@@ -1,15 +1,37 @@
 # My dotfiles
 
-This is a collection of my dotfiles. To install on your local machine do:
+This is a collection of my dotfiles. To install on your local machine run the following commands:
 
 ```
 git clone git://github.com/nebelschwade/dotfiles ~/Dotfiles
 cd ~/Dotfiles
-rake install
+ln -s ~/Dotfiles/vim ~/.vim
+ln -s ~/Dotfiles/gitconfig ~/.gitconfig
+ln -s ~/Dotfiles/gitignore ~/.gitignore
+ln -s ~/Dotfiles/inputrc ~/.inputrc
+ln -s ~/Dotfiles/jshintrc ~/.jshintrc
+ln -s ~/Dotfiles/pearrc ~/.pearrc
+ln -s ~/Dotfiles/profile ~/.profile
+ln -s ~/Dotfiles/pearrc ~/.pearrc
+ln -s ~/Dotfiles/vimrc ~/.vimrc
+git submodule init
+git submodule update
+git submodule foreach git checkout master
+git submodule foreach git pull
 ```
 
-Thanks a lot to Ryan Bates for his install-script [here](https://github.com/ryanb/dotfiles).
-The Vim-config is highly influenced by [janus](https://github.com/carlhuda/janus).
+Then create a file `.gitconfig.user` in your home-folder and provide your git credentials, such as:
+
+```
+[user]
+  name = Your name
+  email = youremail@domain.de
+[github]
+  user = username
+  token = 1235687641287364
+```
+
+Restart your terminal and vim, and you are ready to go.
 
 ## VIM
 
