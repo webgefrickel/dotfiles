@@ -29,7 +29,7 @@ alias dnsflush='sudo dscacheutil -flushcache'
 
 # all in one homebrew, gem and vim bundles update commands
 alias brewup='brew update && brew upgrade && brew cleanup && brew linkapps'
-alias vimup='cd ~/.vim/ && git submodule foreach git pull && cd -'
+alias vimup='cd ~/Dotfiles/ && git submodule foreach git pull && cd -'
 alias gemup='gem update --system && gem update'
 alias upall='brewup && gemup && vimup'
 
