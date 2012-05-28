@@ -62,6 +62,7 @@ alias d='cd ~/Dotfiles && ls'
 # Gitty gitgit
 alias gti='git'
 alias g='git'
+alias grm='git rm $(git ls-files --deleted)'
 alias deploy='dandelion deploy'
 alias status='dandelion status'
 

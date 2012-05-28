@@ -3,7 +3,7 @@
 This is a collection of my dotfiles. To install on your local machine run the following commands:
 
 ```
-git clone git://github.com/nebelschwade/dotfiles ~/Dotfiles
+git clone git://github.com/nebelschwade/Dotfiles ~/Dotfiles
 cd ~/Dotfiles
 ln -s ~/Dotfiles/vim ~/.vim
 ln -s ~/Dotfiles/gitconfig ~/.gitconfig

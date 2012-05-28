@@ -33,8 +33,7 @@
   ps = push
   pl = pull
   hub = push origin master
-  rmall = rm $(git ls-files --deleted)
-  subup= submodule foreach git pull
+  subup = submodule foreach git pull
   rs = reset master --hard
   hist = log --pretty=format:\"%h | %ad | %s%d [%an]\" --graph --date=local
   lo = log --graph --decorate --pretty=oneline --abbrev-commit --all

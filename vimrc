@@ -92,7 +92,6 @@ set visualbell          " don't beep
 " set the leader to comma , and ; == : -- faster commands
 let mapleader = ","
 nnoremap ; :
-nnoremap : ;
 
 " jk nice behaviour (screen lines vs. shown lines)
 nnoremap j gj
