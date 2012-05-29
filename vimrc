@@ -178,9 +178,10 @@ nnoremap <leader>a :Ack
 
 " Nerdtree toggle
 nnoremap <leader>n :NERDTreeToggle<cr>
-" let NERDTreeMinimalUI=1
+let NERDTreeMinimalUI=1
 let NERDTreeWinSize=50
-let NERDTreeShowBookmarkset=1
+let NERDTreeShowHidden=1
+
 
 " ZoomWin configuration
 nnoremap <Leader>z :ZoomWin<CR>
