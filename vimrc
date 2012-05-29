@@ -133,6 +133,8 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
+nmap <Leader>p <C-^>
+
 " but use them for usefull stuff -- switching buffers
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
