@@ -32,6 +32,7 @@
   br = branch
   ps = push
   pl = pull
+  mg = merge
   hub = push origin master
   subup = submodule foreach git pull
   rs = reset master --hard
