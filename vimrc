@@ -104,7 +104,7 @@ vnoremap / /\v
 nnoremap <tab> <C-w><C-w>
 nnoremap <S-tab> <C-w>W
 " custom shift-tab mapping -- opens new { } and blank line
-imap <S-Tab> <Esc>$a {<CR><CR>}<Esc>k0lli
+inoremap <S-Tab> <Esc>$a {<CR><CR>}<Esc>k0lli
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
@@ -112,18 +112,21 @@ nnoremap N Nzz
 nnoremap n nzz
 
 " Adjust viewports to the same size
-nnoremap <Leader>= <C-w>=
-inoremap <Leader>= <Esc> <C-w>=
+nnoremap <leader>= <C-w>=
+inoremap <leader>= <Esc> <C-w>=
 
 " reset search
-nnoremap <Leader><space> :noh<cr>
+nnoremap <leader><space> :noh<cr>
 
 " open new vertical split and change to split
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s<C-w>j
 
 " Opens an edit command with the path of the currently edited file filled in
-nnoremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" start a new document-wide seach-replace
+nnoremap <leader>f :%s/\v
 
 " dont use the arrow keys. LEARN VIM
 nnoremap <up> <nop>
@@ -133,7 +136,7 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-nmap <Leader>p <C-^>
+nmap <leader>p <C-^>
 
 " but use them for usefull stuff -- switching buffers
 nnoremap <left> :bp<cr>
@@ -184,7 +187,7 @@ let NERDTreeShowHidden=1
 
 
 " ZoomWin configuration
-nnoremap <Leader>z :ZoomWin<CR>
+nnoremap <leader>z :ZoomWin<CR>
 
 " TComment
 nnoremap <leader>/ :TComment<CR>
@@ -197,7 +200,7 @@ nnoremap <silent><leader>r :wall<CR> :RRB<CR>
 let g:RefreshRunningBrowserDefault = 'chrome'
 
 " easymotion config leader m
-let g:EasyMotion_leader_key = '<Leader>m'
+let g:EasyMotion_leader_key = '<leader>m'
 
 " Enable syntastic syntax checking
 " no checking for xhtml/html -- because of fluidtemplate for TYPO3
@@ -232,7 +235,7 @@ let g:tagbar_compact=1
 nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 
 " CtrlP
-let g:ctrlp_map = '<Leader>t'
+let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 12
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|\.sass-cache$'
