@@ -7,6 +7,7 @@
   autocrlf = input
   eol = lf
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  pager = less -FXRS -x2
 
 [color]
   ui = auto
