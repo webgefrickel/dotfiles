@@ -25,7 +25,7 @@ alias devstart='apachestart && mysqlstart'
 alias devstop='apachestop && mysqlstop'
 
 # start virtuoso
-alias virt='cd /usr/local/Cellar/virtuoso/6.1.5/var/lib/virtuoso/db/ && virtuoso -df'
+alias virt='cd /usr/local/Cellar/virtuoso/6.1.5/var/lib/virtuoso/db/ && virtuoso-t -df'
 
 # dnsflush-shortcut
 alias dnsflush='sudo dscacheutil -flushcache'
