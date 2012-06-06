@@ -104,7 +104,7 @@ vnoremap / /\v
 nnoremap <tab> <C-w><C-w>
 nnoremap <S-tab> <C-w>W
 " custom shift-tab mapping -- opens new { } and blank line
-inoremap { {<Esc>i <Esc>o<CR>}<Esc>ki<tab>
+inoremap <S-tab> {<Esc>i <Esc>o<CR>}<Esc>ki<tab>
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
