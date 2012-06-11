@@ -103,8 +103,6 @@ vnoremap / /\v
 " Switch between windows
 nnoremap <tab> <C-w><C-w>
 nnoremap <S-tab> <C-w>W
-" custom shift-tab mapping -- opens new { } and blank line
-inoremap <S-tab> {<Esc>i <Esc>o<CR>}<Esc>ki<tab>
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
@@ -175,7 +173,6 @@ nmap <leader>w :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 
 " ========== PLugins leaders and other config ==========
-"
 " search using ack
 nnoremap <leader>a :Ack
 
@@ -240,9 +237,13 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 12
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|\.sass-cache$'
 
+" custom shift-tab mapping -- opens new { } and blank line
+" Supertab and snipmate backwards-key are overwritten to use shfit + alt / crtl
+let g:SuperTabMappingBackward = '<s-c-tab>'
+let g:snips_trigger_key_backwards = '<s-m-tab>'
+inoremap <s-tab> {<Esc>i <Esc>o<CR>}<Esc>ki<tab>
 
 " ========== Custom Pseudofunctions ==========
-"
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 " typoscript syntax
@@ -258,7 +259,6 @@ endif
 
 
 " ========== On Save ==========
-"
 " A function for stripping Whitespace when saving
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
