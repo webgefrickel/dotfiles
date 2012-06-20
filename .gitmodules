@@ -115,3 +115,6 @@
 [submodule "vim/bundle/pasta"]
 	path = vim/bundle/pasta
 	url = git://github.com/sickill/vim-pasta.git
+[submodule "vim/bundle/webapi"]
+	path = vim/bundle/webapi
+	url = git://github.com/mattn/webapi-vim.git

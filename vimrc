@@ -212,8 +212,10 @@ let g:syntastic_mode_map = { 'mode': 'active',
 nnoremap <leader>y :YRShow<CR>
 inoremap <leader>y :YRShow<CR>
 " Prevent YankRing.vim from polluting $HOME:
-let g:yankring_history_dir = '$VIM'
+let g:yankring_history_dir = '$HOME'
 let g:yankring_window_height = 12
+let g:yankring_min_element_length = 2
+let g:yankring_history_file = '.yankring'
 
 " Buffergator
 let g:buffergator_display_regime='filepath'
@@ -236,6 +238,9 @@ let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 12
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|\.sass-cache$'
+
+" Gist filetype-detection
+let g:gist_detect_filetype = 1
 
 " custom shift-tab mapping -- opens new { } and blank line
 " Supertab and snipmate backwards-key are overwritten to use shfit + alt / crtl

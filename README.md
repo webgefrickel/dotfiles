@@ -8,6 +8,7 @@ cd ~/Dotfiles
 ln -s ~/Dotfiles/vim ~/.vim
 ln -s ~/Dotfiles/gitconfig ~/.gitconfig
 ln -s ~/Dotfiles/gitignore ~/.gitignore
+ln -s ~/Dotfiles/hgignore_global ~/.hgignore_global
 ln -s ~/Dotfiles/inputrc ~/.inputrc
 ln -s ~/Dotfiles/jshintrc ~/.jshintrc
 ln -s ~/Dotfiles/pearrc ~/.pearrc
@@ -44,7 +45,7 @@ Restart your terminal and vim, and you are ready to go.
 - ctrlp
 - easymotion
 - fugitive
-- gist
+- gist (more config needed, see github page)
 - indent-guides
 - indent-object
 - matchit
