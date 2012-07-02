@@ -7,11 +7,12 @@ export COPYFILE_DISABLE=true
 
 # colors ftw!
 export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # editor
 export EDITOR=mvim
-VISUAL=$EDITOR; export VISUAL
+VISUAL=$EDITOR; 
+export VISUAL
 
 # node.js
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
@@ -21,8 +22,8 @@ alias apachestart='sudo /usr/sbin/apachectl start'
 alias apachestop='sudo /usr/sbin/apachectl stop'
 alias mysqlstart='mysql.server start'
 alias mysqlstop='mysql.server stop'
-alias devstart='apachestart && mysqlstart'
-alias devstop='apachestop && mysqlstop'
+alias dev='apachestart && mysqlstart && cd ~/Sites && ls'
+alias devs='apachestop && mysqlstop'
 
 # start virtuoso
 alias virt='cd /usr/local/Cellar/virtuoso/6.1.5/var/lib/virtuoso/db/ && virtuoso-t -df'
@@ -68,6 +69,8 @@ alias g='git'
 alias grm='git rm $(git ls-files --deleted)'
 alias deploy='dandelion deploy'
 alias status='dandelion status'
+alias gw='grunt watch'
+
 
 # use ffmpeg to create nice web-videos and a jpg-still
 ffencode () { 

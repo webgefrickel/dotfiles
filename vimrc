@@ -174,7 +174,7 @@ nmap <leader>w :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " ========== PLugins leaders and other config ==========
 " search using ack
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack 
 
 " Nerdtree toggle
 nnoremap <leader>n :NERDTreeToggle<cr>
@@ -238,6 +238,8 @@ let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 12
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|\.sass-cache$'
+" easier split screens
+let g:ctrlp_switch_buffer = 0
 
 " Gist filetype-detection
 let g:gist_detect_filetype = 1
