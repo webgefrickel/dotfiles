@@ -2,3 +2,5 @@
 .DS_Store
 .svn
 .tmp_*
+.revision
+
