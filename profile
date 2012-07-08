@@ -35,7 +35,8 @@ alias dnsflush='sudo dscacheutil -flushcache'
 alias brewup='brew update && brew upgrade && brew cleanup && brew linkapps'
 alias vimup='cd ~/Dotfiles/ && git submodule foreach git pull && cd -'
 alias gemup='gem update --system && gem update'
-alias upall='brewup && gemup && vimup'
+alias npmup='npm -g cache clean && npm -g update'
+alias upall='brewup && gemup && npmup && vimup'
 
 # easy hosts-editing
 alias hosts='sudo mvim /etc/hosts'
