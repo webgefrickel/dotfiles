@@ -29,7 +29,7 @@
   st = status
   cm = commit
   co = checkout
-  br = branch
+  br = branch -a
   ps = push
   pl = pull
   mg = merge
