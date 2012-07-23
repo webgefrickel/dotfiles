@@ -1,6 +1,33 @@
+# always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*.bak
+
+# other stuff
 *~
-.DS_Store
-.svn
+*.sass-cache
 .tmp_*
 .revision
 
+# OS or editor folders
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.komodoproject
+.komodotools
+
+# vcs-folders to ignore
+.hg
+.svn
+.CVS

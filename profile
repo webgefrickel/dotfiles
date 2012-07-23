@@ -22,7 +22,7 @@ alias apachestart='sudo /usr/sbin/apachectl start'
 alias apachestop='sudo /usr/sbin/apachectl stop'
 alias mysqlstart='mysql.server start'
 alias mysqlstop='mysql.server stop'
-alias dev='apachestart && mysqlstart && cd ~/Sites && ls'
+alias dev='apachestart && mysqlstart'
 alias devs='apachestop && mysqlstop'
 
 # start virtuoso

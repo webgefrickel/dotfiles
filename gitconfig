@@ -33,6 +33,7 @@
   ps = push
   pl = pull
   mg = merge
+  unst = reset HEAD
   hub = push origin master
   subup = submodule foreach git pull
   rs = reset master --hard
