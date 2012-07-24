@@ -255,6 +255,8 @@ inoremap <s-tab> {<Esc>i <Esc>o<CR>}<Esc>ki<tab>
 au BufNewFile,BufRead *.json set ft=javascript
 " typoscript syntax
 au BufNewFile,BufRead *.ts set ft=typoscript
+" typoscript syntax
+au BufNewFile,BufRead *.txt set ft=typoscript
 " scss
 au BufNewFile,BufRead *.scss set ft=scss.css
 
