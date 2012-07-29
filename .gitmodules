@@ -118,3 +118,6 @@
 [submodule "vim/bundle/webapi"]
 	path = vim/bundle/webapi
 	url = git://github.com/mattn/webapi-vim.git
+[submodule "vim/bundle/editorconfig"]
+	path = vim/bundle/editorconfig
+	url = git://github.com/editorconfig/editorconfig-vim.git
