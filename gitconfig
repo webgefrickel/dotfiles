@@ -35,6 +35,7 @@
   mg = merge
   unst = reset HEAD
   hub = push origin master
+  fac = push origin refac
   subup = submodule foreach git pull
   rs = reset master --hard
   hist = log --pretty=format:\"%h | %ad | %s%d [%an]\" --graph --date=local

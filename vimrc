@@ -161,6 +161,10 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" stupid ex-mode and man-page stuff
+nnoremap Q <nop>
+nnoremap K <nop>
+
 " upper/lower word
 nmap <leader>U mQviwU`Q
 nmap <leader>L mQviwu`Q
@@ -237,7 +241,11 @@ nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 12
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|\.sass-cache$'
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.sass-cache$',
+	\ 'file': '\.exe$\|\.so$\|\.dll$\|\.psd$\|\.png$\|\.jpg$\|\.gif#',
+	\ }
+
 " easier split screens
 let g:ctrlp_switch_buffer = 0
 
