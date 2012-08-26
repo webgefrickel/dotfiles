@@ -1,4 +1,14 @@
---type-add
-html=.haml
---type-add
-css=.css,.sass,.scss
+# only search with case sensitivity if there is mixed case
+--smart-case
+# follow symlinks
+--follow
+
+# add additional often used types
+--type-add=html=.haml
+--type-add=css=.sass,.scss,.less
+
+# add default most searched files set
+--type-set=dev=.php,.scss,.html,.xml,.js,.ts,.rb
+--type-set=plaintext=.txt,.md,.markdown
+--type-set=typoscript=.,ts
+

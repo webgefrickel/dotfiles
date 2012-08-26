@@ -121,3 +121,6 @@
 [submodule "vim/bundle/editorconfig"]
 	path = vim/bundle/editorconfig
 	url = git://github.com/editorconfig/editorconfig-vim.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = git@github.com:nebelschwade/oh-my-zsh.git

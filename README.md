@@ -1,27 +1,24 @@
 # My dotfiles
 
-This is a collection of my dotfiles. To install on your local machine run the following commands:
+This is a collection of my dotfiles. Requirements are:
+installed and working homebrew with installed node, npm
+and the node jake-plugin. And zsh :-)
 
 ```
 git clone git://github.com/nebelschwade/Dotfiles ~/Dotfiles
 cd ~/Dotfiles
-ln -s ~/Dotfiles/vim ~/.vim
-ln -s ~/Dotfiles/gitconfig ~/.gitconfig
-ln -s ~/Dotfiles/gitignore ~/.gitignore
-ln -s ~/Dotfiles/hgignore_global ~/.hgignore_global
-ln -s ~/Dotfiles/inputrc ~/.inputrc
-ln -s ~/Dotfiles/jshintrc ~/.jshintrc
-ln -s ~/Dotfiles/pearrc ~/.pearrc
-ln -s ~/Dotfiles/profile ~/.profile
-ln -s ~/Dotfiles/pearrc ~/.pearrc
-ln -s ~/Dotfiles/vimrc ~/.vimrc
-git submodule init
-git submodule update
-git submodule foreach git checkout master
-git submodule foreach git pull
+jake
 ```
 
-Then create a file `.gitconfig.user` in your home-folder and provide your git credentials, such as:
+Restart your terminal and type
+
+```
+cd ~/Dotfiles
+jake zsh
+```
+
+Now change the file `.gitconfig.user` in your home-folder and 
+provide your git credentials, such as:
 
 ```
 [user]
@@ -32,7 +29,12 @@ Then create a file `.gitconfig.user` in your home-folder and provide your git cr
   token = 1235687641287364
 ```
 
-Restart your terminal and vim, and you are ready to go.
+Finally restart your terminal and vim again, and you are ready to go.
+
+## oh-my-zsh
+
+I use the famous oh-my-zsh framework with a custom theme.
+Have a look at the zshrc-file for custom aliases and functions.
 
 ## VIM
 
@@ -44,13 +46,14 @@ Restart your terminal and vim, and you are ready to go.
 - buffergator
 - ctrlp
 - easymotion
+- editorconfig
 - fugitive
 - gist (more config needed, see github page)
 - indent-guides
 - indent-object
 - matchit
-- nrrwrgn
 - nerdtree
+- nrrwrgn
 - pasta
 - ragtag
 - repeat
@@ -94,6 +97,7 @@ Restart your terminal and vim, and you are ready to go.
 - ,v for a new vertical split
 - ,= for resizing splits equally
 - ,a for Ack-Search
+- ,f for search and replace
 - ,/ for un/commenting
 - ,z for zoomin
 - ,r for browser-refreshing- 
@@ -106,7 +110,3 @@ Restart your terminal and vim, and you are ready to go.
 - \<F8\> for toggling the tagbar
 - \<shift-tab\> in css indents single line to column 31
 - autotrailing of whitespace for php, html, css, js, ts, xml, json, inc and vim files
-
-## Bash and aliases
-
-Well, have a look at .profile.
