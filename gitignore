@@ -14,8 +14,9 @@
 *.sass-cache
 .tmp_*
 .revision
+_srcs
 
-# OS or editor folders
+# OS or editor folders and files
 .DS_Store
 Thumbs.db
 .cache
@@ -26,6 +27,7 @@ Thumbs.db
 nbproject
 *.komodoproject
 .komodotools
+NERD_tree*
 
 # vcs-folders to ignore
 .hg

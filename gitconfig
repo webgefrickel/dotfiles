@@ -38,17 +38,7 @@
   fac = push origin refac
   subup = submodule foreach git pull
   rs = reset master --hard
-  hist = log --pretty=format:\"%h | %ad | %s%d [%an]\" --graph --date=local
+  hist = log --pretty=format:\"%h | %ad | %an | %s%d \" --graph --date=local
   lo = log --graph --decorate --pretty=oneline --abbrev-commit --all
   type = cat-file -t
   dump = cat-file -p
-
-[merge]
-  tool = sourcetree
-  summary = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true

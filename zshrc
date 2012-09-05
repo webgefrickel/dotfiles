@@ -36,8 +36,8 @@ alias vd='mvimdiff'
 alias diff='mvimdiff'
 
 # easy hosts-editing
-alias hosts='_ v /etc/hosts'
-alias vhosts='_ v /etc/apache2/extra/httpd-vhosts.conf'
+alias hosts='_ mvim /etc/hosts'
+alias vhosts='_ mvim /etc/apache2/extra/httpd-vhosts.conf'
 
 # Easier navigation: .., ..., ~ and -
 alias ..='cd ..'
