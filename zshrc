@@ -60,6 +60,9 @@ alias status='dandelion status'
 # grunt
 alias grw='grunt watch'
 alias grd='grunt deploy'
+
+# other tools
+alias cw='compass watch'
  
 # default plugins to load
 plugins=(brew git npm node gem osx)
