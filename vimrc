@@ -215,7 +215,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
 " Yankring
 nnoremap <leader>y :YRShow<CR>
 inoremap <leader>y :YRShow<CR>
-" Prevent YankRing.vim from polluting $HOME:
 let g:yankring_history_dir = '$HOME'
 let g:yankring_window_height = 12
 let g:yankring_min_element_length = 2

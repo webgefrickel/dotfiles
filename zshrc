@@ -2,6 +2,28 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="webgefrickel"
 
+# default plugins to load
+plugins=(brew git npm node gem osx)
+
+source $ZSH/oh-my-zsh.sh
+unsetopt correct_all
+
+# paths
+export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:$PATH
+export MANPATH=/usr/local/share/man:$MANPATH
+
+# disable stupid ._ and dsstore files
+export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
+export COPYFILE_DISABLE=true
+
+# editor
+export EDITOR=mvim
+VISUAL=$EDITOR; 
+export VISUAL
+
+# node.js
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+
 ### aliases ##
 # aliases for apache and mysql
 alias apachestart='_ /usr/sbin/apachectl start'
@@ -63,27 +85,7 @@ alias grd='grunt deploy'
 
 # other tools
 alias cw='compass watch'
- 
-# default plugins to load
-plugins=(brew git npm node gem osx)
 
-source $ZSH/oh-my-zsh.sh
-
-# paths
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:$PATH
-export MANPATH=/usr/local/share/man:$MANPATH
-
-# disable stupid ._ and dsstore files
-export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
-export COPYFILE_DISABLE=true
-
-# editor
-export EDITOR=mvim
-VISUAL=$EDITOR; 
-export VISUAL
-
-# node.js
-export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 
 ### some custom functions ###
 # use ffmpeg to create nice web-videos and a jpg-still
