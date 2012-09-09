@@ -48,9 +48,6 @@ alias npmup='npm -g cache clean && npm -g update'
 alias rvmup='rvm get latest'
 alias upall='brewup && rvmup && gemup && npmup && dotup && dotsubup'
 
-# dont autocorrect the following zsh-stuff
-alias jake='nocorrect jake'
-
 # always use mvim
 alias v='mvim'
 alias vim='mvim'
