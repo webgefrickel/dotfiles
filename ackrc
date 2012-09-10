@@ -3,12 +3,12 @@
 # follow symlinks
 --follow
 
-# add additional often used types
---type-add=html=.haml
---type-add=css=.sass,.scss,.less
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=_srcs
+# we only want to search in scss/sass dirs
+--ignore-dir=css
+--sort-files
 
-# add default most searched files set
---type-set=dev=.php,.scss,.html,.xml,.js,.ts,.rb
---type-set=plaintext=.txt,.md,.markdown
---type-set=typoscript=.,ts
-
+# search in everything else
+-a
