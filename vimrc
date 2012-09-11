@@ -3,6 +3,9 @@ call pathogen#infect()
 filetype plugin indent on
 syntax on
 
+" set zsh as default to keep aliases and stuff in :! commands
+set shell=/usr/local/bin/zsh\ -l\ -i\ -e
+
 set nocompatible   " activate vim awesomeness
 set ruler          " show where you are in the document
 set cursorline     " highligh current line
