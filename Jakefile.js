@@ -62,7 +62,8 @@ task('zsh', [], function() {
   var cmds = [
     'chsh -s `which zsh`',
     '/usr/bin/env zsh',
-    'source ~/.zshrc'
+    'source ~/.zshrc',
+    'sudo mv /etc/zshenv /etc/zprofile'
   ];
 
   jake.exec(cmds, function() {
