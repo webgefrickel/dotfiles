@@ -6,8 +6,11 @@
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=_srcs
+--ignore-dir=.sass-cache
+
 # we only want to search in scss/sass dirs
 --ignore-dir=css
+
 --sort-files
 
 # search in everything else

@@ -189,6 +189,9 @@ let NERDTreeMinimalUI=1
 let NERDTreeWinSize=50
 let NERDTreeShowHidden=1
 
+" fugitive shortcuts -- 20+ increases window-height
+nmap <leader>gs :Gstatus<CR><C-w>20+
+nmap <leader>gg :Gcommit<CR><C-w>20+
 
 " ZoomWin configuration
 nnoremap <leader>z :ZoomWin<CR>
