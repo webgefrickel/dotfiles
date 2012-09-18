@@ -4,7 +4,9 @@ filetype plugin indent on
 syntax on
 
 " set zsh as default to keep aliases and stuff in :! commands
-set shell=/usr/local/bin/zsh\ -l\ -i\ -e
+" this breaks mvimdiff! thus i better uncomment it
+" Gstatus etc. will work fine after 'sudo mv /etc/zshenv /etc/zprofile' anyways
+" set shell=/usr/local/bin/zsh\ -l\ -i\ -e
 
 set nocompatible   " activate vim awesomeness
 set ruler          " show where you are in the document
