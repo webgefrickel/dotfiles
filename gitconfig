@@ -42,9 +42,14 @@
   lo = log --graph --decorate --pretty=oneline --abbrev-commit --all
   type = cat-file -t
   dump = cat-file -p
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+
+[diff]
+  tool = vimdiff
+  guitool = mvimdiff
+
+[mergetool]
+  prompt = false
+  keepBackup = false
+
+[difftool "mvimdiff"]
+  cmd = /usr/local/bin/mvimdiff -f "$LOCAL" "$MERGED" "$REMOTE"
