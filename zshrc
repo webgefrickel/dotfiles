@@ -17,9 +17,8 @@ export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
 export COPYFILE_DISABLE=true
 
 # editor
-export EDITOR=mvim
-VISUAL=$EDITOR; 
-export VISUAL
+export EDITOR=vim
+export VISUAL=vim
 
 # node.js
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
@@ -48,15 +47,14 @@ alias npmup='npm -g cache clean && npm -g update'
 alias rvmup='rvm get latest'
 alias upall='brewup && rvmup && gemup && npmup && dotup && dotsubup'
 
-# always use mvim
-alias v='mvim'
-alias vim='mvim'
-alias vd='mvimdiff'
-alias diff='mvimdiff'
+# always use vim
+alias v='vim'
+alias vd='vimdiff'
+alias diff='vimdiff'
 
 # easy hosts-editing
-alias hosts='_ mvim /etc/hosts'
-alias vhosts='_ mvim /etc/apache2/extra/httpd-vhosts.conf'
+alias hosts='_ vim /etc/hosts'
+alias vhosts='_ vim /etc/apache2/extra/httpd-vhosts.conf'
 
 # Easier navigation: .., ..., ~ and -
 alias ..='cd ..'

@@ -67,9 +67,6 @@
 [submodule "vim/bundle/typoscript"]
 	path = vim/bundle/typoscript
 	url = git://github.com/nebelschwade/typoscript-vim.git
-[submodule "vim/bundle/statusline"]
-	path = vim/bundle/statusline
-	url = git://github.com/nebelschwade/statusline-vim.git
 [submodule "vim/bundle/snipmate-snippets"]
 	path = vim/bundle/snipmate-snippets
 	url = git://github.com/nebelschwade/snipmate-snippets.git
@@ -124,3 +121,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git@github.com:nebelschwade/oh-my-zsh.git
+[submodule "vim/bundle/powerline"]
+	path = vim/bundle/powerline
+	url = git://github.com/Lokaltog/vim-powerline.git

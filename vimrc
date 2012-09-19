@@ -42,10 +42,18 @@ set smarttab
 set expandtab
 set autoindent
 
-set guifont=MesloLGSDZ:h12 " a nice font here
-set guioptions-=T          " no toolbar
-set guioptions-=L          " no left scrollbar
-set guioptions-=r          " no right scrollbar
+" use the mouse for scrolling, yeah
+set mouse=a
+
+" gui options
+if has('gui_running')
+  set guifont=MesloLGMDZ:h12 " a nice font here
+  set guioptions-=T          " no toolbar
+  set guioptions-=L          " no left scrollbar
+  set guioptions-=r          " no right scrollbar
+endif
+
+" color options
 color jellybeans
 set fillchars=""
 
@@ -180,6 +188,8 @@ nmap <leader>l mQgewvu`Q
 " Swap two words
 nmap <leader>w :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
+" change working directory to current file
+nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 
 " ========== PLugins leaders and other config ==========
 " search using ack
@@ -242,22 +252,26 @@ let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
 let g:tagbar_compact=1
 
-nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
-
 " CtrlP
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 12
-let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\v[\/](\.git|\.hg|\.svn|\.sass-cache)$',
-	\ 'file': '\.exe$\|\.so$\|\.dll$\|\.psd$\|\.png$\|\.jpg$\|\.gif$',
-	\ }
-
+let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.git|\.hg|\.svn|\.sass-cache)$',
+                            \ 'file': '\.exe$\|\.so$\|\.dll$\|\.psd$\|\.png$\|\.jpg$\|\.gif$',
+                            \ }
 " easier split screens
 let g:ctrlp_switch_buffer = 0
 
 " Gist filetype-detection
 let g:gist_detect_filetype = 1
+
+" Powerline customization
+let g:Powerline_stl_path_style = 'short'
+let g:Powerline_symbols_override = { 'BRANCH': '‣',
+                                   \ 'LINE': 'L',
+                                   \ }
+call Pl#Theme#RemoveSegment('scrollpercent')
+
 
 " custom shift-tab mapping -- opens new { } and blank line
 " Supertab and snipmate backwards-key are overwritten to use shfit + alt / crtl
@@ -265,15 +279,18 @@ let g:SuperTabMappingBackward = '<s-c-tab>'
 let g:snips_trigger_key_backwards = '<s-m-tab>'
 inoremap <s-tab> {<Esc>i <Esc>o<CR>}<Esc>ki<tab>
 
+
 " ========== Custom Pseudofunctions ==========
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 " typoscript syntax
 au BufNewFile,BufRead *.ts set ft=typoscript
-" typoscript syntax
+" typoscript syntax for all text-files
 au BufNewFile,BufRead *.txt set ft=typoscript
 " scss
 au BufNewFile,BufRead *.scss set ft=scss.css
+" php
+au BufNewFile,BufRead Phakefile set ft=php
 
 " Remember last location in file
 if has("autocmd")

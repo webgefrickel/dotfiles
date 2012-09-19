@@ -44,7 +44,7 @@ namespace('setup', function() {
     var cmds = [
       'git submodule init',
       'git submodule update',
-      'git submodule foreach git checkout master',
+      'git submodule foreach git checkout HEAD',
       'git submodule foreach git pull'
     ];
 
