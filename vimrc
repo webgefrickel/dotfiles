@@ -266,10 +266,8 @@ let g:ctrlp_switch_buffer = 0
 let g:gist_detect_filetype = 1
 
 " Powerline customization
+let g:Powerline_symbols = 'fancy'
 let g:Powerline_stl_path_style = 'short'
-let g:Powerline_symbols_override = { 'BRANCH': '‣',
-                                   \ 'LINE': 'L',
-                                   \ }
 call Pl#Theme#RemoveSegment('scrollpercent')
 
 
