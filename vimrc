@@ -270,7 +270,6 @@ let g:Powerline_symbols = 'fancy'
 let g:Powerline_stl_path_style = 'short'
 call Pl#Theme#RemoveSegment('scrollpercent')
 
-
 " custom shift-tab mapping -- opens new { } and blank line
 " Supertab and snipmate backwards-key are overwritten to use shfit + alt / crtl
 let g:SuperTabMappingBackward = '<s-c-tab>'
