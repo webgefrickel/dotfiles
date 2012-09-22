@@ -80,6 +80,7 @@ alias grd='grunt deploy'
 
 # other tools
 alias cw='compass watch'
+alias t='tmux -u'
 
 
 ### some custom functions ###

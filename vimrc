@@ -47,15 +47,26 @@ set mouse=a
 
 " gui options
 if has('gui_running')
-  set guifont=MesloLGMDZ:h12 " a nice font here
-  set guioptions-=T          " no toolbar
-  set guioptions-=L          " no left scrollbar
-  set guioptions-=r          " no right scrollbar
+  set guifont=Menlo\ for\ Powerline:h12 " a nice font here
+  set linespace=1    " menlo is nice, but very dense...
+  set guioptions-=T  " no toolbar
+  set guioptions-=L  " no left scrollbar
+  set guioptions-=r  " no right scrollbar
+endif
+
+" mac terminal-vim play nicely with tmux
+if &term =~ '^screen'
+  " tmux will send xterm-style keys when its xterm-keys option is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+  " map <Esc>[B <Down>
 endif
 
 " color options
 color jellybeans
-set fillchars=""
+set fillchars="" 
 
 " Automatically read a file that has changed on disk
 set autoread
