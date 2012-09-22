@@ -23,6 +23,9 @@ export VISUAL=mvim
 # node.js
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 
+# disable auto titling fixes tmux window
+export DISABLE_AUTO_TITLE=true
+
 ### aliases ##
 # aliases for apache and mysql
 alias apachestart='_ /usr/sbin/apachectl start'
