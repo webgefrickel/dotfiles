@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="webgefrickel"
 
 # default plugins to load
-plugins=(brew cap extract git github history-substring-search jake-node laravel npm node gem osx)
+plugins=(brew cap extract git github history-substring-search jake-node laravel npm node gem osx zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
