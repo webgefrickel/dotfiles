@@ -84,6 +84,7 @@ alias grd='grunt deploy'
 # other tools
 alias cw='compass watch'
 alias t='tmux -u'
+alias pdf2jpg='gs -dNOPAUSE -sDEVICE=jpeg -r144 -sOutputFile=p%03d.jpg file.pdf'
 
 
 ### some custom functions ###
