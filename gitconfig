@@ -40,6 +40,7 @@
   rs = reset HEAD --hard
   hist = log --pretty=format:\"%h | %ad | %an | %s%d \" --graph --date=local
   lo = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
   type = cat-file -t
   dump = cat-file -p
 
