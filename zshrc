@@ -9,7 +9,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 # paths
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
 export MANPATH=/usr/local/share/man:$MANPATH
 
 # disable stupid ._ and dsstore files
@@ -17,14 +17,17 @@ export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
 export COPYFILE_DISABLE=true
 
 # editor
-export EDITOR=mvim
-export VISUAL=mvim
+export EDITOR=vim
+export VISUAL=vim
 
 # node.js
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 
 # disable auto titling fixes tmux window
 export DISABLE_AUTO_TITLE=true
+
+# z script installed via homebrew
+. `brew --prefix`/etc/profile.d/z.sh
 
 ### aliases ##
 # aliases for apache and mysql
@@ -51,13 +54,13 @@ alias rvmup='rvm get latest'
 alias upall='brewup && rvmup && gemup && npmup && dotup && dotsubup'
 
 # always use mvim but for 'vim'
-alias v='mvim'
-alias vd='mvimdiff'
-alias diff='mvimdiff'
+alias v='vim'
+alias vd='vimdiff'
+alias diff='vimdiff'
 
 # easy hosts-editing
-alias hosts='_ mvim /etc/hosts'
-alias vhosts='_ mvim /etc/apache2/extra/httpd-vhosts.conf'
+alias hosts='_ vim /etc/hosts'
+alias vhosts='_ vim /etc/apache2/extra/httpd-vhosts.conf'
 
 # Easier navigation: .., ..., ~ and -
 alias ..='cd ..'

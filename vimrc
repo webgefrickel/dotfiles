@@ -8,6 +8,9 @@ syntax on
 " Gstatus etc. will work fine after 'sudo mv /etc/zshenv /etc/zprofile' anyways
 " set shell=/usr/local/bin/zsh\ -l\ -i\ -e
 
+" terminal vim and tmux
+set clipboard=unnamed
+
 set nocompatible   " activate vim awesomeness
 set ruler          " show where you are in the document
 set cursorline     " highligh current line
@@ -179,6 +182,12 @@ vmap <C-left> <gv
 vmap <C-right> >gv
 
 set pastetoggle=<F2>    " toggle paste-mode for c&p with F2
+" Yank text to the OS X clipboard
+noremap <leader>y "*y
+noremap <leader>Y "*Y
+
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 " no HELP while mishitting ESC - awesome
 inoremap <F1> <ESC>

@@ -15,6 +15,7 @@
 .tmp_*
 .revision
 _srcs
+node_modules
 
 # OS or editor folders and files
 .DS_Store
