@@ -9,7 +9,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 # paths
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:$PATH
 export MANPATH=/usr/local/share/man:$MANPATH
 
 # disable stupid ._ and dsstore files

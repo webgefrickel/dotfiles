@@ -6,10 +6,11 @@
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=_srcs
+--ignore-dir=node_modules
 --ignore-dir=.sass-cache
 
 # we only want to search in scss/sass dirs
---ignore-dir=css
+# --ignore-dir=css
 
 --sort-files
 

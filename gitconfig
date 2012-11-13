@@ -3,7 +3,7 @@
 
 [core]
   excludesfile = ~/.gitignore
-  editor = mvim -f
+  editor = vim
   autocrlf = input
   eol = lf
   pager = less -FXRS -x2
@@ -46,11 +46,8 @@
 
 [diff]
   tool = vimdiff
-  guitool = mvimdiff
+  guitool = vimdiff
 
 [mergetool]
   prompt = false
   keepBackup = false
-
-[difftool "mvimdiff"]
-  cmd = /usr/local/bin/mvimdiff -f "$LOCAL" "$MERGED" "$REMOTE"
