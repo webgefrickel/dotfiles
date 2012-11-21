@@ -161,8 +161,6 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-nmap <leader>p <C-^>
-
 " but use them for usefull stuff -- switching buffers
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
@@ -181,19 +179,17 @@ imap <C-right> <Esc>>>i
 vmap <C-left> <gv
 vmap <C-right> >gv
 
-set pastetoggle=<F2>    " toggle paste-mode for c&p with F2
+set pastetoggle=<F2> " toggle paste-mode for c&p with F2
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
 noremap <leader>Y "*Y
-
-" Preserve indentation while pasting text from the OS X clipboard
-noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+" paste keeping indentation
+nnoremap <leader>p p`[v`]=
 
 " no HELP while mishitting ESC - awesome
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-
 " stupid ex-mode and man-page stuff
 nnoremap Q <nop>
 nnoremap K <nop>
@@ -233,11 +229,6 @@ nnoremap <leader>/ :TComment<CR>
 vnoremap <leader>/ :TComment<CR>
 inoremap <leader>/ <Esc>:TComment<CR>i
 
-" refresh browser mapping
-nnoremap <silent><leader>r :wall<CR> :RRB<CR>
-" Browser-Refresh config -- only use chrome
-let g:RefreshRunningBrowserDefault = 'chrome'
-
 " easymotion config leader m
 let g:EasyMotion_leader_key = '<leader>m'
 
@@ -266,21 +257,14 @@ let g:buffergator_viewport_split_policy='B'
 let g:buffergator_split_size=12
 nnoremap <leader>b :BuffergatorToggle<cr>
 
-" Tagbar config and keyboard toggler
-nmap <F8> :TagbarToggle<CR>
-let g:tagbar_autofocus=1
-let g:tagbar_autoclose=1
-let g:tagbar_compact=1
-
 " CtrlP
 let g:ctrlp_map = '<leader>t'
+let g:ctrlp_switch_buffer = 0 " easier split screens
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 12
 let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|\.sass-cache)$',
                             \ 'file': '\.exe$\|\.so$\|\.dll$\|\.psd$\|\.png$\|\.jpg$\|\.gif$',
                             \ }
-" easier split screens
-let g:ctrlp_switch_buffer = 0
 
 " Gist filetype-detection
 let g:gist_detect_filetype = 1

@@ -61,9 +61,6 @@
 [submodule "vim/bundle/jellybeans"]
 	path = vim/bundle/jellybeans
 	url = git://github.com/nanotech/jellybeans.vim.git
-[submodule "vim/bundle/browser-refresh"]
-	path = vim/bundle/browser-refresh
-	url = git://github.com/mkitt/browser-refresh.vim.git
 [submodule "vim/bundle/typoscript"]
 	path = vim/bundle/typoscript
 	url = git://github.com/nebelschwade/typoscript-vim.git
@@ -73,9 +70,6 @@
 [submodule "vim/bundle/php-indent"]
 	path = vim/bundle/php-indent
 	url = git://github.com/2072/PHP-Indenting-for-VIm.git
-[submodule "vim/bundle/indent-guides"]
-	path = vim/bundle/indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
@@ -100,18 +94,12 @@
 [submodule "vim/bundle/git"]
 	path = vim/bundle/git
 	url = git://github.com/tpope/vim-git.git
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = git://github.com/majutsushi/tagbar.git
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/scss"]
 	path = vim/bundle/scss
 	url = git://github.com/cakebaker/scss-syntax.vim.git
-[submodule "vim/bundle/pasta"]
-	path = vim/bundle/pasta
-	url = git://github.com/sickill/vim-pasta.git
 [submodule "vim/bundle/webapi"]
 	path = vim/bundle/webapi
 	url = git://github.com/mattn/webapi-vim.git
