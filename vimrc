@@ -127,6 +127,8 @@ nnoremap k gk
 nnoremap / /\v
 vnoremap / /\v
 
+inoremap jj <Esc>
+
 " Switch between windows
 nnoremap <tab> <C-w><C-w>
 nnoremap <S-tab> <C-w>W
