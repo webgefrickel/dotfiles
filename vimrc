@@ -69,7 +69,7 @@ endif
 
 " color options
 color jellybeans
-set fillchars="" 
+set fillchars=""
 
 " Automatically read a file that has changed on disk
 set autoread
