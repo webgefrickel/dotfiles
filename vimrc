@@ -209,6 +209,10 @@ nmap <leader>w :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 " change working directory to current file
 nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 
+" reload files when set autoread is active with F5
+nnoremap <F5> :checktime<cr>
+
+
 " ========== PLugins leaders and other config ==========
 " search using ack
 nnoremap <leader>a :Ack 
