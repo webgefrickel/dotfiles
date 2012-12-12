@@ -29,6 +29,9 @@ nbproject
 *.komodoproject
 .komodotools
 NERD_tree*
+*.iws
+*.ipr
+*.iml
 
 # vcs-folders to ignore
 .hg

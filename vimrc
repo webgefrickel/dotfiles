@@ -288,6 +288,8 @@ inoremap <s-tab> {<Esc>i <Esc>o<CR>}<Esc>ki<tab>
 
 
 " ========== Custom Pseudofunctions ==========
+" .twig files == html
+au BufNewFile,BufRead *.twig set ft=html
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 " typoscript syntax
