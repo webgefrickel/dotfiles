@@ -73,6 +73,7 @@ alias web='cd ~/Sites && l'
 alias rep='cd ~/Repositories && l'
 alias dot='cd ~/Dotfiles && l'
 alias brain='cd ~/Dropbox/Brain && vim .'
+alias jake='noglob jake'
 
 # Gitty gitgit
 alias gitrm='git rm $(git ls-files --deleted)'
