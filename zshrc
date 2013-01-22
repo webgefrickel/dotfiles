@@ -77,6 +77,10 @@ alias jake='noglob jake'
 
 # Gitty gitgit
 alias gitrm='git rm $(git ls-files --deleted)'
+# git search helper
+gf() {
+  git hist | grep "$*";
+}
 
 # dandelion deployment shortcuts
 alias deploy='dandelion deploy'
@@ -91,24 +95,6 @@ alias cw='compass watch'
 alias t='tmux -u'
 alias pdf2jpg='gs -dNOPAUSE -sDEVICE=jpeg -r144 -sOutputFile=p%03d.jpg file.pdf'
 
-
-### some custom functions ###
-# use ffmpeg to create nice web-videos and a jpg-still
-ffencode() { 
-  ffmpeg -i $1 -vcodec libx264 -vprofile high -preset slow -vb 1000k -maxrate 1000k -bufsize 2000k -vf scale="854:trunc(ow/a/2)*2" -threads 0 -ab 128k video-low.mp4;
-  ffmpeg -i $1 -vcodec libx264 -vprofile high -preset slower -vb 1800k -vf scale="1280:trunc(ow/a/2)*2" -threads 0 -ab 224k video-high.mp4
-  ffmpeg -i $1 -vcodec libvpx -quality good -cpu-used 0 -vb 1000k -maxrate 1000k -bufsize 2000k -qmin 10 -qmax 42 -vf scale="854:trunc(ow/a/2)*2" -threads 0 -acodec libvorbis -ab 128k video-low.webm;
-  ffmpeg -i $1 -vcodec libvpx -quality good -cpu-used 0 -vb 1800k -maxrate 1800k -bufsize 3600k -qmin 10 -qmax 42 -vf scale="1280:trunc(ow/a/2)*2" -threads 0 -acodec libvorbis -ab 224k video-high.webm;
-  ffmpeg -i $1 -ss 00:00:05.01 -y -f image2 -vcodec mjpeg -vframes 1 -s hd720 video-high.jpg
-  ffmpeg -i $1 -ss 00:00:05.01 -y -f image2 -vcodec mjpeg -vframes 1 -s hd480 video-low.jpg
-  mp4box -inter 500 -hint video-high.mp4
-  mp4box -inter 500 -hint video-low.mp4
-}
-
-# git search helper
-gf() {
-  git hist | grep "$*";
-}
 
 # rvm ftw!
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
