@@ -38,9 +38,6 @@ alias mysqlstop='mysql.server stop'
 alias dev='apachestart && mysqlstart'
 alias devs='apachestop && mysqlstop'
 
-# start virtuoso
-alias virt='cd /usr/local/Cellar/virtuoso/6.1.5/var/lib/virtuoso/db/ && virtuoso-t -df'
-
 # dnsflush-shortcut
 alias dnsflush='_ dscacheutil -flushcache'
 
@@ -77,10 +74,10 @@ alias jake='noglob jake'
 
 # Gitty gitgit
 alias gitrm='git rm $(git ls-files --deleted)'
+# THIS is evil. only use for private stuff and useless stuff
+alias ggg='git add . && git commit -a -m "-"'
 # git search helper
-gf() {
-  git hist | grep "$*";
-}
+gf() { git hist | grep "$*"; }
 
 # dandelion deployment shortcuts
 alias deploy='dandelion deploy'
@@ -91,8 +88,8 @@ alias grw='grunt watch'
 alias grd='grunt deploy'
 
 # other tools
-alias cw='compass watch'
 alias t='tmux -u'
+alias ta='tmux attach'
 alias pdf2jpg='gs -dNOPAUSE -sDEVICE=jpeg -r144 -sOutputFile=p%03d.jpg file.pdf'
 
 
