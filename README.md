@@ -5,7 +5,7 @@ installed and working homebrew with installed node, npm
 and the node jake-plugin. And zsh :-)
 
 ```
-git clone git://github.com/nebelschwade/Dotfiles ~/Dotfiles
+git clone git://github.com/webgefrickel/Dotfiles ~/Dotfiles
 cd ~/Dotfiles
 jake
 ```
@@ -42,19 +42,17 @@ Have a look at the zshrc-file for custom aliases and functions.
 
 - Pathogen (sits in autoload/ - the only one _not_ in bundle/)
 - ack
-- browser-refresh
 - buffergator
 - ctrlp
 - easymotion
 - editorconfig
 - fugitive
 - gist (more config needed, see github page)
-- indent-guides
 - indent-object
 - matchit
 - nerdtree
 - nrrwrgn
-- pasta
+- powerline
 - ragtag
 - repeat
 - snipmate
@@ -63,10 +61,8 @@ Have a look at the zshrc-file for custom aliases and functions.
 - surround
 - syntastic
 - tabular
-- tagbar
 - tcomment
 - unimpaired
-- yankring
 - zoomwin
 
 ### Bundled Color Schemes
@@ -75,18 +71,19 @@ Have a look at the zshrc-file for custom aliases and functions.
 
 ### Better syntax and indenting for
 
-- javascript
-- css3 and scss
-- html5
-- php
+- css3
 - git
+- html5
+- javascript
 - markdown
+- php
+- scss
+- typoscript
 
 ### Custom Stuff (see my github profile)
 
-- [typoscript syntax for Vim](https://github.com/nebelschwade/typoscript-vim)
-- [a better statusline](https://github.com/nebelschwade/statusline-vim)
-- [custom snipmate snippets](https://github.com/nebelschwade/snipmate-snippets)
+- [typoscript syntax for Vim](https://github.com/webgefrickel/typoscript-vim)
+- [custom snipmate snippets](https://github.com/webgefrickel/snipmate-snippets)
 
 - remapping ; to :
 - \<leader\> is set to comma (,)
@@ -100,13 +97,12 @@ Have a look at the zshrc-file for custom aliases and functions.
 - ,f for search and replace
 - ,/ for un/commenting
 - ,z for zoomin
-- ,r for browser-refreshing- 
 - ,n for nerdtree toggling
 - ,m for easymotion (,mw or ,mf are my favorites here)
-- ,y for the yankring
 - ,b for toggling buffergator
 - ,t for CtrlP 
 - ,d for changing the working dir to the dir of the current file
-- \<F8\> for toggling the tagbar
-- \<shift-tab\> in css indents single line to column 31
+- ,e for editing file in the same path
 - autotrailing of whitespace for php, html, css, js, ts, xml, json, inc and vim files
+
+Hav a look at the vimrc-file and have fun!

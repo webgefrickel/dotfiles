@@ -49,9 +49,6 @@
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
-[submodule "vim/bundle/yankring"]
-	path = vim/bundle/yankring
-	url = git://github.com/vim-scripts/YankRing.vim.git
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = git://github.com/tpope/vim-repeat.git
@@ -63,10 +60,10 @@
 	url = git://github.com/nanotech/jellybeans.vim.git
 [submodule "vim/bundle/typoscript"]
 	path = vim/bundle/typoscript
-	url = git://github.com/nebelschwade/typoscript-vim.git
+	url = git://github.com/webgefrickel/typoscript-vim.git
 [submodule "vim/bundle/snipmate-snippets"]
 	path = vim/bundle/snipmate-snippets
-	url = git://github.com/nebelschwade/snipmate-snippets.git
+	url = git://github.com/webgefrickel/snipmate-snippets.git
 [submodule "vim/bundle/php-indent"]
 	path = vim/bundle/php-indent
 	url = git://github.com/2072/PHP-Indenting-for-VIm.git
@@ -108,7 +105,7 @@
 	url = git://github.com/editorconfig/editorconfig-vim.git
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
-	url = git@github.com:nebelschwade/oh-my-zsh.git
+	url = git@github.com:webgefrickel/oh-my-zsh.git
 [submodule "vim/bundle/powerline"]
 	path = vim/bundle/powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
