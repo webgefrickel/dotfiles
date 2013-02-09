@@ -20,17 +20,17 @@ namespace('setup', function() {
     console.log('Linking files and dirs to your home directory...');
 
     var cmds = [
-      'ln -s ~/Dotfiles/vim ~/.vim',
-      'ln -s ~/Dotfiles/oh-my-zsh ~/.oh-my-zsh',
-      'ln -s ~/Dotfiles/ackrc ~/.ackrc',
-      'ln -s ~/Dotfiles/gitconfig ~/.gitconfig',
-      'ln -s ~/Dotfiles/gitignore ~/.gitignore',
-      'ln -s ~/Dotfiles/hgignore_global ~/.hgignore_global',
-      'ln -s ~/Dotfiles/jshintrc ~/.jshintrc',
-      'ln -s ~/Dotfiles/pearrc ~/.pearrc',
-      'ln -s ~/Dotfiles/tmux.conf ~/.tmux.conf',
-      'ln -s ~/Dotfiles/vimrc ~/.vimrc',
-      'ln -s ~/Dotfiles/zshrc ~/.zshrc'
+      'ln -s ~/dotfiles/vim ~/.vim',
+      'ln -s ~/dotfiles/oh-my-zsh ~/.oh-my-zsh',
+      'ln -s ~/dotfiles/ackrc ~/.ackrc',
+      'ln -s ~/dotfiles/gitconfig ~/.gitconfig',
+      'ln -s ~/dotfiles/gitignore ~/.gitignore',
+      'ln -s ~/dotfiles/hgignore_global ~/.hgignore_global',
+      'ln -s ~/dotfiles/jshintrc ~/.jshintrc',
+      'ln -s ~/dotfiles/pearrc ~/.pearrc',
+      'ln -s ~/dotfiles/tmux.conf ~/.tmux.conf',
+      'ln -s ~/dotfiles/vimrc ~/.vimrc',
+      'ln -s ~/dotfiles/zshrc ~/.zshrc'
     ];
 
     jake.exec(cmds, function() {

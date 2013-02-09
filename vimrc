@@ -247,14 +247,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['ruby', 'php', 'javascript'],
                            \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'scss.css'] }    
 
-" Yankring
-nnoremap <leader>y :YRShow<CR>
-inoremap <leader>y :YRShow<CR>
-let g:yankring_history_dir = '$HOME'
-let g:yankring_window_height = 12
-let g:yankring_min_element_length = 2
-let g:yankring_history_file = '.yankring'
-
 " Buffergator
 let g:buffergator_display_regime='filepath'
 " no default keymappings -- needing for command-t to work
