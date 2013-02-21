@@ -37,6 +37,7 @@ alias mysqlstart='mysql.server start'
 alias mysqlstop='mysql.server stop'
 alias dev='apachestart && mysqlstart'
 alias devs='apachestop && mysqlstop'
+alias devr='devs && dev'
 
 # dnsflush-shortcut
 alias dnsflush='_ dscacheutil -flushcache'
