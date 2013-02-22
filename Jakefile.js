@@ -30,7 +30,8 @@ namespace('setup', function() {
       'ln -s ~/dotfiles/pearrc ~/.pearrc',
       'ln -s ~/dotfiles/tmux.conf ~/.tmux.conf',
       'ln -s ~/dotfiles/vimrc ~/.vimrc',
-      'ln -s ~/dotfiles/zshrc ~/.zshrc'
+      'ln -s ~/dotfiles/zshrc ~/.zshrc',
+      'ln -s ~/dotfiles/slate.js ~/.slate.js'
     ];
 
     jake.exec(cmds, function() {
@@ -51,24 +52,6 @@ namespace('setup', function() {
 
     jake.exec(cmds, function() {
       console.log('Submodules complete.');
-    }, { printStdout: true } );
-  });
-
-
-  desc('Install grunt/node stuff.');
-  task('node', [], function(params) {
-    console.log('Installing npm, grunt and other stuff...');
-
-    var cmds = [
-      'curl https://npmjs.org/install.sh | sh',
-      'npm install -g grunt-cli',
-      'npm install -g jshint',
-      'npm install -g uglify-js',
-      'npm install -g jake'
-    ];
-
-    jake.exec(cmds, function() {
-      console.log('Grunt/Node stuff installed.');
     }, { printStdout: true } );
   });
 

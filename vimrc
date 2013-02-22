@@ -33,7 +33,7 @@ set listchars=extends:»,precedes:«,tab:▸\ ,eol:¬,trail:·
 set iskeyword+=-
 
 " Syntax coloring lines that are too long just slows down the world "
-" set synmaxcol=256  
+" set synmaxcol=256
 set lazyredraw     " to avoid scrolling problems
 
 " Tabs and Whitespace
@@ -124,10 +124,20 @@ nnoremap ; :
 nnoremap j gj
 nnoremap k gk
 
+" behave - yank just like D and C
+nnoremap Y y$
+
 nnoremap / /\v
 vnoremap / /\v
 
 inoremap jj <Esc>
+
+" brackets and other stuff doubling - very basic, fine by me
+inoremap { {<cr><cr>}<Esc>ki<tab>
+inoremap < <><Esc>i
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+
 
 " Switch between windows
 nnoremap <tab> <C-w><C-w>
@@ -146,8 +156,8 @@ inoremap <leader>= <Esc> <C-w>=
 nnoremap <leader><space> :noh<cr>
 
 " open new vertical split and change to split
-nnoremap <leader>v <C-w>v<C-w>l
-nnoremap <leader>s <C-w>s<C-w>j
+nnoremap <leader>\ <C-w>v<C-w>l
+nnoremap <leader>- <C-w>s<C-w>j
 
 " Opens an edit command with the path of the currently edited file filled in
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -257,6 +267,7 @@ nnoremap <leader>b :BuffergatorToggle<cr>
 
 " CtrlP
 let g:ctrlp_map = '<leader>t'
+let g:ctrlp_by_filename = 1
 let g:ctrlp_switch_buffer = 0 " easier split screens
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 12
@@ -272,12 +283,6 @@ let g:Powerline_symbols = 'fancy'
 let g:Powerline_stl_path_style = 'short'
 call Pl#Theme#RemoveSegment('scrollpercent')
 
-" custom shift-tab mapping -- opens new { } and blank line
-" Supertab and snipmate backwards-key are overwritten to use shfit + alt / crtl
-let g:SuperTabMappingBackward = '<s-c-tab>'
-let g:snips_trigger_key_backwards = '<s-m-tab>'
-inoremap <s-tab> {<Esc>i <Esc>o<CR>}<Esc>ki<tab>
-
 
 " ========== Custom Pseudofunctions ==========
 " .twig files == html
@@ -286,8 +291,6 @@ au BufNewFile,BufRead *.twig set ft=html
 au BufNewFile,BufRead *.json set ft=javascript
 " typoscript syntax
 au BufNewFile,BufRead *.ts set ft=typoscript
-" typoscript syntax for all text-files
-au BufNewFile,BufRead *.txt set ft=typoscript
 " scss
 au BufNewFile,BufRead *.scss set ft=scss.css
 " php
