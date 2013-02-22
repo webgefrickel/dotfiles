@@ -5,15 +5,16 @@ installed and working homebrew with installed node, npm
 and the node jake-plugin. And zsh :-)
 
 ```
-git clone git://github.com/webgefrickel/Dotfiles ~/Dotfiles
-cd ~/Dotfiles
+git clone git://github.com/webgefrickel/dotfiles ~/dotfiles
+cd ~/dotfiles
 jake
 ```
 
-Restart your terminal and type
+If you haven't configured ZSH to be your default shell yet: 
+restart your terminal and type
 
 ```
-cd ~/Dotfiles
+cd ~/dotfiles
 jake zsh
 ```
 
@@ -88,10 +89,10 @@ Have a look at the zshrc-file for custom aliases and functions.
 - remapping ; to :
 - \<leader\> is set to comma (,)
 - \<tab\> and \<shift-tab\> for switching between buffers
-- no arrow-keys, except for indenting, moving blocks of code with \<shift\>
+- no arrow-keys, except for indenting and moving codes of blocks around
 - ,u and ,l (and uppercase) for uppercasing/lowercasing words
 - ,w for switching to words
-- ,v for a new vertical split
+- ,\ for a new vertical split
 - ,= for resizing splits equally
 - ,a for Ack-Search
 - ,f for search and replace

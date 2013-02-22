@@ -131,8 +131,8 @@ var hyperModal = hyper + ",m:toggle";
 slate.bind("tab" + hyper, hint, false);
 
 slate.bind("j" + hyper, iterm, false);
-slate.bind("k" + hyper, chrome, false);
-slate.bind("l" + hyper, fork, false);
+slate.bind("k" + hyper, fork, false);
+slate.bind("l" + hyper, chrome, false);
 slate.bind(";" + hyper, mail, false);
 
 // movements in modal mode
