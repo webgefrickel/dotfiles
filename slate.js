@@ -128,14 +128,18 @@ var fullhd = slate.operation("move", {
 var hyper = ":shift,ctrl,alt,cmd";
 var hyperModal = hyper + ",m:toggle";
 
-slate.bind("tab" + hyper, hint, false);
+// f = fast switching and a nice position in the home row
+slate.bind("f" + hyper, hint, false);
+// g = grid view
+slate.bind("g" + hyper, grid, false);
 
+// most important apps on easy accesible keys
 slate.bind("j" + hyper, iterm, false);
 slate.bind("k" + hyper, fork, false);
 slate.bind("l" + hyper, chrome, false);
 slate.bind(";" + hyper, mail, false);
 
-// movements in modal mode
+// movements in modal mode with m
 slate.bind("1" + hyperModal, lefthalf, false);
 slate.bind("2" + hyperModal, righthalf, false);
 slate.bind("3" + hyperModal, tophalf, false);
