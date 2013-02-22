@@ -68,14 +68,14 @@ var fullscreen = slate.operation("move", {
 var lefthalf = slate.operation("move", {
   "x": "screenOriginX",
   "y": "screenOriginY",
-  "width": "screenSizeX / 2",
+  "width": "screenSizeX/2",
   "height": "screenSizeY"
 });
 
 var righthalf = slate.operation("move", {
-  "x": "screenOriginX + screenSizeX / 2",
+  "x": "screenOriginX+screenSizeX/2",
   "y": "screenOriginY",
-  "width": "screenSizeX / 2",
+  "width": "screenSizeX/2",
   "height": "screenSizeY"
 });
 
@@ -83,14 +83,14 @@ var tophalf = slate.operation("move", {
   "x": "screenOriginX",
   "y": "screenOriginY",
   "width": "screenSizeX",
-  "height": "screenSizeY / 2"
+  "height": "screenSizeY/2"
 });
 
 var bottomhalf = slate.operation("move", {
   "x": "screenOriginX",
-  "y": "screenOriginY + screenSizeY / 2",
+  "y": "screenOriginY+screenSizeY/2",
   "width": "screenSizeX",
-  "height": "screenSizeY / 2"
+  "height": "screenSizeY/2"
 });
 
 var mobile = slate.operation("move", {
