@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="webgefrickel"
 
 # default plugins to load
-plugins=(brew cap extract git github history-substring-search jake-node laravel npm node gem osx zsh-syntax-highlighting)
+plugins=(brew extract git github history-substring-search jake-node npm node gem osx zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -30,6 +30,7 @@ export DISABLE_AUTO_TITLE=true
 . `brew --prefix`/etc/profile.d/z.sh
 
 ### aliases ##
+
 # aliases for apache and mysql
 alias apachestart='_ /usr/sbin/apachectl start'
 alias apachestop='_ /usr/sbin/apachectl stop'
@@ -64,21 +65,21 @@ alias vhosts='_ vim /etc/apache2/extra/httpd-vhosts.conf'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 # Shortcuts
-alias drop='cd ~/Dropbox && l'
-alias web='cd ~/Sites && l'
-alias rep='cd ~/Repositories && l'
-alias dot='cd ~/Dotfiles && l'
+alias drop='cd ~/Dropbox && ls -al'
+alias web='cd ~/Sites && ls -al'
+alias rep='cd ~/Repositories && ls -al'
+alias dot='cd ~/Dotfiles && ls -al'
 alias brain='cd ~/Dropbox/Brain && vim .'
 alias jake='noglob jake'
 
 # Gitty gitgit
 alias gitrm='git rm $(git ls-files --deleted)'
 # THIS is evil. only use for private stuff and useless stuff
+# squish those commits afterwards with rebase!
 alias ggg='git add . && git commit -a -m "-"'
-# git search helper
-gf() { git hist | grep "$*"; }
 
 # dandelion deployment shortcuts
 alias deploy='dandelion deploy'
@@ -91,8 +92,6 @@ alias grd='grunt deploy'
 # other tools
 alias t='tmux -u'
 alias ta='tmux attach'
-alias pdf2jpg='gs -dNOPAUSE -sDEVICE=jpeg -r144 -sOutputFile=p%03d.jpg file.pdf'
-
 
 # rvm ftw!
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
