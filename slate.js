@@ -129,15 +129,15 @@ var hyper = ":shift,ctrl,alt,cmd";
 var hyperModal = hyper + ",m:toggle";
 
 // f = fast switching and a nice position in the home row
-slate.bind("f" + hyper, hint, false);
+slate.bind("[" + hyper, hint, false);
 // g = grid view
-slate.bind("g" + hyper, grid, false);
+slate.bind("]" + hyper, grid, false);
 
 // most important apps on easy accesible keys
-slate.bind("j" + hyper, iterm, false);
-slate.bind("k" + hyper, fork, false);
-slate.bind("l" + hyper, chrome, false);
-slate.bind(";" + hyper, mail, false);
+slate.bind("a" + hyper, iterm, false);
+slate.bind("s" + hyper, fork, false);
+slate.bind("d" + hyper, chrome, false);
+slate.bind("f" + hyper, mail, false);
 
 // movements in modal mode with m
 slate.bind("1" + hyperModal, lefthalf, false);
