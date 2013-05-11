@@ -56,6 +56,10 @@ var iterm = slate.operation("focus", { "app": "iTerm" });
 var chrome = slate.operation("focus", { "app": "Google Chrome" });
 var mail = slate.operation("focus", { "app": "Mail" });
 var fork = slate.operation("focus", { "app": "ForkLift" });
+var ical = slate.operation("focus", { "app": "iCal" });
+var shop = slate.operation("focus", { "app": "Photoshop" });
+var launch = slate.operation("focus", { "app": "Launchbar" });
+var ecoute = slate.operation("focus", { "app": "Ecoute" });
 
 
 var fullscreen = slate.operation("move", {
@@ -135,9 +139,14 @@ slate.bind("]" + hyper, grid, false);
 
 // most important apps on easy accesible keys
 slate.bind("a" + hyper, iterm, false);
-slate.bind("s" + hyper, fork, false);
-slate.bind("d" + hyper, chrome, false);
-slate.bind("f" + hyper, mail, false);
+slate.bind("s" + hyper, chrome, false);
+slate.bind("d" + hyper, mail, false);
+slate.bind("f" + hyper, fork, false);
+
+slate.bind("j" + hyper, ical, false);
+slate.bind("k" + hyper, ecoute, false);
+slate.bind("l" + hyper, launch, false);
+slate.bind(";" + hyper, shop, false);
 
 // movements in modal mode with m
 slate.bind("1" + hyperModal, lefthalf, false);

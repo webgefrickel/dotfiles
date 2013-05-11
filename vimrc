@@ -15,7 +15,7 @@ set nocompatible   " activate vim awesomeness
 set ruler          " show where you are in the document
 set cursorline     " highligh current line
 set ttyfast        " faster terminal usage
-set ttyscroll=3    " faster terminal scrolling
+" set ttyscroll=3    " faster terminal scrolling
 set showcmd        " show me what im doing. helps alot
 set showmode       " show active mode
 set hidden         " allows for switching buffers without writing
@@ -34,7 +34,7 @@ set iskeyword+=-
 
 " Syntax coloring lines that are too long just slows down the world "
 " set synmaxcol=256
-set lazyredraw     " to avoid scrolling problems
+" set lazyredraw     " to avoid scrolling problems
 
 " Tabs and Whitespace
 set tabstop=2
@@ -132,11 +132,10 @@ vnoremap / /\v
 
 inoremap jj <Esc>
 
-" brackets and other stuff doubling - very basic, fine by me
-inoremap { {<cr><cr>}<Esc>ki<tab>
 inoremap < <><Esc>i
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
+inoremap { {}<Esc>i
 
 
 " Switch between windows
@@ -206,6 +205,7 @@ vnoremap <F1> <ESC>
 nnoremap Q <nop>
 nnoremap K <nop>
 
+
 " upper/lower word
 nmap <leader>U mQviwU`Q
 nmap <leader>L mQviwu`Q
@@ -267,7 +267,6 @@ nnoremap <leader>b :BuffergatorToggle<cr>
 
 " CtrlP
 let g:ctrlp_map = '<leader>t'
-let g:ctrlp_by_filename = 1
 let g:ctrlp_switch_buffer = 0 " easier split screens
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 12
@@ -319,3 +318,4 @@ endfunction
 
 " Don't strip whitespace for files like md,txt or csv/sql - define files here
 au BufWritePre *.{php,html,scss,css,js,ts,xml,json,inc,vim,rb} :call <SID>StripTrailingWhitespaces()
+
