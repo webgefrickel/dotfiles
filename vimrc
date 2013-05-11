@@ -1,21 +1,9 @@
-" Load pathogen, switch on filetype and syntax afterwards
-call pathogen#infect()
-filetype plugin indent on
-syntax on
-
-" set zsh as default to keep aliases and stuff in :! commands
-" this breaks mvimdiff! thus i better uncomment it
-" Gstatus etc. will work fine after 'sudo mv /etc/zshenv /etc/zprofile' anyways
-" set shell=/usr/local/bin/zsh\ -l\ -i\ -e
-
 " terminal vim and tmux
 set clipboard=unnamed
 
-set nocompatible   " activate vim awesomeness
 set ruler          " show where you are in the document
 set cursorline     " highligh current line
 set ttyfast        " faster terminal usage
-" set ttyscroll=3    " faster terminal scrolling
 set showcmd        " show me what im doing. helps alot
 set showmode       " show active mode
 set hidden         " allows for switching buffers without writing
@@ -31,10 +19,6 @@ set listchars=extends:»,precedes:«,tab:▸\ ,eol:¬,trail:·
 
 " add the dash to keywords -- makes better css/js search
 set iskeyword+=-
-
-" Syntax coloring lines that are too long just slows down the world "
-" set synmaxcol=256
-" set lazyredraw     " to avoid scrolling problems
 
 " Tabs and Whitespace
 set tabstop=2
