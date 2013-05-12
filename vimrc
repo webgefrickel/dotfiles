@@ -1,3 +1,73 @@
+" nocompatible mode for a real vim
+set nocompatible
+
+" switch filetype of before starting vundle
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" load the vundle bundle of course
+Bundle 'gmarik/vundle'
+
+
+" plugins
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Raimondi/delimitMate'
+Bundle 'SirVer/ultisnips'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'chrisbra/NrrwRgn'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'edsono/vim-matchit'
+Bundle 'godlygeek/tabular'
+Bundle 'jeetsukumaran/vim-buffergator'
+Bundle 'kana/vim-textobj-user'
+Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'maxbrunsfeld/vim-yankstack'
+Bundle 'rking/ag.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'sjl/vitality.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tristen/vim-sparkup'
+Bundle 'vim-scripts/ZoomWin'
+
+
+" Additional syntaxes
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'juvenn/mustache.vim'
+Bundle 'othree/html5.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'spf13/PIV'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-haml'
+Bundle 'webgefrickel/vim-typoscript'
+
+
+" Color themes
+Bundle 'Lokaltog/vim-distinguished'
+Bundle 'jaromero/vim-monokai-refined'
+Bundle 'morhetz/gruvbox'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'sjl/badwolf'
+Bundle 'zeis/vim-kolor'
+
+
+" and reset auto-filetype after loading all bundles
+filetype plugin indent on
+syntax on
+
 " terminal vim and tmux
 set clipboard=unnamed
 
@@ -52,7 +122,8 @@ if &term =~ '^screen'
 endif
 
 " color options
-color jellybeans
+colorscheme gruvbox
+
 set fillchars=""
 
 " Automatically read a file that has changed on disk
@@ -268,12 +339,8 @@ call Pl#Theme#RemoveSegment('scrollpercent')
 
 
 " ========== Custom Pseudofunctions ==========
-" .twig files == html
-au BufNewFile,BufRead *.twig set ft=html
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
-" typoscript syntax
-au BufNewFile,BufRead *.ts set ft=typoscript
 " scss
 au BufNewFile,BufRead *.scss set ft=scss.css
 " php
