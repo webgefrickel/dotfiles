@@ -30,10 +30,11 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/vitality.vim'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
@@ -67,9 +68,6 @@ Bundle 'zeis/vim-kolor'
 " and reset auto-filetype after loading all bundles
 filetype plugin indent on
 syntax on
-
-" terminal vim and tmux
-set clipboard=unnamed
 
 set ruler          " show where you are in the document
 set cursorline     " highligh current line
@@ -122,7 +120,8 @@ if &term =~ '^screen'
 endif
 
 " color options
-colorscheme gruvbox
+set bg=dark
+colorscheme jellybeans
 
 set fillchars=""
 
@@ -187,12 +186,6 @@ vnoremap / /\v
 
 inoremap jj <Esc>
 
-inoremap < <><Esc>i
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap { {}<Esc>i
-
-
 " Switch between windows
 nnoremap <tab> <C-w><C-w>
 nnoremap <S-tab> <C-w>W
@@ -204,7 +197,6 @@ nnoremap n nzz
 
 " Adjust viewports to the same size
 nnoremap <leader>= <C-w>=
-inoremap <leader>= <Esc> <C-w>=
 
 " reset search
 nnoremap <leader><space> :noh<cr>
@@ -216,18 +208,18 @@ nnoremap <leader>- <C-w>s<C-w>j
 " Opens an edit command with the path of the currently edited file filled in
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
-" start a new document-wide seach-replace
-nnoremap <leader>f :%s/\v
+" start a new document-wide seach-replace using abolish
+nnoremap <leader>f :%S/\v
 
-" dont use the arrow keys. LEARN VIM
-nnoremap <up> <nop>
-nnoremap <down> <nop>
+" dont use the arrow keys in insert mode
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-" but use them for usefull stuff -- switching buffers
+" but use them for usefull stuff in normal mode-- switching buffers
+nnoremap <up> :bfirst<cr>
+nnoremap <down> :blast<cr>
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
 
@@ -240,33 +232,31 @@ vmap <C-down> ]egv
 " in/outdent Keymappings
 nmap <C-left> <<
 nmap <C-right> >>
-imap <C-left> <Esc><<i
-imap <C-right> <Esc>>>i
 vmap <C-left> <gv
 vmap <C-right> >gv
 
+" pasting and copying
 set pastetoggle=<F2> " toggle paste-mode for c&p with F2
+set clipboard=unnamed
+
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
 noremap <leader>Y "*Y
 " paste keeping indentation
 nnoremap <leader>p p`[v`]=
 
+
 " no HELP while mishitting ESC - awesome
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-" stupid ex-mode and man-page stuff
+" deactivate stupid ex-mode and man-page stuff
 nnoremap Q <nop>
 nnoremap K <nop>
-
 
 " upper/lower word
 nmap <leader>U mQviwU`Q
 nmap <leader>L mQviwu`Q
-" upper/lower first CHAR of word
-nmap <leader>u mQgewvU`Q
-nmap <leader>l mQgewvu`Q
 
 " Swap two words
 nmap <leader>w :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
@@ -279,8 +269,8 @@ nnoremap <F5> :checktime<cr>
 
 
 " ========== PLugins leaders and other config ==========
-" search using ack
-nnoremap <leader>a :Ack 
+" search using Ag - the Silver Surfer ftw!
+nnoremap <leader>a :Ag
 
 " Nerdtree toggle
 nnoremap <leader>n :NERDTreeToggle<cr>
@@ -292,9 +282,6 @@ let NERDTreeShowHidden=1
 nmap <leader>gs :Gstatus<CR><C-w>20+
 nmap <leader>gg :Gcommit<CR><C-w>20+
 
-" ZoomWin configuration
-nnoremap <leader>z :ZoomWin<CR>
-
 " TComment
 nnoremap <leader>/ :TComment<CR>
 vnoremap <leader>/ :TComment<CR>
@@ -302,6 +289,9 @@ inoremap <leader>/ <Esc>:TComment<CR>i
 
 " easymotion config leader m
 let g:EasyMotion_leader_key = '<leader>m'
+
+" YouCompleteMe Options
+let g:ycm_complete_in_comments = 1
 
 " Enable syntastic syntax checking
 " no checking for xhtml/html -- because of fluidtemplate for TYPO3
@@ -339,12 +329,12 @@ call Pl#Theme#RemoveSegment('scrollpercent')
 
 
 " ========== Custom Pseudofunctions ==========
-" add json syntax highlighting
+" JSON syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
-" scss
-au BufNewFile,BufRead *.scss set ft=scss.css
-" php
+" Phakefiles syntax is php
 au BufNewFile,BufRead Phakefile set ft=php
+" SCSS is scss and css
+au BufNewFile,BufRead *.scss set ft=scss.css
 
 " Remember last location in file
 if has("autocmd")
