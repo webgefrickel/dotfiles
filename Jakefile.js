@@ -22,16 +22,15 @@ namespace('setup', function() {
     var cmds = [
       'ln -s ~/dotfiles/vim ~/.vim',
       'ln -s ~/dotfiles/oh-my-zsh ~/.oh-my-zsh',
-      'ln -s ~/dotfiles/ackrc ~/.ackrc',
       'ln -s ~/dotfiles/gitconfig ~/.gitconfig',
       'ln -s ~/dotfiles/gitignore ~/.gitignore',
       'ln -s ~/dotfiles/hgignore_global ~/.hgignore_global',
       'ln -s ~/dotfiles/jshintrc ~/.jshintrc',
       'ln -s ~/dotfiles/pearrc ~/.pearrc',
+      'ln -s ~/dotfiles/slate.js ~/.slate.js',
       'ln -s ~/dotfiles/tmux.conf ~/.tmux.conf',
       'ln -s ~/dotfiles/vimrc ~/.vimrc',
-      'ln -s ~/dotfiles/zshrc ~/.zshrc',
-      'ln -s ~/dotfiles/slate.js ~/.slate.js'
+      'ln -s ~/dotfiles/zshrc ~/.zshrc'
     ];
 
     jake.exec(cmds, function() {
@@ -46,7 +45,7 @@ namespace('setup', function() {
     var cmds = [
       'git submodule init',
       'git submodule update',
-      'git submodule foreach git checkout HEAD',
+      'git submodule foreach git checkout master',
       'git submodule foreach git pull'
     ];
 
