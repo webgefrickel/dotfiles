@@ -9,15 +9,18 @@
 *.vi
 *.bak
 
-# other stuff
+# some folders
 *~
-*.sass-cache
 .tmp_*
+.sass-cache
+*.sass-cache
 .revision
 _srcs
+log
+tmp
 node_modules
 
-# OS or editor folders and files
+# OS or editor folders and temporary and other files
 .DS_Store
 Thumbs.db
 .cache
