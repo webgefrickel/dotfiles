@@ -43,9 +43,7 @@ alias devr='devs && dev'
 # dnsflush-shortcut
 alias dnsflush='_ dscacheutil -flushcache'
 
-# all in one homebrew, gem and vim bundles update commands
-alias dotup='cd ~/Dotfiles/ && git pull && cd -'
-alias dotsubup='cd ~/Dotfiles/ && git submodule foreach git pull && cd -'
+# all in one homebrew, gem update commands
 alias brewup='brew update && brew upgrade && brew cleanup && brew linkapps'
 alias gemup='gem update --system && gem update && gem cleanup'
 alias npmup='npm -g cache clean && npm -g update'
