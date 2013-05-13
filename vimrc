@@ -209,7 +209,7 @@ nnoremap <leader>- <C-w>s<C-w>j
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " start a new document-wide seach-replace using abolish
-nnoremap <leader>f :%S/\v
+nnoremap <leader>f :%S/
 
 " dont use the arrow keys in insert mode
 inoremap <up> <nop>
@@ -292,6 +292,32 @@ let g:EasyMotion_leader_key = '<leader>m'
 
 " YouCompleteMe Options
 let g:ycm_complete_in_comments = 1
+let g:ycm_min_num_of_chars_for_completion = 5
+let g:ycm_key_list_select_completion = ['<TAB>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>']
+
+
+" UltiSnips ctrl-n if ycm is active
+function! g:UltiSnips_Complete()
+  call UltiSnips_ExpandSnippet()
+  if g:ulti_expand_res == 0
+    if pumvisible()
+      return "\<C-n>"
+    else
+      call UltiSnips_JumpForwards()
+      if g:ulti_jump_forwards_res == 0
+        return "\<TAB>"
+      endif
+    endif
+  endif
+  return ""
+endfunction
+
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+let g:UltiSnipsSnippetDirectories=["snippets"]
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+
 
 " Enable syntastic syntax checking
 " no checking for xhtml/html -- because of fluidtemplate for TYPO3

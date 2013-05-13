@@ -1,0 +1,187 @@
+# This file contains snippets that are always defined. I personally
+# have snippets for signatures and often needed texts
+
+##############
+# NICE BOXES #
+##############
+global !p
+import string, vim
+
+""" Maps a filetype to comment format used for boxes.
+Automatically filled during usage"""
+_commentDict = { }
+
+def _parse_comments(s):
+    """ Parses vim's comments option to extract comment format """
+    i = iter(s.split(","))
+
+    rv = []
+    try:
+        while True:
+            # get the flags and text of a comment part
+            flags,text = i.next().split(':', 1)
+
+            if len(flags) == 0:
+                if len(text) == 1:
+                    rv.append((text,text,text, ""))
+            # parse 3-part comment, but ignore those with O flag
+            elif flags[0] == 's' and 'O' not in flags:
+                ctriple = []
+                indent = ""
+
+                if flags[-1] in string.digits:
+                    indent = " " * int(flags[-1])
+                ctriple.append(text)
+
+                flags,text = i.next().split(':', 1)
+                assert(flags[0] == 'm')
+                ctriple.append(text)
+
+                flags,text = i.next().split(':', 1)
+                assert(flags[0] == 'e')
+                ctriple.append(text)
+                ctriple.append(indent)
+
+                rv.append(ctriple)
+
+            elif flags[0] == 'b':
+                if len(text) == 1:
+                    rv.insert(0, (text,text,text, ""))
+
+    except StopIteration:
+       return rv
+
+def _get_comment_format():
+    """ Returns a 4-element tuple representing the comment format for
+    the current file. """
+
+    ft = vim.eval("&filetype")
+    # check if the comment dict has the format for the current file
+    if _commentDict.has_key(ft):
+        return _commentDict[ft]
+
+    # otherwise parse vim's comments and add it for later use
+    commentformat = _parse_comments(vim.eval("&comments"))[0]
+    _commentDict[ft] = commentformat
+
+    return commentformat
+
+
+def make_box(twidth, bwidth=None):
+    b, m, e, i = _get_comment_format()
+    bwidth_inner = bwidth - 3 - max(len(b), len(i + e)) if bwidth else twidth + 2
+    sline = b + m + bwidth_inner * m + 2 * m
+    nspaces = (bwidth_inner - twidth) // 2
+    mlines = i + m + " " + " " * nspaces
+    mlinee = " " + " "*(bwidth_inner - twidth - nspaces) + m
+    eline = i + 2 * m + bwidth_inner * m + m + e
+    return sline, mlines, mlinee, eline
+endglobal
+
+
+##############################################################################
+##############################################################################
+##############################################################################
+
+
+# the box snippet
+snippet box "A nice box with the current comment symbol" b
+`!p
+box = make_box(len(t[1]))
+snip.rv = box[0] + '\n' + box[1]
+`${1:content}`!p
+box = make_box(len(t[1]))
+snip.rv = box[2] + '\n' + box[3]`
+$0
+endsnippet
+
+
+# general comments
+snippet / "Comment"
+/* ${1} */
+endsnippet
+
+snippet // "large comment block"
+
+/* ${1:your comment}
+====================================================================== */
+
+$0
+endsnippet
+
+snippet /// "even larger comment block"
+
+/* ${1:your comment}
+----------------------------------------------------------------------
+---------------------------------------------------------------------- */
+
+$0
+endsnippet
+
+
+# lorem ipsum
+snippet lrm1 "Lorem Ipsum - 50 Words" b
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet.
+endsnippet
+
+snippet lrm2 "Lorem Ipsum - deutsch, 3 Absätze" b
+Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind 
+und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks 
+oder Handgloves, um Schriften zu testen.
+
+Manchmal Sätze, die alle Buchstaben des Alphabets enthalten - man nennt 
+diese Sätze »Pangrams«. Sehr bekannt ist dieser: The quick brown fox jumps 
+over the lazy old dog. Oft werden in Typoblindtexte auch fremdsprachige 
+Satzteile eingebaut (AVAIL® and Wefox™ are testing aussi la Kerning), 
+um die Wirkung in anderen Sprachen zu testen. In Lateinisch sieht zum 
+Beispiel fast jede Schrift gut aus.
+
+Quod erat demonstrandum. Seit 1975 fehlen in den meisten Testtexten die Zahlen, 
+weswegen nach TypoGb. 204 § ab dem Jahr 2034 Zahlen in 86 der Texte zur 
+Pflicht werden. Nichteinhaltung wird mit bis zu 245 € oder 368 $ bestraft. 
+Genauso wichtig in sind mittlerweile auch Âçcèñtë, die in neueren Schriften 
+aber fast immer enthalten sind. Ein wichtiges aber schwierig zu integrierendes 
+Feld sind OpenType-Funktionalitäten.
+endsnippet
+
+snippet mfg "Mit freundlichen Grüßen" b
+Mit freundlichen Grüßen,
+
+Steffen Becker
+endsnippet
+
+snippet lg "Liebe Grüße" b
+Liebe Grüße, Steffen.
+endsnippet
+
+snippet sig "Signature"
+
+-- 
+Mit freundlichen Grüßen,
+
+Steffen Becker
+Webentwicklung
+
++49 177 55 33 074
+kontakt@webgefrickel.de
+http://webgefrickel.de
+endsnippet
+
+
+
+snippet sigk "Signature Kreuzer"
+
+-- 
+Mit freundlichen Grüßen,
+
+Steffen Becker
+Kreuzer Leipzig
+
+webmaster@kreuzer-leipzig.de
+endsnippet
+
+
+# vim:ft=snippets:

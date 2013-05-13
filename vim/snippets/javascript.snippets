@@ -1,0 +1,168 @@
+snippet :, "Object Value JS"
+${1:value_name}: ${0:value},
+endsnippet
+
+snippet v "general var assignment"
+var ${1:sth} = ${2:value};
+endsnippet
+
+snippet for "for (...) {...}"
+for (var ${2:i} = 0; $2 <= ${1:var}.lenth; $2 += 1) {
+  ${3:$1[$2]}${VISUAL}$0
+};
+endsnippet
+
+snippet fun "function (fun)"
+var ${1:functionname} = function(${2:argument}) {
+  ${VISUAL}$0
+}
+endsnippet
+
+snippet iif "Immediately-Invoked Function Expression (iife)"
+(function (${1:argument}) {
+  ${VISUAL}$0
+}(${2:$1}));
+endsnippet
+
+snippet ife "if ___ else"
+if (${1:condition}) {
+  ${2://code}
+} else {
+  ${3://code}
+}
+endsnippet
+
+snippet if "if"
+if (${1:condition}) {
+  ${VISUAL}$0
+}
+endsnippet
+
+snippet ifl "if item has length"
+if (\$${1:('.selector')}.length > 0) {
+  $0
+}
+endsnippet
+
+
+snippet sw "Switch statement"
+switch(${1:expression}) {
+  case '${3:case}':
+    ${4:// code}
+    break;
+  ${5}
+  default:
+    ${2:// code}
+    break;
+}
+endsnippet
+
+snippet case
+case '${1:case}':
+  ${2:// code}
+break;
+$0
+endsnippet
+
+# debugging and stuff
+
+snippet cl "console.log"
+console.log(${1:"${2:value}"});
+endsnippet
+
+snippet cw "console.warn"
+console.warn(${1:"${2:value}"});
+endsnippet
+
+snippet ce "console.error"
+console.error(${1:"${2:value}"});
+endsnippet
+
+snippet ca "console.assert"
+console.assert(${1:assertion}, ${2:"${3:message}"});
+endsnippet
+
+
+# jquery snippets, yeah
+
+snippet $ "general jquery var assignment"
+var \$${1:varname} = \$('${2:.selector}');
+endsnippet
+
+snippet f "find"
+\$${1:('.selector')}.find('.${2:selector}');
+endsnippet
+
+
+snippet p "parent"
+\$${1:('.selector')}.parent(${2:'.selector'});
+endsnippet
+
+
+snippet ch "children"
+\$${1:('.selector')}.children(${2:'.selector'});
+endsnippet
+
+
+snippet on "on / event handler"
+\$${1:('.selector')}.on('${3:click}', function(e) {
+  e.preventDefault();
+  $0
+});
+endsnippet
+
+
+snippet each "each for elements"
+\$${1:('.selector')}.each(function(i) {
+  var \$item = \$(this);
+  $0
+});
+endsnippet
+
+
+snippet app "append stuff"
+\$${1:('.selector')}.append(\$${2:item});
+endsnippet
+
+snippet html "change html"
+\$${1:('.selector')}.html(\$${2:htmlstring});
+endsnippet
+
+snippet css "css"
+\$${1:('.selector')}.css({
+  ${2:display}: "${3:none}",
+  ${4:position}: "${5:absolute}"
+});
+endsnippet
+
+
+snippet acl "addClass"
+\$${1:('.selector')}.addClass('${2:class}');
+endsnippet
+
+
+snippet rcl "removeClass"
+\$${1:('.selector')}.removeClass('${2:class}');
+endsnippet
+
+snippet tcl "toggleClass"
+\$${1:('.selector')}.toggleClass('${2:class}');
+endsnippet
+
+
+snippet ajax "ajax request"
+$.ajax({
+  type: "${1:GET}",
+  url: ${2:window.location.href},
+  data: ${3:\$form.serialize()},
+  success: function(response) {
+    $0
+  }
+});
+endsnippet
+
+snippet drd "document ready snippet"
+jQuery(document).ready(function(\$) {
+  $0
+}); // end documentready
+endsnippet

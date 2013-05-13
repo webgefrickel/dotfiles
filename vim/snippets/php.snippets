@@ -1,0 +1,183 @@
+snippet arr "array"
+$${1:arrayName} = array('${2}' => ${3});${4}
+endsnippet
+
+snippet dcf "doc function"
+/**
+ * $2
+ * @return ${4:void}
+ * @author ${5:`!v g:snips_author`}
+ **/
+${1:public }function ${2:someFunc}(${3})
+{${6}
+}
+endsnippet
+
+snippet else "else"
+else {
+  ${1:// code...}
+}
+endsnippet
+
+snippet for "for"
+for ($${2:i} = 0; $$2 < ${1:count}; $$2${3: += 1}) {
+  ${4:// code...}
+}
+endsnippet
+
+snippet fek "foreach with key"
+foreach ($${1:variable} as $${2:key} => $${3:value}){
+  ${4:// code...}
+}
+endsnippet
+
+snippet fe "foreach without key"
+foreach ($${1:variable} as $${2:value}){
+  ${4:// code...}
+}
+
+endsnippet
+
+
+snippet get "get"
+$_GET['${1}']${2}
+endsnippet
+
+snippet if "if"
+if (${1:/* condition */}) {
+  ${2:// code...}
+}
+endsnippet
+
+snippet inc "inc"
+include '${1:file}';${2}
+endsnippet
+
+snippet bug "bug statement with pre"
+echo '<pre>' . print_r($${1:var}, 1) . '</pre>';$0
+endsnippet
+
+snippet post "post"
+$_POST['${1}']${2}
+endsnippet
+
+snippet req1 "req1"
+require_once '${1:file}';${2}
+endsnippet
+
+snippet sss "session"
+$_SESSION['${1}']${2}
+endsnippet
+
+snippet t "t"
+$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
+endsnippet
+
+
+snippet pub "Public function" !b
+public function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}
+$0
+endsnippet
+
+snippet pro "Protected function" !b
+protected function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}
+$0
+endsnippet
+
+snippet pri "Private function" !b
+private function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}
+$0
+endsnippet
+
+snippet pubs "Public static function" !b
+public static function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}
+$0
+endsnippet
+
+snippet pros "Protected static function" !b
+protected static function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}
+$0
+endsnippet
+
+snippet pris "Private static function" !b
+private static function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}
+$0
+endsnippet
+
+snippet fun "Function snip" !b
+function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}
+$0
+endsnippet
+
+snippet ife "if else"
+if (${1:/* condition */}) {
+    ${2:// code...}
+} else {
+    ${3:// code...}
+}
+$0
+endsnippet
+
+snippet cls "Class declaration template" !b
+/**
+ * Class ${1:`!p snip.rv=snip.fn.capitalize().split('.')[0]`} 
+ */
+class $1 {
+    public function ${3:__construct}(${4:$options}) {
+        ${4:// code}
+    }
+}
+$0
+endsnippet
+
+
+snippet ph "begin php block" b
+<?php
+
+$0
+
+endsnippet
+
+
+snippet phi "begin php inline block"
+<?php $0 ?>
+endsnippet
+
+
+
+snippet sw "switch statement"
+switch ($${1:variable}) {
+  case '${2:value}':
+    ${3:// code...}
+    break;
+  ${5}
+  default:
+    ${4:// code...}
+    break;
+}
+endsnippet
+
+
+snippet case
+case '${1:value}':
+  ${2:// code...}
+  break;${3}
+endsnippet
+
+
+# :vim:ft=snippets:
+
