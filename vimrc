@@ -17,7 +17,6 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'airblade/vim-gitgutter'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'edsono/vim-matchit'
@@ -42,7 +41,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tristen/vim-sparkup'
-Bundle 'vim-scripts/ZoomWin'
 
 
 " Additional syntaxes
@@ -59,10 +57,12 @@ Bundle 'webgefrickel/vim-typoscript'
 " Color themes
 Bundle 'Lokaltog/vim-distinguished'
 Bundle 'jaromero/vim-monokai-refined'
-Bundle 'morhetz/gruvbox'
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'sjl/badwolf'
 Bundle 'zeis/vim-kolor'
+Bundle 'morhetz/gruvbox'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'wgibbs/vim-irblack'
+Bundle 'stephenmckinney/vim-solarized-powerline'
 
 
 " and reset auto-filetype after loading all bundles
@@ -119,9 +119,10 @@ if &term =~ '^screen'
   " map <Esc>[B <Down>
 endif
 
-" color options
-set bg=dark
-colorscheme jellybeans
+
+let g:solarized_visibility = 'low'
+set background=dark
+colorscheme solarized
 
 set fillchars=""
 
@@ -205,6 +206,9 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>\ <C-w>v<C-w>l
 nnoremap <leader>- <C-w>s<C-w>j
 
+" open a new split and edit the vimrc
+nnoremap <leader>v <C-w>v<C-w>l :e ~/.vimrc<cr>
+
 " Opens an edit command with the path of the currently edited file filled in
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
@@ -270,7 +274,7 @@ nnoremap <F5> :checktime<cr>
 
 " ========== PLugins leaders and other config ==========
 " search using Ag - the Silver Surfer ftw!
-nnoremap <leader>a :Ag
+nnoremap <leader>a :Ag 
 
 " Nerdtree toggle
 nnoremap <leader>n :NERDTreeToggle<cr>
@@ -279,13 +283,29 @@ let NERDTreeWinSize=50
 let NERDTreeShowHidden=1
 
 " fugitive shortcuts -- 20+ increases window-height
-nmap <leader>gs :Gstatus<CR><C-w>20+
-nmap <leader>gg :Gcommit<CR><C-w>20+
+nnoremap <silent> <leader>gs :Gstatus<CR><C-w>20+
+nnoremap <silent> <leader>gd :Gdiff<CR><C-w>20+
+nnoremap <silent> <leader>gc :Gcommit<CR><C-w>20+
+nnoremap <silent> <leader>gb :Gblame<CR><C-w>20+
+nnoremap <silent> <leader>gl :Glog<CR><C-w>20+
+nnoremap <silent> <leader>gp :Git push<CR><C-w>20+
+nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
 
 " TComment
 nnoremap <leader>/ :TComment<CR>
 vnoremap <leader>/ :TComment<CR>
 inoremap <leader>/ <Esc>:TComment<CR>i
+
+" Tabularize
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
+nmap <Leader>a, :Tabularize /,<CR>
+vmap <Leader>a, :Tabularize /,<CR>
+nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+
 
 " easymotion config leader m
 let g:EasyMotion_leader_key = '<leader>m'
@@ -351,6 +371,7 @@ let g:gist_detect_filetype = 1
 " Powerline customization
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_stl_path_style = 'short'
+let g:Powerline_colorscheme = 'solarized256_dark'
 call Pl#Theme#RemoveSegment('scrollpercent')
 
 

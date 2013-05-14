@@ -8,6 +8,9 @@ plugins=(brew extract git github history-substring-search jake-node npm node gem
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
+# Terminal
+export TERM="screen-256color"
+
 # paths
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:$PATH
 export MANPATH=/usr/local/share/man:$MANPATH
@@ -88,7 +91,7 @@ alias grw='grunt watch'
 alias grd='grunt deploy'
 
 # other tools
-alias t='tmux -u'
+alias t='tmux -u -2'
 alias ta='tmux attach'
 
 # rvm ftw!
