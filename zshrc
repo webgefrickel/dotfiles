@@ -67,6 +67,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+alias l='ls -al'
 
 # Shortcuts
 alias drop='cd ~/Dropbox && ls -al'

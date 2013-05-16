@@ -11,6 +11,7 @@
 
 # some folders
 *~
+.~lock*
 .tmp_*
 .sass-cache
 *.sass-cache
