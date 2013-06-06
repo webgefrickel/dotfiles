@@ -41,6 +41,7 @@ Bundle 'tristen/vim-sparkup'
 
 
 " Additional syntaxes
+Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'juvenn/mustache.vim'
 Bundle 'othree/html5.vim'
@@ -51,8 +52,8 @@ Bundle 'webgefrickel/vim-typoscript'
 
 
 " Color themes
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'nanotech/jellybeans.vim'
 Bundle 'stephenmckinney/vim-solarized-powerline'
 
 
@@ -76,9 +77,10 @@ set sidescrolloff=5
 set list!
 set listchars=extends:»,precedes:«,tab:▸\ ,eol:¬,trail:·
 
-" add the dash to keywords -- makes better css/js search
-set iskeyword+=-
-set iskeyword-=_
+" add the dash to keywords -- makes better css/js/html search
+" dot this for specific files only (not in php/rb e.g.)
+au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword+=-
+au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
 
 " Tabs and Whitespace
 set tabstop=2
