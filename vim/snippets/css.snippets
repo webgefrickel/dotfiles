@@ -58,7 +58,7 @@ snippet tra "compass transitions"
 @include transition(all ${1:0.3}s ease-in-out);$0
 endsnippet
 
-snippet frm "compass transforms"
+snippet traf "compass transforms"
 @include transform(${1:scale}(${2:1.1})); $0
 endsnippet
 
@@ -101,6 +101,10 @@ snippet bgf "background: complete"
 background:${6: ${1:\$color-main}} url(../img/$2) ${3:no-repeat} ${4:scroll/fixed} ${5:top left};$0
 endsnippet
 
+snippet bg "background"
+background: ${1:$color-background-default};
+endsnippet
+
 
 # borders
 
@@ -112,7 +116,7 @@ snippet bdt "border-top"
 border-top: ${1:1}px ${2:solid} ${3:$color-main};$0
 endsnippet
 
-snippet bdb "border-right"
+snippet bdr "border-right"
 border-right: ${1:1}px ${2:solid} ${3:\$color-main};$0
 endsnippet
 

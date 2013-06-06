@@ -16,22 +16,19 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'edsono/vim-matchit'
+Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'jeetsukumaran/vim-buffergator'
-Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
-Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'sjl/vitality.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-fugitive'
@@ -48,20 +45,14 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'juvenn/mustache.vim'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'spf13/PIV'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-haml'
 Bundle 'webgefrickel/vim-typoscript'
 
 
 " Color themes
-Bundle 'Lokaltog/vim-distinguished'
-Bundle 'jaromero/vim-monokai-refined'
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'zeis/vim-kolor'
-Bundle 'morhetz/gruvbox'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'wgibbs/vim-irblack'
 Bundle 'stephenmckinney/vim-solarized-powerline'
 
 
@@ -87,6 +78,7 @@ set listchars=extends:»,precedes:«,tab:▸\ ,eol:¬,trail:·
 
 " add the dash to keywords -- makes better css/js search
 set iskeyword+=-
+set iskeyword-=_
 
 " Tabs and Whitespace
 set tabstop=2
@@ -120,7 +112,7 @@ if &term =~ '^screen'
 endif
 
 
-let g:solarized_visibility = 'low'
+let g:solarized_contrast = 'high'
 set background=dark
 colorscheme solarized
 
@@ -260,8 +252,8 @@ nnoremap Q <nop>
 nnoremap K <nop>
 
 " upper/lower word
-nmap <leader>U mQviwU`Q
-nmap <leader>L mQviwu`Q
+nmap <leader>u mQviwU`Q
+nmap <leader>l mQviwu`Q
 
 " Swap two words
 nmap <leader>w :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
@@ -297,7 +289,7 @@ nnoremap <leader>/ :TComment<CR>
 vnoremap <leader>/ :TComment<CR>
 inoremap <leader>/ <Esc>:TComment<CR>i
 
-" Tabularize
+" Tabularize a == think align
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:<CR>
@@ -310,29 +302,6 @@ vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 
 " easymotion config leader m
 let g:EasyMotion_leader_key = '<leader>m'
-
-" YouCompleteMe Options
-let g:ycm_complete_in_comments = 1
-let g:ycm_min_num_of_chars_for_completion = 5
-let g:ycm_key_list_select_completion = ['<TAB>']
-let g:ycm_key_list_previous_completion = ['<S-TAB>']
-
-
-" UltiSnips ctrl-n if ycm is active
-function! g:UltiSnips_Complete()
-  call UltiSnips_ExpandSnippet()
-  if g:ulti_expand_res == 0
-    if pumvisible()
-      return "\<C-n>"
-    else
-      call UltiSnips_JumpForwards()
-      if g:ulti_jump_forwards_res == 0
-        return "\<TAB>"
-      endif
-    endif
-  endif
-  return ""
-endfunction
 
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 let g:UltiSnipsSnippetDirectories=["snippets"]

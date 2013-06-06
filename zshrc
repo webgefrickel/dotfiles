@@ -11,6 +11,9 @@ unsetopt correct_all
 # Terminal
 export TERM="screen-256color"
 
+# brew CASK
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # paths
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:$PATH
 export MANPATH=/usr/local/share/man:$MANPATH
@@ -58,9 +61,10 @@ alias v='vim'
 alias vd='vimdiff'
 alias diff='vimdiff'
 
-# easy hosts-editing
+# easy hosts / apache / php editing
 alias hosts='_ vim /etc/hosts'
 alias vhosts='_ vim /etc/apache2/extra/httpd-vhosts.conf'
+alias phpini='vim /usr/local/etc/php/5.4/php.ini'
 
 # Easier navigation: .., ..., ~ and -
 alias ..='cd ..'
