@@ -54,7 +54,7 @@ alias brewup='brew update && brew upgrade && brew cleanup && brew linkapps'
 alias gemup='gem update --system && gem update && gem cleanup'
 alias npmup='npm -g cache clean && npm -g update'
 alias rvmup='rvm get latest'
-alias upall='brewup && rvmup && gemup && npmup && dotup && dotsubup'
+alias upall='brewup && rvmup && gemup && npmup'
 
 # always use mvim but for 'vim'
 alias v='vim'

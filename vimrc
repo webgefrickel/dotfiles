@@ -305,10 +305,8 @@ vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 " easymotion config leader m
 let g:EasyMotion_leader_key = '<leader>m'
 
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+" ultisnips in custom dir
 let g:UltiSnipsSnippetDirectories=["snippets"]
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
 
 
 " Enable syntastic syntax checking
