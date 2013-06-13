@@ -143,19 +143,19 @@ snippet ps "position"
 position: ${1:static/relative/absolute/fixed};$0
 endsnippet
 
-snippet ps:a "position absolute"
+snippet psa "position absolute"
 position: absolute;$0
 endsnippet
 
-snippet ps:r "position relative"
+snippet psr "position relative"
 position: relative;$0
 endsnippet
 
-snippet ps:s "position static"
+snippet pss "position static"
 position: static;$0
 endsnippet
 
-snippet ps:f "position fixed"
+snippet psf "position fixed"
 position: fixed;$0
 endsnippet
 
@@ -183,23 +183,23 @@ snippet h "height"
 height: $1;$0
 endsnippet
 
-snippet d:b  "display: block"
+snippet db  "display: block"
 display: block;$0
 endsnippet
 
-snippet d:n  "display: none"
+snippet dn  "display: none"
 display: none;$0
 endsnippet
 
-snippet d:i "display: inline"
+snippet di "display: inline"
 display: inline;$0
 endsnippet
 
-snippet d:ib "display: inline-block"
+snippet dib "display: inline-block"
 display: inline-block;$0
 endsnippet
 
-snippet d:t "display: table-types"
+snippet dt "display: table-types"
 display: ${1:table/inline-table/table-row-group/table-header-group/table-footer-group/table-row/table-column-group/table-column/table-cell/table-caption};$0
 endsnippet
 
@@ -226,7 +226,7 @@ snippet cl "clear: value (clear)"
 clear: ${1:left/right/both/none};$0
 endsnippet
 
-snippet cl:b "clear: both"
+snippet clb "clear: both"
 clear: both;$0
 endsnippet
 
@@ -234,15 +234,15 @@ snippet fl "float"
 float: ${1:left/right/none};$0
 endsnippet
 
-snippet fl:l "float: left"
+snippet fll "float: left"
 float: left;$0
 endsnippet
 
-snippet fl:r "float: right"
+snippet flr "float: right"
 float: right;$0
 endsnippet
 
-snippet fl:n "float: none"
+snippet fln "float: none"
 float: none;$0
 endsnippet
 
@@ -250,11 +250,11 @@ snippet ov "overflow"
 overflow: ${1:visible/hidden/scroll/auto};$0
 endsnippet
 
-snippet ov:h "overflow: hidden"
+snippet ovh "overflow: hidden"
 overflow: hidden;$0
 endsnippet
 
-snippet ov:a "overflow: auto"
+snippet ova "overflow: auto"
 overflow: auto;$0
 endsnippet
 
@@ -265,11 +265,11 @@ snippet cr "cursor"
 cursor: ${1:default/auto/crosshair/pointer/move/*-resize/text/wait/help};$0
 endsnippet
 
-snippet cr:p "cursor"
+snippet crp "cursor"
 cursor: pointer;$0
 endsnippet
 
-snippet cr:d "cursor"
+snippet crd "cursor"
 cursor: default;$0
 endsnippet
 
@@ -277,7 +277,7 @@ endsnippet
 # fonts and text
 
 snippet ff "font-family"
-font-family: ${1:Arial}, ${2:sans-}serif;$0
+font-family: $font-family-${1:special};$0
 endsnippet
 
 snippet fz "font-size"
@@ -288,11 +288,11 @@ snippet fs "font-style"
 font-style: ${1:normal/italic/oblique};$0
 endsnippet
 
-snippet fs:i "font-style: italic"
+snippet fsi "font-style: italic"
 font-style: italic;$0
 endsnippet
 
-snippet fs:n "font-style: normal"
+snippet fsn "font-style: normal"
 font-style: normal;$0
 endsnippet
 
@@ -304,11 +304,11 @@ snippet fw "font-weight"
 font-weight: ${1:normal/bold};$0
 endsnippet
 
-snippet fw:b "font-weight: bold"
+snippet fwb "font-weight: bold"
 font-weight: bold;$0
 endsnippet
 
-snippet fw:n "font-weight: normal"
+snippet fwn "font-weight: normal"
 font-weight: normal;$0
 endsnippet
 
@@ -328,19 +328,19 @@ snippet ta "text-align"
 text-align: ${1:left/right/center/justify};$0
 endsnippet
 
-snippet ta:c "text-align center"
+snippet tac "text-align center"
 text-align: center;$0
 endsnippet
 
-snippet ta:l "text-align left"
+snippet tal "text-align left"
 text-align: left;$0
 endsnippet
 
-snippet ta:r "text-align right"
+snippet tar "text-align right"
 text-align: right;$0
 endsnippet
 
-snippet ta:j "text-align justifyy"
+snippet taj "text-align justifyy"
 text-align: justify;$0
 endsnippet
 
@@ -348,11 +348,11 @@ snippet td "text-decoration"
 text-decoration: ${1:none/underline/overline/line-through/blink};$0
 endsnippet
 
-snippet td:u "text-decoration: underline"
+snippet tdu "text-decoration: underline"
 text-decoration: underline;$0
 endsnippet
 
-snippet td:n "text-decoration: none"
+snippet tdn "text-decoration: none"
 text-decoration: none;$0
 endsnippet
 
@@ -364,15 +364,15 @@ snippet tt "text-transform"
 text-transform: ${1:capitalize/uppercase/lowercase};$0
 endsnippet
 
-snippet tt:u "text-transform: uppercase"
+snippet ttu "text-transform: uppercase"
 text-transform: uppercase;$0
 endsnippet
 
-snippet tt:l "text-transform: lowercase"
+snippet ttl "text-transform: lowercase"
 text-transform: lowercase;$0
 endsnippet
 
-snippet tt:n  "text-transform: none"
+snippet ttn  "text-transform: none"
 text-transform: none;$0
 endsnippet
 
@@ -383,11 +383,11 @@ snippet li "list-style"
 list-style: ${1:none/disc/circle/square/decimal/zero};$0
 endsnippet
 
-snippet li:n "list-style: none"
+snippet lin "list-style: none"
 list-style: none;$0
 endsnippet
 
-snippet li:d "list-style: disc"
+snippet lid "list-style: disc"
 list-style: disc;$0
 endsnippet
 
@@ -468,27 +468,19 @@ snippet ! "!important CSS (!)"
 ${1:!important}
 endsnippet
 
-snippet sel "selection"
-$1::-moz-selection,
-$1::selection {
-	color: ${2:inherit};
-	background: ${3:inherit};
-}
-endsnippet
-
 snippet va "vertical-align: type"
 vertical-align: ${1:baseline/sub/super/top/text-top/middle/bottom/text-bottom/length/%};$0
 endsnippet
 
-snippet va:t "vertical-align: top"
+snippet vat "vertical-align: top"
 vertical-align: top;$0
 endsnippet
 
-snippet va:m "vertical-align: middle"
+snippet vam "vertical-align: middle"
 vertical-align: middle;$0
 endsnippet
 
-snippet va:b "vertical-align: bottom"
+snippet vab "vertical-align: bottom"
 vertical-align: bottom;$0
 endsnippet
 

@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="webgefrickel"
 
 # default plugins to load
-plugins=(brew extract git github history-substring-search jake-node npm node gem osx zsh-syntax-highlighting)
+plugins=(brew git git-flow-completion github grunt history-substring-search jake-node npm node gem osx zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -46,8 +46,9 @@ alias dev='apachestart && mysqlstart'
 alias devs='apachestop && mysqlstop'
 alias devr='devs && dev'
 
-# dnsflush-shortcut
+# random usefull stuff
 alias dnsflush='_ dscacheutil -flushcache'
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # all in one homebrew, gem update commands
 alias brewup='brew update && brew upgrade && brew cleanup && brew linkapps'
@@ -80,6 +81,10 @@ alias rep='cd ~/Repositories && ls -al'
 alias dot='cd ~/Dotfiles && ls -al'
 alias brain='cd ~/Dropbox/Brain && vim .'
 alias jake='noglob jake'
+
+# some function for finding stuff
+function fname() { find . -iname "*$@*"; }
+function grepkill() { ps -axf | grep -v grep | grep "$@" | awk '{print $2}' | xargs kill }
 
 # Gitty gitgit
 alias gitrm='git rm $(git ls-files --deleted)'
