@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="webgefrickel"
 
 # default plugins to load
-plugins=(brew git git-flow-completion github grunt history-substring-search jake-node npm node gem osx zsh-syntax-highlighting)
+plugins=(brew git git-flow github history-substring-search jake-node npm node gem osx zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -12,7 +12,7 @@ unsetopt correct_all
 export TERM="screen-256color"
 
 # brew CASK
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # paths
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:$PATH
@@ -73,6 +73,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias l='ls -al'
+alias e='exit'
 
 # Shortcuts
 alias drop='cd ~/Dropbox && ls -al'
@@ -88,15 +89,18 @@ function grepkill() { ps -axf | grep -v grep | grep "$@" | awk '{print $2}' | xa
 
 # Gitty gitgit
 alias gitrm='git rm $(git ls-files --deleted)'
+alias gsmu='git submodule init && git submodule update'
 # THIS is evil. only use for private stuff and useless stuff
 # squish those commits afterwards with rebase!
 alias ggg='git add . && git commit -a -m "-"'
+
 
 # dandelion deployment shortcuts
 alias deploy='dandelion deploy'
 alias status='dandelion status'
 
 # grunt
+alias gr='grunt'
 alias grw='grunt watch'
 alias grd='grunt deploy'
 

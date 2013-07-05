@@ -21,11 +21,9 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
-Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
-Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -53,7 +51,6 @@ Bundle 'webgefrickel/vim-typoscript'
 
 " Color themes
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'stephenmckinney/vim-solarized-powerline'
 
 
@@ -155,7 +152,9 @@ set nowritebackup
 set noswapfile          " no swp-files
 
 " Better folding
+" TODO rework this and start using folds
 set foldmethod=indent
+setlocal foldignore=
 set foldnestmax=20      " max 20 levels of folding
 set nofoldenable        " dont fold by default - let me do it
 set foldlevelstart=1    " deactivate folding on fileload
@@ -165,6 +164,18 @@ set visualbell          " don't beep
 
 
 " ========== Custom Keymappings ==========
+
+" Typos
+command! -bang E e<bang>
+command! -bang Q q<bang>
+command! -bang W w<bang>
+command! -bang QA qa<bang>
+command! -bang Qa qa<bang>
+command! -bang Wa wa<bang>
+command! -bang WA wa<bang>
+command! -bang Wq wq<bang>
+command! -bang WQ wq<bang>
+
 " set the leader to comma , and ; == : -- faster commands
 let mapleader = ","
 nnoremap ; :
@@ -207,8 +218,9 @@ nnoremap <leader>s :source ~/.vimrc<cr>
 " Opens an edit command with the path of the currently edited file filled in
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
-" start a new document-wide seach-replace using abolish
-nnoremap <leader>f :%S/
+" start a new document-wide seach-replace using abolish or normal search
+nnoremap <leader>f :%s/
+nnoremap <leader>F :%S/
 
 " dont use the arrow keys in insert mode
 inoremap <up> <nop>
@@ -264,7 +276,15 @@ nmap <leader>w :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 
 " reload files when set autoread is active with F5
+" TODO make this awesome reloading NERDtree + ctrl+p as well
 nnoremap <F5> :checktime<cr>
+
+" folding shortcuts
+nnoremap <space> za
+
+
+" when over a class in html hit fc to find that class in css/scss/js
+nnoremap <leader>c :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnext<CR>
 
 
 " ========== PLugins leaders and other config ==========
@@ -289,7 +309,7 @@ nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
 " TComment
 nnoremap <leader>/ :TComment<CR>
 vnoremap <leader>/ :TComment<CR>
-inoremap <leader>/ <Esc>:TComment<CR>i
+inoremap <leader>/ <Esc>:TComment<CR>
 
 " Tabularize a == think align
 nmap <Leader>a= :Tabularize /=<CR>
@@ -318,18 +338,12 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['ruby', 'php', 'javascript'],
                            \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'scss.css'] }    
 
-" Buffergator
-let g:buffergator_display_regime='filepath'
-" no default keymappings -- needing for command-t to work
-let g:buffergator_suppress_keymaps=1
-let g:buffergator_viewport_split_policy='B'
-let g:buffergator_split_size=12
-nnoremap <leader>b :BuffergatorToggle<cr>
-
 " CtrlP
+nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <leader>r :CtrlPMRU<cr>
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_switch_buffer = 0 " easier split screens
-let g:ctrlp_working_path_mode = 0
+let g:ctrlp_working_path_mode = 0 " dont try to change my working directory
 let g:ctrlp_max_height = 12
 let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|\.sass-cache)$',
                             \ 'file': '\.exe$\|\.so$\|\.dll$\|\.psd$\|\.png$\|\.jpg$\|\.gif$',

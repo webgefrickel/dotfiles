@@ -34,6 +34,9 @@
   ps = push
   pl = pull
   mg = merge
+  ffs = flow feature start
+  fff = flow feature finish
+  fi = flow init
   unst = reset HEAD
   hub = push origin master
   fac = push origin refac

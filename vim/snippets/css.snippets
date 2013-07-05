@@ -21,6 +21,15 @@ snippet mix "create a mixin" !b
 
 endsnippet
 
+snippet fe "each in sass" !b
+@each $${1:item} in $${2:variable} { 
+  $0
+}
+
+endsnippet
+
+
+
 
 #########################################
 #  css3 stuff and using compass mixins  #
@@ -379,15 +388,15 @@ endsnippet
 
 # lists
 
-snippet li "list-style"
+snippet ls "list-style"
 list-style: ${1:none/disc/circle/square/decimal/zero};$0
 endsnippet
 
-snippet lin "list-style: none"
+snippet lsn "list-style: none"
 list-style: none;$0
 endsnippet
 
-snippet lid "list-style: disc"
+snippet lsd "list-style: disc"
 list-style: disc;$0
 endsnippet
 
