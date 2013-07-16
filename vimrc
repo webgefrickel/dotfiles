@@ -13,9 +13,9 @@ Bundle 'gmarik/vundle'
 
 " plugins
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
+Bundle 'bling/vim-airline'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'edsono/vim-matchit'
@@ -27,6 +27,8 @@ Bundle 'mattn/webapi-vim'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+Bundle 'terryma/vim-expand-region'
+Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-fugitive'
@@ -35,7 +37,6 @@ Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'tristen/vim-sparkup'
 
 
 " Additional syntaxes
@@ -51,7 +52,6 @@ Bundle 'webgefrickel/vim-typoscript'
 
 " Color themes
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'stephenmckinney/vim-solarized-powerline'
 
 
 " and reset auto-filetype after loading all bundles
@@ -354,11 +354,14 @@ let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|\.sa
 " Gist filetype-detection
 let g:gist_detect_filetype = 1
 
-" Powerline customization
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_stl_path_style = 'short'
-let g:Powerline_colorscheme = 'solarized256_dark'
-call Pl#Theme#RemoveSegment('scrollpercent')
+
+" airline config
+
+let g:airline_theme='solarized'
+let g:airline_left_sep='▶'
+let g:airline_right_sep='◀'
+set ttimeoutlen=50
+
 
 
 " ========== Custom Pseudofunctions ==========
