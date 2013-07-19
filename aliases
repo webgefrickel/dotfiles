@@ -1,0 +1,87 @@
+# aliases for apache and mysql
+alias apachestart='_ /usr/sbin/apachectl start'
+alias apachestop='_ /usr/sbin/apachectl stop'
+alias mysqlstart='mysql.server start'
+alias mysqlstop='mysql.server stop'
+alias dev='apachestart && mysqlstart'
+alias devs='apachestop && mysqlstop'
+alias devr='devs && dev'
+
+
+# noglobbing aliases
+alias jake='noglob jake'
+alias g="noglob git"
+
+
+# Gitty gitgit -- use aliases from oh-my-zsh plugins
+alias gitrm='git rm $(git ls-files --deleted)'
+alias gsmu='git submodule init && git submodule update'
+alias em='$EDITOR $(git ls-files -m)'
+
+
+# dandelion deployment shortcuts
+alias deploy='dandelion deploy'
+alias status='dandelion status'
+
+
+# grunt
+alias gr='grunt'
+alias grw='grunt watch'
+alias grd='grunt deploy'
+
+
+# tmux
+alias t='tmux -u -2'
+alias ta='tmux attach'
+
+
+# random usefull stuff
+alias dnsflush='_ dscacheutil -flushcache'
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias psa="ps aux"
+
+
+# all in one homebrew, gem update commands
+alias brewup='brew update && brew upgrade && brew cleanup && brew linkapps'
+alias gemup='gem update --system && gem update && gem cleanup'
+alias npmup='npm -g cache clean && npm -g update'
+alias rvmup='rvm get latest'
+alias sysup='_ softwareupdate -i -a'
+alias upall='sysup && brewup && rvmup && gemup && npmup'
+
+
+# alias for re-installing npm from the web and default packages
+alias npmins="curl"
+
+# always use macvim but for 'vim'
+alias vim=$EDITOR
+alias vi=$EDITOR
+alias v=$EDITOR
+alias vd='vimdiff'
+alias diff='vimdiff'
+
+
+# easy hosts / apache / php editing
+alias hosts='_ vim /etc/hosts'
+alias vhosts='_ vim /etc/apache2/extra/httpd-vhosts.conf'
+alias phpini='vim /usr/local/etc/php/5.4/php.ini'
+alias http='_ vim /etc/apache2/httpd.conf'
+
+
+# Easier navigation: .., ..., ~ and -
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias l='ls -al'
+alias e='exit'
+
+
+# often used folder shortcuts
+alias drop='cd ~/Dropbox && ls -al'
+alias web='cd ~/Sites && ls -al'
+alias rep='cd ~/Repositories && ls -al'
+alias dot='cd ~/Dotfiles && ls -al'
+alias brain='cd ~/Dropbox/Brain && vim .'
+
+

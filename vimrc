@@ -24,6 +24,8 @@ Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'rizzatti/funcoo.vim'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -213,7 +215,7 @@ nnoremap <leader>- <C-w>s<C-w>j
 
 " open a new split and edit the vimrc // easy sourcing vimrc
 nnoremap <leader>v <C-w>v<C-w>l :e ~/.vimrc<cr>
-nnoremap <leader>s :source ~/.vimrc<cr>
+nnoremap <leader>vs :source ~/.vimrc<cr>
 
 " Opens an edit command with the path of the currently edited file filled in
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -270,10 +272,10 @@ nmap <leader>u mQviwU`Q
 nmap <leader>l mQviwu`Q
 
 " Swap two words
-nmap <leader>w :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+nmap <leader>sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " change working directory to current file
-nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
+nnoremap <leader>w :cd %:p:h<CR>:pwd<CR>
 
 " reload files when set autoread is active with F5
 " TODO make this awesome reloading NERDtree + ctrl+p as well
@@ -347,9 +349,10 @@ let g:ctrlp_map = '<leader>t'
 let g:ctrlp_switch_buffer = 0 " easier split screens
 let g:ctrlp_working_path_mode = 0 " dont try to change my working directory
 let g:ctrlp_max_height = 12
-let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|\.sass-cache)$',
-                            \ 'file': '\.exe$\|\.so$\|\.dll$\|\.psd$\|\.png$\|\.jpg$\|\.gif$',
-                            \ }
+let g:ctrlp_custom_ignore = { 
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|\.sass-cache)$',
+  \ 'file': '\v\.(exe|so|dll|zip|gz|png|gif|jpg|tif|psd|pdf|mp4|webm|mp3)$',
+  \ }
 
 " Gist filetype-detection
 let g:gist_detect_filetype = 1
@@ -362,6 +365,12 @@ let g:airline_left_sep='▶'
 let g:airline_right_sep='◀'
 set ttimeoutlen=50
 
+" Mac Dash.app integration
+nmap <silent> <leader>d <Plug>DashSearch
+nmap <silent> <leader>D <Plug>DashGlobalSearch
+let g:dash_map = {
+  \ 'javascript' : 'jquery'
+  \ }
 
 
 " ========== Custom Pseudofunctions ==========
