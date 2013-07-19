@@ -51,7 +51,8 @@ alias upall='sysup && brewup && rvmup && gemup && npmup'
 
 
 # alias for re-installing npm from the web and default packages
-alias npmins="curl"
+alias npmins='curl https://npmjs.org/install.sh | sh && npm install -g grunt-cli && npm install -g jshint && npm install -g uglify-js && npm install -g jake'
+
 
 # always use macvim but for 'vim'
 alias vim=$EDITOR
@@ -66,6 +67,13 @@ alias hosts='_ vim /etc/hosts'
 alias vhosts='_ vim /etc/apache2/extra/httpd-vhosts.conf'
 alias phpini='vim /usr/local/etc/php/5.4/php.ini'
 alias http='_ vim /etc/apache2/httpd.conf'
+
+
+# vagrant stuff
+vu='vagrant up'
+vr='vagrant reload'
+vp='vagrant provision'
+vh='vagrant halt'
 
 
 # Easier navigation: .., ..., ~ and -

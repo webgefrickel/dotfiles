@@ -57,9 +57,11 @@ var chrome = slate.operation("focus", { "app": "Google Chrome" });
 var mail = slate.operation("focus", { "app": "Mail" });
 var fork = slate.operation("focus", { "app": "ForkLift" });
 var ical = slate.operation("focus", { "app": "iCal" });
-var shop = slate.operation("focus", { "app": "Photoshop" });
-var launch = slate.operation("focus", { "app": "Launchbar" });
-var ecoute = slate.operation("focus", { "app": "Ecoute" });
+var adium = slate.operation("focus", { "app": "Adium" });
+var macvim = slate.operation("focus", { "app": "MacVim" });
+var time = slate.operation("focus", { "app": "TimeLog" });
+var dash = slate.operation("focus", { "app": "Dash" });
+var fox = slate.operation("focus", { "app": "Firefox" });
 
 
 var fullscreen = slate.operation("move", {
@@ -130,7 +132,7 @@ var fullhd = slate.operation("move", {
 ====================================================================== */
 
 var hyper = ":shift,ctrl,alt,cmd";
-var hyperModal = hyper + ",m:toggle";
+var hyperModal = hyper + ",right:toggle";
 
 // f = fast switching and a nice position in the home row
 slate.bind("[" + hyper, hint, false);
@@ -138,15 +140,16 @@ slate.bind("[" + hyper, hint, false);
 slate.bind("]" + hyper, grid, false);
 
 // most important apps on easy accesible keys
-slate.bind("a" + hyper, iterm, false);
-slate.bind("s" + hyper, chrome, false);
-slate.bind("d" + hyper, mail, false);
+slate.bind("t" + hyper, iterm, false);
+slate.bind("c" + hyper, chrome, false);
+slate.bind("m" + hyper, mail, false);
 slate.bind("f" + hyper, fork, false);
-
-slate.bind("j" + hyper, ical, false);
-slate.bind("k" + hyper, ecoute, false);
-slate.bind("l" + hyper, launch, false);
-slate.bind(";" + hyper, shop, false);
+slate.bind("i" + hyper, ical, false);
+slate.bind("v" + hyper, macvim, false);
+slate.bind("a" + hyper, adium, false);
+slate.bind("l" + hyper, time, false);
+slate.bind("d" + hyper, dash, false);
+slate.bind("x" + hyper, fox, false);
 
 // movements in modal mode with m
 slate.bind("1" + hyperModal, lefthalf, false);

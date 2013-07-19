@@ -20,13 +20,15 @@ namespace('setup', function() {
     console.log('Linking files and dirs to your home directory...');
 
     var cmds = [
-      'ln -s ~/dotfiles/vim ~/.vim',
       'ln -s ~/dotfiles/oh-my-zsh ~/.oh-my-zsh',
+      'ln -s ~/dotfiles/agignore ~/.agignore',
+      'ln -s ~/dotfiles/aliases ~/.aliases',
+      'ln -s ~/dotfiles/exports ~/.exports',
+      'ln -s ~/dotfiles/functions ~/.functions',
       'ln -s ~/dotfiles/gitconfig ~/.gitconfig',
       'ln -s ~/dotfiles/gitignore ~/.gitignore',
       'ln -s ~/dotfiles/hgignore_global ~/.hgignore_global',
       'ln -s ~/dotfiles/jshintrc ~/.jshintrc',
-      'ln -s ~/dotfiles/pearrc ~/.pearrc',
       'ln -s ~/dotfiles/slate.js ~/.slate.js',
       'ln -s ~/dotfiles/tmux.conf ~/.tmux.conf',
       'ln -s ~/dotfiles/vimrc ~/.vimrc',

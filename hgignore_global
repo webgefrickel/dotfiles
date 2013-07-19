@@ -10,10 +10,14 @@ syntax: glob
 *.vi
 *.bak
 *~
-*.sass-cache
+.~lock*
 .tmp_*
+.sass-cache
+*.sass-cache
 .revision
 _srcs
+log
+tmp
 node_modules
 .DS_Store
 Thumbs.db
@@ -29,6 +33,6 @@ NERD_tree*
 *.iws
 *.ipr
 *.iml
-.git
+.hg
 .svn
 .CVS

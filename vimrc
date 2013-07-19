@@ -113,9 +113,11 @@ if &term =~ '^screen'
 endif
 
 
-let g:solarized_contrast = 'high'
-set background=dark
+set t_Co=256
 colorscheme solarized
+set background=dark
+let g:solarized_termtrans = 1
+let g:solarized_contrast = 'high'
 
 set fillchars=""
 
