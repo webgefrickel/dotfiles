@@ -376,12 +376,9 @@ let g:dash_map = {
 
 
 " ========== Custom Pseudofunctions ==========
-" JSON syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
 " Phakefiles syntax is php
 au BufNewFile,BufRead Phakefile set ft=php
-" SCSS is scss and css
-au BufNewFile,BufRead *.scss set ft=scss.css
+
 
 " Remember last location in file
 if has("autocmd")

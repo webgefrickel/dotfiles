@@ -28,7 +28,7 @@ slate.configAll({
 ====================================================================== */
 
 // show the overlay hints for applications
-var hint = slate.operation("hint", { "characters": "ASDFGHJKLQWERTYUIOPCVBN" });
+var hint = slate.operation("hint", { "characters": "jkl;asdfqwertyuiop[]zxcvbnm," });
 
 
 // custom resize grids for all monitors 6x4
@@ -36,16 +36,16 @@ var grid = slate.operation("grid", {
   "padding": 10,
   "grids": {
     "0": {
-      "width": 6,
-      "height": 4
+      "width": 12,
+      "height": 8
     },
     "1": {
-      "width": 6,
-      "height": 4
+      "width": 12,
+      "height": 8
     },
     "2": {
-      "width": 6,
-      "height": 4
+      "width": 12,
+      "height": 8
     }
   }
 });
@@ -132,12 +132,12 @@ var fullhd = slate.operation("move", {
 ====================================================================== */
 
 var hyper = ":shift,ctrl,alt,cmd";
-var hyperModal = hyper + ",right:toggle";
+var hyperModal = hyper + ",s:toggle";
 
 // f = fast switching and a nice position in the home row
-slate.bind("[" + hyper, hint, false);
+slate.bind("]", hint, false);
 // g = grid view
-slate.bind("]" + hyper, grid, false);
+slate.bind("[" + hyper, grid, false);
 
 // most important apps on easy accesible keys
 slate.bind("t" + hyper, iterm, false);
@@ -152,13 +152,13 @@ slate.bind("d" + hyper, dash, false);
 slate.bind("x" + hyper, fox, false);
 
 // movements in modal mode with m
-slate.bind("1" + hyperModal, lefthalf, false);
-slate.bind("2" + hyperModal, righthalf, false);
-slate.bind("3" + hyperModal, tophalf, false);
-slate.bind("4" + hyperModal, bottomhalf, false);
-slate.bind("5" + hyperModal, mobile, false);
-slate.bind("6" + hyperModal, tablet, false);
-slate.bind("7" + hyperModal, desktop, false);
-slate.bind("8" + hyperModal, fullhd, false);
+slate.bind("h" + hyperModal, lefthalf, false);
+slate.bind("l" + hyperModal, righthalf, false);
+slate.bind("k" + hyperModal, tophalf, false);
+slate.bind("j" + hyperModal, bottomhalf, false);
+slate.bind("1" + hyperModal, mobile, false);
+slate.bind("2" + hyperModal, tablet, false);
+slate.bind("3" + hyperModal, desktop, false);
+slate.bind("4" + hyperModal, fullhd, false);
 slate.bind("space" + hyperModal, fullscreen, false);
 
