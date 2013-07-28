@@ -58,7 +58,6 @@ var mail = slate.operation("focus", { "app": "Mail" });
 var fork = slate.operation("focus", { "app": "ForkLift" });
 var ical = slate.operation("focus", { "app": "iCal" });
 var adium = slate.operation("focus", { "app": "Adium" });
-var macvim = slate.operation("focus", { "app": "MacVim" });
 var time = slate.operation("focus", { "app": "TimeLog" });
 var dash = slate.operation("focus", { "app": "Dash" });
 var fox = slate.operation("focus", { "app": "Firefox" });
@@ -135,7 +134,7 @@ var hyper = ":shift,ctrl,alt,cmd";
 var hyperModal = hyper + ",s:toggle";
 
 // f = fast switching and a nice position in the home row
-slate.bind("]", hint, false);
+slate.bind("]" + hyper, hint, false);
 // g = grid view
 slate.bind("[" + hyper, grid, false);
 
@@ -145,7 +144,6 @@ slate.bind("c" + hyper, chrome, false);
 slate.bind("m" + hyper, mail, false);
 slate.bind("f" + hyper, fork, false);
 slate.bind("i" + hyper, ical, false);
-slate.bind("v" + hyper, macvim, false);
 slate.bind("a" + hyper, adium, false);
 slate.bind("l" + hyper, time, false);
 slate.bind("d" + hyper, dash, false);
