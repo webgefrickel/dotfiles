@@ -60,6 +60,7 @@ alias vi=$EDITOR
 alias v=$EDITOR
 alias vd='vimdiff'
 alias diff='vimdiff'
+alias vf='vifm'
 
 
 # easy hosts / apache / php editing

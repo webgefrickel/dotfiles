@@ -1,5 +1,82 @@
 # You can edit this file by hand, but it's recommended not to do that.
 
 # Bookmarks:
+'H
+	/Users/nebelschwade/
+	../
+'d
+	/Users/nebelschwade/Documents/
+	../
+'h
+	/Users/nebelschwade/
+	../
+'s
+	/Users/nebelschwade/dotfiles/
+	../
+'v
+	/Users/nebelschwade/dotfiles/vim/
+	../
+'w
+	/Users/nebelschwade/Sites/
+	../
+'x
+	/Users/nebelschwade/Dropbox/
+	../
+'z
+	/Users/nebelschwade/.vifm
+	../
+
+# TUI:
+ar
+q0
+v2
+ov
+m-1
+l12
+r2
+
+# Left window history (oldest to newest):
+d/Users/nebelschwade/Dotfiles
+	../
+0
+d/Users/nebelschwade
+	../
+0
+d/Users
+	nebelschwade/
+2
+d/Users/nebelschwade
+	Sites/
+13
+d/Users/nebelschwade/Sites
+	tsg-leipzig.de/
+15
+d
+
+# Right window history (oldest to newest):
+D/Users/nebelschwade/Dotfiles
+	gitconfig
+10
+D
+
+# Command line history (oldest to newest):
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Registers:
+
+# Directory stack (oldest to newest):
 
 # Trash content:
+
+# State:
+f
+i1
+[.1
+F
+I1
+].1
+s0

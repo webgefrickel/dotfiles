@@ -21,6 +21,8 @@ namespace('setup', function() {
 
     var cmds = [
       'ln -s ~/dotfiles/oh-my-zsh ~/.oh-my-zsh',
+      'ln -s ~/dotfiles/vifm ~/.vifm',
+      'ln -s ~/dotfiles/vim ~/.vim',
       'ln -s ~/dotfiles/agignore ~/.agignore',
       'ln -s ~/dotfiles/aliases ~/.aliases',
       'ln -s ~/dotfiles/exports ~/.exports',
