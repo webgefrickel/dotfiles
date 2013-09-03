@@ -28,6 +28,12 @@ snippet fe "each in sass" !b
 
 endsnippet
 
+snippet mq "mediaquery mixin" !b
+@include x-mq(${1:smallonly}) {
+  $0
+}
+endsnippet
+
 
 
 
@@ -108,6 +114,10 @@ endsnippet
 
 snippet bgf "background: complete"
 background:${6: ${1:\$color-main}} url(../img/$2) ${3:no-repeat} ${4:scroll/fixed} ${5:top left};$0
+endsnippet
+
+snippet bgs "background-size"
+background-size: cover; $0
 endsnippet
 
 snippet bg "background"
@@ -204,6 +214,14 @@ snippet di "display: inline"
 display: inline;$0
 endsnippet
 
+snippet dt "display: table"
+display: table;$0
+endsnippet
+
+snippet dtc "display: table-cell"
+display: table-cell;$0
+endsnippet
+
 snippet dib "display: inline-block"
 display: inline-block;$0
 endsnippet
@@ -239,6 +257,14 @@ snippet clb "clear: both"
 clear: both;$0
 endsnippet
 
+snippet cll "clear: left"
+clear: left;$0
+endsnippet
+
+snippet clr "clear: right"
+clear: right;$0
+endsnippet
+
 snippet fl "float"
 float: ${1:left/right/none};$0
 endsnippet
@@ -267,6 +293,13 @@ snippet ova "overflow: auto"
 overflow: auto;$0
 endsnippet
 
+snippet ovx "overflow-x: hidden"
+overflow-x: hidden;$0
+endsnippet
+
+snippet ovy "overflow-y: hidden"
+overflow-y: hidden;$0
+endsnippet
 
 # cursors
 
