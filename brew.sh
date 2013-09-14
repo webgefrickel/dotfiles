@@ -49,6 +49,7 @@ brew cask install dropbox
 brew cask install firefox
 brew cask install forklift
 brew cask install google-chrome
+brew cask install handbrake
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install iterm2

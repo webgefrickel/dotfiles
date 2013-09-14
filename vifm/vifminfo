@@ -27,13 +27,13 @@
 	../
 
 # TUI:
-ar
+al
 q0
 v2
 ov
 m-1
 l12
-r2
+r12
 
 # Left window history (oldest to newest):
 d/Users/nebelschwade/Dotfiles
@@ -49,18 +49,31 @@ d/Users/nebelschwade
 	Sites/
 13
 d/Users/nebelschwade/Sites
-	tsg-leipzig.de/
+	../
+0
+d/Users/nebelschwade
+	Sites/
+13
+d/Users
+	nebelschwade/
+2
+d/
+	Users/
 15
 d
 
 # Right window history (oldest to newest):
 D/Users/nebelschwade/Dotfiles
-	gitconfig
-10
+	oh-my-zsh/
+2
+D/Users/nebelschwade
+	../
+0
 D
 
 # Command line history (oldest to newest):
 :q
+:source ~/.vifm/vifmrc
 
 # Search history (oldest to newest):
 
