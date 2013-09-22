@@ -58,6 +58,7 @@ brew cask install libre-office
 brew cask install max
 brew cask install miro-video-converter
 brew cask install opera
+brew cask install osxfuse
 brew cask install pc-keyboardhack
 brew cask install sequel-pro
 brew cask install simple-comic
@@ -66,6 +67,7 @@ brew cask install slate
 brew cask install sourcetree
 brew cask install things
 brew cask install timings
+brew cask install tor-browser
 brew cask install transmission
 brew cask install true-crypt
 brew cask install vagrant
