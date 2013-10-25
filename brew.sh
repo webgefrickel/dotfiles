@@ -47,6 +47,7 @@ brew cask install charles
 brew cask install doxie
 brew cask install dropbox
 brew cask install firefox
+brew cask install f-lux
 brew cask install forklift
 brew cask install google-chrome
 brew cask install handbrake

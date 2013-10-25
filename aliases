@@ -51,10 +51,6 @@ alias sysup='_ softwareupdate -i -a'
 alias upall='sysup && brewup && rvmup && gemup && npmup'
 
 
-# alias for re-installing npm from the web and default packages
-alias npmins='brew link --overwrite node && curl https://npmjs.org/install.sh | sh && npm install -g grunt-cli && npm install -g jshint && npm install -g uglify-js && npm install -g jake'
-
-
 # always use macvim but for 'vim'
 alias vim=$EDITOR
 alias vi=$EDITOR
