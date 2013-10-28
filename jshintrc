@@ -1,17 +1,26 @@
 {
   "bitwise": true,
   "browser": true,
+  "camelcase": true,
   "curly": true,
   "eqeqeq": true,
   "eqnull": true,
   "immed": true,
-  "jquery": true,
+  "indent": 2,
   "latedef": true,
+  "maxlen": 80,
   "newcap": true,
   "noarg": true,
   "nonew": true,
   "plusplus": true,
+  "quotmark": "single",
   "regexp": true,
   "trailing": true,
-  "undef": true
+  "undef": true,
+
+  "globals": {
+    "jQuery": true,
+    "$": true,
+    "Modernizr": true
+  }
 }
