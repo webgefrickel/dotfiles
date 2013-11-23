@@ -25,8 +25,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'leshill/vim-json'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
-Bundle 'rizzatti/dash.vim'
 Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -366,7 +366,6 @@ let g:gist_detect_filetype = 1
 let g:airline_theme='solarized'
 let g:airline_left_sep='▶'
 let g:airline_right_sep='◀'
-set ttimeoutlen=50
 
 " Mac Dash.app integration
 nmap <silent> <leader>d <Plug>DashSearch
@@ -388,20 +387,12 @@ if has("autocmd")
 endif
 
 
-" ========== On Save ==========
-" A function for stripping Whitespace when saving
-function! <SID>StripTrailingWhitespaces()
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  %s/\s\+$//e
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
-endfunction
 
-" Don't strip whitespace for files like md,txt or csv/sql - define files here
-au BufWritePre *.{php,html,scss,css,js,ts,xml,json,inc,vim,rb} :call <SID>StripTrailingWhitespaces()
+" Other functions
+" ======================================================================
+
+" spell correction on text-files
+autocmd BufRead,BufNewFile *.{md|rst|txt} setlocal spell
+
+
 
