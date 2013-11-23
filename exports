@@ -1,11 +1,17 @@
 # Terminal
 export TERM="screen-256color"
 
+# shell
+export SHELL=/usr/local/bin/zsh
+
 # brew CASK
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # paths
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.rvm/bin:$PATH
+export PATH=$HOME/.tmuxifier/bin:$PATH
+
 export MANPATH=/usr/local/share/man:$MANPATH
 
 # disable stupid ._ and dsstore files

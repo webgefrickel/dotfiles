@@ -168,9 +168,10 @@ set noerrorbells        " don't beep
 set visualbell          " don't beep
 
 
-" ========== Custom Keymappings ==========
+" Custom key mappings and shortcuts
+" ======================================================================
 
-" Typos
+" Fix some common typos
 command! -bang E e<bang>
 command! -bang Q q<bang>
 command! -bang W w<bang>
@@ -292,17 +293,21 @@ nnoremap <space> za
 nnoremap <leader>c :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnext<CR>
 
 
-" ========== PLugins leaders and other config ==========
-" search using Ag - the Silver Surfer ftw!
+" Plugins
+" ======================================================================
+"
+" Ag
 nnoremap <leader>a :Ag 
 
-" Nerdtree toggle
+
+" NERDtree
 nnoremap <leader>n :NERDTreeToggle<cr>
 let NERDTreeMinimalUI=1
 let NERDTreeWinSize=50
 let NERDTreeShowHidden=1
 
-" fugitive shortcuts -- 20+ increases window-height
+
+" fugitive shortcuts (20+ increases window-height)
 nnoremap <silent> <leader>gs :Gstatus<CR><C-w>20+
 nnoremap <silent> <leader>gd :Gdiff<CR><C-w>20+
 nnoremap <silent> <leader>gc :Gcommit<CR><C-w>20+
@@ -311,12 +316,14 @@ nnoremap <silent> <leader>gl :Glog<CR><C-w>20+
 nnoremap <silent> <leader>gp :Git push<CR><C-w>20+
 nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
 
+
 " TComment
 nnoremap <leader>/ :TComment<CR>
 vnoremap <leader>/ :TComment<CR>
 inoremap <leader>/ <Esc>:TComment<CR>
 
-" Tabularize a == think align
+
+" Tabularize (a == think align)
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a{ :Tabularize /{<CR>
@@ -329,21 +336,24 @@ nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 
 
-" easymotion config leader m
+" easymotion
 let g:EasyMotion_leader_key = '<leader>m'
 
-" ultisnips in custom dir
-let g:UltiSnipsSnippetDirectories=["snippets"]
+
+" ultisnips
+let g:UltiSnipsSnippetDirectories = ["snippets"]
 
 
-" Enable syntastic syntax checking
+" Syntastic
 " no checking for xhtml/html -- because of fluidtemplate for TYPO3
 " and no checking for scss.css because of CSS3 and SASS-Variable
-" errors for included files - let codekit handle this
-let g:syntastic_auto_jump=0
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ['ruby', 'php', 'javascript'],
-                           \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'scss.css'] }    
+let g:syntastic_auto_jump = 0
+let g:syntastic_mode_map = { 
+  \ 'mode': 'active',
+  \ 'active_filetypes': ['ruby', 'php', 'javascript'],
+  \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'scss.css', 'css'] 
+  \ }    
+
 
 " CtrlP
 nnoremap <leader>b :CtrlPBuffer<cr>
@@ -357,15 +367,16 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|zip|gz|png|gif|jpg|tif|psd|pdf|mp4|webm|mp3)$',
   \ }
 
+
 " Gist filetype-detection
 let g:gist_detect_filetype = 1
 
 
 " airline config
+let g:airline_theme = 'solarized'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
 
-let g:airline_theme='solarized'
-let g:airline_left_sep='▶'
-let g:airline_right_sep='◀'
 
 " Mac Dash.app integration
 nmap <silent> <leader>d <Plug>DashSearch
@@ -375,24 +386,19 @@ let g:dash_map = {
   \ }
 
 
-" ========== Custom Pseudofunctions ==========
-" Phakefiles syntax is php
-au BufNewFile,BufRead Phakefile set ft=php
 
-
-" Remember last location in file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
-endif
-
-
-
-" Other functions
+" Other functions / Onload, Autocommands
 " ======================================================================
 
 " spell correction on text-files
 autocmd BufRead,BufNewFile *.{md|rst|txt} setlocal spell
 
+" Phakefiles syntax is php
+au BufNewFile,BufRead Phakefile set ft=php
 
+" Remember last location/cursor in file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+endif
 
