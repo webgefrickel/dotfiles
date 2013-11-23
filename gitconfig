@@ -34,6 +34,7 @@
   ps = push
   pl = pull
   mg = merge
+  rbc = rebase --continue
   ffs = flow feature start
   fff = flow feature finish
   fi = flow init
