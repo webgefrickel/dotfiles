@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
-# NOTE install xcode first!
+# NOTE install xcode first / via app store
+# this re-updates the command line tools
+xcode-select --install
+
+brew tap homebrew/dupes
+brew tap josegonzalez/homebrew-php
+brew tap phinze/homebrew-cask
 
 # install brew packages
 brew install ack
+brew install brew-cask
 brew install composer
 brew install ctags
 brew install curl
@@ -53,10 +60,10 @@ brew cask install google-chrome
 brew cask install handbrake
 brew cask install imagealpha
 brew cask install imageoptim
+brew cask install istat-menus
 brew cask install iterm2
 brew cask install key-remap4-mac-book
 brew cask install libre-office
-brew cask install max
 brew cask install miro-video-converter
 brew cask install opera
 brew cask install osxfuse
@@ -74,5 +81,6 @@ brew cask install true-crypt
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install vlc
+brew cask install xld
 
 # the rest -> appstore :-)
