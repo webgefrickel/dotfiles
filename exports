@@ -8,9 +8,11 @@ export SHELL=/usr/local/bin/zsh
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # paths
+export PATH=$HOME/.rbenv/shims:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=$HOME/.rvm/bin:$PATH
 export PATH=$HOME/.tmuxifier/bin:$PATH
+
+fpath=($HOME/dotfiles/zsh/zsh-completions/src $fpath)
 
 export MANPATH=/usr/local/share/man:$MANPATH
 
@@ -28,3 +30,17 @@ export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 # disable auto titling fixes tmux window
 export DISABLE_AUTO_TITLE=true
 
+# tmuxifier
+export TMUXIFIER_LAYOUT_PATH="$HOME/dotfiles/tmux"
+
+# grep
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+
+## pager
+export PAGER="less"
+export LESS="-R"
+
+export LC_CTYPE=$LANG
+
+export RBENV_VERSION="2.0.0-p247"

@@ -20,21 +20,19 @@ namespace('setup', function() {
     console.log('Linking files and dirs to your home directory...');
 
     var cmds = [
-      'ln -s ~/dotfiles/oh-my-zsh ~/.oh-my-zsh',
       'ln -s ~/dotfiles/vifm ~/.vifm',
       'ln -s ~/dotfiles/vim ~/.vim',
       'ln -s ~/dotfiles/agignore ~/.agignore',
-      'ln -s ~/dotfiles/aliases ~/.aliases',
-      'ln -s ~/dotfiles/exports ~/.exports',
-      'ln -s ~/dotfiles/functions ~/.functions',
       'ln -s ~/dotfiles/gitconfig ~/.gitconfig',
       'ln -s ~/dotfiles/gitignore ~/.gitignore',
-      'ln -s ~/dotfiles/hgignore_global ~/.hgignore_global',
       'ln -s ~/dotfiles/jshintrc ~/.jshintrc',
+      'ln -s ~/dotfiles/editorconf ~/.editorconf',
       'ln -s ~/dotfiles/slate.js ~/.slate.js',
       'ln -s ~/dotfiles/tmux.conf ~/.tmux.conf',
       'ln -s ~/dotfiles/vimrc ~/.vimrc',
-      'ln -s ~/dotfiles/zshrc ~/.zshrc'
+      'ln -s ~/dotfiles/zshrc ~/.zshrc',
+
+      'ln -s ~/dotfiles/zsh/pure/pure.zsh /usr/local/share/zsh/site-functions/prompt_pure_setup'
     ];
 
     jake.exec(cmds, function() {
@@ -49,8 +47,6 @@ namespace('setup', function() {
     var cmds = [
       'git submodule init',
       'git submodule update',
-      'git submodule foreach git checkout master',
-      'git submodule foreach git pull'
     ];
 
     jake.exec(cmds, function() {

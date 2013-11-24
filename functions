@@ -4,6 +4,12 @@ function fname() {
 }
 
 
+function take() {
+  mkdir -p $1
+  cd $1
+}
+
+
 # find process by name and kill them
 function grepkill() { 
   ps -axf | grep -v grep | grep "$@" | awk '{print $2}' | xargs kill 
@@ -13,6 +19,13 @@ function grepkill() {
 # open changed files in git index
 function gch () {
   vim `git status | grep modified | awk '{print $3}'`
+}
+
+
+function current_branch() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
+  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+  echo ${ref#refs/heads/}
 }
 
 

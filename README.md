@@ -1,21 +1,11 @@
 # My dotfiles
 
-This is a collection of my dotfiles. Requirements are:
-installed and working homebrew with installed node, npm
-and the node jake-plugin. And zsh :-)
+This is a collection of my dotfiles.
 
 ```
 git clone git://github.com/webgefrickel/dotfiles ~/dotfiles
 cd ~/dotfiles
-jake
-```
-
-If you haven't configured ZSH to be your default shell yet: 
-restart your terminal and type
-
-```
-cd ~/dotfiles
-jake zsh
+./install/_install.sh
 ```
 
 Now change the file `.gitconfig.user` in your home-folder and 
@@ -31,11 +21,6 @@ provide your git credentials, such as:
 ```
 
 Finally restart your terminal and vim again, and you are ready to go.
-
-## oh-my-zsh
-
-I use a custom fork of the famous oh-my-zsh framework.
-Have a look at the zshrc-file for custom aliases and functions.
 
 ## VIM
 
