@@ -135,7 +135,10 @@ set laststatus=2
 set ch=2
 
 " Add a $ to the end of a selection vor easier overwriting vizualisation
-set cpoptions+=$
+set cpo+=$
+
+" 2 spaces after a sentence for easier text manupulation
+set cpo+=J
 
 " Searching
 set ignorecase
@@ -297,7 +300,7 @@ nnoremap <leader>c :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnex
 " ======================================================================
 "
 " Ag
-nnoremap <leader>a :Ag 
+nnoremap <leader>a :Ag<space>
 
 
 " NERDtree
@@ -348,11 +351,11 @@ let g:UltiSnipsSnippetDirectories = ["snippets"]
 " no checking for xhtml/html -- because of fluidtemplate for TYPO3
 " and no checking for scss.css because of CSS3 and SASS-Variable
 let g:syntastic_auto_jump = 0
-let g:syntastic_mode_map = { 
+let g:syntastic_mode_map = {
   \ 'mode': 'active',
   \ 'active_filetypes': ['ruby', 'php', 'javascript'],
-  \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'scss.css', 'css'] 
-  \ }    
+  \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'scss.css', 'css']
+  \ }
 
 
 " CtrlP
@@ -362,7 +365,7 @@ let g:ctrlp_map = '<leader>t'
 let g:ctrlp_switch_buffer = 0 " easier split screens
 let g:ctrlp_working_path_mode = 0 " dont try to change my working directory
 let g:ctrlp_max_height = 12
-let g:ctrlp_custom_ignore = { 
+let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|\.sass-cache)$',
   \ 'file': '\v\.(exe|so|dll|zip|gz|png|gif|jpg|tif|psd|pdf|mp4|webm|mp3)$',
   \ }

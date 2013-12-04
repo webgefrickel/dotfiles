@@ -48,6 +48,7 @@ brew cask install dropbox
 brew cask install firefox
 brew cask install f-lux
 brew cask install forklift
+brew cask install ghostlab
 brew cask install google-chrome
 brew cask install imagealpha
 brew cask install imageoptim
