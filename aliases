@@ -63,7 +63,7 @@ alias ta='tmux attach'
 
 
 # random usefull stuff
-alias dnsflush='_ dscacheutil -flushcache'
+alias dnsflush='sudo dscacheutil -flushcache'
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias psa="ps aux"
 
