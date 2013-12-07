@@ -20,22 +20,20 @@ Bundle 'chrisbra/NrrwRgn'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/supertab'
+Bundle 'gavinbeatty/dragvisuals.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
-Bundle 'leshill/vim-json'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
-Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+Bundle 'rizzatti/funcoo.vim'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'terryma/vim-expand-region'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
@@ -45,11 +43,12 @@ Bundle 'tpope/vim-unimpaired'
 " Additional syntaxes
 Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'juvenn/mustache.vim'
+Bundle 'leshill/vim-json'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
 Bundle 'webgefrickel/vim-typoscript'
 
 
@@ -73,14 +72,11 @@ set nowrap         " dont wrap lines around
 set sidescroll=10  " smoother side-scrolling
 set sidescrolloff=5
 
+set lazyredraw " Don't redraw while executing macros
+
 " nice Whitespace chars
 set list!
-set listchars=extends:»,precedes:«,tab:▸\ ,eol:¬,trail:·
-
-" add the dash to keywords -- makes better css/js/html search
-" dot this for specific files only (not in php/rb e.g.)
-au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword+=-
-au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
+set listchars=extends:»,precedes:«,tab:▸\ ,trail:·
 
 " Tabs and Whitespace
 set tabstop=2
@@ -94,7 +90,7 @@ set autoindent
 " use the mouse for scrolling, yeah
 set mouse=a
 
-" gui options
+" gui options for macvim
 if has('gui_running')
   set guifont=Menlo\ for\ Powerline:h12 " a nice font here
   set linespace=1    " menlo is nice, but very dense...
@@ -152,7 +148,7 @@ set backspace=indent,eol,start " Allow backspacing over everything in insert mod
 
 " Tab completion, and ignore some filetypes
 set wildmode=list:longest,list:full
-set wildignore+=.git,.svn,*.swp,*.bak,*.tmp,*.old
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*.,*/.DS_Store
 set wildmenu
 
 set nobackup            " no backups
@@ -160,7 +156,6 @@ set nowritebackup
 set noswapfile          " no swp-files
 
 " Better folding
-" TODO rework this and start using folds
 set foldmethod=indent
 setlocal foldignore=
 set foldnestmax=20      " max 20 levels of folding
@@ -169,6 +164,13 @@ set foldlevelstart=1    " deactivate folding on fileload
 
 set noerrorbells        " don't beep
 set visualbell          " don't beep
+
+" pasting and copying
+set pastetoggle=<F2> " toggle paste-mode for c&p with F2
+set clipboard=unnamed " osx + tmux fix
+
+ " get rid of the delay when pressing O (for example)
+set timeout timeoutlen=1000 ttimeoutlen=100
 
 
 " Custom key mappings and shortcuts
@@ -188,6 +190,13 @@ command! -bang WQ wq<bang>
 " set the leader to comma , and ; == : -- faster commands
 let mapleader = ","
 nnoremap ; :
+
+
+" Swap v and CTRL-V, because Block mode is more useful
+nnoremap v <C-V>
+nnoremap <C-V> v
+vnoremap v <C-V>
+vnoremap <C-V> v
 
 " jk nice behaviour (screen lines vs. shown lines)
 nnoremap j gj
@@ -227,9 +236,8 @@ nnoremap <leader>vs :source ~/.vimrc<cr>
 " Opens an edit command with the path of the currently edited file filled in
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
-" start a new document-wide seach-replace using abolish or normal search
+" start a new document-wide seach-replace
 nnoremap <leader>f :%s/
-nnoremap <leader>F :%S/
 
 " dont use the arrow keys in insert mode
 inoremap <up> <nop>
@@ -246,18 +254,20 @@ nnoremap <right> :bn<cr>
 " Bubble lines using unimpaired
 nmap <C-up> [e
 nmap <C-down> ]e
-vmap <C-up> [egv
-vmap <C-down> ]egv
+
+" use visual line/block bubbling with dragvisuals
+vmap <expr> <C-h> DVB_Drag('left')
+vmap <expr> <C-l> DVB_Drag('right')
+vmap <expr> <C-j> DVB_Drag('down')
+vmap <expr> <C-k> DVB_Drag('up')
+vmap <expr> <C-d> DVB_Duplicate()
+let g:DVB_TrimWS = 1
 
 " in/outdent Keymappings
 nmap <C-left> <<
 nmap <C-right> >>
 vmap <C-left> <gv
 vmap <C-right> >gv
-
-" pasting and copying
-set pastetoggle=<F2> " toggle paste-mode for c&p with F2
-set clipboard=unnamed
 
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
@@ -285,8 +295,7 @@ nmap <leader>sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 nnoremap <leader>w :cd %:p:h<CR>:pwd<CR>
 
 " reload files when set autoread is active with F5
-" TODO make this awesome reloading NERDtree + ctrl+p as well
-nnoremap <F5> :checktime<cr>
+lnoremap <F5> :checktime<CR>
 
 " folding shortcuts
 nnoremap <space> za
@@ -305,6 +314,8 @@ nnoremap <leader>A :Ag! <C-r><C-w><cr>
 
 " NERDtree
 nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>o :NERDTreeFind<cr>
+let NERDTreeAutoDeleteBuffer=1
 let NERDTreeMinimalUI=1
 let NERDTreeWinSize=50
 let NERDTreeShowHidden=1
@@ -326,17 +337,17 @@ vnoremap <leader>/ :TComment<CR>
 inoremap <leader>/ <Esc>:TComment<CR>
 
 
-" Tabularize (a == think align)
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a{ :Tabularize /{<CR>
-vmap <Leader>a{ :Tabularize /{<CR>
-nmap <Leader>a: :Tabularize /:<CR>
-vmap <Leader>a: :Tabularize /:<CR>
-nmap <Leader>a, :Tabularize /,<CR>
-vmap <Leader>a, :Tabularize /,<CR>
-nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+" Tabularize
+nmap <Leader>s= :Tabularize /=<CR>
+vmap <Leader>s= :Tabularize /=<CR>
+nmap <Leader>s{ :Tabularize /{<CR>
+vmap <Leader>s{ :Tabularize /{<CR>
+nmap <Leader>s: :Tabularize /:<CR>
+vmap <Leader>s: :Tabularize /:<CR>
+nmap <Leader>s, :Tabularize /,<CR>
+vmap <Leader>s, :Tabularize /,<CR>
+nmap <Leader>s<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>s<Bar> :Tabularize /<Bar><CR>
 
 
 " easymotion
@@ -361,20 +372,17 @@ let g:syntastic_mode_map = {
 " CtrlP (using Ag)
 nnoremap <leader>b :CtrlPBuffer<cr>
 nnoremap <leader>r :CtrlPMRU<cr>
+let g:ctrlp_map = '<leader>t'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
-let g:ctrlp_map = '<leader>t'
 let g:ctrlp_switch_buffer = 0 " easier split screens
 let g:ctrlp_working_path_mode = 0 " dont try to change my working directory
 let g:ctrlp_max_height = 12
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|\.sass-cache)$',
-  \ 'file': '\v\.(exe|so|dll|zip|gz|png|gif|jpg|tif|psd|pdf|mp4|webm|mp3)$',
-  \ }
 
 
 " Gist filetype-detection
 let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
 
 
 " airline config
@@ -398,8 +406,15 @@ let g:dash_map = {
 " spell correction on text-files
 autocmd BufRead,BufNewFile *.{md|rst|txt} setlocal spell
 
-" Phakefiles syntax is php
+" add the dash to keywords -- makes better css/js/html search
+" dot this for specific files only (not in php/rb e.g.)
+au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword+=-
+au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
+
+
+" Syntaxes for other files
 au BufNewFile,BufRead Phakefile set ft=php
+au BufNewFile,BufRead *.twig set ft=html
 
 " Remember last location/cursor in file
 if has("autocmd")
