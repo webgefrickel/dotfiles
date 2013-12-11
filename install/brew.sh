@@ -55,7 +55,7 @@ brew cask install imageoptim
 brew cask install istat-menus
 brew cask install iterm2
 brew cask install key-remap4-mac-book
-brew cask install libre-office
+brew cask install libre-effice
 brew cask install miro-video-converter
 brew cask install opera
 brew cask install pc-keyboardhack

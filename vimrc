@@ -12,7 +12,6 @@ Bundle 'gmarik/vundle'
 
 
 " plugins
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
 Bundle 'bling/vim-airline'
@@ -22,9 +21,11 @@ Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/supertab'
 Bundle 'gavinbeatty/dragvisuals.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'justinmk/vim-sneak'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
+Bundle 'mbbill/undotree'
 Bundle 'rizzatti/dash.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rking/ag.vim'
@@ -41,11 +42,14 @@ Bundle 'tpope/vim-unimpaired'
 
 
 " Additional syntaxes
-Bundle '2072/PHP-Indenting-for-VIm'
+" Bundle '2072/PHP-Indenting-for-VIm'
+Bundle 'beyondwords/vim-twig'
+Bundle 'elzr/vim-json'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'leshill/vim-json'
+Bundle 'juvenn/mustache.vim'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'spf13/PIV'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
@@ -170,7 +174,7 @@ set pastetoggle=<F2> " toggle paste-mode for c&p with F2
 set clipboard=unnamed " osx + tmux fix
 
  " get rid of the delay when pressing O (for example)
-set timeout timeoutlen=1000 ttimeoutlen=100
+set timeout timeoutlen=800 ttimeoutlen=100
 
 
 " Custom key mappings and shortcuts
@@ -190,7 +194,7 @@ command! -bang WQ wq<bang>
 " set the leader to comma , and ; == : -- faster commands
 let mapleader = ","
 nnoremap ; :
-
+nnoremap : ;
 
 " Swap v and CTRL-V, because Block mode is more useful
 nnoremap v <C-V>
@@ -230,7 +234,7 @@ nnoremap <leader>\ <C-w>v<C-w>l
 nnoremap <leader>- <C-w>s<C-w>j
 
 " open a new split and edit the vimrc // easy sourcing vimrc
-nnoremap <leader>v <C-w>v<C-w>l :e ~/.vimrc<cr>
+nnoremap <leader>ve <C-w>v<C-w>l :e ~/.vimrc<cr>
 nnoremap <leader>vs :source ~/.vimrc<cr>
 
 " Opens an edit command with the path of the currently edited file filled in
@@ -254,6 +258,8 @@ nnoremap <right> :bn<cr>
 " Bubble lines using unimpaired
 nmap <C-up> [e
 nmap <C-down> ]e
+vmap <C-up> [egv
+vmap <C-down> ]egv
 
 " use visual line/block bubbling with dragvisuals
 vmap <expr> <C-h> DVB_Drag('left')
@@ -297,10 +303,6 @@ nnoremap <leader>w :cd %:p:h<CR>:pwd<CR>
 " reload files when set autoread is active with F5
 lnoremap <F5> :checktime<CR>
 
-" folding shortcuts
-nnoremap <space> za
-
-
 " when over a class in html hit fc to find that class in css/scss/js
 nnoremap <leader>c :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnext<CR>
 
@@ -331,6 +333,10 @@ nnoremap <silent> <leader>gp :Git push<CR><C-w>20+
 nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
 
 
+" Undotree
+nnoremap <F3> :UndotreeToggle<cr>
+
+
 " TComment
 nnoremap <leader>/ :TComment<CR>
 vnoremap <leader>/ :TComment<CR>
@@ -352,6 +358,17 @@ vmap <Leader>s<Bar> :Tabularize /<Bar><CR>
 
 " easymotion
 let g:EasyMotion_leader_key = '<leader>m'
+
+
+" vim sneak
+let g:sneak#use_ic_scs = 1
+let g:sneak#map_netrw = 0
+let g:sneak#streak = 1
+
+nmap <Bslash> <Plug>SneakNext
+nmap \| <Plug>SneakPrevious
+xmap <Bslash> <Plug>VSneakNext
+xmap \| <Plug>VSneakPrevious
 
 
 " ultisnips
@@ -407,14 +424,13 @@ let g:dash_map = {
 autocmd BufRead,BufNewFile *.{md|rst|txt} setlocal spell
 
 " add the dash to keywords -- makes better css/js/html search
-" dot this for specific files only (not in php/rb e.g.)
+" do this for specific files only (not in php/rb e.g.)
 au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword+=-
 au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
 
 
 " Syntaxes for other files
 au BufNewFile,BufRead Phakefile set ft=php
-au BufNewFile,BufRead *.twig set ft=html
 
 " Remember last location/cursor in file
 if has("autocmd")

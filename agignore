@@ -2,7 +2,13 @@
 *.min.css
 *.min.js
 *.min.map
+*.psd
+*.ai
+*.svg
 *.jpg
 *.gif
 *.png
 *.ico
+_srcs
+node_modules
+.sass-cache
