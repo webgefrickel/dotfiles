@@ -356,15 +356,10 @@ nmap <Leader>s<Bar> :Tabularize /<Bar><CR>
 vmap <Leader>s<Bar> :Tabularize /<Bar><CR>
 
 
-" easymotion
-let g:EasyMotion_leader_key = '<leader>m'
-
-
 " vim sneak
 let g:sneak#use_ic_scs = 1
 let g:sneak#map_netrw = 0
 let g:sneak#streak = 1
-
 nmap <Bslash> <Plug>SneakNext
 nmap \| <Plug>SneakPrevious
 xmap <Bslash> <Plug>VSneakNext
