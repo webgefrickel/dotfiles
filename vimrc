@@ -180,21 +180,12 @@ set timeout timeoutlen=800 ttimeoutlen=100
 " Custom key mappings and shortcuts
 " ======================================================================
 
-" Fix some common typos
-command! -bang E e<bang>
-command! -bang Q q<bang>
-command! -bang W w<bang>
-command! -bang QA qa<bang>
-command! -bang Qa qa<bang>
-command! -bang Wa wa<bang>
-command! -bang WA wa<bang>
-command! -bang Wq wq<bang>
-command! -bang WQ wq<bang>
-
 " set the leader to comma , and ; == : -- faster commands
 let mapleader = ","
 nnoremap ; :
 nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 
 " Swap v and CTRL-V, because Block mode is more useful
 nnoremap v <C-V>
@@ -261,14 +252,6 @@ nmap <C-down> ]e
 vmap <C-up> [egv
 vmap <C-down> ]egv
 
-" use visual line/block bubbling with dragvisuals
-vmap <expr> <C-h> DVB_Drag('left')
-vmap <expr> <C-l> DVB_Drag('right')
-vmap <expr> <C-j> DVB_Drag('down')
-vmap <expr> <C-k> DVB_Drag('up')
-vmap <expr> <C-d> DVB_Duplicate()
-let g:DVB_TrimWS = 1
-
 " in/outdent Keymappings
 nmap <C-left> <<
 nmap <C-right> >>
@@ -306,6 +289,8 @@ lnoremap <F5> :checktime<CR>
 " when over a class in html hit fc to find that class in css/scss/js
 nnoremap <leader>c :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnext<CR>
 
+" short command to strip trainling whitepsace
+nnoremap <leader>s ms:%s/\s\+$//e<cr>:noh<cr>`s
 
 " Plugins
 " ======================================================================
@@ -331,6 +316,15 @@ nnoremap <silent> <leader>gb :Gblame<CR><C-w>20+
 nnoremap <silent> <leader>gl :Glog<CR><C-w>20+
 nnoremap <silent> <leader>gp :Git push<CR><C-w>20+
 nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
+
+
+" use visual line/block bubbling with dragvisuals
+vmap <expr> <C-h> DVB_Drag('left')
+vmap <expr> <C-l> DVB_Drag('right')
+vmap <expr> <C-j> DVB_Drag('down')
+vmap <expr> <C-k> DVB_Drag('up')
+vmap <expr> <C-d> DVB_Duplicate()
+let g:DVB_TrimWS = 1
 
 
 " Undotree
@@ -426,6 +420,7 @@ au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
 
 " Syntaxes for other files
 au BufNewFile,BufRead Phakefile set ft=php
+au BufNewFile,BufRead *.twig set ft=html.twig
 
 " Remember last location/cursor in file
 if has("autocmd")
