@@ -8,6 +8,7 @@ npm install -g npm-check-updates
 npm install -g jshint
 npm install -g uglify-js
 npm install -g jake
+npm install -g js-beautify
 npm install -g jsonlint
 npm install -g recursive-blame
 npm install -g bower

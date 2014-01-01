@@ -136,8 +136,8 @@ var fullhd = slate.operation('move', {
 var hyper = ':shift,ctrl,alt,cmd';
 var hyperModal = hyper + ',s:toggle';
 
-slate.bind('tab:cmd', hint, false);
-slate.bind('tab:shift,cmd', grid, false);
+slate.bind('tab' + hyper, hint, false);
+slate.bind('g' + hyper, grid, false);
 
 // most important apps on easy accesible keys
 slate.bind('q' + hyper, iterm, false);

@@ -68,8 +68,8 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
-# Disable hibernation (speeds up entering sleep mode)
-sudo pmset -a hibernatemode 0
+# Hibernation for SSD and max filevault security
+sudo pmset -a destroyfvkeyonstandby 1 hibernatemode 25
 
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0

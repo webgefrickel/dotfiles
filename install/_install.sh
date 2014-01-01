@@ -26,6 +26,12 @@ brew cask install forklift
 brew cask install iterm2
 brew cask install dropbox
 
+# set zsh to the default
+sudo vim /etc/shells
+chsh -s /usr/local/bin/zsh
+/usr/bin/env zsh
+sudo mv /etc/zshenv /etc/zprofile
+
 # install all submodules
 git submodule init
 git submodule update
@@ -43,8 +49,6 @@ ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh/pure/pure.zsh /usr/local/share/zsh/site-functions/prompt_pure_setup
+ln -s ~/dotfiles/tmux/tmuxifier ~/.tmuxifier
 
-chsh -s `which zsh`
-/usr/bin/env/ zsh
-source ~/.zshrc
-sudo mv /etc/zshenv /etc/zprofile
+# now restart your terminal/iterm2 and hope for the best

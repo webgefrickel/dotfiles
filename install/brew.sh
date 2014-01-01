@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# NOTE install xcode first / via app store
-# this re-updates the command line tools
-xcode-select --install
-
 brew tap homebrew/dupes
 brew tap josegonzalez/homebrew-php
 
@@ -11,6 +7,7 @@ brew tap josegonzalez/homebrew-php
 brew install curl
 brew install ghostscript
 brew install git-flow
+brew install httpd
 brew install macvim
 brew install markdown
 brew install mcrypt
@@ -21,7 +18,6 @@ brew install php55
 brew install php55-mcrypt
 brew install php55-xdebug
 brew install composer
-brew install phake
 brew install rbenv
 brew install ruby-build
 brew install subversion
@@ -34,6 +30,7 @@ brew install wget
 brew cask install adium
 brew cask install alfred
 brew cask install amadeus-pro
+brew cask install bartender
 brew cask install bill
 brew cask install carbon-copy-cloner
 brew cask install doxie
@@ -45,11 +42,11 @@ brew cask install google-chrome
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install istat-menus
-brew cask install key-remap4-mac-book
-brew cask install libre-office
+brew cask install keyremap4macbook
+brew cask install libreoffice
 brew cask install miro-video-converter
 brew cask install opera
-brew cask install pc-keyboardhack
+brew cask install pckeyboardhack
 brew cask install sequel-pro
 brew cask install simple-comic
 brew cask install skype
