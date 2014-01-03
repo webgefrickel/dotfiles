@@ -38,7 +38,7 @@ git submodule update
 
 # link the dotfiles
 ln -s ~/dotfiles/agignore ~/.agignore
-ln -s ~/dotfiles/editorconf ~/.editorconf
+ln -s ~/dotfiles/editorconfig ~/.editorconfig
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/jshintrc ~/.jshintrc

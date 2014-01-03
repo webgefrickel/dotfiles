@@ -58,6 +58,16 @@ brew cask install truecrypt
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install vlc
+brew cask install wedge
 brew cask install xld
+
+# quicklook stuff
+brew cask install qlcolorcode
+brew cask install qlstephen
+brew cask install qlmarkdown
+brew cask install quicklook-json
+brew cask install quicklook-csv
+brew cask install betterzipql
+qlmanage -r
 
 # the rest -> appstore or adobe or others :-)

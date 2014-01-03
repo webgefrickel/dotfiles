@@ -12,6 +12,8 @@ export PATH=$HOME/.rbenv/shims:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$HOME/.tmuxifier/bin:$PATH
 
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+
 fpath=($HOME/dotfiles/zsh/zsh-completions/src $fpath)
 
 export MANPATH=/usr/local/share/man:$MANPATH

@@ -37,8 +37,8 @@ alias gmo='$EDITOR $(git ls-files -m)'
 
 
 # aliases for apache and mysql
-alias apachestart='sudo /usr/sbin/apachectl start'
-alias apachestop='sudo /usr/sbin/apachectl stop'
+alias apachestart='sudo apachectl start'
+alias apachestop='sudo apachectl stop'
 alias mysqlstart='mysql.server start'
 alias mysqlstop='mysql.server stop'
 alias dev='apachestart && mysqlstart'
@@ -78,9 +78,9 @@ alias upall='sysup && brewup && gemup && npmup'
 
 # easy hosts / apache / php editing
 alias hosts='sudo vim /etc/hosts'
-alias vhosts='sudo vim /etc/apache2/extra/httpd-vhosts.conf'
-alias phpini='vim /usr/local/etc/php/5.4/php.ini'
-alias http='sudo vim /etc/apache2/httpd.conf'
+alias vhosts='sudo vim /usr/local/etc/apache2/extra/httpd-vhosts.conf'
+alias phpini='vim /usr/local/etc/php/5.5/php.ini'
+alias http='vim /usr/local/etc/apache2/httpd.conf'
 
 
 # vagrant stuff
