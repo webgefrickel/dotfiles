@@ -61,7 +61,6 @@ setopt long_list_jobs
 source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/dotfiles/zsh/forklift/forklift.plugin.zsh
 
-
 # load tmuxifier
 eval "$(tmuxifier init -)"
 

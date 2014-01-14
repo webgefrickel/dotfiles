@@ -45,13 +45,13 @@ brew cask install istat-menus
 brew cask install keyremap4macbook
 brew cask install libreoffice
 brew cask install miro-video-converter
+brew cask install openemu
 brew cask install opera
 brew cask install pckeyboardhack
 brew cask install sequel-pro
 brew cask install simple-comic
 brew cask install skype
 brew cask install slate
-brew cask install sourcetree
 brew cask install things
 brew cask install transmission
 brew cask install truecrypt
@@ -68,6 +68,13 @@ brew cask install qlmarkdown
 brew cask install quicklook-json
 brew cask install quicklook-csv
 brew cask install betterzipql
+
+# set some options for qlcolorcode
+defaults write org.n8gray.QLColorCode font Menlo
+defaults write org.n8gray.QLColorCode fontSizePoints 8
+# maybe you have to copy solarized-dark into the caskroom to use it
+# have a look a the most current github repo for qlcolorcode
+defaults write org.n8gray.QLColorCode hlTheme solarized-dark
 qlmanage -r
 
 # the rest -> appstore or adobe or others :-)

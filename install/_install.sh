@@ -10,6 +10,7 @@ brew doctor
 
 # tap the casks
 brew tap phinze/homebrew-cask
+brew tap caskroom/versions
 
 # brew paths
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -23,7 +24,7 @@ brew install brew-cask
 brew install coreutils
 
 brew cask install forklift
-brew cask install iterm2
+brew cask install iterm2-beta
 brew cask install dropbox
 
 # set zsh to the default

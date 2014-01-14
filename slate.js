@@ -42,16 +42,16 @@ var grid = slate.operation('grid', {
   'padding': 10,
   'grids': {
     '0': {
-      'width': 12,
-      'height': 8
+      'width': 6,
+      'height': 2
     },
     '1': {
-      'width': 12,
-      'height': 8
+      'width': 6,
+      'height': 2
     },
     '2': {
-      'width': 12,
-      'height': 8
+      'width': 6,
+      'height': 2
     }
   }
 });
@@ -62,8 +62,7 @@ var iterm = slate.operation('focus', { 'app': 'iTerm' });
 var chrome = slate.operation('focus', { 'app': 'Google Chrome' });
 var mail = slate.operation('focus', { 'app': 'Mail' });
 var fork = slate.operation('focus', { 'app': 'ForkLift' });
-var ical = slate.operation('focus', { 'app': 'iCal' });
-var fox = slate.operation('focus', { 'app': 'Firefox' });
+var things = slate.operation('focus', { 'app': 'Things' });
 
 
 var fullscreen = slate.operation('move', {
@@ -144,7 +143,7 @@ slate.bind('q' + hyper, iterm, false);
 slate.bind('w' + hyper, chrome, false);
 slate.bind('e' + hyper, mail, false);
 slate.bind('r' + hyper, fork, false);
-slate.bind('t' + hyper, ical, false);
+slate.bind('t' + hyper, things, false);
 
 // movements in modal mode with m
 slate.bind('h' + hyperModal, lefthalf, false);

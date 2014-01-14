@@ -19,7 +19,6 @@ Bundle 'chrisbra/NrrwRgn'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/supertab'
-Bundle 'gavinbeatty/dragvisuals.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'justinmk/vim-sneak'
 Bundle 'kien/ctrlp.vim'
@@ -246,17 +245,11 @@ nnoremap <down> :blast<cr>
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
 
-" Bubble lines using unimpaired
-nmap <C-up> [e
-nmap <C-down> ]e
-vmap <C-up> [egv
-vmap <C-down> ]egv
-
-" in/outdent Keymappings
-nmap <C-left> <<
-nmap <C-right> >>
-vmap <C-left> <gv
-vmap <C-right> >gv
+" Bubble/indent lines using unimpaired
+nmap <C-k> [e
+nmap <C-j> ]e
+nmap <C-h> <<
+nmap <C-l> >>
 
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
@@ -316,15 +309,6 @@ nnoremap <silent> <leader>gb :Gblame<CR><C-w>20+
 nnoremap <silent> <leader>gl :Glog<CR><C-w>20+
 nnoremap <silent> <leader>gp :Git push<CR><C-w>20+
 nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
-
-
-" use visual line/block bubbling with dragvisuals
-vmap <expr> <C-h> DVB_Drag('left')
-vmap <expr> <C-l> DVB_Drag('right')
-vmap <expr> <C-j> DVB_Drag('down')
-vmap <expr> <C-k> DVB_Drag('up')
-vmap <expr> <C-d> DVB_Duplicate()
-let g:DVB_TrimWS = 1
 
 
 " Undotree
