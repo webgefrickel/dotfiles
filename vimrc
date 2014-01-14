@@ -250,6 +250,10 @@ nmap <C-k> [e
 nmap <C-j> ]e
 nmap <C-h> <<
 nmap <C-l> >>
+vmap <C-k> [egv
+vmap <C-j> ]egv
+vmap <C-h> <gv
+vmap <C-l> >gv
 
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
