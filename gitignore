@@ -16,6 +16,7 @@
 .sass-cache
 *.sass-cache
 .revision
+.rev
 _srcs
 log
 tmp

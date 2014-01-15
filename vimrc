@@ -93,6 +93,12 @@ set autoindent
 " use the mouse for scrolling, yeah
 set mouse=a
 
+" use ag for grepping
+set grepprg=ag
+
+" no delay for escaping
+set noesckeys
+
 " gui options for macvim
 if has('gui_running')
   set guifont=Menlo\ for\ Powerline:h12 " a nice font here

@@ -79,15 +79,16 @@ alias upall='sysup && brewup && gemup && npmup'
 # easy hosts / apache / php editing
 alias hosts='sudo vim /etc/hosts'
 alias vhosts='sudo vim /usr/local/etc/apache2/extra/httpd-vhosts.conf'
-alias phpini='vim /usr/local/etc/php/5.5/php.ini'
+alias php55ini='vim /usr/local/etc/php/5.5/php.ini'
+alias php54ini='vim /usr/local/etc/php/5.4/php.ini'
 alias http='vim /usr/local/etc/apache2/httpd.conf'
 
 
 # vagrant stuff
-vu='vagrant up'
-vr='vagrant reload'
-vp='vagrant provision'
-vh='vagrant halt'
+alias vu='vagrant up'
+alias vr='vagrant reload'
+alias vp='vagrant provision'
+alias vh='vagrant halt'
 
 
 # often used folder shortcuts
