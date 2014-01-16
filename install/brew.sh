@@ -24,6 +24,7 @@ brew install subversion
 brew install the_silver_searcher
 brew install unrar
 brew install wget
+brew install youtube-dl
 
 # brew cask and install software
 

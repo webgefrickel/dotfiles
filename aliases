@@ -46,11 +46,6 @@ alias devs='apachestop && mysqlstop'
 alias devr='devs && dev'
 
 
-# dandelion deployment shortcuts
-alias deploy='dandelion deploy'
-alias status='dandelion status'
-
-
 # grunt
 alias gr='grunt'
 alias grw='grunt watch'

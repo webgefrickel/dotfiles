@@ -14,6 +14,7 @@ Bundle 'gmarik/vundle'
 " plugins
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'editorconfig/editorconfig-vim'
@@ -22,6 +23,7 @@ Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'justinmk/vim-sneak'
 Bundle 'kien/ctrlp.vim'
+Bundle 'kshenoy/vim-signature'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mbbill/undotree'
@@ -55,7 +57,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'webgefrickel/vim-typoscript'
 
 
-" Color themes
+" Color themes -- one to rule them all!
 Bundle 'altercation/vim-colors-solarized'
 
 
@@ -120,10 +122,12 @@ endif
 
 
 set t_Co=256
-colorscheme solarized
 set background=dark
+colorscheme solarized
 let g:solarized_termtrans = 1
 let g:solarized_contrast = 'high'
+" minor optical fix vor vim-gitgutter / syntastic / vim-signature
+highlight SignColumn ctermbg=8
 
 set fillchars=""
 
@@ -188,9 +192,7 @@ set timeout timeoutlen=800 ttimeoutlen=100
 " set the leader to comma , and ; == : -- faster commands
 let mapleader = ","
 nnoremap ; :
-nnoremap : ;
 vnoremap ; :
-vnoremap : ;
 
 " Swap v and CTRL-V, because Block mode is more useful
 nnoremap v <C-V>
@@ -398,6 +400,9 @@ let g:dash_map = {
   \ 'javascript' : 'jquery'
   \ }
 
+
+" php syntax stuff
+let g:DisableAutoPHPFolding = 1
 
 
 " Other functions / Onload, Autocommands
