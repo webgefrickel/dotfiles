@@ -72,6 +72,65 @@ var fullscreen = slate.operation('move', {
   'height': 'screenSizeY'
 });
 
+var fullheight = slate.operation('move', {
+  'x': 'windowTopLeftX',
+  'y': 'windowTopLeftY',
+  'width': 'windowSizeX',
+  'height': 'screenSizeY'
+});
+
+var resizeToBottom = slate.operation('resize', {
+  'width': '+0',
+  'height': '+10'
+});
+
+var resizeToRight = slate.operation('resize', {
+  'width': '+10',
+  'height': '+0'
+});
+
+var throwNext = function(win) {
+  if (!win) {
+    return;
+  }
+  var winRect = win.rect();
+  var screen = win.screen().visibleRect();
+ 
+  var newX = (winRect.x - screen.x) / screen.width + '*screenSizeX+screenOriginX';
+  var newY = (winRect.y - screen.y) / screen.height + '*screenSizeY+screenOriginY';
+  var newWidth = winRect.width / screen.width + '*screenSizeX';
+  var newHeight = winRect.height/screen.height + '*screenSizeY';
+  var throwNext = slate.operation('throw', {
+    'x': newX,
+    'y': newY,
+    'width': newWidth,
+    'height': newHeight,
+    'screen': 'next'
+  });
+  win.doOperation(throwNext);
+};
+
+var throwPrev = function(win) {
+  if (!win) {
+    return;
+  }
+  var winRect = win.rect();
+  var screen = win.screen().visibleRect();
+ 
+  var newX = (winRect.x - screen.x) / screen.width + '*screenSizeX+screenOriginX';
+  var newY = (winRect.y - screen.y) / screen.height + '*screenSizeY+screenOriginY';
+  var newWidth = winRect.width / screen.width + '*screenSizeX';
+  var newHeight = winRect.height/screen.height + '*screenSizeY';
+  var throwPrev = slate.operation('throw', {
+    'x': newX,
+    'y': newY,
+    'width': newWidth,
+    'height': newHeight,
+    'screen': 'prev'
+  });
+  win.doOperation(throwPrev);
+};
+
 var lefthalf = slate.operation('move', {
   'x': 'screenOriginX',
   'y': 'screenOriginY',
@@ -154,5 +213,11 @@ slate.bind('1' + hyperModal, mobile, false);
 slate.bind('2' + hyperModal, tablet, false);
 slate.bind('3' + hyperModal, desktop, false);
 slate.bind('4' + hyperModal, fullhd, false);
+
 slate.bind('space' + hyperModal, fullscreen, false);
+slate.bind('f' + hyperModal, fullheight, false);
+slate.bind('right' + hyperModal, resizeToRight, false);
+slate.bind('down' + hyperModal, resizeToBottom, false);
+slate.bind(']' + hyperModal, throwNext, false);
+slate.bind('[' + hyperModal, throwPrev, false);
 

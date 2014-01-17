@@ -20,6 +20,7 @@ brew install php55-xdebug
 brew install composer
 brew install rbenv
 brew install ruby-build
+brew install ssh-copy-id
 brew install subversion
 brew install the_silver_searcher
 brew install unrar
