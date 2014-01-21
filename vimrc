@@ -14,7 +14,6 @@ Bundle 'gmarik/vundle'
 " plugins
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
-Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'editorconfig/editorconfig-vim'
@@ -27,6 +26,7 @@ Bundle 'kshenoy/vim-signature'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mbbill/undotree'
+Bundle 'mhinz/vim-signify'
 Bundle 'rizzatti/dash.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rking/ag.vim'
@@ -43,7 +43,6 @@ Bundle 'tpope/vim-unimpaired'
 
 
 " Additional syntaxes
-" Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'beyondwords/vim-twig'
 Bundle 'elzr/vim-json'
 Bundle 'hail2u/vim-css3-syntax'
@@ -76,6 +75,9 @@ set relativenumber " relative line numbers are mothereffin awesome -- see how fa
 set nowrap         " dont wrap lines around
 set sidescroll=10  " smoother side-scrolling
 set sidescrolloff=5
+set scrolljump=5   " Lines to scroll when cursor leaves screen
+set scrolloff=3    " Minimum lines to keep above and below cursor
+
 
 set lazyredraw " Don't redraw while executing macros
 
@@ -126,6 +128,7 @@ set background=dark
 colorscheme solarized
 let g:solarized_termtrans = 1
 let g:solarized_contrast = 'high'
+
 " minor optical fix vor vim-gitgutter / syntastic / vim-signature
 highlight SignColumn ctermbg=8
 
@@ -296,6 +299,15 @@ nnoremap <leader>c :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnex
 
 " short command to strip trainling whitepsace
 nnoremap <leader>s ms:%s/\s\+$//e<cr>:noh<cr>`s
+
+" Find merge conflict markers
+map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
+
+" For when you forget to sudo.. Really Write the file.
+cmap w!! w !sudo tee % >/dev/null
+
+" Map <Leader>ff to display all lines with keyword under cursor and ask which one to jump to
+nmap <Leader>j [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " Plugins
 " ======================================================================

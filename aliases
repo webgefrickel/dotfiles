@@ -57,12 +57,6 @@ alias t='tmux -u -2'
 alias ta='tmux attach'
 
 
-# random usefull stuff
-alias dnsflush='sudo dscacheutil -flushcache'
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-alias psa="ps aux"
-
-
 # all in one homebrew, gem update commands
 alias brewup='brew update && brew upgrade && brew cleanup && brew linkapps'
 alias gemup='gem update --system && gem update && gem cleanup'
@@ -91,5 +85,20 @@ alias drop='cd ~/Dropbox && ls -al'
 alias web='cd ~/Sites && ls -al'
 alias rep='cd ~/Repositories && ls -al'
 alias dot='cd ~/Dotfiles && ls -al'
+
+
+# random usefull stuff
+alias dnsflush='sudo dscacheutil -flushcache'
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias psa="ps aux"
+
+
+# imagemagick downsampling shortcuts (c&p retina folder, run, done!)
+# http://www.imagemagick.org/Usage/filter/nicolas/#downsample
+alias png25='find . -name "*.png" | xargs mogrify -colorspace RGB -filter LanczosRadius -distort Resize 25% -colorspace sRGB'
+alias jpg25='find . -name "*.jpg" | xargs mogrify -colorspace RGB -filter LanczosRadius -distort Resize 25% -colorspace sRGB'
+alias png50='find . -name "*.png" | xargs mogrify -colorspace RGB -filter LanczosRadius -distort Resize 50% -colorspace sRGB'
+alias jpg50='find . -name "*.jpg" | xargs mogrify -colorspace RGB -filter LanczosRadius -distort Resize 50% -colorspace sRGB'
+
 
 

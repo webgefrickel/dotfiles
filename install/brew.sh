@@ -8,6 +8,7 @@ brew install curl
 brew install ghostscript
 brew install git-flow
 brew install httpd
+brew install imagemagick
 brew install macvim
 brew install markdown
 brew install mcrypt
