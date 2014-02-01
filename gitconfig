@@ -27,6 +27,7 @@
 
 [alias]
   git = !git
+  cl = clean -f -d
   st = status
   cm = commit
   co = checkout
@@ -41,7 +42,6 @@
   unst = reset HEAD
   hub = push origin master
   fac = push origin refac
-  subup = submodule foreach git pull
   rs = reset HEAD --hard
   hist = log --pretty=format:\"%h | %ad | %an | %s%d \" --graph --date=local
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit

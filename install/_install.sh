@@ -47,6 +47,7 @@ ln -s ~/dotfiles/slate.js ~/.slate.js
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh/pure/pure.zsh /usr/local/share/zsh/site-functions/prompt_pure_setup
 ln -s ~/dotfiles/tmux/tmuxifier ~/.tmuxifier

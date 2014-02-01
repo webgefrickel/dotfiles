@@ -10,8 +10,6 @@ curl https://npmjs.org/install.sh | sh
 # set npm to use npm_lazy
 npm install -g npm_lazy
 npm config set registry http://localhost:8080/
-grepkill npm_lazy
-npm_lazy &
 
 npm install -g bower
 npm install -g dploy
