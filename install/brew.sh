@@ -2,11 +2,13 @@
 
 brew tap homebrew/dupes
 brew tap josegonzalez/homebrew-php
+brew tap thoughtbot/formulae
 
 # install brew packages
 brew install curl
 brew install ghostscript
 brew install git-flow
+brew install gitsh
 brew install httpd
 brew install imagemagick
 brew install macvim
@@ -39,6 +41,7 @@ brew cask install carbon-copy-cloner
 brew cask install doxie
 brew cask install dropbox
 brew cask install firefox
+brew cask install fontprep
 brew cask install f-lux
 brew cask install ghostlab
 brew cask install google-chrome
@@ -78,6 +81,7 @@ defaults write org.n8gray.QLColorCode fontSizePoints 8
 # maybe you have to copy solarized-dark into the caskroom to use it
 # have a look a the most current github repo for qlcolorcode
 defaults write org.n8gray.QLColorCode hlTheme solarized-dark
+defaults write org.n8gray.QLColorCode extraHLFlags '--replace-tabs=2'
 qlmanage -r
 
 # the rest -> appstore or adobe or others :-)

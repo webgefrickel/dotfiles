@@ -306,8 +306,8 @@ map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
 
-" Map <Leader>ff to display all lines with keyword under cursor and ask which one to jump to
-nmap <Leader>j [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+" Map <Leader>j to display all lines with keyword under cursor and ask which one to jump to
+nmap <Leader>j [I:let nr = input("Enter line number: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " Plugins
 " ======================================================================
@@ -432,6 +432,7 @@ au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
 " Syntaxes for other files
 au BufNewFile,BufRead Phakefile set ft=php
 au BufNewFile,BufRead *.twig set ft=html.twig
+au BufNewFile,BufRead *.{txt,ts} set ft=typoscript
 
 " Remember last location/cursor in file
 if has("autocmd")
