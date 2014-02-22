@@ -11,11 +11,11 @@ brew install git-flow
 brew install gitsh
 brew install httpd
 brew install imagemagick
-brew install macvim
+brew install macvim --with-cscope --with-lua --HEAD
 brew install markdown
 brew install mcrypt
 brew install mysql
-brew install node
+brew install node --without-npm
 brew install reattach-to-user-namespace
 brew install php55
 brew install php55-mcrypt

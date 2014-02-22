@@ -23,6 +23,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'justinmk/vim-sneak'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kshenoy/vim-signature'
+Bundle "mattn/emmet-vim"
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mbbill/undotree'
@@ -46,10 +47,10 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'beyondwords/vim-twig'
 Bundle 'elzr/vim-json'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'juvenn/mustache.vim'
+Bundle 'joshtronic/php.vim'
+Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'spf13/PIV'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
@@ -68,7 +69,7 @@ set ruler          " show where you are in the document
 set cursorline     " highligh current line
 set ttyfast        " faster terminal usage
 set showcmd        " show me what im doing. helps alot
-set showmode       " show active mode
+set noshowmode     " dont show active mode -- we use airline for that
 set hidden         " allows for switching buffers without writing
 set relativenumber " relative line numbers are mothereffin awesome -- see how far your commands will go
 
@@ -129,7 +130,7 @@ colorscheme solarized
 let g:solarized_termtrans = 1
 let g:solarized_contrast = 'high'
 
-" minor optical fix vor vim-gitgutter / syntastic / vim-signature
+" minor optical fix vor syntastic / vim-signature
 highlight SignColumn ctermbg=8
 
 set fillchars=""
@@ -194,6 +195,10 @@ set timeout timeoutlen=800 ttimeoutlen=100
 
 " set the leader to comma , and ; == : -- faster commands
 let mapleader = ","
+let g:mapleader = ","
+let maplocalleader = ","
+let g:maplocalleader = ","
+
 nnoremap ; :
 vnoremap ; :
 
@@ -413,8 +418,11 @@ let g:dash_map = {
   \ }
 
 
-" php syntax stuff
-let g:DisableAutoPHPFolding = 1
+" emmet -- only use the html-expansion
+let g:user_emmet_install_global = 0
+autocmd FileType html,php,twig EmmetInstall
+imap <expr> <C-e> emmet#expandAbbrIntelligent("\<C-e>")
+
 
 
 " Other functions / Onload, Autocommands
@@ -431,6 +439,7 @@ au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
 
 " Syntaxes for other files
 au BufNewFile,BufRead Phakefile set ft=php
+au BufNewFile,BufRead *.twig set ft=html.twig
 au BufNewFile,BufRead *.twig set ft=html.twig
 au BufNewFile,BufRead *.{txt,ts} set ft=typoscript
 
