@@ -33,6 +33,7 @@ alias ggps='git push origin $(current_branch)'
 alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
 alias gitrm='git rm $(git ls-files --deleted)'
 alias gsmu='git submodule init && git submodule update'
+alias gsmuu='git submodule foreach git pull origin master'
 alias gsvn='git checkout master && git svn fetch && git merge dev && git svn rebase && git svn dcommit'
 alias gmo='$EDITOR $(git ls-files -m)'
 
