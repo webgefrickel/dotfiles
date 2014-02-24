@@ -1,92 +1,147 @@
-" nocompatible mode for a real vim
-set nocompatible
+"======================================================================
+" Neobundle Setup
+"======================================================================
 
-" switch filetype of before starting vundle
-filetype off
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-" load the vundle bundle of course
-Bundle 'gmarik/vundle'
-
-
-" plugins
-Bundle 'Raimondi/delimitMate'
-Bundle 'SirVer/ultisnips'
-Bundle 'bling/vim-airline'
-Bundle 'chrisbra/NrrwRgn'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'edsono/vim-matchit'
-Bundle 'ervandew/supertab'
-Bundle 'godlygeek/tabular'
-Bundle 'justinmk/vim-sneak'
-Bundle 'kien/ctrlp.vim'
-Bundle 'kshenoy/vim-signature'
-Bundle "mattn/emmet-vim"
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'mbbill/undotree'
-Bundle 'mhinz/vim-signify'
-Bundle 'rizzatti/dash.vim'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'terryma/vim-expand-region'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 
+"======================================================================
+" Plugins and useful stuff/dependencies
+"======================================================================
+
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'chrisbra/NrrwRgn'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'edsono/vim-matchit'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'justinmk/vim-sneak'
+NeoBundle 'kshenoy/vim-signature'
+NeoBundle "mattn/emmet-vim"
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mhinz/vim-signify'
+NeoBundle 'rizzatti/dash.vim'
+NeoBundle 'rizzatti/funcoo.vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'terryma/vim-expand-region'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-ragtag'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+  \     'windows' : 'make -f make_mingw32.mak',
+  \     'cygwin' : 'make -f make_cygwin.mak',
+  \     'mac' : 'make -f make_mac.mak',
+  \     'unix' : 'make -f make_unix.mak',
+  \    },
+  \ }
+
+
+"======================================================================
 " Additional syntaxes
-Bundle 'beyondwords/vim-twig'
-Bundle 'elzr/vim-json'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'joshtronic/php.vim'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'othree/html5.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'webgefrickel/vim-typoscript'
+"======================================================================
+
+NeoBundle 'beyondwords/vim-twig'
+NeoBundle 'elzr/vim-json'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'joshtronic/php.vim'
+NeoBundle 'mustache/vim-mustache-handlebars'
+NeoBundle 'othree/html5.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'tpope/vim-git'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'webgefrickel/vim-typoscript'
 
 
-" Color themes -- one to rule them all!
-Bundle 'altercation/vim-colors-solarized'
+"======================================================================
+" Color themes
+"======================================================================
+
+NeoBundle 'altercation/vim-colors-solarized'
 
 
-" and reset auto-filetype after loading all bundles
+"======================================================================
+" Default sane config
+"======================================================================
+
 filetype plugin indent on
 syntax on
 
-set ruler          " show where you are in the document
-set cursorline     " highligh current line
-set ttyfast        " faster terminal usage
-set showcmd        " show me what im doing. helps alot
-set noshowmode     " dont show active mode -- we use airline for that
-set hidden         " allows for switching buffers without writing
-set relativenumber " relative line numbers are mothereffin awesome -- see how far your commands will go
+set autoread                               " Automatically read a file that has changed on disk
+set backspace=indent,eol,start             " Allow backspacing over everything in insert mode
+set cursorline                             " highligh current line
+set encoding=utf-8                         " Yeah. UTF-8 FTW!
+set grepprg=ag                             " use ag for grepping
+set hidden                                 " allows for switching buffers without writing
+set lazyredraw                             " Don't redraw while executing macros
+set list!                                  " nice Whitespace chars
+set mouse=a                                " mouse for scrolling
+set nobackup                               " no backups
+set noerrorbells                           " don't beep
+set noesckeys                              " no delay for escaping
+set noshowmode                             " dont show active mode -- we use airline for that
+set noswapfile                             " no swp-files
+set nowrap                                 " dont wrap lines around
+set nowritebackup                          " no stupid backup files
+set pastetoggle=<F2>                       " toggle paste-mode for c&p with F2
+set relativenumber                         " relative line numbers are mothereffin awesome -- see how far your commands will go
+set ruler                                  " show where you are in the document
+set scrolljump=5                           " Lines to scroll when cursor leaves screen
+set scrolloff=3                            " Minimum lines to keep above and below cursor
+set showcmd                                " show me what im doing. helps alot
+set sidescroll=10                          " smoother side-scrolling
+set sidescrolloff=5                        " jump by 5 when scrolling sideways
+set timeout timeoutlen=800 ttimeoutlen=100 " get rid of the delay when pressing O (for example)
+set ttyfast                                " faster terminal usage
+set virtualedit=all                        " every mode active from v V to StrgV
+set visualbell                             " don't flicker
 
-set nowrap         " dont wrap lines around
-set sidescroll=10  " smoother side-scrolling
-set sidescrolloff=5
-set scrolljump=5   " Lines to scroll when cursor leaves screen
-set scrolloff=3    " Minimum lines to keep above and below cursor
+
+"======================================================================
+" Searching, completion and folds
+"======================================================================
+
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+set wrapscan
+
+set wildmode=list:longest,list:full
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*.,*/.DS_Store
+set wildmenu
+
+set foldignore=
+set foldmethod=indent " indent folding
+set foldnestmax=20    " max 20 levels of folding
+set nofoldenable      " dont fold by default - let me do it
+set foldlevelstart=1  " deactivate folding on fileload
 
 
-set lazyredraw " Don't redraw while executing macros
+"======================================================================
+" Tabs and Whitespace -- can be overridden by editorconfig
+"======================================================================
 
-" nice Whitespace chars
-set list!
-set listchars=extends:»,precedes:«,tab:▸\ ,trail:·
-
-" Tabs and Whitespace
+set fileformat=unix
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -95,16 +150,11 @@ set smarttab
 set expandtab
 set autoindent
 
-" use the mouse for scrolling, yeah
-set mouse=a
 
-" use ag for grepping
-set grepprg=ag
-
-" no delay for escaping
-set noesckeys
-
+"======================================================================
 " gui options for macvim
+"======================================================================
+
 if has('gui_running')
   set guifont=Menlo\ for\ Powerline:h12 " a nice font here
   set linespace=1    " menlo is nice, but very dense...
@@ -113,7 +163,11 @@ if has('gui_running')
   set guioptions-=r  " no right scrollbar
 endif
 
+
+"======================================================================
 " mac terminal-vim play nicely with tmux
+"======================================================================
+
 if &term =~ '^screen'
   " tmux will send xterm-style keys when its xterm-keys option is on
   execute "set <xUp>=\e[1;*A"
@@ -123,9 +177,24 @@ if &term =~ '^screen'
   " map <Esc>[B <Down>
 endif
 
+set clipboard=unnamed " osx + tmux fix
 
-set t_Co=256
-set background=dark
+
+"======================================================================
+" colorscheme and optical stuff
+"======================================================================
+
+" custom list/invisible chars
+set listchars=extends:»,precedes:«,tab:▸\ ,trail:·
+set fillchars=
+
+set laststatus=2    " statusbar is 2 high
+set ch=2            " command window is 2 high
+set cpo+=$          " Add a $ to the end of a selection
+set cpo+=J          " 2 spaces after a sentence for easier text manupulation
+set t_Co=256        " 256 color terminal FTW
+set background=dark " and a dark background of course
+
 colorscheme solarized
 let g:solarized_termtrans = 1
 let g:solarized_contrast = 'high'
@@ -133,72 +202,102 @@ let g:solarized_contrast = 'high'
 " minor optical fix vor syntastic / vim-signature
 highlight SignColumn ctermbg=8
 
-set fillchars=""
 
-" Automatically read a file that has changed on disk
-set autoread
+"======================================================================
+" Plugin configuration
+"======================================================================
 
-set encoding=utf-8    " Yeah. UTF-8 FTW!
-set fileformat=unix
+" vim sneak
+let g:sneak#use_ic_scs = 1
+let g:sneak#map_netrw = 0
+let g:sneak#streak = 1
 
-set virtualedit=all  " every mode active from v V to StrgV
+" ultisnips
+let g:UltiSnipsSnippetDirectories = ["snippets"]
 
-" always put a status line in and make the command line 2 lines high
-set laststatus=2
-set ch=2
+" Syntastic
+" no checking for xhtml/html -- because of fluidtemplate for TYPO3
+" and no checking for scss.css because of CSS3 and SASS-Variable
+let g:syntastic_auto_jump = 0
+let g:syntastic_mode_map = {
+  \ 'mode': 'active',
+  \ 'active_filetypes': ['ruby', 'php', 'javascript'],
+  \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'scss.css', 'css']
+  \ }
 
-" Add a $ to the end of a selection vor easier overwriting vizualisation
-set cpo+=$
+" Gist filetype-detection
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
 
-" 2 spaces after a sentence for easier text manupulation
-set cpo+=J
+" airline config
+let g:airline_theme = 'solarized'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
 
-" Searching
-set ignorecase
-set smartcase
-set gdefault
-set incsearch
-set showmatch
-set hlsearch
-set wrapscan            " set the search scan to wrap lines
-set backspace=indent,eol,start " Allow backspacing over everything in insert mode
-
-" Tab completion, and ignore some filetypes
-set wildmode=list:longest,list:full
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*.,*/.DS_Store
-set wildmenu
-
-set nobackup            " no backups
-set nowritebackup
-set noswapfile          " no swp-files
-
-" Better folding
-set foldmethod=indent
-setlocal foldignore=
-set foldnestmax=20      " max 20 levels of folding
-set nofoldenable        " dont fold by default - let me do it
-set foldlevelstart=1    " deactivate folding on fileload
-
-set noerrorbells        " don't beep
-set visualbell          " don't beep
-
-" pasting and copying
-set pastetoggle=<F2> " toggle paste-mode for c&p with F2
-set clipboard=unnamed " osx + tmux fix
-
- " get rid of the delay when pressing O (for example)
-set timeout timeoutlen=800 ttimeoutlen=100
+" EMMET deactivate emmet by default
+let g:user_emmet_install_global = 0
 
 
+"======================================================================
+" The Unite Plugin gets an extra config section
+"======================================================================
+
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#set_profile('files', 'smartcase', 1)
+call unite#custom#source('line,outline','matchers','matcher_fuzzy')
+call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+  \ 'ignore_pattern', join([
+  \ '\.git/',
+  \ '.sass-cache',
+  \ '_srcs',
+  \ 'node_modules/',
+  \ 'tmp/',
+  \ ], '\|'))
+
+let g:unite_source_history_yank_enable=1
+let g:unite_prompt='❯ '
+let g:unite_source_grep_command='ag'
+let g:unite_source_grep_default_opts='--nocolor --nogroup -S'
+let g:unite_source_grep_recursive_opt=''
+let g:unite_split_rule = "botright"
+
+nmap <space> [unite]
+nnoremap [unite] <nop>
+
+nnoremap <silent> [unite], :<C-u>Unite -start-insert -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
+nnoremap <silent> [unite]. :<C-u>Unite -quick-match buffer<cr>
+nnoremap <silent> [unite]n :<C-u>Unite -toggle -auto-resize -buffer-name=files file<cr><c-u>
+nnoremap <silent> [unite]b :<C-u>Unite -start-insert -auto-resize -buffer-name=buffers buffer<cr>
+nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
+nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
+nnoremap <silent> [unite]f :<C-u>UniteWithCursorWord -start-insert -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
+nnoremap <silent> [unite]a :<C-u>Unite -no-quit -buffer-name=search grep:.<cr>
+nnoremap <silent> [unite]A :<C-u>UniteWithCursorWord -no-quit -buffer-name=search grep:.<cr>
+
+autocmd FileType unite call s:unite_settings()
+
+function! s:unite_settings()
+  let b:SuperTabDisabled=1
+
+  nmap <buffer> <ESC> <Plug>(unite_exit)
+  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+  nmap <buffer> <C-r> <Plug>(unite_redraw)
+  imap <buffer> <C-r> <Plug>(unite_redraw)
+  inoremap <silent><buffer><expr> <C-s> unite#do_action('split')
+  nnoremap <silent><buffer><expr> <C-s> unite#do_action('split')
+  inoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+  nnoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+
+endfunction
+
+
+"======================================================================
 " Custom key mappings and shortcuts
-" ======================================================================
+"======================================================================
 
-" set the leader to comma , and ; == : -- faster commands
-let mapleader = ","
-let g:mapleader = ","
-let maplocalleader = ","
-let g:maplocalleader = ","
-
+" remap semi-colon to be colon
 nnoremap ; :
 vnoremap ; :
 
@@ -215,39 +314,14 @@ nnoremap k gk
 " behave - yank just like D and C
 nnoremap Y y$
 
+" sane default search
 nnoremap / /\v
 vnoremap / /\v
-
-inoremap jj <Esc>
-
-" Switch between windows
-nnoremap <tab> <C-w><C-w>
-nnoremap <S-tab> <C-w>W
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
 nnoremap N Nzz
 nnoremap n nzz
-
-" Adjust viewports to the same size
-nnoremap <leader>= <C-w>=
-
-" reset search
-nnoremap <leader><space> :noh<cr>
-
-" open new vertical split and change to split
-nnoremap <leader>\ <C-w>v<C-w>l
-nnoremap <leader>- <C-w>s<C-w>j
-
-" open a new split and edit the vimrc // easy sourcing vimrc
-nnoremap <leader>ve <C-w>v<C-w>l :e ~/.vimrc<cr>
-nnoremap <leader>vs :source ~/.vimrc<cr>
-
-" Opens an edit command with the path of the currently edited file filled in
-nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-" start a new document-wide seach-replace
-nnoremap <leader>f :%s/
 
 " dont use the arrow keys in insert mode
 inoremap <up> <nop>
@@ -271,64 +345,98 @@ vmap <C-j> ]egv
 vmap <C-h> <gv
 vmap <C-l> >gv
 
-" Yank text to the OS X clipboard
-noremap <leader>y "*y
-noremap <leader>Y "*Y
-" paste keeping indentation
-nnoremap <leader>p p`[v`]=
+" Switch between windows
+nnoremap <tab> <C-w><C-w>
+nnoremap <S-tab> <C-w>W
 
-
-" no HELP while mishitting ESC - awesome
+" no help while mishitting ESC - awesome
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
 " deactivate stupid ex-mode and man-page stuff
 nnoremap Q <nop>
 nnoremap K <nop>
 
-" upper/lower word
-nmap <leader>u mQviwU`Q
-nmap <leader>l mQviwu`Q
-
-" Swap two words
-nmap <leader>sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
-
-" change working directory to current file
-nnoremap <leader>w :cd %:p:h<CR>:pwd<CR>
-
 " reload files when set autoread is active with F5
 lnoremap <F5> :checktime<CR>
-
-" when over a class in html hit fc to find that class in css/scss/js
-nnoremap <leader>c :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnext<CR>
-
-" short command to strip trainling whitepsace
-nnoremap <leader>s ms:%s/\s\+$//e<cr>:noh<cr>`s
-
-" Find merge conflict markers
-map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
 
-" Map <Leader>j to display all lines with keyword under cursor and ask which one to jump to
-nmap <Leader>j [I:let nr = input("Enter line number: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
-" Plugins
-" ======================================================================
-"
-" Ag
-nnoremap <leader>a :Ag!<space>
-nnoremap <leader>A :Ag! <C-r><C-w><cr>
+"======================================================================
+" Plugin specific mappings/overrides
+"======================================================================
 
-" NERDtree
-nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>o :NERDTreeFind<cr>
-let NERDTreeAutoDeleteBuffer=1
-let NERDTreeMinimalUI=1
-let NERDTreeWinSize=50
-let NERDTreeShowHidden=1
+" sneak next/prev
+nmap <Bslash> <Plug>SneakNext
+nmap \| <Plug>SneakPrevious
+xmap <Bslash> <Plug>VSneakNext
+xmap \| <Plug>VSneakPrevious
 
+" emmet expansion
+imap <expr> <C-e> emmet#expandAbbrIntelligent("\<C-e>")
+
+
+"======================================================================
+" take me to your leader!
+"======================================================================
+
+let mapleader = ","
+let g:mapleader = ","
+let maplocalleader = ","
+let g:maplocalleader = ","
+
+" open new vertical split and change to split
+nnoremap <leader>\ <C-w>v<C-w>l
+nnoremap <leader>- <C-w>s<C-w>j
+
+" Adjust viewports to the same size
+nnoremap <leader>= <C-w>=
+
+" open a new split and edit the vimrc // easy sourcing vimrc
+nnoremap <leader>ve <C-w>v<C-w>l :e ~/.vimrc<cr>
+nnoremap <leader>vs :source ~/.vimrc<cr>
+
+" Opens an edit command with the path of the currently edited file filled in
+nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" start a new document-wide seach-replace
+nnoremap <leader>r :%s/
+
+" reset search
+nmap <leader><space> :noh<cr>
+
+" Swap two words
+nmap <leader>w :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+
+" when over a class in html hit c to find that class in css/scss/js
+nmap <leader>c :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnext<CR>
+
+" short command to strip trainling whitepsace
+nmap <leader>s :call <SID>StripTrailingWhitespaces()<CR>
+
+" Find merge conflict markers
+nmap <leader>g /\v^[<\|=>]{7}( .*\|$)<CR>
+
+" Format strings in js
+vmap <leader>f :call Stringify()<cr>
+
+" Map <Leader>* to display all lines with keyword under cursor and ask which one to jump to
+nmap <Leader>* [I:let nr = input("Enter line number: ")<Bar>exe "normal " . nr ."[\t"<CR>
+
+" Yank text to the OS X clipboard
+noremap <leader>y "*y
+noremap <leader>Y "*Y
+
+" paste keeping indentation
+nnoremap <leader>p p`[v`]=
+
+
+"======================================================================
+" Plugin leader mappings
+"======================================================================
 
 " fugitive shortcuts (20+ increases window-height)
 nnoremap <silent> <leader>gs :Gstatus<CR><C-w>20+
@@ -339,113 +447,85 @@ nnoremap <silent> <leader>gl :Glog<CR><C-w>20+
 nnoremap <silent> <leader>gp :Git push<CR><C-w>20+
 nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
 
-
-" Undotree
-nnoremap <F3> :UndotreeToggle<cr>
-
-
 " TComment
 nnoremap <leader>/ :TComment<CR>
 vnoremap <leader>/ :TComment<CR>
 inoremap <leader>/ <Esc>:TComment<CR>
 
-
 " Tabularize
-nmap <Leader>s= :Tabularize /=<CR>
-vmap <Leader>s= :Tabularize /=<CR>
-nmap <Leader>s{ :Tabularize /{<CR>
-vmap <Leader>s{ :Tabularize /{<CR>
-nmap <Leader>s: :Tabularize /:<CR>
-vmap <Leader>s: :Tabularize /:<CR>
-nmap <Leader>s, :Tabularize /,<CR>
-vmap <Leader>s, :Tabularize /,<CR>
-nmap <Leader>s<Bar> :Tabularize /<Bar><CR>
-vmap <Leader>s<Bar> :Tabularize /<Bar><CR>
+nmap <Leader>t= :Tabularize /=<CR>
+vmap <Leader>t= :Tabularize /=<CR>
+nmap <Leader>t{ :Tabularize /{<CR>
+vmap <Leader>t{ :Tabularize /{<CR>
+nmap <Leader>t: :Tabularize /:<CR>
+vmap <Leader>t: :Tabularize /:<CR>
+nmap <Leader>t, :Tabularize /,<CR>
+vmap <Leader>t, :Tabularize /,<CR>
+nmap <Leader>t<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>t<Bar> :Tabularize /<Bar><CR>
 
-
-" vim sneak
-let g:sneak#use_ic_scs = 1
-let g:sneak#map_netrw = 0
-let g:sneak#streak = 1
-nmap <Bslash> <Plug>SneakNext
-nmap \| <Plug>SneakPrevious
-xmap <Bslash> <Plug>VSneakNext
-xmap \| <Plug>VSneakPrevious
-
-
-" ultisnips
-let g:UltiSnipsSnippetDirectories = ["snippets"]
-
-
-" Syntastic
-" no checking for xhtml/html -- because of fluidtemplate for TYPO3
-" and no checking for scss.css because of CSS3 and SASS-Variable
-let g:syntastic_auto_jump = 0
-let g:syntastic_mode_map = {
-  \ 'mode': 'active',
-  \ 'active_filetypes': ['ruby', 'php', 'javascript'],
-  \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'scss.css', 'css']
-  \ }
-
-
-" CtrlP (using Ag)
-nnoremap <leader>b :CtrlPBuffer<cr>
-nnoremap <leader>r :CtrlPMRU<cr>
-let g:ctrlp_map = '<leader>t'
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-let g:ctrlp_use_caching = 0
-let g:ctrlp_switch_buffer = 0 " easier split screens
-let g:ctrlp_working_path_mode = 0 " dont try to change my working directory
-let g:ctrlp_max_height = 12
-
-
-" Gist filetype-detection
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-
-
-" airline config
-let g:airline_theme = 'solarized'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-
-
-" Mac Dash.app integration
+" dash
 nmap <silent> <leader>d <Plug>DashSearch
 nmap <silent> <leader>D <Plug>DashGlobalSearch
-let g:dash_map = {
-  \ 'javascript' : 'jquery'
-  \ }
 
 
-" emmet -- only use the html-expansion
-let g:user_emmet_install_global = 0
-autocmd FileType html,php,twig EmmetInstall
-imap <expr> <C-e> emmet#expandAbbrIntelligent("\<C-e>")
+"======================================================================
+" Other functions
+"======================================================================
 
+" for stripping trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfunction
 
-
-" Other functions / Onload, Autocommands
-" ======================================================================
-
-" spell correction on text-files
-autocmd BufRead,BufNewFile *.{md|rst|txt} setlocal spell
-
-" add the dash to keywords -- makes better css/js/html search
-" do this for specific files only (not in php/rb e.g.)
-au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword+=-
-au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
-
-
-" Syntaxes for other files
-au BufNewFile,BufRead Phakefile set ft=php
-au BufNewFile,BufRead *.twig set ft=html.twig
-au BufNewFile,BufRead *.twig set ft=html.twig
-au BufNewFile,BufRead *.{txt,ts} set ft=typoscript
+" string up javascript-strings with single quotes and + 
+function! Stringify() range
+  for linenum in range(a:firstline, a:lastline)
+    let replaceSub = "'\\1'\ +"
+    if a:lastline == linenum
+      let replaceSub = "'\\1'"
+    endif
+    let newline = getline(linenum)
+    " escape single quote
+    " \\\\ is \
+    " \= means previous char is optional
+    let newline = substitute(newline, "\\\\\\='", "\\\\\\\'", 'g')
+    " add single quotes and plus
+    let newline = substitute(newline,'\(\S.*\)', replaceSub ,'g')
+    call setline(linenum, newline)
+  endfor
+endfunction
 
 " Remember last location/cursor in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 endif
+
+
+"======================================================================
+" filetypes, spelling, keywords for specific filetypes
+"======================================================================
+
+" spell correction on text-files
+au BufRead,BufNewFile *.{md|rst} setlocal spell
+
+" add the dash to keywords -- makes better css/js/html search
+" do this for specific files only (not in php/rb e.g.)
+" TODO check if this is sane at all
+au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword+=-
+au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
+
+" Syntaxes for other files
+au BufNewFile,BufRead Phakefile set ft=php
+au BufNewFile,BufRead *.twig set ft=html.twig
+
+" assume typoscript for txt -- i use md only :-)
+au BufNewFile,BufRead *.{txt,ts} set ft=typoscript
+
+" load emmet for html-files
+au FileType html,php,twig,mustache EmmetInstall
 
