@@ -33,6 +33,7 @@ NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'rizzatti/funcoo.vim'
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'terryma/vim-multiple-cursors'
@@ -236,6 +237,12 @@ let g:airline_right_sep = '◀'
 
 " EMMET deactivate emmet by default
 let g:user_emmet_install_global = 0
+
+" NERDtree
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeMinimalUI=1
+let NERDTreeWinSize=50
+let NERDTreeShowHidden=1
 
 
 "======================================================================
@@ -468,6 +475,9 @@ vmap <Leader>t<Bar> :Tabularize /<Bar><CR>
 nmap <silent> <leader>d <Plug>DashSearch
 nmap <silent> <leader>D <Plug>DashGlobalSearch
 
+" NERDtree
+nnoremap <leader>n :NERDTreeToggle<cr>
+
 
 "======================================================================
 " Other functions
@@ -481,7 +491,7 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 
-" string up javascript-strings with single quotes and + 
+" string up javascript-strings with single quotes and +
 function! Stringify() range
   for linenum in range(a:firstline, a:lastline)
     let replaceSub = "'\\1'\ +"
