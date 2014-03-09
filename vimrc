@@ -46,10 +46,8 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
-  \     'windows' : 'make -f make_mingw32.mak',
-  \     'cygwin' : 'make -f make_cygwin.mak',
   \     'mac' : 'make -f make_mac.mak',
-  \     'unix' : 'make -f make_unix.mak',
+  \     'unix' : 'make -f make_unix.mak'
   \    },
   \ }
 
@@ -252,7 +250,7 @@ let NERDTreeShowHidden=1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#set_profile('files', 'smartcase', 1)
-call unite#custom#source('line,outline','matchers','matcher_fuzzy')
+call unite#custom#source('line,outline', 'matchers', 'matcher_fuzzy')
 call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
   \ 'ignore_pattern', join([
   \ '\.git/',
@@ -292,6 +290,8 @@ function! s:unite_settings()
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
   nmap <buffer> <C-r> <Plug>(unite_redraw)
   imap <buffer> <C-r> <Plug>(unite_redraw)
+  nmap <buffer> <F5> <Plug>(unite_redraw)
+  imap <buffer> <F5> <Plug>(unite_redraw)
   inoremap <silent><buffer><expr> <C-s> unite#do_action('split')
   nnoremap <silent><buffer><expr> <C-s> unite#do_action('split')
   inoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')

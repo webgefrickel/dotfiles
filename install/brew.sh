@@ -6,6 +6,7 @@ brew tap thoughtbot/formulae
 
 # install brew packages
 brew install curl
+brew install ffmpeg
 brew install ghostscript
 brew install git-flow
 brew install gitsh
@@ -21,6 +22,7 @@ brew install php55
 brew install php55-mcrypt
 brew install php55-xdebug
 brew install composer
+brew install q
 brew install rbenv
 brew install ruby-build
 brew install ssh-copy-id
@@ -29,6 +31,7 @@ brew install the_silver_searcher
 brew install unrar
 brew install wget
 brew install youtube-dl
+brew install z
 
 # brew cask and install software
 

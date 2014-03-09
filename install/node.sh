@@ -12,7 +12,9 @@ npm install -g npm_lazy
 npm config set registry http://localhost:8080/
 
 npm install -g bower
+npm install -g browserify
 npm install -g dploy
+npm install -g fuck-you
 npm install -g generator-generator
 npm install -g grunt-cli
 npm install -g jake
