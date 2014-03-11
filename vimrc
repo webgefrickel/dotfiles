@@ -28,14 +28,13 @@ NeoBundle 'ervandew/supertab'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'kshenoy/vim-signature'
-NeoBundle "mattn/emmet-vim"
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mattn/gist-vim'
-NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'rizzatti/dash.vim'
-NeoBundle 'rizzatti/funcoo.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 't9md/vim-choosewin'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'tomtom/tcomment_vim'
@@ -45,6 +44,10 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'Shougo/unite.vim'
+
+" plugin libs and dependencies
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'rizzatti/funcoo.vim'
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
   \     'mac' : 'make -f make_mac.mak',
@@ -195,9 +198,9 @@ set cpo+=J          " 2 spaces after a sentence for easier text manupulation
 set t_Co=256        " 256 color terminal FTW
 set background=dark " and a dark background of course
 
-colorscheme solarized
 let g:solarized_termtrans = 1
 let g:solarized_contrast = 'high'
+colorscheme solarized
 
 " minor optical fix vor syntastic / vim-signature
 highlight SignColumn ctermbg=8
@@ -242,6 +245,11 @@ let NERDTreeAutoDeleteBuffer=1
 let NERDTreeMinimalUI=1
 let NERDTreeWinSize=50
 let NERDTreeShowHidden=1
+
+" choosewin
+let g:choosewin_overlay_enable = 1
+let g:choosewin_overlay_clear_multibyte = 1
+let g:choosewin_label = 'ASDFGHJKL;QWERTYUIOP'
 
 
 "======================================================================
@@ -419,17 +427,11 @@ nmap <leader><space> :noh<cr>
 " Swap two words
 nmap <leader>w :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
-" when over a class in html hit c to find that class in css/scss/js
-nmap <leader>c :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnext<CR>
-
 " short command to strip trainling whitepsace
 nmap <leader>s :call <SID>StripTrailingWhitespaces()<CR>
 
 " Find merge conflict markers
 nmap <leader>g /\v^[<\|=>]{7}( .*\|$)<CR>
-
-" Format strings in js
-vmap <leader>f :call Stringify()<cr>
 
 " Map <Leader>* to display all lines with keyword under cursor and ask which one to jump to
 nmap <Leader>* [I:let nr = input("Enter line number: ")<Bar>exe "normal " . nr ."[\t"<CR>
@@ -440,6 +442,12 @@ noremap <leader>Y "*Y
 
 " paste keeping indentation
 nnoremap <leader>p p`[v`]=
+
+" when over a class in html hit c to find that class in css/scss/js
+nmap <leader>cf :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnext<CR>
+
+" Format strings in js
+vmap <leader>js :call Stringify()<cr>
 
 
 "======================================================================
@@ -478,6 +486,9 @@ nmap <silent> <leader>D <Plug>DashGlobalSearch
 
 " NERDtree
 nnoremap <leader>n :NERDTreeToggle<cr>
+
+" choosewin
+nmap <leader>q <Plug>(choosewin)
 
 
 "======================================================================
