@@ -17,6 +17,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Plugins and useful stuff/dependencies
 "======================================================================
 
+NeoBundle 'webgefrickel/vim-gtfo'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'bling/vim-airline'
