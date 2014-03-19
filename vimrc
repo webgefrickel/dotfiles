@@ -19,25 +19,21 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Shougo/unite.vim'
-" NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'edsono/vim-matchit'
-NeoBundle 'ervandew/supertab'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'mattn/gist-vim'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 't9md/vim-choosewin'
-NeoBundle 'terryma/vim-expand-region'
-NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-ragtag'
@@ -48,7 +44,6 @@ NeoBundle 'webgefrickel/vim-gtfo'
 NeoBundle 'webgefrickel/vim-snippets'
 
 " plugin libs and dependencies
-NeoBundle 'mattn/webapi-vim'
 NeoBundle 'rizzatti/funcoo.vim'
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
@@ -209,115 +204,67 @@ highlight SignColumn ctermbg=8
 
 
 "======================================================================
-" Plugin configuration
+" Custom functions
 "======================================================================
 
-" vim sneak
-let g:sneak#use_ic_scs = 1
-let g:sneak#map_netrw = 0
-let g:sneak#streak = 1
-
-" neosnippet
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-let g:neosnippet#disable_runtime_snippets = {
-  \   '_' : 1,
-  \ }
-
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-
-" Syntastic
-" no checking for xhtml/html -- because of fluidtemplate for TYPO3
-" and no checking for scss.css because of CSS3 and SASS-Variable
-let g:syntastic_auto_jump = 0
-let g:syntastic_mode_map = {
-  \ 'mode': 'active',
-  \ 'active_filetypes': ['ruby', 'php', 'javascript'],
-  \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'scss.css', 'css']
-  \ }
-
-" Gist filetype-detection
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-
-" airline config
-let g:airline_theme = 'solarized'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-
-" EMMET deactivate emmet by default
-let g:user_emmet_install_global = 0
-
-" NERDtree
-let NERDTreeAutoDeleteBuffer=1
-let NERDTreeMinimalUI=1
-let NERDTreeWinSize=50
-let NERDTreeShowHidden=1
-
-" choosewin
-let g:choosewin_overlay_enable = 1
-let g:choosewin_overlay_clear_multibyte = 1
-let g:choosewin_label = 'ASDFGHJKL;QWERTYUIOP'
-
-
-"======================================================================
-" The Unite Plugin gets an extra config section
-"======================================================================
-
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#set_profile('files', 'smartcase', 1)
-call unite#custom#source('line,outline', 'matchers', 'matcher_fuzzy')
-call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
-  \ 'ignore_pattern', join([
-  \ '\.git/',
-  \ '.sass-cache',
-  \ '_srcs',
-  \ 'node_modules/',
-  \ 'tmp/',
-  \ ], '\|'))
-
-let g:unite_source_history_yank_enable=1
-let g:unite_prompt='❯ '
-let g:unite_source_grep_command='ag'
-let g:unite_source_grep_default_opts='--nocolor --nogroup -S'
-let g:unite_source_grep_recursive_opt=''
-let g:unite_split_rule = "botright"
-
-nmap <space> [unite]
-nnoremap [unite] <nop>
-
-nnoremap <silent> [unite], :<C-u>Unite -start-insert -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
-nnoremap <silent> [unite]. :<C-u>Unite -quick-match buffer<cr>
-nnoremap <silent> [unite]n :<C-u>Unite -toggle -auto-resize -buffer-name=files file<cr><c-u>
-nnoremap <silent> [unite]b :<C-u>Unite -start-insert -auto-resize -buffer-name=buffers buffer<cr>
-nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
-nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
-nnoremap <silent> [unite]f :<C-u>UniteWithCursorWord -start-insert -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
-nnoremap <silent> [unite]a :<C-u>Unite -no-quit -buffer-name=search grep:.<cr>
-nnoremap <silent> [unite]A :<C-u>UniteWithCursorWord -no-quit -buffer-name=search grep:.<cr>
-
-autocmd FileType unite call s:unite_settings()
-
-function! s:unite_settings()
-  let b:SuperTabDisabled=1
-
-  nmap <buffer> <ESC> <Plug>(unite_exit)
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-  nmap <buffer> <C-r> <Plug>(unite_redraw)
-  imap <buffer> <C-r> <Plug>(unite_redraw)
-  nmap <buffer> <F5> <Plug>(unite_redraw)
-  imap <buffer> <F5> <Plug>(unite_redraw)
-  inoremap <silent><buffer><expr> <C-s> unite#do_action('split')
-  nnoremap <silent><buffer><expr> <C-s> unite#do_action('split')
-  inoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-  nnoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-
+" for stripping trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
 endfunction
+
+" string up javascript-strings with single quotes and +
+function! Stringify() range
+  for linenum in range(a:firstline, a:lastline)
+    let replaceSub = "'\\1'\ +"
+    if a:lastline == linenum
+      let replaceSub = "'\\1'"
+    endif
+    let newline = getline(linenum)
+    " escape single quote
+    " \\\\ is \
+    " \= means previous char is optional
+    let newline = substitute(newline, "\\\\\\='", "\\\\\\\'", 'g')
+    " add single quotes and plus
+    let newline = substitute(newline,'\(\S.*\)', replaceSub ,'g')
+    call setline(linenum, newline)
+  endfor
+endfunction
+
+
+"======================================================================
+" autocommands, filetypes, spelling, keywords for specific filetypes
+"======================================================================
+"
+" Remember last location/cursor in file
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+" spell correction on text-files
+au BufRead,BufNewFile *.{md|rst} setlocal spell
+
+" add the dash to keywords -- makes better css/js/html search
+" do this for specific files only (not in php/rb e.g.)
+" TODO check if this is sane at all
+au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword+=-
+au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
+
+" Syntaxes for other files
+au BufNewFile,BufRead Phakefile set ft=php
+au BufNewFile,BufRead *.twig set ft=html.twig
+
+" assume typoscript for txt -- i use md only :-)
+au BufNewFile,BufRead *.{txt,ts} set ft=typoscript
+
+" load emmet for html-files
+au FileType html,php,twig,mustache EmmetInstall
+
+" omnicompletion for some filetypes
+au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
+au FileType html,php,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
 "======================================================================
@@ -393,34 +340,6 @@ cmap w!! w !sudo tee % >/dev/null
 
 
 "======================================================================
-" Plugin specific mappings/overrides
-"======================================================================
-
-" sneak next/prev
-nmap <Bslash> <Plug>SneakNext
-nmap \| <Plug>SneakPrevious
-xmap <Bslash> <Plug>VSneakNext
-xmap \| <Plug>VSneakPrevious
-
-" emmet expansion
-imap <expr> <C-e> emmet#expandAbbrIntelligent("\<C-e>")
-
-" Neosnippet
-imap <C-s> <Plug>(neosnippet_expand_or_jump)
-smap <C-s> <Plug>(neosnippet_expand_or_jump)
-xmap <C-s> <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: pumvisible() ? "\<C-n>" : "\<TAB>"
-
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: "\<TAB>"
-
-
-"======================================================================
 " take me to your leader!
 "======================================================================
 
@@ -476,10 +395,20 @@ vmap <leader>js :call Stringify()<cr>
 
 
 "======================================================================
-" Plugin leader mappings
+" Plugin configuration and keymappings
 "======================================================================
 
-" fugitive shortcuts (20+ increases window-height)
+" vim sneak
+let g:sneak#use_ic_scs = 1
+let g:sneak#map_netrw = 0
+let g:sneak#streak = 1
+nmap <Bslash> <Plug>SneakNext
+nmap \| <Plug>SneakPrevious
+xmap <Bslash> <Plug>VSneakNext
+xmap \| <Plug>VSneakPrevious
+
+
+" fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR><C-w>20+
 nnoremap <silent> <leader>gd :Gdiff<CR><C-w>20+
 nnoremap <silent> <leader>gc :Gcommit<CR><C-w>20+
@@ -488,10 +417,6 @@ nnoremap <silent> <leader>gl :Glog<CR><C-w>20+
 nnoremap <silent> <leader>gp :Git push<CR><C-w>20+
 nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
 
-" TComment
-nnoremap <leader>/ :TComment<CR>
-vnoremap <leader>/ :TComment<CR>
-inoremap <leader>/ <Esc>:TComment<CR>
 
 " Tabularize
 nmap <Leader>t= :Tabularize /=<CR>
@@ -505,74 +430,200 @@ vmap <Leader>t, :Tabularize /,<CR>
 nmap <Leader>t<Bar> :Tabularize /<Bar><CR>
 vmap <Leader>t<Bar> :Tabularize /<Bar><CR>
 
+
 " dash
 nmap <silent> <leader>d <Plug>DashSearch
 nmap <silent> <leader>D <Plug>DashGlobalSearch
 
 " NERDtree
-nnoremap <leader>n :NERDTreeToggle<cr>
 
 " choosewin
 nmap <leader>q <Plug>(choosewin)
 
 
-"======================================================================
-" Other functions
-"======================================================================
+" TComment
+nnoremap <leader>/ :TComment<CR>
+vnoremap <leader>/ :TComment<CR>
+inoremap <leader>/ <Esc>:TComment<CR>
 
-" for stripping trailing whitespace
-function! <SID>StripTrailingWhitespaces()
-  let l = line(".")
-  let c = col(".")
-  %s/\s\+$//e
-  call cursor(l, c)
-endfunction
 
-" string up javascript-strings with single quotes and +
-function! Stringify() range
-  for linenum in range(a:firstline, a:lastline)
-    let replaceSub = "'\\1'\ +"
-    if a:lastline == linenum
-      let replaceSub = "'\\1'"
-    endif
-    let newline = getline(linenum)
-    " escape single quote
-    " \\\\ is \
-    " \= means previous char is optional
-    let newline = substitute(newline, "\\\\\\='", "\\\\\\\'", 'g')
-    " add single quotes and plus
-    let newline = substitute(newline,'\(\S.*\)', replaceSub ,'g')
-    call setline(linenum, newline)
-  endfor
-endfunction
+" neosnippet
+let g:neosnippet#scope_aliases = {}
+let g:neosnippet#scope_aliases['css'] = 'css,scss'
+let g:neosnippet#scope_aliases['php'] = 'php,html'
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: "\<TAB>"
 
-" Remember last location/cursor in file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
 endif
 
 
+" Syntastic
+" no checking for xhtml/html -- because of fluidtemplate for TYPO3
+" and no checking for scss.css because of CSS3 and SASS-Variable
+let g:syntastic_auto_jump = 0
+let g:syntastic_mode_map = {
+  \ 'mode': 'active',
+  \ 'active_filetypes': ['ruby', 'php', 'javascript'],
+  \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'scss.css', 'css']
+  \ }
+
+
+" airline config
+let g:airline_theme = 'solarized'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+
+
+" EMMET deactivate emmet by default
+let g:user_emmet_install_global = 0
+imap <expr> <C-e> emmet#expandAbbrIntelligent("\<C-e>")
+
+
+" NERDtree
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeMinimalUI=1
+let NERDTreeWinSize=50
+let NERDTreeShowHidden=1
+nnoremap <leader>n :NERDTreeToggle<cr>
+
+
+" choosewin
+let g:choosewin_overlay_enable = 1
+let g:choosewin_overlay_clear_multibyte = 1
+let g:choosewin_label = 'ASDFGHJKL;QWERTYUIOP'
+
+" NEOCOMPLETE
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+
+" Close popup by <Space>.
+inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
+" For cursor moving in insert mode(Not recommended)
+"inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
+"inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
+"inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
+"inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
+" Or set this.
+"let g:neocomplete#enable_cursor_hold_i = 1
+" Or set this.
+"let g:neocomplete#enable_insert_char_pre = 1
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+
+
 "======================================================================
-" filetypes, spelling, keywords for specific filetypes
+" The Unite Plugin gets an extra config section
 "======================================================================
 
-" spell correction on text-files
-au BufRead,BufNewFile *.{md|rst} setlocal spell
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#set_profile('files', 'smartcase', 1)
+call unite#custom#source('line,outline', 'matchers', 'matcher_fuzzy')
+call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+  \ 'ignore_pattern', join([
+  \ '\.git/',
+  \ '.sass-cache',
+  \ '_srcs',
+  \ 'node_modules/',
+  \ 'tmp/',
+  \ ], '\|'))
 
-" add the dash to keywords -- makes better css/js/html search
-" do this for specific files only (not in php/rb e.g.)
-" TODO check if this is sane at all
-au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword+=-
-au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
+let g:unite_source_history_yank_enable=1
+let g:unite_prompt='❯ '
+let g:unite_source_grep_command='ag'
+let g:unite_source_grep_default_opts='--nocolor --nogroup -S'
+let g:unite_source_grep_recursive_opt=''
+let g:unite_split_rule = "botright"
 
-" Syntaxes for other files
-au BufNewFile,BufRead Phakefile set ft=php
-au BufNewFile,BufRead *.twig set ft=html.twig
+nmap <space> [unite]
+nnoremap [unite] <nop>
 
-" assume typoscript for txt -- i use md only :-)
-au BufNewFile,BufRead *.{txt,ts} set ft=typoscript
+nnoremap <silent> [unite], :<C-u>Unite -start-insert -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
+nnoremap <silent> [unite]. :<C-u>Unite -quick-match buffer<cr>
+nnoremap <silent> [unite]n :<C-u>Unite -toggle -auto-resize -buffer-name=files file<cr><c-u>
+nnoremap <silent> [unite]b :<C-u>Unite -start-insert -auto-resize -buffer-name=buffers buffer<cr>
+nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
+nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
+nnoremap <silent> [unite]f :<C-u>UniteWithCursorWord -start-insert -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
+nnoremap <silent> [unite]a :<C-u>Unite -no-quit -buffer-name=search grep:.<cr>
+nnoremap <silent> [unite]A :<C-u>UniteWithCursorWord -no-quit -buffer-name=search grep:.<cr>
 
-" load emmet for html-files
-au FileType html,php,twig,mustache EmmetInstall
+autocmd FileType unite call s:unite_settings()
 
+function! s:unite_settings()
+  nmap <buffer> <ESC> <Plug>(unite_exit)
+  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+  nmap <buffer> <C-r> <Plug>(unite_redraw)
+  imap <buffer> <C-r> <Plug>(unite_redraw)
+  nmap <buffer> <F5> <Plug>(unite_redraw)
+  imap <buffer> <F5> <Plug>(unite_redraw)
+  inoremap <silent><buffer><expr> <C--> unite#do_action('split')
+  nnoremap <silent><buffer><expr> <C--> unite#do_action('split')
+  inoremap <silent><buffer><expr> <C-\> unite#do_action('vsplit')
+  nnoremap <silent><buffer><expr> <C-\> unite#do_action('vsplit')
+endfunction
