@@ -17,9 +17,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Plugins and useful stuff/dependencies
 "======================================================================
 
-NeoBundle 'webgefrickel/vim-gtfo'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'SirVer/ultisnips'
+NeoBundle 'Shougo/unite.vim'
+" NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'editorconfig/editorconfig-vim'
@@ -43,7 +44,8 @@ NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'Shougo/unite.vim'
+NeoBundle 'webgefrickel/vim-gtfo'
+NeoBundle 'webgefrickel/vim-snippets'
 
 " plugin libs and dependencies
 NeoBundle 'mattn/webapi-vim'
@@ -215,8 +217,17 @@ let g:sneak#use_ic_scs = 1
 let g:sneak#map_netrw = 0
 let g:sneak#streak = 1
 
-" ultisnips
-let g:UltiSnipsSnippetDirectories = ["snippets"]
+" neosnippet
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#disable_runtime_snippets = {
+  \   '_' : 1,
+  \ }
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 " Syntastic
 " no checking for xhtml/html -- because of fluidtemplate for TYPO3
@@ -393,6 +404,20 @@ xmap \| <Plug>VSneakPrevious
 
 " emmet expansion
 imap <expr> <C-e> emmet#expandAbbrIntelligent("\<C-e>")
+
+" Neosnippet
+imap <C-s> <Plug>(neosnippet_expand_or_jump)
+smap <C-s> <Plug>(neosnippet_expand_or_jump)
+xmap <C-s> <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: "\<TAB>"
 
 
 "======================================================================

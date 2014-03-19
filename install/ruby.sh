@@ -2,6 +2,7 @@
 
 gem install bundler --no-ri --no-rdoc
 gem install sass --no-ri --no-rdoc
+gem install sass-globbing --no-ri --no-rdoc
 gem install compass --pre --no-ri --no-rdoc
 gem install dandelion --no-ri --no-rdoc
 gem install net-sftp --no-ri --no-rdoc
