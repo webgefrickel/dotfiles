@@ -3,7 +3,7 @@
 
 [core]
   excludesfile = ~/.gitignore
-  editor = vim
+  editor = /Applications/MacVim.app/Contents/MacOS/Vim
   autocrlf = input
   eol = lf
   pager = less -FXRS -x2
