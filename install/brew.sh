@@ -48,6 +48,7 @@ brew cask install fontprep
 brew cask install f-lux
 brew cask install ghostlab
 brew cask install google-chrome
+brew cask install google-chrome-canary
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install istat-menus
