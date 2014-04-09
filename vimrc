@@ -487,7 +487,7 @@ imap <expr> <C-e> emmet#expandAbbrIntelligent("\<C-e>")
 
 
 " wildfire
-let g:wildfire_objects = ['i"', "i'", "i)", "i]", "i}", "it", "ip"]
+let g:wildfire_objects = ['i"', "i'", "i)", "i]", "i}", "iW", "it", "ip"]
 let g:wildfire_fuel_map = "<ENTER>"
 let g:wildfire_water_map = "<BS>"
 

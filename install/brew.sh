@@ -55,8 +55,6 @@ brew cask install istat-menus
 brew cask install keyremap4macbook
 brew cask install libreoffice
 brew cask install miro-video-converter
-brew cask install openemu
-brew cask install opera
 brew cask install pckeyboardhack
 brew cask install sequel-pro
 brew cask install simple-comic
@@ -88,4 +86,4 @@ defaults write org.n8gray.QLColorCode hlTheme solarized-dark
 defaults write org.n8gray.QLColorCode extraHLFlags '--replace-tabs=2'
 qlmanage -r
 
-# the rest -> appstore or adobe or others :-)
+# the rest -> appstore or adobe or others, such as gpg have to be installed manually
