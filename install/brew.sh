@@ -6,40 +6,34 @@ brew tap thoughtbot/formulae
 
 # install brew packages
 brew install curl
-brew install ffmpeg
 brew install ghostscript
 brew install git-flow
 brew install gitsh
 brew install httpd
 brew install imagemagick
 brew install macvim --with-cscope --with-lua --HEAD
-brew install markdown
-brew install mcrypt
 brew install mysql
 brew install node --without-npm
 brew install reattach-to-user-namespace
 brew install php55
 brew install php55-mcrypt
 brew install php55-xdebug
+brew install php55-intl
 brew install composer
-brew install q
 brew install rbenv
 brew install ruby-build
 brew install ssh-copy-id
 brew install subversion
 brew install the_silver_searcher
-brew install unrar
 brew install wget
 brew install youtube-dl
 brew install z
 
 # brew cask and install software
-
 brew cask install adium
 brew cask install alfred
 brew cask install amadeus-pro
 brew cask install bartender
-brew cask install bill
 brew cask install carbon-copy-cloner
 brew cask install doxie
 brew cask install dropbox
@@ -57,7 +51,6 @@ brew cask install libreoffice
 brew cask install miro-video-converter
 brew cask install pckeyboardhack
 brew cask install sequel-pro
-brew cask install simple-comic
 brew cask install skype
 brew cask install slate
 brew cask install things
