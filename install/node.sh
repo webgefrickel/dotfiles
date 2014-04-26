@@ -17,6 +17,7 @@ npm install -g dploy
 npm install -g fuck-you
 npm install -g generator-generator
 npm install -g grunt-cli
+npm install -g gulp
 npm install -g jake
 npm install -g js-beautify
 npm install -g jshint

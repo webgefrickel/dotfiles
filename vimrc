@@ -44,6 +44,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'webgefrickel/vim-gtfo'
 NeoBundle 'webgefrickel/vim-snippets'
+NeoBundle 'wellle/tmux-complete.vim'
 
 " plugin libs and dependencies
 NeoBundle 'rizzatti/funcoo.vim'
@@ -65,6 +66,7 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'joshtronic/php.vim'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'othree/html5.vim'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'tpope/vim-git'
 NeoBundle 'tpope/vim-haml'
@@ -268,6 +270,8 @@ au FileType html,php,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+" special lib syntax sugar for javascriptj
+let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs'
 
 "======================================================================
 " Custom key mappings and shortcuts
@@ -469,10 +473,11 @@ endif
 " no checking for xhtml/html -- because of fluidtemplate for TYPO3
 " and no checking for scss.css because of CSS3 and SASS-Variable
 let g:syntastic_auto_jump = 0
+" let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_mode_map = {
   \ 'mode': 'active',
-  \ 'active_filetypes': ['ruby', 'php', 'javascript'],
-  \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'scss.css', 'css']
+  \ 'active_filetypes': ['ruby', 'php', 'javascript', 'scss', 'css'],
+  \ 'passive_filetypes': ['xhtml', 'html']
   \ }
 
 
@@ -560,7 +565,7 @@ nmap <space> [unite]
 nnoremap [unite] <nop>
 
 nnoremap <silent> [unite], :<C-u>Unite -start-insert -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
-nnoremap <silent> [unite]. :<C-u>Unite -quick-match buffer<cr>
+nnoremap <silent> [unite]. :<C-u>Unite -short-source-names -quick-match buffer<cr>
 nnoremap <silent> [unite]n :<C-u>Unite -toggle -auto-resize -buffer-name=files file<cr><c-u>
 nnoremap <silent> [unite]b :<C-u>Unite -start-insert -auto-resize -buffer-name=buffers buffer<cr>
 nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
