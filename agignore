@@ -8,7 +8,12 @@
 *.jpg
 *.gif
 *.png
+*.pdf
 *.ico
+*.woff
+*.ttf
+*.otf
+*.eot
 _srcs
 node_modules
 .sass-cache

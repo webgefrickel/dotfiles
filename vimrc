@@ -17,7 +17,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Plugins and useful stuff/dependencies
 "======================================================================
 
-NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
@@ -31,8 +30,6 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'mhinz/vim-signify'
-NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 't9md/vim-choosewin'
@@ -47,7 +44,6 @@ NeoBundle 'webgefrickel/vim-snippets'
 NeoBundle 'wellle/tmux-complete.vim'
 
 " plugin libs and dependencies
-NeoBundle 'rizzatti/funcoo.vim'
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
   \     'mac' : 'make -f make_mac.mak',
@@ -203,7 +199,7 @@ let g:solarized_termtrans = 1
 let g:solarized_contrast = 'high'
 colorscheme solarized
 
-" minor optical fix vor syntastic / vim-signature
+" minor optical fix vor syntastic and vim signature
 highlight SignColumn ctermbg=8
 
 
@@ -374,9 +370,6 @@ nnoremap <leader>r :%s/
 " reset search
 nmap <leader><space> :noh<cr>
 
-" Swap two words
-nmap <leader>w :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
-
 " short command to strip trainling whitepsace
 nmap <leader>s :call <SID>StripTrailingWhitespaces()<CR>
 
@@ -394,7 +387,7 @@ noremap <leader>Y "*Y
 nnoremap <leader>p p`[v`]=
 
 " when over a class in html hit c to find that class in css/scss/js
-nmap <leader>cf :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnext<CR>
+nmap <leader>f :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnext<CR>
 
 " Format strings in js
 vmap <leader>js :call Stringify()<cr>
@@ -437,14 +430,8 @@ nmap <Leader>t<Bar> :Tabularize /<Bar><CR>
 vmap <Leader>t<Bar> :Tabularize /<Bar><CR>
 
 
-" dash
-nmap <silent> <leader>d <Plug>DashSearch
-nmap <silent> <leader>D <Plug>DashGlobalSearch
-
-" NERDtree
-
 " choosewin
-nmap <leader>q <Plug>(choosewin)
+nmap <leader>w <Plug>(choosewin)
 
 
 " TComment
@@ -476,8 +463,8 @@ let g:syntastic_auto_jump = 0
 " let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_mode_map = {
   \ 'mode': 'active',
-  \ 'active_filetypes': ['ruby', 'php', 'javascript', 'scss', 'css'],
-  \ 'passive_filetypes': ['xhtml', 'html']
+  \ 'active_filetypes': ['php', 'javascript'],
+  \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'css']
   \ }
 
 
@@ -556,18 +543,22 @@ call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
 
 let g:unite_source_history_yank_enable=1
 let g:unite_prompt='❯ '
-let g:unite_source_grep_command='ag'
-let g:unite_source_grep_default_opts='--nocolor --nogroup -S'
-let g:unite_source_grep_recursive_opt=''
-let g:unite_split_rule = "botright"
+
+if executable('ag')
+  let g:unite_source_grep_command='ag'
+  let g:unite_source_grep_default_opts='--nocolor --nogroup --column -S'
+  let g:unite_source_rec_async_command= 'ag --nocolor --nogroup --column -S --hidden -g ""'
+  let g:unite_source_grep_recursive_opt=''
+  let g:unite_split_rule = "botright"
+endif
 
 nmap <space> [unite]
 nnoremap [unite] <nop>
 
 nnoremap <silent> [unite], :<C-u>Unite -start-insert -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
-nnoremap <silent> [unite]. :<C-u>Unite -short-source-names -quick-match buffer<cr>
+nnoremap <silent> [unite]b :<C-u>Unite -short-source-names -quick-match buffer<cr>
 nnoremap <silent> [unite]n :<C-u>Unite -toggle -auto-resize -buffer-name=files file<cr><c-u>
-nnoremap <silent> [unite]b :<C-u>Unite -start-insert -auto-resize -buffer-name=buffers buffer<cr>
+nnoremap <silent> [unite]. :<C-u>Unite -start-insert -auto-resize -buffer-name=buffers buffer<cr>
 nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
 nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
 nnoremap <silent> [unite]f :<C-u>UniteWithCursorWord -start-insert -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
