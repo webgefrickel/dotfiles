@@ -43,8 +43,8 @@ alias apachestart='sudo apachectl start'
 alias apachestop='sudo apachectl stop'
 alias mysqlstart='mysql.server start'
 alias mysqlstop='mysql.server stop'
-alias dev='apachestart && mysqlstart'
-alias devs='apachestop && mysqlstop'
+alias dev='apachestart && mysqlstart && npm_lazy &'
+alias devs='apachestop && mysqlstop && grepkill npm_lazy'
 alias devr='devs && dev'
 
 

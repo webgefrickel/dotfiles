@@ -25,5 +25,6 @@ npm install -g jsonlint
 npm install -g npm-check-updates
 npm install -g recursive-blame
 npm install -g stylestats
+npm install -g svgo
 npm install -g uglify-js
 npm install -g yo
