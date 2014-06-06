@@ -534,14 +534,16 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#set_profile('files', 'smartcase', 1)
 call unite#custom#source('line,outline', 'matchers', 'matcher_fuzzy')
-call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+call unite#custom_source('file_rec, file_rec/async, file_mru, file, buffer, grep',
   \ 'ignore_pattern', join([
   \ '\.git/',
+  \ '\.\(png\|gif\|jpeg\|jpg\|pdf\|ico\)$',
   \ '.sass-cache',
   \ '_srcs',
   \ 'node_modules/',
   \ 'tmp/',
   \ ], '\|'))
+
 
 let g:unite_source_history_yank_enable=1
 let g:unite_prompt='❯ '

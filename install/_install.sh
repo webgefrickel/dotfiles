@@ -9,7 +9,7 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
 
 # tap the casks
-brew tap phinze/homebrew-cask
+brew tap caskroom/homebrew-cask
 brew tap caskroom/versions
 
 # brew paths
