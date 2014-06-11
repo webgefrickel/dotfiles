@@ -31,6 +31,7 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'moll/vim-node'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 't9md/vim-choosewin'
@@ -52,6 +53,7 @@ NeoBundle 'Shougo/vimproc', {
   \     'unix' : 'make -f make_unix.mak'
   \    },
   \ }
+
 
 
 "======================================================================
