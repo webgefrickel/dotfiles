@@ -45,4 +45,4 @@ export LESS="-R"
 
 export LC_CTYPE=$LANG
 
-export RBENV_VERSION="2.1.1"
+export RBENV_VERSION="2.1.2"

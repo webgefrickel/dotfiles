@@ -299,6 +299,15 @@ defaults write org.m0k.transmission WarningLegal -bool false
 
 
 ###############################################################################
+# Apache too many files and other restrictions override                       #
+###############################################################################
+
+echo 'kern.maxfiles=20480' | sudo tee -a /etc/sysctl.conf
+echo -e 'limit maxfiles 8192 20480\nlimit maxproc 1000 2000' | sudo tee -a /etc/launchd.conf
+echo 'ulimit -n 4096' | sudo tee -a /etc/profile
+
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
@@ -308,4 +317,7 @@ for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" \
 	killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+
+
 

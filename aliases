@@ -1,3 +1,7 @@
+# make aliases and other stuff work in sudo
+alias sudo='sudo '
+
+
 # always use macvim but for 'vim'
 alias vim=$EDITOR
 alias vi=$EDITOR
@@ -17,6 +21,16 @@ alias e='exit'
 alias md='mkdir -p'
 alias rd=rmdir
 alias d='dirs -v | head -10'
+
+
+# suffix-aliases for file-types (zsh only)
+alias -s css=vim
+alias -s scss=vim
+alias -s js=vim
+alias -s php=vim
+alias -s html=vim
+alias -s md=vim
+alias -s txt=vim
 
 
 # gnu coreutils
