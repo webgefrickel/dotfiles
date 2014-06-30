@@ -21,6 +21,12 @@ NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+  \     'mac' : 'make -f make_mac.mak',
+  \     'unix' : 'make -f make_unix.mak'
+  \    },
+  \ }
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'dhruvasagar/vim-vinegar'
@@ -30,7 +36,14 @@ NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'kshenoy/vim-signature'
+NeoBundle 'marijnh/tern_for_vim', {
+  \ 'build' : {
+  \     'mac' : 'npm install',
+  \     'unix' : 'npm install'
+  \    },
+  \ }
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'mhinz/vim-startify'
 NeoBundle 'moll/vim-node'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
@@ -46,13 +59,6 @@ NeoBundle 'webgefrickel/vim-gtfo'
 NeoBundle 'webgefrickel/vim-snippets'
 NeoBundle 'wellle/tmux-complete.vim'
 
-" plugin libs and dependencies
-NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-  \     'mac' : 'make -f make_mac.mak',
-  \     'unix' : 'make -f make_unix.mak'
-  \    },
-  \ }
 
 
 
@@ -533,31 +539,26 @@ let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 " The Unite Plugin gets an extra config section
 "======================================================================
 
+let g:unite_source_grep_command='ag'
+let g:unite_source_grep_default_opts='--nocolor --nogroup --column -S --hidden -g'
+let g:unite_source_grep_recursive_opt=''
+let g:unite_split_rule = "botright"
+let g:unite_source_history_yank_enable=1
+let g:unite_prompt='❯ '
+
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#set_profile('files', 'smartcase', 1)
 call unite#custom#source('line,outline', 'matchers', 'matcher_fuzzy')
 call unite#custom_source('file_rec, file_rec/async, file_mru, file, buffer, grep',
   \ 'ignore_pattern', join([
-  \ '\.git/',
-  \ '\.\(png\|gif\|jpeg\|jpg\|pdf\|ico\)$',
+  \ '\.git',
   \ '.sass-cache',
   \ '_srcs',
-  \ 'node_modules/',
-  \ 'tmp/',
+  \ 'node_modules',
+  \ 'tmp',
+  \ '\.\(png\|gif\|jpg\|pdf\|ico\|mp4\|webm\|svg\|mp3\|min\.js\|min\.map\|css\)$',
   \ ], '\|'))
-
-
-let g:unite_source_history_yank_enable=1
-let g:unite_prompt='❯ '
-
-if executable('ag')
-  let g:unite_source_grep_command='ag'
-  let g:unite_source_grep_default_opts='--nocolor --nogroup --column -S'
-  let g:unite_source_rec_async_command= 'ag --nocolor --nogroup --column -S --hidden -g ""'
-  let g:unite_source_grep_recursive_opt=''
-  let g:unite_split_rule = "botright"
-endif
 
 nmap <space> [unite]
 nnoremap [unite] <nop>
