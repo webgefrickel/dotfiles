@@ -18,6 +18,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "======================================================================
 
 NeoBundle 'AndrewRadev/splitjoin.vim'
+NeoBundle "Chiel92/vim-autoformat"
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
@@ -58,8 +59,6 @@ NeoBundle 'vim-scripts/Unicode-RST-Tables'
 NeoBundle 'webgefrickel/vim-gtfo'
 NeoBundle 'webgefrickel/vim-snippets'
 NeoBundle 'wellle/tmux-complete.vim'
-
-
 
 
 "======================================================================
@@ -225,24 +224,6 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 
-" string up javascript-strings with single quotes and +
-function! Stringify() range
-  for linenum in range(a:firstline, a:lastline)
-    let replaceSub = "'\\1'\ +"
-    if a:lastline == linenum
-      let replaceSub = "'\\1'"
-    endif
-    let newline = getline(linenum)
-    " escape single quote
-    " \\\\ is \
-    " \= means previous char is optional
-    let newline = substitute(newline, "\\\\\\='", "\\\\\\\'", 'g')
-    " add single quotes and plus
-    let newline = substitute(newline,'\(\S.*\)', replaceSub ,'g')
-    call setline(linenum, newline)
-  endfor
-endfunction
-
 
 "======================================================================
 " autocommands, filetypes, spelling, keywords for specific filetypes
@@ -345,7 +326,11 @@ nnoremap Q <nop>
 nnoremap K <nop>
 
 " reload files when set autoread is active with F5
-lnoremap <F5> :checktime<CR>
+nnoremap <F5> :checktime<CR>
+
+" Autoformat plugin
+nnoremap <F3> :Autoformat<CR>
+
 
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
@@ -396,11 +381,8 @@ noremap <leader>Y "*Y
 " paste keeping indentation
 nnoremap <leader>p p`[v`]=
 
-" when over a class in html hit c to find that class in css/scss/js
+" when over a class in html hit leader-f to find that class in css/scss/js
 nmap <leader>f :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnext<CR>
-
-" Format strings in js
-vmap <leader>js :call Stringify()<cr>
 
 
 "======================================================================
@@ -458,8 +440,8 @@ let g:neosnippet#scope_aliases['php'] = 'php,html'
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+      \ "\<Plug>(neosnippet_expand_or_jump)"
+      \: pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " For snippet_complete marker.
 if has('conceal')
@@ -473,10 +455,10 @@ endif
 let g:syntastic_auto_jump = 0
 " let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_mode_map = {
-  \ 'mode': 'active',
-  \ 'active_filetypes': ['php', 'javascript'],
-  \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'css']
-  \ }
+      \ 'mode': 'active',
+      \ 'active_filetypes': ['php', 'javascript'],
+      \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'css']
+      \ }
 
 
 " airline config
@@ -551,14 +533,14 @@ call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#set_profile('files', 'smartcase', 1)
 call unite#custom#source('line,outline', 'matchers', 'matcher_fuzzy')
 call unite#custom_source('file_rec, file_rec/async, file_mru, file, buffer, grep',
-  \ 'ignore_pattern', join([
-  \ '\.git',
-  \ '.sass-cache',
-  \ '_srcs',
-  \ 'node_modules',
-  \ 'tmp',
-  \ '\.\(png\|gif\|jpg\|pdf\|ico\|mp4\|webm\|svg\|mp3\|min\.js\|min\.map\|css\)$',
-  \ ], '\|'))
+      \ 'ignore_pattern', join([
+      \ '\.git',
+      \ '.sass-cache',
+      \ '_srcs',
+      \ 'node_modules',
+      \ 'tmp',
+      \ '\.\(png\|gif\|jpg\|pdf\|ico\|mp4\|webm\|svg\|mp3\|min\.js\|min\.map\|css\)$',
+      \ ], '\|'))
 
 nmap <space> [unite]
 nnoremap [unite] <nop>
