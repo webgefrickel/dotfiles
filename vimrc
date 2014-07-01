@@ -539,7 +539,7 @@ call unite#custom_source('file_rec, file_rec/async, file_mru, file, buffer, grep
       \ '_srcs',
       \ 'node_modules',
       \ 'tmp',
-      \ '\.\(png\|gif\|jpg\|pdf\|ico\|mp4\|webm\|svg\|mp3\|min\.js\|min\.map\|css\)$',
+      \ '\.\(png\|gif\|jpg\|pdf\|ico\|mp4\|webm\|svg\|mp3\|woff\|ttf\|eot\|min\.js\|min\.map\|css\)$',
       \ ], '\|'))
 
 nmap <space> [unite]
