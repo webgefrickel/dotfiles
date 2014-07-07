@@ -27,7 +27,6 @@ alias d='dirs -v | head -10'
 alias -s css=vim
 alias -s scss=vim
 alias -s js=vim
-alias -s php=vim
 alias -s html=vim
 alias -s md=vim
 alias -s txt=vim

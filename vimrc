@@ -44,7 +44,6 @@ NeoBundle 'marijnh/tern_for_vim', {
   \    },
   \ }
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'mhinz/vim-startify'
 NeoBundle 'moll/vim-node'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
@@ -422,6 +421,12 @@ nmap <Leader>t<Bar> :Tabularize /<Bar><CR>
 vmap <Leader>t<Bar> :Tabularize /<Bar><CR>
 
 
+" Splitjoin
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+nmap <Leader>J :SplitjoinJoin<cr>
+nmap <Leader>S :SplitjoinSplit<cr>
+
 " choosewin
 nmap <leader>w <Plug>(choosewin)
 
@@ -521,12 +526,12 @@ let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 " The Unite Plugin gets an extra config section
 "======================================================================
 
-let g:unite_source_grep_command='ag'
-let g:unite_source_grep_default_opts='--nocolor --nogroup --column -S --hidden -g'
-let g:unite_source_grep_recursive_opt=''
-let g:unite_split_rule = "botright"
 let g:unite_source_history_yank_enable=1
 let g:unite_prompt='❯ '
+let g:unite_source_grep_command='ag'
+let g:unite_source_grep_default_opts='--nocolor --nogroup -S'
+let g:unite_source_grep_recursive_opt=''
+let g:unite_split_rule = "botright"
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
