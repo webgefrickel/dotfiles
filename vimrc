@@ -17,8 +17,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Plugins and useful stuff/dependencies
 "======================================================================
 
-NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle "Chiel92/vim-autoformat"
+NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
@@ -28,15 +28,14 @@ NeoBundle 'Shougo/vimproc', {
   \     'unix' : 'make -f make_unix.mak'
   \    },
   \ }
+NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'dhruvasagar/vim-vinegar'
 NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'edsono/vim-matchit'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'justinmk/vim-sneak'
-NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'marijnh/tern_for_vim', {
   \ 'build' : {
   \     'mac' : 'npm install',
@@ -54,7 +53,6 @@ NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'vim-scripts/Unicode-RST-Tables'
 NeoBundle 'webgefrickel/vim-gtfo'
 NeoBundle 'webgefrickel/vim-snippets'
 NeoBundle 'wellle/tmux-complete.vim'
@@ -65,15 +63,14 @@ NeoBundle 'wellle/tmux-complete.vim'
 "======================================================================
 
 NeoBundle 'beyondwords/vim-twig'
+NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'elzr/vim-json'
-NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'joshtronic/php.vim'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'tpope/vim-git'
-NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'webgefrickel/vim-typoscript'
 
@@ -200,14 +197,13 @@ set laststatus=2    " statusbar is 2 high
 set ch=2            " command window is 2 high
 set cpo+=$          " Add a $ to the end of a selection
 set cpo+=J          " 2 spaces after a sentence for easier text manupulation
-set t_Co=256        " 256 color terminal FTW
-set background=dark " and a dark background of course
 
+colorscheme solarized
+set background=dark " and a dark background of course
+set t_Co=256        " 256 color terminal FTW
 let g:solarized_termtrans = 1
 let g:solarized_contrast = 'high'
-colorscheme solarized
-
-" minor optical fix vor syntastic and vim signature
+" minor optical fix vor syntastic
 highlight SignColumn ctermbg=8
 
 
@@ -557,8 +553,8 @@ nnoremap <silent> [unite]. :<C-u>Unite -start-insert -auto-resize -buffer-name=b
 nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
 nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
 nnoremap <silent> [unite]f :<C-u>UniteWithCursorWord -start-insert -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
-nnoremap <silent> [unite]a :<C-u>Unite -no-quit -buffer-name=search grep:.<cr>
-nnoremap <silent> [unite]A :<C-u>UniteWithCursorWord -no-quit -buffer-name=search grep:.<cr>
+nnoremap <silent> [unite]a :<C-u>Unite -buffer-name=search grep:.<cr>
+nnoremap <silent> [unite]A :<C-u>UniteWithCursorWord -buffer-name=search grep:.<cr>
 
 autocmd FileType unite call s:unite_settings()
 

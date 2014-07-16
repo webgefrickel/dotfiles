@@ -41,6 +41,9 @@ fi
 HISTSIZE=10000
 SAVEHIST=10000
 
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
+
 setopt append_history
 setopt extended_history
 setopt hist_expire_dups_first
