@@ -74,7 +74,7 @@ alias ta='tmux attach'
 # all in one homebrew, gem update commands
 alias brewup='brew update && brew upgrade && brew cleanup && brew linkapps'
 alias gemup='gem update --system && gem update && gem cleanup'
-alias npmup='npm -g cache clean && npm -g update && npm-check-updates -u && npm install'
+alias npmup='npm -g cache clean && npm -g update'
 alias sysup='sudo softwareupdate -i -a'
 alias upall='sysup && brewup && gemup && npmup'
 

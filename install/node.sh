@@ -5,7 +5,7 @@ brew update
 brew install node --without-npm
 brew unlink node
 brew link node
-curl https://npmjs.org/install.sh | sh
+curl -L https://npmjs.org/install.sh | sh
 
 npm install -g bower
 npm install -g browserify
