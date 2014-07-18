@@ -232,23 +232,17 @@ au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
 au BufNewFile,BufRead *.{scss} set ft=scss.css
 
 " Syntaxes for other files
-au BufNewFile,BufRead Phakefile set ft=php
 au BufNewFile,BufRead *.twig set ft=html.twig
-
-" assume typoscript for txt -- i use md only :-)
-au BufNewFile,BufRead *.{txt,ts} set ft=typoscript
 
 " load emmet for html-files
 au FileType html,php,twig,mustache EmmetInstall
 
 " omnicompletion for some filetypes
 au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
-au FileType html,php,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+au FileType html,php,twig,mustache setlocal omnifunc=htmlcomplete#CompleteTags
 au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" special lib syntax sugar for javascriptj
-let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs'
 
 "======================================================================
 " Custom key mappings and shortcuts
@@ -280,13 +274,7 @@ vnoremap / /\v
 nnoremap N Nzz
 nnoremap n nzz
 
-" dont use the arrow keys in insert mode
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
-" but use them for usefull stuff in normal mode-- switching buffers
+" use the arrowkeys for usefull stuff in normal mode -- switching buffers
 nnoremap <up> :bfirst<cr>
 nnoremap <down> :blast<cr>
 nnoremap <left> :bp<cr>
@@ -321,7 +309,6 @@ nnoremap <F5> :checktime<CR>
 " Autoformat plugin
 nnoremap <F3> :Autoformat<CR>
 
-
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
 
@@ -349,9 +336,6 @@ nnoremap <leader>vs :source ~/.vimrc<cr>
 " Opens an edit command with the path of the currently edited file filled in
 nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
 
-" start a new document-wide seach-replace
-nnoremap <leader>r :%s/
-
 " reset search
 nmap <leader><space> :noh<cr>
 
@@ -363,10 +347,6 @@ nmap <leader>g /\v^[<\|=>]{7}( .*\|$)<CR>
 
 " Map <Leader>* to display all lines with keyword under cursor and ask which one to jump to
 nmap <Leader>* [I:let nr = input("Enter line number: ")<Bar>exe "normal " . nr ."[\t"<CR>
-
-" Yank text to the OS X clipboard
-noremap <leader>y "*y
-noremap <leader>Y "*Y
 
 " paste keeping indentation
 nnoremap <leader>p p`[v`]=
@@ -393,9 +373,6 @@ xmap \| <Plug>VSneakPrevious
 nnoremap <silent> <leader>gs :Gstatus<CR><C-w>20+
 nnoremap <silent> <leader>gd :Gdiff<CR><C-w>20+
 nnoremap <silent> <leader>gc :Gcommit<CR><C-w>20+
-nnoremap <silent> <leader>gb :Gblame<CR><C-w>20+
-nnoremap <silent> <leader>gl :Glog<CR><C-w>20+
-nnoremap <silent> <leader>gp :Git push<CR><C-w>20+
 nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
 
 
@@ -408,8 +385,6 @@ nmap <Leader>t: :Tabularize /:<CR>
 vmap <Leader>t: :Tabularize /:<CR>
 nmap <Leader>t, :Tabularize /,<CR>
 vmap <Leader>t, :Tabularize /,<CR>
-nmap <Leader>t<Bar> :Tabularize /<Bar><CR>
-vmap <Leader>t<Bar> :Tabularize /<Bar><CR>
 
 
 " Splitjoin
@@ -446,11 +421,11 @@ endif
 " no checking for xhtml/html -- because of fluidtemplate for TYPO3
 " and no checking for scss.css because of CSS3 and SASS-Variable
 let g:syntastic_auto_jump = 0
-" let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_mode_map = {
       \ 'mode': 'active',
-      \ 'active_filetypes': ['php', 'javascript'],
-      \ 'passive_filetypes': ['xhtml', 'html', 'scss', 'css']
+      \ 'active_filetypes': ['php', 'javascript', 'scss'],
+      \ 'passive_filetypes': ['xhtml', 'html']
       \ }
 
 
@@ -477,12 +452,6 @@ let NERDTreeMinimalUI=1
 let NERDTreeWinSize=50
 let NERDTreeShowHidden=1
 nnoremap <leader>n :NERDTreeToggle<cr>
-
-
-" choosewin
-let g:choosewin_overlay_enable = 1
-let g:choosewin_overlay_clear_multibyte = 1
-let g:choosewin_label = 'ASDFGHJKL;QWERTYUIOP'
 
 
 " NEOCOMPLETE
