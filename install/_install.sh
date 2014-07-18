@@ -17,15 +17,19 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # install some neccessary brew packages
-brew install tmux
-brew install zsh
-brew install git
 brew install brew-cask
 brew install coreutils
+brew install git
+brew install macvim --with-cscope --with-lua --HEAD
+brew install reattach-to-user-namespace
+brew install tmux
+brew install the_silver_searcher
+brew install wget
+brew install zsh
 
-brew cask install forklift
-brew cask install iterm2-beta
 brew cask install dropbox
+brew cask install forklift
+brew cask install iterm2
 
 # set zsh to the default
 sudo vim /etc/shells

@@ -4,17 +4,16 @@ brew tap homebrew/dupes
 brew tap josegonzalez/homebrew-php
 brew tap thoughtbot/formulae
 
-# install brew packages
+# install additional brew packages -- see _install.sh too
 brew install curl
+brew install ffmpeg
 brew install ghostscript
 brew install git-flow
-brew install gitsh
 brew install httpd
 brew install imagemagick
-brew install macvim --with-cscope --with-lua --HEAD
+brew install markdown
 brew install mysql
 brew install node --without-npm
-brew install reattach-to-user-namespace
 brew install php55
 brew install php55-mcrypt
 brew install php55-xdebug
@@ -24,32 +23,36 @@ brew install rbenv
 brew install ruby-build
 brew install ssh-copy-id
 brew install subversion
-brew install the_silver_searcher
-brew install wget
+brew install unrar
 brew install youtube-dl
-brew install z
 
 # brew cask and install software
 brew cask install adium
 brew cask install alfred
 brew cask install amadeus-pro
 brew cask install bartender
+brew cask install betterzipql
+brew cask install bill
 brew cask install carbon-copy-cloner
 brew cask install doxie
-brew cask install dropbox
 brew cask install firefox
+brew cask install flux
 brew cask install fontprep
-brew cask install f-lux
 brew cask install ghostlab
 brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install istat-menus
-brew cask install keyremap4macbook
+brew cask install karabiner
 brew cask install libreoffice
 brew cask install miro-video-converter
-brew cask install pckeyboardhack
+brew cask install qlcolorcode
+brew cask install qlmarkdown
+brew cask install qlstephen
+brew cask install quicklook-csv
+brew cask install quicklook-json
+brew cask install seil
 brew cask install sequel-pro
 brew cask install skype
 brew cask install slate
@@ -61,14 +64,6 @@ brew cask install virtualbox
 brew cask install vlc
 brew cask install wedge
 brew cask install xld
-
-# quicklook stuff
-brew cask install qlcolorcode
-brew cask install qlstephen
-brew cask install qlmarkdown
-brew cask install quicklook-json
-brew cask install quicklook-csv
-brew cask install betterzipql
 
 # set some options for qlcolorcode
 defaults write org.n8gray.QLColorCode font Menlo

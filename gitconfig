@@ -38,6 +38,7 @@
   rbc = rebase --continue
   ffs = flow feature start
   fff = flow feature finish
+  ffp = flow feature publish
   fi = flow init
   unst = reset HEAD
   hub = push origin master
