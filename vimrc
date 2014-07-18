@@ -28,7 +28,6 @@ NeoBundle 'Shougo/vimproc', {
   \     'unix' : 'make -f make_unix.mak'
   \    },
   \ }
-NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'dhruvasagar/vim-vinegar'
@@ -63,7 +62,6 @@ NeoBundle 'wellle/tmux-complete.vim'
 "======================================================================
 
 NeoBundle 'beyondwords/vim-twig'
-NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'joshtronic/php.vim'
 NeoBundle 'mustache/vim-mustache-handlebars'
@@ -71,6 +69,7 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'tpope/vim-git'
+NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'webgefrickel/vim-typoscript'
 
@@ -235,6 +234,9 @@ au BufRead,BufNewFile *.{md|rst} setlocal spell
 " TODO check if this is sane at all
 au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword+=-
 au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
+
+" scss.css snippets and stuff
+au BufNewFile,BufRead *.{scss} set ft=scss.css
 
 " Syntaxes for other files
 au BufNewFile,BufRead Phakefile set ft=php
