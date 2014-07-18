@@ -36,17 +36,10 @@ NeoBundle 'edsono/vim-matchit'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'justinmk/vim-sneak'
-NeoBundle 'marijnh/tern_for_vim', {
-  \ 'build' : {
-  \     'mac' : 'npm install',
-  \     'unix' : 'npm install'
-  \    },
-  \ }
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'moll/vim-node'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 't9md/vim-choosewin'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-ragtag'
@@ -67,7 +60,6 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'joshtronic/php.vim'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'othree/html5.vim'
-NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'tpope/vim-git'
 NeoBundle 'tpope/vim-haml'
@@ -423,11 +415,8 @@ vmap <Leader>t<Bar> :Tabularize /<Bar><CR>
 " Splitjoin
 let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''
-nmap <Leader>J :SplitjoinJoin<cr>
-nmap <Leader>S :SplitjoinSplit<cr>
-
-" choosewin
-nmap <leader>w <Plug>(choosewin)
+nmap <Leader>j :SplitjoinJoin<cr>
+nmap <Leader>jj :SplitjoinSplit<cr>
 
 
 " TComment
