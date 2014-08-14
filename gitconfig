@@ -58,3 +58,6 @@
 [mergetool]
   prompt = false
   keepBackup = false
+[user]
+	name = Steffen Rademacker
+	email = webgefrickel@gmail.com

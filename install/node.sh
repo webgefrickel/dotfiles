@@ -12,6 +12,7 @@ npm install -g browserify
 npm install -g dploy
 npm install -g grunt-cli
 npm install -g gulp
+npm install -g jscs
 npm install -g jshint
 npm install -g jsonlint
 npm install -g npm-check-updates

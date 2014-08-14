@@ -14,13 +14,13 @@
 .~lock*
 .tmp_*
 .sass-cache
-*.sass-cache
 .revision
 .rev
 _srcs
 log
 tmp
 node_modules
+bower_components
 
 # OS or editor folders and temporary and other files
 .DS_Store

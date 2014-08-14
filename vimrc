@@ -36,7 +36,6 @@ NeoBundle 'edsono/vim-matchit'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'justinmk/vim-sneak'
-NeoBundle 'mattn/emmet-vim'
 NeoBundle 'moll/vim-node'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
@@ -107,6 +106,7 @@ set sidescroll=10                          " smoother side-scrolling
 set sidescrolloff=5                        " jump by 5 when scrolling sideways
 set timeout timeoutlen=800 ttimeoutlen=100 " get rid of the delay when pressing O (for example)
 set ttyfast                                " faster terminal usage
+set ttymouse=xterm2                        " xterm/tmux compatible mouse
 set virtualedit=all                        " every mode active from v V to StrgV
 set visualbell                             " don't flicker
 
@@ -220,26 +220,23 @@ endfunction
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " spell correction on text-files
-au BufRead,BufNewFile *.{md|rst} setlocal spell
+au BufRead,BufNewFile *.md setlocal spell
 
 " add the dash to keywords -- makes better css/js/html search
 " do this for specific files only (not in php/rb e.g.)
-" TODO check if this is sane at all
-au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword+=-
-au BufNewFile,BufRead *.{json,js,css,scss,html} set iskeyword-=_
+au BufNewFile,BufRead *.{js,scss,html} set iskeyword+=-
+au BufNewFile,BufRead *.{js,scss,html} set iskeyword-=_
+au BufNewFile,BufRead *.php set iskeyword-=-
 
 " scss.css snippets and stuff
-au BufNewFile,BufRead *.{scss} set ft=scss.css
+au BufNewFile,BufRead *.scss set ft=scss.css
 
 " Syntaxes for other files
 au BufNewFile,BufRead *.twig set ft=html.twig
 
-" load emmet for html-files
-au FileType html,php,twig,mustache EmmetInstall
-
 " omnicompletion for some filetypes
 au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
-au FileType html,php,twig,mustache setlocal omnifunc=htmlcomplete#CompleteTags
+au FileType html,php,twig setlocal omnifunc=htmlcomplete#CompleteTags
 au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
@@ -422,22 +419,19 @@ endif
 " and no checking for scss.css because of CSS3 and SASS-Variable
 let g:syntastic_auto_jump = 0
 let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_mode_map = {
-      \ 'mode': 'active',
-      \ 'active_filetypes': ['php', 'javascript', 'scss'],
-      \ 'passive_filetypes': ['xhtml', 'html']
-      \ }
+  \ 'mode': 'active',
+  \ 'active_filetypes': ['php', 'javascript', 'scss', 'json'],
+  \ 'passive_filetypes': ['xhtml', 'html']
+  \ }
 
 
 " airline config
 let g:airline_theme = 'solarized'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
-
-
-" EMMET deactivate emmet by default
-let g:user_emmet_install_global = 0
-imap <expr> <C-e> emmet#expandAbbrIntelligent("\<C-e>")
 
 
 " wildfire
@@ -497,9 +491,10 @@ call unite#custom#source('line,outline', 'matchers', 'matcher_fuzzy')
 call unite#custom_source('file_rec, file_rec/async, file_mru, file, buffer, grep',
       \ 'ignore_pattern', join([
       \ '\.git',
-      \ '.sass-cache',
+      \ '\.sass-cache',
       \ '_srcs',
       \ 'node_modules',
+      \ 'bower_components',
       \ 'tmp',
       \ '\.\(png\|gif\|jpg\|pdf\|ico\|mp4\|webm\|svg\|mp3\|woff\|ttf\|eot\|min\.js\|min\.map\|css\)$',
       \ ], '\|'))

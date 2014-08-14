@@ -83,7 +83,7 @@ alias upall='sysup && brewup && gemup && npmup'
 alias hosts='sudo vim /etc/hosts'
 alias vhosts='sudo vim /usr/local/etc/apache2/extra/httpd-vhosts.conf'
 alias phpini='vim /usr/local/etc/php/5.5/php.ini'
-alias http='vim /usr/local/etc/apache2/httpd.conf'
+alias httpconf='vim /usr/local/etc/apache2/httpd.conf'
 
 
 # vagrant stuff
