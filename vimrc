@@ -153,7 +153,7 @@ set autoindent
 "======================================================================
 
 if has('gui_running')
-  set guifont=Menlo\ for\ Powerline:h12 " a nice font here
+  set guifont=Menlo:h12 " a nice font here
   set linespace=1    " menlo is nice, but very dense...
   set guioptions-=T  " no toolbar
   set guioptions-=L  " no left scrollbar
@@ -197,6 +197,7 @@ let g:solarized_termtrans = 1
 let g:solarized_contrast = 'high'
 " minor optical fix vor syntastic
 highlight SignColumn ctermbg=8
+highlight Comment cterm=italic
 
 
 "======================================================================
@@ -477,7 +478,6 @@ let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 " The Unite Plugin gets an extra config section
 "======================================================================
 
-let g:unite_source_history_yank_enable=1
 let g:unite_prompt='❯ '
 let g:unite_source_grep_command='ag'
 let g:unite_source_grep_default_opts='--nocolor --nogroup -S'
@@ -491,26 +491,27 @@ call unite#custom#source('line,outline', 'matchers', 'matcher_fuzzy')
 call unite#custom_source('file_rec, file_rec/async, file_mru, file, buffer, grep',
       \ 'ignore_pattern', join([
       \ '\.git',
+      \ '\.svn',
       \ '\.sass-cache',
       \ '_srcs',
       \ 'node_modules',
       \ 'bower_components',
-      \ 'tmp',
+      \ 'vim\/bundle',
       \ '\.\(png\|gif\|jpg\|pdf\|ico\|mp4\|webm\|svg\|mp3\|woff\|ttf\|eot\|min\.js\|min\.map\|css\)$',
       \ ], '\|'))
 
 nmap <space> [unite]
 nnoremap [unite] <nop>
 
-nnoremap <silent> [unite], :<C-u>Unite -start-insert -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
+nnoremap <silent> [unite], :<C-u>Unite -start-insert -toggle -auto-resize file_rec/async<cr>
 nnoremap <silent> [unite]b :<C-u>Unite -short-source-names -quick-match buffer<cr>
-nnoremap <silent> [unite]n :<C-u>Unite -toggle -auto-resize -buffer-name=files file<cr><c-u>
-nnoremap <silent> [unite]. :<C-u>Unite -start-insert -auto-resize -buffer-name=buffers buffer<cr>
-nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
-nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
-nnoremap <silent> [unite]f :<C-u>UniteWithCursorWord -start-insert -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
-nnoremap <silent> [unite]a :<C-u>Unite -buffer-name=search grep:.<cr>
-nnoremap <silent> [unite]A :<C-u>UniteWithCursorWord -buffer-name=search grep:.<cr>
+nnoremap <silent> [unite]n :<C-u>Unite -toggle -auto-resize file<cr>
+nnoremap <silent> [unite]. :<C-u>Unite -start-insert -auto-resize buffer<cr>
+nnoremap <silent> [unite]l :<C-u>Unite -auto-resize line<cr>
+nnoremap <silent> [unite]y :<C-u>Unite history/yank<cr>
+nnoremap <silent> [unite]f :<C-u>UniteWithCursorWord -start-insert -toggle -auto-resize file_rec/async<cr>
+nnoremap <silent> [unite]a :<C-u>Unite grep:.<cr>
+nnoremap <silent> [unite]A :<C-u>UniteWithCursorWord grep:.<cr>
 
 autocmd FileType unite call s:unite_settings()
 
