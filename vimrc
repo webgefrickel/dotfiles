@@ -60,6 +60,7 @@ NeoBundle 'joshtronic/php.vim'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'shawncplus/phpcomplete.vim'
 NeoBundle 'tpope/vim-git'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
@@ -234,12 +235,6 @@ au BufNewFile,BufRead *.scss set ft=scss.css
 
 " Syntaxes for other files
 au BufNewFile,BufRead *.twig set ft=html.twig
-
-" omnicompletion for some filetypes
-au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
-au FileType html,php,twig setlocal omnifunc=htmlcomplete#CompleteTags
-au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
 "======================================================================
@@ -431,8 +426,18 @@ let g:syntastic_mode_map = {
 
 " airline config
 let g:airline_theme = 'solarized'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = '⮀'
+let g:airline_right_sep = '⮂'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+  let g:airline_symbols.linenr = '⭡'
+  let g:airline_symbols.branch = '⭠'
+  let g:airline_symbols.paste = ' PASTE'
+  let g:airline_symbols.whitespace = 'Ξ'
+  let g:airline_symbols.readonly = '⭤'
+endif
+
 
 
 " wildfire
@@ -452,10 +457,7 @@ nnoremap <leader>n :NERDTreeToggle<cr>
 " NEOCOMPLETE
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#auto_completion_start_length = 4
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-let g:neocomplete#enable_fuzzy_completion = 1
+let g:neocomplete#auto_completion_start_length = 3
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
@@ -470,8 +472,15 @@ endfunction
 
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
+  let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 endif
-let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+
+" omnicompletion for some filetypes
+au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
+au FileType html,php,twig setlocal omnifunc=htmlcomplete#CompleteTags
+au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
 
 
 "======================================================================
