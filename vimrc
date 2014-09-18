@@ -23,21 +23,17 @@ NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-  \     'mac' : 'make -f make_mac.mak',
-  \     'unix' : 'make -f make_unix.mak'
-  \    },
-  \ }
-NeoBundle 'bling/vim-airline'
-NeoBundle 'chrisbra/NrrwRgn'
-NeoBundle 'dhruvasagar/vim-vinegar'
+      \ 'build' : {
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak'
+      \    },
+      \ }
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'edsono/vim-matchit'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'justinmk/vim-sneak'
-NeoBundle 'moll/vim-node'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-fugitive'
@@ -45,6 +41,7 @@ NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'webgefrickel/vim-gtfo'
 NeoBundle 'webgefrickel/vim-snippets'
 NeoBundle 'wellle/tmux-complete.vim'
@@ -57,14 +54,13 @@ NeoBundle 'wellle/tmux-complete.vim'
 NeoBundle 'beyondwords/vim-twig'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'joshtronic/php.vim'
+NeoBundle 'moll/vim-node'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'shawncplus/phpcomplete.vim'
 NeoBundle 'tpope/vim-git'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
-NeoBundle 'webgefrickel/vim-typoscript'
 
 
 "======================================================================
@@ -83,7 +79,7 @@ syntax on
 
 set autoread                               " Automatically read a file that has changed on disk
 set backspace=indent,eol,start             " Allow backspacing over everything in insert mode
-set cursorline                             " highligh current line
+set cursorline                             " highlight current line
 set encoding=utf-8                         " Yeah. UTF-8 FTW!
 set grepprg=ag                             " use ag for grepping
 set hidden                                 " allows for switching buffers without writing
@@ -93,7 +89,7 @@ set mouse=a                                " mouse for scrolling
 set nobackup                               " no backups
 set noerrorbells                           " don't beep
 set noesckeys                              " no delay for escaping
-set noshowmode                             " dont show active mode -- we use airline for that
+set noshowmode                             " dont show active mode
 set noswapfile                             " no swp-files
 set nowrap                                 " dont wrap lines around
 set nowritebackup                          " no stupid backup files
@@ -150,7 +146,7 @@ set autoindent
 
 
 "======================================================================
-" gui options for macvim
+" gui options for macvim / gvim
 "======================================================================
 
 if has('gui_running')
@@ -235,6 +231,12 @@ au BufNewFile,BufRead *.scss set ft=scss.css
 
 " Syntaxes for other files
 au BufNewFile,BufRead *.twig set ft=html.twig
+
+" omnicompletion for some filetypes
+au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
+au FileType html,php,twig setlocal omnifunc=htmlcomplete#CompleteTags
+au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
 "======================================================================
@@ -333,7 +335,7 @@ nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
 nmap <leader><space> :noh<cr>
 
 " short command to strip trainling whitepsace
-nmap <leader>s :call <SID>StripTrailingWhitespaces()<CR>
+nmap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
 
 " Find merge conflict markers
 nmap <leader>g /\v^[<\|=>]{7}( .*\|$)<CR>
@@ -383,8 +385,8 @@ vmap <Leader>t, :Tabularize /,<CR>
 " Splitjoin
 let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''
-nmap <Leader>j :SplitjoinJoin<cr>
-nmap <Leader>jj :SplitjoinSplit<cr>
+nmap <Leader>sj :SplitjoinJoin<cr>
+nmap <Leader>sk :SplitjoinSplit<cr>
 
 
 " TComment
@@ -398,22 +400,17 @@ let g:neosnippet#disable_runtime_snippets = { "_": 1 }
 let g:neosnippet#scope_aliases = {}
 let g:neosnippet#scope_aliases['css'] = 'css,scss'
 let g:neosnippet#scope_aliases['php'] = 'php,html,twig'
+let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
 
 " Neosnippet - SuperTab like snippets behavior.
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \ "\<Plug>(neosnippet_expand_or_jump)"
       \: pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \ "\<Plug>(neosnippet_expand_or_jump)"
       \: "\<TAB>"
-
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
 
 
 " Syntastic
@@ -424,40 +421,17 @@ let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_mode_map = {
-  \ 'mode': 'active',
-  \ 'active_filetypes': ['php', 'javascript', 'scss', 'json'],
-  \ 'passive_filetypes': ['xhtml', 'html']
-  \ }
-
-
-" airline config
-let g:airline_theme = 'solarized'
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = '⮀'
-let g:airline_right_sep = '⮂'
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-  let g:airline_symbols.linenr = '⭡'
-  let g:airline_symbols.branch = '⭠'
-  let g:airline_symbols.paste = ' PASTE'
-  let g:airline_symbols.whitespace = 'Ξ'
-  let g:airline_symbols.readonly = '⭤'
-endif
+      \ 'mode': 'active',
+      \ 'active_filetypes': ['php', 'javascript', 'scss', 'json'],
+      \ 'passive_filetypes': ['xhtml', 'html']
+      \ }
 
 
 
-" wildfire
+" wildfire -- selecting with enter/backspace
 let g:wildfire_objects = ['i"', "i'", "i)", "i]", "i}", "iW", "it", "ip"]
 let g:wildfire_fuel_map = "<ENTER>"
 let g:wildfire_water_map = "<BS>"
-
-
-" NERDtree
-let NERDTreeAutoDeleteBuffer=1
-let NERDTreeMinimalUI=1
-let NERDTreeWinSize=50
-let NERDTreeShowHidden=1
-nnoremap <leader>n :NERDTreeToggle<cr>
 
 
 " NEOCOMPLETE
@@ -466,13 +440,13 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#auto_completion_start_length = 3
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+inoremap <silent> <CR> <C-r>=<SID>neocomplete_cr_function()<CR>
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
 
-function! s:my_cr_function()
+function! s:neocomplete_cr_function()
   return neocomplete#close_popup() . "\<CR>"
 endfunction
 
@@ -481,16 +455,75 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 endif
 
-" omnicompletion for some filetypes
-au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
-au FileType html,php,twig setlocal omnifunc=htmlcomplete#CompleteTags
-au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+"======================================================================
+" The Lightline Plugin
+"======================================================================
+
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
+      \   'right': [ [ 'lineinfo' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component_function': {
+      \   'modified': 'LightlineModified',
+      \   'readonly': 'LightlineReadonly',
+      \   'fugitive': 'LightlineFugitive',
+      \   'filename': 'LightlineFilename',
+      \   'fileformat': 'LightlineFileformat',
+      \   'filetype': 'LightlineFiletype',
+      \   'fileencoding': 'LightlineFileencoding',
+      \   'mode': 'LightlineMode',
+      \ },
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ }
+
+function! LightlineModified()
+  return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LightlineReadonly()
+  return &ft !~? 'help' && &readonly ? '⭤' : ''
+endfunction
+
+function! LightlineFilename()
+  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+        \ (&ft == 'unite' ? unite#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+function! LightlineFugitive()
+  if exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? '⭠ '._ : ''
+  endif
+  return ''
+endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! LightlineMode()
+  let fname = expand('%:t')
+  return &ft == 'unite' ? 'Unite' : winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
 
 
 
 "======================================================================
-" The Unite Plugin gets an extra config section
+" The Unite Plugin
 "======================================================================
 
 let g:unite_prompt='❯ '
@@ -498,10 +531,11 @@ let g:unite_source_grep_command='ag'
 let g:unite_source_grep_default_opts='--nocolor --nogroup -S'
 let g:unite_source_grep_recursive_opt=''
 let g:unite_split_rule = "botright"
+let g:unite_force_overwrite_statusline = 0
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#set_profile('files', 'smartcase', 1)
+call unite#set_profile('files', 'context.smartcase', 1)
 call unite#custom#source('line,outline', 'matchers', 'matcher_fuzzy')
 call unite#custom_source('file_rec, file_rec/async, file_mru, file, buffer, grep',
       \ 'ignore_pattern', join([
