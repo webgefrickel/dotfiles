@@ -47,6 +47,7 @@ brew cask install istat-menus
 brew cask install karabiner
 brew cask install libreoffice
 brew cask install miro-video-converter
+brew cask install opera
 brew cask install qlcolorcode
 brew cask install qlmarkdown
 brew cask install qlstephen
