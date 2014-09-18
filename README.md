@@ -25,7 +25,4 @@ Finally restart your terminal and vim again, and you are ready to go.
 ## VIM
 
 I use a lot of plugins and custom syntaxes. They are all
-installed via vundle - for a list of the plugins see vimrc.
-
-To get things to work properly you first have to install
-vundle - see the instructions here: [vundle](https://github.com/gmarik/vundle)
+installed via neobundle - for a list of the plugins see vimrc.
