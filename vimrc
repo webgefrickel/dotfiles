@@ -191,7 +191,6 @@ colorscheme solarized
 set background=dark " and a dark background of course
 set t_Co=256        " 256 color terminal FTW
 let g:solarized_termtrans = 1
-let g:solarized_contrast = 'high'
 " minor optical fix vor syntastic
 highlight SignColumn ctermbg=8
 highlight Comment cterm=italic
@@ -461,7 +460,7 @@ endif
 "======================================================================
 
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'solarized_dark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
       \   'right': [ [ 'lineinfo' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
