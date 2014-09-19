@@ -161,11 +161,11 @@
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.15170273184776306</real>
+				<real>0.5859375</real>
 				<key>Green Component</key>
-				<real>0.11783610284328461</real>
+				<real>0.578125</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.51171875</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -438,6 +438,8 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NSColorPanelMode</key>
+	<string>6</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/dotfiles/install</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -446,10 +448,12 @@
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
+	<key>NSWindow Frame NSColorPanel</key>
+	<string>427 356 214 309 0 0 1920 1058 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>611 285 924 485 0 0 1920 1200 </string>
+	<string>2531 171 924 485 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 190 1690 986 0 0 1920 1200 </string>
+	<string>2107 149 1130 656 1920 0 1920 1080 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -588,11 +592,11 @@
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.15170273184776306</real>
+				<real>0.5859375</real>
 				<key>Green Component</key>
-				<real>0.11783610284328461</real>
+				<real>0.578125</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.51171875</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -1244,7 +1248,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-09-18T10:45:17Z</date>
+	<date>2014-09-19T12:20:23Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -1258,7 +1262,7 @@
 	<key>SmartPlacement</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.42883864045143127</real>
+	<real>0.34436598420143127</real>
 	<key>SwitchTabModifier</key>
 	<integer>6</integer>
 	<key>SwitchWindowModifier</key>

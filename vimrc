@@ -59,7 +59,7 @@ NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'tpope/vim-git'
-NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-haml' " for sass etc.
 NeoBundle 'tpope/vim-markdown'
 
 
@@ -67,7 +67,6 @@ NeoBundle 'tpope/vim-markdown'
 " Color themes
 "======================================================================
 
-NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'altercation/vim-colors-solarized'
 
 
@@ -188,15 +187,16 @@ set ch=2            " command window is 2 high
 set cpo+=$          " Add a $ to the end of a selection
 set cpo+=J          " 2 spaces after a sentence for easier text manupulation
 
+colorscheme solarized
+let g:solarized_termtrans = 1
 set background=dark " and a dark background of course
 set t_Co=256        " 256 color terminal FTW
-let base16colorspace = 256
-colorscheme base16-solarized
-" colorscheme solarized
-" let g:solarized_termtrans = 1
+
 " minor optical fix vor syntastic
-" highlight SignColumn ctermbg=8
-" highlight Comment cterm=italic
+highlight SignColumn ctermbg=8
+
+" italic comments, yeah
+highlight Comment cterm=italic
 
 
 "======================================================================
