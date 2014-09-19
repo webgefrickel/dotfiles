@@ -39,7 +39,7 @@ alias l='gls -al --color=auto'
 
 # Gitty gitgit
 alias g="git"
-alias gf="git flow"
+alias gf="git-flow"
 alias gst="git status"
 alias ggpl='git pull origin $(current_branch)'
 alias ggps='git push origin $(current_branch)'
@@ -58,12 +58,6 @@ alias mysqlstop='mysql.server stop'
 alias dev='apachestart && mysqlstart'
 alias devs='apachestop && mysqlstop'
 alias devr='devs && dev'
-
-
-# grunt
-alias gr='grunt'
-alias grw='grunt watch'
-alias grd='grunt deploy'
 
 
 # tmux
@@ -86,13 +80,6 @@ alias phpini='vim /usr/local/etc/php/5.5/php.ini'
 alias httpconf='vim /usr/local/etc/apache2/httpd.conf'
 
 
-# vagrant stuff
-alias vu='vagrant up'
-alias vr='vagrant reload'
-alias vp='vagrant provision'
-alias vh='vagrant halt'
-
-
 # often used folder shortcuts
 alias drop='cd ~/Dropbox && ls -al'
 alias web='cd ~/Sites && ls -al'
@@ -103,7 +90,6 @@ alias dot='cd ~/Dotfiles && ls -al'
 # random usefull stuff
 alias dnsflush='sudo dscacheutil -flushcache'
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-alias psa="ps aux"
 
 
 # imagemagick downsampling shortcuts (c&p retina folder, run, done!)

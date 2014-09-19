@@ -4,13 +4,6 @@ for file in ~/dotfiles/{exports,aliases,functions}; do
 done
 unset file
 
-
-# nice dircolors -- this requires installed coreutils and lscolors fallback
-autoload colors; colors;
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
-eval `gdircolors $HOME/dotfiles/zsh/dircolors-solarized/dircolors.256dark`
-
-
 # a nice prompt
 autoload -U promptinit && promptinit
 setopt prompt_subst
@@ -22,10 +15,10 @@ autoload bashcompinit && bashcompinit
 
 # autocomplete for the git alias
 compdef g=git
+compdef gf=git-flow
 
 # case-insensitive (all),partial-word and then substring completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
-    'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
@@ -63,6 +56,12 @@ setopt long_list_jobs
 # source some zsh and other plugins
 source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/dotfiles/zsh/forklift/forklift.plugin.zsh
+
+# nice dircolors -- this requires installed coreutils and lscolors fallback
+autoload colors; colors;
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+eval `gdircolors $HOME/dotfiles/zsh/dircolors-solarized/dircolors.256dark`
+
 
 # load tmuxifier
 eval "$(tmuxifier init -)"

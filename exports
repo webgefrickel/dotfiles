@@ -8,12 +8,10 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH=$HOME/.rbenv/shims:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$HOME/.tmuxifier/bin:$PATH
-
-export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+export MANPATH=/usr/local/share/man:$MANPATH
 
 fpath=($HOME/dotfiles/zsh/zsh-completions/src $fpath)
-
-export MANPATH=/usr/local/share/man:$MANPATH
 
 # disable stupid ._ and dsstore files
 export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
@@ -39,7 +37,6 @@ export GREP_COLOR='1;32'
 ## pager
 export PAGER="less"
 export LESS="-R"
-
 export LC_CTYPE=$LANG
 
 export RBENV_VERSION="2.1.2"

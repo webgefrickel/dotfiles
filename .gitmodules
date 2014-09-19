@@ -13,3 +13,6 @@
 [submodule "zsh/dircolors-solarized"]
 	path = zsh/dircolors-solarized
 	url = git@github.com:webgefrickel/dircolors-solarized.git
+[submodule "zsh/base16-shell"]
+	path = zsh/base16-shell
+	url = git@github.com:chriskempson/base16-shell.git

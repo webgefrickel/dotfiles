@@ -1,6 +1,6 @@
 # a small function for finding stuff
-function fname() { 
-  find . -iname "*$@*"; 
+function fname() {
+  find . -iname "*$@*";
 }
 
 
@@ -11,8 +11,8 @@ function take() {
 
 
 # find process by name and kill them
-function grepkill() { 
-  ps -axf | grep -v grep | grep "$@" | awk '{print $2}' | xargs kill 
+function grepkill() {
+  ps -axf | grep -v grep | grep "$@" | awk '{print $2}' | xargs kill
 }
 
 
