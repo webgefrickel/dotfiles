@@ -60,7 +60,6 @@ brew cask install slate
 brew cask install things
 brew cask install transmission
 brew cask install truecrypt
-brew cask install vagrant
 brew cask install virtualbox
 brew cask install vlc
 brew cask install wedge

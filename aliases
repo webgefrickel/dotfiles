@@ -63,6 +63,7 @@ alias devr='devs && dev'
 # tmux
 alias t='tmux -u -2'
 alias ta='tmux attach'
+alias tmd='tmuxifier load-window dev'
 
 
 # all in one homebrew, gem update commands

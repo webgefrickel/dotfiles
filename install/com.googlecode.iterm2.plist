@@ -350,6 +350,13 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0x6e-0x180000</key>
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x01 0x3A 0x6E 0x65 0x77 0x0D</string>
+		</dict>
 		<key>0x76-0x100000</key>
 		<dict>
 			<key>Action</key>
@@ -453,7 +460,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>2531 171 924 485 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2107 149 1130 656 1920 0 1920 1080 </string>
+	<string>0 0 1280 800 0 0 1280 778 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1248,7 +1255,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-09-19T12:20:23Z</date>
+	<date>2014-09-21T18:25:49Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
