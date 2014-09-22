@@ -1,6 +1,28 @@
+# no tmuxifier, just tmux-commands for creating a dev-session
+function tmd() {
+  cd ~/Sites/$1
+  tmux rename-session $1
+
+  git status
+  tmux rename-window gitngulp
+  tmux split-window -h -p 50 -d
+  tmux new-window -n scss -d
+  tmux new-window -n js -d
+  tmux new-window -n templates -d
+  tmux send-keys -t scss 'cd source/scss && vim' Enter
+  tmux send-keys -t js 'cd source/js && vim' Enter
+  tmux send-keys -t templates 'cd public && vim' Enter
+  tmux select-window -t gitngulp
+  tmux select-pane -t 2
+  tmux send-keys -t gitngulp 'gulp' Enter
+}
+
 # a small function for finding stuff
 function fname() {
   find . -iname "*$@*";
+}
+
+function schalala() {
 }
 
 
