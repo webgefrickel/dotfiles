@@ -428,14 +428,13 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " and no checking for scss.css because of CSS3 and SASS-Variable
 let g:syntastic_auto_jump = 0
 let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+let g:syntastic_javascript_checkers = ['eslint', 'jscs']
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_mode_map = {
       \ 'mode': 'active',
       \ 'active_filetypes': ['php', 'javascript', 'scss', 'json'],
       \ 'passive_filetypes': ['xhtml', 'html']
       \ }
-
 
 
 " wildfire -- selecting with enter/backspace

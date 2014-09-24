@@ -15,7 +15,6 @@ npm install -g grunt-cli
 npm install -g gulp
 npm install -g js-beautify
 npm install -g jscs
-npm install -g jshint
 npm install -g jsonlint
 npm install -g npm-check-updates
 npm install -g recursive-blame
