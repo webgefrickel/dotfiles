@@ -28,6 +28,7 @@ NeoBundle 'Shougo/vimproc', {
       \     'unix' : 'make -f make_unix.mak'
       \    },
       \ }
+NeoBundle 'calebsmith/vim-lambdify'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'edsono/vim-matchit'
 NeoBundle 'gcmt/wildfire.vim'
@@ -196,11 +197,14 @@ let g:solarized_termtrans = 1
 set background=dark " and a dark background of course
 set t_Co=256        " 256 color terminal FTW
 
-" minor optical fix vor syntastic
+" minor optical fix vor syntastic - background for extra-error-column
 highlight SignColumn ctermbg=8
 
 " italic comments, yeah
 highlight Comment cterm=italic
+
+" bold concealed functions
+highlight Conceal cterm=bold
 
 
 "======================================================================
@@ -576,8 +580,6 @@ function! s:unite_settings()
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
   nmap <buffer> <C-r> <Plug>(unite_redraw)
   imap <buffer> <C-r> <Plug>(unite_redraw)
-  nmap <buffer> <F5> <Plug>(unite_redraw)
-  imap <buffer> <F5> <Plug>(unite_redraw)
   inoremap <silent><buffer><expr> <C--> unite#do_action('split')
   nnoremap <silent><buffer><expr> <C--> unite#do_action('split')
   inoremap <silent><buffer><expr> <C-\> unite#do_action('vsplit')
