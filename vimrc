@@ -29,6 +29,7 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 NeoBundle 'calebsmith/vim-lambdify'
+NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'edsono/vim-matchit'
 NeoBundle 'gcmt/wildfire.vim'
@@ -286,14 +287,15 @@ nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
 
 " Bubble/indent lines using unimpaired
-nmap <C-k> [e
-nmap <C-j> ]e
-nmap <C-h> <<
-nmap <C-l> >>
-vmap <C-k> [egv
-vmap <C-j> ]egv
-vmap <C-h> <gv
-vmap <C-l> >gv
+" using left alt + hjkl on mac
+nmap ˚ [e
+nmap ∆ ]e
+nmap ˙ <<
+nmap ¬ >>
+vmap ˚ [egv
+vmap ∆ ]egv
+vmap ˙ <gv
+vmap ¬ >gv
 
 " Switch between windows
 nnoremap <tab> <C-w><C-w>
@@ -331,7 +333,7 @@ let g:maplocalleader = ","
 nnoremap <leader>\ <C-w>v<C-w>l
 nnoremap <leader>- <C-w>s<C-w>j
 
-" Adjust viewports to the same size
+" Adjust viewports/splits to equal widths/heights
 nnoremap <leader>= <C-w>=
 
 " open a new split and edit the vimrc // easy sourcing vimrc
@@ -350,19 +352,14 @@ nmap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
 " Find merge conflict markers
 nmap <leader>g /\v^[<\|=>]{7}( .*\|$)<CR>
 
-" Map <Leader>* to display all lines with keyword under cursor and ask which one to jump to
-nmap <Leader>* [I:let nr = input("Enter line number: ")<Bar>exe "normal " . nr ."[\t"<CR>
-
 " paste keeping indentation
 nnoremap <leader>p p`[v`]=
-
-" when over a class in html hit leader-f to find that class in css/scss/js
-nmap <leader>f :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cnext<CR>
 
 
 "======================================================================
 " Plugin configuration and keymappings
 "======================================================================
+
 
 " vim sneak
 let g:sneak#use_ic_scs = 1
