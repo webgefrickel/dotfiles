@@ -198,7 +198,7 @@ set background=dark " and a dark background of course
 set t_Co=256        " 256 color terminal FTW
 
 " minor optical fix vor syntastic - background for extra-error-column
-highlight SignColumn ctermbg=8
+highlight SignColumn ctermbg=0
 
 " italic comments, yeah
 highlight Comment cterm=italic
