@@ -336,13 +336,6 @@
 			<key>Text</key>
 			<string>0x01 0x63 0x01 0x2C</string>
 		</dict>
-		<key>0x5c-0x100000</key>
-		<dict>
-			<key>Action</key>
-			<integer>11</integer>
-			<key>Text</key>
-			<string>0x01 0x7C</string>
-		</dict>
 		<key>0x63-0x100000</key>
 		<dict>
 			<key>Action</key>
@@ -364,40 +357,12 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf700-0x300000</key>
-		<dict>
-			<key>Action</key>
-			<integer>11</integer>
-			<key>Text</key>
-			<string>0x01 0x6B</string>
-		</dict>
-		<key>0xf701-0x300000</key>
-		<dict>
-			<key>Action</key>
-			<integer>11</integer>
-			<key>Text</key>
-			<string>0x01 0x6A</string>
-		</dict>
-		<key>0xf702-0x300000</key>
-		<dict>
-			<key>Action</key>
-			<integer>11</integer>
-			<key>Text</key>
-			<string>0x01 0x68</string>
-		</dict>
 		<key>0xf702-0x320000</key>
 		<dict>
 			<key>Action</key>
 			<integer>11</integer>
 			<key>Text</key>
 			<string>0x01 0x70</string>
-		</dict>
-		<key>0xf703-0x300000</key>
-		<dict>
-			<key>Action</key>
-			<integer>11</integer>
-			<key>Text</key>
-			<string>0x01 0x6C</string>
 		</dict>
 		<key>0xf703-0x320000</key>
 		<dict>
@@ -458,9 +423,9 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>427 356 214 309 0 0 1920 1058 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>2531 171 924 485 1920 0 1920 1080 </string>
+	<string>2476 225 924 485 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1280 800 0 0 1280 778 </string>
+	<string>2266 123 1130 656 1920 0 1920 1080 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1255,7 +1220,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-09-21T18:25:49Z</date>
+	<date>2014-09-25T10:56:54Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>

@@ -32,12 +32,10 @@ brew cask install alfred
 brew cask install amadeus-pro
 brew cask install bartender
 brew cask install betterzipql
-brew cask install bill
 brew cask install carbon-copy-cloner
 brew cask install doxie
 brew cask install firefox
 brew cask install flux
-brew cask install fontprep
 brew cask install ghostlab
 brew cask install google-chrome
 brew cask install google-chrome-canary
