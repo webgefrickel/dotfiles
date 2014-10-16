@@ -90,6 +90,7 @@ alias dot='cd ~/Dotfiles && ls -al'
 # random usefull stuff
 alias dnsflush='sudo dscacheutil -flushcache'
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 
 # imagemagick downsampling shortcuts (c&p retina folder, run, done!)
