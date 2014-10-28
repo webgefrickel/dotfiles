@@ -406,8 +406,8 @@ inoremap <leader>/ <Esc>:TComment<CR>
 " neosnippet
 let g:neosnippet#disable_runtime_snippets = { "_": 1 }
 let g:neosnippet#scope_aliases = {}
-let g:neosnippet#scope_aliases['css'] = 'css,scss'
-let g:neosnippet#scope_aliases['php'] = 'php,html,twig'
+let g:neosnippet#scope_aliases['css'] = 'scss'
+let g:neosnippet#scope_aliases['php'] = 'php,html'
 let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
 
 " Neosnippet - SuperTab like snippets behavior.
