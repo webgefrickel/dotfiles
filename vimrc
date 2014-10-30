@@ -35,6 +35,7 @@ NeoBundle 'edsono/vim-matchit'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'gorkunov/smartpairs.vim'
+NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'scrooloose/syntastic'
@@ -122,9 +123,8 @@ set visualbell                             " don't flicker
 set ignorecase
 set smartcase
 set gdefault
-set incsearch
-set showmatch
 set hlsearch
+set showmatch
 set wrapscan
 
 set wildmode=list:longest,list:full
@@ -272,10 +272,6 @@ nnoremap k gk
 " behave - yank just like D and C
 nnoremap Y y$
 
-" sane default search
-nnoremap / /\v
-vnoremap / /\v
-
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
 nnoremap N Nzz
@@ -361,6 +357,19 @@ nnoremap <leader>p p`[v`]=
 " Plugin configuration and keymappings
 "======================================================================
 
+" incsearch
+let g:incsearch#auto_nohlsearch = 1
+let g:incsearch#consistent_n_direction = 1
+let g:incsearch#magic = '\v'
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
 
 " vim sneak
 let g:sneak#use_ic_scs = 1
