@@ -33,7 +33,6 @@ NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'edsono/vim-matchit'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'gorkunov/smartpairs.vim'
 NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'justinmk/vim-sneak'
@@ -447,6 +446,7 @@ let g:wildfire_water_map = "<BS>"
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#auto_completion_start_length = 3
+let g:neocomplete#force_overwrite_completefunc = 1
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
 inoremap <silent> <CR> <C-r>=<SID>neocomplete_cr_function()<CR>
