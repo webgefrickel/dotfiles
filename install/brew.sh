@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 brew tap homebrew/dupes
-brew tap josegonzalez/homebrew-php
-brew tap thoughtbot/formulae
+brew tap homebrew/php
 
 # install additional brew packages -- see _install.sh too
 brew install curl
@@ -13,7 +12,6 @@ brew install httpd
 brew install imagemagick
 brew install markdown
 brew install mysql
-brew install node --without-npm
 brew install php55
 brew install php55-mcrypt
 brew install php55-xdebug
@@ -22,7 +20,6 @@ brew install composer
 brew install rbenv
 brew install ruby-build
 brew install ssh-copy-id
-brew install subversion
 brew install unrar
 brew install youtube-dl
 
@@ -31,12 +28,10 @@ brew cask install adium
 brew cask install alfred
 brew cask install amadeus-pro
 brew cask install bartender
-brew cask install betterzipql
 brew cask install carbon-copy-cloner
 brew cask install doxie
 brew cask install firefox
 brew cask install flux
-brew cask install ghostlab
 brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install imagealpha
@@ -44,8 +39,6 @@ brew cask install imageoptim
 brew cask install istat-menus
 brew cask install karabiner
 brew cask install libreoffice
-brew cask install miro-video-converter
-brew cask install opera
 brew cask install qlcolorcode
 brew cask install qlmarkdown
 brew cask install qlstephen

@@ -62,5 +62,8 @@ autoload colors; colors;
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 eval `gdircolors $HOME/dotfiles/zsh/dircolors-solarized/dircolors.256dark`
 
+# fasd
+eval "$(fasd --init auto)"
+
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

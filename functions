@@ -11,7 +11,7 @@ function tmd() {
   tmux new-window -n templates -d
   tmux send-keys -t scss 'cd source/scss && vim' Enter
   tmux send-keys -t js 'cd source/js && vim' Enter
-  tmux send-keys -t templates 'cd public && vim' Enter
+  tmux send-keys -t templates 'cd public && ls' Enter
   tmux select-window -t gitngulp
   tmux select-pane -t 2
   tmux send-keys -t gitngulp 'gulp' Enter
@@ -22,10 +22,7 @@ function fname() {
   find . -iname "*$@*";
 }
 
-function schalala() {
-}
-
-
+# create and change to directory/folder
 function take() {
   mkdir -p $1
   cd $1
@@ -54,7 +51,6 @@ function current_branch() {
 # creates an archive from given directory
 mktar() { tar cvf  "${1%%/}.tar" "${1%%/}"; }
 mktgz() { tar cvzf "${1%%/}.tgz" "${1%%/}"; }
-mktbz() { tar cvjf "${1%%/}.tbz" "${1%%/}"; }
 mkzip() { zip -r   "${1%%/}"     "${1%%/}"; }
 
 

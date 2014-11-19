@@ -18,7 +18,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "======================================================================
 
 NeoBundle "Chiel92/vim-autoformat"
-NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
@@ -247,6 +246,7 @@ au BufNewFile,BufRead *.twig set ft=html.twig
 " omnicompletion for some filetypes
 au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
 au FileType html,php,twig setlocal omnifunc=htmlcomplete#CompleteTags
+au FileType php setlocal omnifunc=phpcomplete#CompletePHP
 au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
@@ -397,13 +397,6 @@ nmap <Leader>t: :Tabularize /:<CR>
 vmap <Leader>t: :Tabularize /:<CR>
 nmap <Leader>t, :Tabularize /,<CR>
 vmap <Leader>t, :Tabularize /,<CR>
-
-
-" Splitjoin
-let g:splitjoin_split_mapping = ''
-let g:splitjoin_join_mapping = ''
-nmap <Leader>sj :SplitjoinJoin<cr>
-nmap <Leader>sk :SplitjoinSplit<cr>
 
 
 " TComment
@@ -570,9 +563,8 @@ nnoremap [unite] <nop>
 
 nnoremap <silent> [unite], :<C-u>Unite -start-insert -toggle -auto-resize file_rec/async<cr>
 nnoremap <silent> [unite]b :<C-u>Unite -short-source-names -quick-match buffer<cr>
-nnoremap <silent> [unite]n :<C-u>Unite -toggle -auto-resize file<cr>
 nnoremap <silent> [unite]. :<C-u>Unite -start-insert -auto-resize buffer<cr>
-nnoremap <silent> [unite]l :<C-u>Unite -auto-resize line<cr>
+nnoremap <silent> [unite]l :<C-u>Unite -start-insert -auto-resize line<cr>
 nnoremap <silent> [unite]y :<C-u>Unite history/yank<cr>
 nnoremap <silent> [unite]f :<C-u>UniteWithCursorWord -start-insert -toggle -auto-resize file_rec/async<cr>
 nnoremap <silent> [unite]a :<C-u>Unite grep:.<cr>

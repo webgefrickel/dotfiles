@@ -9,8 +9,7 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
 
 # tap the casks
-brew tap caskroom/homebrew-cask
-brew tap caskroom/versions
+brew install caskroom/cask/brew-cask
 
 # brew paths
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -26,6 +25,8 @@ brew install tmux
 brew install the_silver_searcher
 brew install wget
 brew install zsh
+brew install docker
+brew install boot2docker
 
 brew cask install dropbox
 brew cask install forklift
