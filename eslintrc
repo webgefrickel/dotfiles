@@ -4,11 +4,6 @@
     "node": true
   },
 
-  "globals": {
-    "jQuery": false,
-    "$": false
-  },
-
   "rules": {
     "no-console": 0,
     "no-reserved-keys": 2,
