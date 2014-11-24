@@ -32,6 +32,8 @@ var chrome = slate.operation('focus', { app: 'Google Chrome' });
 var mail = slate.operation('focus', { app: 'Mail' });
 var fork = slate.operation('focus', { app: 'ForkLift' });
 var things = slate.operation('focus', { app: 'Things' });
+var macvim = slate.operation('focus', { app: 'MacVim' });
+var tyme = slate.operation('focus', { app: 'Tyme' });
 
 
 var fullscreen = slate.operation('move', {
@@ -68,7 +70,8 @@ var throwNext = function (win) {
   var newY = (winRect.y - screen.y) / screen.height + '*screenSizeY+screenOriginY';
   var newWidth = winRect.width / screen.width + '*screenSizeX';
   var newHeight = winRect.height / screen.height + '*screenSizeY';
-  var throwNext = slate.operation('throw', {
+
+  throwNext = slate.operation('throw', {
     x: newX,
     y: newY,
     width: newWidth,
@@ -88,7 +91,8 @@ var throwPrev = function (win) {
   var newY = (winRect.y - screen.y) / screen.height + '*screenSizeY+screenOriginY';
   var newWidth = winRect.width / screen.width + '*screenSizeX';
   var newHeight = winRect.height / screen.height + '*screenSizeY';
-  var throwPrev = slate.operation('throw', {
+
+  throwPrev = slate.operation('throw', {
     x: newX,
     y: newY,
     width: newWidth,
@@ -162,7 +166,6 @@ var hyper = ':shift,ctrl,alt,cmd';
 var hyperModal = hyper + ',s:toggle';
 
 
-
 /* default configs
 ====================================================================== */
 
@@ -193,11 +196,13 @@ slate.bind('tab' + hyper, hint, false);
 slate.bind('g' + hyper, grid, false);
 
 // most important apps on easy accesible keys
-slate.bind('q' + hyper, iterm, false);
-slate.bind('w' + hyper, chrome, false);
-slate.bind('e' + hyper, mail, false);
-slate.bind('r' + hyper, fork, false);
+slate.bind('i' + hyper, iterm, false);
+slate.bind('c' + hyper, chrome, false);
+slate.bind('m' + hyper, mail, false);
+slate.bind('f' + hyper, fork, false);
 slate.bind('t' + hyper, things, false);
+slate.bind('v' + hyper, macvim, false);
+slate.bind('y' + hyper, tyme, false);
 
 // movements in modal mode with m
 slate.bind('h' + hyperModal, lefthalf, false);
