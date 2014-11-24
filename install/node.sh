@@ -13,11 +13,8 @@ npm install -g dploy
 npm install -g eslint
 npm install -g grunt-cli
 npm install -g gulp
-npm install -g js-beautify
-npm install -g jscs
 npm install -g jsonlint
 npm install -g npm-check-updates
 npm install -g recursive-blame
 npm install -g stylestats
-npm install -g svgo
 npm install -g vtop
