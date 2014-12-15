@@ -32,7 +32,6 @@ var chrome = slate.operation('focus', { app: 'Google Chrome' });
 var mail = slate.operation('focus', { app: 'Mail' });
 var fork = slate.operation('focus', { app: 'ForkLift' });
 var things = slate.operation('focus', { app: 'Things' });
-var macvim = slate.operation('focus', { app: 'MacVim' });
 var tyme = slate.operation('focus', { app: 'Tyme' });
 
 
@@ -151,6 +150,13 @@ var desktop = slate.operation('move', {
   height: '800'
 });
 
+var large = slate.operation('move', {
+  x: 'screenOriginX',
+  y: 'screenOriginY',
+  width: '1440',
+  height: '900'
+});
+
 var fullhd = slate.operation('move', {
   x: 'screenOriginX',
   y: 'screenOriginY',
@@ -201,7 +207,6 @@ slate.bind('c' + hyper, chrome, false);
 slate.bind('m' + hyper, mail, false);
 slate.bind('f' + hyper, fork, false);
 slate.bind('t' + hyper, things, false);
-slate.bind('v' + hyper, macvim, false);
 slate.bind('y' + hyper, tyme, false);
 
 // movements in modal mode with m
@@ -212,7 +217,8 @@ slate.bind('j' + hyperModal, bottomhalf, false);
 slate.bind('1' + hyperModal, mobile, false);
 slate.bind('2' + hyperModal, tablet, false);
 slate.bind('3' + hyperModal, desktop, false);
-slate.bind('4' + hyperModal, fullhd, false);
+slate.bind('4' + hyperModal, large, false);
+slate.bind('5' + hyperModal, fullhd, false);
 
 slate.bind('space' + hyperModal, fullscreen, false);
 slate.bind('f' + hyperModal, fullheight, false);

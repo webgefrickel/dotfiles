@@ -5,8 +5,10 @@ brew tap homebrew/php
 
 # install additional brew packages -- see _install.sh too
 brew install curl
+brew install fasd
 brew install ffmpeg
 brew install ghostscript
+brew install git-extras
 brew install git-flow
 brew install httpd
 brew install imagemagick
