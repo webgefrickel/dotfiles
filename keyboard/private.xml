@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <!-- copy top ~/Library/Application\ Support/Karabiner/ -->
+    <name>Remap F19 Hyper</name>
+    <appendix>This maps F19 (keycode 80) to Control + Shift + Option + Command</appendix>
+
+    <identifier>webgefrickel.hyperhyper</identifier>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::F19,
+
+      KeyCode::COMMAND_L,
+      ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+    </autogen>
+  </item>
+</root>
