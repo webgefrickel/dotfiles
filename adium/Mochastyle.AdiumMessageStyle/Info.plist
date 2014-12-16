@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowTextColors</key>
+	<false/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Terminal/IRC Message Style</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.adiumx.terminal.style</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>1.3</string>
+	<key>CFBundleName</key>
+	<string>Mochastyle</string>
+	<key>CFBundlePackageType</key>
+	<string>AdIM</string>
+	<key>DefaultFontFamily</key>
+	<string>Monaco</string>
+	<key>DefaultFontSize</key>
+	<integer>9</integer>
+	<key>DisableCombineConsecutive</key>
+	<true/>
+	<key>DisableCustomBackground</key>
+	<false/>
+	<key>DisplayNameForNoVariant</key>
+	<string>None</string>
+	<key>MessageViewVersion</key>
+	<integer>3</integer>
+	<key>ShowsUserIcons</key>
+	<false/>
+</dict>
+</plist>

@@ -1,0 +1,70 @@
+body {
+    background: #333;
+    line-height : 1.3em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color : #0cf;
+}
+
+a:link:hover {
+    text-decoration : underline;
+}
+
+.incoming {
+    color : #fff;
+}
+
+.incoming:hover {
+  background : #444;
+  color : white;
+}
+
+.outgoing {
+    color : #999;
+}
+
+.outgoing:hover {
+  background : #444;
+  color : white;
+}
+
+input {
+    background : black
+    border : 2px solid #0cf;
+}
+        
+.incomingName {
+    color : #7bff2c;
+}
+
+.outgoingName {
+    color : #fff227;
+}
+
+.status {
+    padding : 1em;
+    color : #3bcfff;
+    text-transform : uppercase;
+    border-top : 1px dashed #3bcfff;
+    border-bottom : 1px dashed #3bcfff;
+    margin : 1em 0;
+}
+
+.message {
+  padding : 2px 5px;
+}
+
+.timestamp {
+  float: right;
+  color : #666;
+}
+
+.outgoing:hover .timestamp,
+.incoming:hover .timestamp {
+  color : #ccc;
+}
