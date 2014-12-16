@@ -37,6 +37,8 @@ alias -s html=vim
 alias -s md=vim
 alias -s txt=vim
 
+# clipper -- https://github.com/wincent/clipper
+alias clip="nc localhost 8377"
 
 # gnu coreutils
 alias ls="gls -al --color=auto"

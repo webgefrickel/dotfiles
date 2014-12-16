@@ -17,16 +17,16 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # install some neccessary brew packages
 brew install brew-cask
+brew install clipper
 brew install coreutils
 brew install git
 brew install macvim --with-cscope --with-lua --HEAD
-brew install reattach-to-user-namespace
+brew install rbenv
+brew install ruby-build
 brew install tmux
 brew install the_silver_searcher
 brew install wget
 brew install zsh
-brew install docker
-brew install boot2docker
 
 brew cask install dropbox
 brew cask install forklift
@@ -38,6 +38,9 @@ chsh -s /usr/local/bin/zsh
 /usr/bin/env zsh
 sudo mv /etc/zshenv /etc/zprofile
 
+# clipper
+ln -sfv /usr/local/opt/clipper/*.plist ~/Library/LaunchAgents
+
 # install all submodules
 git submodule init
 git submodule update
@@ -48,18 +51,17 @@ ln -s ~/dotfiles/editorconfig ~/.editorconfig
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/eslintrc ~/.eslintrc
-ln -s ~/dotfiles/jscsrc ~/.jscsrc
 ln -s ~/dotfiles/slate.js ~/.slate.js
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zshrc ~/.zshrc
-ln -s ~/dotfiles/zsh/pure/pure.zsh /usr/local/share/zsh/site-functions/prompt_pure_setup
 
 # set xterm/screen terminals to enable italic fonts in terminal
-tic ~/dotfiles/install/screen-256color-italic.terminfo
-tic ~/dotfiles/install/xterm-256color-italic.terminfo
+ln -s ~/dotfiles/zsh/pure/pure.zsh /usr/local/share/zsh/site-functions/prompt_pure_setup
+tic ~/dotfiles/terminfo/screen-256color-italic.terminfo
+tic ~/dotfiles/terminfo/xterm-256color-italic.terminfo
 
 # set iterm terminal to xterm-256color-italic and enable italics!
 # now restart your terminal/iterm2 and hope for the best

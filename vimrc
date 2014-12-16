@@ -339,6 +339,9 @@ nnoremap <leader>vs :source ~/.vimrc<cr>
 " Opens an edit command with the path of the currently edited file filled in
 nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
 
+" Yank to clipboard with clipper -- see https://github.com/wincent/clipper
+nnoremap <leader>y :call system('nc localhost 8377', @0)<CR>
+
 " reset search
 nmap <leader><space> :noh<cr>
 

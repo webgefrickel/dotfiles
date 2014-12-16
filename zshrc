@@ -1,5 +1,5 @@
 # Load the functions, aliases, function etc.
-for file in ~/dotfiles/{exports,aliases,functions}; do
+for file in ~/dotfiles/zsh/{exports,aliases,functions}; do
   [ -r "$file" ] && source "$file"
 done
 unset file

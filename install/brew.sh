@@ -5,6 +5,8 @@ brew tap homebrew/php
 
 # install additional brew packages -- see _install.sh too
 brew install curl
+brew install docker
+brew install boot2docker
 brew install fasd
 brew install ffmpeg
 brew install ghostscript
@@ -19,8 +21,6 @@ brew install php55-mcrypt
 brew install php55-xdebug
 brew install php55-intl
 brew install composer
-brew install rbenv
-brew install ruby-build
 brew install ssh-copy-id
 brew install unrar
 brew install youtube-dl
