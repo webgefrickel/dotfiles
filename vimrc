@@ -173,10 +173,7 @@ if &term =~ '^screen'
   execute "set <xDown>=\e[1;*B"
   execute "set <xRight>=\e[1;*C"
   execute "set <xLeft>=\e[1;*D"
-  " map <Esc>[B <Down>
 endif
-
-set clipboard=unnamed " osx + tmux fix
 
 
 "======================================================================
