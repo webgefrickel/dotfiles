@@ -14,63 +14,51 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 
 "======================================================================
-" Plugins and useful stuff/dependencies
+" All bundles, syntaxes and plugins
 "======================================================================
 
 NeoBundle "Chiel92/vim-autoformat"
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak'
-      \    },
+NeoBundle 'Shougo/vimproc.vim', {
+      \ 'build': {
+      \     'mac': 'make -f make_mac.mak',
+      \     'linux': 'make',
+      \     'unix': 'gmake'
+      \    }
       \ }
-NeoBundle 'calebsmith/vim-lambdify'
+NeoBundle 'Z1MM32M4N/vim-superman'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'beyondwords/vim-twig'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'edsono/vim-matchit'
+NeoBundle 'elzr/vim-json'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'joshtronic/php.vim'
 NeoBundle 'justinmk/vim-sneak'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'moll/vim-node'
+NeoBundle 'othree/html5.vim'
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-git'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-vinegar'
+NeoBundle 'vim-scripts/matchit.zip'
 NeoBundle 'webgefrickel/vim-gtfo'
 NeoBundle 'webgefrickel/vim-snippets'
 NeoBundle 'wellle/tmux-complete.vim'
-
-
-"======================================================================
-" Additional syntaxes
-"======================================================================
-
-NeoBundle 'beyondwords/vim-twig'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'joshtronic/php.vim'
-NeoBundle 'moll/vim-node'
-NeoBundle 'mustache/vim-mustache-handlebars'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'tpope/vim-git'
-NeoBundle 'tpope/vim-haml' " for sass etc.
-NeoBundle 'tpope/vim-markdown'
-
-
-"======================================================================
-" Color themes
-"======================================================================
-
-NeoBundle 'altercation/vim-colors-solarized'
-
 
 " end neobundle config
 call neobundle#end()
@@ -90,7 +78,6 @@ set encoding=utf-8                         " Yeah. UTF-8 FTW!
 set grepprg=ag                             " use ag for grepping
 set hidden                                 " allows for switching buffers without writing
 set lazyredraw                             " Don't redraw while executing macros
-set list!                                  " nice Whitespace chars
 set mouse=a                                " mouse for scrolling
 set nobackup                               " no backups
 set noerrorbells                           " don't beep
@@ -107,7 +94,7 @@ set scrolloff=3                            " Minimum lines to keep above and bel
 set showcmd                                " show me what im doing. helps alot
 set sidescroll=10                          " smoother side-scrolling
 set sidescrolloff=5                        " jump by 5 when scrolling sideways
-set timeout timeoutlen=800 ttimeoutlen=100 " get rid of the delay when pressing O (for example)
+set timeout ttimeoutlen=100                " get rid of the delay when pressing O (for example)
 set ttyfast                                " faster terminal usage
 set ttymouse=xterm2                        " xterm/tmux compatible mouse
 set virtualedit=all                        " every mode active from v V to StrgV
@@ -120,7 +107,6 @@ set visualbell                             " don't flicker
 
 set ignorecase
 set smartcase
-set gdefault
 set hlsearch
 set showmatch
 set wrapscan
@@ -181,13 +167,14 @@ endif
 "======================================================================
 
 " custom list/invisible chars
+set list! " nice Whitespace chars
 set listchars=extends:»,precedes:«,tab:▸\ ,trail:·
 set fillchars=
 
 set laststatus=2    " statusbar is 2 high
-set ch=2            " command window is 2 high
-set cpo+=$          " Add a $ to the end of a selection
-set cpo+=J          " 2 spaces after a sentence for easier text manupulation
+set cmdheight=2     " command window is 2 high
+set cpoptions+=$          " Add a $ to the end of a selection
+set cpoptions+=J          " 2 spaces after a sentence for easier text manupulation
 
 colorscheme solarized
 let g:solarized_termtrans = 1
@@ -220,38 +207,43 @@ endfunction
 "======================================================================
 " autocommands, filetypes, spelling, keywords for specific filetypes
 "======================================================================
-"
+
+" define a group `vimrc` and initialize.
+augroup vimrc
+  autocmd!
+augroup END
+
 " Remember last location/cursor in file
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+autocmd vimrc BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " spell correction on text-files
-au BufRead,BufNewFile *.md setlocal spell
+autocmd vimrc BufNewFile,BufRead *.md setlocal spell
 
 " add the dash to keywords -- makes better css/js/html search
 " do this for specific files only (not in php/rb e.g.)
-au BufNewFile,BufRead *.{js,scss,html} set iskeyword+=-
-au BufNewFile,BufRead *.{js,scss,html} set iskeyword-=_
-au BufNewFile,BufRead *.php set iskeyword-=-
+autocmd vimrc BufNewFile,BufRead *.{js,scss,html} set iskeyword+=-
+autocmd vimrc BufNewFile,BufRead *.{js,scss,html} set iskeyword-=_
+autocmd vimrc BufNewFile,BufRead *.php set iskeyword-=-
 
 " scss.css snippets and stuff
-au BufNewFile,BufRead *.scss set ft=scss.css
+autocmd vimrc BufNewFile,BufRead *.scss set filetype=scss.css
 
 " Syntaxes for other files
-au BufNewFile,BufRead *.twig set ft=html.twig
+autocmd vimrc BufNewFile,BufRead *.twig set filetype=html.twig
 
 " omnicompletion for some filetypes
-au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
-au FileType html,php,twig setlocal omnifunc=htmlcomplete#CompleteTags
-au FileType php setlocal omnifunc=phpcomplete#CompletePHP
-au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd vimrc FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
+autocmd vimrc FileType html,php,twig setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd vimrc FileType php setlocal omnifunc=phpcomplete#CompletePHP
+autocmd vimrc FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd vimrc FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
 "======================================================================
 " Custom key mappings and shortcuts
 "======================================================================
 
-" remap semi-colon to be colon
+" remap semi-colon to be colon in normal an visual mode
 nnoremap ; :
 vnoremap ; :
 
@@ -280,7 +272,7 @@ nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
 
 " Bubble/indent lines using unimpaired
-" using left alt + hjkl on mac
+" using left alt + hjkl on mac usgerman keyboard
 nmap ˚ [e
 nmap ∆ ]e
 nmap ˙ <<
@@ -290,14 +282,12 @@ vmap ∆ ]egv
 vmap ˙ <gv
 vmap ¬ >gv
 
-" Switch between windows
+" Fast Switch between windows/buffers with tab
 nnoremap <tab> <C-w><C-w>
 nnoremap <S-tab> <C-w>W
 
 " no help while mishitting ESC - awesome
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
+noremap <F1> <ESC>
 
 " deactivate stupid ex-mode and man-page stuff
 nnoremap Q <nop>
@@ -317,9 +307,7 @@ cmap w!! w !sudo tee % >/dev/null
 " take me to your leader!
 "======================================================================
 
-let mapleader = ","
 let g:mapleader = ","
-let maplocalleader = ","
 let g:maplocalleader = ","
 
 " open new vertical split and change to split
@@ -340,13 +328,13 @@ nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <leader>y :call system('nc localhost 8377', @0)<CR>
 
 " reset search
-nmap <leader><space> :noh<cr>
+nnoremap <leader><space> :noh<cr>
 
 " short command to strip trainling whitepsace
-nmap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
 
 " Find merge conflict markers
-nmap <leader>g /\v^[<\|=>]{7}( .*\|$)<CR>
+nnoremap <leader>g /\v^[<\|=>]{7}( .*\|$)<CR>
 
 " paste keeping indentation
 nnoremap <leader>p p`[v`]=
@@ -370,6 +358,12 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
+
+" emmet
+let g:user_emmet_install_global = 0
+autocmd vimrc FileType html,css,scss,php EmmetInstall
+
+
 " vim sneak
 let g:sneak#use_ic_scs = 1
 let g:sneak#map_netrw = 0
@@ -388,13 +382,9 @@ nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
 
 
 " Tabularize
-nmap <Leader>t= :Tabularize /=<CR>
 vmap <Leader>t= :Tabularize /=<CR>
-nmap <Leader>t{ :Tabularize /{<CR>
 vmap <Leader>t{ :Tabularize /{<CR>
-nmap <Leader>t: :Tabularize /:<CR>
 vmap <Leader>t: :Tabularize /:<CR>
-nmap <Leader>t, :Tabularize /,<CR>
 vmap <Leader>t, :Tabularize /,<CR>
 
 
@@ -437,7 +427,7 @@ let g:syntastic_mode_map = {
 
 
 " wildfire -- selecting with enter/backspace
-let g:wildfire_objects = ['i"', "i'", "i)", "i]", "i}", "iW", "it", "ip"]
+let g:wildfire_objects = ['iw', 'iW', 'i"', "i\'", 'i)', 'i]', 'i}', 'i>', 'ip', 'it']
 let g:wildfire_fuel_map = "<ENTER>"
 let g:wildfire_water_map = "<BS>"
 

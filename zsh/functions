@@ -17,6 +17,15 @@ function tmd() {
   tmux send-keys -t gitngulp 'gulp' Enter
 }
 
+# open man pages in vim -- use vim-superman-plugin
+vman() {
+  vim -c "SuperMan $*"
+
+  if [ "$?" != "0" ]; then
+    echo "No manual entry for $*"
+  fi
+}
+
 # a small function for finding stuff
 function fname() {
   find . -iname "*$@*";
