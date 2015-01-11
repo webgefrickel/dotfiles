@@ -31,10 +31,15 @@ export DISABLE_AUTO_TITLE=true
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
-## pager
+# pager
 export PAGER="less"
 export LESS="-R"
 export LC_CTYPE=$LANG
 
+# ruby
 export RBENV_VERSION="2.1.5"
+
+# docker
 export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/webgefrickel/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1

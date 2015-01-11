@@ -33,6 +33,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'beyondwords/vim-twig'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
@@ -99,6 +100,10 @@ set ttyfast                                " faster terminal usage
 set ttymouse=xterm2                        " xterm/tmux compatible mouse
 set virtualedit=all                        " every mode active from v V to StrgV
 set visualbell                             " don't flicker
+set complete-=i                            " dont complete from files
+set nrformats-=octal                       " nobody uses octal anyway
+set display+=lastline                      " shorten long lastlines
+set formatoptions+=j                       " Delete comment character when joining commented lines
 
 
 "======================================================================
