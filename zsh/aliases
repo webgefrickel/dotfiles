@@ -80,6 +80,8 @@ alias npmup='npm -g cache clean && npm -g update'
 alias sysup='sudo softwareupdate -i -a'
 alias upall='sysup && brewup && gemup && npmup'
 
+# other often used stuff
+alias npmre='rm -rf node_modules && npm cache clean && npm install'
 
 # easy hosts / apache / php editing
 alias hosts='sudo vim /etc/hosts'
@@ -87,6 +89,8 @@ alias vhosts='sudo vim /usr/local/etc/apache2/extra/httpd-vhosts.conf'
 alias phpini='vim /usr/local/etc/php/5.5/php.ini'
 alias httpconf='vim /usr/local/etc/apache2/httpd.conf'
 
+# docker stuff
+alias drft='docker run -it -v $(pwd)/:/code/ docker-frontend-tools'
 
 # often used folder shortcuts
 alias drop='cd ~/Dropbox && ls -al'
