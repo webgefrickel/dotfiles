@@ -37,7 +37,7 @@ export LESS="-R"
 export LC_CTYPE=$LANG
 
 # ruby
-export RBENV_VERSION="2.1.5"
+export RBENV_VERSION="2.2.0"
 
 # docker -- boot2docker config
 export DOCKER_TLS_VERIFY=1
