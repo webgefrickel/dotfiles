@@ -57,7 +57,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'vim-scripts/matchit.zip'
-NeoBundle 'webgefrickel/vim-gtfo'
 NeoBundle 'webgefrickel/vim-snippets'
 NeoBundle 'wellle/tmux-complete.vim'
 
@@ -117,7 +116,6 @@ set showmatch
 set wrapscan
 
 set wildmode=list:longest,list:full
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*.,*/.DS_Store
 set wildmenu
 
 set foldignore=

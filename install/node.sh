@@ -11,6 +11,7 @@ npm install -g bower
 npm install -g browserify
 npm install -g dploy
 npm install -g eslint
+npm install -g frontend-md
 npm install -g grunt-cli
 npm install -g gulp
 npm install -g jsonlint
