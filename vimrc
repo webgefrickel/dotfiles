@@ -17,7 +17,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " All bundles, syntaxes and plugins
 "======================================================================
 
-NeoBundle "Chiel92/vim-autoformat"
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
@@ -28,7 +27,6 @@ NeoBundle 'Shougo/vimproc.vim', {
       \     'unix': 'gmake'
       \    }
       \ }
-NeoBundle 'Z1MM32M4N/vim-superman'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'beyondwords/vim-twig'
 NeoBundle 'christoomey/vim-tmux-navigator'
@@ -49,7 +47,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-git'
-NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-haml' " for sass as well
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'tpope/vim-repeat'
