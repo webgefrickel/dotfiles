@@ -61,3 +61,5 @@
 [user]
 	name = Steffen Rademacker
 	email = webgefrickel@gmail.com
+[push]
+	default = simple

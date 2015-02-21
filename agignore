@@ -1,9 +1,12 @@
 _srcs
+log
+vendor
+tmp
 node_modules
+bower_compnents
 .sass-cache
 
 *.css
 *.min.css
 *.min.js
 *.min.map
-*.svg
