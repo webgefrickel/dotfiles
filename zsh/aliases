@@ -1,13 +1,11 @@
 # make aliases and other stuff work in sudo
 alias sudo='sudo '
 
-
 # always use macvim but for 'vim'
 alias vim=$EDITOR
 alias vi=$EDITOR
 alias v=$EDITOR
 alias vd=$EDITOR -d
-
 
 # Easier navigation: .., ..., ~ and -
 alias ~="cd ~"
@@ -42,7 +40,6 @@ alias clip="nc localhost 8377"
 alias ls="gls -al --color=auto"
 alias l='gls -al --color=auto'
 
-
 # Gitty gitgit
 alias g="git"
 alias gf="git-flow"
@@ -55,7 +52,6 @@ alias gsmuu='git submodule foreach git pull origin master'
 alias gsvn='git checkout master && git svn fetch && git merge dev && git svn rebase && git svn dcommit'
 alias gmo='$EDITOR $(git ls-files -m)'
 
-
 # aliases for apache and mysql
 alias apachestart='sudo apachectl start'
 alias apachestop='sudo apachectl stop'
@@ -65,11 +61,9 @@ alias dev='apachestart && mysqlstart'
 alias devs='apachestop && mysqlstop'
 alias devr='devs && dev'
 
-
 # tmux
 alias t='tmux -u -2'
 alias ta='tmux attach'
-
 
 # all in one homebrew, gem update commands
 alias brewup='brew update && brew upgrade && brew cleanup && brew linkapps'
@@ -96,12 +90,10 @@ alias web='cd ~/Sites && ls -al'
 alias rep='cd ~/Repositories && ls -al'
 alias dot='cd ~/Dotfiles && ls -al'
 
-
 # random usefull stuff
 alias dnsflush='sudo dscacheutil -flushcache'
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
 
 # imagemagick downsampling shortcuts (c&p retina folder, run, done!)
 # http://www.imagemagick.org/Usage/filter/nicolas/#downsample
@@ -109,6 +101,3 @@ alias png25='find . -name "*.png" | xargs mogrify -colorspace RGB -filter Lanczo
 alias jpg25='find . -name "*.jpg" | xargs mogrify -colorspace RGB -filter LanczosRadius -distort Resize 25% -colorspace sRGB'
 alias png50='find . -name "*.png" | xargs mogrify -colorspace RGB -filter LanczosRadius -distort Resize 50% -colorspace sRGB'
 alias jpg50='find . -name "*.jpg" | xargs mogrify -colorspace RGB -filter LanczosRadius -distort Resize 50% -colorspace sRGB'
-
-
-
