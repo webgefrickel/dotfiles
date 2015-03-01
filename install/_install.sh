@@ -28,7 +28,6 @@ brew install the_silver_searcher
 brew install wget
 brew install zsh
 
-brew cask install dropbox
 brew cask install forklift
 brew cask install iterm2
 

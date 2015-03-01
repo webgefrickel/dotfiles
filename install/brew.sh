@@ -8,18 +8,15 @@ brew install curl
 brew install docker
 brew install boot2docker
 brew install fasd
-brew install ffmpeg
-brew install ghostscript
 brew install git-extras
 brew install git-flow
 brew install httpd
-brew install imagemagick
 brew install markdown
 brew install mysql
-brew install php55
-brew install php55-mcrypt
-brew install php55-xdebug
-brew install php55-intl
+brew install php56
+brew install php56-mcrypt
+brew install php56-xdebug
+brew install php56-intl
 brew install composer
 brew install ssh-copy-id
 brew install unrar
@@ -30,8 +27,10 @@ brew cask install adium
 brew cask install alfred
 brew cask install amadeus-pro
 brew cask install bartender
+brew cask install betterzipql
 brew cask install carbon-copy-cloner
 brew cask install doxie
+brew cask install dropbox
 brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
@@ -42,20 +41,20 @@ brew cask install istat-menus
 brew cask install karabiner
 brew cask install libreoffice
 brew cask install qlcolorcode
+brew cask install qlimagesize
 brew cask install qlmarkdown
 brew cask install qlstephen
 brew cask install quicklook-csv
 brew cask install quicklook-json
 brew cask install seil
 brew cask install sequel-pro
-brew cask install skype
 brew cask install slate
 brew cask install things
 brew cask install transmission
 brew cask install truecrypt
 brew cask install virtualbox
 brew cask install vlc
-brew cask install wedge
+brew cask install webpquicklook
 brew cask install xld
 
 # set some options for qlcolorcode

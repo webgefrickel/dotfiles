@@ -261,6 +261,9 @@ nnoremap k gk
 " behave - yank just like D and C
 nnoremap Y y$
 
+" auto-yanking with clipper for selected yanking, see leader-y mapping
+vnoremap y y :call system('nc localhost 8377', @0)<cr>
+
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
 nnoremap N Nzz
@@ -417,13 +420,13 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " no checking for xhtml/html -- because of fluidtemplate for TYPO3
 " and no checking for scss.css because of CSS3 and SASS-Variable
 let g:syntastic_auto_jump = 0
-let g:syntastic_scss_checkers = ['scss_lint']
+" let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_mode_map = {
       \ 'mode': 'active',
-      \ 'active_filetypes': ['php', 'javascript', 'scss', 'json'],
-      \ 'passive_filetypes': ['xhtml', 'html']
+      \ 'active_filetypes': ['php', 'javascript', 'json'],
+      \ 'passive_filetypes': ['xhtml', 'html', 'scss']
       \ }
 
 
