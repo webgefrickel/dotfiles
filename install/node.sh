@@ -16,3 +16,4 @@ npm install -g gulp
 npm install -g jsonlint
 npm install -g npm-check-updates
 npm install -g recursive-blame
+npm install -g vtop

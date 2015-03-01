@@ -1,4 +1,3 @@
-"======================================================================
 " Neobundle Setup
 "======================================================================
 
@@ -13,7 +12,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 
-"======================================================================
 " All bundles, syntaxes and plugins
 "======================================================================
 
@@ -62,7 +60,6 @@ NeoBundle 'wellle/tmux-complete.vim'
 call neobundle#end()
 
 
-"======================================================================
 " Default sane config
 "======================================================================
 
@@ -103,7 +100,6 @@ set display+=lastline                      " shorten long lastlines
 set formatoptions+=j                       " Delete comment character when joining commented lines
 
 
-"======================================================================
 " Searching, completion and folds
 "======================================================================
 
@@ -123,7 +119,6 @@ set nofoldenable      " dont fold by default - let me do it
 set foldlevelstart=1  " deactivate folding on fileload
 
 
-"======================================================================
 " Tabs and Whitespace -- can be overridden by editorconfig
 "======================================================================
 
@@ -137,7 +132,6 @@ set expandtab
 set autoindent
 
 
-"======================================================================
 " gui options for macvim / gvim
 "======================================================================
 
@@ -150,7 +144,6 @@ if has('gui_running')
 endif
 
 
-"======================================================================
 " mac terminal-vim play nicely with tmux
 "======================================================================
 
@@ -163,7 +156,6 @@ if &term =~ '^screen'
 endif
 
 
-"======================================================================
 " colorscheme and optical stuff
 "======================================================================
 
@@ -192,7 +184,6 @@ highlight Comment cterm=italic
 highlight Conceal cterm=bold
 
 
-"======================================================================
 " Custom functions
 "======================================================================
 
@@ -205,7 +196,6 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 
-"======================================================================
 " autocommands, filetypes, spelling, keywords for specific filetypes
 "======================================================================
 
@@ -240,7 +230,6 @@ autocmd vimrc FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJ
 autocmd vimrc FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
-"======================================================================
 " Custom key mappings and shortcuts
 "======================================================================
 
@@ -307,7 +296,6 @@ nnoremap <F3> :Autoformat<CR>
 cmap w!! w !sudo tee % >/dev/null
 
 
-"======================================================================
 " take me to your leader!
 "======================================================================
 
@@ -344,7 +332,6 @@ nnoremap <leader>g /\v^[<\|=>]{7}( .*\|$)<CR>
 nnoremap <leader>p p`[v`]=
 
 
-"======================================================================
 " Plugin configuration and keymappings
 "======================================================================
 
@@ -405,6 +392,7 @@ let g:neosnippet#scope_aliases['scss'] = 'scss,css'
 let g:neosnippet#scope_aliases['php'] = 'php,html'
 let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
 
+
 " Neosnippet - SuperTab like snippets behavior.
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -459,7 +447,6 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 endif
 
 
-"======================================================================
 " The Lightline Plugin
 "======================================================================
 
@@ -524,8 +511,6 @@ function! LightlineMode()
 endfunction
 
 
-
-"======================================================================
 " The Unite Plugin
 "======================================================================
 
