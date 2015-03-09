@@ -9,8 +9,8 @@ function tmd() {
   tmux new-window -n scss -d
   tmux new-window -n js -d
   tmux new-window -n templates -d
-  tmux send-keys -t scss 'cd source/scss && vim' Enter
-  tmux send-keys -t js 'cd source/js && vim' Enter
+  tmux send-keys -t scss 'cd src/scss && vim' Enter
+  tmux send-keys -t js 'cd src/js && vim' Enter
   tmux send-keys -t templates 'cd public && ls' Enter
   tmux select-window -t gitngulp
   tmux select-pane -t 2
