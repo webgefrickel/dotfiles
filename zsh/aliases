@@ -79,7 +79,7 @@ alias npmre='rm -rf node_modules && npm cache clean && npm install'
 # easy hosts / apache / php editing
 alias hosts='sudo vim /etc/hosts'
 alias vhosts='sudo vim /usr/local/etc/apache2/extra/httpd-vhosts.conf'
-alias phpini='vim /usr/local/etc/php/5.5/php.ini'
+alias phpini='vim /usr/local/etc/php/5.6/php.ini'
 alias httpconf='vim /usr/local/etc/apache2/httpd.conf'
 
 # docker stuff

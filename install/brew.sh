@@ -4,22 +4,25 @@ brew tap homebrew/dupes
 brew tap homebrew/php
 
 # install additional brew packages -- see _install.sh too
+brew install boot2docker
+brew install composer
 brew install curl
 brew install docker
-brew install boot2docker
 brew install fasd
 brew install git-extras
 brew install git-flow
 brew install httpd
+brew install imagemagick
 brew install markdown
 brew install mysql
 brew install php56
 brew install php56-mcrypt
 brew install php56-xdebug
-brew install php56-intl
-brew install composer
+brew install rbenv
+brew install ruby-build
 brew install ssh-copy-id
-brew install unrar
+brew install the_silver_searcher
+brew install wget
 brew install youtube-dl
 
 # brew cask and install software

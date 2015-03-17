@@ -21,11 +21,7 @@ brew install clipper
 brew install coreutils
 brew install git
 brew install macvim --with-cscope --with-lua --HEAD
-brew install rbenv
-brew install ruby-build
 brew install tmux
-brew install the_silver_searcher
-brew install wget
 brew install zsh
 
 brew cask install forklift
@@ -47,9 +43,9 @@ git submodule update
 # link the dotfiles
 ln -s ~/dotfiles/agignore ~/.agignore
 ln -s ~/dotfiles/editorconfig ~/.editorconfig
+ln -s ~/dotfiles/eslintrc ~/.eslintrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
-ln -s ~/dotfiles/eslintrc ~/.eslintrc
 ln -s ~/dotfiles/slate.js ~/.slate.js
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vim ~/.vim
