@@ -14,6 +14,7 @@ npm install -g frontend-md
 npm install -g grunt-cli
 npm install -g gulp
 npm install -g jsonlint
+npm install -g htmlhint
 npm install -g npm-check-updates
 npm install -g recursive-blame
 npm install -g vtop

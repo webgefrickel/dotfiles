@@ -1,0 +1,8 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Hide Favicons for the bookmarks menubar */
+#PlacesToolbarItems .bookmark-item:not([type="menu"]) .toolbarbutton-icon,
+#PlacesToolbarItems .bookmark-item[type="menu"] .toolbarbutton-icon,
+#personal-bookmarks .bookmark-item:not([container]) .toolbarbutton-icon {
+  display: none !important;
+}

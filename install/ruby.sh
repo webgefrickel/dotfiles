@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rbenv instal 2.2.0
+rbenv install 2.2.1
 gem install bundler --no-document
 gem install capistrano --no-document
 gem install compass --no-document

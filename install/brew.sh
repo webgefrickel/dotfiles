@@ -37,7 +37,6 @@ brew cask install dropbox
 brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
-brew cask install google-chrome-canary
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install istat-menus
@@ -54,7 +53,6 @@ brew cask install sequel-pro
 brew cask install slate
 brew cask install things
 brew cask install transmission
-brew cask install truecrypt
 brew cask install virtualbox
 brew cask install vlc
 brew cask install webpquicklook
