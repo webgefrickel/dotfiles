@@ -32,7 +32,7 @@ var chrome = slate.operation('focus', { app: 'Google Chrome' });
 var mail = slate.operation('focus', { app: 'Mail' });
 var fork = slate.operation('focus', { app: 'ForkLift' });
 var things = slate.operation('focus', { app: 'Things' });
-var tyme = slate.operation('focus', { app: 'Tyme' });
+var firefox = slate.operation('focus', { app: 'Firefox' });
 
 
 var fullscreen = slate.operation('move', {
@@ -132,8 +132,15 @@ var bottomhalf = slate.operation('move', {
 var mobile = slate.operation('move', {
   x: 'screenOriginX',
   y: 'screenOriginY',
-  width: '480',
-  height: 'screenSizeY'
+  width: '320',
+  height: '568'
+});
+
+var phablet = slate.operation('move', {
+  x: 'screenOriginX',
+  y: 'screenOriginY',
+  width: '414',
+  height: '736'
 });
 
 var tablet = slate.operation('move', {
@@ -204,10 +211,10 @@ slate.bind('g' + hyper, grid, false);
 // most important apps on easy accesible keys
 slate.bind('i' + hyper, iterm, false);
 slate.bind('c' + hyper, chrome, false);
+slate.bind('x' + hyper, firefox, false);
 slate.bind('m' + hyper, mail, false);
 slate.bind('f' + hyper, fork, false);
 slate.bind('t' + hyper, things, false);
-slate.bind('y' + hyper, tyme, false);
 
 // movements in modal mode with m
 slate.bind('h' + hyperModal, lefthalf, false);
@@ -215,10 +222,11 @@ slate.bind('l' + hyperModal, righthalf, false);
 slate.bind('k' + hyperModal, tophalf, false);
 slate.bind('j' + hyperModal, bottomhalf, false);
 slate.bind('1' + hyperModal, mobile, false);
-slate.bind('2' + hyperModal, tablet, false);
-slate.bind('3' + hyperModal, desktop, false);
-slate.bind('4' + hyperModal, large, false);
-slate.bind('5' + hyperModal, fullhd, false);
+slate.bind('2' + hyperModal, phablet, false);
+slate.bind('3' + hyperModal, tablet, false);
+slate.bind('4' + hyperModal, desktop, false);
+slate.bind('5' + hyperModal, large, false);
+slate.bind('6' + hyperModal, fullhd, false);
 
 slate.bind('space' + hyperModal, fullscreen, false);
 slate.bind('f' + hyperModal, fullheight, false);
