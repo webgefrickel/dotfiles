@@ -19,6 +19,8 @@
 _srcs
 log
 tmp
+node_modules
+bower_components
 
 # OS or editor folders and temporary and other files
 .DS_Store
