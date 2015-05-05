@@ -391,7 +391,7 @@
 	<key>HotKeyTogglesWindow</key>
 	<false/>
 	<key>Hotkey</key>
-	<true/>
+	<false/>
 	<key>HotkeyChar</key>
 	<integer>63247</integer>
 	<key>HotkeyCode</key>
@@ -440,9 +440,9 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>427 356 214 309 0 0 1920 1058 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>548 409 924 485 0 0 1920 1200 </string>
+	<string>2116 513 924 485 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 12 1914 1166 0 0 1920 1200 </string>
+	<string>1920 0 1920 1080 1920 0 1920 1058 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1239,7 +1239,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-12-16T11:33:10Z</date>
+	<date>2015-05-04T10:16:38Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -1295,6 +1295,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20141103</string>
+	<string>2.0.0.20150412</string>
 </dict>
 </plist>
