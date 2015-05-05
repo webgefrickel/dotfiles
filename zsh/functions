@@ -17,6 +17,13 @@ function tmd() {
   tmux send-keys -t gitngulp 'gulp' Enter
 }
 
+function screenshot() {
+  cd ~/Downloads/
+  pageres $1 320x500 --filename '<%= url %>-mobile' --crop --delay 3
+  pageres $1 1000x750 --filename '<%= url %>-tablet' --crop --delay 3
+  pageres $1 1400x1000 --filename '<%= url %>-desktop' --crop --delay 3
+}
+
 # open man pages in vim -- use vim-superman-plugin
 vman() {
   vim -c "SuperMan $*"
