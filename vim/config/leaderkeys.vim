@@ -24,9 +24,6 @@ nnoremap <leader>y :call system('nc localhost 8377', @0)<CR>
 " reset search
 nnoremap <leader><space> :noh<cr>
 
-" short command to strip trainling whitepsace
-nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
-
 " Find merge conflict markers
 nnoremap <leader>g /\v^[<\|=>]{7}( .*\|$)<CR>
 
