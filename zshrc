@@ -6,7 +6,6 @@ unset file
 
 # a nice prompt
 autoload -U promptinit && promptinit
-setopt prompt_subst
 prompt pure
 
 # completions
@@ -20,9 +19,9 @@ compdef gf=git-flow
 # case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-unsetopt menu_complete   # do not autoselect the first completion entry
+unsetopt menu_complete # do not autoselect the first completion entry
 unsetopt flowcontrol
-setopt auto_menu         # show completion menu on succesive tab press
+setopt auto_menu # show completion menu on succesive tab press
 setopt complete_in_word
 setopt always_to_end
 
@@ -46,11 +45,11 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
 
-## smart urls
+# smart urls
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
-## jobs
+# jobs
 setopt long_list_jobs
 
 # source some zsh and other plugins
