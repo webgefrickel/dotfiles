@@ -57,8 +57,5 @@ nnoremap K <nop>
 " reload files when set autoread is active with F5
 nnoremap <F5> :checktime<CR>
 
-" Autoformat plugin
-nnoremap <F3> :Autoformat<CR>
-
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null

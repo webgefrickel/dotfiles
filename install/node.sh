@@ -19,4 +19,5 @@ npm install -g pageres
 npm install -g pure-prompt
 npm install -g recursive-blame
 npm install -g stylestats
+npm install -g trash
 npm install -g vtop
