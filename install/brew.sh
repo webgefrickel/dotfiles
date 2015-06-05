@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 brew tap homebrew/dupes
 brew tap homebrew/php
 
@@ -9,6 +8,7 @@ brew install composer
 brew install curl
 brew install docker
 brew install fasd
+brew install ffmpeg --with-libvpx --with-libvorbis --with-fdk-aac
 brew install git-extras
 brew install git-flow
 brew install httpd
@@ -16,7 +16,9 @@ brew install imagemagick
 brew install markdown
 brew install mysql
 brew install php56
+brew install php56-intl
 brew install php56-mcrypt
+brew install php56-tidy
 brew install php56-xdebug
 brew install rbenv
 brew install ruby-build
@@ -51,7 +53,6 @@ brew cask install quicklook-json
 brew cask install seil
 brew cask install sequel-pro
 brew cask install slate
-brew cask install things
 brew cask install transmission
 brew cask install virtualbox
 brew cask install vlc

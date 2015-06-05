@@ -29,6 +29,7 @@ source ~/.vim/config/plugins/incsearch.vim
 source ~/.vim/config/plugins/lightline.vim
 source ~/.vim/config/plugins/neocomplete.vim
 source ~/.vim/config/plugins/neosnippet.vim
+source ~/.vim/config/plugins/pencil.vim
 source ~/.vim/config/plugins/syntastic.vim
 source ~/.vim/config/plugins/tabularize.vim
 source ~/.vim/config/plugins/tcomment.vim

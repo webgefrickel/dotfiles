@@ -44,6 +44,7 @@ git submodule update
 ln -s ~/dotfiles/agignore ~/.agignore
 ln -s ~/dotfiles/editorconfig ~/.editorconfig
 ln -s ~/dotfiles/eslintrc ~/.eslintrc
+ln -s ~/dotfiles/gemrc ~/.gemrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/slate.js ~/.slate.js

@@ -17,6 +17,7 @@ function tmd() {
   tmux send-keys -t gitngulp 'gulp' Enter
 }
 
+# generate screenshots from url
 function screenshot() {
   cd ~/Downloads/
   pageres $1 320x500 --filename '<%= url %>-mobile' --crop --delay 3
@@ -24,14 +25,12 @@ function screenshot() {
   pageres $1 1400x1000 --filename '<%= url %>-desktop' --crop --delay 3
 }
 
-# open man pages in vim -- use vim-superman-plugin
-vman() {
-  vim -c "SuperMan $*"
-
-  if [ "$?" != "0" ]; then
-    echo "No manual entry for $*"
-  fi
+# convert a video to mp4 + webm in one go for web
+function videoconvert() {
+  ffmpeg -i $1 -acodec libvorbis -aq 7 -ac 2 -vcodec libvpx -b:v 2M -qmax 16 -threads 4 $1.webm
+  ffmpeg -i $1 -acodec libfdk_aac -cutoff 18000 -vcodec libx264 -b:v 2M -qmax 16 -threads 4 $1.mp4
 }
+
 
 # a small function for finding stuff
 function fname() {
@@ -54,13 +53,6 @@ function grepkill() {
 # open changed files in git index
 function gch () {
   vim `git status | grep modified | awk '{print $3}'`
-}
-
-
-function current_branch() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
-  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-  echo ${ref#refs/heads/}
 }
 
 
