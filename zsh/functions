@@ -43,6 +43,12 @@ function take() {
   cd $1
 }
 
+# a function to get the current branch for git shortcuts etc
+function current_branch() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
+  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+  echo ${ref#refs/heads/}
+}
 
 # find process by name and kill them
 function grepkill() {
