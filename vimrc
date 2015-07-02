@@ -17,6 +17,7 @@ source ~/.vim/config/bundles.vim
 source ~/.vim/config/defaultconfig.vim
 source ~/.vim/config/search.vim
 source ~/.vim/config/whitespace.vim
+source ~/.vim/config/autocommands.vim
 source ~/.vim/config/gui.vim
 source ~/.vim/config/tmux.vim
 source ~/.vim/config/colorscheme.vim
