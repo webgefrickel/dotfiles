@@ -10,6 +10,7 @@ curl -L https://npmjs.org/install.sh | sh
 npm install -g caniuse-cmd
 npm install -g dploy
 npm install -g eslint
+npm install -g fkill-cli
 npm install -g frontend-md
 npm install -g grunt-cli
 npm install -g gulp
