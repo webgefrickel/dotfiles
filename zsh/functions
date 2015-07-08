@@ -17,20 +17,11 @@ function tmd() {
   tmux send-keys -t gitngulp 'gulp' Enter
 }
 
-# generate screenshots from url
-function screenshot() {
-  cd ~/Downloads/
-  pageres $1 320x500 --filename '<%= url %>-mobile' --crop --delay 3
-  pageres $1 1000x750 --filename '<%= url %>-tablet' --crop --delay 3
-  pageres $1 1400x1000 --filename '<%= url %>-desktop' --crop --delay 3
-}
-
 # convert a video to mp4 + webm in one go for web
 function videoconvert() {
   ffmpeg -i $1 -acodec libvorbis -aq 7 -ac 2 -vcodec libvpx -b:v 2M -qmax 16 -threads 4 $1.webm
   ffmpeg -i $1 -acodec libfdk_aac -cutoff 18000 -vcodec libx264 -b:v 2M -qmax 16 -threads 4 $1.mp4
 }
-
 
 # a small function for finding stuff
 function fname() {
@@ -55,12 +46,10 @@ function gch () {
   vim `git status | grep modified | awk '{print $3}'`
 }
 
-
 # creates an archive from given directory
 mktar() { tar cvf  "${1%%/}.tar" "${1%%/}"; }
 mktgz() { tar cvzf "${1%%/}.tgz" "${1%%/}"; }
 mkzip() { zip -r   "${1%%/}"     "${1%%/}"; }
-
 
 # easy extract
 extract () {

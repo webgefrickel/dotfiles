@@ -17,7 +17,6 @@ npm install -g gulp
 npm install -g jsonlint
 npm install -g htmlhint
 npm install -g npm-check-updates
-npm install -g pageres
 npm install -g pure-prompt
 npm install -g recursive-blame
 npm install -g stylestats
