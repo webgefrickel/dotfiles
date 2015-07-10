@@ -36,6 +36,10 @@ SAVEHIST=10000
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
 
+# easy vim/terminal switch
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 setopt append_history
 setopt extended_history
 setopt hist_expire_dups_first

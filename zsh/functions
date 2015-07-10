@@ -41,6 +41,17 @@ function current_branch() {
   echo ${ref#refs/heads/}
 }
 
+# easy vim/terminal switch
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+
 # open changed files in git index
 function gch () {
   vim `git status | grep modified | awk '{print $3}'`
