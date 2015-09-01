@@ -20,6 +20,7 @@ npm install -g grunt-cli
 npm install -g gulp
 npm install -g htmlhint
 npm install -g jsonlint
+npm install -g notes
 npm install -g npm-check-updates
 npm install -g pure-prompt
 npm install -g recursive-blame
