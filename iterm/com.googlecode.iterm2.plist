@@ -444,7 +444,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>352 293 924 485 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 162 1438 896 1920 0 1920 1058 </string>
+	<string>0 0 1280 800 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>94 42 1130 656 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1289,7 +1289,7 @@
 	<key>UseCompactLabel</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
-	<true/>
+	<false/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
