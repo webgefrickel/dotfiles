@@ -60,7 +60,7 @@ brew cask install webpquicklook
 brew cask install xld
 
 # set some options for qlcolorcode
-defaults write org.n8gray.QLColorCode font Menlo
+defaults write org.n8gray.QLColorCode font Hack
 defaults write org.n8gray.QLColorCode fontSizePoints 8
 # maybe you have to copy solarized-dark into the caskroom to use it
 # have a look a the most current github repo for qlcolorcode
