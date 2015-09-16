@@ -18,8 +18,9 @@ function tmd() {
 }
 
 # convert a video to mp4 + webm in one go for web
-function webmconvert() {
-  ffmpeg -i $1 -acodec libvorbis -aq 3 -ac 2 -vcodec libvpx -b:v 1M -bufsize 2M -qmax 16 -threads 4 $1.webm
+function webvideo() {
+  ffmpeg -i $1 -acodec libvorbis -ac 2 -b:a 128k -ar 44100 -vcodec libvpx -b:v 1400k $1.webm
+  ffmpeg -i $1 -acodec libfaac -ac 2 -b:a 128k -ar 44100 -vcodec libx264 -level 21 -refs 2 -b:v 1400k -bt 1400k -threads 0 $1.mp4
 }
 
 # a small function for finding stuff
