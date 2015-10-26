@@ -19,8 +19,34 @@ function tmd() {
 
 # convert a video to mp4 + webm in one go for web
 function webvideo() {
-  ffmpeg -i $1 -acodec libvorbis -ac 2 -b:a 128k -ar 44100 -vcodec libvpx -b:v 1400k $1.webm
-  ffmpeg -i $1 -acodec libfaac -ac 2 -b:a 128k -ar 44100 -vcodec libx264 -level 21 -refs 2 -b:v 1400k -bt 1400k -threads 0 $1.mp4
+  ffmpeg -i $1 -acodec libvorbis -ac 2 -b:a 128k -ar 44100 -vcodec libvpx -pix_fmt yuv420p -r 25 -qmin 10 -qmax 42 -cpu-used 0 -quality best -b:v 2M -maxrate 2M -bufsize 4M -s 1280x720 $1.webm
+  ffmpeg -i $1 -movflags +faststart -acodec libfdk_aac -ac 2 -b:a 128k -ar 44100 -vcodec libx264 -vprofile high -preset slower -pix_fmt yuv420p -r 25 -b:v 2M -maxrate 2M -bufsize 4M -s 1280x720 $1.mp4
+}
+
+function webvideohigh() {
+  ffmpeg -i $1 -acodec libvorbis -ac 2 -b:a 160k -ar 44100 -vcodec libvpx -pix_fmt yuv420p -r 25 -qmin 10 -qmax 42 -cpu-used 0 -quality best -b:v 3M -maxrate 3M -bufsize 6M -s 1280x720 $1--high.webm
+  ffmpeg -i $1 -movflags +faststart -acodec libfdk_aac -ac 2 -b:a 160k -ar 44100 -vcodec libx264 -vprofile high -preset slower -pix_fmt yuv420p -r 25 -b:v 3M -maxrate 3M -bufsize 6M -s 1280x720 $1--high.mp4
+}
+
+function webvideolow() {
+  ffmpeg -i $1 -acodec libvorbis -ac 2 -b:a 96k -ar 44100 -vcodec libvpx -pix_fmt yuv420p -r 25 -qmin 10 -qmax 42 -cpu-used 0 -quality best -b:v 1M -maxrate 1M -bufsize 2M -s 1280x720 $1--low.webm
+  ffmpeg -i $1 -movflags +faststart -acodec libfdk_aac -ac 2 -b:a 96k -ar 44100 -vcodec libx264 -vprofile high -preset slower -pix_fmt yuv420p -r 25 -b:v 1M -maxrate 1M -bufsize 2M -s 1280x720 $1--low.mp4
+}
+
+# convert a video to mp4 + webm in one go for web
+function webvideonoaudio() {
+  ffmpeg -i $1 -an -vcodec libvpx -pix_fmt yuv420p -r 25 -qmin 10 -qmax 42 -cpu-used 0 -quality best -b:v 2M -maxrate 2M -bufsize 4M -s 1280x720 $1--no-audio.webm
+  ffmpeg -i $1 -movflags +faststart -an -vcodec libx264 -vprofile high -preset slower -pix_fmt yuv420p -r 25 -b:v 2M -maxrate 2M -bufsize 4M -s 1280x720 $1--no-audio.mp4
+}
+
+function webvideohighnoaudio() {
+  ffmpeg -i $1 -an -vcodec libvpx -pix_fmt yuv420p -r 25 -qmin 10 -qmax 42 -cpu-used 0 -quality best -b:v 3M -maxrate 3M -bufsize 6M -s 1280x720 $1--high--no-audio.webm
+  ffmpeg -i $1 -movflags +faststart -an -vcodec libx264 -vprofile high -preset slower -pix_fmt yuv420p -r 25 -b:v 3M -maxrate 3M -bufsize 6M -s 1280x720 $1--high--no-audio.mp4
+}
+
+function webvideolownoaudio() {
+  ffmpeg -i $1 -an -vcodec libvpx -pix_fmt yuv420p -r 25 -qmin 10 -qmax 42 -cpu-used 0 -quality best -b:v 1M -maxrate 1M -bufsize 2M -s 1280x720 $1--low--no-audio.webm
+  ffmpeg -i $1 -movflags +faststart -an -vcodec libx264 -vprofile high -preset slower -pix_fmt yuv420p -r 25 -b:v 1M -maxrate 1M -bufsize 2M -s 1280x720 $1--low--no-audio.mp4
 }
 
 # a small function for finding stuff
