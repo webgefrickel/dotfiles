@@ -98,7 +98,8 @@ alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 
 # imagemagick downsampling shortcuts (c&p retina folder, run, done!)
 # http://www.imagemagick.org/Usage/filter/nicolas/#downsample
-alias png25='find . -name "*.png" | xargs mogrify -colorspace RGB -filter LanczosRadius -distort Resize 25% -colorspace sRGB'
-alias jpg25='find . -name "*.jpg" | xargs mogrify -colorspace RGB -filter LanczosRadius -distort Resize 25% -colorspace sRGB'
-alias png50='find . -name "*.png" | xargs mogrify -colorspace RGB -filter LanczosRadius -distort Resize 50% -colorspace sRGB'
-alias jpg50='find . -name "*.jpg" | xargs mogrify -colorspace RGB -filter LanczosRadius -distort Resize 50% -colorspace sRGB'
+alias jpg25='mogrify -format jpg -resize 25% -strip -interlace Plane -filter LanczosRadius -quality 90 *.jpg'
+alias jpg50='mogrify -format jpg -resize 50% -strip -interlace Plane -filter LanczosRadius -quality 90 *.jpg'
+alias png25='mogrify -format png -resize 25% -strip -interlace Plane -filter LanczosRadius -quality 90 *.png'
+alias png50='mogrify -format png -resize 50% -strip -interlace Plane -filter LanczosRadius -quality 90 *.png'
+alias gallery='mogrify -format jpg -resize 2280x2280 -strip -interlace Plane -filter Lanczos -quality 90 *.jpg'
