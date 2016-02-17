@@ -32,10 +32,8 @@ brew cask install adium
 brew cask install alfred
 brew cask install amadeus-pro
 brew cask install bartender
-brew cask install betterzipql
 brew cask install carbon-copy-cloner
 brew cask install doxie
-brew cask install dropbox
 brew cask install firefox
 brew cask install flux
 brew cask install google-chrome

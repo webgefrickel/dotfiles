@@ -21,9 +21,6 @@ nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
 " Yank to clipboard with clipper -- see https://github.com/wincent/clipper
 nnoremap <leader>y :call system('nc localhost 8377', @0)<CR>
 
-" reset search
-nnoremap <leader><space> :noh<cr>
-
 " Find merge conflict markers
 nnoremap <leader>g /\v^[<\|=>]{7}( .*\|$)<CR>
 

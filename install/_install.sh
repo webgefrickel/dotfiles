@@ -20,10 +20,15 @@ brew install brew-cask
 brew install clipper
 brew install coreutils
 brew install git
-brew install macvim --with-cscope --with-lua --HEAD
 brew install tmux
 brew install zsh
 
+# install macvim and neobundle for vim
+brew install macvim --with-cscope --with-lua --HEAD
+mkdir ~/.vim/bundle
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+
+# this is the minimal software used
 brew cask install forklift
 brew cask install iterm2
 
