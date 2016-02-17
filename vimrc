@@ -14,6 +14,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Let Neobundle handle the rest, and start by loading bundles and defaults
 source ~/.vim/config/bundles.vim
+
+" end neobundle config
+call neobundle#end()
+
+" load the default config and mappings
 source ~/.vim/config/defaultconfig.vim
 source ~/.vim/config/search.vim
 source ~/.vim/config/whitespace.vim

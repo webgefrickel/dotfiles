@@ -652,13 +652,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>831 374 445 270 0 0 1280 778 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>324 130 924 485 0 0 1280 778 </string>
+	<string>906 254 924 485 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3 102 1130 656 0 0 1280 778 </string>
+	<string>0 444 1130 614 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>94 42 1130 656 0 0 1280 778 </string>
+	<string>1920 402 1130 656 1920 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>769 89 1130 656 0 0 1920 1058 </string>
+	<string>2689 89 1130 656 1920 0 1920 1058 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>2173 142 1123 641 1920 0 1920 1080 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1208,11 +1210,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>Hack 12</string>
+			<string>Hack-Regular 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Hack 12</string>
+			<string>Hack-Regular 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1362,7 +1364,7 @@
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
-			<string>xterm-256color-italic</string>
+			<string>xterm-256color</string>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -1378,7 +1380,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Vertical Spacing</key>
-			<real>0.84471338987350464</real>
+			<real>0.99974924325942993</real>
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
@@ -2117,7 +2119,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453214263.015971</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>470933011.22990698</real>
+	<real>477408799.95078999</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -2184,7 +2186,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-12-04T14:03:45Z</date>
+	<date>2016-02-17T13:04:07Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>

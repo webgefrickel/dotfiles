@@ -32,6 +32,9 @@ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 brew cask install forklift
 brew cask install iterm2
 
+# add a nice font
+brew cask install caskroom/fonts/font-hack
+
 # set zsh to the default
 sudo vim /etc/shells
 chsh -s /usr/local/bin/zsh
@@ -61,8 +64,7 @@ ln -s ~/dotfiles/zshrc ~/.zshrc
 
 # set xterm/screen terminals to enable italic fonts in terminal
 ln -s ~/dotfiles/zsh/pure/pure.zsh /usr/local/share/zsh/site-functions/prompt_pure_setup
-tic ~/dotfiles/terminfo/screen-256color-italic.terminfo
-tic ~/dotfiles/terminfo/xterm-256color-italic.terminfo
+tic ~/dotfiles/terminfo/xterm-256color.terminfo
 
-# set iterm terminal to xterm-256color-italic and enable italics!
+# set iterm terminal to xterm-256color and enable italics!
 # now restart your terminal/iterm2 and hope for the best
