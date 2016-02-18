@@ -9,6 +9,7 @@ NeoBundle 'Shougo/vimproc.vim', {
     \    }
     \ }
 
+" use the bundled matchit instead of one from github
 NeoBundle 'matchit.zip', {
     \ 'on_map' : ['%', 'g%']
     \ }
@@ -40,7 +41,10 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-vinegar'
-NeoBundle 'matchit.zip'
 NeoBundle 'webgefrickel/vim-snippets'
 NeoBundle 'wellle/tmux-complete.vim'
+
+" TODO, remove when fixed with newer macvim version
+" use an old version of netrw, fixes split bug
+NeoBundle 'vim-scripts/netrw.vim'
 

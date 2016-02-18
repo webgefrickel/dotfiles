@@ -24,7 +24,6 @@ source ~/.vim/config/search.vim
 source ~/.vim/config/whitespace.vim
 source ~/.vim/config/autocommands.vim
 source ~/.vim/config/gui.vim
-source ~/.vim/config/tmux.vim
 source ~/.vim/config/colorscheme.vim
 source ~/.vim/config/keymappings.vim
 source ~/.vim/config/leaderkeys.vim
