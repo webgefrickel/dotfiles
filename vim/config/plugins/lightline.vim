@@ -17,16 +17,16 @@ let g:lightline = {
       \   'fileencoding': 'LightlineFileencoding',
       \   'mode': 'LightlineMode',
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
 
 function! LightlineModified()
-  return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  return &ft =~ 'help' ? '' : &modified ? 'ɱ' : &modifiable ? '' : 'ɯ'
 endfunction
 
 function! LightlineReadonly()
-  return &ft !~? 'help' && &readonly ? '⭤' : ''
+  return &ft !~? 'help' && &readonly ? 'ɹ' : ''
 endfunction
 
 function! LightlineFilename()
@@ -39,7 +39,7 @@ endfunction
 function! LightlineFugitive()
   if exists("*fugitive#head")
     let _ = fugitive#head()
-    return strlen(_) ? '⭠ '._ : ''
+    return strlen(_) ? 'ɓ '._ : ''
   endif
   return ''
 endfunction

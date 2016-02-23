@@ -652,9 +652,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>831 374 445 270 0 0 1280 778 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>906 254 924 485 0 0 1920 1058 </string>
+	<string>2186 544 924 485 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 444 1130 614 0 0 1920 1058 </string>
+	<string>1920 0 1920 1080 1920 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1920 402 1130 656 1920 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -834,7 +834,7 @@
 			<key>Blend</key>
 			<real>0.30000001192092896</real>
 			<key>Blink Allowed</key>
-			<false/>
+			<true/>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
@@ -2114,12 +2114,14 @@
 			<string>/Users/nebelschwade</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveShownPromoWithId_4</key>
+	<true/>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>453214263.015971</real>
+	<real>477909723.430677</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>477408799.95078999</real>
+	<real>477909713.02178597</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -2186,7 +2188,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-02-17T13:04:07Z</date>
+	<date>2016-02-23T08:38:09Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
