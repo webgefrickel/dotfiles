@@ -3,59 +3,43 @@ brew tap homebrew/dupes
 brew tap homebrew/php
 
 # install additional brew packages -- see _install.sh too
-brew install boot2docker
+brew install bmon
 brew install composer
 brew install curl
-brew install docker
 brew install fasd
 brew install ffmpeg --with-libvpx --with-libvorbis --with-fdk-aac
 brew install git-extras
 brew install git-flow
-brew install httpd
-brew install imagemagick
-brew install markdown
-brew install mysql
+brew install mariadb
+brew install nginx
 brew install php56
 brew install php56-intl
 brew install php56-mcrypt
-brew install php56-tidy
-brew install php56-xdebug
-brew install rbenv
-brew install ruby-build
 brew install ssh-copy-id
 brew install the_silver_searcher
-brew install wget
 brew install youtube-dl
 
 # brew cask and install software
 brew cask install adium
 brew cask install alfred
-brew cask install amadeus-pro
 brew cask install bartender
 brew cask install carbon-copy-cloner
 brew cask install doxie
 brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
+brew cask install google-chrome-canary
 brew cask install imagealpha
 brew cask install imageoptim
-brew cask install istat-menus
 brew cask install karabiner
 brew cask install libreoffice
 brew cask install qlcolorcode
-brew cask install qlimagesize
-brew cask install qlmarkdown
 brew cask install qlstephen
-brew cask install quicklook-csv
-brew cask install quicklook-json
 brew cask install seil
 brew cask install sequel-pro
 brew cask install slate
-brew cask install transmission
 brew cask install virtualbox
 brew cask install vlc
-brew cask install webpquicklook
-brew cask install xld
 
 # set some options for qlcolorcode
 defaults write org.n8gray.QLColorCode font Hack

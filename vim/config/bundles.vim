@@ -2,17 +2,17 @@
 "======================================================================
 
 NeoBundle 'Shougo/vimproc.vim', {
-    \ 'build': {
-    \     'mac': 'make -f make_mac.mak',
-    \     'linux': 'make',
-    \     'unix': 'gmake'
-    \    }
-    \ }
+  \ 'build': {
+  \     'mac': 'make -f make_mac.mak',
+  \     'linux': 'make',
+  \     'unix': 'gmake'
+  \   }
+  \ }
 
 " use the bundled matchit instead of one from github
 NeoBundle 'matchit.zip', {
-    \ 'on_map' : ['%', 'g%']
-    \ }
+  \ 'on_map' : ['%', 'g%']
+  \ }
 
 let bundle = neobundle#get('matchit.zip')
 function! bundle.hooks.on_post_source(bundle)
@@ -23,6 +23,7 @@ endfunction
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
@@ -43,8 +44,3 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'webgefrickel/vim-snippets'
 NeoBundle 'wellle/tmux-complete.vim'
-
-" TODO, remove when fixed with newer macvim version
-" use an old version of netrw, fixes split bug
-NeoBundle 'vim-scripts/netrw.vim'
-
