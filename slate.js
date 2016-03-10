@@ -30,9 +30,9 @@ var grid = slate.operation('grid', {
 var iterm = slate.operation('focus', { app: 'iTerm' });
 var chrome = slate.operation('focus', { app: 'Google Chrome' });
 var mail = slate.operation('focus', { app: 'Mail' });
-var fork = slate.operation('focus', { app: 'ForkLift' });
-var things = slate.operation('focus', { app: 'Things' });
+var forklift = slate.operation('focus', { app: 'ForkLift' });
 var firefox = slate.operation('focus', { app: 'Firefox' });
+var reminders = slate.operation('focus', { app: 'Reminders' });
 
 
 var fullscreen = slate.operation('move', {
@@ -213,8 +213,8 @@ slate.bind('i' + hyper, iterm, false);
 slate.bind('c' + hyper, chrome, false);
 slate.bind('x' + hyper, firefox, false);
 slate.bind('m' + hyper, mail, false);
-slate.bind('f' + hyper, fork, false);
-slate.bind('t' + hyper, things, false);
+slate.bind('f' + hyper, forklift, false);
+slate.bind('r' + hyper, reminders, false);
 
 // movements in modal mode with m
 slate.bind('h' + hyperModal, lefthalf, false);
