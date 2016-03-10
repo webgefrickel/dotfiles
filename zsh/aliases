@@ -54,12 +54,14 @@ alias gsvn='git checkout master && git svn fetch && git merge dev && git svn reb
 alias gmo='$EDITOR $(git ls-files -m)'
 
 # aliases for apache and mysql
-alias apachestart='sudo apachectl start'
-alias apachestop='sudo apachectl stop'
-alias mysqlstart='mysql.server start'
-alias mysqlstop='mysql.server stop'
-alias dev='apachestart && mysqlstart'
-alias devs='apachestop && mysqlstop'
+alias nginxstart='sudo brew services start nginx'
+alias nginxstop='sudo brew services stop nginx'
+alias mysqlstart='brew services start mariadb'
+alias mysqlstop='brew services stop mariadb'
+alias phpstart='brew services start php70'
+alias phpstop='brew services stop php70'
+alias dev='nginxstart && mysqlstart && phpstart'
+alias devs='nginxstop && mysqlstop && phpstop'
 alias devr='devs && dev'
 
 # tmux
@@ -78,15 +80,9 @@ alias npmre='rm -rf node_modules && npm cache clean && npm install'
 
 # easy hosts / apache / php editing
 alias hosts='sudo vim /etc/hosts'
-alias vhosts='sudo vim /usr/local/etc/apache2/extra/httpd-vhosts.conf'
-alias phpini='vim /usr/local/etc/php/5.6/php.ini'
-alias httpconf='vim /usr/local/etc/apache2/httpd.conf'
-
-# docker stuff
-alias drft='docker run -it -v $(pwd)/:/code/ docker-frontend-tools'
+alias vhosts='vim /usr/local/etc/nginx/servers/'
 
 # often used folder shortcuts
-alias drop='cd ~/Dropbox && ls -al'
 alias web='cd ~/Sites && ls -al'
 alias rep='cd ~/Repositories && ls -al'
 alias dot='cd ~/Dotfiles && ls -al'

@@ -5,7 +5,6 @@ export SHELL=/usr/local/bin/zsh
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # paths
-export PATH=$HOME/.rbenv/shims:$PATH
 export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
@@ -33,11 +32,3 @@ export GREP_COLOR='1;32'
 export PAGER="less"
 export LESS="-R"
 export LC_CTYPE=$LANG
-
-# ruby
-export RBENV_VERSION="2.3.0"
-
-# docker -- boot2docker config
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/webgefrickel/.boot2docker/certs/boot2docker-vm
