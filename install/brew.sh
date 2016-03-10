@@ -1,30 +1,30 @@
 #!/usr/bin/env bash
 brew tap homebrew/dupes
 brew tap homebrew/php
+brew tap caskroom/versions
 
 # install additional brew packages -- see _install.sh too
 brew install bmon
 brew install composer
 brew install curl
-brew install fasd
 brew install ffmpeg --with-libvpx --with-libvorbis --with-fdk-aac
 brew install git-extras
 brew install git-flow
 brew install mariadb
 brew install nginx
-brew install php56
-brew install php56-intl
-brew install php56-mcrypt
+brew install php70
+brew install php70-intl
+brew install php70-mcrypt
 brew install ssh-copy-id
 brew install the_silver_searcher
-brew install youtube-dl
 
 # brew cask and install software
+brew cask install 1password
 brew cask install adium
 brew cask install alfred
+brew cask install atom
 brew cask install bartender
 brew cask install carbon-copy-cloner
-brew cask install doxie
 brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
