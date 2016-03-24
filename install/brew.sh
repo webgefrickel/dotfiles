@@ -20,7 +20,6 @@ brew install the_silver_searcher
 
 # brew cask and install software
 brew cask install 1password
-brew cask install adium
 brew cask install alfred
 brew cask install atom
 brew cask install bartender
