@@ -37,5 +37,4 @@ source ~/.vim/config/plugins/neosnippet.vim
 source ~/.vim/config/plugins/syntastic.vim
 source ~/.vim/config/plugins/unite.vim
 source ~/.vim/config/plugins/sneak.vim
-source ~/.vim/config/plugins/vimfiler.vim
 source ~/.vim/config/plugins/wildfire.vim

@@ -23,7 +23,6 @@ endfunction
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
