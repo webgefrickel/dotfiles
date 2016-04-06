@@ -10,13 +10,18 @@ brew install curl
 brew install ffmpeg --with-libvpx --with-libvorbis --with-fdk-aac
 brew install git-extras
 brew install git-flow
+brew install imagemagick
+brew install lynx
 brew install mariadb
 brew install nginx
 brew install php70
 brew install php70-intl
 brew install php70-mcrypt
+brew install ruby
 brew install ssh-copy-id
 brew install the_silver_searcher
+brew install wget
+brew install youtube-dl
 
 # brew cask and install software
 brew cask install 1password

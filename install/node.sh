@@ -11,6 +11,7 @@ npm install -g dploy
 npm install -g eslint
 npm install -g fkill-cli
 npm install -g gulp
+npm install -g grunt-cli
 npm install -g jsonlint
 npm install -g npm-check-updates
 npm install -g pure-prompt
