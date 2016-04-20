@@ -11,6 +11,7 @@ brew install ffmpeg --with-libvpx --with-libvorbis --with-fdk-aac
 brew install git-extras
 brew install git-flow
 brew install imagemagick
+brew install irssi
 brew install lynx
 brew install mariadb
 brew install nginx
