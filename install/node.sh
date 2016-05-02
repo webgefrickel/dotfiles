@@ -16,5 +16,5 @@ npm install -g jsonlint
 npm install -g npm-check-updates
 npm install -g pure-prompt
 npm install -g recursive-blame
-npm install -g trash
+npm install -g trash-cli
 npm install -g vtop

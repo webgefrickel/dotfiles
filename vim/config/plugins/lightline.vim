@@ -2,22 +2,22 @@
 "======================================================================
 
 let g:lightline = {
-      \ 'colorscheme': 'solarized_dark',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
-      \   'right': [ [ 'lineinfo' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
-      \ },
-      \ 'component_function': {
-      \   'modified': 'LightlineModified',
-      \   'readonly': 'LightlineReadonly',
-      \   'fugitive': 'LightlineFugitive',
-      \   'filename': 'LightlineFilename',
-      \   'fileformat': 'LightlineFileformat',
-      \   'filetype': 'LightlineFiletype',
-      \   'fileencoding': 'LightlineFileencoding',
-      \   'mode': 'LightlineMode',
-      \ }
-      \ }
+  \ 'colorscheme': 'solarized_dark',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
+  \   'right': [ [ 'lineinfo' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+  \ },
+  \ 'component_function': {
+  \   'modified': 'LightlineModified',
+  \   'readonly': 'LightlineReadonly',
+  \   'fugitive': 'LightlineFugitive',
+  \   'filename': 'LightlineFilename',
+  \   'fileformat': 'LightlineFileformat',
+  \   'filetype': 'LightlineFiletype',
+  \   'fileencoding': 'LightlineFileencoding',
+  \   'mode': 'LightlineMode',
+  \ }
+  \ }
 
 function! LightlineModified()
   return &ft =~ 'help' ? '' : &modified ? 'ɱ' : &modifiable ? '' : 'ɯ'
@@ -29,9 +29,9 @@ endfunction
 
 function! LightlineFilename()
   return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-        \ (&ft == 'unite' ? unite#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+    \ (&ft == 'unite' ? unite#get_status_string() :
+    \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+    \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
 endfunction
 
 function! LightlineFugitive()

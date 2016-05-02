@@ -51,6 +51,7 @@ ln -s ~/dotfiles/editorconfig ~/.editorconfig
 ln -s ~/dotfiles/eslintrc ~/.eslintrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
+ln -s ~/dotfiles/sass-lint.yml ~/.sass-lint.yml
 ln -s ~/dotfiles/slate.js ~/.slate.js
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vim ~/.vim
@@ -59,7 +60,6 @@ ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zshrc ~/.zshrc
 
 # set xterm/screen terminals to enable italic fonts in terminal
-ln -s ~/dotfiles/zsh/pure/pure.zsh /usr/local/share/zsh/site-functions/prompt_pure_setup
 tic ~/dotfiles/terminfo/xterm-256color.terminfo
 
 # set iterm terminal to xterm-256color and enable italics!

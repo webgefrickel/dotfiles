@@ -9,11 +9,11 @@ let g:neocomplete#force_overwrite_completefunc = 1
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
 inoremap <silent> <CR> <C-r>=<SID>neocomplete_cr_function()<CR>
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
+inoremap <expr><C-y> neocomplete#close_popup()
+inoremap <expr><C-e> neocomplete#cancel_popup()
 
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
