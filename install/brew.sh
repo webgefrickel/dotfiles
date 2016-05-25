@@ -14,7 +14,8 @@ brew install imagemagick
 brew install irssi
 brew install lynx
 brew install mariadb
-brew install nginx
+brew install mozjpeg
+brew install nginx --with-http2
 brew install php70
 brew install php70-intl
 brew install php70-mcrypt
@@ -43,6 +44,7 @@ brew cask install qlstephen
 brew cask install seil
 brew cask install sequel-pro
 brew cask install slate
+brew cask install vagrant
 brew cask install virtualbox
 brew cask install vlc
 
