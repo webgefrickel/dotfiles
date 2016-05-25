@@ -59,9 +59,9 @@ ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zshrc ~/.zshrc
 
 # set xterm/screen terminals to enable italic fonts in terminal
-tic ~/dotfiles/terminfo/xterm-256color.terminfo
+tic ~/dotfiles/other/xterm-256color.terminfo
 
-# set iterm terminal to xterm-256color and enable italics!
+# set iterm terminal to xterm-256color!
 # now restart your terminal/iterm2 and hope for the best
 
 # set zsh to the default
