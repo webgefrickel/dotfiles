@@ -29,10 +29,10 @@ brew install youtube-dl
 brew cask install 1password
 brew cask install alfred
 brew cask install atom
-brew cask install bartender
 brew cask install carbon-copy-cloner
 brew cask install firefox
 brew cask install flux
+brew cask install gitkraken
 brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install imagealpha
@@ -44,6 +44,7 @@ brew cask install qlstephen
 brew cask install seil
 brew cask install sequel-pro
 brew cask install slate
+brew cask install telegram
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install vlc

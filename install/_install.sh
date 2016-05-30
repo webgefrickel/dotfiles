@@ -20,6 +20,7 @@ brew install coreutils
 brew install fasd
 brew install git
 brew install tmux
+brew install tree
 brew install zsh
 
 # install macvim and neobundle for vim
