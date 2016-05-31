@@ -58,6 +58,7 @@ setopt long_list_jobs
 
 # source some zsh and other plugins
 source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/dotfiles/zsh/zsh-completions/zsh-completions.plugin.zsh
 source $HOME/dotfiles/zsh/forklift/forklift.plugin.zsh
 
 # nice dircolors -- this requires installed coreutils and lscolors fallback
@@ -68,5 +69,6 @@ eval `gdircolors $HOME/dotfiles/zsh/dircolors-solarized/dircolors.256dark`
 # fasd
 eval "$(fasd --init auto)"
 
-# rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# nvm
+export NVM_DIR="/Users/webgefrickel/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

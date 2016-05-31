@@ -7,8 +7,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # paths
 export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
-export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 export MANPATH=/usr/local/share/man:$MANPATH
 
 fpath=($HOME/dotfiles/zsh/zsh-completions/src $fpath)

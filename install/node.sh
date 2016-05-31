@@ -1,10 +1,12 @@
 #!/usr/bin/env zsh
 
-brew uninstall node
-brew update
-brew install node
-brew unlink node
-brew link node
+# use nvm instead of brew node or anything else
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
+nvm install v4.4.5
+nvm use default
+curl -L https://www.npmjs.com/install.sh | sh
+
+npm update -g
 
 npm install -g caniuse-cmd
 npm install -g dploy
