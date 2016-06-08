@@ -29,6 +29,7 @@ source ~/.vim/config/keymappings.vim
 source ~/.vim/config/leaderkeys.vim
 
 " and the configs and mappings for plugins loaded in bundles.vim
+source ~/.vim/config/plugins/emmet.vim
 source ~/.vim/config/plugins/fugitive.vim
 source ~/.vim/config/plugins/incsearch.vim
 source ~/.vim/config/plugins/lightline.vim
@@ -37,4 +38,3 @@ source ~/.vim/config/plugins/neosnippet.vim
 source ~/.vim/config/plugins/syntastic.vim
 source ~/.vim/config/plugins/unite.vim
 source ~/.vim/config/plugins/sneak.vim
-source ~/.vim/config/plugins/wildfire.vim
