@@ -46,7 +46,7 @@ brew cask install vlc
 
 # set some options for qlcolorcode
 defaults write org.n8gray.QLColorCode font Hack
-defaults write org.n8gray.QLColorCode fontSizePoints 8
+defaults write org.n8gray.QLColorCode fontSizePoints 9
 # maybe you have to copy solarized-dark into the caskroom to use it
 # have a look a the most current github repo for qlcolorcode
 defaults write org.n8gray.QLColorCode hlTheme solarized-dark
