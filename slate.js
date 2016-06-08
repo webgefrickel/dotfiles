@@ -27,8 +27,8 @@ var grid = slate.operation('grid', {
 
 
 // ultrafast application-switching
-var iterm = slate.operation('focus', { app: 'iTerm' });
-var chrome = slate.operation('focus', { app: 'Google Chrome' });
+var terminal = slate.operation('focus', { app: 'Terminal' });
+var chrome = slate.operation('focus', { app: 'Google Chrome Canary' });
 var mail = slate.operation('focus', { app: 'Mail' });
 var forklift = slate.operation('focus', { app: 'ForkLift' });
 var firefox = slate.operation('focus', { app: 'Firefox' });
@@ -209,7 +209,7 @@ slate.bind('tab' + hyper, hint, false);
 slate.bind('g' + hyper, grid, false);
 
 // most important apps on easy accesible keys
-slate.bind('i' + hyper, iterm, false);
+slate.bind('t' + hyper, terminal, false);
 slate.bind('c' + hyper, chrome, false);
 slate.bind('x' + hyper, firefox, false);
 slate.bind('m' + hyper, mail, false);
