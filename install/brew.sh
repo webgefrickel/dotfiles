@@ -25,11 +25,9 @@ brew install youtube-dl
 # brew cask and install software
 brew cask install 1password
 brew cask install alfred
-brew cask install atom
 brew cask install carbon-copy-cloner
 brew cask install firefox
 brew cask install flux
-brew cask install gitkraken
 brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install imagealpha
