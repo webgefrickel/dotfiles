@@ -4,15 +4,12 @@ brew tap homebrew/php
 brew tap caskroom/versions
 
 # install additional brew packages -- see _install.sh too
-brew install bmon
 brew install composer
 brew install curl
 brew install ffmpeg --with-libvpx --with-libvorbis --with-fdk-aac
 brew install git-extras
 brew install git-flow
 brew install imagemagick
-brew install irssi
-brew install lynx
 brew install mariadb
 brew install mozjpeg
 brew install nginx --with-http2
