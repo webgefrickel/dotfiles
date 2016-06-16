@@ -38,6 +38,7 @@ brew cask install qlcolorcode
 brew cask install qlstephen
 brew cask install seil
 brew cask install sequel-pro
+brew cask install slack
 brew cask install slate
 brew cask install telegram
 brew cask install vagrant
