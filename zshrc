@@ -72,3 +72,6 @@ eval "$(fasd --init auto)"
 # nvm
 export NVM_DIR="/Users/webgefrickel/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# the fuck
+eval "$(thefuck --alias)"

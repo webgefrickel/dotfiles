@@ -19,6 +19,7 @@ brew install clipper
 brew install coreutils
 brew install fasd
 brew install git
+brew install thefuck
 brew install tmux
 brew install tree
 brew install zsh
