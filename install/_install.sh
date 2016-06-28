@@ -17,11 +17,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # install some neccessary brew packages
 brew install clipper
 brew install coreutils
-brew install fasd
 brew install git
-brew install thefuck
 brew install tmux
-brew install tree
 brew install zsh
 
 # install macvim and neobundle for vim

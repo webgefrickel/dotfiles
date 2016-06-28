@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
 # use nvm instead of brew node or anything else
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
-nvm install v4.4.5
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
+nvm install v4.4.6
 nvm use default
 curl -L https://www.npmjs.com/install.sh | sh
 

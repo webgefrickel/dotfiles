@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 brew tap homebrew/dupes
 brew tap homebrew/php
+brew tap homebrew/versions
 brew tap caskroom/versions
 
 # install additional brew packages -- see _install.sh too
 brew install composer
 brew install curl
+brew install fasd
 brew install ffmpeg --with-libvpx --with-libvorbis --with-fdk-aac
 brew install git-extras
 brew install git-flow
@@ -13,12 +15,14 @@ brew install imagemagick
 brew install mariadb
 brew install mozjpeg
 brew install nginx --with-http2
-brew install php70
+brew install openssl
+brew install php70 --with-homebrew-curl --with-homebrew-openssl
 brew install php70-intl
 brew install php70-mcrypt
 brew install ruby
-brew install ssh-copy-id
 brew install the_silver_searcher
+brew install thefuck
+brew install tree
 brew install wget
 brew install youtube-dl
 
