@@ -1,22 +1,3 @@
-# no tmuxifier, just tmux-commands for creating a dev-session
-function tmd() {
-  cd ~/Sites/$1
-  tmux rename-session $1
-
-  git status
-  tmux rename-window gitngulp
-  tmux split-window -h -p 50 -d
-  tmux new-window -n scss -d
-  tmux new-window -n js -d
-  tmux new-window -n templates -d
-  tmux send-keys -t scss 'cd src/scss && vim' Enter
-  tmux send-keys -t js 'cd src/js && vim' Enter
-  tmux send-keys -t templates 'cd public && ls' Enter
-  tmux select-window -t gitngulp
-  tmux select-pane -t 2
-  tmux send-keys -t gitngulp 'gulp' Enter
-}
-
 # convert a video to mp4 + webm in one go for web
 function webvideo() {
   ffmpeg -i $1 -acodec libvorbis -ac 2 -b:a 128k -ar 44100 -vcodec libvpx -pix_fmt yuv420p -r 25 -qmin 10 -qmax 42 -cpu-used 0 -quality best -b:v 2M -maxrate 2M -bufsize 4M -s 1280x720 $1.webm
