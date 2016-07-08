@@ -19,11 +19,10 @@ call unite#custom_source('file_rec, file_rec/async, file_mru, file, buffer, grep
   \ '\.git',
   \ '\.svn',
   \ '\.sass-cache',
-  \ '_srcs',
-  \ 'node_modules',
-  \ 'bower_components',
+  \ '_srcs\/',
+  \ 'node_modules\/',
   \ 'vim\/bundle',
-  \ '\.\(png\|gif\|jpg\|pdf\|ico\|mp4\|webm\|mp3\|woff\|ttf\|eot\|min\.js\|min\.map\|css\)$',
+  \ '\.\(png\|gif\|jpg\|pdf\|ico\|mp4\|webm\|mp3\|woff\|ttf\|eot\|min\.js\|min\.map\)$',
   \ ], '\|'))
 
 nmap <space> [unite]
