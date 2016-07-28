@@ -6,7 +6,7 @@
   editor = /Applications/MacVim.app/Contents/MacOS/Vim
   autocrlf = input
   eol = lf
-  pager = less -FXRS -x2
+  pager = diff-so-fancy | less --tabs=2 -RFX
 
 [color]
   ui = auto
