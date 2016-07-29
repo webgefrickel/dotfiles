@@ -233,9 +233,9 @@
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
 	<key>UseBrightBold</key>
-	<true/>
+	<false/>
 	<key>VisualBell</key>
-	<true/>
+	<false/>
 	<key>VisualBellOnlyWhenMuted</key>
 	<false/>
 	<key>columnCount</key>
