@@ -70,8 +70,5 @@ eval `gdircolors $HOME/dotfiles/zsh/dircolors-solarized/dircolors.256dark`
 eval "$(fasd --init auto)"
 
 # nvm
-export NVM_DIR="/Users/webgefrickel/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# the fuck
-eval "$(thefuck --alias)"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm

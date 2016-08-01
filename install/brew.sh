@@ -21,7 +21,6 @@ brew install php70-intl
 brew install php70-mcrypt
 brew install ruby
 brew install the_silver_searcher
-brew install thefuck
 brew install tree
 brew install wget
 brew install youtube-dl
@@ -33,7 +32,6 @@ brew cask install carbon-copy-cloner
 brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
-brew cask install google-chrome-canary
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install karabiner
@@ -45,7 +43,6 @@ brew cask install sequel-pro
 brew cask install slack
 brew cask install slate
 brew cask install telegram
-brew cask install vagrant
 brew cask install virtualbox
 brew cask install vlc
 
