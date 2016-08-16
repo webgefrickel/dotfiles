@@ -50,6 +50,9 @@ nnoremap <S-tab> <C-w>W
 " no help while mishitting ESC - awesome
 noremap <F1> <ESC>
 
+" hitting jj in insert mode escapes
+inoremap jj <ESC>
+
 " deactivate stupid ex-mode and man-page stuff
 nnoremap Q <nop>
 nnoremap K <nop>
