@@ -17,18 +17,18 @@
   remote = green
 
 [color "diff"]
-  meta = yellow bold
-  commit = green bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+  meta = yellow
+  commit = green
+  frag = magenta
+  old = red
+  new = green
   whitespace = red reverse
 
 [color "diff-highlight"]
-  newNormal = green bold
-  newHighlight = green bold 22
-  oldNormal = red bold
-  oldHighlight = red bold 52
+  newNormal = green
+  newHighlight = green 22
+  oldNormal = red
+  oldHighlight = red 52
 
 [color "status"]
   added = yellow
@@ -55,7 +55,7 @@
   fac = push origin refac
   rs = reset HEAD --hard
   hist = log --pretty=format:\"%h | %ad | %an | %s%d \" --graph --date=local
-  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit
   lo = log --graph --decorate --pretty=oneline --abbrev-commit --all
   pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
   type = cat-file -t

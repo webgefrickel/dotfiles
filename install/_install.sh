@@ -18,6 +18,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 brew install clipper
 brew install coreutils
 brew install git
+brew install hyperterm
 brew install tmux
 brew install zsh
 
@@ -49,6 +50,7 @@ ln -s ~/dotfiles/editorconfig ~/.editorconfig
 ln -s ~/dotfiles/eslintrc ~/.eslintrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
+ln -s ~/dotfiles/hyperterm.js ~/.hyperterm.js
 ln -s ~/dotfiles/slate.js ~/.slate.js
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vim ~/.vim
