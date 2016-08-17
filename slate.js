@@ -27,7 +27,7 @@ var grid = slate.operation('grid', {
 
 
 // ultrafast application-switching
-var terminal = slate.operation('focus', { app: 'Terminal' });
+var terminal = slate.operation('focus', { app: 'HyperTerm' });
 var chrome = slate.operation('focus', { app: 'Google Chrome Canary' });
 var mail = slate.operation('focus', { app: 'Mail' });
 var forklift = slate.operation('focus', { app: 'ForkLift' });
