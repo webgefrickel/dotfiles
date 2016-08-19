@@ -58,10 +58,10 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
-# Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# Trackpad: disable tap to click for this user and for the login screen, the new macbooks touchpad is so sensitive
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool false
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 0
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 0
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)

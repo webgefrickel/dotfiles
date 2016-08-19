@@ -16,9 +16,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # install some neccessary brew packages
 brew install clipper
-brew install coreutils
 brew install git
-brew install hyperterm
 brew install tmux
 brew install zsh
 
@@ -29,6 +27,7 @@ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 # this is the minimal software used
 brew cask install forklift
+brew cask install hyperterm
 brew cask install owncloud
 
 # add a nice font

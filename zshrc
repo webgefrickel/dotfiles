@@ -62,9 +62,8 @@ source $HOME/dotfiles/zsh/zsh-completions/zsh-completions.plugin.zsh
 source $HOME/dotfiles/zsh/forklift/forklift.plugin.zsh
 
 # nice dircolors -- this requires installed coreutils and lscolors fallback
-autoload colors; colors;
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
-eval `gdircolors $HOME/dotfiles/zsh/dircolors-solarized/dircolors.256dark`
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 # fasd
 eval "$(fasd --init auto)"

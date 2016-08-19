@@ -35,9 +35,9 @@ alias -s txt=vim
 # clipper -- https://github.com/wincent/clipper
 alias clip="nc localhost 8377"
 
-# gnu coreutils
-alias ls="gls -al --color=auto"
-alias l='gls -al --color=auto'
+# better ls / l command
+alias ls='ls -alGp'
+alias l='ls -alGp'
 
 # Gitty gitgit
 alias g="git"

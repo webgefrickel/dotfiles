@@ -2,7 +2,7 @@
 "======================================================================
 
 let g:lightline = {
-  \ 'colorscheme': 'solarized_dark',
+  \ 'colorscheme': 'hybrid',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
   \   'right': [ [ 'lineinfo' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
