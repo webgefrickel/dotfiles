@@ -30,6 +30,3 @@ export GREP_COLOR='1;32'
 export PAGER="less"
 export LESS="-R"
 export LC_CTYPE=$LANG
-
-# the fuck
-export THEFUCK_REQUIRE_CONFIRMATION=true
