@@ -56,12 +56,11 @@ zle -N self-insert url-quote-magic
 # jobs
 setopt long_list_jobs
 
-# source some zsh and other plugins
+# source some zsh plugins
 source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/dotfiles/zsh/zsh-completions/zsh-completions.plugin.zsh
-source $HOME/dotfiles/zsh/forklift/forklift.plugin.zsh
 
-# nice dircolors -- this requires installed coreutils and lscolors fallback
+# nice dircolors for ls
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
