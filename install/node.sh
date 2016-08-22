@@ -2,8 +2,9 @@
 
 # use nvm instead of brew node or anything else
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
-nvm install v4.4.7
-nvm use default
+nvm install 4.5.0
+nvm install node
+nvm use node
 curl -L https://www.npmjs.com/install.sh | sh
 
 npm update -g
