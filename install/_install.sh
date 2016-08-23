@@ -46,7 +46,6 @@ git submodule update
 # link the dotfiles
 ln -s ~/dotfiles/agignore ~/.agignore
 ln -s ~/dotfiles/editorconfig ~/.editorconfig
-ln -s ~/dotfiles/eslintrc ~/.eslintrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/hyperterm.js ~/.hyperterm.js
