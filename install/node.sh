@@ -11,7 +11,6 @@ npm update -g
 
 npm install -g caniuse-cmd
 npm install -g diff-so-fancy
-npm install -g dploy
 npm install -g eslint
 npm install -g fkill-cli
 npm install -g grunt-cli
