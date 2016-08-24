@@ -6,11 +6,12 @@ brew tap caskroom/versions
 
 # install additional brew packages -- see _install.sh too
 brew install composer
-brew install curl
+brew install curl --with-ssl --with-libssh2
 brew install fasd
 brew install ffmpeg --with-libvpx --with-libvorbis --with-fdk-aac
 brew install git-extras
 brew install git-flow
+brew install git-ftp
 brew install imagemagick
 brew install mariadb
 brew install mozjpeg
@@ -19,6 +20,7 @@ brew install openssl
 brew install php70 --with-homebrew-curl --with-homebrew-openssl
 brew install php70-intl
 brew install php70-mcrypt
+brew install rsync
 brew install ruby
 brew install the_silver_searcher
 brew install tree
