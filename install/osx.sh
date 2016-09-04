@@ -111,3 +111,6 @@ defaults write -g NSWindowResizeTime -float 0.001
 
 # opening and closing Quick Look windows
 defaults write -g QLPanelAnimationDuration -float 0
+
+# deactivate stupid chrome mouse gestures
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
