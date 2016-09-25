@@ -25,6 +25,7 @@ kwmc config border focused off
 kwmc rule owner="Harvest" properties={float="true"}
 kwmc rule owner="VOX" properties={float="true"}
 kwmc rule owner="Finder" properties={float="true"}
+kwmc rule owner="CleanMyMac 3" properties={float="true"}
 
 // The following command creates a rule that captures an application to the given screen, if the screen exists.
 kwmc rule owner="Firefox" properties={display="0"}
@@ -37,7 +38,7 @@ kwmc rule owner="Reminders" properties={display="1"}
 
 // Enable the prefix mode
 kwmc mode prefix prefix on
-kwmc mode prefix timeout 0.7
+kwmc mode prefix timeout 1
 kwmc mode prefix restore default
 kwmc mode prefix color 0xFF8C9440
 
