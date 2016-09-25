@@ -13,6 +13,7 @@ brew install git-extras
 brew install git-flow
 brew install git-ftp
 brew install imagemagick
+brew install koekeishiya/kwm/kwm
 brew install mariadb
 brew install mozjpeg
 brew install nginx --with-http2
@@ -42,10 +43,10 @@ brew cask install qlstephen
 brew cask install seil
 brew cask install sequel-pro
 brew cask install slack
-brew cask install slate
 brew cask install telegram
 brew cask install virtualbox
 brew cask install vlc
+brew cask install vox
 
 # set some options for qlcolorcode
 defaults write org.n8gray.QLColorCode font Hack
