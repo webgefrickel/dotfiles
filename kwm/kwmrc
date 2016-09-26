@@ -1,81 +1,42 @@
 // define global vars
-define PADDING 2
-define HYPER ctrl+cmd+alt+shift
+define PADDING 6
+
+// default tiling is bsp
+kwmc config tiling bsp
+kwmc config spawn right
+kwmc config split-ratio 0.425
 
 // default style
 kwmc config padding PADDING PADDING PADDING PADDING
 kwmc config gap PADDING PADDING
-kwmc config tiling bsp
+kwmc config border focused on
+kwmc config border focused size 2
+kwmc config border focused color 0xFF5E8D87
+kwmc config border focused radius 6
+
 kwmc config hotkeys on
+kwmc config cycle-focus on
+kwmc config focus-follows-mouse on
+kwmc config mouse-follows-focus on
 kwmc config float-non-resizable on
 kwmc config lock-to-container on
-kwmc config focus-follows-mouse off
 kwmc config standby-on-float on
-kwmc config mouse-follows-focus on
-kwmc config mouse-drag off
-kwmc config cycle-focus on
-kwmc config split-ratio 0.5
-kwmc config spawn right
-kwmc config border focused off
+kwmc config mouse-drag on
+kwmc config mouse-drag mod shift
 
-// add rules to apps that dont have tileable state by default
-// kwmc rule owner="iTerm2" properties={role="AXDialog"}
-
-// The following commands create rules that blacklists an application from Kwms tiling
-kwmc rule owner="Harvest" properties={float="true"}
-kwmc rule owner="VOX" properties={float="true"}
-kwmc rule owner="Finder" properties={float="true"}
-kwmc rule owner="CleanMyMac 3" properties={float="true"}
-
-// The following command creates a rule that captures an application to the given screen, if the screen exists.
-kwmc rule owner="Firefox" properties={display="0"}
-kwmc rule owner="HYPERTerm" properties={display="0"}
-kwmc rule owner="Terminal" properties={display="0"}
-kwmc rule owner="Calendar" properties={display="1"}
-kwmc rule owner="ForkLift" properties={display="1"}
-kwmc rule owner="Mail" properties={display="1"}
-kwmc rule owner="Reminders" properties={display="1"}
+// override if there are two displays, smaller one monocle always
+kwmc config display 0 mode bsp
+kwmc config display 0 float-dim 1200 800
+kwmc config display 1 mode monocle
+kwmc config display 1 float-dim 1200 800
 
 // Enable the prefix mode
 kwmc mode prefix prefix on
 kwmc mode prefix timeout 1
 kwmc mode prefix restore default
-kwmc mode prefix color 0xFF8C9440
+kwmc mode prefix color 0xFFA54242
 
-/*  Default Keybinds */
-// Activate prefix mode
-kwmc bindsym HYPER-a mode activate prefix
 
-// hyper key bindings with prefix mode for less used commands
-kwmc bindsym prefix-1 window -c type bsp
-kwmc bindsym prefix-2 window -c type float
-kwmc bindsym prefix-h window -c reduce 0.02 east
-kwmc bindsym prefix-l window -c expand 0.02 east
-kwmc bindsym prefix-j window -c expand 0.02 south
-kwmc bindsym prefix-k window -c reduce 0.02 south
-kwmc bindsym prefix-shift-h window -c reduce 0.02 west
-kwmc bindsym prefix-shift-l window -c expand 0.02 west
-kwmc bindsym prefix-shift-j window -c expand 0.02 north
-kwmc bindsym prefix-shift-k window -c reduce 0.02 north
-kwmc bindsym prefix-p window -z parent
-kwmc bindsym prefix-f window -t focused
-kwmc bindsym prefix-s window -c split-mode toggle
-kwmc bindsym prefix-[ window -m display 0
-kwmc bindsym prefix-] window -m display 1
-
-// moving around with cmd+ctrl
-kwmc bindsym cmd+ctrl-h window -f west
-kwmc bindsym cmd+ctrl-l window -f east
-kwmc bindsym cmd+ctrl-j window -f south
-kwmc bindsym cmd+ctrl-k window -f north
-
-// hyper key bindings for fullscreen, displays etc.
-kwmc bindsym HYPER-1 display -f 0
-kwmc bindsym HYPER-2 display -f 1
-kwmc bindsym HYPER-h window -s west
-kwmc bindsym HYPER-j window -s south
-kwmc bindsym HYPER-k window -s north
-kwmc bindsym HYPER-l window -s east
-kwmc bindsym HYPER-f window -z fullscreen
-kwmc bindsym HYPER-r tree rotate 90
-
+// include binds, space and other config + rules
+include rules
+include binds
