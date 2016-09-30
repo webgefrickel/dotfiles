@@ -1,5 +1,5 @@
 // define global vars
-define PADDING 6
+define PADDING 4
 
 // default tiling is bsp
 kwmc config tiling bsp
@@ -21,8 +21,7 @@ kwmc config mouse-follows-focus on
 kwmc config float-non-resizable on
 kwmc config lock-to-container on
 kwmc config standby-on-float on
-kwmc config mouse-drag on
-kwmc config mouse-drag mod shift
+kwmc config mouse-drag off
 
 // override if there are two displays, smaller one monocle always
 kwmc config display 0 mode bsp

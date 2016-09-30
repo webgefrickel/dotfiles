@@ -3,6 +3,8 @@
 
 // The following commands create rules that blacklists an application from Kwms tiling
 kwmc rule owner="Harvest" properties={float="true"}
+kwmc rule owner="TogglDesktop" properties={float="true"}
+kwmc rule owner="1Password" properties={float="true"}
 kwmc rule owner="VOX" properties={float="true"}
 kwmc rule owner="Finder" properties={float="true"}
 kwmc rule owner="CleanMyMac 3" properties={float="true"}

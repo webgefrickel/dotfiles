@@ -201,10 +201,16 @@
 	<true/>
 	<key>ShowActivityIndicatorInTab</key>
 	<false/>
+	<key>ShowCommandKeyInTitle</key>
+	<false/>
 	<key>ShowDimensionsInTitle</key>
 	<false/>
+	<key>ShowRepresentedURLInTitle</key>
+	<true/>
 	<key>ShowRepresentedURLPathInTitle</key>
 	<true/>
+	<key>ShowShellCommandInTitle</key>
+	<false/>
 	<key>ShowTerminalInDockIcon</key>
 	<false/>
 	<key>TextBoldColor</key>
@@ -234,6 +240,8 @@
 	<string>Hybrid</string>
 	<key>rowCount</key>
 	<integer>48</integer>
+	<key>shellExitAction</key>
+	<integer>1</integer>
 	<key>type</key>
 	<string>Window Settings</string>
 	<key>warnOnShellCloseAction</key>
