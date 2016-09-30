@@ -22,7 +22,7 @@ brew install php70 --with-homebrew-curl --with-homebrew-openssl
 brew install php70-intl
 brew install php70-mcrypt
 brew install rsync
-brew install ruby
+brew install rbenv
 brew install the_silver_searcher
 brew install tree
 brew install wget
