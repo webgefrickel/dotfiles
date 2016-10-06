@@ -27,7 +27,7 @@ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 # this is the minimal software used
 brew cask install forklift
-brew cask install hyperterm
+brew cask install hyper
 brew cask install owncloud
 
 # add a nice font

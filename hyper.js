@@ -44,6 +44,11 @@ module.exports = {
         border: 0;
         border-radius: 0;
       }
+
+      .splitpane_divider {
+        background: #85678f !important;
+        border-color: #1d1f21 !important;
+      }
     `,
 
     // custom css to embed in the terminal window
