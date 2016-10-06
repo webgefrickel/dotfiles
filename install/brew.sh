@@ -31,6 +31,7 @@ brew install youtube-dl
 # brew cask and install software
 brew cask install alfred
 brew cask install carbon-copy-cloner
+brew cask install dash
 brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
