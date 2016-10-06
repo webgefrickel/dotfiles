@@ -11,10 +11,6 @@ kwmc bindsym prefix-h window -c reduce 0.02 east
 kwmc bindsym prefix-l window -c expand 0.02 east
 kwmc bindsym prefix-j window -c expand 0.02 south
 kwmc bindsym prefix-k window -c reduce 0.02 south
-kwmc bindsym prefix-shift-h window -c reduce 0.02 west
-kwmc bindsym prefix-shift-l window -c expand 0.02 west
-kwmc bindsym prefix-shift-j window -c expand 0.02 north
-kwmc bindsym prefix-shift-k window -c reduce 0.02 north
 kwmc bindsym prefix-p window -z parent
 kwmc bindsym prefix-f window -t focused
 kwmc bindsym prefix-s window -c split-mode toggle

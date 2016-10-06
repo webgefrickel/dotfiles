@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 
 # use nvm instead of brew node or anything else
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
-nvm install 4.5.0
-nvm install node
-nvm use node
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+nvm install 4.6.0
+nvm use 4.6.0
+nvm alias default 4.6.0
 curl -L https://www.npmjs.com/install.sh | sh
 
 npm update -g
