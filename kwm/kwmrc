@@ -1,41 +1,60 @@
-// define global vars
-define PADDING 3
-
-// default tiling is bsp
-kwmc config tiling bsp
+# default config
+kwmc config optimal-ratio 1.618
 kwmc config spawn right
-kwmc config split-ratio 0.5
-
-// default style
-kwmc config padding PADDING PADDING PADDING PADDING
-kwmc config gap PADDING PADDING
-kwmc config border focused on
-kwmc config border focused size 2
-kwmc config border focused color 0xFF5E8D87
-kwmc config border focused radius 6
-
-kwmc config hotkeys on
-kwmc config cycle-focus on
-kwmc config focus-follows-mouse on
-kwmc config mouse-follows-focus on
 kwmc config float-non-resizable on
 kwmc config lock-to-container on
-kwmc config standby-on-float on
+kwmc config focus-follows-mouse off
+kwmc config standby-on-float off
+kwmc config center-on-float on
+kwmc config cycle-focus on
+kwmc config mouse-follows-focus on
 kwmc config mouse-drag off
+kwmc config mouse-drag mod ctrl+cmd+alt+shift
+kwmc config hotkeys on
+kwmc config split-ratio 0.5
 
-// override if there are two displays, smaller one monocle always
+# no border, use hazeover instead
+kwmc config border focused off
+kwmc config border focused size 2
+kwmc config border focused radius 6
+
+# default is bsp with a padding of 6
+kwmc config tiling bsp
+kwmc config padding 2 2 2 2
+kwmc config gap 2 2
+
+# override displays, if there are two
 kwmc config display 0 mode bsp
 kwmc config display 0 float-dim 1200 800
 kwmc config display 1 mode monocle
 kwmc config display 1 float-dim 1200 800
 
-// Enable the prefix mode
-kwmc mode prefix prefix on
-kwmc mode prefix timeout 1
-kwmc mode prefix restore default
-kwmc mode prefix color 0xFFA54242
+# add rules to apps that dont have tileable state by default
+# kwmc rule owner="iTerm2" properties={role="AXDialog"}
 
+# blacklist applications from kwms tiling
+kwmc rule owner="1Password" properties={float="true"}
+kwmc rule owner="CleanMyMac 3" properties={float="true"}
+kwmc rule owner="Finder" properties={float="true"}
+kwmc rule owner="Harvest" properties={float="true"}
+kwmc rule owner="System Preferences" properties={float="true"}
+kwmc rule owner="TogglDesktop" properties={float="true"}
+kwmc rule owner="VOX" properties={float="true"}
 
-// include binds, space and other config + rules
-include rules
-include binds
+# those apps should always be on the main display
+kwmc rule owner="Firefox" properties={display="0"}
+kwmc rule owner="Google Chrome" properties={display="0"}
+kwmc rule owner="HyperTerm" properties={display="0"}
+kwmc rule owner="MacVim" properties={display="0"}
+kwmc rule owner="Safari" properties={display="0"}
+kwmc rule owner="Terminal" properties={display="0"}
+
+# and those should be on the secondary display
+kwmc rule owner="Calendar" properties={display="1"}
+kwmc rule owner="Dash" properties={display="1"}
+kwmc rule owner="ForkLift" properties={display="1"}
+kwmc rule owner="Mail" properties={display="1"}
+kwmc rule owner="Messages" properties={display="1"}
+kwmc rule owner="Skype" properties={display="1"}
+kwmc rule owner="Slack" properties={display="1"}
+kwmc rule owner="Telegram" properties={display="1"}

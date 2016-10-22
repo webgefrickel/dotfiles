@@ -16,7 +16,10 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # install some neccessary brew packages
 brew install clipper
+brew install fasd
 brew install git
+brew install koekeishiya/kwm/kwm
+brew install koekeishiya/khd/khd
 brew install tmux
 brew install zsh
 
@@ -35,9 +38,11 @@ brew cask install caskroom/fonts/font-hack
 brew linkapps
 brew tap homebrew/services
 
-# clipper
+# clipper + kwm
 mkdir -p ~/Library/LaunchAgents
 brew services start clipper
+brew services start khd
+brew services start kwm
 
 # install all submodules
 git submodule init
@@ -51,6 +56,7 @@ ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/hyperterm.js ~/.hyperterm.js
 ln -s ~/dotfiles/kwm ~/.kwm
+ln -s ~/dotfiles/khdrc ~/.khdrc
 ln -s ~/dotfiles/ruby-version ~/.ruby-version
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vim ~/.vim
@@ -69,3 +75,4 @@ sudo vim /etc/shells
 chsh -s /usr/local/bin/zsh
 /usr/bin/env zsh
 sudo mv /etc/zshenv /etc/zprofile
+sudo launchctl config user path $PATH
