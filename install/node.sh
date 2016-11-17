@@ -22,3 +22,4 @@ npm install -g recursive-blame
 npm install -g sass-lint
 npm install -g trash-cli
 npm install -g vtop
+npm install -g yarn
