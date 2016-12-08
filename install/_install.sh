@@ -22,23 +22,23 @@ brew install koekeishiya/kwm/kwm
 brew install koekeishiya/khd/khd
 brew install tmux
 brew install zsh
+brew install neovim/neovim/neovim --HEAD
+brew install python3
 
-# install macvim and neobundle for vim
-brew install macvim --with-cscope --with-lua --HEAD
-mkdir ~/.vim/bundle
-git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+# install deps + plugins for neovim
+pip3 install neovim
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh installer.sh ~/.config/nvim/dein
 
-# this is the minimal software used
+# this is the minimal software and fonts used
 brew cask install forklift
 brew cask install hyper
 brew cask install owncloud
-
-# add a nice font
 brew cask install caskroom/fonts/font-hack
 brew linkapps
 brew tap homebrew/services
 
-# clipper + kwm
+# clipper + kwm/khd
 mkdir -p ~/Library/LaunchAgents
 brew services start clipper
 brew services start khd
@@ -50,17 +50,16 @@ git submodule update
 
 # link the dotfiles
 ln -s ~/dotfiles/agignore ~/.agignore
+ln -s ~/dotfiles/config ~/.config
 ln -s ~/dotfiles/editorconfig ~/.editorconfig
 ln -s ~/dotfiles/gemrc ~/.gemrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/hyperterm.js ~/.hyperterm.js
-ln -s ~/dotfiles/kwm ~/.kwm
 ln -s ~/dotfiles/khdrc ~/.khdrc
+ln -s ~/dotfiles/kwm ~/.kwm
 ln -s ~/dotfiles/ruby-version ~/.ruby-version
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/vim ~/.vim
-ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zshrc ~/.zshrc
 

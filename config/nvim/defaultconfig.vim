@@ -4,12 +4,9 @@
 filetype plugin indent on
 syntax on
 
-NeoBundleCheck
-
 set autoread                     " Automatically read a file that has changed on disk
 set backspace=indent,eol,start   " Allow backspacing over everything in insert mode
 set cursorline                   " highlight current line
-set encoding=utf-8               " Yeah. UTF-8 FTW!
 set grepprg=ag                   " use ag for grepping
 set hidden                       " allows for switching buffers without writing
 set lazyredraw                   " Don't redraw while executing macros
@@ -30,8 +27,6 @@ set showcmd                      " show me what im doing. helps alot
 set sidescroll=10                " smoother side-scrolling
 set sidescrolloff=5              " jump by 5 when scrolling sideways
 set timeout ttimeoutlen=100      " get rid of the delay when pressing O (for example)
-set ttyfast                      " faster terminal usage
-set ttymouse=xterm2              " xterm/tmux compatible mouse
 set virtualedit=all              " every mode active from v V to StrgV
 set visualbell                   " don't flicker
 set complete-=i                  " dont complete from files

@@ -2,6 +2,7 @@
 alias sudo='sudo '
 
 # always use macvim but for 'vim'
+alias nvim=$EDITOR
 alias vim=$EDITOR
 alias vi=$EDITOR
 alias v=$EDITOR
@@ -25,12 +26,12 @@ alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
 # suffix-aliases for file-types (zsh only)
-alias -s css=vim
-alias -s scss=vim
-alias -s js=vim
-alias -s html=vim
-alias -s md=vim
-alias -s txt=vim
+alias -s css=nvim
+alias -s scss=nvim
+alias -s js=nvim
+alias -s html=nvim
+alias -s md=nvim
+alias -s txt=nvim
 
 # clipper -- https://github.com/wincent/clipper
 alias clip="nc localhost 8377"
@@ -79,8 +80,8 @@ alias upall='sysup && brewup && npmup'
 alias npmre='rm -rf node_modules && npm cache clean && npm install'
 
 # easy hosts / apache / php editing
-alias hosts='sudo vim /etc/hosts'
-alias vhosts='vim /usr/local/etc/nginx/servers/'
+alias hosts='sudo nvim /etc/hosts'
+alias vhosts='nvim /usr/local/etc/nginx/servers/'
 
 # often used folder shortcuts
 alias web='cd ~/Sites && ls -al'

@@ -38,7 +38,7 @@ khd mode launcher color 0xff5e8d87
 # toggle between modes
 ralt - a: khd -e "mode activate resizer"; kwmc config border focused on;
 ralt - s: khd -e "mode activate vimmode"; kwmc config border focused on;
-ralt - x: khd -e "mode activate launcher"; kwmc config border focused on;
+ralt - d: khd -e "mode activate launcher"; kwmc config border focused on;
 resizer + ralt - a: khd -e "mode activate default"; kwmc config border focused off;
 vimmode + ralt - s: khd -e "mode activate default"; kwmc config border focused off;
 launcher + ralt - x: khd -e "mode activate default"; kwmc config border focused off;

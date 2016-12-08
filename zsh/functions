@@ -61,7 +61,7 @@ fancy-ctrl-z () {
 
 # open changed files in git index
 function gch () {
-  vim `git status | grep modified | awk '{print $3}'`
+  nvim `git status | grep modified | awk '{print $3}'`
 }
 
 # creates an archive from given directory

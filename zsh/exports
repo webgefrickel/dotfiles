@@ -8,6 +8,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export MANPATH=/usr/local/share/man:$MANPATH
+
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 
@@ -18,8 +19,8 @@ export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
 export COPYFILE_DISABLE=true
 
 # editor
-export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
-export VISUAL="/Applications/MacVim.app/Contents/MacOS/Vim"
+export EDITOR="/usr/local/bin/nvim
+export VISUAL="/usr/local/bin/nvim
 
 # disable auto titling fixes tmux window
 export DISABLE_AUTO_TITLE=true

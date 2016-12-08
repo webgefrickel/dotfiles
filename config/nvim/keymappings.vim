@@ -1,6 +1,9 @@
 " Custom key mappings and shortcuts
 "======================================================================
 
+" fix an issue with nvim + c+h for tmux-vim navigation
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+
 " remap semi-colon to be colon in normal an visual mode
 nnoremap ; :
 vnoremap ; :
