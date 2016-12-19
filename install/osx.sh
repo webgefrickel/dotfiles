@@ -114,3 +114,6 @@ defaults write -g QLPanelAnimationDuration -float 0
 
 # deactivate stupid chrome mouse gestures
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
+# dont show suggestions when typing l etc. multiple times
+defaults write -g ApplePressAndHoldEnabled -bool false
