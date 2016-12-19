@@ -16,12 +16,15 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # install some neccessary brew packages
 brew install clipper
-brew install fasd
+brew install fzf
 brew install git
 brew install koekeishiya/kwm/kwm
 brew install koekeishiya/khd/khd
 brew install tmux
 brew install zsh
+
+# install fzf
+/usr/local/opt/fzf/install
 
 # install macvim and neobundle for vim
 brew install macvim --with-cscope --with-lua --HEAD
@@ -31,6 +34,7 @@ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 # this is the minimal software used
 brew cask install forklift
 brew cask install hyper
+brew cask install iterm2
 brew cask install owncloud
 
 # add a nice font
