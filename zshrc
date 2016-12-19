@@ -5,7 +5,7 @@ done
 unset file
 
 # a nice prompt
-autoload -U promptinit && promptinit
+autoload -U promptinit; promptinit
 prompt pure
 
 # completions
@@ -64,12 +64,21 @@ source $HOME/dotfiles/zsh/zsh-completions/zsh-completions.plugin.zsh
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
-# fasd
-eval "$(fasd --init auto)"
-
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # rbenv
 eval "$(rbenv init -)"
+
+# fzf
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+  export PATH="$PATH:/usr/local/opt/fzf/bin"
+fi
+
+if [[ ! "$MANPATH" == */usr/local/opt/fzf/man* && -d "/usr/local/opt/fzf/man" ]]; then
+  export MANPATH="$MANPATH:/usr/local/opt/fzf/man"
+fi
+
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"

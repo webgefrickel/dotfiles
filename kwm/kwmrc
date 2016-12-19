@@ -30,7 +30,7 @@ kwmc config display 1 mode monocle
 kwmc config display 1 float-dim 1200 800
 
 # add rules to apps that dont have tileable state by default
-# kwmc rule owner="iTerm2" properties={role="AXDialog"}
+kwmc rule owner="iTerm2" properties={role="AXDialog"}
 
 # blacklist applications from kwms tiling
 kwmc rule owner="1Password" properties={float="true"}
@@ -48,6 +48,7 @@ kwmc rule owner="HyperTerm" properties={display="0"}
 kwmc rule owner="MacVim" properties={display="0"}
 kwmc rule owner="Safari" properties={display="0"}
 kwmc rule owner="Terminal" properties={display="0"}
+kwmc rule owner="iTerm2" properties={display="0"}
 
 # and those should be on the secondary display
 kwmc rule owner="Calendar" properties={display="1"}

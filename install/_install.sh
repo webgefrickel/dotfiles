@@ -16,7 +16,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # install some neccessary brew packages
 brew install clipper
-brew install fasd
+brew install fzf
 brew install git
 brew install koekeishiya/kwm/kwm
 brew install koekeishiya/khd/khd
@@ -30,9 +30,13 @@ pip3 install neovim
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh installer.sh ~/.config/nvim/dein
 
+# install fzf
+/usr/local/opt/fzf/install
+
 # this is the minimal software and fonts used
 brew cask install forklift
 brew cask install hyper
+brew cask install iterm2
 brew cask install owncloud
 brew cask install caskroom/fonts/font-hack
 brew linkapps

@@ -40,14 +40,9 @@ module.exports = {
         font-weight: 500;
       }
 
-      .hyperterm_main {
+      .hyper_main {
         border: 0;
         border-radius: 0;
-      }
-
-      .splitpane_divider {
-        background: #85678f !important;
-        border-color: #1d1f21 !important;
       }
     `,
 
@@ -58,17 +53,10 @@ module.exports = {
           -webkit-font-smoothing: subpixel-antialiased !important;
         }
       }
-    `,
-
-    // plugins config
-    hyperclean: {
-      hideTabs: true,
-      hideFirstTabBorder: true
-    }
+    `
   },
 
   plugins: [
-    'hyperclean',
     'hyperterm-1password'
   ]
 
