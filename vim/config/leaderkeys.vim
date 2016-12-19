@@ -26,3 +26,6 @@ nnoremap <leader>g /\v^[<\|=>]{7}( .*\|$)<CR>
 
 " paste keeping indentation
 nnoremap <leader>p p`[v`]=
+
+" toggle wrapping
+nnoremap <leader>w :set wrap! wrap?<CR>
