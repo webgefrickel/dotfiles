@@ -31,17 +31,14 @@ ralt - 2: kwmc space -t monocle
 ralt - 3: kwmc space -t float
 
 # set border color for different modes
-khd mode resizer color 0xffde935f
+khd mode resizer color 0xff5e8d87
 khd mode vimmode color 0xffa54242
-khd mode launcher color 0xff5e8d87
 
 # toggle between modes
 ralt - a: khd -e "mode activate resizer"; kwmc config border focused on;
 ralt - s: khd -e "mode activate vimmode"; kwmc config border focused on;
-ralt - x: khd -e "mode activate launcher"; kwmc config border focused on;
 resizer + ralt - a: khd -e "mode activate default"; kwmc config border focused off;
 vimmode + ralt - s: khd -e "mode activate default"; kwmc config border focused off;
-launcher + ralt - x: khd -e "mode activate default"; kwmc config border focused off;
 
 # resizer mode
 resizer - 1: kwmc window -c type bsp
@@ -74,18 +71,3 @@ vimmode+shift - g: khd -p "alt - down"
 vimmode - x: khd -p "cmd - w"
 vimmode - q: khd -p "cmd - q"
 vimmode - 0x35: khd -e "mode activate default"; kwmc config border focused off;
-
-# basic launcher shortcuts
-launcher - q: khd -p "cmd - q"
-launcher - x: open -a /Applications/Firefox.app
-launcher - g: open -a /Applications/Google\ Chrome.app
-launcher - m: open -a /Applications/Mail.app
-launcher - 1: open -a /Applications/1Password.app
-launcher - d: open -a /Applications/Dash.app
-launcher - f: open -a /Applications/ForkLift.app
-launcher - v: open -a /Applications/MacVim.app
-launcher - i: open -a /Applications/iTunes.app
-launcher - t: open -a /Applications/Utilities/Terminal.app
-launcher - h: open -a /Applications/Hyper.app
-launcher - space: open -a /Applications/Hyper.app
-launcher - 0x35: khd -e "mode activate default"; kwmc config border focused off;
