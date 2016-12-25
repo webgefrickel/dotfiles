@@ -12,8 +12,6 @@ brew install git-flow
 brew install git-ftp
 brew install imagemagick
 brew install mariadb
-brew install mas
-brew install mdp
 brew install mozjpeg
 brew install nginx --with-http2
 brew install openssl

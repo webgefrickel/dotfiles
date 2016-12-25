@@ -36,14 +36,3 @@ defaults write org.n8gray.QLColorCode fontSizePoints 9
 defaults write org.n8gray.QLColorCode hlTheme blacknblue
 defaults write org.n8gray.QLColorCode extraHLFlags '--replace-tabs=2'
 qlmanage -r
-
-# mac app store installs using mas (brew install mas)
-mas install 430798174 # HazeOver (1.7.4)
-mas install 443987910 # 1Password (6.5)
-mas install 890031187 # Marked 2 (2.5.6)
-mas install 497799835 # Xcode (8.1)
-mas install 824171161 # Affinity Designer (1.5.3)
-mas install 824183456 # Affinity Photo (1.4.3)
-mas install 557168941 # Tweetbot (2.4.4)
-
-# the rest such as gpg and drivers have to be installed manually
