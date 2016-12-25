@@ -3,8 +3,11 @@
 
 " TODO Replace those with the de-versions
 " NeoBundle 'Shougo/neocomplete'
-" NeoBundle 'Shougo/neosnippet'
+call dein#add('Shougo/neosnippet')
 " NeoBundle 'Shougo/unite.vim'
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('junegunn/fzf', { 'build': './install --all' })
+call dein#add('junegunn/fzf.vim')
 call dein#add('cakebaker/scss-syntax.vim')
 call dein#add('christoomey/vim-tmux-navigator')
 call dein#add('cocopon/lightline-hybrid.vim')

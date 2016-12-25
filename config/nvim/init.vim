@@ -22,8 +22,8 @@ source ~/.config/nvim/leaderkeys.vim
 source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/incsearch.vim
 source ~/.config/nvim/plugins/lightline.vim
-" source ~/.config/nvim/plugins/neosnippet.vim
-" source ~/.config/nvim/plugins/neocomplete.vim
+source ~/.config/nvim/plugins/neosnippet.vim
+source ~/.config/nvim/plugins/deoplete.vim
 source ~/.config/nvim/plugins/sneak.vim
 source ~/.config/nvim/plugins/syntastic.vim
 " source ~/.config/nvim/plugins/unite.vim

@@ -12,8 +12,8 @@ nnoremap <leader>- <C-w>s<C-w>j
 nnoremap <leader>= <C-w>=
 
 " open a new split and edit the vimrc // easy sourcing vimrc
-nnoremap <leader>ve <C-w>v<C-w>l :e ~/.vimrc<cr>
-nnoremap <leader>vs :source ~/.vimrc<cr>
+nnoremap <leader>ve <C-w>v<C-w>l :e ~/.config/nvim/init.vim<cr>
+nnoremap <leader>vs :source ~/.config/nvim/init.vim<cr>
 
 " Opens an edit command with the path of the currently edited file filled in
 nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>

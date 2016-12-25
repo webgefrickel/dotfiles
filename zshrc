@@ -72,13 +72,4 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(rbenv init -)"
 
 # fzf
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-  export PATH="$PATH:/usr/local/opt/fzf/bin"
-fi
-
-if [[ ! "$MANPATH" == */usr/local/opt/fzf/man* && -d "/usr/local/opt/fzf/man" ]]; then
-  export MANPATH="$MANPATH:/usr/local/opt/fzf/man"
-fi
-
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

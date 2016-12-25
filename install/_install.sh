@@ -24,14 +24,17 @@ brew install tmux
 brew install zsh
 brew install neovim/neovim/neovim --HEAD
 brew install python3
+read -p "Press any key to continue... " -n1 -s
 
 # install deps + plugins for neovim
 pip3 install neovim
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh installer.sh ~/.config/nvim/dein
+read -p "Press any key to continue... " -n1 -s
 
 # install fzf
 /usr/local/opt/fzf/install
+read -p "Press any key to continue... " -n1 -s
 
 # this is the minimal software and fonts used
 brew cask install forklift
@@ -39,6 +42,8 @@ brew cask install hyper
 brew cask install iterm2
 brew cask install owncloud
 brew cask install caskroom/fonts/font-hack
+read -p "Press any key to continue... " -n1 -s
+
 brew linkapps
 brew tap homebrew/services
 
