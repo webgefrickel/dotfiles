@@ -1,6 +1,3 @@
-filetype plugin indent on
-syntax on
-
 set autoread                     " Automatically read a file that has changed on disk
 set backspace=indent,eol,start   " Allow backspacing over everything in insert mode
 set cursorline                   " highlight current line

@@ -1,10 +1,18 @@
+if &compatible
+  set nocompatible
+endif
+
 set langmenu=en_US.UTF-8
 set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 " let dein handle all the plugins and bundles
 call dein#begin(expand('~/.config/nvim/dein'))
+call dein#add('Shougo/dein.vim')
 source ~/.config/nvim/bundles.vim
 call dein#end()
+
+filetype plugin indent on
+syntax on
 
 " load the default config and mappings
 source ~/.config/nvim/config.vim
