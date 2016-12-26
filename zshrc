@@ -1,10 +1,10 @@
-# Load the functions, aliases, function etc.
+# Load the functions, aliases and exports
 for file in ~/dotfiles/zsh/{exports,aliases,functions}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
 
-# a nice prompt
+# a nice prompt, install it via npm to make this work
 autoload -U promptinit; promptinit
 prompt pure
 
@@ -19,12 +19,11 @@ compdef gf=git-flow
 # case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-unsetopt menu_complete # do not autoselect the first completion entry
 unsetopt flowcontrol
+unsetopt menu_complete # do not autoselect the first completion entry
 setopt auto_menu # show completion menu on succesive tab press
 setopt complete_in_word
 setopt always_to_end
-
 
 # history settings
 if [ -z $HISTFILE ]; then
@@ -32,9 +31,6 @@ if [ -z $HISTFILE ]; then
 fi
 HISTSIZE=10000
 SAVEHIST=10000
-
-bindkey '\e[A' history-beginning-search-backward
-bindkey '\e[B' history-beginning-search-forward
 
 # easy vim/terminal switch
 zle -N fancy-ctrl-z

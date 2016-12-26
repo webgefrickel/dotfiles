@@ -12,6 +12,7 @@ export MANPATH=/usr/local/share/man:$MANPATH
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 
+# zsh-completions
 fpath=($HOME/dotfiles/zsh/zsh-completions/src $fpath)
 
 # disable stupid ._ and dsstore files
@@ -19,8 +20,8 @@ export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
 export COPYFILE_DISABLE=true
 
 # editor
-export EDITOR="/usr/local/bin/nvim
-export VISUAL="/usr/local/bin/nvim
+export EDITOR="/usr/local/bin/nvim"
+export VISUAL="/usr/local/bin/nvim"
 
 # disable auto titling fixes tmux window
 export DISABLE_AUTO_TITLE=true

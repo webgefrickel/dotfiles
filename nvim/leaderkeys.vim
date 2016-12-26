@@ -1,6 +1,3 @@
-" take me to your leader!
-"======================================================================
-
 let g:mapleader = ","
 let g:maplocalleader = ","
 
@@ -22,7 +19,7 @@ nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <leader>y :call system('nc localhost 8377', @0)<CR>
 
 " Find merge conflict markers
-nnoremap <leader>g /\v^[<\|=>]{7}( .*\|$)<CR>
+nnoremap <leader>gf /\v^[<\|=>]{7}( .*\|$)<CR>
 
 " paste keeping indentation
 nnoremap <leader>p p`[v`]=

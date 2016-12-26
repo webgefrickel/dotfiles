@@ -1,24 +1,18 @@
-" All bundles, syntaxes and plugins
-"======================================================================
-
-" TODO Replace those with the de-versions
-" NeoBundle 'Shougo/neocomplete'
-call dein#add('Shougo/neosnippet')
-" NeoBundle 'Shougo/unite.vim'
 call dein#add('Shougo/deoplete.nvim')
-call dein#add('junegunn/fzf', { 'build': './install --all' })
-call dein#add('junegunn/fzf.vim')
-call dein#add('cakebaker/scss-syntax.vim')
+call dein#add('Shougo/neosnippet')
+call dein#add('cakebaker/scss-syntax.vim', { 'on_ft': [ 'scss', 'css'] })
 call dein#add('christoomey/vim-tmux-navigator')
 call dein#add('cocopon/lightline-hybrid.vim')
 call dein#add('editorconfig/editorconfig-vim')
-call dein#add('gcorne/vim-sass-lint')
+" call dein#add('gcorne/vim-sass-lint')
 call dein#add('haya14busa/incsearch.vim')
 call dein#add('itchyny/lightline.vim')
+call dein#add('junegunn/fzf', { 'merged': 0 })
+call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
 call dein#add('justinmk/vim-sneak')
-call dein#add('moll/vim-node')
-call dein#add('mtscout6/syntastic-local-eslint.vim')
-call dein#add('scrooloose/syntastic')
+call dein#add('moll/vim-node', { 'on_ft': 'javascript' })
+" call dein#add('mtscout6/syntastic-local-eslint.vim', { 'on_ft': 'javascript' })
+" call dein#add('scrooloose/syntastic')
 call dein#add('sheerun/vim-polyglot')
 call dein#add('tpope/vim-commentary')
 call dein#add('tpope/vim-fugitive')
@@ -30,3 +24,8 @@ call dein#add('tpope/vim-vinegar')
 call dein#add('w0ng/vim-hybrid')
 call dein#add('webgefrickel/vim-snippets')
 call dein#add('wellle/tmux-complete.vim')
+call dein#add('itmammoth/doorboy.vim')
+
+" test those
+call dein#add('tyru/open-browser.vim')
+call dein#add('w0rp/ale')

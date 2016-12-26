@@ -1,2 +1,2 @@
-.netrwhist
-vim/bundle/*
+nvim/.netrwhist
+nvim/dein/

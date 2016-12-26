@@ -1,8 +1,5 @@
-" autocommands, filetypes, spelling, keywords for specific filetypes
-"======================================================================
-
-" define a group `vimrc` and initialize.
-augroup vimrc
+" define a group `init` and initialize.
+augroup init
   autocmd!
 
   " Remember last location/cursor in file
@@ -13,16 +10,11 @@ augroup vimrc
   autocmd BufNewFile,BufRead *.md setlocal wrap
 
   " add the dash to keywords -- makes better css/js/html search
-  " do this for specific files only (not in php/rb e.g.)
-  autocmd BufNewFile,BufRead *.{js,scss,html} set iskeyword+=-
-  autocmd BufNewFile,BufRead *.{js,scss,html} set iskeyword-=_
+  " do this for specific files only (not in php/rb e.g.) where dashes are
+  " not used in variable names (use camelCase instead here)
+  autocmd BufNewFile,BufRead *.{js,css,scss,html} set iskeyword+=-
+  autocmd BufNewFile,BufRead *.{js,css,scss,html} set iskeyword-=_
   autocmd BufNewFile,BufRead *.php set iskeyword-=-
-
-  " scss.css snippets and stuff
-  autocmd BufNewFile,BufRead *.scss set filetype=scss.css
-
-  " Syntaxes for other files
-  autocmd BufNewFile,BufRead *.twig set filetype=html.twig
 
   " omnicompletion for some filetypes
   autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS

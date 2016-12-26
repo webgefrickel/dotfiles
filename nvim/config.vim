@@ -1,6 +1,3 @@
-" Default sane config
-"======================================================================
-
 filetype plugin indent on
 syntax on
 
@@ -33,6 +30,39 @@ set complete-=i                  " dont complete from files
 set nrformats-=octal             " nobody uses octal anyway
 set display+=lastline            " shorten long lastlines
 set formatoptions+=j             " Delete comment character when joining commented lines
+set ignorecase
+set smartcase
+set hlsearch
+set showmatch
+set wrapscan
+set wildmode=list:longest,list:full
+set wildmenu
+set foldignore=
+set foldmethod=indent " indent folding
+set foldnestmax=20    " max 20 levels of folding
+set nofoldenable      " dont fold by default - let me do it
+set foldlevelstart=1  " deactivate folding on fileload
+set fileformat=unix
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set shiftround
+set smarttab
+set expandtab
+set autoindent
+set list! " nice Whitespace chars
+set listchars=extends:»,precedes:«,tab:▸\ ,trail:·
+set fillchars=
+set laststatus=2 " statusbar is 2 high
+set cmdheight=2 " command window is 2 high
+set cpoptions+=$ " Add a $ to the end of a selection
+set cpoptions+=J " 2 spaces after a sentence for easier text manupulation
+
+" hybrid color scheme
+let g:hybrid_reduced_contrast = 0
+let g:hybrid_custom_term_colors = 1
+set background=dark
+colorscheme hybrid
 
 " deactivate syntax highlighting when diffing
 if &diff

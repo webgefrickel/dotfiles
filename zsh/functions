@@ -30,11 +30,6 @@ function webvideolownoaudio() {
   ffmpeg -i $1 -movflags +faststart -an -vcodec libx264 -vprofile high -preset slower -pix_fmt yuv420p -r 25 -b:v 1M -maxrate 1M -bufsize 2M -s 1280x720 $1--low--no-audio.mp4
 }
 
-# a small function for finding stuff
-function fname() {
-  find . -iname "*$@*";
-}
-
 # create and change to directory/folder
 function take() {
   mkdir -p $1
@@ -57,11 +52,6 @@ fancy-ctrl-z () {
     zle push-input
     zle clear-screen
   fi
-}
-
-# open changed files in git index
-function gch () {
-  nvim `git status | grep modified | awk '{print $3}'`
 }
 
 # creates an archive from given directory

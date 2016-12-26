@@ -1,9 +1,3 @@
-" Custom key mappings and shortcuts
-"======================================================================
-
-" fix an issue with nvim + c+h for tmux-vim navigation
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-
 " remap semi-colon to be colon in normal an visual mode
 nnoremap ; :
 vnoremap ; :
@@ -45,10 +39,6 @@ vmap ˚ [egv
 vmap ∆ ]egv
 vmap ˙ <gv
 vmap ¬ >gv
-
-" Fast Switch between windows/buffers with tab
-nnoremap <tab> <C-w><C-w>
-nnoremap <S-tab> <C-w>W
 
 " no help while mishitting ESC - awesome
 noremap <F1> <ESC>

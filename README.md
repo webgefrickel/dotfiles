@@ -2,6 +2,8 @@
 
 This is a collection of my dotfiles.
 
+## Installation
+
 ```
 git clone git://github.com/webgefrickel/dotfiles ~/dotfiles
 cd ~/dotfiles
@@ -22,7 +24,14 @@ provide your git credentials, such as:
 
 Finally restart your terminal and vim again, and you are ready to go.
 
-## VIM
+## Additional stuff
 
-I use a lot of plugins and custom syntaxes. They are all
-installed via neobundle - for a list of the plugins see vimrc.
+There are additional installation script for commonly used
+CLI-tools and software (mainly macOS specific) and some color
+schemes for different terminal emulators, see the folders 
+install/, alfred/ and other/.
+
+## Vim
+
+I use neovim as a default, with some selected plugins. Those
+plugins are managed with dein, see nvim/bundles.vim.
