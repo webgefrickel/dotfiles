@@ -22,7 +22,7 @@ brew install koekeishiya/kwm/kwm
 brew install koekeishiya/khd/khd
 brew install tmux
 brew install zsh
-brew install neovim/neovim/neovim --HEAD
+brew install neovim/neovim/neovim
 brew install python3
 read -p "Press any key to continue... " -n1 -s
 
@@ -73,7 +73,7 @@ ln -s ~/dotfiles/kwm ~/.kwm
 ln -s ~/dotfiles/ruby-version ~/.ruby-version
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/zsh ~/.zsh
-ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 read -p "Press any key to continue... " -n1 -s
 
 # set xterm/screen terminals to enable italic fonts in terminal
