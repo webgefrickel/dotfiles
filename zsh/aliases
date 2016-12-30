@@ -54,7 +54,7 @@ alias devr='devs && dev'
 
 # tmux
 alias t='tmux -u -2'
-alias ta='tmux attach'
+alias ta='tmux -u attach'
 
 # all in one homebrew, gem update commands
 alias brewup='brew update && brew upgrade && brew cleanup && brew linkapps'
