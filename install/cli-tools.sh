@@ -7,7 +7,6 @@ brew tap homebrew/versions
 brew install composer
 brew install curl --with-ssl --with-libssh2
 brew install ffmpeg --with-libvpx --with-libvorbis --with-fdk-aac
-brew install git-extras
 brew install git-flow
 brew install git-ftp
 brew install imagemagick
@@ -21,5 +20,6 @@ brew install php70-mcrypt
 brew install rsync
 brew install rbenv
 brew install the_silver_searcher
-brew install wget
 brew install youtube-dl
+
+rbenv install 2.4.0

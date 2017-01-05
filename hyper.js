@@ -10,7 +10,7 @@ module.exports = {
   ],
 
   localPlugins: [
-    'hyper-hybrid-clean'
+    'hyper-hybrid-minimal'
   ]
 
 };

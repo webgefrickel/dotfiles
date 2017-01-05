@@ -40,7 +40,6 @@ read -p "Press any key to continue... " -n1 -s
 # this is the minimal software and fonts used
 brew cask install forklift
 brew cask install hyper
-brew cask install iterm2
 brew cask install owncloud
 brew cask install caskroom/fonts/font-hack
 read -p "Press any key to continue... " -n1 -s
@@ -70,7 +69,6 @@ ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/hyperterm.js ~/.hyperterm.js
 ln -s ~/dotfiles/khdrc ~/.khdrc
 ln -s ~/dotfiles/kwm ~/.kwm
-ln -s ~/dotfiles/ruby-version ~/.ruby-version
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
@@ -80,8 +78,8 @@ read -p "Press any key to continue... " -n1 -s
 tic ~/dotfiles/other/xterm-256color.terminfo
 read -p "Press any key to continue... " -n1 -s
 
-# set iterm terminal to xterm-256color!
-# now restart your terminal/iterm2 and hope for the best
+# set terminal to xterm-256color!
+# now restart your terminal and hope for the best
 
 # set zsh to the default
 sudo vim /etc/shells
