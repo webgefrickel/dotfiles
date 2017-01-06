@@ -22,4 +22,8 @@ brew install rbenv
 brew install the_silver_searcher
 brew install youtube-dl
 
+# install a current ruby version
 rbenv install 2.4.0
+
+# use nvm instead of brew node or anything else
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash

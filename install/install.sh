@@ -26,33 +26,6 @@ brew install neovim/neovim/neovim
 brew install python3
 read -p "Press any key to continue... " -n1 -s
 
-# install deps + plugins for neovim
-pip3 install neovim
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh installer.sh ~/.config/nvim/dein
-read -p "Press any key to continue... " -n1 -s
-rm installer.sh
-
-# install fzf
-/usr/local/opt/fzf/install
-read -p "Press any key to continue... " -n1 -s
-
-# this is the minimal software and fonts used
-brew cask install forklift
-brew cask install hyper
-brew cask install nextcloud
-brew cask install caskroom/fonts/font-hack
-read -p "Press any key to continue... " -n1 -s
-
-brew linkapps
-brew tap homebrew/services
-
-# clipper + kwm/khd
-mkdir -p ~/Library/LaunchAgents
-brew services start clipper
-brew services start khd
-brew services start kwm
-
 # install all submodules
 git submodule init
 git submodule update
@@ -73,6 +46,33 @@ ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 read -p "Press any key to continue... " -n1 -s
+
+# install fzf
+/usr/local/opt/fzf/install
+read -p "Press any key to continue... " -n1 -s
+
+# this is the minimal software and fonts used
+brew cask install forklift
+brew cask install hyper
+brew cask install nextcloud
+brew cask install caskroom/fonts/font-hack
+read -p "Press any key to continue... " -n1 -s
+
+brew tap homebrew/services
+
+# clipper + kwm/khd
+mkdir -p ~/Library/LaunchAgents
+brew services start clipper
+brew services start khd
+brew services start kwm
+read -p "Press any key to continue... " -n1 -s
+
+# install deps + plugins for neovim
+pip3 install neovim
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh installer.sh ~/.config/nvim/dein
+read -p "Press any key to continue... " -n1 -s
+rm installer.sh
 
 # set xterm/screen terminals to enable italic fonts in terminal
 tic ~/dotfiles/other/xterm-256color.terminfo

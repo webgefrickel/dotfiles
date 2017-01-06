@@ -23,10 +23,13 @@ brew cask install spotify
 brew cask install telegram
 brew cask install virtualbox
 brew cask install vlc
+read -p "Press any key to continue... " -n1 -s
 
 # set some options for qlcolorcode
 defaults write org.n8gray.QLColorCode font Hack
 defaults write org.n8gray.QLColorCode fontSizePoints 9
 defaults write org.n8gray.QLColorCode hlTheme blacknblue
 defaults write org.n8gray.QLColorCode extraHLFlags '--replace-tabs=2'
+read -p "Press any key to continue... " -n1 -s
 qlmanage -r
+read -p "Press any key to continue... " -n1 -s
