@@ -10,6 +10,16 @@ cd ~/dotfiles
 ./install/_install.sh
 ```
 
+If you are having problems with khd/kwm, run this command and reboot:
+
+```
+sudo launchctl config user path $PATH
+```
+
+This will add your path variable for all services and fixes an issue
+where khd could not find the kwmc executable.
+
+
 Now change the file `.gitconfig.user` in your home-folder and 
 provide your git credentials, such as:
 
