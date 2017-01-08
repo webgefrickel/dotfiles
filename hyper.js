@@ -6,11 +6,7 @@ module.exports = {
   },
 
   plugins: [
+    'hyper-hybrid-minimal',
     'hyperterm-1password'
-  ],
-
-  localPlugins: [
-    'hyper-hybrid-minimal'
   ]
-
 };
