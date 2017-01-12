@@ -24,7 +24,7 @@ ralt - 0x21: kwmc window -m display 0
 ralt - 0x1E: kwmc window -m display 1
 
 # rotate and fullscreen and switch modes
-ralt - f: kwmc window -z fullscreen
+ralt - f: kwmc window -t focused
 ralt - r: kwmc tree rotate 90
 ralt - 1: kwmc space -t bsp
 ralt - 2: kwmc space -t monocle
@@ -35,10 +35,10 @@ khd mode resizer color 0xff5e8d87
 khd mode vimmode color 0xffa54242
 
 # toggle between modes
-ralt - a: khd -e "mode activate resizer"; kwmc config border focused on;
-ralt - s: khd -e "mode activate vimmode"; kwmc config border focused on;
+ralt - a: khd -e "mode activate resizer"; kwmc config border focused on; # a as used in tmux as well
+ralt - v: khd -e "mode activate vimmode"; kwmc config border focused on; # v for vim mode
 resizer + ralt - a: khd -e "mode activate default"; kwmc config border focused off;
-vimmode + ralt - s: khd -e "mode activate default"; kwmc config border focused off;
+vimmode + ralt - v: khd -e "mode activate default"; kwmc config border focused off;
 
 # resizer mode
 resizer - 1: kwmc window -c type bsp
@@ -53,7 +53,7 @@ resizer - d: kwmc window -c reduce 0.02 west
 resizer - w: kwmc window -c reduce 0.02 south
 resizer - s: kwmc window -c reduce 0.02 north
 resizer - p: kwmc window -z parent
-resizer - f: kwmc window -t focused
+resizer - f: kwmc window -z fullscreen
 resizer - t: kwmc window -c split-mode toggle
 resizer - 0x35: khd -e "mode activate default"; kwmc config border focused off;
 
