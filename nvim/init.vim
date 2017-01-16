@@ -2,7 +2,7 @@ if &compatible
   set nocompatible
 endif
 
-set langmenu=en_US.UTF-8
+language en_US.UTF-8
 set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 " let dein handle all the plugins and bundles

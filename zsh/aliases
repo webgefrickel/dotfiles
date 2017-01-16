@@ -15,12 +15,12 @@ alias .....='cd ../../../..'
 alias q='exit'
 
 # suffix-aliases for file-types (zsh only)
-alias -s css=nvim
-alias -s scss=nvim
-alias -s js=nvim
-alias -s html=nvim
-alias -s md=nvim
-alias -s txt=nvim
+alias -s css=$EDITOR
+alias -s scss=$EDITOR
+alias -s js=$EDITOR
+alias -s html=$EDITOR
+alias -s md=$EDITOR
+alias -s txt=$EDITOR
 
 # clipper -- https://github.com/wincent/clipper
 alias clip="nc localhost 8377"
@@ -41,7 +41,7 @@ alias gsmu='git submodule init && git submodule update'
 alias gsmuu='git submodule foreach git pull origin master'
 alias gmo='$EDITOR $(git ls-files -m)'
 
-# aliases for apache and mysql
+# aliases for nginx and mariadb and php
 alias nginxstart='sudo brew services start nginx'
 alias nginxstop='sudo brew services stop nginx'
 alias mysqlstart='brew services start mariadb'
@@ -63,17 +63,20 @@ alias npmup='npm -g cache clean && npm -g update'
 alias sysup='sudo softwareupdate -i -a'
 alias upall='sysup && brewup && npmup'
 
-# other often used stuff
+# other often used stuff, mostly node/npm
+alias nr='npm run'
+alias yr='yarn run'
 alias npmre='rm -rf node_modules && npm cache clean && npm install'
+alias yarnre='rm -rf node_modules && yarn'
 
 # easy hosts / apache / php editing
-alias hosts='sudo nvim /etc/hosts'
-alias vhosts='nvim /usr/local/etc/nginx/servers/'
+alias hosts='sudo $EDITOR /etc/hosts'
+alias vhosts='$EDITOR /usr/local/etc/nginx/servers/'
 
 # often used folder shortcuts
-alias web='cd ~/Sites && ls -al'
-alias rep='cd ~/Repositories && ls -al'
-alias dot='cd ~/Dotfiles && ls -al'
+alias web='cd ~/Sites && ls'
+alias rep='cd ~/Repositories && ls'
+alias dot='cd ~/Dotfiles && ls'
 
 # random usefull stuff
 alias dnsflush='sudo dscacheutil -flushcache'
