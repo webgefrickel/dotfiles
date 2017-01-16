@@ -11,6 +11,7 @@ npm install -g npm
 npm install -g caniuse-cmd
 npm install -g diff-so-fancy
 npm install -g eslint
+npm install -g eslint-config-xo-space
 npm install -g fkill-cli
 npm install -g gulp
 npm install -g jsonlint
