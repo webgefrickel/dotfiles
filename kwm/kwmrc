@@ -36,6 +36,7 @@ kwmc rule owner="Dash" properties={float="true"}
 kwmc rule owner="Finder" properties={float="true"}
 kwmc rule owner="ImageOptim" properties={float="true"}
 kwmc rule owner="System Preferences" properties={float="true"}
+kwmc rule owner="Telegram" properties={float="true"}
 kwmc rule owner="Tweetbot" properties={float="true"}
 
 # those apps should always be on the main display

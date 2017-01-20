@@ -41,17 +41,6 @@ alias gsmu='git submodule init && git submodule update'
 alias gsmuu='git submodule foreach git pull origin master'
 alias gmo='$EDITOR $(git ls-files -m)'
 
-# aliases for nginx and mariadb and php
-alias nginxstart='sudo brew services start nginx'
-alias nginxstop='sudo brew services stop nginx'
-alias mysqlstart='brew services start mariadb'
-alias mysqlstop='brew services stop mariadb'
-alias phpstart='brew services start php70'
-alias phpstop='brew services stop php70'
-alias dev='nginxstart && mysqlstart && phpstart'
-alias devs='nginxstop && mysqlstop && phpstop'
-alias devr='devs && dev'
-
 # tmux
 alias t='tmux -u -2'
 alias ta='tmux -u attach'
