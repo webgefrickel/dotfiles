@@ -31,7 +31,6 @@ kwmc config display 1 float-dim 1200 800
 
 # blacklist applications from kwms tiling
 kwmc rule owner="1Password" properties={float="true"}
-kwmc rule owner="CleanMyMac 3" properties={float="true"}
 kwmc rule owner="Dash" properties={float="true"}
 kwmc rule owner="Finder" properties={float="true"}
 kwmc rule owner="ImageOptim" properties={float="true"}
