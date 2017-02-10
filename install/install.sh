@@ -18,8 +18,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 brew install clipper
 brew install fzf
 brew install git
-brew install koekeishiya/kwm/kwm
-brew install koekeishiya/khd/khd
+brew install koekeishiya/formulae/kwm
+brew install koekeishiya/formulae/khd
 brew install tmux
 brew install zsh
 brew install neovim/neovim/neovim
