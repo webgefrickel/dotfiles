@@ -29,6 +29,9 @@ alias clip="nc localhost 8377"
 alias ls='ls -alGp'
 alias l='ls -alGp'
 
+# mutt
+alias m='mutt'
+
 # Gitty gitgit
 alias g="git"
 alias gf="git-flow"

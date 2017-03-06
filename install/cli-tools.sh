@@ -22,6 +22,13 @@ brew install rbenv
 brew install the_silver_searcher
 brew install youtube-dl
 
+# everything needed for mutt
+brew install mutt
+brew install offlineimap
+brew install w3m
+brew install urlview
+brew install msmtp
+
 # install a current ruby version
 rbenv install 2.4.0
 
