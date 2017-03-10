@@ -48,6 +48,7 @@ noremap <F1> <ESC>
 
 " hitting jj in insert mode escapes
 inoremap jj <ESC>
+inoremap jk <ESC>
 
 " deactivate stupid ex-mode and man-page stuff
 nnoremap Q <nop>

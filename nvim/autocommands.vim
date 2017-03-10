@@ -5,10 +5,15 @@ augroup init
   " Remember last location/cursor in file
   autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
-  " spell correction on text-files
-  autocmd BufNewFile,BufRead *.md setlocal spell
-  autocmd BufNewFile,BufRead *.md setlocal wrap
-  autocmd BufNewFile,BufRead *.md setlocal spelllang=en,de
+  " spell correction on markdown files and mail (for mutt)
+  autocmd FileType mail,markdown setlocal spell
+  autocmd FileType mail,markdown setlocal wrap
+  autocmd FileType mail,markdown setlocal spelllang=en,de
+
+  " special settings for writing emails, flowed text at 72 width
+  autocmd FileType mail setlocal textwidth=72
+  autocmd FileType mail setlocal comments+=nb:>
+  autocmd FileType mail setlocal formatoptions+=awq
 
   " add the dash to keywords -- makes better css/js/html search
   " do this for specific files only (not in php/rb e.g.) where dashes are
