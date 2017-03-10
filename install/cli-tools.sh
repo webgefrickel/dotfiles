@@ -26,8 +26,12 @@ brew install youtube-dl
 brew install mutt
 brew install offlineimap
 brew install w3m
-brew install urlview
 brew install msmtp
+brew install ripmime
+
+# to install urlscan (for mutt) go here:
+# https://github.com/firecat53/urlscan — download and
+# sudo python3 setup.py install
 
 # install a current ruby version
 rbenv install 2.4.0
