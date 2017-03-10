@@ -17,6 +17,7 @@ npm install -g gulp
 npm install -g jsonlint
 npm install -g np
 npm install -g npm-check-updates
+npm install -g parker
 npm install -g pure-prompt
 npm install -g sass-lint
 npm install -g trash-cli
