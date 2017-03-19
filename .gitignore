@@ -1,2 +1,5 @@
 nvim/.netrwhist
 nvim/dein/
+office/mutt/cache/*
+office/mutt/tmp/*
+office/vdirsyncer/status/*
