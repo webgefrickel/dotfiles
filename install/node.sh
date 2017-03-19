@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
-nvm install 6.9.3
-nvm use 6.9.3
-nvm alias default 6.9.3
+nvm install 6.10.0
+nvm use 6.10.0
+nvm alias default 6.10.0
 curl -L https://www.npmjs.com/install.sh | sh
 
 npm update -g
