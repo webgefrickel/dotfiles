@@ -34,6 +34,8 @@ alias l='ls -alGp'
 
 # mutt
 alias m='mutt'
+# alias for syncing everything
+alias office="mbsync -a && mu index --maildir ~/Mail && vdirsyncer discover && vdirsyncer sync"
 
 # Gitty gitgit
 alias g="git"
