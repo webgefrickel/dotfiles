@@ -1,7 +1,8 @@
 " deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
-let g:deoplete#auto_completion_start_length = 3
+let g:deoplete#auto_complete_delay = 150
+let g:deoplete#auto_completion_start_length = 4
 
 inoremap <expr><C-h> deoplete#smart_close_popup().doorboy#map_backspace()
 inoremap <expr><BS> deoplete#smart_close_popup().doorboy#map_backspace()
