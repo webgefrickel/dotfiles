@@ -1,0 +1,325 @@
+#################################
+######## Account mailbox ########
+#################################
+
+IMAPAccount mailbox
+Host imap.mailbox.org
+User s.rademacker@mailbox.org
+PassCmd "security find-internet-password -s 'imap.mailbox.org' -a 's.rademacker@mailbox.org' -w"
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile ~/dotfiles/office/certificates.crt
+
+# Remote storage
+IMAPStore mailbox-remote
+Account mailbox
+
+# Local storage
+MaildirStore mailbox-local
+Path ~/Mail/mailbox/
+Inbox ~/Mail/mailbox/INBOX
+
+Channel mailbox-inbox
+Master :mailbox-remote:"INBOX"
+Slave :mailbox-local:INBOX
+Create Both
+Expunge Both
+
+Channel mailbox-archive
+Master :mailbox-remote:"Archiv"
+Slave :mailbox-local:archive
+Create Both
+Expunge Both
+
+Channel mailbox-drafts
+Master :mailbox-remote:"Entw&APw-rfe"
+Slave :mailbox-local:drafts
+Create Both
+Expunge Both
+
+Channel mailbox-sent
+Master :mailbox-remote:"Gesendete Objekte"
+Slave :mailbox-local:sent
+Create Both
+Expunge Both
+
+Channel mailbox-trash
+Master :mailbox-remote:"Papierkorb"
+Slave :mailbox-local:trash
+Create Both
+Expunge Both
+
+Channel mailbox-junk
+Master :mailbox-remote:"Spam"
+Slave :mailbox-local:junk
+Create Both
+Expunge Both
+
+Group mailbox
+Channel mailbox-inbox
+Channel mailbox-archive
+Channel mailbox-drafts
+Channel mailbox-sent
+Channel mailbox-trash
+Channel mailbox-junk
+
+#################################
+######## Account viu ############
+#################################
+
+IMAPAccount viu
+Host outlook.office365.com
+User steffen.rademacker@viu.ch
+PassCmd "security find-internet-password -s 'outlook.office365.com' -a 'steffen.rademacker@viu.ch' -w"
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile ~/dotfiles/office/certificates.crt
+
+# Remote storage
+IMAPStore viu-remote
+Account viu
+
+# Local storage
+MaildirStore viu-local
+Path ~/Mail/viu/
+Inbox ~/Mail/viu/INBOX
+
+Channel viu-inbox
+Master :viu-remote:"INBOX"
+Slave :viu-local:INBOX
+Create Both
+Expunge Both
+
+Channel viu-archive
+Master :viu-remote:"Archive"
+Slave :viu-local:archive
+Create Both
+Expunge Both
+
+Channel viu-drafts
+Master :viu-remote:"Entw&APw-rfe"
+Slave :viu-local:drafts
+Create Both
+Expunge Both
+
+Channel viu-sent
+Master :viu-remote:"Gesendete Elemente"
+Slave :viu-local:sent
+Create Both
+Expunge Both
+
+Channel viu-trash
+Master :viu-remote:"Gel&APY-schte Elemente"
+Slave :viu-local:trash
+Create Both
+Expunge Both
+
+Channel viu-junk
+Master :viu-remote:"Junk-E-Mail"
+Slave :viu-local:junk
+Create Both
+Expunge Both
+
+Group viu
+Channel viu-inbox
+Channel viu-archive
+Channel viu-drafts
+Channel viu-sent
+Channel viu-trash
+Channel viu-junk
+
+#################################
+######## Account hsv ############
+#################################
+
+IMAPAccount hsv
+Host sslin.df.eu
+User s.rademacker@hoerspielsommer.de
+PassCmd "security find-internet-password -s 'sslin.df.eu' -a 's.rademacker@hoerspielsommer.de' -w"
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile ~/dotfiles/office/certificates.crt
+
+# Remote storage
+IMAPStore hsv-remote
+Account hsv
+
+# Local storage
+MaildirStore hsv-local
+Path ~/Mail/hsv/
+Inbox ~/Mail/hsv/INBOX
+
+Channel hsv-inbox
+Master :hsv-remote:"INBOX"
+Slave :hsv-local:INBOX
+Create Both
+Expunge Both
+
+Channel hsv-archive
+Master :hsv-remote:"Archive"
+Slave :hsv-local:archive
+Create Both
+Expunge Both
+
+Channel hsv-drafts
+Master :hsv-remote:"Drafts"
+Slave :hsv-local:drafts
+Create Both
+Expunge Both
+
+Channel hsv-sent
+Master :hsv-remote:"Sent Messages"
+Slave :hsv-local:sent
+Create Both
+Expunge Both
+
+Channel hsv-trash
+Master :hsv-remote:"Deleted Messages"
+Slave :hsv-local:trash
+Create Both
+Expunge Both
+
+Channel hsv-junk
+Master :hsv-remote:"Junk"
+Slave :hsv-local:junk
+Create Both
+Expunge Both
+
+Group hsv
+Channel hsv-inbox
+Channel hsv-archive
+Channel hsv-drafts
+Channel hsv-sent
+Channel hsv-trash
+Channel hsv-junk
+
+#################################
+######## Account mf #############
+#################################
+
+IMAPAccount mf
+Host tobaco.kasserver.com
+User s.rademacker@medienfreunde.com
+PassCmd "security find-internet-password -s 'tobaco.kasserver.com' -a 's.rademacker@medienfreunde.com' -w"
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile ~/dotfiles/office/certificates.crt
+
+# Remote storage
+IMAPStore mf-remote
+Account mf
+
+# Local storage
+MaildirStore mf-local
+Path ~/Mail/mf/
+Inbox ~/Mail/mf/INBOX
+
+Channel mf-inbox
+Master :mf-remote:"INBOX"
+Slave :mf-local:INBOX
+Create Both
+Expunge Both
+
+Channel mf-archive
+Master :mf-remote:"Archiv"
+Slave :mf-local:archive
+Create Both
+Expunge Both
+
+Channel mf-drafts
+Master :mf-remote:"Entw&APw-rfe"
+Slave :mf-local:drafts
+Create Both
+Expunge Both
+
+Channel mf-sent
+Master :mf-remote:"Gesendet"
+Slave :mf-local:sent
+Create Both
+Expunge Both
+
+Channel mf-trash
+Master :mf-remote:"Papierkorb"
+Slave :mf-local:trash
+Create Both
+Expunge Both
+
+Channel mf-junk
+Master :mf-remote:"Spam"
+Slave :mf-local:junk
+Create Both
+Expunge Both
+
+Group mf
+Channel mf-inbox
+Channel mf-archive
+Channel mf-drafts
+Channel mf-sent
+Channel mf-trash
+Channel mf-junk
+
+#################################
+######## Account kfi ############
+#################################
+
+IMAPAccount kfi
+Host mx.kf-interactive.com
+User steffen.rademacker@kf-interactive.com
+PassCmd "security find-internet-password -s 'mx.kf-interactive.com' -a 'steffen.rademacker@kf-interactive.com' -w"
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile ~/dotfiles/office/certificates.crt
+
+# Remote storage
+IMAPStore kfi-remote
+Account kfi
+
+# Local storage
+MaildirStore kfi-local
+Path ~/Mail/kfi/
+Inbox ~/Mail/kfi/INBOX
+
+Channel kfi-inbox
+Master :kfi-remote:"INBOX"
+Slave :kfi-local:INBOX
+Create Both
+Expunge Both
+
+Channel kfi-archive
+Master :kfi-remote:"Archives"
+Slave :kfi-local:archive
+Create Both
+Expunge Both
+
+Channel kfi-drafts
+Master :kfi-remote:"Drafts"
+Slave :kfi-local:drafts
+Create Both
+Expunge Both
+
+Channel kfi-sent
+Master :kfi-remote:"Sent Messages"
+Slave :kfi-local:sent
+Create Both
+Expunge Both
+
+Channel kfi-trash
+Master :kfi-remote:"Deleted Messages"
+Slave :kfi-local:trash
+Create Both
+Expunge Both
+
+Channel kfi-junk
+Master :kfi-remote:"Junk"
+Slave :kfi-local:junk
+Create Both
+Expunge Both
+
+Group kfi
+Channel kfi-inbox
+Channel kfi-archive
+Channel kfi-drafts
+Channel kfi-sent
+Channel kfi-trash
+Channel kfi-junk
+
