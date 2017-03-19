@@ -5,6 +5,9 @@ alias sudo='sudo '
 alias vim=$EDITOR
 alias vi=$EDITOR
 alias v=$EDITOR
+alias vimdiff='$EDITOR -d'
+alias vdiff='$EDITOR -d'
+alias vd='$EDITOR -d'
 
 # Easier navigation: .., ..., ~ and -
 alias ~="cd ~"
