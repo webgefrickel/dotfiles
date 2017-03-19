@@ -4,10 +4,12 @@ root = true
 [*]
 charset = utf-8
 end_of_line = lf
+insert_final_newline = true
 indent_style = space
 indent_size = 2
-trim_trailing_whitespace = true
-insert_final_newline = true
 
-[*.{md,rst,txt,csv}]
+[*.{php,css,scss,sass,js,json,jsx,tmpl,html,haml,twig,yml,svg}]
+trim_trailing_whitespace = true
+
+[*.{md,markdown,rst,txt,csv,snip,mail}]
 trim_trailing_whitespace = false
