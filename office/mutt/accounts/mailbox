@@ -1,0 +1,29 @@
+set from = "kontakt@webgefrickel.de"
+set sendmail = "/usr/local/bin/msmtp -a mailbox"
+
+# Set folders
+set spoolfile = "+mailbox/INBOX"
+set mbox = "+mailbox/archive"
+set postponed = "+mailbox/drafts"
+set record = "+mailbox/sent"
+set trash = "+mailbox/trash"
+
+# Alternate email addresses.
+alternates ^kontakt@webgefrickel.de$ ^s.rademacker@mailbox.org$
+
+# custom signaure
+set signature = ~/.mutt/signatures/work
+
+color status cyan default
+
+macro index o "<shell-escape>mbsync mailbox<enter>" "run mbsync to sync mail for this account"
+
+macro index,pager J \
+  "<enter-command>set my_old_resolve=\$resolve noresolve<enter>\
+  <tag-prefix><clear-flag>n<enter-command>set resolve=\$my_old_resolve<enter>\
+  <save-message>+mailbox/junk<enter>" \
+  "mark as read and move to junk folder"
+
+macro index,pager A \
+  "<save-message>+mailbox/archive<enter>"  \
+  "move message to the archive"

@@ -1,0 +1,29 @@
+set from = "steffen.rademacker@viu.ch"
+set sendmail = "/usr/local/bin/msmtp -a viu"
+
+# Set folders
+set spoolfile = "+viu/INBOX"
+set mbox = "+viu/archive"
+set postponed = "+viu/drafts"
+set record = "+viu/sent"
+set trash = "+viu/trash"
+
+# Alternate email addresses.
+alternates ^steffen.rademacker@viu.ch$
+
+# custom signaure
+set signature = ~/.mutt/signatures/default
+
+color status red default
+
+macro index o "<shell-escape>mbsync viu<enter>" "run mbsync to sync mail for this account"
+
+macro index,pager J \
+  "<enter-command>set my_old_resolve=\$resolve noresolve<enter>\
+  <tag-prefix><clear-flag>n<enter-command>set resolve=\$my_old_resolve<enter>\
+  <save-message>+viu/junk<enter>" \
+  "mark as read and move to junk folder"
+
+macro index,pager A \
+  "<save-message>+viu/archive<enter>"  \
+  "move message to the archive"

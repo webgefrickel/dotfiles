@@ -1,0 +1,46 @@
+# some keybindings
+bind index gg       first-entry
+bind index G        last-entry
+bind index R        group-reply
+bind index <tab>    sync-mailbox
+bind index <space>  collapse-thread
+
+# pager Key Bindings
+bind pager k  previous-line
+bind pager j  next-line
+bind pager gg top
+bind pager G  bottom
+bind pager R  group-reply
+
+# View attachments properly.
+bind attach <return> view-mailcap
+
+bind compose P postpone-message
+bind index p recall-message
+
+# using neomutts trash patch
+bind index,pager D purge-message
+
+# Sync all email
+macro index O "<shell-escape>mbsync -a && mu index --maildir ~/Mail<enter>" "run mbsync and mu to sync all mail"
+
+# Save all attachments
+macro index S "<pipe-message>ripmime -i - -d ~/Downloads" "Save all attachments using ripmime"
+
+# write a new email to the sender of selected email
+bind index,pager @ compose-to-sender
+
+# opening urls with urlscan
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
+# finding stuff
+bind editor <tab> complete-query
+macro index F "<shell-escape>mu find --clearlinks --format=links --linksdir=~/.mu/results " "mu find"
+macro index \cf "<change-folder-readonly>~/.mu/results<enter>" "mu find results"
+
+# Sidebar Navigation
+bind index,pager <down> sidebar-next
+bind index,pager <up> sidebar-prev
+bind index,pager <right> sidebar-open
+

@@ -1,0 +1,19 @@
+# MS Word documents
+application/msword; ~/dotfiles/office/view-attachment.sh %s "-" '/Applications/LibreOffice.app'
+application/vnd.ms-excel; ~/dotfiles/office/view-attachment.sh %s "-" '/Applications/LibreOffice.app'
+application/vnd.openxmlformats-officedocument.presentationml.presentation; ~/dotfiles/office/view-attachment.sh %s "-" '/Applications/LibreOffice.app'
+application/vnd.oasis.opendocument.text; ~/dotfiles/office/view-attachment.sh %s "-" '/Applications/LibreOffice.app'
+
+# Images
+image/jpg; ~/dotfiles/office/quicklook.sh %s jpg
+image/jpeg; ~/dotfiles/office/quicklook.sh %s jpg
+image/pjpeg; ~/dotfiles/office/quicklook.sh %s jpg
+image/png; ~/dotfiles/office/quicklook.sh %s png
+image/gif; ~/dotfiles/office/quicklook.sh %s gif
+application/pdf; ~/dotfiles/office/quicklook.sh %s pdf
+
+# HTML
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+
+# Unidentified files
+application/octet-stream; ~/dotfiles/office/view-attachment.sh %s "-"
