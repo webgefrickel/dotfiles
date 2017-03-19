@@ -22,19 +22,8 @@ brew install rbenv
 brew install the_silver_searcher
 brew install youtube-dl
 
-# everything needed for mutt
-brew install mutt
-brew install offlineimap
-brew install w3m
-brew install msmtp
-brew install ripmime
-
-# to install urlscan (for mutt) go here:
-# https://github.com/firecat53/urlscan — download and
-# sudo python3 setup.py install
-
 # install a current ruby version
 rbenv install 2.4.0
 
 # use nvm instead of brew node or anything else
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
