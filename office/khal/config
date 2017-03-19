@@ -21,5 +21,4 @@ longdatetimeformat = %d.%m.%Y %H:%M
 
 [default]
 default_calendar = "private"
-default_command = "interactive"
 timedelta = "7d"
