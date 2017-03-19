@@ -1,0 +1,25 @@
+[calendars]
+
+[[private]]
+path = ~/Calendars/39
+color = light blue
+
+[[band]]
+path = ~/Calendars/40
+color = light red
+
+[[work]]
+path = ~/Calendars/41
+color = light green
+
+[locale]
+timeformat = %H:%M
+dateformat = %d.%m.%Y
+longdateformat = %d.%m.%Y
+datetimeformat = %d.%m.%Y %H:%M
+longdatetimeformat = %d.%m.%Y %H:%M
+
+[default]
+default_calendar = "private"
+default_command = "interactive"
+timedelta = "7d"
