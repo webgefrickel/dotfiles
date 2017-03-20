@@ -12,6 +12,10 @@ color = light red
 path = ~/Calendars/41
 color = light green
 
+[[viu]]
+path = /Users/webgefrickel/Library/Calendars/FA03512E-7DFF-4766-BFCD-0E48FB7A9494.exchange/092D56DC-99B8-49B7-AF75-D6FA62488F99.calendar/Events
+color = brown
+
 [locale]
 timeformat = %H:%M
 dateformat = %d.%m.%Y
@@ -22,3 +26,6 @@ longdatetimeformat = %d.%m.%Y %H:%M
 [default]
 default_calendar = "private"
 timedelta = "7d"
+
+[view]
+agenda_event_format = {calendar-color}{start-end-time-style} {title}{repeat-symbol}{reset}
