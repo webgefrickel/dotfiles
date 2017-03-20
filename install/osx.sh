@@ -25,13 +25,6 @@ defaults write com.apple.terminal StringEncodings -array 4
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
-# Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
-
-# Disable send and reply animations in Mail.app
-defaults write com.apple.mail DisableReplyAnimations -bool true
-defaults write com.apple.mail DisableSendAnimations -bool true
-
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
@@ -117,3 +110,7 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
 
 # dont show suggestions when typing l etc. multiple times
 defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Fix forklift selection colors
+defaults write com.binarynights.ForkLift-3 VividSelectionColors true
+
