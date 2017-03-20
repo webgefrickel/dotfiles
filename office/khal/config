@@ -15,6 +15,13 @@ color = light green
 [[viu]]
 path = /Users/webgefrickel/Library/Calendars/FA03512E-7DFF-4766-BFCD-0E48FB7A9494.exchange/092D56DC-99B8-49B7-AF75-D6FA62488F99.calendar/Events
 color = brown
+readonly = true
+
+[[birthdays]]
+path = ~/Contacts/27
+type = birthdays
+color = light magenta
+readonly = true
 
 [locale]
 timeformat = %H:%M
