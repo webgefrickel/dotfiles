@@ -11,10 +11,10 @@ brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
 brew cask install google-chrome-canary
-brew cask install imagealpha
-brew cask install kap
 brew cask install hyper
+brew cask install imagealpha
 brew cask install imageoptim
+brew cask install kap
 brew cask install karabiner-elements
 brew cask install qlcolorcode
 brew cask install qlstephen
