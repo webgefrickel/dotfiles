@@ -42,6 +42,7 @@ ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/hyperterm.js ~/.hyperterm.js
 ln -s ~/dotfiles/khdrc ~/.khdrc
 ln -s ~/dotfiles/kwm ~/.kwm
+ln -s ~/dotfiles/ruby-version ~/.ruby-version
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
