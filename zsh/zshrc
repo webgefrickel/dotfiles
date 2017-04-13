@@ -65,7 +65,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # rbenv
-export RBENV_VERSION=2.3.1
 eval "$(rbenv init -)"
 
 # fzf
