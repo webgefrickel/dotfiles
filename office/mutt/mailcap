@@ -14,6 +14,7 @@ application/pdf; ~/dotfiles/office/quicklook.sh %s pdf
 
 # HTML
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
+text/plain; nvim %s
 
 # Unidentified files
 application/octet-stream; ~/dotfiles/office/view-attachment.sh %s "-"
