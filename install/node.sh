@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 nvm install 6.10.2
-nvm install 7.8.0
+nvm install 7.9.0
 nvm use 6.10.2
 nvm alias default 6.10.2
 curl -L https://www.npmjs.com/install.sh | sh

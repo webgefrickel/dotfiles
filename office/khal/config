@@ -29,6 +29,7 @@ dateformat = %d.%m.%Y
 longdateformat = %d.%m.%Y
 datetimeformat = %d.%m.%Y %H:%M
 longdatetimeformat = %d.%m.%Y %H:%M
+weeknumbers = "right"
 
 [default]
 default_calendar = "private"
