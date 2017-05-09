@@ -25,7 +25,6 @@ set listchars=extends:»,precedes:«,tab:▸\ ,trail:·
 set mouse=a                      " mouse for scrolling
 set nobackup                     " no backups
 set noerrorbells                 " don't beep
-set noesckeys                    " no delay for escaping
 set nofoldenable                 " dont fold by default - let me do it
 set noshowmode                   " dont show active mode
 set noswapfile                   " no swp-files
