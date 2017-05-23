@@ -81,6 +81,15 @@ set sidebar_indent_string = '  ''
 set sidebar_format = "%B %* [%?N?%N / ?%S]"
 set mail_check_stats
 
+# GPG/PGP 
+set pgp_sign_as = 2F283D0D
+set crypt_use_gpgme = yes
+set crypt_autosign = no
+set crypt_verify_sig = yes
+set crypt_replysign = yes
+set crypt_replyencrypt = yes
+set crypt_replysignencrypted = yes
+
 # Mailboxes to show in the sidebar.
 mailboxes =mailbox
 mailboxes =mailbox/INBOX =mailbox/sent =mailbox/archive =mailbox/drafts =mailbox/junk =mailbox/trash

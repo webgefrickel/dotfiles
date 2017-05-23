@@ -1,15 +1,14 @@
 #!/usr/bin/env zsh
 
-nvm install 6.10.2
-nvm install 7.9.0
-nvm use 6.10.2
-nvm alias default 6.10.2
+nvm install 6.10.3
+nvm install 7.10.0
+nvm use 6.10.3
+nvm alias default 6.10.3
 curl -L https://www.npmjs.com/install.sh | sh
 
 npm install -g npm
 npm update -g
 
-npm install -g caniuse-cmd
 npm install -g diff-so-fancy
 npm install -g eslint
 npm install -g eslint-config-xo-space

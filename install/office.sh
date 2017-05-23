@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
 # everything needed for mutt
+brew install gpgme
 brew install isync
 brew install khal
 brew install khard
 brew install msmtp
 brew install mu
-brew install neomutt/homebrew-neomutt/neomutt --with-sidebar-patch
+brew install neomutt/homebrew-neomutt/neomutt --with-sidebar-patch --with-gpgme
 brew install ripmime
 brew install w3m
 read -p "Press any key to continue... " -n1 -s
