@@ -28,6 +28,9 @@ brew cask install virtualbox
 brew cask install vlc
 read -p "Press any key to continue... " -n1 -s
 
+# A terminal twitterclient, because why not
+sudo pip3 install -I rainbowstream
+
 # set some options for qlcolorcode
 defaults write org.n8gray.QLColorCode font Hack
 defaults write org.n8gray.QLColorCode fontSizePoints 9
