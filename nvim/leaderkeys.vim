@@ -26,3 +26,6 @@ nnoremap <leader>p p`[v`]=
 
 " toggle wrapping
 nnoremap <leader>w :set wrap! wrap?<CR>
+
+" reload files when set autoread is active with F5
+nnoremap <leader>r :checktime<CR>

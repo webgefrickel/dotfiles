@@ -12,16 +12,19 @@ function! s:deoplete_cr_function() abort
   return deoplete#close_popup() . "\<CR>"
 endfunction
 
-" fugitive
-nnoremap <silent> <leader>gs :Gstatus<CR><C-w>20+
-nnoremap <silent> <leader>gd :Gdiff<CR><C-w>20+
-nnoremap <silent> <leader>gc :Gcommit<CR><C-w>20+
-nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
+" fugitive + vimagit
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gvdiff<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gm :Magit<CR>
 
 " incsearch
 let g:incsearch#auto_nohlsearch = 1
 let g:incsearch#consistent_n_direction = 1
 let g:incsearch#magic = '\v'
+
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
@@ -44,15 +47,10 @@ smap <C-j> <Plug>(neosnippet_expand_or_jump)
 xmap <C-j> <Plug>(neosnippet_expand_target)
 
 " sneak
-let g:sneak#use_ic_scs = 0
+let g:sneak#use_ic_scs = 1
 let g:sneak#map_netrw = 1
 let g:sneak#s_next = 1
 let g:sneak#streak = 1
-
-" openbrowser
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
 
 " ale
 let g:ale_lint_on_save = 1

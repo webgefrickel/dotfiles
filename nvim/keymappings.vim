@@ -34,6 +34,7 @@ nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
 " Bubble/indent lines using unimpaired
 " using left alt + hjkl on mac usgerman keyboard
+" those are some weird mappings, but they work!
 nmap ˚ [e
 nmap ∆ ]e
 nmap ˙ <<
@@ -44,6 +45,7 @@ vmap ˙ <gv
 vmap ¬ >gv
 
 " no help while mishitting ESC - awesome
+" just type :help if you need help is easier
 noremap <F1> <ESC>
 
 " hitting jj in insert mode escapes
