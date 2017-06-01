@@ -13,11 +13,11 @@ function! s:deoplete_cr_function() abort
 endfunction
 
 " fugitive + vimagit
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gvdiff<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gw :Gwrite<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gs :Gstatus<CR><C-w>20+
+nnoremap <silent> <leader>gd :Gvdiff<CR><C-w>20+
+nnoremap <silent> <leader>gc :Gcommit<CR><C-w>20+
+nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
+nnoremap <silent> <leader>gb :Gblame<CR><C-w>20+
 nnoremap <silent> <leader>gm :Magit<CR>
 
 " incsearch

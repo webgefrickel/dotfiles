@@ -27,3 +27,7 @@ macro index,pager J \
 macro index,pager A \
   "<save-message>+mf/archive<enter>"  \
   "move message to the archive"
+
+macro index,pager I \
+  "<save-message>+mf/INBOX<enter>"  \
+  "move message to the inbox"
