@@ -22,8 +22,9 @@ brew install koekeishiya/formulae/kwm
 brew install koekeishiya/formulae/khd
 brew install tmux
 brew install zsh
-brew install neovim/neovim/neovim
+read -p "Press any key to continue... " -n1 -s
 brew install python3
+brew install neovim/neovim/neovim
 read -p "Press any key to continue... " -n1 -s
 
 # install all submodules

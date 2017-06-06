@@ -55,13 +55,13 @@ alias ta='tmux -u attach'
 
 # all in one homebrew, gem update commands
 alias brewup='brew update && brew upgrade && brew cleanup'
-alias npmup='npm -g cache clean && npm -g update'
+alias npmup='npm -g outdated && npm -g update'
 alias upall='brewup && npmup'
 
 # other often used stuff, mostly node/npm
 alias nr='npm run'
 alias yr='yarn run'
-alias npmre='rm -rf node_modules && npm cache clean && npm install'
+alias npmre='rm -rf node_modules && npm cache clean --force && npm install'
 alias yarnre='rm -rf node_modules && yarn'
 
 # easy hosts / apache / php editing

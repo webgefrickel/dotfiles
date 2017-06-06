@@ -25,7 +25,7 @@ defaults write com.apple.terminal StringEncodings -array 4
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
-# Disable transparency in the menu bar and elsewhere on Yosemite
+# Disable transparency in the menu bar and elsewhere
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
 # Expand save panel by default
@@ -69,7 +69,7 @@ defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 # Wipe all (default) app icons from the Dock
 defaults write com.apple.dock persistent-apps -array
 
-# Show indicator lights for open applications in the Dock
+# Dont Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool false
 
 # Disable Dashboard
