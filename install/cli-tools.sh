@@ -17,8 +17,9 @@ brew install openssl
 brew install php70 --with-homebrew-curl --with-homebrew-openssl
 brew install php70-intl
 brew install php70-mcrypt
-brew install rsync
 brew install rbenv
+brew install rsync
+brew install shpotify
 brew install the_silver_searcher
 brew install youtube-dl
 

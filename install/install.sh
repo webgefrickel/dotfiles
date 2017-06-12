@@ -18,8 +18,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 brew install clipper
 brew install fzf
 brew install git
-brew install koekeishiya/formulae/kwm
-brew install koekeishiya/formulae/khd
 brew install tmux
 brew install zsh
 read -p "Press any key to continue... " -n1 -s
@@ -35,13 +33,13 @@ read -p "Press any key to continue... " -n1 -s
 # link the dotfiles
 mkdir ~/.config
 ln -s ~/dotfiles/agignore ~/.agignore
-ln -s ~/dotfiles/nvim ~/.config/nvim
 ln -s ~/dotfiles/editorconfig ~/.editorconfig
 ln -s ~/dotfiles/gemrc ~/.gemrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
-ln -s ~/dotfiles/khdrc ~/.khdrc
-ln -s ~/dotfiles/kwm ~/.kwm
+ln -s ~/dotfiles/hammerspoon ~/.hammerspoon
+ln -s ~/dotfiles/karabiner ~/.config/karabiner
+ln -s ~/dotfiles/nvim ~/.config/nvim
 ln -s ~/dotfiles/ruby-version ~/.ruby-version
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/zsh ~/.zsh
@@ -53,18 +51,17 @@ read -p "Press any key to continue... " -n1 -s
 read -p "Press any key to continue... " -n1 -s
 
 # this is the minimal software and fonts used
-brew cask install forklift
-brew cask install nextcloud
 brew cask install caskroom/fonts/font-hack
+brew cask install forklift
+brew cask install hammerspoon
+brew cask install nextcloud
 read -p "Press any key to continue... " -n1 -s
 
 brew tap homebrew/services
 
-# clipper + kwm/khd
+# clipper
 mkdir -p ~/Library/LaunchAgents
 brew services start clipper
-brew services start khd
-brew services start kwm
 read -p "Press any key to continue... " -n1 -s
 
 # install deps + plugins for neovim
