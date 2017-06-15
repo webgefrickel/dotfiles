@@ -7,9 +7,10 @@ brew install khal
 brew install khard
 brew install msmtp
 brew install mu
-brew install neomutt/homebrew-neomutt/neomutt --with-sidebar-patch --with-gpgme
+brew install neomutt/homebrew-neomutt/neomutt --with-gpgme
 brew install ripmime
 brew install w3m
+brew install vdirsyncer
 read -p "Press any key to continue... " -n1 -s
 
 # python dependencies (for mutt)
