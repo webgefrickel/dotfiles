@@ -1,10 +1,9 @@
 #!/usr/bin/env zsh
 
-nvm install 6.10.3
-nvm install 8.0.0
-nvm use 6.10.3
-nvm alias default 6.10.3
-curl -L https://www.npmjs.com/install.sh | sh
+nvm install 6.11.0
+nvm install 8.1.1
+nvm use 6.11.0
+nvm alias default 6.11.0
 
 npm install -g npm@latest
 npm update -g
