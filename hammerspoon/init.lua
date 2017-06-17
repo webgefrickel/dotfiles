@@ -9,6 +9,8 @@ local keys = {
   'u', 'v', 'w', 'x', 'y', 'z', '[', ']', 'space'
 }
 
+hs.window.animationDuration = 0
+
 -- hyper mode
 -------------
 
