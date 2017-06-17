@@ -6,6 +6,7 @@ local hyper = { 'cmd', 'alt', 'shift', 'ctrl' }
 --------------------
 
 hs.window.animationDuration = 0
+tiling.set('layouts', { 'fullscreen', 'gp-vertical', 'gp-horizontal', 'columns' })
 
 function isInScreen(screen, win)
   return win:screen() == screen
@@ -38,8 +39,6 @@ local function center(window)
   window:setFrame(frame)
 end
 
-hs.hotkey.bind(hyper, '1', function() tiling.goToLayout('gp-vertical'); moveMouse() end)
-hs.hotkey.bind(hyper, '2', function() tiling.goToLayout('fullscreen'); moveMouse() end)
 hs.hotkey.bind(hyper, 'f', function() tiling.toggleFloat(center); moveMouse() end)
 hs.hotkey.bind(hyper, 'r', function() tiling.retile(); moveMouse() end)
 hs.hotkey.bind(hyper, 'a', function() tiling.cycle(1); moveMouse() end)
@@ -53,4 +52,18 @@ hs.hotkey.bind(hyper, 'k', function() hs.window.focusedWindow():focusWindowNorth
 hs.hotkey.bind(hyper, 'l', function() hs.window.focusedWindow():focusWindowEast(); moveMouse() end)
 hs.hotkey.bind(hyper, 'n', function () focusScreen(hs.window.focusedWindow():screen():next()) end)
 
-tiling.set('layouts', { 'fullscreen', 'gp-vertical', 'gp-horizontal', 'columns' })
+-- map hyper + number to the corresponding fn-key, since the touchbar
+-- kinda sucks, and karabiner-elements is breaking fn-function to show keys
+hs.hotkey.bind(hyper, '1', function() hs.eventtap.keyStroke({}, 'F1') end)
+hs.hotkey.bind(hyper, '2', function() hs.eventtap.keyStroke({}, 'F2') end)
+hs.hotkey.bind(hyper, '3', function() hs.eventtap.keyStroke({}, 'F3') end)
+hs.hotkey.bind(hyper, '4', function() hs.eventtap.keyStroke({}, 'F4') end)
+hs.hotkey.bind(hyper, '5', function() hs.eventtap.keyStroke({}, 'F5') end)
+hs.hotkey.bind(hyper, '6', function() hs.eventtap.keyStroke({}, 'F6') end)
+hs.hotkey.bind(hyper, '7', function() hs.eventtap.keyStroke({}, 'F7') end)
+hs.hotkey.bind(hyper, '8', function() hs.eventtap.keyStroke({}, 'F8') end)
+hs.hotkey.bind(hyper, '9', function() hs.eventtap.keyStroke({}, 'F9') end)
+hs.hotkey.bind(hyper, '0', function() hs.eventtap.keyStroke({}, 'F10') end)
+hs.hotkey.bind(hyper, '-', function() hs.eventtap.keyStroke({}, 'F11') end)
+hs.hotkey.bind(hyper, '=', function() hs.eventtap.keyStroke({}, 'F12') end)
+
