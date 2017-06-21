@@ -5,6 +5,9 @@ augroup init
   " Remember last location/cursor in file
   autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
+  " Autoresize windows/splits when vim resizes
+  autocmd VimResized * wincmd =
+
   " spell correction on markdown files and mail (for mutt)
   autocmd FileType mail,markdown setlocal spell
   autocmd FileType mail,markdown setlocal wrap
@@ -29,3 +32,4 @@ augroup init
   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup END
+

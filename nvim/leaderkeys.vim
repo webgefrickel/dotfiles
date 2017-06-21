@@ -5,9 +5,6 @@ let g:maplocalleader = ","
 nnoremap <leader>\ <C-w>v<C-w>l
 nnoremap <leader>- <C-w>s<C-w>j
 
-" Adjust viewports/splits to equal widths/heights
-nnoremap <leader>= <C-w>=
-
 " open a new split and edit the vimrc // easy sourcing vimrc
 nnoremap <leader>ve <C-w>v<C-w>l :e ~/.config/nvim/init.vim<cr>
 nnoremap <leader>vs :source ~/.config/nvim/init.vim<cr>
