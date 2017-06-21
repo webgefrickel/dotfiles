@@ -59,6 +59,29 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "description": "Change left control lock to control/escape",
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     }
@@ -74,6 +97,16 @@
                         "vendor_id": 1452
                     },
                     "ignore": true
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": true,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 256,
+                        "vendor_id": 2131
+                    },
+                    "ignore": false
                 }
             ],
             "fn_function_keys": {
