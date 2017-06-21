@@ -19,7 +19,7 @@ set gdefault                     " search & replace is always global
 set grepprg=ag                   " use ag for grepping
 set hidden                       " allows for switching buffers without writing
 set hlsearch
-set ignorecase
+set infercase
 set laststatus=2                 " statusbar is 2 high
 set lazyredraw                   " Don't redraw while executing macros
 set list!                        " nice Whitespace chars
