@@ -1,6 +1,7 @@
 set autoindent
 set autoread                     " Automatically read a file that has changed on disk
 set backspace=indent,eol,start   " Allow backspacing over everything in insert mode
+set breakindent
 set cmdheight=2                  " command window is 2 high
 set cpoptions+=$                 " Add a $ to the end of a selection
 set cpoptions+=J                 " 2 spaces after a sentence for easier text manupulation
@@ -38,6 +39,7 @@ set scrolljump=5                 " Lines to scroll when cursor leaves screen
 set scrolloff=3                  " Minimum lines to keep above and below cursor
 set shiftround
 set shiftwidth=2
+set showbreak=\\\\\
 set showcmd                      " show me what im doing. helps alot
 set showmatch
 set sidescroll=10                " smoother side-scrolling
