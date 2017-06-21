@@ -9,8 +9,8 @@ vnoremap v <C-V>
 vnoremap <C-V> v
 
 " jk nice behaviour (screen lines vs. shown lines)
-nnoremap j gj
-nnoremap k gk
+nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
 " behave - yank just like D and C
 nnoremap Y y$
