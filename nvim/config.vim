@@ -14,6 +14,7 @@ set foldlevelstart=1             " deactivate folding on fileload
 set foldmethod=indent            " indent folding
 set foldnestmax=20               " max 20 levels of folding
 set formatoptions+=j             " Delete comment character when joining commented lines
+set gdefault                     " search & replace is always global
 set grepprg=ag                   " use ag for grepping
 set hidden                       " allows for switching buffers without writing
 set hlsearch
