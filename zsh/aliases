@@ -60,9 +60,7 @@ alias upall='brewup && npmup'
 
 # other often used stuff, mostly node/npm
 alias nr='npm run'
-alias yr='yarn run'
 alias npmre='rm -rf node_modules && npm cache clean --force && npm install'
-alias yarnre='rm -rf node_modules && yarn'
 
 # easy hosts / apache / php editing
 alias hosts='sudo $EDITOR /etc/hosts'
