@@ -1,24 +1,18 @@
-# some keybindings
-bind index g noop
+# some sane vim-like keybindings
+bind index,pager k previous-entry
+bind index,pager j next-entry
+bind index,pager g noop
+bind index,pager R group-reply
+bind index,pager \Cu half-up
+bind index,pager \Cd half-down
+
 bind index gg first-entry
 bind index G last-entry
-bind pager k previous-entry
-bind pager j next-entry
-bind index R group-reply
 bind index <tab> sync-mailbox
 bind index <space> collapse-thread
-bind index \Cu half-up
-bind index \Cd half-down
 
-# pager Key Bindings
-bind pager k previous-entry
-bind pager j next-entry
-bind pager g noop
 bind pager gg top
 bind pager G bottom
-bind pager R group-reply
-bind pager \Cu half-up
-bind pager \Cd half-down
 
 # View attachments properly.
 bind attach <return> view-mailcap
@@ -30,10 +24,11 @@ bind index p recall-message
 bind index,pager D purge-message
 
 # Sync all email
-macro index O "<shell-escape>mbsync -a && mu index --maildir ~/Mail<enter>" "run mbsync and mu to sync all mail"
+# If you want to make everything indexable after syncing email, use the office-alias
+macro index,pager O "<shell-escape>mbsync -a<enter>" "run mbsync to sync all mail"
 
 # Save all attachments
-macro index S "<pipe-message>ripmime -i - -d ~/Downloads" "Save all attachments using ripmime"
+macro index,pager S "<pipe-message>ripmime -i - -d ~/Downloads && rm ~/Downloads/textfile*" "Save all non-text attachments using ripmime"
 
 # write a new email to the sender of selected email
 bind index,pager @ compose-to-sender
