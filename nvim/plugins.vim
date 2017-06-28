@@ -60,7 +60,6 @@ let g:ale_linters = {
   \ 'css': [],
   \ 'html': ['htmlhint'],
   \ 'javascript': ['eslint'],
-  \ 'sass': ['sasslint'],
   \ 'scss': ['sasslint'],
 \}
 
