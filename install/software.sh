@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 brew tap caskroom/versions
+brew tap buo/cask-upgrade
 
 # brew cask and install software
 brew cask install alfred
