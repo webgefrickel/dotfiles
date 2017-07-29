@@ -5,7 +5,6 @@ brew tap buo/cask-upgrade
 # brew cask and install software
 brew cask install alfred
 brew cask install bill
-brew cask install caffeine
 brew cask install carbon-copy-cloner
 brew cask install dash
 brew cask install doxie
