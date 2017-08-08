@@ -49,10 +49,10 @@
   ffp = flow feature publish
   fi = flow init
   rs = reset HEAD --hard
+  fame = shortlog -sn --all --no-merges
   hist = log --pretty=format:\"%h | %ad | %an | %s%d \" --graph --date=local
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit
   lo = log --graph --decorate --pretty=oneline --abbrev-commit --all
-  pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
 
 [diff]
   tool = nvim -d
