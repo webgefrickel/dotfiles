@@ -6,7 +6,7 @@ local hyper = { 'cmd', 'alt', 'shift', 'ctrl' }
 --------------------
 
 hs.window.animationDuration = 0
-tiling.set('layouts', { 'fullscreen', 'gp-vertical', 'gp-horizontal', 'columns' })
+tiling.set('layouts', { 'fullscreen', 'gp-vertical' })
 
 function isInScreen(screen, win)
   return win:screen() == screen
@@ -39,7 +39,17 @@ local function center(window)
   window:setFrame(frame)
 end
 
+local function fullsize(window)
+  frame = window:screen():frame()
+  frame.x = 0
+  frame.y = 0
+  frame.w = frame.w
+  frame.h = frame.h
+  window:setFrame(frame)
+end
+
 hs.hotkey.bind(hyper, 'f', function() tiling.toggleFloat(center); moveMouse() end)
+hs.hotkey.bind(hyper, 'z', function() fullsize(hs.window.focusedWindow()); moveMouse() end)
 hs.hotkey.bind(hyper, 'r', function() tiling.retile(); moveMouse() end)
 hs.hotkey.bind(hyper, 'a', function() tiling.cycle(1); moveMouse() end)
 hs.hotkey.bind(hyper, 'w', function() tiling.promote(); moveMouse() end)
