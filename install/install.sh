@@ -51,7 +51,7 @@ read -p "Press any key to continue... " -n1 -s
 read -p "Press any key to continue... " -n1 -s
 
 # this is the minimal software and fonts used
-brew cask install caskroom/fonts/font-hack
+brew cask install caskroom/fonts/font-fira-code
 brew cask install forklift
 brew cask install hammerspoon
 brew cask install nextcloud

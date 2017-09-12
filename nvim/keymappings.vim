@@ -57,7 +57,7 @@ nnoremap Q <nop>
 nnoremap K <nop>
 
 " reload files when set autoread is active with F5
-nnoremap <F5> :checktime<CR>
+nnoremap <F5> :checktime<CR>:redraw!<CR>
 
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
