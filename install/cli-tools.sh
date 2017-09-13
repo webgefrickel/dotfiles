@@ -25,4 +25,4 @@ brew install youtube-dl
 rbenv install 2.4.1
 
 # use nvm instead of brew node or anything else
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
