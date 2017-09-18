@@ -44,6 +44,10 @@ vmap ∆ ]egv
 vmap ˙ <gv
 vmap ¬ >gv
 
+" same for using yankstack, use alt + p, alt + P
+nmap π <Plug>yankstack_substitute_older_paste
+nmap ∏ <Plug>yankstack_substitute_newer_paste
+
 " no help while mishitting ESC - awesome
 " just type :help if you need help is easier
 noremap <F1> <ESC>
