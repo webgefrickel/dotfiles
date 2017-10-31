@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
-nvm install 6.11.3
-nvm install 8.5.0
-nvm use 6.11.3
-nvm alias default 6.11.3
+nvm install 6.11.5
+nvm install 8.9.0
+nvm use 8.9.0
+nvm alias default 8.9.0
 
 npm install -g npm@latest
 npm update -g
@@ -20,4 +20,3 @@ npm install -g pure-prompt
 npm install -g sass-lint
 npm install -g trash-cli
 npm install -g vtop
-npm install -g xo

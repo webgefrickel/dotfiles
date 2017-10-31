@@ -11,12 +11,12 @@ brew cask install doxie
 brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
-brew cask install google-chrome-canary
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install kap
 brew cask install karabiner-elements
 brew cask install ngrok
+brew cask install ocenaudio
 brew cask install qlcolorcode
 brew cask install qlstephen
 brew cask install sequel-pro
@@ -27,10 +27,8 @@ brew cask install spotify
 brew cask install telegram
 brew cask install virtualbox
 brew cask install vlc
+brew cask install xld
 read -p "Press any key to continue... " -n1 -s
-
-# A terminal twitterclient, because why not
-sudo pip3 install -I rainbowstream
 
 # set some options for qlcolorcode
 defaults write org.n8gray.QLColorCode font "Fira Code"

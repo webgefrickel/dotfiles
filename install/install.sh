@@ -18,11 +18,10 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 brew install clipper
 brew install fzf
 brew install git
+brew install neovim
+brew install python3
 brew install tmux
 brew install zsh
-read -p "Press any key to continue... " -n1 -s
-brew install python3
-brew install neovim/neovim/neovim
 read -p "Press any key to continue... " -n1 -s
 
 # install all submodules

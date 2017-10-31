@@ -16,8 +16,6 @@ brew install php71 --with-homebrew-curl
 brew install php71-intl
 brew install php71-mcrypt
 brew install rbenv
-brew install rsync
-brew install shpotify
 brew install the_silver_searcher
 brew install youtube-dl
 
@@ -25,7 +23,7 @@ brew install youtube-dl
 brew link --force curl
 
 # install a current ruby version
-rbenv install 2.4.1
+rbenv install 2.4.2
 
 # use nvm instead of brew node or anything else
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
