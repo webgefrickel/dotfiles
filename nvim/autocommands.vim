@@ -24,6 +24,7 @@ augroup init
   autocmd BufNewFile,BufRead *.{js,css,scss,html} set iskeyword+=-
   autocmd BufNewFile,BufRead *.{js,css,scss,html} set iskeyword-=_
   autocmd BufNewFile,BufRead *.php set iskeyword-=-
+  autocmd BufNewFile,BufRead neomutt-* set ft=mail
 
   " omnicompletion for some filetypes
   autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS

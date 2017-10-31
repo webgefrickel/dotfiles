@@ -33,7 +33,7 @@ alias ls='ls -alGp'
 alias l='ls -alGp'
 
 # mutt
-alias m='mutt'
+alias m='neomutt'
 # alias for syncing everything
 alias office="clear && mbsync -a && mu index --maildir ~/Mail && vdirsyncer sync && khal"
 
