@@ -1,6 +1,6 @@
-if &compatible
-  set nocompatible
-endif
+" if &compatible
+"   set nocompatible
+" endif
 
 language en_US.UTF-8
 set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
@@ -30,9 +30,6 @@ call dein#add('webgefrickel/vim-snippets')
 call dein#add('wellle/targets.vim')
 call dein#add('wellle/tmux-complete.vim')
 call dein#end()
-
-filetype plugin indent on
-syntax on
 
 " load the default config and mappings
 source ~/.config/nvim/config.vim
