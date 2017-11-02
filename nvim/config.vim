@@ -44,12 +44,6 @@ set visualbell                   " don't flicker
 set wildmode=list:longest,list:full
 set wrapscan
 
-" hybrid color scheme
-let g:hybrid_reduced_contrast = 0
-let g:hybrid_custom_term_colors = 1
-set background=dark
-colorscheme hybrid
-
 filetype plugin indent on
 syntax on
 
@@ -57,3 +51,10 @@ syntax on
 if &diff
   syntax off
 endif
+
+" hybrid color scheme
+let g:hybrid_reduced_contrast = 0
+let g:hybrid_custom_term_colors = 1
+set background=dark
+colorscheme hybrid
+

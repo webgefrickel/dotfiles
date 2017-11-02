@@ -1,23 +1,29 @@
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+function! StatuslineGitInfo()
+  let git = fugitive#head()
+  if git != ''
+    return ' '.fugitive#head()
+  else
+    return ''
 endfunction
 
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+function! MyStatusLine(mode)
+  let statusline = ""
+  if a:mode == 'Enter'
+    let statusline .= "%#StatusLineColor#"
+  else
+    let statusline .= "%#NoStatusLineColor#"
+  endif
+  let statusline .= "\ %f\ %m%r\ %{StatuslineGitInfo()}\ "
+  let statusline .= "%= "
+  let statusline .= "\ %{toupper(mode())}"
+  let statusline .= "%= "
+  let statusline .= "\ %y\ %{&fileencoding?&fileencoding:&encoding}\/\%{&fileformat}\ \|\ %l:%c\ "
+  return statusline
 endfunction
 
-set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%m\
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=\ 
+hi StatusLineColor ctermbg=white ctermfg=black
+hi NoStatusLineColor ctermbg=black ctermfg=lightgrey
+au WinEnter * setlocal statusline=%!MyStatusLine('Enter')
+au WinLeave * setlocal statusline=%!MyStatusLine('Leave')
+
+set statusline=%!MyStatusLine('Enter')

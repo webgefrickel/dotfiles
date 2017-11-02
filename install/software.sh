@@ -20,6 +20,7 @@ brew cask install ocenaudio
 brew cask install qlcolorcode
 brew cask install qlstephen
 brew cask install sequel-pro
+brew cask install signal
 brew cask install sketch
 brew cask install skype
 brew cask install slack
