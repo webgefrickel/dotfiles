@@ -15,33 +15,33 @@ set grepprg=ag " use ag for grepping
 set hidden 
 set ignorecase
 set infercase
-set lazyredraw                   " Don't redraw while executing macros
-set list!                        " nice Whitespace chars
+set lazyredraw
+set list!
 set listchars=extends:»,precedes:«,tab:▸\ ,trail:·
-set mouse=a                      " mouse for scrolling
-set nobackup                     " no backups
-set noerrorbells                 " don't beep
-set nofoldenable                 " dont fold by default - let me do it
-set noshowmode                   " dont show active mode
-set noswapfile                   " no swp-files
-set nowrap                       " dont wrap lines around
-set nowritebackup                " no stupid backup files
-set pastetoggle=<F2>             " toggle paste-mode for c&p with F2
-set relativenumber               " relative line numbers are mothereffin awesome -- see how far your commands will go
-set scrolljump=5                 " Lines to scroll when cursor leaves screen
-set scrolloff=3                  " Minimum lines to keep above and below cursor
+set mouse=a
+set nobackup
+set noerrorbells
+set nofoldenable
+set noshowmode
+set noswapfile
+set nowrap 
+set nowritebackup 
+set pastetoggle=<F2>
+set relativenumber
+set scrolljump=5
+set scrolloff=3 
 set shiftround
 set shiftwidth=2
 set showbreak=\\\\\
 set showmatch
-set sidescroll=10                " smoother side-scrolling
-set sidescrolloff=5              " jump by 5 when scrolling sideways
+set sidescroll=10
+set sidescrolloff=5
 set smartcase
 set softtabstop=2
 set tabstop=2
-set timeout ttimeoutlen=100      " get rid of the delay when pressing O (for example)
-set virtualedit=all              " every mode active from v V to StrgV
-set visualbell                   " don't flicker
+set timeout ttimeoutlen=100
+set virtualedit=all
+set visualbell
 set wildmode=list:longest,list:full
 set wrapscan
 

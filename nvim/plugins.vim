@@ -48,3 +48,7 @@ nnoremap <silent> <space>l :Lines<cr>
 nnoremap <silent> <space>a :Ag<cr>
 nnoremap <silent> <space>r :History:<cr>
 
+" yankstack, use alt + p, alt + P
+nmap π <Plug>yankstack_substitute_older_paste
+nmap ∏ <Plug>yankstack_substitute_newer_paste
+
