@@ -1,18 +1,19 @@
 set breakindent
-set cmdheight=2                  " command window is 2 high
-set cpoptions+=$                 " Add a $ to the end of a selection
-set cpoptions+=J                 " 2 spaces after a sentence for easier text manupulation
-set cursorline                   " highlight current line
+set cmdheight=2
+set cpoptions+=$ " Add a $ to the end of a selection
+set cpoptions+=J " 2 spaces after a sentence for easier text manupulation
+set cursorline
 set expandtab
 set fileformat=unix
 set fillchars=
 set foldignore=
-set foldlevelstart=1             " deactivate folding on fileload
-set foldmethod=indent            " indent folding
-set foldnestmax=20               " max 20 levels of folding
-set gdefault                     " search & replace is always global
-set grepprg=ag                   " use ag for grepping
-set hidden                       " allows for switching buffers without writing
+set foldlevelstart=1 " deactivate folding on fileload
+set foldmethod=indent " indent folding
+set foldnestmax=20 " max 20 levels of folding
+set gdefault
+set grepprg=ag " use ag for grepping
+set hidden 
+set ignorecase
 set infercase
 set lazyredraw                   " Don't redraw while executing macros
 set list!                        " nice Whitespace chars
