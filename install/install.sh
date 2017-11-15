@@ -18,7 +18,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 brew install clipper
 brew install fzf
 brew install git
-brew install neovim
+brew install neovim --HEAD
 brew install python3
 brew install tmux
 brew install zsh
