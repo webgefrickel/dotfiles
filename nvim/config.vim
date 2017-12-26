@@ -12,7 +12,7 @@ set foldmethod=indent " indent folding
 set foldnestmax=20 " max 20 levels of folding
 set gdefault
 set grepprg=ag " use ag for grepping
-set hidden 
+set hidden
 set ignorecase
 set infercase
 set lazyredraw
@@ -24,12 +24,12 @@ set noerrorbells
 set nofoldenable
 set noshowmode
 set noswapfile
-set nowrap 
+set nowrap
 set nowritebackup 
 set pastetoggle=<F2>
 set relativenumber
 set scrolljump=5
-set scrolloff=3 
+set scrolloff=3
 set shiftround
 set shiftwidth=2
 set showbreak=\\\\\
@@ -54,8 +54,8 @@ if &diff
 endif
 
 " hybrid color scheme
-let g:hybrid_reduced_contrast = 0
-let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast=0
+let g:hybrid_custom_term_colors=1
 set background=dark
 colorscheme hybrid
 

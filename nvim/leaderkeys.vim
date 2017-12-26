@@ -1,5 +1,5 @@
-let g:mapleader = ","
-let g:maplocalleader = ","
+let g:mapleader=","
+let g:maplocalleader=","
 
 " open new vertical split and change to split
 nnoremap <leader>\ <C-w>v<C-w>l

@@ -1,8 +1,8 @@
 " deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#auto_complete_delay = 150
-let g:deoplete#auto_completion_start_length = 4
+let g:deoplete#enable_at_startup=1
+let g:deoplete#enable_smart_case=1
+let g:deoplete#auto_complete_delay=150
+let g:deoplete#auto_completion_start_length=4
 
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
@@ -20,21 +20,21 @@ nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
 nnoremap <silent> <leader>gb :Gblame<CR><C-w>20+
 
 " neosnippet
-let g:neosnippet#disable_runtime_snippets = { "_": 1 }
-let g:neosnippet#scope_aliases = {}
-let g:neosnippet#scope_aliases['scss'] = 'scss,css'
-let g:neosnippet#scope_aliases['php'] = 'php,html'
-let g:neosnippet#snippets_directory = '~/.config/nvim/dein/repos/github.com/webgefrickel/vim-snippets/snippets'
+let g:neosnippet#disable_runtime_snippets={ "_": 1 }
+let g:neosnippet#scope_aliases={}
+let g:neosnippet#scope_aliases['scss']='scss,css'
+let g:neosnippet#scope_aliases['php']='php,html'
+let g:neosnippet#snippets_directory='~/.config/nvim/dein/repos/github.com/webgefrickel/vim-snippets/snippets'
 
 imap <C-j> <Plug>(neosnippet_expand_or_jump)
 smap <C-j> <Plug>(neosnippet_expand_or_jump)
 xmap <C-j> <Plug>(neosnippet_expand_target)
 
 " ale
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_enter = 1
-let g:ale_linters = {
+let g:ale_lint_on_save=1
+let g:ale_lint_on_text_changed=0
+let g:ale_lint_on_enter=1
+let g:ale_linters={
   \ 'css': [],
   \ 'html': ['htmlhint'],
   \ 'javascript': ['eslint'],
