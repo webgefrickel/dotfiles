@@ -52,3 +52,8 @@ nnoremap <silent> <space>r :History:<cr>
 nmap π <Plug>yankstack_substitute_older_paste
 nmap ∏ <Plug>yankstack_substitute_newer_paste
 
+" EasyMotion
+let g:EasyMotion_do_mapping=0
+let g:EasyMotion_smartcase=1
+nmap <leader>s <Plug>(easymotion-overwin-f)
+nmap <leader>S <Plug>(easymotion-overwin-f2)

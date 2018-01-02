@@ -39,7 +39,6 @@ set sidescrolloff=5
 set smartcase
 set softtabstop=2
 set tabstop=2
-set timeout ttimeoutlen=100
 set virtualedit=all
 set visualbell
 set wildmode=list:longest,list:full
