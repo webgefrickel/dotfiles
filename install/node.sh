@@ -1,9 +1,8 @@
 #!/usr/bin/env zsh
 
-nvm install 6.11.5
-nvm install 8.9.0
-nvm use 8.9.0
-nvm alias default 8.9.0
+nvm install 8.9.4
+nvm use 8.9.4
+nvm alias default 8.9.4
 
 npm install -g npm@latest
 npm update -g

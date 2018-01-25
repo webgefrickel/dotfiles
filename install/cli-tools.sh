@@ -23,7 +23,7 @@ brew install youtube-dl
 brew link --force curl
 
 # install a current ruby version
-rbenv install 2.4.2
+rbenv install 2.5.0
 
 # use nvm instead of brew node or anything else
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
