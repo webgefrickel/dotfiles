@@ -12,9 +12,8 @@ brew install mariadb
 brew install mozjpeg
 brew install nginx
 brew install openssl
-brew install php71 --with-homebrew-curl 
-brew install php71-intl
-brew install php71-mcrypt
+brew install php72 --with-homebrew-curl 
+brew install php72-intl
 brew install rbenv
 brew install the_silver_searcher
 brew install youtube-dl
