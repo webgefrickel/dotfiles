@@ -26,8 +26,8 @@ brew cask install skype
 brew cask install slack
 brew cask install spotify
 brew cask install telegram
-brew cask install virtualbox
 brew cask install vlc
+brew cask install vmware-fusion
 brew cask install xld
 read -p "Press any key to continue... " -n1 -s
 
