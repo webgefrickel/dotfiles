@@ -1,6 +1,20 @@
 let g:mapleader=","
 let g:maplocalleader=","
 
+" Zoom / Restore window.
+function! s:ZoomToggle() abort
+  if exists('t:zoomed') && t:zoomed
+    execute t:zoom_winrestcmd
+    let t:zoomed = 0
+  else
+    let t:zoom_winrestcmd = winrestcmd()
+    resize
+    vertical resize
+    let t:zoomed = 1
+  endif
+endfunction
+command! ZoomToggle call s:ZoomToggle()
+
 " open new vertical split and change to split
 nnoremap <leader>\ <C-w>v<C-w>l
 nnoremap <leader>- <C-w>s<C-w>j
@@ -26,3 +40,6 @@ nnoremap <leader>w :set wrap! wrap?<CR>
 
 " reload files when set autoread is active with F5
 nnoremap <leader>r :checktime<CR>
+
+" zoomwindow
+nnoremap <leader>z :ZoomToggle<CR>
