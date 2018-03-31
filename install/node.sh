@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
-nvm install 8.9.4
-nvm use 8.9.4
-nvm alias default 8.9.4
+nvm install 8.11.1
+nvm use 8.11.1
+nvm alias default 8.11.1
 
 npm install -g npm@latest
 npm update -g
@@ -11,7 +11,6 @@ npm install -g diff-so-fancy
 npm install -g eslint
 npm install -g eslint-config-xo-space
 npm install -g fkill-cli
-npm install -g gulp
 npm install -g htmlhint
 npm install -g jsonlint
 npm install -g npm-check-updates
