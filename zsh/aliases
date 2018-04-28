@@ -61,6 +61,8 @@ alias upall='brewup && npmup'
 # other often used stuff, mostly node/npm
 alias nr='npm run'
 alias ns="npm start"
+alias nb="npm run build"
+alias np="npm run production"
 alias npmre='rm -f package-lock.json && rm -rf node_modules && npm install'
 
 # easy hosts / apache / php editing
