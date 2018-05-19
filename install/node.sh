@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
-nvm install 8.11.1
-nvm use 8.11.1
-nvm alias default 8.11.1
+nvm install 8.11.2
+nvm use 8.11.2
+nvm alias default 8.11.2
 
 npm install -g npm@latest
 npm update -g
