@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
-nvm install 8.11.2
-nvm use 8.11.2
-nvm alias default 8.11.2
+nvm install 8.11.3
+nvm use 8.11.3
+nvm alias default 8.11.3
 
 npm install -g npm@latest
 npm update -g
@@ -17,4 +17,4 @@ npm install -g npm-check-updates
 npm install -g pure-prompt
 npm install -g sass-lint
 npm install -g trash-cli
-npm install -g vtop
+npm install -g yarn
