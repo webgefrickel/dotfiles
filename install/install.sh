@@ -19,8 +19,9 @@ brew install clipper
 brew install fzf
 brew install git
 brew install neovim --HEAD
-brew install python3
+brew install python
 brew install tmux
+brew install ruby
 brew install zsh
 read -p "Press any key to continue... " -n1 -s
 
@@ -39,7 +40,6 @@ ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/hammerspoon ~/.hammerspoon
 ln -s ~/dotfiles/karabiner ~/.config/karabiner
 ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/ruby-version ~/.ruby-version
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
@@ -64,6 +64,7 @@ brew services start clipper
 read -p "Press any key to continue... " -n1 -s
 
 # install deps + plugins for neovim
+gem install neovim
 pip3 install neovim
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh installer.sh ~/.config/nvim/dein
