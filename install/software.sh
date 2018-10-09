@@ -3,6 +3,7 @@ brew tap caskroom/versions
 brew tap buo/cask-upgrade
 
 # brew cask and install software
+brew cask install 1password
 brew cask install alfred
 brew cask install bill
 brew cask install carbon-copy-cloner
