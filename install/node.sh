@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
-
-nvm install 8.11.3
-nvm use 8.11.3
-nvm alias default 8.11.3
+curl -L https://git.io/n-install | bash
 
 npm install -g npm@latest
 npm update -g

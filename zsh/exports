@@ -2,6 +2,13 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# nice dircolors for ls
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+# n — node version manager
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
 # shell
 export SHELL=/usr/local/bin/zsh
 
@@ -12,12 +19,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export MANPATH=/usr/local/share/man:$MANPATH
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-# zsh-completions
-fpath=($HOME/dotfiles/zsh/zsh-completions/src $fpath)
 
 # disable stupid ._ and dsstore files
 export COPY_EXTENDED_ATTRIBUTES_DISABLE=true

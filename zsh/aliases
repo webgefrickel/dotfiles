@@ -35,7 +35,7 @@ alias l='ls -alGp'
 # mutt
 alias m='neomutt'
 # alias for syncing everything
-alias office="clear && mbsync -a && mu index --maildir ~/Mail && vdirsyncer sync && khal"
+alias office="cd ~ && clear && mbsync -a && mu index --maildir ~/Mail && vdirsyncer sync && khal"
 
 # Gitty gitgit
 alias g="git"
@@ -64,6 +64,7 @@ alias ns="npm start"
 alias nb="npm run build"
 alias np="npm run production"
 alias npmre='rm -f package-lock.json && rm -rf node_modules && npm install'
+alias yre='rm -f yarn.lock && rm -rf node_modules && yarn'
 
 # easy hosts / apache / php editing
 alias hosts='sudo $EDITOR /etc/hosts'

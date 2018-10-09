@@ -58,16 +58,8 @@ setopt long_list_jobs
 source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/dotfiles/zsh/zsh-completions/zsh-completions.plugin.zsh
 
-# nice dircolors for ls
-export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
-# rbenv
-eval "$(rbenv init -)"
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# zsh-completions
+fpath=($HOME/dotfiles/zsh/zsh-completions/src $fpath)
