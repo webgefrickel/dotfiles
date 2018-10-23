@@ -9,6 +9,7 @@ read -p "Press any key to continue... " -n1 -s
 # install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew doctor
+brew tap homebrew/services
 
 # brew paths
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -55,8 +56,6 @@ brew cask install forklift
 brew cask install hammerspoon
 brew cask install nextcloud
 read -p "Press any key to continue... " -n1 -s
-
-brew tap homebrew/services
 
 # clipper
 mkdir -p ~/Library/LaunchAgents
