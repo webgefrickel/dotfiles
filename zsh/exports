@@ -31,9 +31,10 @@ export VISUAL="/usr/local/bin/nvim"
 # disable auto titling fixes tmux window
 export DISABLE_AUTO_TITLE=true
 
-# grep
+# grep / ripgrep
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
+export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc"
 
 # pager
 export PAGER="less"

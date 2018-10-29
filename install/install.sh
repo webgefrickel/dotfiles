@@ -33,9 +33,7 @@ read -p "Press any key to continue... " -n1 -s
 
 # link the dotfiles
 mkdir ~/.config
-ln -s ~/dotfiles/agignore ~/.agignore
 ln -s ~/dotfiles/editorconfig ~/.editorconfig
-ln -s ~/dotfiles/gemrc ~/.gemrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/hammerspoon ~/.hammerspoon

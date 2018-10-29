@@ -45,8 +45,8 @@ let g:ale_linters={
 nnoremap <silent> <space>, :Files<cr>
 nnoremap <silent> <space>. :Buffers<cr>
 nnoremap <silent> <space>l :Lines<cr>
-nnoremap <silent> <space>a :Ag<cr>
-nnoremap <silent> <space>r :History:<cr>
+nnoremap <silent> <space>a :Rg<cr>
+nnoremap <silent> <space>h :History:<cr>
 
 " yankstack, use alt + p, alt + P
 nmap π <Plug>yankstack_substitute_older_paste

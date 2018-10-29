@@ -13,7 +13,7 @@ brew install mozjpeg
 brew install nginx
 brew install openssl
 brew install php --with-homebrew-curl 
-brew install the_silver_searcher
+brew install ripgrep
 brew install youtube-dl
 
 # link keg-only / pre-installed duplicates
