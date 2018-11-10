@@ -12,8 +12,8 @@ brew doctor
 brew tap homebrew/services
 
 # brew paths
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+read -p "Press any key to continue... " -n1 -s
 
 # install some neccessary brew packages
 brew install clipper

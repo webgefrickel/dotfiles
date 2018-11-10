@@ -7,7 +7,7 @@ brew install khal
 brew install khard
 brew install msmtp
 brew install mu
-brew install neomutt/homebrew-neomutt/neomutt --with-gpgme
+brew install neomutt/neomutt/neomutt --with-gpgme
 brew install ripmime
 brew install w3m
 brew install vdirsyncer

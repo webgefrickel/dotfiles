@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-brew tap homebrew/php
 
 # install additional brew packages -- see _install.sh too
-brew install composer
 brew install curl --with-libssh2 --with-openssl
 brew install ffmpeg --with-libvpx --with-libvorbis --with-fdk-aac
 brew install git-flow
