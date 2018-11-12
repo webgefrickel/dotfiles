@@ -6,6 +6,7 @@ brew tap homebrew/cask-drivers
 brew cask install 1password
 brew cask install alfred
 brew cask install bill
+brew cask install browserstacklocal
 brew cask install carbon-copy-cloner
 brew cask install dash
 brew cask install doxie
