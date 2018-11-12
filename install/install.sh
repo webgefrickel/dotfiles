@@ -82,7 +82,5 @@ chsh -s /usr/local/bin/zsh
 read -p "Press any key to continue... " -n1 -s
 /usr/bin/env zsh
 read -p "Press any key to continue... " -n1 -s
-sudo mv /etc/zshenv /etc/zprofile
-read -p "Press any key to continue... " -n1 -s
 sudo launchctl config user path $PATH
 read -p "Press any key to continue... " -n1 -s
