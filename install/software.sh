@@ -26,6 +26,7 @@ brew cask install sketch
 brew cask install skype
 brew cask install spotify
 brew cask install telegram
+brew cask install transmission
 brew cask install vlc
 brew cask install vmware-fusion
 
