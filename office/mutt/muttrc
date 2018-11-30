@@ -90,8 +90,11 @@ set crypt_replyencrypt = yes
 set crypt_replysignencrypted = yes
 
 # Mailboxes to show in the sidebar.
+mailboxes =ALL-INBOXES
+mailboxes =mailbox/INBOX =viu/INBOX =mf/INBOX =kfi/INBOX =hsv/INBOX
+mailboxes ="==================="
 mailboxes =mailbox
-mailboxes =mailbox/INBOX =mailbox/archive =mailbox/sent =mailbox/drafts =mailbox/junk =mailbox/trash
+mailboxes =mailbox/INBOX =mailbox/archive =malbox/sent =mailbox/drafts =mailbox/junk =mailbox/trash
 mailboxes =viu
 mailboxes =viu/INBOX =viu/archive =viu/sent =viu/drafts =viu/junk =viu/trash
 mailboxes =mf
