@@ -16,20 +16,3 @@ type = "carddav"
 url = "https://dav.mailbox.org"
 username = "s.rademacker@mailbox.org"
 password.fetch = ["command", "~/dotfiles/office/getpassword.sh"]
-
-[pair mailboxcalendars]
-a = "mailboxcalendars_local"
-b = "mailboxcalendars_remote"
-collections = ["from a", "from b"]
-conflict_resolution = "b wins"
-
-[storage mailboxcalendars_local]
-type = "filesystem"
-path = "~/Calendars/"
-fileext = ".ics"
-
-[storage mailboxcalendars_remote]
-type = "caldav"
-url = "https://dav.mailbox.org"
-username = "s.rademacker@mailbox.org"
-password.fetch = ["command", "~/dotfiles/office/getpassword.sh"]
