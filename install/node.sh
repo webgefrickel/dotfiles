@@ -12,6 +12,7 @@ npm install -g htmlhint
 npm install -g jsonlint
 npm install -g neovim
 npm install -g npm-check-updates
+npm install -g prettier
 npm install -g pure-prompt
 npm install -g sass-lint
 npm install -g trash-cli

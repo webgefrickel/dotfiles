@@ -52,7 +52,6 @@ read -p "Press any key to continue... " -n1 -s
 brew cask install caskroom/fonts/font-fira-code
 brew cask install forklift
 brew cask install hammerspoon
-brew cask install nextcloud
 read -p "Press any key to continue... " -n1 -s
 
 # clipper

@@ -34,12 +34,21 @@ xmap <C-j> <Plug>(neosnippet_expand_target)
 let g:ale_lint_on_save=1
 let g:ale_lint_on_text_changed=0
 let g:ale_lint_on_enter=1
-let g:ale_linters={
+let g:ale_linters = {
   \ 'css': [],
   \ 'html': ['htmlhint'],
   \ 'javascript': ['eslint'],
   \ 'scss': ['sasslint'],
 \}
+" let g:ale_fixers = {
+"   \ 'javascript': ['prettier'],
+"   \ 'css': ['prettier'],
+"   \ 'scss': ['prettier'],
+"   \ 'markdown': ['prettier'],
+"   \ 'yaml': ['prettier'],
+" \}
+" let g:ale_linters_explicit = 1
+" let g:ale_fix_on_save = 1
 
 " fzf
 nnoremap <silent> <space>, :Files<cr>
