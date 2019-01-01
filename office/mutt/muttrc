@@ -94,7 +94,7 @@ mailboxes =ALL-INBOXES
 mailboxes =mailbox/INBOX =viu/INBOX =mf/INBOX =kfi/INBOX =hsv/INBOX
 mailboxes ="==================="
 mailboxes =mailbox
-mailboxes =mailbox/archive =malbox/sent =mailbox/drafts =mailbox/junk =mailbox/trash
+mailboxes =mailbox/archive =mailbox/sent =mailbox/drafts =mailbox/junk =mailbox/trash
 mailboxes =viu
 mailboxes =viu/archive =viu/sent =viu/drafts =viu/junk =viu/trash
 mailboxes =mf

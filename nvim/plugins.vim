@@ -40,15 +40,18 @@ let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'scss': ['sasslint'],
 \}
-" let g:ale_fixers = {
-"   \ 'javascript': ['prettier'],
-"   \ 'css': ['prettier'],
-"   \ 'scss': ['prettier'],
-"   \ 'markdown': ['prettier'],
-"   \ 'yaml': ['prettier'],
-" \}
-" let g:ale_linters_explicit = 1
-" let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+  \ 'css': ['prettier'],
+  \ 'javascript': ['prettier'],
+  \ 'json': ['prettier'],
+  \ 'jsx': ['prettier'],
+  \ 'markdown': ['prettier'],
+  \ 'php': ['prettier'],
+  \ 'scss': ['prettier'],
+  \ 'yaml': ['prettier'],
+\}
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
 
 " fzf
 nnoremap <silent> <space>, :Files<cr>
