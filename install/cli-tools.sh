@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # install additional brew packages -- see _install.sh too
+brew install composer
 brew install curl --with-libssh2 --with-openssl
 brew install ffmpeg --with-fdk-aac
 brew install git-flow

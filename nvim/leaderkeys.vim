@@ -2,7 +2,7 @@ let g:mapleader=","
 let g:maplocalleader=","
 
 " Zoom / Restore window.
-function! s:ZoomToggle() abort
+function! s:ToggleZoom() abort
   if exists('t:zoomed') && t:zoomed
     execute t:zoom_winrestcmd
     let t:zoomed = 0
@@ -13,7 +13,26 @@ function! s:ZoomToggle() abort
     let t:zoomed = 1
   endif
 endfunction
-command! ZoomToggle call s:ZoomToggle()
+
+function! s:TogglePrettier()
+  if g:ale_fix_on_save == 0
+    let g:ale_fix_on_save = 1
+    echomsg "Prettier fixing is now enabled!"
+  else
+    let g:ale_fix_on_save = 0
+    echomsg "Prettier fixing is now disabled!"
+  endif
+endfunction
+
+" shortcust for functions
+command! ToggleZoom call s:ToggleZoom()
+command! TogglePrettier call s:TogglePrettier()
+
+" zoomwindow
+nnoremap <leader>z :ToggleZoom<CR>
+
+" ale fixing shortcut toggle
+nnoremap <leader>f :TogglePrettier<CR>
 
 " open new vertical split and change to split
 nnoremap <leader>\ <C-w>v<C-w>l
@@ -40,6 +59,3 @@ nnoremap <leader>w :set wrap! wrap?<CR>
 
 " reload files when set autoread is active with F5
 nnoremap <leader>r :checktime<CR>
-
-" zoomwindow
-nnoremap <leader>z :ZoomToggle<CR>
