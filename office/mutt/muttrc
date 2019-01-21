@@ -91,7 +91,7 @@ set crypt_replysignencrypted = yes
 
 # Mailboxes to show in the sidebar.
 mailboxes =ALL-INBOXES
-mailboxes =mailbox/INBOX =viu/INBOX =mf/INBOX =kfi/INBOX =hsv/INBOX
+mailboxes =mailbox/INBOX =viu/INBOX =mf/INBOX =kfi/INBOX
 mailboxes ="==================="
 mailboxes =mailbox
 mailboxes =mailbox/archive =mailbox/sent =mailbox/drafts =mailbox/junk =mailbox/trash
@@ -101,8 +101,6 @@ mailboxes =mf
 mailboxes =mf/archive =mf/sent =mf/drafts =mf/junk =mf/trash
 mailboxes =kfi
 mailboxes =kfi/archive =kfi/sent =kfi/drafts =kfi/junk =kfi/trash
-mailboxes =hsv
-mailboxes =hsv/archive =hsv/sent =hsv/drafts =hsv/junk =hsv/trash
 
 # source colors and keybindings
 # keeping those in one place makes it easier for my brain
@@ -121,5 +119,4 @@ source ~/.mutt/accounts/mailbox
 folder-hook mailbox/* source ~/.mutt/accounts/mailbox
 folder-hook kfi/* source ~/.mutt/accounts/kfi
 folder-hook viu/* source ~/.mutt/accounts/viu
-folder-hook hsv/* source ~/.mutt/accounts/hsv
 folder-hook mf/* source ~/.mutt/accounts/mf
