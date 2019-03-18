@@ -46,7 +46,6 @@ let g:ale_fixers = {
   \ 'json': ['prettier'],
   \ 'jsx': ['prettier'],
   \ 'markdown': ['prettier'],
-  \ 'php': ['prettier'],
   \ 'scss': ['prettier'],
   \ 'yaml': ['prettier'],
 \}

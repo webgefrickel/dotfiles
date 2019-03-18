@@ -66,10 +66,6 @@ alias np="npm run production"
 alias npmre='rm -f package-lock.json && rm -rf node_modules && npm install'
 alias yre='rm -f yarn.lock && rm -rf node_modules && yarn'
 
-# easy hosts / apache / php editing
-alias hosts='sudo $EDITOR /etc/hosts'
-alias vhosts='$EDITOR /usr/local/etc/nginx/servers/'
-
 # often used folder shortcuts
 alias web='cd ~/Sites && ls'
 alias rep='cd ~/Repositories && ls'
