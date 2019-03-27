@@ -3,17 +3,18 @@
 # install additional brew packages -- see _install.sh too
 brew install composer
 brew install curl --with-libssh2 --with-openssl
+brew install dnsmasq
 brew install ffmpeg --with-fdk-aac
 brew install git-flow
 brew install git-ftp
+brew install htop
+brew install httpd
 brew install imagemagick
 brew install mariadb
 brew install mkcert 
 brew install mozjpeg
 brew install neofetch
 brew install nss
-brew install httpd
-brew install dnsmasq
 brew install openssl
 brew install php
 brew install ripgrep
