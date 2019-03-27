@@ -9,8 +9,9 @@ brew install git-ftp
 brew install imagemagick
 brew install mariadb
 brew install mkcert 
-brew install nss
 brew install mozjpeg
+brew install neofetch
+brew install nss
 brew install httpd
 brew install dnsmasq
 brew install openssl
