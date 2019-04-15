@@ -55,8 +55,7 @@ alias ta='tmux -u attach'
 
 # all in one homebrew, gem update commands
 alias brewup='brew update && brew upgrade && brew cu -a -f -y && brew cleanup'
-alias npmup='ncu -g && npm -g outdated && npm -g update'
-alias upall='brewup && npmup'
+alias upall='brewup && ncu -g'
 
 # other often used stuff, mostly node/npm
 alias nr='npm run'
