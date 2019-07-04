@@ -48,7 +48,37 @@ local function fullsize(window)
   window:setFrame(frame)
 end
 
+local function size720(window) 
+  frame = window:screen():frame()
+  frame.x = (frame.w - 1280) / 2
+  frame.y = (frame.h - 720) / 2
+  frame.w = 1280
+  frame.h = 720
+  window:setFrame(frame)
+end
+
+local function size900(window) 
+  frame = window:screen():frame()
+  frame.x = (frame.w - 1440) / 2
+  frame.y = (frame.h - 900) / 2
+  frame.w = 1440
+  frame.h = 900
+  window:setFrame(frame)
+end
+
+local function size1080(window) 
+  frame = window:screen():frame()
+  frame.x = (frame.w - 1920) / 2
+  frame.y = (frame.h - 1080) / 2
+  frame.w = 1920
+  frame.h = 1080
+  window:setFrame(frame)
+end
+
 hs.hotkey.bind(hyper, 'f', function() tiling.toggleFloat(center); moveMouse() end)
+hs.hotkey.bind(hyper, 't', function() tiling.toggleFloat(size720); moveMouse() end)
+hs.hotkey.bind(hyper, 'y', function() tiling.toggleFloat(size900); moveMouse() end)
+hs.hotkey.bind(hyper, 'u', function() tiling.toggleFloat(size1080); moveMouse() end)
 hs.hotkey.bind(hyper, 'z', function() fullsize(hs.window.focusedWindow()); moveMouse() end)
 hs.hotkey.bind(hyper, 'r', function() tiling.retile(); moveMouse() end)
 hs.hotkey.bind(hyper, 'a', function() tiling.cycle(1); moveMouse() end)
