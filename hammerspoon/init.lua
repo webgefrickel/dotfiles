@@ -76,9 +76,9 @@ local function size1080(window)
 end
 
 hs.hotkey.bind(hyper, 'f', function() tiling.toggleFloat(center); moveMouse() end)
-hs.hotkey.bind(hyper, 't', function() tiling.toggleFloat(size720); moveMouse() end)
-hs.hotkey.bind(hyper, 'y', function() tiling.toggleFloat(size900); moveMouse() end)
-hs.hotkey.bind(hyper, 'u', function() tiling.toggleFloat(size1080); moveMouse() end)
+hs.hotkey.bind(hyper, 'v', function() tiling.toggleFloat(size720); moveMouse() end)
+hs.hotkey.bind(hyper, 'b', function() tiling.toggleFloat(size900); moveMouse() end)
+hs.hotkey.bind(hyper, 'n', function() tiling.toggleFloat(size1080); moveMouse() end)
 hs.hotkey.bind(hyper, 'z', function() fullsize(hs.window.focusedWindow()); moveMouse() end)
 hs.hotkey.bind(hyper, 'r', function() tiling.retile(); moveMouse() end)
 hs.hotkey.bind(hyper, 'a', function() tiling.cycle(1); moveMouse() end)
@@ -90,7 +90,6 @@ hs.hotkey.bind(hyper, 'h', function() hs.window.focusedWindow():focusWindowWest(
 hs.hotkey.bind(hyper, 'j', function() hs.window.focusedWindow():focusWindowSouth(); moveMouse() end)
 hs.hotkey.bind(hyper, 'k', function() hs.window.focusedWindow():focusWindowNorth(); moveMouse() end)
 hs.hotkey.bind(hyper, 'l', function() hs.window.focusedWindow():focusWindowEast(); moveMouse() end)
-hs.hotkey.bind(hyper, 'n', function () focusScreen(hs.window.focusedWindow():screen():next()) end)
 
 -- map hyper + number to the corresponding fn-key, since the touchbar
 -- kinda sucks, and karabiner-elements is breaking fn-function to show keys
