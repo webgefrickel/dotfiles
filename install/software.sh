@@ -10,7 +10,6 @@ brew cask install carbon-copy-cloner
 brew cask install dash
 brew cask install doxie
 brew cask install firefox
-brew cask install flux
 brew cask install google-chrome
 brew cask install imagealpha
 brew cask install imageoptim
@@ -20,7 +19,6 @@ brew cask install libreoffice
 brew cask install ngrok
 brew cask install qlcolorcode
 brew cask install qlstephen
-brew cask install sequel-pro
 brew cask install signal
 brew cask install sketch
 brew cask install skype

@@ -21,7 +21,6 @@ mkdir ~/Mail/mailbox
 mkdir ~/Mail/viu
 mkdir ~/Mail/mf
 mkdir ~/Mail/kfi
-mkdir ~/Mail/hsv
 ln -s ~/dotfiles/office/mutt ~/.mutt
 ln -s ~/dotfiles/office/mbsyncrc ~/.mbsyncrc
 ln -s ~/dotfiles/office/msmtprc ~/.msmtprc

@@ -6,6 +6,7 @@ call dein#begin(expand('~/.config/nvim/dein'))
   call dein#add('Shougo/dein.vim')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/neosnippet')
+  call dein#add('ap/vim-css-color')
   call dein#add('christoomey/vim-tmux-navigator')
   call dein#add('easymotion/vim-easymotion')
   call dein#add('editorconfig/editorconfig-vim')
@@ -13,7 +14,6 @@ call dein#begin(expand('~/.config/nvim/dein'))
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   call dein#add('junegunn/gv.vim')
   call dein#add('maxbrunsfeld/vim-yankstack')
-  call dein#add('moll/vim-node')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('terryma/vim-multiple-cursors')
   call dein#add('tpope/vim-commentary')
@@ -36,6 +36,7 @@ call dein#end()
 source ~/.config/nvim/config.vim
 source ~/.config/nvim/autocommands.vim
 source ~/.config/nvim/statusline.vim
+source ~/.config/nvim/gotofile.vim
 source ~/.config/nvim/keymappings.vim
 source ~/.config/nvim/leaderkeys.vim
 source ~/.config/nvim/plugins.vim

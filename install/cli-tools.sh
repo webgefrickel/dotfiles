@@ -2,18 +2,15 @@
 
 # install additional brew packages -- see _install.sh too
 brew install composer
-brew install curl --with-libssh2 --with-openssl
+brew install curl
 brew install dnsmasq
-brew install ffmpeg --with-fdk-aac
+brew install ffmpeg
 brew install git-flow
 brew install git-ftp
-brew install htop
 brew install httpd
 brew install imagemagick
 brew install mariadb
 brew install mkcert 
-brew install mozjpeg
-brew install neofetch
 brew install nss
 brew install openssl
 brew install php
@@ -25,3 +22,6 @@ echo 'address=/.localhost/127.0.0.1' > /usr/local/etc/dnsmasq.conf
 sudo brew services start dnsmasq
 sudo mkdir -v /etc/resolver
 sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/localhost'
+
+# php
+sudo pecl install imagick

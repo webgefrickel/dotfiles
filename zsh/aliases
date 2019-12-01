@@ -75,7 +75,6 @@ alias dnsflush='sudo dscacheutil -flushcache'
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # imagemagick downsampling shortcuts (c&p retina folder, run, done!)
-alias jpegoptim='for i (*.jpg) mozjpeg -copy none -optimize -scans ~/dotfiles/other/scans.txt -outfile $i $i'
 alias jpg25='mogrify -format jpg -resize 25% -strip -quality 80 *.jpg'
 alias jpg50='mogrify -format jpg -resize 50% -strip -quality 80 *.jpg'
 alias png25='mogrify -format png -resize 25% -strip -quality 80 *.png'

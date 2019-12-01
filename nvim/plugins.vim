@@ -13,7 +13,7 @@ function! s:deoplete_cr_function() abort
 endfunction
 
 " fugitive
-nnoremap <silent> <leader>gs :Gstatus<CR><C-w>20+
+nnoremap <silent> <leader>gs :G<CR><C-w>20+
 nnoremap <silent> <leader>gd :Gvdiff<CR><C-w>20+
 nnoremap <silent> <leader>gc :Gcommit<CR><C-w>20+
 nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
@@ -32,21 +32,29 @@ xmap <C-j> <Plug>(neosnippet_expand_target)
 
 " ale
 let g:ale_lint_on_save=1
-let g:ale_lint_on_text_changed=0
+let g:ale_lint_on_text_changed='never'
+let g:ale_lint_on_insert_leave=0
 let g:ale_lint_on_enter=1
 let g:ale_linters = {
   \ 'css': [],
   \ 'html': ['htmlhint'],
   \ 'javascript': ['eslint'],
+  \ 'javascriptreact': ['eslint'],
+  \ 'json': ['jsonlint'],
+  \ 'jsx': ['eslint'],
+  \ 'php': ['php'],
   \ 'scss': ['sasslint'],
+  \ 'typescript': ['tslint'],
 \}
 let g:ale_fixers = {
   \ 'css': ['prettier'],
   \ 'javascript': ['prettier'],
+  \ 'javascriptreact': ['prettier'],
   \ 'json': ['prettier'],
   \ 'jsx': ['prettier'],
   \ 'markdown': ['prettier'],
   \ 'scss': ['prettier'],
+  \ 'typescript': ['prettier'],
   \ 'yaml': ['prettier'],
 \}
 let g:ale_linters_explicit = 1

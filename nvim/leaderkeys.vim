@@ -31,8 +31,9 @@ command! TogglePrettier call s:TogglePrettier()
 " zoomwindow
 nnoremap <leader>z :ToggleZoom<CR>
 
-" ale fixing shortcut toggle
+" ale 
 nnoremap <leader>f :TogglePrettier<CR>
+nnoremap <leader>e :ALENext<CR>
 
 " open new vertical split and change to split
 nnoremap <leader>\ <C-w>v<C-w>l

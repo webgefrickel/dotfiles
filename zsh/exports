@@ -16,9 +16,13 @@ export SHELL=/usr/local/bin/zsh
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # paths
-export PATH=/usr/local/opt/ruby/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/opt/curl/bin:$PATH
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/opt/ruby/bin:$PATH
+export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
+
+# manpath
 export MANPATH=/usr/local/share/man:$MANPATH
 
 # disable stupid ._ and dsstore files
