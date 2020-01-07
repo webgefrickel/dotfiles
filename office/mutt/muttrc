@@ -90,7 +90,6 @@ set sidebar_indent_string = '  ''
 set sidebar_format = "%B %* [%?N?%N / ?%S]"
 
 # Mailboxes to show in the sidebar.
-mailboxes ="==================="
 mailboxes =mailbox
 mailboxes =mailbox/INBOX =mailbox/archive =mailbox/sent =mailbox/drafts =mailbox/junk =mailbox/trash
 mailboxes ="==================="
