@@ -10,6 +10,7 @@ brew install neomutt/neomutt/neomutt --with-gpgme
 brew install ripmime
 brew install w3m
 brew install vdirsyncer
+read -p "Press any key to continue... " -n1 -s
 
 # python dependencies (for mutt)
 sudo pip3 install -I urlscan
@@ -19,10 +20,9 @@ mkdir ~/Contacts
 mkdir ~/Mail
 mkdir ~/Mail/mailbox
 mkdir ~/Mail/viu
-mkdir ~/Mail/mf
-mkdir ~/Mail/kfi
 ln -s ~/dotfiles/office/mutt ~/.mutt
 ln -s ~/dotfiles/office/mbsyncrc ~/.mbsyncrc
 ln -s ~/dotfiles/office/msmtprc ~/.msmtprc
 ln -s ~/dotfiles/office/khard ~/.config/khard
 ln -s ~/dotfiles/office/vdirsyncer ~/.vdirsyncer
+read -p "Press any key to continue... " -n1 -s

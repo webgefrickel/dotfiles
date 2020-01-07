@@ -32,8 +32,8 @@ command! TogglePrettier call s:TogglePrettier()
 nnoremap <leader>z :ToggleZoom<CR>
 
 " ale 
-nnoremap <leader>f :TogglePrettier<CR>
 nnoremap <leader>e :ALENext<CR>
+nnoremap <leader>f :TogglePrettier<CR>
 
 " open new vertical split and change to split
 nnoremap <leader>\ <C-w>v<C-w>l

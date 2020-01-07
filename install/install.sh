@@ -72,6 +72,7 @@ read -p "Press any key to continue... " -n1 -s
 
 # set terminal to xterm-256color!
 # now restart your terminal and hope for the best
+read -p "Now set terminal to xterm-256color, restart and hope for the best..." -n1 -s
 
 # set zsh to the default
 sudo vim /etc/shells

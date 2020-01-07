@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 brew tap buo/cask-upgrade
 brew tap homebrew/cask-drivers
+read -p "Press any key to continue... " -n1 -s
 
 # brew cask and install software
 brew cask install 1password
@@ -15,7 +16,6 @@ brew cask install imagealpha
 brew cask install imageoptim
 brew cask install kap
 brew cask install karabiner-elements
-brew cask install libreoffice
 brew cask install ngrok
 brew cask install qlcolorcode
 brew cask install qlstephen
@@ -24,9 +24,9 @@ brew cask install sketch
 brew cask install skype
 brew cask install spotify
 brew cask install telegram
-brew cask install transmission
 brew cask install vlc
 brew cask install vmware-fusion
+read -p "Press any key to continue... " -n1 -s
 
 # Drivers and other software
 brew cask install ubiquiti-unifi-controller
