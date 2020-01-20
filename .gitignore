@@ -3,3 +3,4 @@ nvim/dein/
 office/mutt/cache/*
 office/mutt/tmp/*
 office/vdirsyncer/status/*
+karabiner/automatic_backups/*
