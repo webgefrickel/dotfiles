@@ -18,16 +18,16 @@ color status cyan default
 
 macro index o "<shell-escape>mbsync mailbox<enter>" "run mbsync to sync mail for this account"
 
-macro index,pager J \
+macro index,pager s \
   "<enter-command>set my_old_resolve=\$resolve noresolve<enter>\
   <tag-prefix><clear-flag>n<enter-command>set resolve=\$my_old_resolve<enter>\
   <save-message>+mailbox/junk<enter>" \
   "mark as read and move to junk folder"
 
-macro index,pager A \
+macro index,pager a \
   "<save-message>+mailbox/archive<enter>"  \
   "move message to the archive"
 
-macro index,pager I \
+macro index,pager i \
   "<save-message>+mailbox/INBOX<enter>"  \
   "move message to the inbox"
