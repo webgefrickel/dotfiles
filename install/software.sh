@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
 brew tap buo/cask-upgrade
-brew tap homebrew/cask-drivers
-read -p "Press any key to continue... " -n1 -s
-
-# brew cask and install software
 brew cask install 1password
 brew cask install alfred
-brew cask install bill
+# brew cask install bill TODO
 brew cask install carbon-copy-cloner
 brew cask install dash
 brew cask install doxie
 brew cask install firefox
+brew cask install forklift
 brew cask install google-chrome
+brew cask install hammerspoon
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install kap
@@ -26,17 +24,14 @@ brew cask install spotify
 brew cask install telegram
 brew cask install vlc
 brew cask install vmware-fusion
-read -p "Press any key to continue... " -n1 -s
 
 # Drivers and other software
-brew cask install ubiquiti-unifi-controller
-read -p "Press any key to continue... " -n1 -s
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
 
 # set some options for qlcolorcode
 defaults write org.n8gray.QLColorCode font "Fira Code"
 defaults write org.n8gray.QLColorCode fontSizePoints 9
 defaults write org.n8gray.QLColorCode hlTheme blacknblue
 defaults write org.n8gray.QLColorCode extraHLFlags '--replace-tabs=2'
-read -p "Press any key to continue... " -n1 -s
 qlmanage -r
-read -p "Press any key to continue... " -n1 -s
