@@ -15,6 +15,7 @@ brew install nss
 brew install openssl
 brew install php@7.3
 brew install ripgrep
+brew install switchaudio-osx
 
 # dnsmasq
 echo 'address=/.localhost/127.0.0.1' > /usr/local/etc/dnsmasq.conf
@@ -22,5 +23,7 @@ sudo brew services start dnsmasq
 sudo mkdir -v /etc/resolver
 sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/localhost'
 
-# php
+# php and ssl
 sudo pecl install imagick
+mkcert -install
+mkcert localhost "dev.localhost" "*.dev.localhost"
