@@ -8,7 +8,6 @@ npm install -g diff-so-fancy
 npm install -g fkill-cli
 npm install -g neovim
 npm install -g npm-check-updates
-npm install -g prettier
 npm install -g pure-prompt
 npm install -g trash-cli
 npm install -g yarn
