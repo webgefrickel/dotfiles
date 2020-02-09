@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
+brew tap homebrew-ffmpeg/ffmpeg
 
 # install additional brew packages -- see _install.sh too
 brew install composer
 brew install curl
 brew install dnsmasq
-brew install ffmpeg
 brew install git-flow
 brew install git-ftp
+brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
 brew install httpd
 brew install imagemagick
 brew install mariadb
