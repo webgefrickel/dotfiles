@@ -6,6 +6,7 @@ npm update -g
 
 npm install -g diff-so-fancy
 npm install -g fkill-cli
+npm install -g localtunnel
 npm install -g neovim
 npm install -g npm-check-updates
 npm install -g pure-prompt
