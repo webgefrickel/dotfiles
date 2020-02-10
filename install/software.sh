@@ -14,7 +14,6 @@ brew cask install imagealpha
 brew cask install imageoptim
 brew cask install kap
 brew cask install karabiner-elements
-brew cask install ngrok
 brew cask install qlcolorcode
 brew cask install qlstephen
 brew cask install signal
