@@ -2,7 +2,6 @@
 brew tap buo/cask-upgrade
 brew cask install 1password
 brew cask install alfred
-# brew cask install bill TODO
 brew cask install carbon-copy-cloner
 brew cask install dash
 brew cask install doxie
@@ -33,4 +32,9 @@ defaults write org.n8gray.QLColorCode font "Fira Code"
 defaults write org.n8gray.QLColorCode fontSizePoints 9
 defaults write org.n8gray.QLColorCode hlTheme blacknblue
 defaults write org.n8gray.QLColorCode extraHLFlags '--replace-tabs=2'
+
+# reload QuickLook and set permissions
+sudo xattr -cr ~/Library/QuickLook/*.qlgenerator
 qlmanage -r
+qlmanage -r cache
+
