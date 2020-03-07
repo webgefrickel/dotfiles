@@ -10,6 +10,22 @@ function webvideonoaudio() {
   ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $1.h264.mp4
 }
 
+function webvideooptimized() {
+  ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=1920:trunc(ow/a/2)*2" $1.h264.mp4
+}
+
+function webvideooptimizednoaudio() {
+  ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=1920:trunc(ow/a/2)*2" $1.h264.mp4
+}
+
+function webvideooptimizednoaudiomobile() {
+  ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=640:trunc(ow/a/2)*2" $1.h264.mp4
+}
+
+function webvideoposter() {
+  ffmpeg -ss 00:00:02 -i $1 -frames:v 1 $1.jpg
+}
+
 # create and change to directory/folder
 function take() {
   mkdir -p $1

@@ -29,19 +29,17 @@ alias -s txt=$EDITOR
 alias clip="nc localhost 8377"
 
 # better ls / l command
-alias ls='ls -alGp'
 alias l='ls -alGp'
 
 # mutt
 alias m='neomutt'
 # alias for syncing everything
-alias office="cd ~ && mbsync -a && mu index --maildir ~/Mail && vdirsyncer sync"
+alias O="cd ~ && mbsync -a && mu index --maildir ~/Mail && vdirsyncer sync"
 
 # Gitty gitgit
 alias g="git"
 alias gf="git-flow"
 alias gs="git status"
-alias gst="git status"
 alias ggpl='git pull origin $(current_branch)'
 alias ggps='git push origin $(current_branch)'
 alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
@@ -69,9 +67,9 @@ alias yp='yarn production'
 alias yre='rm -f yarn.lock && rm -rf node_modules && yarn'
 
 # often used folder shortcuts
-alias web='cd ~/Sites && ls'
-alias rep='cd ~/Repositories && ls'
-alias dot='cd ~/Dotfiles && ls'
+alias web='cd ~/Sites && l'
+alias rep='cd ~/Repositories && l'
+alias dot='cd ~/Dotfiles && l'
 
 # random usefull stuff
 alias dnsflush='sudo dscacheutil -flushcache'
