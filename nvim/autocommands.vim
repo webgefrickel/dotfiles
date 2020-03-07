@@ -17,6 +17,7 @@ augroup init
   autocmd FileType mail setlocal textwidth=72
   autocmd FileType mail setlocal comments+=nb:>
   autocmd FileType mail setlocal formatoptions+=awq
+  autocmd BufNewFile,BufRead neomutt-* set ft=mail
 
   " add the dash to keywords -- makes better css/js/html search
   " do this for specific files only (not in php/rb e.g.) where dashes are
@@ -24,7 +25,6 @@ augroup init
   autocmd BufNewFile,BufRead *.{js,css,scss,html} set iskeyword+=-
   autocmd BufNewFile,BufRead *.{js,css,scss,html} set iskeyword-=_
   autocmd BufNewFile,BufRead *.php set iskeyword-=-
-  autocmd BufNewFile,BufRead neomutt-* set ft=mail
 
   " omnicompletion for some filetypes
   autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
