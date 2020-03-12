@@ -56,14 +56,11 @@ alias brewup='brew update && brew upgrade && brew cu -a -f -y && brew cleanup'
 alias upall='brewup && ncu -g'
 
 # other often used stuff, mostly node/npm
-alias nr='npm run'
 alias ns="npm start"
 alias nb="npm run build"
-alias np="npm run production"
 alias npmre='rm -f package-lock.json && rm -rf node_modules && npm install'
 alias ys='yarn start'
-alias yb='yarn build'
-alias yp='yarn production'
+alias yp='yarn lint && yarn production'
 alias yre='rm -f yarn.lock && rm -rf node_modules && yarn'
 
 # often used folder shortcuts
