@@ -55,6 +55,9 @@ alias ta='tmux -u attach'
 alias brewup='brew update && brew upgrade && brew cu -a -f -y && brew cleanup'
 alias upall='brewup && ncu -g'
 
+# temp fix for dnsmasq-bootup
+alias dnsmasqfix='sudo brew services stop dnsmasq && sudo mkdir /usr/local/etc/dnsmasq.d && sudo brew services start dnsmasq'
+
 # other often used stuff, mostly node/npm
 alias ns="npm start"
 alias nb="npm run build"

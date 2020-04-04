@@ -8,6 +8,7 @@ brew install dnsmasq
 brew install git-flow
 brew install git-ftp
 brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
+brew install htop
 brew install httpd
 brew install imagemagick
 brew install mariadb
