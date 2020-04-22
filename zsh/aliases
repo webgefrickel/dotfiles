@@ -62,7 +62,7 @@ alias dnsmasqfix='sudo brew services stop dnsmasq && sudo mkdir /usr/local/etc/d
 alias ns="npm start"
 alias nb="npm run build"
 alias npmre='rm -f package-lock.json && rm -rf node_modules && npm install'
-alias ys='yarn start'
+alias ys='yarn develop'
 alias yp='yarn lint && yarn production'
 alias yre='rm -f yarn.lock && rm -rf node_modules && yarn'
 
