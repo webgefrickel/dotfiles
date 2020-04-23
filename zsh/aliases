@@ -53,7 +53,7 @@ alias ta='tmux -u attach'
 
 # all in one homebrew, gem update commands
 alias brewup='brew update && brew upgrade && brew cu -a -f -y && brew cleanup'
-alias upall='brewup && ncu -g'
+alias upall='brewup && npm-check -g'
 
 # temp fix for dnsmasq-bootup
 alias dnsmasqfix='sudo brew services stop dnsmasq && sudo mkdir /usr/local/etc/dnsmasq.d && sudo brew services start dnsmasq'
