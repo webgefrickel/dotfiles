@@ -16,9 +16,7 @@ brew install clipper
 brew install fzf
 brew install git
 brew install neovim --HEAD
-brew install python
 brew install tmux
-brew install ruby
 brew install zsh
 
 # install all submodules
@@ -45,6 +43,7 @@ mkdir -p ~/Library/LaunchAgents
 brew services start clipper
 
 # install deps + plugins for neovim
+brew install python
 pip3 install neovim
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh installer.sh ~/.config/nvim/dein

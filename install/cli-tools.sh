@@ -7,6 +7,7 @@ brew install curl
 brew install dnsmasq
 brew install git-flow
 brew install git-ftp
+brew install golang
 brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
 brew install htop
 brew install httpd
@@ -17,6 +18,7 @@ brew install nss
 brew install openssl
 brew install php@7.3
 brew install ripgrep
+brew install ruby
 brew install switchaudio-osx
 
 # dnsmasq

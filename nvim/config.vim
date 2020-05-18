@@ -39,6 +39,7 @@ set sidescrolloff=5
 set smartcase
 set softtabstop=2
 set tabstop=2
+set termguicolors
 set virtualedit=all
 set visualbell
 set wildmode=list:longest,list:full
