@@ -1,6 +1,6 @@
 // installed extensions are:
 // coc-yank coc-snippets coc-prettier coc-eslint coc-emmet coc-yaml coc-tsserver
-// coc-stylelint coc-phpls coc-markdownlint coc-json coc-html coc-css
+// coc-stylelint coc-phpls coc-markdownlint coc-json coc-html coc-css coc-calc coc-pairs
 {
   "suggest.minTriggerInputLength": 3,
   "suggest.noselect": false,
