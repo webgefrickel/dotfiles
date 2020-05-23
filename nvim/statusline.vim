@@ -21,10 +21,13 @@ function! MyStatusLine(mode)
   else
     let statusline .= "%#NoStatusLineColor#"
   endif
-  let statusline .= "\ %f\ %m%r %{StatuslineGitInfo()}\ "
+  let statusline .= "\ %f\ %m%r"
   let statusline .= "%= "
-  let statusline .= "%{toupper(mode())}"
-  let statusline .= "\ %{StatusLinePaste()}"
+  let statusline .= "\ %{fugitive#head()}"
+  let statusline .= "%= "
+  let statusline .= "%{coc#status()}"
+  let statusline .= "%= "
+  let statusline .= "%{toupper(mode())}\ %{StatusLinePaste()}"
   let statusline .= "%= "
   let statusline .= "\ %y\ %{&fileencoding?&fileencoding:&encoding}\/\%{&fileformat}\ \|\ %l:%c\ "
   return statusline

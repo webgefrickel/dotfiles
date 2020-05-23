@@ -32,6 +32,7 @@ set scrolljump=5
 set scrolloff=3
 set shiftround
 set shiftwidth=2
+set shortmess+=c
 set showbreak=\\\\\
 set showmatch
 set sidescroll=10
@@ -39,7 +40,7 @@ set sidescrolloff=5
 set smartcase
 set softtabstop=2
 set tabstop=2
-set termguicolors
+set updatetime=300
 set virtualedit=all
 set visualbell
 set wildmode=list:longest,list:full

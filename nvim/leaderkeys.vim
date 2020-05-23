@@ -14,26 +14,8 @@ function! s:ToggleZoom() abort
   endif
 endfunction
 
-function! s:TogglePrettier()
-  if g:ale_fix_on_save == 0
-    let g:ale_fix_on_save = 1
-    echomsg "Prettier fixing is now enabled!"
-  else
-    let g:ale_fix_on_save = 0
-    echomsg "Prettier fixing is now disabled!"
-  endif
-endfunction
-
-" shortcust for functions
 command! ToggleZoom call s:ToggleZoom()
-command! TogglePrettier call s:TogglePrettier()
-
-" zoomwindow
 nnoremap <leader>z :ToggleZoom<CR>
-
-" ale 
-nnoremap <leader>e :ALENext<CR>
-nnoremap <leader>f :TogglePrettier<CR>
 
 " open new vertical split and change to split
 nnoremap <leader>\ <C-w>v<C-w>l
