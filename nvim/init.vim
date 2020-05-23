@@ -3,6 +3,8 @@ set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 " let dein handle all the plugins and bundles
 call dein#begin(expand('~/.config/nvim/dein'))
+  call dein#add('shougo/dein.vim')
+
   call dein#add('christoomey/vim-tmux-navigator')
   call dein#add('easymotion/vim-easymotion')
   call dein#add('editorconfig/editorconfig-vim')
@@ -10,7 +12,6 @@ call dein#begin(expand('~/.config/nvim/dein'))
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'release' })
   call dein#add('sheerun/vim-polyglot')
-  call dein#add('shougo/dein.vim')
   call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-eunuch')
   call dein#add('tpope/vim-ragtag')
