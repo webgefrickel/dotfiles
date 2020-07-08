@@ -1,39 +1,39 @@
-function webvideo() {
+webvideo () {
   ffmpeg -i $1 -map_metadata -1 -c:a libopus -c:v libaom-av1 -crf 34 -b:v 0 -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -strict experimental $1.av1.mp4
   ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -c:v libx265 -crf 24 -preset veryslow -pix_fmt yuv420p -movflags +faststart -tag:v hvc1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $1.hevc.mp4
   ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $1.h264.mp4
 }
 
-function webvideonoaudio() {
+webvideonoaudio () {
   ffmpeg -i $1 -map_metadata -1 -an -c:v libaom-av1 -crf 34 -b:v 0 -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -strict experimental $1.av1.mp4
   ffmpeg -i $1 -map_metadata -1 -an -c:v libx265 -crf 24 -preset veryslow -pix_fmt yuv420p -movflags +faststart -tag:v hvc1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $1.hevc.mp4
   ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $1.h264.mp4
 }
 
-function webvideooptimized() {
+webvideooptimized () {
   ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=1920:trunc(ow/a/2)*2" $1.h264.mp4
 }
 
-function webvideooptimizednoaudio() {
+webvideooptimizednoaudio () {
   ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=1920:trunc(ow/a/2)*2" $1.h264.mp4
 }
 
-function webvideooptimizednoaudiomobile() {
-  ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=640:trunc(ow/a/2)*2" $1.h264.mp4
+webvideooptimizednoaudiomobile () {
+  ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=720:trunc(ow/a/2)*2" $1.h264.mp4
 }
 
-function webvideoposter() {
+webvideoposter () {
   ffmpeg -ss 00:00:02 -i $1 -frames:v 1 $1.jpg
 }
 
 # create and change to directory/folder
-function take() {
+take () {
   mkdir -p $1
   cd $1
 }
 
 # a function to get the current branch for git shortcuts etc
-function current_branch() {
+current_branch () {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
   echo ${ref#refs/heads/}
@@ -51,9 +51,9 @@ fancy-ctrl-z () {
 }
 
 # creates an archive from given directory
-mktar() { tar cvf  "${1%%/}.tar" "${1%%/}"; }
-mktgz() { tar cvzf "${1%%/}.tgz" "${1%%/}"; }
-mkzip() { zip -r   "${1%%/}"     "${1%%/}"; }
+mktar () { tar cvf  "${1%%/}.tar" "${1%%/}"; }
+mktgz () { tar cvzf "${1%%/}.tgz" "${1%%/}"; }
+mkzip () { zip -r   "${1%%/}"     "${1%%/}"; }
 
 # easy extract
 extract () {
@@ -75,5 +75,14 @@ extract () {
     esac
   else
     echo "'$1' is not a valid file!"
+  fi
+}
+
+wttr () {
+  if [[ -n "$1" ]]
+    then 
+      curl "wttr.in/$1?format=v2"
+    else 
+      curl "wttr.in/Leipzig?format=v2"
   fi
 }

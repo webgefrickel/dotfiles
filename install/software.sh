@@ -26,7 +26,6 @@ brew cask install telegram
 brew cask install transmission
 brew cask install vlc
 brew cask install vmware-fusion
-brew cask install zoomus
 
 # Drivers and other software
 brew tap homebrew/cask-fonts

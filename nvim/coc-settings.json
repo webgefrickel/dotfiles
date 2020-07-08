@@ -15,12 +15,32 @@
     "json",
     "yaml"
   ],
-  "snippets.ultisnips.directories": ["~/.config/nvim/snippets"],
+  "snippets.ultisnips.directories": [
+    "~/.config/nvim/snippets"
+  ],
   "snippets.extends": {
-    "php": ["html"],
-    "scss": ["css"],
-    "jsx": ["javascript"],
-    "javascriptreact": ["javascript"],
-    "typescript": ["javascript"]
-  }
+    "php": [
+      "html"
+    ],
+    "scss": [
+      "css"
+    ],
+    "jsx": [
+      "javascript"
+    ],
+    "javascriptreact": [
+      "javascript"
+    ],
+    "typescript": [
+      "javascript"
+    ]
+  },
+  // whyever: this seems broken so deactivate for now
+  "phpls.enable": false,
+  "typescript.suggest.enabled": false,
+  "typescript.validate.enable": false,
+  "typescript.format.enabled": false,
+  "tsserver.disableAutomaticTypeAcquisition": true,
+  "javascript.format.enabled": false,
+  "javascript.validate.enable": false
 }

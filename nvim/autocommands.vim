@@ -18,5 +18,8 @@ augroup init
   autocmd FileType mail setlocal comments+=nb:>
   autocmd FileType mail setlocal formatoptions+=awq
   autocmd BufNewFile,BufRead neomutt-* set ft=mail
+
+  " special settings for json5, css and scss: better BEM
+  autocmd BufNewFile,BufRead *.{json5,css,scss} set iskeyword+=-
 augroup END
 

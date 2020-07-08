@@ -55,8 +55,10 @@ alias ta='tmux -u attach'
 alias brewup='brew update && brew upgrade && brew cu -a -f -y && brew cleanup'
 alias upall='brewup && npm-check -gu'
 
-# temp fix for dnsmasq-bootup
+# temp fix for dnsmasq-bootup/unifi-java fuckup
+# <key>JVMRuntime</key> <string>adoptopenjdk-8.jdk</string>
 alias dnsmasqfix='sudo brew services stop dnsmasq && sudo mkdir /usr/local/etc/dnsmasq.d && sudo brew services start dnsmasq'
+alias unififix='sudo ln -s /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk /Applications/UniFi.app/Contents/PlugIns/adoptopenjdk-8.jdk && sudo v /Applications/UniFi.app/Contents/Info.plist'
 
 # other often used stuff, mostly node/npm
 alias ns="npm start"

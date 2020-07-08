@@ -66,5 +66,8 @@
 [push]
   default = simple
 
+[pull]
+  rebase = false
+
 [interactive]
   diffFilter = diff-highlight
