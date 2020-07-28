@@ -18,7 +18,6 @@ brew install nss
 brew install openssl
 brew install php@7.3
 brew install ripgrep
-brew install ruby
 brew install switchaudio-osx
 
 # dnsmasq

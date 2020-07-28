@@ -43,7 +43,12 @@ mkdir -p ~/Library/LaunchAgents
 brew services start clipper
 
 # install deps + plugins for neovim
-brew install python
+brew install ruby
+brew install python@3
+brew link python@3
+gem install neovim
+easy_install --user pip
+python -m pip install --user neovim
 pip3 install neovim
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh installer.sh ~/.config/nvim/dein
