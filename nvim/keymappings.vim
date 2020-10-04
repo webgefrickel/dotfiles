@@ -44,20 +44,6 @@ vmap ∆ ]egv
 vmap ˙ <gv
 vmap ¬ >gv
 
-" no help while mishitting ESC - awesome
-" just type :help if you need help is easier
-noremap <F1> <ESC>
-
-" hitting jj in insert mode escapes
-inoremap jj <ESC>
-inoremap jk <ESC>
-
 " deactivate stupid ex-mode and man-page stuff
 nnoremap Q <nop>
 nnoremap K <nop>
-
-" reload files when set autoread is active with F5
-nnoremap <F5> :checktime<CR>:redraw!<CR>
-
-" For when you forget to sudo.. Really Write the file.
-cmap w!! w !sudo tee % >/dev/null

@@ -1,9 +1,9 @@
 " fugitive
-nnoremap <silent> <leader>gs :G<CR><C-w>20+
-nnoremap <silent> <leader>gd :Gvdiff<CR><C-w>20+
-nnoremap <silent> <leader>gc :Gcommit<CR><C-w>20+
-nnoremap <silent> <leader>gw :Gwrite<CR><C-w>20+
-nnoremap <silent> <leader>gb :Gblame<CR><C-w>20+
+nnoremap <silent> <leader>gs :G<cr><C-w>20+
+nnoremap <silent> <leader>gd :Gvdiff<cr><C-w>20+
+nnoremap <silent> <leader>gc :Gcommit<cr><C-w>20+
+nnoremap <silent> <leader>gw :Gwrite<cr><C-w>20+
+nnoremap <silent> <leader>gb :Gblame<cr><C-w>20+
 
 " fzf
 nnoremap <silent> <space>, :Files<cr>
@@ -21,7 +21,7 @@ nmap <leader>S <Plug>(easymotion-overwin-f2)
 " COC.vim
 inoremap <silent><expr> <C-j>
   \ pumvisible() ? coc#_select_confirm() :
-  \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<cr>" :
   \ <SID>check_back_space() ? "\<C-j>" :
   \ coc#refresh()
 
@@ -34,11 +34,11 @@ let g:coc_snippet_next = '<c-j>'
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
-" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <cr>`.
 if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<cr>"
 else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
 endif
 
 " GoTo code navigation.
@@ -48,7 +48,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call <SID>show_documentation()<cr>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -88,4 +88,4 @@ nnoremap π :<C-u>CocList -A --normal yank<cr>
 " coc multiple cursors (very helpful for when in CocSearch)
 hi CocCursorRange ctermbg=139 ctermfg=234
 nmap <silent> <c-n> <Plug>(coc-cursors-word)*
-xmap <silent> <c-n> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn
+xmap <silent> <c-n> y/\V<C-r>=escape(@",'/\')<cr><cr>gN<Plug>(coc-cursors-range)gn
