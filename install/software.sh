@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 brew tap buo/cask-upgrade
+
 brew cask install 1password
 brew cask install adoptopenjdk8
 brew cask install alfred
@@ -14,7 +15,6 @@ brew cask install imagealpha
 brew cask install imageoptim
 brew cask install kap
 brew cask install karabiner-elements
-brew cask install microsoft-edge
 brew cask install microsoft-teams
 brew cask install qlcolorcode
 brew cask install qlstephen
@@ -42,4 +42,3 @@ defaults write org.n8gray.QLColorCode extraHLFlags '--replace-tabs=2'
 sudo xattr -cr ~/Library/QuickLook/*.qlgenerator
 qlmanage -r
 qlmanage -r cache
-

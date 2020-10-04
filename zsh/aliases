@@ -19,14 +19,14 @@ alias q='exit'
 
 # suffix-aliases for file-types (zsh only)
 alias -s css=$EDITOR
-alias -s scss=$EDITOR
-alias -s js=$EDITOR
 alias -s html=$EDITOR
+alias -s js=$EDITOR
+alias -s json=$EDITOR
+alias -s jsx=$EDITOR
 alias -s md=$EDITOR
+alias -s scss=$EDITOR
 alias -s txt=$EDITOR
-
-# clipper -- https://github.com/wincent/clipper
-alias clip="nc localhost 8377"
+alias -s yaml=$EDITOR
 
 # better ls / l command
 alias l='ls -alGp'

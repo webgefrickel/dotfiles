@@ -2,11 +2,9 @@
 brew tap homebrew-ffmpeg/ffmpeg
 
 # install additional brew packages -- see _install.sh too
-brew install composer
 brew install curl
 brew install dnsmasq
 brew install git-flow
-brew install git-ftp
 brew install golang
 brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
 brew install htop
