@@ -18,6 +18,7 @@ brew cask install karabiner-elements
 brew cask install microsoft-teams
 brew cask install qlcolorcode
 brew cask install qlstephen
+brew cask install reaper
 brew cask install signal
 brew cask install sketch
 brew cask install skype
