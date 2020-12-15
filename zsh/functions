@@ -11,7 +11,7 @@ webvideonoaudio () {
 }
 
 webvideooptimized () {
-  ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=1920:trunc(ow/a/2)*2" $1.h264.mp4
+  ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -c:v libx264 -crf 24 -preset veryfast -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=900:trunc(ow/a/2)*2" $1.h264.mp4
 }
 
 webvideooptimizednoaudio () {

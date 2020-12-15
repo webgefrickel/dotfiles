@@ -1,37 +1,37 @@
 #!/usr/bin/env bash
 brew tap buo/cask-upgrade
+brew tap homebrew/cask-fonts
 
-brew cask install 1password
-brew cask install adoptopenjdk8
-brew cask install alfred
-brew cask install carbon-copy-cloner
-brew cask install dash
-brew cask install doxie
-brew cask install firefox
-brew cask install forklift
-brew cask install google-chrome
-brew cask install hammerspoon
-brew cask install imagealpha
-brew cask install imageoptim
-brew cask install kap
-brew cask install karabiner-elements
-brew cask install microsoft-teams
-brew cask install qlcolorcode
-brew cask install qlstephen
-brew cask install reaper
-brew cask install signal
-brew cask install sketch
-brew cask install skype
-brew cask install spotify
-brew cask install telegram
-brew cask install transmission
-brew cask install vlc
-brew cask install vmware-fusion
+brew install --cask 1password
+brew install --cask adoptopenjdk8
+brew install --cask alfred
+brew install --cask carbon-copy-cloner
+brew install --cask dash
+brew install --cask doxie
+brew install --cask firefox
+brew install --cask forklift
+brew install --cask google-chrome
+brew install --cask hammerspoon
+brew install --cask imagealpha
+brew install --cask imageoptim
+brew install --cask kap
+brew install --cask karabiner-elements
+brew install --cask microsoft-teams
+brew install --cask qlcolorcode
+brew install --cask qlstephen
+brew install --cask reaper
+brew install --cask signal
+brew install --cask sketch
+brew install --cask skype
+brew install --cask spotify
+brew install --cask telegram
+brew install --cask transmission
+brew install --cask vlc
+brew install --cask vmware-fusion
 
 # Drivers and other software
-brew tap homebrew/cask-fonts
-brew cask install font-fira-code
-brew cask install ubiquiti-unifi-controller
+brew install --cask font-fira-code
+brew install --cask ubiquiti-unifi-controller
 
 # set some options for qlcolorcode
 defaults write org.n8gray.QLColorCode font "Fira Code"
