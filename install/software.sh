@@ -7,25 +7,21 @@ brew install --cask adoptopenjdk8
 brew install --cask alfred
 brew install --cask carbon-copy-cloner
 brew install --cask dash
-brew install --cask doxie
 brew install --cask firefox
 brew install --cask forklift
 brew install --cask google-chrome
 brew install --cask hammerspoon
 brew install --cask imagealpha
 brew install --cask imageoptim
-brew install --cask kap
 brew install --cask karabiner-elements
 brew install --cask microsoft-teams
 brew install --cask qlcolorcode
 brew install --cask qlstephen
 brew install --cask reaper
 brew install --cask signal
-brew install --cask sketch
 brew install --cask skype
 brew install --cask spotify
 brew install --cask telegram
-brew install --cask transmission
 brew install --cask vlc
 brew install --cask vmware-fusion
 
