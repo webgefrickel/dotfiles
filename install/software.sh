@@ -15,9 +15,9 @@ brew install --cask imagealpha
 brew install --cask imageoptim
 brew install --cask karabiner-elements
 brew install --cask microsoft-teams
+brew install --cask numi
 brew install --cask qlcolorcode
 brew install --cask qlstephen
-brew install --cask reaper
 brew install --cask signal
 brew install --cask skype
 brew install --cask spotify

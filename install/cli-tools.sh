@@ -5,7 +5,6 @@ brew tap homebrew-ffmpeg/ffmpeg
 brew install curl
 brew install dnsmasq
 brew install git-flow
-brew install golang
 brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
 brew install htop
 brew install httpd
@@ -14,7 +13,7 @@ brew install mariadb
 brew install mkcert
 brew install nss
 brew install openssl
-brew install php@7.3
+brew install php@7.4
 brew install ripgrep
 brew install switchaudio-osx
 
