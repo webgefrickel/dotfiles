@@ -1,0 +1,73 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1 localhost
+255.255.255.255 broadcasthost
+::1 localhost
+
+## 
+# Block procrastination websites
+##
+
+# Main time sinks
+127.0.0.1 reddit.com
+127.0.0.1 www.reddit.com
+127.0.0.1 imgur.com
+127.0.0.1 www.imgur.com
+127.0.0.1 youtube.com
+127.0.0.1 www.youtube.com
+127.0.0.1 netflix.com
+127.0.0.1 www.netflix.com
+127.0.0.1 twitter.com
+127.0.0.1 www.twitter.com
+
+# Hobbies (also reddit)
+127.0.0.1 bikepacking.com
+127.0.0.1 www.bikepacking.com
+127.0.0.1 ultraleicht-trekking.de
+127.0.0.1 www.ultraleicht-trekking.de
+
+# Useless MTG gaming stuff
+127.0.0.1 scryfall.com
+127.0.0.1 www.scryfall.com
+127.0.0.1 aetherhub.com
+127.0.0.1 www.aetherhub.com
+127.0.0.1 wizards.com
+127.0.0.1 www.wizards.com
+127.0.0.1 gatherer.wizards.com
+
+# Tech stuff
+127.0.0.1 golem.de
+127.0.0.1 www.golem.de
+127.0.0.1 heise.de
+127.0.0.1 www.heise.de
+127.0.0.1 macrumors.com
+127.0.0.1 www.macrumors.com
+127.0.0.1 9to5mac.com
+127.0.0.1 www.9to5mac.com
+
+# News, zeit.de and tagesschau.de are OK
+127.0.0.1 spiegel.de
+127.0.0.1 www.spiegel.de
+127.0.0.1 bild.de
+127.0.0.1 www.bild.de
+127.0.0.1 independent.co.uk
+127.0.0.1 www.independent.co.uk
+127.0.0.1 cnn.com
+127.0.0.1 www.cnn.com
+127.0.0.1 edition.cnn.com
+127.0.0.1 nytimes.com
+127.0.0.1 www.nytimes.com
+127.0.0.1 vice.com
+127.0.0.1 www.vice.com
+
+# Shopping
+127.0.0.1 amazon.de
+127.0.0.1 www.amazon.com
+127.0.0.1 ultralightoutdoorgear.co.uk
+127.0.0.1 www.ultralightoutdoorgear.co.uk
+127.0.0.1 trekking-lite-store.com
+127.0.0.1 www.trekking-lite-store.com
