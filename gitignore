@@ -23,6 +23,7 @@ node_modules
 bower_components
 
 # OS or editor folders and temporary and other files
+Session.vim
 .DS_Store
 Thumbs.db
 .cache
