@@ -15,7 +15,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 brew install clipper
 brew install fzf
 brew install git
-brew install neovim --HEAD
+brew install neovim
 brew install tmux
 brew install zsh
 
@@ -42,7 +42,7 @@ ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 mkdir -p ~/Library/LaunchAgents
 brew services start clipper
 
-# install deps + plugins for neovim
+# install deps + plugins for neovim and tmux
 brew install ruby
 brew install python@3
 brew link python@3
@@ -50,8 +50,10 @@ gem install neovim
 easy_install --user pip
 python -m pip install --user neovim
 pip3 install neovim
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh installer.sh ~/.config/nvim/dein
+sh ./installer.sh ~/.cache/dein
 rm installer.sh
 
 # set xterm/screen terminals to enable italic fonts in terminal
