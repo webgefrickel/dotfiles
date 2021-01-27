@@ -1,20 +1,13 @@
-# make aliases and other stuff work in sudo
+# Make aliases and other stuff work in sudo
 alias sudo='sudo '
-
-# always use nvim, see exports
 alias vim=$EDITOR
 alias vi=$EDITOR
 alias v=$EDITOR
 alias vimdiff='$EDITOR -d'
 alias vdiff='$EDITOR -d'
 alias vd='$EDITOR -d'
-
-# Easier navigation: .., ..., ~ and -
-alias ~="cd ~"
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 alias q='exit'
 
 # suffix-aliases for file-types (zsh only)
@@ -28,12 +21,9 @@ alias -s scss=$EDITOR
 alias -s txt=$EDITOR
 alias -s yaml=$EDITOR
 
-# better ls / l command
-alias l='ls -alGp'
-
 # mutt
+alias mutt='neomutt'
 alias m='neomutt'
-# alias for syncing everything
 alias O="cd ~ && mbsync -a && mu index && vdirsyncer sync"
 
 # Gitty gitgit
@@ -67,11 +57,6 @@ alias npmre='rm -f package-lock.json && rm -rf node_modules && npm install'
 alias ys='yarn develop'
 alias yp='yarn lint && yarn production'
 alias yre='rm -f yarn.lock && rm -rf node_modules && yarn'
-
-# often used folder shortcuts
-alias web='cd ~/Sites && l'
-alias rep='cd ~/Repositories && l'
-alias dot='cd ~/Dotfiles && l'
 
 # random usefull stuff
 alias dnsflush='sudo dscacheutil -flushcache'

@@ -46,13 +46,11 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history
+setopt long_list_jobs
 
 # smart urls
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
-
-# jobs
-setopt long_list_jobs
 
 # source some zsh plugins
 source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -61,7 +59,8 @@ source $HOME/dotfiles/zsh/zsh-completions/zsh-completions.plugin.zsh
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# jump
+eval "$(jump shell)"
+
 # zsh-completions
 fpath=($HOME/dotfiles/zsh/zsh-completions/src $fpath)
-
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).

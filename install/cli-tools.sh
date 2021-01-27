@@ -9,13 +9,17 @@ brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
 brew install htop
 brew install httpd
 brew install imagemagick
+brew install jump
 brew install mariadb
 brew install mkcert
+brew install nnn
 brew install nss
 brew install openssl
 brew install php@7.4
 brew install ripgrep
 brew install switchaudio-osx
+brew install trash-cli
+brew install tree
 
 # dnsmasq
 echo 'address=/.localhost/127.0.0.1' > /usr/local/etc/dnsmasq.conf

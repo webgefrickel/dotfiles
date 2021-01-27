@@ -12,6 +12,11 @@ nnoremap <silent> <space>l :Lines<cr>
 nnoremap <silent> <space>a :Rg<cr>
 nnoremap <silent> <space>h :History:<cr>
 
+" nnn integration
+let g:nnn#set_default_mappings = 0
+let g:nnn#command = 'nnn -deH'
+nnoremap <silent> - :NnnPicker %:p:h<CR>
+
 " EasyMotion
 let g:EasyMotion_do_mapping=0
 let g:EasyMotion_smartcase=1
@@ -68,7 +73,6 @@ nmap <silent> <C-s> <Plug>(coc-range-select)
 xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Map function and class text objects
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 xmap if <Plug>(coc-funcobj-i)
 omap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)

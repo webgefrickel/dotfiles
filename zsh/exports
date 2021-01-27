@@ -47,3 +47,13 @@ export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc"
 export PAGER="less"
 export LESS="-R"
 export LC_CTYPE=$LANG
+
+# nnn
+export NNN_BMS='d:~/Dotfiles;s:~/Sites;l:~/Downloads;h:~/'
+export NNN_FIFO='/tmp/nnn.fifo'
+export NNN_TRASH=1
+export NNN_PLUG='o:fzcd;j:autojump;p:preview-tui'
+export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$"
+
+# n node version management
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).

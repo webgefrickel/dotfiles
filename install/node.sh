@@ -9,5 +9,4 @@ npm install -g fkill-cli
 npm install -g neovim
 npm install -g npm-check
 npm install -g pure-prompt
-npm install -g trash-cli
 npm install -g yarn
