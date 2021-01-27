@@ -46,10 +46,12 @@ set visualbell
 set wildmode=list:longest,list:full
 set wrapscan
 
-filetype plugin indent on
-syntax on
+" default language utf-8
+language en_US.UTF-8
 
 " deactivate syntax highlighting when diffing
+filetype plugin indent on
+syntax on
 if &diff
   syntax off
 endif
@@ -59,4 +61,3 @@ let g:hybrid_reduced_contrast=0
 let g:hybrid_custom_term_colors=1
 set background=dark
 colorscheme hybrid
-

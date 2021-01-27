@@ -1,9 +1,7 @@
-language en_US.UTF-8
-set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
-
-" let dein handle all the plugins and bundles
-call dein#begin(expand('~/.config/nvim/dein'))
-  call dein#add('shougo/dein.vim')
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   call dein#add('christoomey/vim-tmux-navigator')
   call dein#add('easymotion/vim-easymotion')
@@ -13,9 +11,11 @@ call dein#begin(expand('~/.config/nvim/dein'))
   call dein#add('junegunn/gv.vim')
   call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'release' })
   call dein#add('sheerun/vim-polyglot')
+  call dein#add('tpope/vim-apathy')
   call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-eunuch')
   call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-obsession')
   call dein#add('tpope/vim-ragtag')
   call dein#add('tpope/vim-repeat')
   call dein#add('tpope/vim-surround')
@@ -25,7 +25,10 @@ call dein#begin(expand('~/.config/nvim/dein'))
   call dein#add('wellle/targets.vim')
   call dein#add('wellle/tmux-complete.vim')
   call dein#add('wincent/terminus')
-call dein#end()
+
+  call dein#end()
+  call dein#save_state()
+endif
 
 " load the default config and mappings
 source ~/.config/nvim/config.vim
