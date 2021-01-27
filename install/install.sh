@@ -51,6 +51,7 @@ easy_install --user pip
 python -m pip install --user neovim
 pip3 install neovim
 
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh ./installer.sh ~/.cache/dein
