@@ -1,4 +1,5 @@
 local tiling = require 'hs.tiling'
+local vimouse = require('vimouse')
 local appliaction = require 'hs.application'
 local hyper = { 'cmd', 'alt', 'shift', 'ctrl' }
 
@@ -37,6 +38,9 @@ local function fullsize(window)
   frame.h = frame.h
   window:setFrame(frame)
 end
+
+-- Move and click mouse via keyboard
+vimouse(hyper, 'm')
 
 hs.hotkey.bind(hyper, 'f', function() tiling.toggleFloat(fullsize); moveMouse() end)
 hs.hotkey.bind(hyper, 'r', function() tiling.retile(); moveMouse() end)
