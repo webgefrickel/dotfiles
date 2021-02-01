@@ -39,8 +39,7 @@ pip3 install neovim
 
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-sh -c 'curl -fLo "~/.config/nvim/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+sh -c 'curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # dnsmasq
 echo 'address=/.localhost/127.0.0.1' > /usr/local/etc/dnsmasq.conf
@@ -49,6 +48,6 @@ sudo mkdir -v /etc/resolver
 sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/localhost'
 
 # php and ssl
-sudo pecl install imagick
+pecl install imagick
 mkcert -install
 mkcert localhost "dev.localhost" "*.dev.localhost"
