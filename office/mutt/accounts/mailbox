@@ -14,7 +14,7 @@ alternates ^kontakt@webgefrickel.de$ ^s.rademacker@mailbox.org$
 # custom signaure
 set signature = ~/.mutt/signatures/work
 
-color status cyan default
+color status green default
 
 macro index o "<shell-escape>mbsync mailbox<enter>" "run mbsync to sync mail for this account"
 

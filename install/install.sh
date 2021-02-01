@@ -11,13 +11,12 @@ brew tap homebrew/services
 # brew paths
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-# install some neccessary brew packages
-brew install clipper
-brew install fzf
 brew install git
-brew install neovim
-brew install tmux
+brew install git-flow
+brew install python@3
+brew install ruby
 brew install zsh
+brew link python@3
 
 # install all submodules
 git submodule init
@@ -34,28 +33,6 @@ ln -s ~/dotfiles/nvim ~/.config/nvim
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
-
-# install fzf
-/usr/local/opt/fzf/install
-
-# clipper
-mkdir -p ~/Library/LaunchAgents
-brew services start clipper
-
-# install deps + plugins for neovim and tmux
-brew install ruby
-brew install python@3
-brew link python@3
-gem install neovim
-easy_install --user pip
-python -m pip install --user neovim
-pip3 install neovim
-
-curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh ~/.cache/dein
-rm installer.sh
 
 # set xterm/screen terminals to enable italic fonts in terminal
 # set terminal to xterm-256color!

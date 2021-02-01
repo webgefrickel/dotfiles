@@ -1,7 +1,7 @@
 function! StatuslineGitInfo()
   let git = fugitive#head()
   if git != ''
-    return " ".fugitive#head()
+    return git
   else
     return ""
 endfunction
@@ -33,9 +33,6 @@ function! MyStatusLine(mode)
   return statusline
 endfunction
 
-hi StatusLineColor ctermbg=White guibg=White ctermfg=Black guifg=Black
-hi NoStatusLineColor ctermbg=NONE guibg=NONE ctermfg=LightGrey guifg=LightGrey
 au WinEnter * setlocal statusline=%!MyStatusLine('Enter')
 au WinLeave * setlocal statusline=%!MyStatusLine('Leave')
-
 set statusline=%!MyStatusLine('Enter')

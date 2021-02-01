@@ -10,17 +10,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias q='exit'
 
-# suffix-aliases for file-types (zsh only)
-alias -s css=$EDITOR
-alias -s html=$EDITOR
-alias -s js=$EDITOR
-alias -s json=$EDITOR
-alias -s jsx=$EDITOR
-alias -s md=$EDITOR
-alias -s scss=$EDITOR
-alias -s txt=$EDITOR
-alias -s yaml=$EDITOR
-
 # mutt
 alias mutt='neomutt'
 alias m='neomutt'

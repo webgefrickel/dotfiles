@@ -1,30 +1,5 @@
-webvideo () {
-  ffmpeg -i $1 -map_metadata -1 -c:a libopus -c:v libaom-av1 -crf 34 -b:v 0 -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -strict experimental $1.av1.mp4
-  ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -c:v libx265 -crf 24 -preset veryslow -pix_fmt yuv420p -movflags +faststart -tag:v hvc1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $1.hevc.mp4
-  ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $1.h264.mp4
-}
-
-webvideonoaudio () {
-  ffmpeg -i $1 -map_metadata -1 -an -c:v libaom-av1 -crf 34 -b:v 0 -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -strict experimental $1.av1.mp4
-  ffmpeg -i $1 -map_metadata -1 -an -c:v libx265 -crf 24 -preset veryslow -pix_fmt yuv420p -movflags +faststart -tag:v hvc1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $1.hevc.mp4
-  ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $1.h264.mp4
-}
-
-webvideooptimized () {
-  ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -c:v libx264 -crf 24 -preset veryfast -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=900:trunc(ow/a/2)*2" $1.h264.mp4
-}
-
-webvideooptimizednoaudio () {
-  ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=1920:trunc(ow/a/2)*2" $1.h264.mp4
-}
-
-webvideooptimizednoaudiomobile () {
-  ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=720:trunc(ow/a/2)*2" $1.h264.mp4
-}
-
-webvideoposter () {
-  ffmpeg -ss 00:00:02 -i $1 -frames:v 1 $1.jpg
-}
+# TERMINAL INTEGRATIONS #
+#########################
 
 l () {
   if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
@@ -34,7 +9,7 @@ l () {
 
   export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
 
-  nnn -deH "$@"
+  nnn "$@"
 
   if [ -f "$NNN_TMPFILE" ]; then
     . "$NNN_TMPFILE"
@@ -42,20 +17,17 @@ l () {
   fi
 }
 
-# create and change to directory/folder
 take () {
   mkdir -p $1
   cd $1
 }
 
-# a function to get the current branch for git shortcuts etc
 current_branch () {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
   echo ${ref#refs/heads/}
 }
 
-# easy vim/terminal switch
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     BUFFER="fg"
@@ -66,6 +38,9 @@ fancy-ctrl-z () {
   fi
 }
 
+# CUSTOM FUNCTIONS #
+####################
+
 wttr () {
   if [[ -n "$1" ]]
     then 
@@ -73,4 +48,24 @@ wttr () {
     else 
       curl "wttr.in/Leipzig?format=v2"
   fi
+}
+
+webvideo () {
+  ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $1.h264.mp4
+}
+
+webvideonoaudio () {
+  ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $1.h264.mp4
+}
+
+webvideo1080p () {
+  ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=1920:trunc(ow/a/2)*2" $1.h264.mp4
+}
+
+webvideo720p () {
+  ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=1280:trunc(ow/a/2)*2" $1.h264.mp4
+}
+
+webvideoposter () {
+  ffmpeg -ss 00:00:02 -i $1 -frames:v 1 $1.jpg
 }

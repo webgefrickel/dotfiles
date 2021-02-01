@@ -1,4 +1,3 @@
-" define a group `init` and initialize.
 augroup init
   autocmd!
 
@@ -23,3 +22,6 @@ augroup init
   autocmd BufNewFile,BufRead *.{json5,css,scss} set iskeyword+=-
 augroup END
 
+if &diff
+  syntax off
+endif

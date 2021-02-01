@@ -46,18 +46,9 @@ set visualbell
 set wildmode=list:longest,list:full
 set wrapscan
 
-" default language utf-8
-language en_US.UTF-8
-
-" deactivate syntax highlighting when diffing
-filetype plugin indent on
-syntax on
-if &diff
-  syntax off
-endif
-
-" hybrid color scheme
-let g:hybrid_reduced_contrast=0
-let g:hybrid_custom_term_colors=1
+" language and colorscheme
 set background=dark
-colorscheme hybrid
+set termguicolors
+let g:gruvbox_italic=1
+autocmd vimenter * ++nested colorscheme gruvbox
+language en_US.UTF-8

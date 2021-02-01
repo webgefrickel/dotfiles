@@ -14,7 +14,7 @@ alternates ^steffen.rademacker@viu.ch$
 # custom signaure
 set signature = ~/.mutt/signatures/default
 
-color status red default
+color status color208 color235 
 
 macro index o "<shell-escape>mbsync viu<enter>" "run mbsync to sync mail for this account"
 

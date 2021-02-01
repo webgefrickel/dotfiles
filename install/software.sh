@@ -13,6 +13,7 @@ brew install --cask google-chrome
 brew install --cask hammerspoon
 brew install --cask imagealpha
 brew install --cask imageoptim
+brew install --cask iterm2
 brew install --cask karabiner-elements
 brew install --cask microsoft-teams
 brew install --cask numi
