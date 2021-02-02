@@ -24,37 +24,30 @@
     "yaml"
   ],
 
+  // autofixing via linters
+  "eslint.autoFixOnSave": true,
+  "stylelintplus.autoFixOnSave": true,
+
+  // we use eslint instaed
+  "javascript.format.enabled": false,
+  "javascript.validate.enable": false,
+  "typescript.suggest.enabled": false,
+  "typescript.validate.enable": false,
+  "typescript.format.enabled": false,
+  "tsserver.disableAutomaticTypeAcquisition": true,
+
   "suggest.minTriggerInputLength": 3,
   "suggest.noselect": false,
   "suggest.enablePreselect": true,
   "suggest.maxCompleteItemCount": 20,
 
   "snippets.snipmate.enable": false,
-  "snippets.ultisnips.directories": [ "~/.config/nvim/snippets" ],
+  "snippets.ultisnips.directories": ["~/.config/nvim/snippets"],
   "snippets.extends": {
-    "php": [
-      "html"
-    ],
-    "scss": [
-      "css"
-    ],
-    "jsx": [
-      "javascript"
-    ],
-    "javascriptreact": [
-      "javascript"
-    ],
-    "typescript": [
-      "javascript"
-    ]
-  },
-
-  "javascript.format.enabled": false,
-  "javascript.validate.enable": false,
-
-  "tsserver.disableAutomaticTypeAcquisition": true,
-
-  "typescript.suggest.enabled": false,
-  "typescript.validate.enable": false,
-  "typescript.format.enabled": false
+    "php": ["html"],
+    "scss": ["css"],
+    "jsx": ["javascript"],
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  }
 }
