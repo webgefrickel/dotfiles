@@ -1,12 +1,20 @@
-// installed extensions are:
-// coc-yank coc-snippets coc-prettier coc-eslint coc-emmet coc-yaml coc-tsserver
-// coc-stylelint coc-phpls coc-markdownlint coc-json coc-html coc-css coc-calc coc-pairs
+// Installed extensions are:
+////////////////////////////
+// coc-calc
+// coc-css
+// coc-eslint
+// coc-html Current version 1.4.1 is up to date.
+// coc-json Current version 1.3.3 is up to date.
+// coc-markdownlint Current version 1.10.1 is up to date.
+// coc-pairs Current version 1.2.22 is up to date.
+// coc-phpls Current version 2.2.0 is up to date.
+// coc-snippets Current version 2.4.0 is up to date.
+// coc-stylelintplus Current version 1.4.0 is up to date.
+// coc-tsserver Current version 1.6.7 is up to date.
+// coc-yaml Current version 1.3.0 is up to date.
+// coc-yank Current version 1.2.0 is up to date.
+
 {
-  "suggest.minTriggerInputLength": 3,
-  "suggest.noselect": false,
-  "suggest.enablePreselect": true,
-  "suggest.maxCompleteItemCount": 20,
-  "snippets.snipmate.enable": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascriptreact",
     "javascript",
@@ -15,9 +23,14 @@
     "json",
     "yaml"
   ],
-  "snippets.ultisnips.directories": [
-    "~/.config/nvim/snippets"
-  ],
+
+  "suggest.minTriggerInputLength": 3,
+  "suggest.noselect": false,
+  "suggest.enablePreselect": true,
+  "suggest.maxCompleteItemCount": 20,
+
+  "snippets.snipmate.enable": false,
+  "snippets.ultisnips.directories": [ "~/.config/nvim/snippets" ],
   "snippets.extends": {
     "php": [
       "html"
@@ -35,12 +48,13 @@
       "javascript"
     ]
   },
-  // whyever: this seems broken so deactivate for now
-  "phpls.enable": false,
+
+  "javascript.format.enabled": false,
+  "javascript.validate.enable": false,
+
+  "tsserver.disableAutomaticTypeAcquisition": true,
+
   "typescript.suggest.enabled": false,
   "typescript.validate.enable": false,
-  "typescript.format.enabled": false,
-  "tsserver.disableAutomaticTypeAcquisition": true,
-  "javascript.format.enabled": false,
-  "javascript.validate.enable": false
+  "typescript.format.enabled": false
 }
