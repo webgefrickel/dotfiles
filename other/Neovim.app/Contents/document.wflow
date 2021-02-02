@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>419</string>
+	<string>492</string>
 	<key>AMApplicationVersion</key>
-	<string>2.6</string>
+	<string>2.10</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>actions</key>
@@ -51,7 +51,30 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input}	set the_path to POSIX path of input	set cmd to "nvim " &amp; quoted form of the_path	tell application "System Events" to set terminalIsRunning to exists application process "Terminal"	tell application "Terminal"		activate		if terminalIsRunning is true then			do script with command cmd		else			do script with command cmd in window 1		end if	end tellend run</string>
+					<string>on run {input, parameters}
+	set paths to ""
+	repeat with i from 1 to length of input
+		set cur to item i of input
+		set paths to paths &amp; " " &amp; quote &amp; POSIX path of cur &amp; quote
+	end repeat
+	set cmd to "vim -p" &amp; paths
+	tell application "iTerm"
+		set created to false
+		if not (exists current window) then
+			create window with profile "Default"
+			set created to true
+		end if
+		tell current window
+			if not created then
+				create tab with profile "Default"
+			end if
+			tell current session
+				activate
+				write text cmd
+			end tell
+		end tell
+	end tell
+end run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -68,15 +91,15 @@
 				<key>Class Name</key>
 				<string>RunScriptAction</string>
 				<key>InputUUID</key>
-				<string>3526A534-47A2-4C57-BA3E-3FC7004E5ED4</string>
+				<string>EE815918-C8D4-4CF4-9059-1F0A03408725</string>
 				<key>Keywords</key>
 				<array>
 					<string>Run</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>55CCF874-3A0D-4364-BE1A-BB05F07B364C</string>
+				<string>E235EDC5-BF18-4ED7-A16A-8DA4A9B13520</string>
 				<key>UUID</key>
-				<string>5ECF9CF3-F18A-47C1-A7A9-9F850E413B5A</string>
+				<string>860D55BA-363F-42F9-91C1-5C6C397D2663</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -107,7 +130,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>526.000000:316.000000</string>
+				<string>309.000000:315.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
