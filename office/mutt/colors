@@ -2,7 +2,7 @@ color attachment  color109 default
 color bold        color229 default
 color error       color167 default
 color hdrdefault  color246 default
-color indicator   color223 color237
+color indicator   color235 color66
 color markers     color243 default
 color normal      color223 default
 color quoted      color250 default
