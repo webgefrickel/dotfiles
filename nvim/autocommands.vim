@@ -11,11 +11,12 @@ augroup init
   autocmd FileType mail,markdown setlocal spell
   autocmd FileType mail,markdown setlocal wrap
   autocmd FileType mail,markdown setlocal spelllang=en,de
+  autocmd FileType mail,markdown setlocal textwidth=80
+  autocmd FileType mail,markdown setlocal formatoptions+=q
 
-  " special settings for writing emails, flowed text at 72 width
-  autocmd FileType mail setlocal textwidth=72
+  " correctly indent comments/quoted text in mails
   autocmd FileType mail setlocal comments+=nb:>
-  autocmd FileType mail setlocal formatoptions+=awq
+  autocmd FileType mail setlocal formatoptions+=aw
   autocmd BufNewFile,BufRead neomutt-* set ft=mail
 
   " special settings for json5, css and scss: better BEM
