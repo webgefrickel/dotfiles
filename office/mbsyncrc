@@ -20,38 +20,38 @@ Path ~/Mail/mailbox/
 Inbox ~/Mail/mailbox/INBOX
 
 Channel mailbox-inbox
-Master :mailbox-remote:"INBOX"
-Slave :mailbox-local:INBOX
+Far :mailbox-remote:"INBOX"
+Near :mailbox-local:INBOX
 Create Both
 Expunge Both
 
 Channel mailbox-archive
-Master :mailbox-remote:"Archiv"
-Slave :mailbox-local:archive
+Far :mailbox-remote:"Archiv"
+Near :mailbox-local:archive
 Create Both
 Expunge Both
 
 Channel mailbox-drafts
-Master :mailbox-remote:"Entw&APw-rfe"
-Slave :mailbox-local:drafts
+Far :mailbox-remote:"Entw&APw-rfe"
+Near :mailbox-local:drafts
 Create Both
 Expunge Both
 
 Channel mailbox-sent
-Master :mailbox-remote:"Gesendete Objekte"
-Slave :mailbox-local:sent
+Far :mailbox-remote:"Gesendete Objekte"
+Near :mailbox-local:sent
 Create Both
 Expunge Both
 
 Channel mailbox-trash
-Master :mailbox-remote:"Papierkorb"
-Slave :mailbox-local:trash
+Far :mailbox-remote:"Papierkorb"
+Near :mailbox-local:trash
 Create Both
 Expunge Both
 
 Channel mailbox-junk
-Master :mailbox-remote:"Spam"
-Slave :mailbox-local:junk
+Far :mailbox-remote:"Spam"
+Near :mailbox-local:junk
 Create Both
 Expunge Both
 
@@ -85,38 +85,38 @@ Path ~/Mail/viu/
 Inbox ~/Mail/viu/INBOX
 
 Channel viu-inbox
-Master :viu-remote:"INBOX"
-Slave :viu-local:INBOX
+Far :viu-remote:"INBOX"
+Near :viu-local:INBOX
 Create Both
 Expunge Both
 
 Channel viu-archive
-Master :viu-remote:"Archive"
-Slave :viu-local:archive
+Far :viu-remote:"Archive"
+Near :viu-local:archive
 Create Both
 Expunge Both
 
 Channel viu-drafts
-Master :viu-remote:"Entw&APw-rfe"
-Slave :viu-local:drafts
+Far :viu-remote:"Entw&APw-rfe"
+Near :viu-local:drafts
 Create Both
 Expunge Both
 
 Channel viu-sent
-Master :viu-remote:"Gesendete Elemente"
-Slave :viu-local:sent
+Far :viu-remote:"Gesendete Elemente"
+Near :viu-local:sent
 Create Both
 Expunge Both
 
 Channel viu-trash
-Master :viu-remote:"Gel&APY-schte Elemente"
-Slave :viu-local:trash
+Far :viu-remote:"Gel&APY-schte Elemente"
+Near :viu-local:trash
 Create Both
 Expunge Both
 
 Channel viu-junk
-Master :viu-remote:"Junk-E-Mail"
-Slave :viu-local:junk
+Far :viu-remote:"Junk-E-Mail"
+Near :viu-local:junk
 Create Both
 Expunge Both
 
