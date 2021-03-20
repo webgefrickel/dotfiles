@@ -55,12 +55,11 @@ zle -N self-insert url-quote-magic
 # source some zsh plugins
 source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/dotfiles/zsh/zsh-completions/zsh-completions.plugin.zsh
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# jump
-eval "$(jump shell)"
-
 # zsh-completions
 fpath=($HOME/dotfiles/zsh/zsh-completions/src $fpath)
+
+# other tools init
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(jump shell)"
+eval "$(rbenv init -)"
+eval "$(pyenv init -)"

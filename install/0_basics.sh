@@ -4,43 +4,42 @@
 xcode-select --install
 
 # install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew doctor
-brew tap homebrew/services
 
 # brew paths
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+# basics
+brew install curl
 brew install git
 brew install git-flow
-brew install python@3
-brew install ruby
+brew install openssl
 brew install zsh
-brew link python@3
 
 # install all submodules
+cd ~/dotfiles
 git submodule init
 git submodule update
+git submodule foreach git pull origin master
 
-# link the dotfiles
+# basic config symlinks
 mkdir ~/.config
 ln -s ~/dotfiles/editorconfig ~/.editorconfig
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
-ln -s ~/dotfiles/hammerspoon ~/.hammerspoon
-ln -s ~/dotfiles/karabiner ~/.config/karabiner
-ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 
 # set xterm/screen terminals to enable italic fonts in terminal
-# set terminal to xterm-256color!
-# now restart your terminal and hope for the best
 tic ~/dotfiles/other/xterm-256color.terminfo
 
-# set zsh to the default
+# zsh as default
 sudo vim /etc/shells
 chsh -s /usr/local/bin/zsh
 /usr/bin/env zsh
 sudo launchctl config user path $PATH
+
+autoload -Uz compinit
+compinit
+# now restart your terminal and proceed...

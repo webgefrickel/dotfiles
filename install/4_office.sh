@@ -12,14 +12,22 @@ brew install w3m
 brew install vdirsyncer
 
 # python dependencies (for mutt)
-sudo pip3 install -I urlscan
+pip install urlscan
 
+# create folders
 mkdir ~/Contacts
 mkdir ~/Mail
 mkdir ~/Mail/mailbox
 mkdir ~/Mail/viu
+mkdir ~/Mail/===================
+
+# link config files
 ln -s ~/dotfiles/office/mutt ~/.mutt
 ln -s ~/dotfiles/office/mbsyncrc ~/.mbsyncrc
 ln -s ~/dotfiles/office/msmtprc ~/.msmtprc
 ln -s ~/dotfiles/office/khard ~/.config/khard
 ln -s ~/dotfiles/office/vdirsyncer ~/.vdirsyncer
+
+# now: create the correct keychain-entries in system keychain
+# for the mailboxes (compare msmtp/mbsync-config) and start
+# the first sync with "O". Usually install 1password first ;)

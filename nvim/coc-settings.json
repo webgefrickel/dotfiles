@@ -3,16 +3,16 @@
 // coc-calc
 // coc-css
 // coc-eslint
-// coc-html Current version 1.4.1 is up to date.
-// coc-json Current version 1.3.3 is up to date.
-// coc-markdownlint Current version 1.10.1 is up to date.
-// coc-pairs Current version 1.2.22 is up to date.
-// coc-phpls Current version 2.2.0 is up to date.
-// coc-snippets Current version 2.4.0 is up to date.
-// coc-stylelintplus Current version 1.4.0 is up to date.
-// coc-tsserver Current version 1.6.7 is up to date.
-// coc-yaml Current version 1.3.0 is up to date.
-// coc-yank Current version 1.2.0 is up to date.
+// coc-html
+// coc-json
+// coc-markdownlint
+// coc-pairs
+// coc-phpls
+// coc-snippets
+// coc-stylelintplus
+// coc-tsserver
+// coc-yaml
+// coc-yank
 
 {
   "coc.preferences.formatOnSaveFiletypes": [
