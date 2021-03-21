@@ -20,6 +20,7 @@ brew install --cask microsoft-teams
 brew install --cask numi
 brew install --cask qlcolorcode
 brew install --cask qlstephen
+brew install --cask sequel-pro
 brew install --cask signal
 brew install --cask skype
 brew install --cask spotify
@@ -46,3 +47,11 @@ defaults write org.n8gray.QLColorCode extraHLFlags '--replace-tabs=2'
 sudo xattr -cr ~/Library/QuickLook/*.qlgenerator
 qlmanage -r
 qlmanage -r cache
+
+# firefox-extensions: 
+# vimium ff, dark reader, privacy badger, ublock origin, 
+# 1passwd classic extension, react developer tools
+
+# other software:
+# bill: https://billtheapp.com/
+# citrix: https://www.citrix.com/downloads/workspace-app/mac/workspace-app-for-mac-latest.html

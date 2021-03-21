@@ -50,6 +50,8 @@
 127.0.0.1 www.9to5mac.com
 
 # News, zeit.de and tagesschau.de are OK
+127.0.0.1 tagesschau.de
+127.0.0.1 www.tagesschau.de
 127.0.0.1 spiegel.de
 127.0.0.1 www.spiegel.de
 127.0.0.1 bild.de

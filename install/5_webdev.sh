@@ -8,16 +8,35 @@ brew reinstall mkcert
 brew reinstall nss
 brew reinstall php@7.4
 
-# dnsmasq
-echo 'address=/.localhost/127.0.0.1' > /usr/local/etc/dnsmasq.conf
-sudo brew services start dnsmasq
-sudo mkdir -v /etc/resolver
-sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/localhost'
+# link etc-configs
+sudo rm -rf /usr/local/etc/php
+sudo rm -rf /usr/local/etc/httpd
+sudo rm /usr/local/etc/my.cnf
+sudo rm /usr/local/etc/dnsmasq.conf
+ln -s ~/dotfiles/etc/httpd /usr/local/etc/httpd
+ln -s ~/dotfiles/etc/php /usr/local/etc/php
+ln -s ~/dotfiles/etc/my.cnf /usr/local/etc/my.cnf
+ln -s ~/dotfiles/etc/dnsmasq.conf /usr/local/etc/dnsmasq.conf
+
+sudo rm /etc/hosts
+sudo ln -s ~/dotfiles/etc/resolver /etc/resolver
+sudo ln -f ~/dotfiles/etc/hosts /etc/hosts
 
 # php and ssl
 brew link php@7.4
 pecl install imagick
+
+# certificates for local ssl
 mkcert -install
 mkcert localhost "dev.localhost" "*.dev.localhost"
+# now move those pem-files to ~/Sites/__dev
 
-# now move those pem-files to their correct location
+# start services
+sudo brew services start dnsmasq
+brew services start httpd
+brew services start mariadb
+brew services start php@7.4
+
+# mariadb
+sudo mysql -uroot
+# then in mysql-prompt: set password = password("root");
