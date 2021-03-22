@@ -1,3 +1,15 @@
+" treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true
+  },
+  indent = {
+    enable = true
+  }
+}
+EOF
+
 " fugitive
 nnoremap <silent> <leader>gs :G<cr><C-w>20+
 nnoremap <silent> <leader>gd :Gvdiff<cr><C-w>20+

@@ -1,11 +1,3 @@
-function! StatuslineGitInfo()
-  let git = fugitive#head()
-  if git != ''
-    return git
-  else
-    return ""
-endfunction
-
 function! StatusLinePaste()
   if &paste
     return "PASTE"

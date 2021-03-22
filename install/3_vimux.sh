@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-brew install neovim
+brew install neovim --HEAD
 brew install tmux
 
 # vim dependencies
@@ -18,5 +18,6 @@ sh -c 'curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.gith
 
 vim +PlugInstall
 vim +CocInstall\ coc-calc\ coc-css\ coc-eslint\ coc-html\ coc-json\ coc-markdownlint\ coc-pairs\ coc-phpls\ coc-snippets\ coc-stylelintplus\ coc-tsserver\ coc-yaml\ coc-yank
-vim +CocUpdate +PlugUpgrade +PlugUpdate
+vim +TSInstall\ javascript\ typescript\ tsx\ vue\ yaml\ html\ json\ jsonc\ jsdoc\ php\ css\ regex\ comment
+vim +CocUpdate +PlugUpgrade +PlugUpdate +TSUpdate
 vim +checkhealth

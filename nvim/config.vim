@@ -8,8 +8,9 @@ set fileformat=unix
 set fillchars=
 set foldignore=
 set foldlevelstart=1 " deactivate folding on fileload
-set foldmethod=indent " indent folding
 set foldnestmax=20 " max 20 levels of folding
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 set gdefault
 set grepprg=ag " use ag for grepping
 set hidden
@@ -50,5 +51,5 @@ set wrapscan
 set background=dark
 set termguicolors
 let g:gruvbox_italic=1
-autocmd vimenter * ++nested colorscheme gruvbox
+colorscheme gruvbox
 language en_US.UTF-8
