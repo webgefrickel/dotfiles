@@ -13,7 +13,7 @@ alias q='exit'
 # mutt
 alias mutt='neomutt'
 alias m='neomutt'
-alias O="cd ~ && mbsync -a && mu index && vdirsyncer sync"
+alias O="cd ~ && mbsync -a && mu index"
 
 # Gitty gitgit
 alias g="git"

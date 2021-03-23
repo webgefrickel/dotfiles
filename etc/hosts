@@ -13,12 +13,12 @@
 ##
 
 # Main time sinks
-127.0.0.1 reddit.com
-127.0.0.1 www.reddit.com
+#127.0.0.1 reddit.com
+#127.0.0.1 www.reddit.com
 127.0.0.1 imgur.com
 127.0.0.1 www.imgur.com
-127.0.0.1 youtube.com
-127.0.0.1 www.youtube.com
+#127.0.0.1 youtube.com
+#127.0.0.1 www.youtube.com
 127.0.0.1 twitter.com
 127.0.0.1 www.twitter.com
 
@@ -67,9 +67,9 @@
 127.0.0.1 www.vice.com
 
 # Shopping
-127.0.0.1 amazon.de
-127.0.0.1 www.amazon.de
-127.0.0.1 ultralightoutdoorgear.co.uk
-127.0.0.1 www.ultralightoutdoorgear.co.uk
-127.0.0.1 trekking-lite-store.com
-127.0.0.1 www.trekking-lite-store.com
+# 127.0.0.1 amazon.de
+# 127.0.0.1 www.amazon.de
+# 127.0.0.1 ultralightoutdoorgear.co.uk
+# 127.0.0.1 www.ultralightoutdoorgear.co.uk
+# 127.0.0.1 trekking-lite-store.com
+# 127.0.0.1 www.trekking-lite-store.com

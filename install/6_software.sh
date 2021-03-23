@@ -23,6 +23,7 @@ brew install --cask qlstephen
 brew install --cask sequel-pro
 brew install --cask signal
 brew install --cask skype
+brew install --cask sketch
 brew install --cask spotify
 brew install --cask telegram
 brew install --cask vlc
