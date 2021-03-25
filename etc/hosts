@@ -13,31 +13,12 @@
 ##
 
 # Main time sinks
-#127.0.0.1 reddit.com
-#127.0.0.1 www.reddit.com
+127.0.0.1 reddit.com
+127.0.0.1 www.reddit.com
 127.0.0.1 imgur.com
 127.0.0.1 www.imgur.com
-#127.0.0.1 youtube.com
-#127.0.0.1 www.youtube.com
 127.0.0.1 twitter.com
 127.0.0.1 www.twitter.com
-
-# Hobbies (also reddit)
-#127.0.0.1 lighterpack.com
-#127.0.0.1 www.lighterpack.com
-#127.0.0.1 bikepacking.com
-#127.0.0.1 www.bikepacking.com
-#127.0.0.1 ultraleicht-trekking.com
-#127.0.0.1 www.ultraleicht-trekking.com
-
-# Useless MTG gaming stuff
-127.0.0.1 scryfall.com
-127.0.0.1 www.scryfall.com
-127.0.0.1 aetherhub.com
-127.0.0.1 www.aetherhub.com
-127.0.0.1 wizards.com
-127.0.0.1 www.wizards.com
-127.0.0.1 gatherer.wizards.com
 
 # Tech stuff
 127.0.0.1 golem.de
@@ -50,8 +31,6 @@
 127.0.0.1 www.9to5mac.com
 
 # News, zeit.de and tagesschau.de are OK
-127.0.0.1 tagesschau.de
-127.0.0.1 www.tagesschau.de
 127.0.0.1 spiegel.de
 127.0.0.1 www.spiegel.de
 127.0.0.1 bild.de
@@ -65,11 +44,3 @@
 127.0.0.1 www.nytimes.com
 127.0.0.1 vice.com
 127.0.0.1 www.vice.com
-
-# Shopping
-# 127.0.0.1 amazon.de
-# 127.0.0.1 www.amazon.de
-# 127.0.0.1 ultralightoutdoorgear.co.uk
-# 127.0.0.1 www.ultralightoutdoorgear.co.uk
-# 127.0.0.1 trekking-lite-store.com
-# 127.0.0.1 www.trekking-lite-store.com
