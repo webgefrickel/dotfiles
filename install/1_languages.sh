@@ -9,7 +9,6 @@ rbenv global 3.0.0
 curl -L https://git.io/n-install | bash
 n v8
 n v12
-n latest
 n lts
 npm install -g npm@latest
 npm update -g
@@ -21,6 +20,3 @@ brew install pyenv # restart terminal, then:
 pyenv install 3.9.2
 pyenv global 3.9.2
 pip install --upgrade pip
-mkdir /usr/local/Cellar/python@3.9
-ln -s ~/.pyenv/versions/3.9.2 /usr/local/Cellar/python@3.9/3.9.2_2
-brew link --overwrite python@3.9

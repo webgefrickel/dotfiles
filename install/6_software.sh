@@ -11,6 +11,7 @@ brew install --cask firefox
 brew install --cask forklift
 brew install --cask google-chrome
 brew install --cask hammerspoon
+brew install --cask iina
 brew install --cask imagealpha
 brew install --cask imageoptim
 brew install --cask iterm2
@@ -22,11 +23,10 @@ brew install --cask qlcolorcode
 brew install --cask qlstephen
 brew install --cask sequel-pro
 brew install --cask signal
-brew install --cask skype
 brew install --cask sketch
+brew install --cask skype
 brew install --cask spotify
 brew install --cask telegram
-brew install --cask vlc
 brew install --cask vmware-fusion
 brew install --cask zoom
 
@@ -37,6 +37,11 @@ ln -s ~/dotfiles/karabiner ~/.config/karabiner
 # Drivers and other software
 brew install --cask font-fira-code
 brew install --cask ubiquiti-unifi-controller
+
+# Tell unifi-controller to use brew-installed java
+sudo ln -s /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk /Applications/UniFi.app/Contents/PlugIns/adoptopenjdk-8.jdk
+sudo v /Applications/UniFi.app/Contents/Info.plist
+# THEN add this: <key>JVMRuntime</key> <string>adoptopenjdk-8.jdk</string>
 
 # set some options for qlcolorcode
 defaults write org.n8gray.QLColorCode font "Fira Code"

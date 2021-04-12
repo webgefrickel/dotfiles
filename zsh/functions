@@ -69,3 +69,8 @@ webvideo720p () {
 webvideoposter () {
   ffmpeg -ss 00:00:02 -i $1 -frames:v 1 $1.jpg
 }
+
+webgallery () {
+  mogrify -format jpg -resize '47.6190476%' -strip -quality 75 *.HEIC
+  rm *.HEIC
+}

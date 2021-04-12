@@ -1,7 +1,8 @@
 #!/usr/bin/env zsh
 
-brew tap homebrew/services
 brew tap homebrew-ffmpeg/ffmpeg
+brew tap homebrew/cask-drivers
+brew tap homebrew/services
 
 # install additional brew packages -- see _install.sh too
 brew install clipper

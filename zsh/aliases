@@ -35,9 +35,9 @@ alias brewup='brew update && brew upgrade && brew cu -a -f -y && brew cleanup'
 alias upall='brewup && npm-check -gu'
 
 # temp fix for dnsmasq-bootup/unifi-java fuckup
-# <key>JVMRuntime</key> <string>adoptopenjdk-8.jdk</string>
 alias dnsmasqfix='sudo brew services stop dnsmasq && sudo mkdir /usr/local/etc/dnsmasq.d && sudo brew services start dnsmasq'
 alias unififix='sudo ln -s /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk /Applications/UniFi.app/Contents/PlugIns/adoptopenjdk-8.jdk && sudo v /Applications/UniFi.app/Contents/Info.plist'
+# THEN: <key>JVMRuntime</key> <string>adoptopenjdk-8.jdk</string>
 
 # other often used stuff, mostly node/npm
 alias ns="npm start"
@@ -52,9 +52,4 @@ alias dnsflush='sudo dscacheutil -flushcache'
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # imagemagick downsampling shortcuts (c&p retina folder, run, done!)
-alias jpg25='mogrify -format jpg -resize 25% -strip -quality 80 *.jpg'
-alias jpg50='mogrify -format jpg -resize 50% -strip -quality 80 *.jpg'
-alias png25='mogrify -format png -resize 25% -strip -quality 80 *.png'
-alias png50='mogrify -format png -resize 50% -strip -quality 80 *.png'
-alias webimg='mogrify -format jpg -resize 1600x1600 -strip -quality 70'
 alias anigif='convert -delay 12 -loop 0 *.jpg animated.gif'
