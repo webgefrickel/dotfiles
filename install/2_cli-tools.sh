@@ -10,6 +10,7 @@ brew install fzf
 brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
 brew install htop
 brew install jump
+brew install lazygit
 brew install nnn
 brew install ripgrep
 brew install switchaudio-osx

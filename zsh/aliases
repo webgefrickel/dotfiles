@@ -25,6 +25,7 @@ alias ggpnp='git pull origin $(current_branch) && git push origin $(current_bran
 alias gsmu='git submodule init && git submodule update'
 alias gsmuu='git submodule foreach git pull origin master'
 alias gmo='$EDITOR $(git ls-files -m)'
+alias lg='lazygit'
 
 # tmux
 alias t='tmux -u -2'
