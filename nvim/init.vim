@@ -5,7 +5,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/gv.vim'
 Plug 'mcchrish/nnn.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'npxbr/gruvbox.nvim'
