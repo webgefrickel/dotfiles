@@ -13,7 +13,6 @@ brew install jump
 brew install lazygit
 brew install nnn
 brew install ripgrep
-brew install switchaudio-osx
 brew install tree
 
 # node cli tools and helpers
