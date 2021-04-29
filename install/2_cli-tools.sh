@@ -18,9 +18,7 @@ brew install tree
 # node cli tools and helpers
 npm install -g diff-so-fancy
 npm install -g fkill-cli
-npm install -g npm-check
 npm install -g pure-prompt
-npm install -g yarn
 
 # install fzf
 /usr/local/opt/fzf/install

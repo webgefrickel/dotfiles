@@ -51,6 +51,5 @@ alias yre='rm -f yarn.lock && rm -rf node_modules && yarn'
 # random usefull stuff
 alias dnsflush='sudo dscacheutil -flushcache'
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-# imagemagick downsampling shortcuts (c&p retina folder, run, done!)
 alias anigif='convert -delay 12 -loop 0 *.jpg animated.gif'
+alias woffwoff='glyphhanger --subset="*.otf" --formats=woff-zopfli,woff2'

@@ -26,6 +26,16 @@ sudo ln -f ~/dotfiles/etc/hosts /etc/hosts
 brew link php@7.4
 pecl install imagick
 
+# additional webdev cli tools
+npm install -g npm-check
+npm install -g yarn
+npm install -g glyphhanger
+
+# additional stuff for glyphhanger
+pip install fonttools
+pip install brotli
+pip install zopfli
+
 # certificates for local ssl
 mkcert -install
 mkcert localhost "dev.localhost" "*.dev.localhost"
