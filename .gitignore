@@ -1,6 +1,7 @@
+karabiner/automatic_backups/*
+lazygit/state.yml
 nvim/.netrwhist
 nvim/autoload/plug.vim.old
 office/mutt/cache/*
 office/mutt/tmp/*
 office/vdirsyncer/status/*
-karabiner/automatic_backups/*

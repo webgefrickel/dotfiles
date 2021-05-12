@@ -1,0 +1,5 @@
+gui:
+  showRandomTip: false
+  showCommandLog: false
+disableStartupPopups: true
+notARepository: 'skip'
