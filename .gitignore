@@ -1,4 +1,5 @@
 nvim/.netrwhist
+nvim/autoload/plug.vim.old
 office/mutt/cache/*
 office/mutt/tmp/*
 office/vdirsyncer/status/*
