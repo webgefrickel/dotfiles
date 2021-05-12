@@ -35,3 +35,7 @@ nnoremap <leader>w :set wrap! wrap?<cr>
 
 " reload files and redraw
 nnoremap <leader>r :checktime<cr>:redraw!<cr>
+
+" vim
+nnoremap <Leader>ve :e $MYVIMRC<cr>
+nnoremap <Leader>vr :source $MYVIMRC<cr>

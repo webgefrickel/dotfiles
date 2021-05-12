@@ -15,6 +15,9 @@ brew install nnn
 brew install ripgrep
 brew install tree
 
+ln -s ~/dotfiles/lazygit ~/.config/lazygit
+ln -s ~/dotfiles/lazygit ~/Library/Application\ Support/lazygit
+
 # node cli tools and helpers
 npm install -g diff-so-fancy
 npm install -g fkill-cli

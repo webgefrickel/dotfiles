@@ -26,15 +26,22 @@ nnoremap <silent> <space>h :History:<cr>
 nnoremap <silent> <space>/ :History/<cr>
 nnoremap <silent> <space>c :Commits<cr>
 
-" nnn integration
-let g:nnn#set_default_mappings = 0
-let g:nnn#command = 'nnn -deH'
-nnoremap <silent> - :NnnPicker %:p:h<CR>
-
 " EasyMotion
 let g:EasyMotion_do_mapping=0
 let g:EasyMotion_smartcase=1
 nmap <leader>j <Plug>(easymotion-overwin-f2)
+
+" Floaterm
+let g:floaterm_keymap_toggle = '<space>t'
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.62
+let g:floaterm_autoclose = 1
+let g:floaterm_opener = 'edit'
+let g:floaterm_borderchars = '─│─│╭╮╯╰'
+let g:floaterm_title = ''
+hi FloatermBorder guibg='#282828' guifg='#655c54'
+nnoremap <silent> - :FloatermNew nnn<cr>
+nnoremap <silent> <space>g :FloatermNew lazygit<cr>
 
 " COC.vim
 inoremap <silent><expr> <C-j>
