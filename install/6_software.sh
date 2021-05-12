@@ -19,13 +19,12 @@ brew install --cask kap
 brew install --cask karabiner-elements
 brew install --cask microsoft-teams
 brew install --cask numi
-brew install --cask qlcolorcode
-brew install --cask qlstephen
 brew install --cask sequel-pro
 brew install --cask signal
 brew install --cask sketch
 brew install --cask skype
 brew install --cask spotify
+brew install --cask syntax-highlight
 brew install --cask telegram
 brew install --cask vmware-fusion
 brew install --cask zoom
@@ -43,20 +42,9 @@ sudo ln -s /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk /Applications/Un
 sudo v /Applications/UniFi.app/Contents/Info.plist
 # THEN add this: <key>JVMRuntime</key> <string>adoptopenjdk-8.jdk</string>
 
-# set some options for qlcolorcode
-defaults write org.n8gray.QLColorCode font "Fira Code"
-defaults write org.n8gray.QLColorCode fontSizePoints 9
-defaults write org.n8gray.QLColorCode hlTheme blacknblue
-defaults write org.n8gray.QLColorCode extraHLFlags '--replace-tabs=2'
-
-# reload QuickLook and set permissions
-sudo xattr -cr ~/Library/QuickLook/*.qlgenerator
-qlmanage -r
-qlmanage -r cache
-
 # firefox-extensions: 
-# vimium ff, dark reader, privacy badger, ublock origin, 
-# 1passwd classic extension, react developer tools
+# vimium ff, dark reader, privacy badger, ublock origin, wikiwand,
+# 1passwd classic extension, react developer tools, df youtube
 
 # other software:
 # bill: https://billtheapp.com/
