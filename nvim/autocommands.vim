@@ -21,6 +21,7 @@ augroup init
 
   " special settings for json5, css and scss: better BEM
   autocmd BufNewFile,BufRead *.{json5,css,scss} set iskeyword+=-
+  autocmd BufNewFile,BufRead *.scss set ft=scss.css
 augroup END
 
 if &diff

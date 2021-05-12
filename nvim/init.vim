@@ -7,9 +7,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mcchrish/nnn.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'npxbr/gruvbox.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'rktjmp/lush.nvim' " for gruvbox.nvim
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -22,6 +20,10 @@ Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
 Plug 'wincent/terminus'
+
+" colorscheme
+Plug 'rktjmp/lush.nvim' " for gruvbox.nvim
+Plug 'npxbr/gruvbox.nvim'
 
 call plug#end()
 

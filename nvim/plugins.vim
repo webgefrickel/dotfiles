@@ -23,6 +23,8 @@ nnoremap <silent> <space>. :Buffers<cr>
 nnoremap <silent> <space>l :Lines<cr>
 nnoremap <silent> <space>a :Rg<cr>
 nnoremap <silent> <space>h :History:<cr>
+nnoremap <silent> <space>/ :History/<cr>
+nnoremap <silent> <space>c :Commits<cr>
 
 " nnn integration
 let g:nnn#set_default_mappings = 0
