@@ -2,8 +2,8 @@ set breakindent
 set cmdheight=2
 set cpoptions+=$ " Add a $ to the end of a selection
 set cursorline
-set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+set foldmethod=expr
 set gdefault
 set grepprg=rg " use ag for grepping
 set hidden
@@ -27,6 +27,7 @@ set showbreak=\\\\\
 set showmatch
 set sidescroll=10
 set sidescrolloff=5
+set signcolumn=number
 set smartcase
 set updatetime=300
 set virtualedit=all
