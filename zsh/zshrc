@@ -1,29 +1,8 @@
 # Load the functions, aliases and exports
-for file in ~/dotfiles/zsh/{exports,aliases,functions}; do
+for file in ~/dotfiles/zsh/{antigen,exports,aliases,functions}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
-
-# a nice prompt, install it via npm to make this work
-autoload -U promptinit; promptinit
-prompt pure
-
-# completions
-autoload -U compinit && compinit -C
-autoload bashcompinit && bashcompinit
-
-# autocomplete for the git alias
-compdef g=git
-compdef gf=git-flow
-
-# case-insensitive (all),partial-word and then substring completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-unsetopt flowcontrol
-unsetopt menu_complete # do not autoselect the first completion entry
-setopt auto_menu # show completion menu on succesive tab press
-setopt complete_in_word
-setopt always_to_end
 
 # history settings
 if [ -z $HISTFILE ]; then
@@ -31,10 +10,6 @@ if [ -z $HISTFILE ]; then
 fi
 HISTSIZE=1000000
 SAVEHIST=1000000
-
-# easy vim/terminal switch
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
 
 setopt append_history
 setopt extended_history
@@ -48,15 +23,35 @@ setopt inc_append_history
 setopt share_history
 setopt long_list_jobs
 
+# a nice prompt, install it via npm to make this work
+autoload -U promptinit; promptinit
+prompt pure
+
+# completions
+autoload -U compinit && compinit -C
+autoload bashcompinit && bashcompinit
+compdef g=git
+compdef gf=git-flow
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+unsetopt flowcontrol
+unsetopt menu_complete
+setopt auto_menu
+setopt complete_in_word
+setopt always_to_end
+
+# easy vim/terminal switch
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 # smart urls
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
-# source some zsh plugins
-source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/dotfiles/zsh/zsh-completions/zsh-completions.plugin.zsh
-# zsh-completions
-fpath=($HOME/dotfiles/zsh/zsh-completions/src $fpath)
+# plugins
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen apply
 
 # other tools init
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
