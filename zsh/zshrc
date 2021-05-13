@@ -6,11 +6,11 @@ unset file
 
 # plugins
 antigen use belak/zsh-utils
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle history
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle completion
+antigen bundle history
 antigen apply
 
 # history
