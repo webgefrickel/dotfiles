@@ -11,7 +11,7 @@ augroup init
   autocmd FileType mail,markdown setlocal spell
   autocmd FileType mail,markdown setlocal wrap
   autocmd FileType mail,markdown setlocal spelllang=en,de
-  autocmd FileType mail,markdown setlocal textwidth=80
+  autocmd FileType mail,markdown setlocal textwidth=70
   autocmd FileType mail,markdown setlocal formatoptions+=q
 
   " correctly indent comments/quoted text in mails
@@ -23,7 +23,3 @@ augroup init
   autocmd BufNewFile,BufRead *.{json5,css,scss} set iskeyword+=-
   autocmd BufNewFile,BufRead *.scss set ft=scss.css
 augroup END
-
-if &diff
-  syntax off
-endif

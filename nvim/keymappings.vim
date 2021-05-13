@@ -29,9 +29,6 @@ nnoremap <down> :blast<cr>
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
 
-" fix a bug in neovim/tmux-navigator
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-
 " Bubble/indent lines using unimpaired
 " using left alt + hjkl on mac usgerman keyboard
 " those are some weird mappings, but they work!

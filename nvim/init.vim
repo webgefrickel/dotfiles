@@ -11,7 +11,6 @@ Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -22,7 +21,7 @@ Plug 'wellle/tmux-complete.vim'
 Plug 'wincent/terminus'
 
 " colorscheme
-Plug 'rktjmp/lush.nvim' " for gruvbox.nvim
+Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
 
 call plug#end()
