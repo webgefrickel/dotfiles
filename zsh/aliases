@@ -1,56 +1,41 @@
-# Make aliases and other stuff work in sudo
-alias sudo='sudo '
-alias vim=$EDITOR
-alias vi=$EDITOR
-alias v=$EDITOR
-alias vimdiff='$EDITOR -d'
-alias vdiff='$EDITOR -d'
-alias vd='$EDITOR -d'
-alias ..='cd ..'
 alias ...='cd ../..'
-alias q='exit'
-
-# mutt
-alias mutt='neomutt'
-alias m='neomutt'
+alias ..='cd ..'
 alias O="cd ~ && mbsync -a && mu index"
-
-# Gitty gitgit
+alias anigif='convert -delay 12 -loop 0 *.jpg animated.gif'
+alias brewup='brew update && brew upgrade && brew cu -a -f -y && brew cleanup'
+alias dnsflush='sudo dscacheutil -flushcache'
+alias dnsmasqfix='sudo brew services stop dnsmasq && sudo mkdir /usr/local/etc/dnsmasq.d && sudo brew services start dnsmasq'
 alias g="git"
 alias gf="git-flow"
-alias gs="git status"
 alias ggpl='git pull origin $(current_branch)'
-alias ggps='git push origin $(current_branch)'
 alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
-alias gsmu='git submodule init && git submodule update'
-alias gsmuu='git submodule foreach git pull origin master'
+alias ggps='git push origin $(current_branch)'
 alias gmo='$EDITOR $(git ls-files -m)'
+alias gs="git status"
 alias lg='lazygit'
-
-# tmux and others
-alias t='tmux -u -2'
-alias ta='tmux -u attach'
+alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias ls='exa -la'
-
-# all in one homebrew, gem update commands
-alias brewup='brew update && brew upgrade && brew cu -a -f -y && brew cleanup'
-alias upall='brewup && npm-check -gu'
-
-# temp fix for dnsmasq-bootup/unifi-java fuckup
-alias dnsmasqfix='sudo brew services stop dnsmasq && sudo mkdir /usr/local/etc/dnsmasq.d && sudo brew services start dnsmasq'
-alias unififix='sudo ln -s /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk /Applications/UniFi.app/Contents/PlugIns/adoptopenjdk-8.jdk && sudo v /Applications/UniFi.app/Contents/Info.plist'
-# THEN: <key>JVMRuntime</key> <string>adoptopenjdk-8.jdk</string>
-
-# other often used stuff, mostly node/npm
-alias ns="npm start"
+alias m='neomutt'
+alias mutt='neomutt'
 alias nb="npm run build"
 alias npmre='rm -f package-lock.json && rm -rf node_modules && npm install'
-alias ys='yarn develop'
+alias ns="npm start"
+alias q='exit'
+alias sudo='sudo '
+alias t='tmux -u -2'
+alias ta='tmux -u attach'
+alias upall='brewup && npm-check -gu'
+alias v=$EDITOR
+alias vd='$EDITOR -d'
+alias vdiff='$EDITOR -d'
+alias vi=$EDITOR
+alias vim=$EDITOR
+alias vimdiff='$EDITOR -d'
+alias woffwoff='glyphhanger --subset="*.otf" --formats=woff-zopfli,woff2'
 alias yp='yarn lint && yarn production'
 alias yre='rm -f yarn.lock && rm -rf node_modules && yarn'
+alias ys='yarn develop'
 
-# random usefull stuff
-alias dnsflush='sudo dscacheutil -flushcache'
-alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias anigif='convert -delay 12 -loop 0 *.jpg animated.gif'
-alias woffwoff='glyphhanger --subset="*.otf" --formats=woff-zopfli,woff2'
+# temp fix for dnsmasq-bootup/unifi-java fuckup
+alias unififix='sudo ln -s /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk /Applications/UniFi.app/Contents/PlugIns/adoptopenjdk-8.jdk && sudo v /Applications/UniFi.app/Contents/Info.plist'
+# THEN: <key>JVMRuntime</key> <string>adoptopenjdk-8.jdk</string>

@@ -1,6 +1,4 @@
-# TERMINAL INTEGRATIONS #
-#########################
-
+# TERMINAL INTEGRATIONS
 l () {
   if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
     echo "nnn is already running"
@@ -38,9 +36,7 @@ fancy-ctrl-z () {
   fi
 }
 
-# CUSTOM FUNCTIONS #
-####################
-
+# CUSTOM FUNCTIONS
 wttr () {
   if [[ -n "$1" ]]
     then 

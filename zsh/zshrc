@@ -4,40 +4,27 @@ for file in ~/dotfiles/zsh/{antigen.zsh,exports,aliases,functions}; do
 done
 unset file
 
-# history settings
-if [ -z $HISTFILE ]; then
-    HISTFILE=$HOME/.zsh_history
-fi
-HISTSIZE=1000000
-SAVEHIST=1000000
+# plugins
+antigen use belak/zsh-utils
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle history
+antigen bundle completion
+antigen apply
 
-setopt append_history
-setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_save_no_dups
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-setopt hist_verify
-setopt inc_append_history
-setopt share_history
-setopt long_list_jobs
+# history
+setopt SHARE_HISTORY
+unsetopt HIST_BEEP
 
 # a nice prompt, install it via npm to make this work
 autoload -U promptinit; promptinit
 prompt pure
 
 # completions
-autoload -U compinit && compinit -C
-autoload bashcompinit && bashcompinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 compdef g=git
 compdef gf=git-flow
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-unsetopt flowcontrol
-unsetopt menu_complete
-setopt auto_menu
-setopt complete_in_word
-setopt always_to_end
 
 # easy vim/terminal switch
 zle -N fancy-ctrl-z
@@ -46,12 +33,6 @@ bindkey '^Z' fancy-ctrl-z
 # smart urls
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
-
-# plugins
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-antigen apply
 
 # other tools init
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

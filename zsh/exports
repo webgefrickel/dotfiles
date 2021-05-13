@@ -1,52 +1,29 @@
-# term, for mutt and vim
-export TERM=xterm-256color
-
-# language
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-# nice dircolors for ls
 export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-
-# shell
-export SHELL=/usr/local/bin/zsh
-
-# brew CASK
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-# paths
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/local/opt/curl/bin:$PATH
-export PATH=/usr/local/opt/ruby/bin:$PATH
-export PATH=/usr/local/lib/ruby/gems/2.7.0/bin:$PATH
-export PATH=/usr/local/opt/php@7.3/bin:$PATH
-export PATH=/usr/local/opt/php@7.3/sbin:$PATH
-
-# manpath
-export MANPATH=/usr/local/share/man:$MANPATH
-
-# disable stupid ._ and dsstore files
-export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
 export COPYFILE_DISABLE=true
-
-# editor
+export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
+export DISABLE_AUTO_TITLE=true
 export EDITOR="/usr/local/bin/nvim"
+export GREP_COLOR='1;32'
+export GREP_OPTIONS='--color=auto'
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=$LANG
+export LESS="-R"
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export MANPATH=/usr/local/share/man:$MANPATH
+export PAGER="less"
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/opt/curl/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+export SHELL=/usr/local/bin/zsh
+export TERM=xterm-256color
 export VISUAL="/usr/local/bin/nvim"
 
-# disable auto titling fixes tmux window
-export DISABLE_AUTO_TITLE=true
-
-# grep / ripgrep
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;32'
+# ripgrep
 export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc"
 
-# pager
-export PAGER="less"
-export LESS="-R"
-export LC_CTYPE=$LANG
+# brew
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # nnn
 export NNN_OPTS='deHR'
