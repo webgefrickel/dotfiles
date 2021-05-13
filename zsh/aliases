@@ -27,9 +27,10 @@ alias gsmuu='git submodule foreach git pull origin master'
 alias gmo='$EDITOR $(git ls-files -m)'
 alias lg='lazygit'
 
-# tmux
+# tmux and others
 alias t='tmux -u -2'
 alias ta='tmux -u attach'
+alias ls='exa -la'
 
 # all in one homebrew, gem update commands
 alias brewup='brew update && brew upgrade && brew cu -a -f -y && brew cleanup'
