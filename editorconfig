@@ -8,7 +8,7 @@ insert_final_newline = true
 indent_style = space
 indent_size = 2
 
-[*.{php,css,scss,sass,js,json,jsx,tmpl,html,haml,twig,yml,svg}]
+[*.{php,css,scss,sass,js,json,jsx,ts,tsx,tmpl,html,haml,twig,yml,svg}]
 trim_trailing_whitespace = true
 
 [*.{md,markdown,rst,txt,csv,snip,mail}]
