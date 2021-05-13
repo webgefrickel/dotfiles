@@ -1,5 +1,5 @@
 # Load the functions, aliases and exports
-for file in ~/dotfiles/zsh/{antigen,exports,aliases,functions}; do
+for file in ~/dotfiles/zsh/{antigen.zsh,exports,aliases,functions}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
