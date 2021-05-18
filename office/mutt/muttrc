@@ -91,7 +91,7 @@ set sidebar_format = "%B %* [%?N?%N / ?%S]"
 # Mailboxes to show in the sidebar.
 mailboxes =mailbox
 mailboxes =mailbox/INBOX =mailbox/archive =mailbox/sent =mailbox/drafts =mailbox/junk =mailbox/trash
-mailboxes ="==================="
+mailboxes ="───────────────────"
 mailboxes =viu
 mailboxes =viu/INBOX =viu/archive =viu/sent =viu/drafts =viu/junk =viu/trash
 
