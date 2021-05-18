@@ -14,6 +14,7 @@ brew install jump
 brew install lazygit
 brew install nnn
 brew install ripgrep
+brew install starship
 brew install tree
 
 ln -s ~/dotfiles/lazygit ~/.config/lazygit
@@ -22,7 +23,6 @@ ln -s ~/dotfiles/lazygit ~/Library/Application\ Support/lazygit
 # node cli tools and helpers
 npm install -g diff-so-fancy
 npm install -g fkill-cli
-npm install -g pure-prompt
 
 # install fzf
 /usr/local/opt/fzf/install
@@ -30,6 +30,3 @@ npm install -g pure-prompt
 # clipper
 mkdir -p ~/Library/LaunchAgents
 brew services start clipper
-
-# nnn plugins + trash-cli
-curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh

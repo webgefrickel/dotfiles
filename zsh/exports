@@ -3,13 +3,10 @@ export COPYFILE_DISABLE=true
 export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
 export DISABLE_AUTO_TITLE=true
 export EDITOR="/usr/local/bin/nvim"
-export GREP_COLOR='1;32'
-export GREP_OPTIONS='--color=auto'
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=$LANG
-export LESS="-R"
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export LESS="-F -i -J -M -R -W -x2 -X -z-4"
 export MANPATH=/usr/local/share/man:$MANPATH
 export PAGER="less"
 export PATH=/usr/local/bin:$PATH
@@ -31,7 +28,6 @@ export NNN_BMS='d:~/Dotfiles;s:~/Sites;l:~/Downloads;h:~/'
 export NNN_FCOLORS='c1e26c2e006033f5c6d6abc4'
 export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_TRASH=0
-export NNN_PLUG='o:fzcd;j:autojump;p:preview-tui'
 export NNN_ARCHIVE="\\.(7z|bz|bz2|gz|rar|rpm|tar|tgz|zip)$"
 
 # fzf colors

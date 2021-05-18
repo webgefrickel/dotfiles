@@ -19,8 +19,6 @@ function! MyStatusLine(mode)
   let statusline .= "%= "
   let statusline .= "%{coc#status()}"
   let statusline .= "%= "
-  let statusline .= "%{toupper(mode())}\ %{StatusLinePaste()}"
-  let statusline .= "%= "
   let statusline .= "\ %y\ %{&fileencoding?&fileencoding:&encoding}\/\%{&fileformat}\ \|\ %l:%c\ "
   return statusline
 endfunction

@@ -1,41 +1,41 @@
-# Load the antigen, and all functions, aliases and exports
-source ~/dotfiles/zsh/antigen.zsh
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
+
+# exports, functions and aliases
 source ~/dotfiles/zsh/exports
 source ~/dotfiles/zsh/aliases
 source ~/dotfiles/zsh/functions
 
 # plugins
-antigen use belak/zsh-utils
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle completion
-antigen bundle history
-antigen apply
+zinit wait lucid for \
+    light-mode benvan/sandboxd \
+    light-mode zsh-users/zsh-autosuggestions \
+    light-mode zsh-users/zsh-completions \
+    light-mode zdharma/fast-syntax-highlighting \
+    light-mode "https://github.com/belak/zsh-utils/blob/master/history/history.plugin.zsh" \
+    light-mode "https://github.com/belak/zsh-utils/blob/master/completion/completion.plugin.zsh"
 
 # history
 setopt SHARE_HISTORY
 unsetopt HIST_BEEP
 
-# a nice prompt, install it via npm to make this work
-autoload -U promptinit; promptinit
-prompt pure
-
-# completions
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-compdef g=git
-compdef gf=git-flow
-
 # easy vim/terminal switch
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-# smart urls
-autoload -U url-quote-magic
-zle -N self-insert url-quote-magic
-
-# other tools init
+# other tools init, pyenv + rbenv are sandboxd
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(starship init zsh)"
 eval "$(jump shell)"
-eval "$(rbenv init -)"
-eval "$(pyenv init -)"
+

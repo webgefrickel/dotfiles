@@ -18,7 +18,6 @@ brew install --cask iterm2
 brew install --cask kap
 brew install --cask karabiner-elements
 brew install --cask microsoft-teams
-brew install --cask numi
 brew install --cask sequel-pro
 brew install --cask signal
 brew install --cask sketch
@@ -34,7 +33,7 @@ ln -s ~/dotfiles/hammerspoon ~/.hammerspoon
 ln -s ~/dotfiles/karabiner ~/.config/karabiner
 
 # Drivers and other software
-brew install --cask font-fira-code
+brew install --cask font-fira-code-nerd-font
 brew install --cask ubiquiti-unifi-controller
 
 # Tell unifi-controller to use brew-installed java

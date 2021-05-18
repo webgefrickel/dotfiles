@@ -1,0 +1,10 @@
+sandbox_init_pyenv() {
+  eval "$(pyenv init -)"
+}
+
+sandbox_init_rbenv() {
+  eval "$(rbenv init -)"
+}
+
+sandbox_hook_shims pyenv
+sandbox_hook_shims rbenv

@@ -5,7 +5,7 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   eol = lf
-  pager = diff-so-fancy | less --tabs=2 -RFX
+  pager = diff-so-fancy | less
 
 [color]
   ui = auto
@@ -50,9 +50,7 @@
   fi = flow init
   rs = reset HEAD --hard
   fame = shortlog -sn --all --no-merges
-  hist = log --pretty=format:\"%h | %ad | %an | %s%d \" --graph --date=local
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit
-  lo = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
 [diff]
   tool = nvim -d
