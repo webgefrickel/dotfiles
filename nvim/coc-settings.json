@@ -13,7 +13,6 @@
 // coc-tsserver
 // coc-yaml
 // coc-yank
-
 {
   "coc.preferences.formatOnSaveFiletypes": [
     "javascriptreact",
@@ -23,11 +22,9 @@
     "json",
     "yaml"
   ],
-
   // autofixing via linters
   "eslint.autoFixOnSave": true,
   "stylelintplus.autoFixOnSave": true,
-
   // we use eslint instaed
   "javascript.format.enabled": false,
   "javascript.validate.enable": false,
@@ -35,19 +32,29 @@
   "typescript.validate.enable": false,
   "typescript.format.enabled": false,
   "tsserver.disableAutomaticTypeAcquisition": true,
-
   "suggest.minTriggerInputLength": 3,
   "suggest.noselect": false,
   "suggest.enablePreselect": true,
   "suggest.maxCompleteItemCount": 20,
-
   "snippets.snipmate.enable": false,
-  "snippets.ultisnips.directories": ["~/.config/nvim/snippets"],
+  "snippets.ultisnips.directories": [
+    "~/.config/nvim/snippets"
+  ],
   "snippets.extends": {
-    "php": ["html"],
-    "scss": ["css"],
-    "jsx": ["javascript"],
-    "javascriptreact": ["javascript"],
-    "typescript": ["javascript"]
+    "php": [
+      "html"
+    ],
+    "scss": [
+      "css"
+    ],
+    "jsx": [
+      "javascript"
+    ],
+    "javascriptreact": [
+      "javascript"
+    ],
+    "typescript": [
+      "javascript"
+    ]
   }
 }
