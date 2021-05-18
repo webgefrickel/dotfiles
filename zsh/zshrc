@@ -1,8 +1,8 @@
-# Load the functions, aliases and exports
-for file in ~/dotfiles/zsh/{antigen.zsh,exports,aliases,functions}; do
-  [ -r "$file" ] && source "$file"
-done
-unset file
+# Load the antigen, and all functions, aliases and exports
+source ~/dotfiles/zsh/antigen.zsh
+source ~/dotfiles/zsh/exports
+source ~/dotfiles/zsh/aliases
+source ~/dotfiles/zsh/functions
 
 # plugins
 antigen use belak/zsh-utils
