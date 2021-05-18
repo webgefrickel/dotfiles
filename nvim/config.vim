@@ -40,3 +40,8 @@ set termguicolors
 let g:gruvbox_italic=1
 colorscheme gruvbox
 language en_US.UTF-8
+
+" deactivate some unneeded language providers
+ let g:loaded_python_provider = 0
+ let g:loaded_perl_provider = 0
+

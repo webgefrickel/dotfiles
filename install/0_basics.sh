@@ -28,7 +28,6 @@ mkdir ~/.config
 ln -s ~/dotfiles/editorconfig ~/.editorconfig
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
-ln -s ~/dotfiles/sandboxrc ~/.sandboxrc
 ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 
