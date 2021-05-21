@@ -15,6 +15,7 @@
 // coc-yank
 {
   "coc.preferences.formatOnSaveFiletypes": [
+    "typescriptreact",
     "javascriptreact",
     "javascript",
     "scss",
@@ -28,10 +29,7 @@
   // we use eslint instaed
   "javascript.format.enabled": false,
   "javascript.validate.enable": false,
-  "typescript.suggest.enabled": false,
-  "typescript.validate.enable": false,
   "typescript.format.enabled": false,
-  "tsserver.disableAutomaticTypeAcquisition": true,
   "suggest.minTriggerInputLength": 3,
   "suggest.noselect": false,
   "suggest.enablePreselect": true,
@@ -47,13 +45,13 @@
     "scss": [
       "css"
     ],
-    "jsx": [
-      "javascript"
-    ],
     "javascriptreact": [
       "javascript"
     ],
     "typescript": [
+      "javascript"
+    ],
+    "typescriptreact": [
       "javascript"
     ]
   }

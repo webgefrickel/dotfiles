@@ -18,6 +18,7 @@ brew install --cask iterm2
 brew install --cask kap
 brew install --cask karabiner-elements
 brew install --cask microsoft-teams
+brew install --cask qlstephen
 brew install --cask sequel-pro
 brew install --cask signal
 brew install --cask sketch
@@ -27,6 +28,12 @@ brew install --cask syntax-highlight
 brew install --cask telegram
 brew install --cask vmware-fusion
 brew install --cask zoom
+
+# Quicklook-reset
+xattr -cr ~/Library/QuickLook
+xattr -d -r com.apple.quarantine ~/Library/QuickLook
+qlmanage -r
+qlmanage -r cache
 
 # link config files for some casks
 ln -s ~/dotfiles/hammerspoon ~/.hammerspoon
@@ -42,7 +49,7 @@ sudo v /Applications/UniFi.app/Contents/Info.plist
 # THEN add this: <key>JVMRuntime</key> <string>adoptopenjdk-8.jdk</string>
 
 # firefox-extensions: 
-# vimium ff, dark reader, privacy badger, ublock origin, wikiwand,
+# surfingkeys, dark reader, privacy badger, ublock origin, wikiwand,
 # 1passwd classic extension, react developer tools, df youtube
 
 # other software:

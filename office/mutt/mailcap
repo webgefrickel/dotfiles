@@ -1,21 +1,50 @@
-# MS Word documents
-application/msword; ~/dotfiles/office/view-attachment.sh %s "-" '/Applications/LibreOffice.app'
-application/vnd.ms-excel; ~/dotfiles/office/view-attachment.sh %s "-" '/Applications/LibreOffice.app'
-application/vnd.openxmlformats-officedocument.presentationml.presentation; ~/dotfiles/office/view-attachment.sh %s "-" '/Applications/LibreOffice.app'
-application/vnd.oasis.opendocument.text; ~/dotfiles/office/view-attachment.sh %s "-" '/Applications/LibreOffice.app'
-
-# Images
-image/jpg; ~/dotfiles/office/quicklook.sh %s jpg
-image/jpeg; ~/dotfiles/office/quicklook.sh %s jpg
-image/pjpeg; ~/dotfiles/office/quicklook.sh %s jpg
-image/png; ~/dotfiles/office/quicklook.sh %s png
-image/gif; ~/dotfiles/office/quicklook.sh %s gif
-video/mp4; ~/dotfiles/office/quicklook.sh %s mp4
-application/pdf; ~/dotfiles/office/quicklook.sh %s pdf
-
-# HTML
+# HTML and text
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
-text/plain; nvim %s
+text/plain; $EDITOR %s
 
-# Unidentified files
-application/octet-stream; ~/dotfiles/office/view-attachment.sh %s "-"
+# images and other media
+audio/aac; ~/dotfiles/office/mutt/view.sh %s 
+audio/mpeg; ~/dotfiles/office/mutt/view.sh %s
+audio/wav; ~/dotfiles/office/mutt/view.sh %s
+audio/webm; ~/dotfiles/office/mutt/view.sh %s
+image/bmp; ~/dotfiles/office/mutt/view.sh %s
+image/gif; ~/dotfiles/office/mutt/view.sh %s
+image/jpeg; ~/dotfiles/office/mutt/view.sh %s
+image/png; ~/dotfiles/office/mutt/view.sh %s
+image/svg+xml; ~/dotfiles/office/mutt/view.sh %s
+image/tiff; ~/dotfiles/office/mutt/view.sh %s
+image/vnd.microsoft.icon; ~/dotfiles/office/mutt/view.sh %s
+video/mp4; ~/dotfiles/office/mutt/view.sh %s
+video/mpeg; ~/dotfiles/office/mutt/view.sh %s
+video/webm; ~/dotfiles/office/mutt/view.sh %s
+video/x-msvideo; ~/dotfiles/office/mutt/view.sh %s
+
+# fonts
+application/vnd.ms-fontobject; ~/dotfiles/office/mutt/view.sh %s
+font/otf; ~/dotfiles/office/mutt/view.sh %s
+font/ttf; ~/dotfiles/office/mutt/view.sh %s
+font/woff2; ~/dotfiles/office/mutt/view.sh %s
+font/woff; ~/dotfiles/office/mutt/view.sh %s
+
+# documents
+application/json; ~/dotfiles/office/mutt/view.sh %s
+application/msword; ~/dotfiles/office/mutt/view.sh %s
+application/pdf; ~/dotfiles/office/mutt/view.sh %s
+application/rtf; ~/dotfiles/office/mutt/view.sh %s
+application/vnd.ms-excel; ~/dotfiles/office/mutt/view.sh %s
+application/vnd.ms-powerpoint; ~/dotfiles/office/mutt/view.sh %s
+application/vnd.oasis.opendocument.presentation; ~/dotfiles/office/mutt/view.sh %s
+application/vnd.oasis.opendocument.spreadsheet; ~/dotfiles/office/mutt/view.sh %s
+application/vnd.oasis.opendocument.text; ~/dotfiles/office/mutt/view.sh %s
+application/vnd.openxmlformats-officedocument.presentationml.presentation; ~/dotfiles/office/mutt/view.sh %s
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; ~/dotfiles/office/mutt/view.sh %s
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; ~/dotfiles/office/mutt/view.sh %s
+application/xml; ~/dotfiles/office/mutt/view.sh %s
+text/calendar; ~/dotfiles/office/mutt/view.sh %s
+text/css; ~/dotfiles/office/mutt/view.sh %s
+text/csv; ~/dotfiles/office/mutt/view.sh %s
+text/javascript; ~/dotfiles/office/mutt/view.sh %s
+text/xml; ~/dotfiles/office/mutt/view.sh %s
+
+# all other Unidentified files
+application/octet-stream; ~/dotfiles/office/mutt/view.sh %s

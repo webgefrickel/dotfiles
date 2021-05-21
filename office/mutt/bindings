@@ -27,10 +27,11 @@ macro index,pager \cb "<pipe-message>urlscan<enter>" "call urlscan to extract UR
 macro index,pager O "<shell-escape>mbsync -a<enter>" "run mbsync to sync all mail"
 
 # View attachments properly.
-bind attach <return> view-mailcap
+bind attach <space> view-mailcap
 
 # Drafts
 bind compose P postpone-message
+bind compose <space> view-attach
 bind index p recall-message
 
 # finding stuff
