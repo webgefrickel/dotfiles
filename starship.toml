@@ -1,0 +1,8 @@
+# Minor modifications to terminal prompt
+
+[cmd_duration]
+min_time = 5_000
+
+[directory]
+truncation_length = 6
+

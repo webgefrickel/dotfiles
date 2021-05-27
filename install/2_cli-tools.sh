@@ -18,6 +18,7 @@ brew install starship
 brew install tree
 
 ln -s ~/dotfiles/lazygit ~/.config/lazygit
+ln -s ~/Dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/dotfiles/lazygit ~/Library/Application\ Support/lazygit
 
 # node cli tools and helpers
