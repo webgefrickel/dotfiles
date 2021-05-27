@@ -36,5 +36,5 @@ bindkey '^Z' fancy-ctrl-z
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(starship init zsh)"
 eval "$(jump shell)"
-eval "$(pyenv init - --no-rehash)"
 eval "$(rbenv init - --no-rehash)"
+eval "$(pyenv init --path --no-rehash)"

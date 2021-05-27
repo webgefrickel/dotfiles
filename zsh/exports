@@ -30,6 +30,10 @@ export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_TRASH=0
 export NNN_ARCHIVE="\\.(7z|bz|bz2|gz|rar|rpm|tar|tgz|zip)$"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
 # fzf colors
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
