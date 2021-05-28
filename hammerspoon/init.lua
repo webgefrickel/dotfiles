@@ -1,71 +1,108 @@
-local tiling = require 'hs.tiling'
-local vimouse = require('vimouse')
-local appliaction = require 'hs.application'
+local vimouse = require 'vimouse'
+local app = require 'hs.application'
+local eventtap = require 'hs.eventtap'
+local hotkey = require 'hs.hotkey'
+local layout = require 'hs.layout'
+local win = require 'hs.window'
+
 local hyper = { 'cmd', 'alt', 'shift', 'ctrl' }
+local laptopMonitor = "Built-in Retina Display"
+local mainMonitor = "TODO TODO"
+
+-- Define position values that don't exist by default in hs.layout.*
+local positions = {
+  rightTop = { x=0.5, y=0, w=0.5, h=0.5 },
+  rightBottom = { x=0.5, y=0.5, w=0.5, h=0.5 }
+}
+
+local layoutDouble = {
+  {"Reminders", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"Calendar", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"Firefox", nil, mainMonitor, layout.left50, nil, nil},
+  {"ForkLift", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"Spotify", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"iTerm", nil, mainMonitor, layout.right50, nil, nil},
+  {"Messages", nil, mainMonitor, positions.rightTop, nil, nil},
+  {"Signal", nil, mainMonitor, positions.rightBottom, nil, nil},
+  {"Telegram", nil, mainMonitor, positions.rightTop, nil, nil},
+  {"Microsoft Teams", nil, mainMonitor, positions.rightBottom, nil, nil},
+}
+
+local layoutSingle = {
+  {"Reminders", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"Calendar", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"Firefox", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"ForkLift", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"Spotify", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"iTerm", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"Messages", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"Signal", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"Telegram", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"Microsoft Teams", nil, laptopMonitor, layout.maximized, nil, nil},
+}
+
+local appNames = {
+  "Reminders",
+  "Calendar",
+  "Firefox",
+  "ForkLift",
+  "Spotify",
+  "iTerm",
+  "Messages",
+  "Signal",
+  "Telegram",
+  "Microsoft Teams",
+}
+
+local function launchApps()
+  for i, appName in ipairs(appNames) do
+    app.launchOrFocus(appName)
+  end
+end
+
+local function moveMouse()
+  local pt = hs.geometry.rectMidPoint(win.focusedWindow():frame())
+  hs.mouse.absolutePosition(pt)
+end
 
 -- Window management
 --------------------
 
-hs.window.animationDuration = 0
-tiling.set('layouts', { 'fullscreen', 'gp-vertical' })
-
-function isInScreen(screen, win)
-  return win:screen() == screen
-end
-
-function moveMouse()
-  local pt = hs.geometry.rectMidPoint(hs.window.focusedWindow():frame())
-  hs.mouse.setAbsolutePosition(pt)
-end
-
-function focusScreen(screen)
-  -- Get windows within screen, ordered from front to back.
-  -- If no windows exist, bring focus to desktop. Otherwise, set focus on
-  -- front-most application window.
-  local windows = hs.fnutils.filter(
-      hs.window.orderedWindows(),
-      hs.fnutils.partial(isInScreen, screen))
-  local windowToFocus = #windows > 0 and windows[1] or hs.window.desktop()
-  windowToFocus:focus()
-  moveMouse()
-end
-
-local function fullsize(window)
-  frame = window:screen():frame()
-  frame.x = 0
-  frame.y = 0
-  frame.w = frame.w
-  frame.h = frame.h
-  window:setFrame(frame)
-end
+win.animationDuration = 0
 
 -- Move and click mouse via keyboard
 vimouse(hyper, 'm')
 
-hs.hotkey.bind(hyper, 'f', function() tiling.toggleFloat(fullsize); moveMouse() end)
-hs.hotkey.bind(hyper, 'r', function() tiling.retile(); moveMouse() end)
-hs.hotkey.bind(hyper, 'a', function() tiling.cycle(1); moveMouse() end)
-hs.hotkey.bind(hyper, 'w', function() tiling.promote(); moveMouse() end)
-hs.hotkey.bind(hyper, 'c', function() tiling.cycleLayout(); moveMouse() end)
-hs.hotkey.bind(hyper, '[', function() hs.window.focusedWindow():moveOneScreenNorth(); moveMouse() end)
-hs.hotkey.bind(hyper, ']', function() hs.window.focusedWindow():moveOneScreenSouth(); moveMouse() end)
-hs.hotkey.bind(hyper, 'h', function() hs.window.focusedWindow():focusWindowWest(); moveMouse() end)
-hs.hotkey.bind(hyper, 'j', function() hs.window.focusedWindow():focusWindowSouth(); moveMouse() end)
-hs.hotkey.bind(hyper, 'k', function() hs.window.focusedWindow():focusWindowNorth(); moveMouse() end)
-hs.hotkey.bind(hyper, 'l', function() hs.window.focusedWindow():focusWindowEast(); moveMouse() end)
+-- Window Navigation
+-- hotkey D is set in Dash itself
+hotkey.bind(hyper, 'a', function() app.launchOrFocus('iTerm') end)
+hotkey.bind(hyper, 's', function() app.launchOrFocus('Firefox') end)
+hotkey.bind(hyper, 'f', function() app.launchOrFocus('ForkLift') end)
+hotkey.bind(hyper, 'g', function() launchApps() end)
+hotkey.bind(hyper, 'n', function() layout.apply(layoutSingle) end)
+hotkey.bind(hyper, 'p', function() layout.apply(layoutDouble) end)
+
+-- Moving window around / navigating windows
+hotkey.bind(hyper, 'z', function() win.focusedWindow():toggleFullScreen(); moveMouse() end)
+hotkey.bind(hyper, '[', function() win.focusedWindow():moveOneScreenNorth(); moveMouse() end)
+hotkey.bind(hyper, ']', function() win.focusedWindow():moveOneScreenSouth(); moveMouse() end)
+hotkey.bind(hyper, 'h', function() win.focusedWindow():focusWindowWest(); moveMouse() end)
+hotkey.bind(hyper, 'j', function() win.focusedWindow():focusWindowSouth(); moveMouse() end)
+hotkey.bind(hyper, 'k', function() win.focusedWindow():focusWindowNorth(); moveMouse() end)
+hotkey.bind(hyper, 'l', function() win.focusedWindow():focusWindowEast(); moveMouse() end)
 
 -- map hyper + number to the corresponding fn-key, since the touchbar
 -- kinda sucks, and karabiner-elements is breaking fn-function to show keys
-hs.hotkey.bind(hyper, '1', function() hs.eventtap.keyStroke({}, 'F1') end)
-hs.hotkey.bind(hyper, '2', function() hs.eventtap.keyStroke({}, 'F2') end)
-hs.hotkey.bind(hyper, '3', function() hs.eventtap.keyStroke({}, 'F3') end)
-hs.hotkey.bind(hyper, '4', function() hs.eventtap.keyStroke({}, 'F4') end)
-hs.hotkey.bind(hyper, '5', function() hs.eventtap.keyStroke({}, 'F5') end)
-hs.hotkey.bind(hyper, '6', function() hs.eventtap.keyStroke({}, 'F6') end)
-hs.hotkey.bind(hyper, '7', function() hs.eventtap.keyStroke({}, 'F7') end)
-hs.hotkey.bind(hyper, '8', function() hs.eventtap.keyStroke({}, 'F8') end)
-hs.hotkey.bind(hyper, '9', function() hs.eventtap.keyStroke({}, 'F9') end)
-hs.hotkey.bind(hyper, '0', function() hs.eventtap.keyStroke({}, 'F10') end)
-hs.hotkey.bind(hyper, '-', function() hs.eventtap.keyStroke({}, 'F11') end)
-hs.hotkey.bind(hyper, '=', function() hs.eventtap.keyStroke({}, 'F12') end)
+hotkey.bind(hyper, '1', function() eventtap.keyStroke({}, 'F1') end)
+hotkey.bind(hyper, '2', function() eventtap.keyStroke({}, 'F2') end)
+hotkey.bind(hyper, '3', function() eventtap.keyStroke({}, 'F3') end)
+hotkey.bind(hyper, '4', function() eventtap.keyStroke({}, 'F4') end)
+hotkey.bind(hyper, '5', function() eventtap.keyStroke({}, 'F5') end)
+hotkey.bind(hyper, '6', function() eventtap.keyStroke({}, 'F6') end)
+hotkey.bind(hyper, '7', function() eventtap.keyStroke({}, 'F7') end)
+hotkey.bind(hyper, '8', function() eventtap.keyStroke({}, 'F8') end)
+hotkey.bind(hyper, '9', function() eventtap.keyStroke({}, 'F9') end)
+hotkey.bind(hyper, '0', function() eventtap.keyStroke({}, 'F10') end)
+hotkey.bind(hyper, '-', function() eventtap.keyStroke({}, 'F11') end)
+hotkey.bind(hyper, '=', function() eventtap.keyStroke({}, 'F12') end)
 
