@@ -1,6 +1,6 @@
 " treesitter
 lua <<EOF
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true
   },
@@ -9,6 +9,23 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 EOF
+
+" bufferline
+lua <<EOF
+require('bufferline').setup {
+  options = {
+    numbers = "ordinal",
+    mappings = true,
+    separator_style = "thin",
+    always_show_bufferline = false,
+    show_close_icon = false
+  }
+}
+EOF
+
+nnoremap <silent> <leader>, :BufferLinePick<cr>
+nnoremap <silent> <leader>] :BufferLineCycleNext<CR>
+nnoremap <silent> <leader>[ :BufferLineCyclePrev<CR>
 
 " fugitive
 nnoremap <silent> <leader>gs :G<cr><C-w>20+

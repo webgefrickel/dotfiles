@@ -1,9 +1,16 @@
 call plug#begin('~/.config/nvim/plugged')
 
+" Some dependencies and colorscheme
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'rktjmp/lush.nvim'
+Plug 'npxbr/gruvbox.nvim'
+
+" Plugins
+Plug 'akinsho/nvim-bufferline.lua'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -19,10 +26,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
 Plug 'wincent/terminus'
-
-" colorscheme
-Plug 'rktjmp/lush.nvim'
-Plug 'npxbr/gruvbox.nvim'
 
 call plug#end()
 
