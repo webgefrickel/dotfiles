@@ -65,6 +65,18 @@ local function moveMouse()
   hs.mouse.absolutePosition(pt)
 end
 
+local function fullSize()
+  local w = win.focusedWindow()
+  local f = w:frame()
+  local max = w:screen():frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w
+  f.h = max.h
+  w:setFrame(f)
+end
+
 -- Window management
 --------------------
 
@@ -83,7 +95,7 @@ hotkey.bind(hyper, 'n', function() layout.apply(layoutSingle) end)
 hotkey.bind(hyper, 'p', function() layout.apply(layoutDouble) end)
 
 -- Moving window around / navigating windows
-hotkey.bind(hyper, 'z', function() win.focusedWindow():toggleFullScreen(); moveMouse() end)
+hotkey.bind(hyper, 'z', function() fullSize(); moveMouse() end)
 hotkey.bind(hyper, '[', function() win.focusedWindow():moveOneScreenNorth(); moveMouse() end)
 hotkey.bind(hyper, ']', function() win.focusedWindow():moveOneScreenSouth(); moveMouse() end)
 hotkey.bind(hyper, 'h', function() win.focusedWindow():focusWindowWest(); moveMouse() end)

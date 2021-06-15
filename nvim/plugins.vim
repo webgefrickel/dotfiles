@@ -23,6 +23,11 @@ require('bufferline').setup {
 }
 EOF
 
+" which key
+lua << EOF
+require('which-key').setup {}
+EOF
+
 nnoremap <silent> <leader>, :BufferLinePick<cr>
 nnoremap <silent> <leader>] :BufferLineCycleNext<CR>
 nnoremap <silent> <leader>[ :BufferLineCyclePrev<CR>

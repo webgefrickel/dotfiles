@@ -7,7 +7,6 @@ Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
 
 " Plugins
-Plug 'akinsho/nvim-bufferline.lua'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
@@ -26,6 +25,10 @@ Plug 'voldikss/vim-floaterm'
 Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
 Plug 'wincent/terminus'
+
+" Stuff to try out...
+Plug 'akinsho/nvim-bufferline.lua'
+Plug 'folke/which-key.nvim'
 
 call plug#end()
 
