@@ -16,7 +16,6 @@ local positions = {
 }
 
 local layoutDouble = {
-  {"Reminders", nil, laptopMonitor, layout.maximized, nil, nil},
   {"Calendar", nil, laptopMonitor, layout.maximized, nil, nil},
   {"Firefox", nil, mainMonitor, layout.left50, nil, nil},
   {"ForkLift", nil, laptopMonitor, layout.maximized, nil, nil},
@@ -29,7 +28,6 @@ local layoutDouble = {
 }
 
 local layoutSingle = {
-  {"Reminders", nil, laptopMonitor, layout.maximized, nil, nil},
   {"Calendar", nil, laptopMonitor, layout.maximized, nil, nil},
   {"Firefox", nil, laptopMonitor, layout.maximized, nil, nil},
   {"ForkLift", nil, laptopMonitor, layout.maximized, nil, nil},
@@ -42,7 +40,6 @@ local layoutSingle = {
 }
 
 local appNames = {
-  "Reminders",
   "Calendar",
   "Firefox",
   "ForkLift",
