@@ -7,7 +7,7 @@ local win = require 'hs.window'
 
 local hyper = { 'cmd', 'alt', 'shift', 'ctrl' }
 local laptopMonitor = "Built-in Retina Display"
-local mainMonitor = "TODO TODO"
+local mainMonitor = "DELL U3415W"
 
 -- Define position values that don't exist by default in hs.layout.*
 local positions = {
@@ -20,7 +20,7 @@ local layoutDouble = {
   {"Firefox", nil, mainMonitor, layout.left50, nil, nil},
   {"ForkLift", nil, laptopMonitor, layout.maximized, nil, nil},
   {"Spotify", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"iTerm", nil, mainMonitor, layout.right50, nil, nil},
+  {"iTerm2", nil, mainMonitor, layout.right50, nil, nil},
   {"Messages", nil, mainMonitor, positions.rightTop, nil, nil},
   {"Signal", nil, mainMonitor, positions.rightBottom, nil, nil},
   {"Telegram", nil, mainMonitor, positions.rightTop, nil, nil},
@@ -32,7 +32,7 @@ local layoutSingle = {
   {"Firefox", nil, laptopMonitor, layout.maximized, nil, nil},
   {"ForkLift", nil, laptopMonitor, layout.maximized, nil, nil},
   {"Spotify", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"iTerm", nil, laptopMonitor, layout.maximized, nil, nil},
+  {"iTerm2", nil, laptopMonitor, layout.maximized, nil, nil},
   {"Messages", nil, laptopMonitor, layout.maximized, nil, nil},
   {"Signal", nil, laptopMonitor, layout.maximized, nil, nil},
   {"Telegram", nil, laptopMonitor, layout.maximized, nil, nil},
