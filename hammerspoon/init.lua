@@ -74,6 +74,54 @@ local function fullSize()
   w:setFrame(f)
 end
 
+local function halfLeft()
+  local w = win.focusedWindow()
+  local f = w:frame()
+  local max = w:screen():frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w / 2
+  f.h = max.h
+  w:setFrame(f)
+end
+
+local function halfRight()
+  local w = win.focusedWindow()
+  local f = w:frame()
+  local max = w:screen():frame()
+
+  f.x = max.x + (max.w / 2)
+  f.y = max.y
+  f.w = max.w / 2
+  f.h = max.h
+  w:setFrame(f)
+end
+
+local function halfUp()
+  local w = win.focusedWindow()
+  local f = w:frame()
+  local max = w:screen():frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w
+  f.h = max.h / 2
+  w:setFrame(f)
+end
+
+local function halfDown()
+  local w = win.focusedWindow()
+  local f = w:frame()
+  local max = w:screen():frame()
+
+  f.x = max.x
+  f.y = max.h / 2
+  f.w = max.w
+  f.h = max.h / 2
+  w:setFrame(f)
+end
+
 -- Window management
 --------------------
 
@@ -95,10 +143,10 @@ hotkey.bind(hyper, 'p', function() layout.apply(layoutDouble) end)
 hotkey.bind(hyper, 'z', function() fullSize(); moveMouse() end)
 hotkey.bind(hyper, '[', function() win.focusedWindow():moveOneScreenNorth(); moveMouse() end)
 hotkey.bind(hyper, ']', function() win.focusedWindow():moveOneScreenSouth(); moveMouse() end)
-hotkey.bind(hyper, 'h', function() win.focusedWindow():focusWindowWest(); moveMouse() end)
-hotkey.bind(hyper, 'j', function() win.focusedWindow():focusWindowSouth(); moveMouse() end)
-hotkey.bind(hyper, 'k', function() win.focusedWindow():focusWindowNorth(); moveMouse() end)
-hotkey.bind(hyper, 'l', function() win.focusedWindow():focusWindowEast(); moveMouse() end)
+hotkey.bind(hyper, 'h', function() halfLeft(); moveMouse() end)
+hotkey.bind(hyper, 'j', function() halfDown(); moveMouse() end)
+hotkey.bind(hyper, 'k', function() halfUp(); moveMouse() end)
+hotkey.bind(hyper, 'l', function() halfRight(); moveMouse() end)
 
 -- map hyper + number to the corresponding fn-key, since the touchbar
 -- kinda sucks, and karabiner-elements is breaking fn-function to show keys
