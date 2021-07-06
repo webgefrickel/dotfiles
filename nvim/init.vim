@@ -2,7 +2,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Some dependencies and colorscheme
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
 
@@ -25,10 +24,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
 Plug 'wincent/terminus'
-
-" Stuff to try out...
-Plug 'akinsho/nvim-bufferline.lua'
-Plug 'folke/which-key.nvim'
 
 call plug#end()
 

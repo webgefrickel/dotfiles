@@ -10,24 +10,6 @@ require('nvim-treesitter.configs').setup {
 }
 EOF
 
-" bufferline
-lua <<EOF
-require('bufferline').setup {
-  options = {
-    numbers = "ordinal",
-    mappings = true,
-    separator_style = "thin",
-    always_show_bufferline = false,
-    show_close_icon = false
-  }
-}
-EOF
-
-" which key
-lua << EOF
-require('which-key').setup {}
-EOF
-
 nnoremap <silent> <leader>, :BufferLinePick<cr>
 nnoremap <silent> <leader>] :BufferLineCycleNext<CR>
 nnoremap <silent> <leader>[ :BufferLineCyclePrev<CR>

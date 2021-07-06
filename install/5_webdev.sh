@@ -27,9 +27,11 @@ brew link php@7.4
 pecl install imagick
 
 # additional webdev cli tools
-npm install -g npm-check
-npm install -g yarn
+npm install -g depcheck
 npm install -g glyphhanger
+npm install -g npm-check
+npm install -g npm-check-updates
+npm install -g yarn
 
 # additional stuff for glyphhanger
 pip install fonttools
