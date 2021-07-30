@@ -18,10 +18,16 @@ nnoremap Y y$
 " auto-yanking with clipper for selected yanking, see leader-y mapping
 vnoremap y y :call system('nc localhost 8377', @0)<cr>
 
-" Search mappings: These will make it so that going to the next one in a
-" search will center on the line it's found in.
-nnoremap N Nzz
-nnoremap n nzz
+" Keeping it centered
+nnoremap N Nzzzv
+nnoremap n nzzzv
+nnoremap J mzJ`z
+
+" und breakpoints when writing long text/code
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
 
 " use the arrowkeys for usefull stuff in normal mode -- switching buffers
 nnoremap <up> :bfirst<cr>
@@ -32,12 +38,12 @@ nnoremap <right> :bn<cr>
 " Bubble/indent lines using unimpaired
 " using left alt + hjkl on mac usgerman keyboard
 " those are some weird mappings, but they work!
-nmap ˚ [e
-nmap ∆ ]e
+nmap ˚ :m .-2<cr>==
+nmap ∆ :m .+1<cr>==
 nmap ˙ <<
 nmap ¬ >>
-vmap ˚ [egv
-vmap ∆ ]egv
+vmap ∆ :m '>+1<cr>gv=gv
+vmap ˚ :m '<-2<cr>gv=gv
 vmap ˙ <gv
 vmap ¬ >gv
 

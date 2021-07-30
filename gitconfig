@@ -40,6 +40,7 @@
   st = status
   cm = commit
   co = checkout
+  cp = cherry-pick
   br = branch -a
   ps = push
   pl = pull
