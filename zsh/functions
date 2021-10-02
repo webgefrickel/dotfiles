@@ -66,7 +66,18 @@ webvideo () {
   ffmpeg -i $1 -map_metadata -1 -c:a libopus -b:a 64k -c:v librav1e -qp 110 -speed 4 -tile-columns 2 -tile-rows 2 -movflags +faststart -vf $SCALE -threads 0 $1.av1.webm
 }
 
-webvideonoaudio () {
+webvideomute () {
+  WIDTH="${2:-trunc(iw/2)*2}"
+  HEIGHT="trunc(ih/2)*2"
+  if [[ -n "$2" ]]
+  then
+    HEIGHT="trunc(ow/a/2)*2"
+  fi
+
+  SCALE="scale=$WIDTH\:$HEIGHT"
+
+  ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 26 -preset slow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf $SCALE -threads 0 $1.h264.mp4
+  ffmpeg -i $1 -map_metadata -1 -an -c:v librav1e -qp 110 -speed 4 -tile-columns 2 -tile-rows 2 -movflags +faststart -vf $SCALE -threads 0 $1.av1.webm
 }
 
 webvideoposter () {

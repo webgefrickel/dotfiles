@@ -4,9 +4,6 @@ brew install neovim --HEAD
 brew install tmux
 
 # vim dependencies
-gem install neovim
-pip install neovim
-npm install -g neovim
 
 # link config files
 ln -s ~/dotfiles/nvim ~/.config/nvim
