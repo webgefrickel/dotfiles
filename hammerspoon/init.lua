@@ -1,42 +1,54 @@
-local vimouse = require 'vimouse'
-local app = require 'hs.application'
-local eventtap = require 'hs.eventtap'
-local hotkey = require 'hs.hotkey'
-local layout = require 'hs.layout'
-local win = require 'hs.window'
+local vimouse = require('vimouse')
+
+local app = require('hs.application')
+local eventtap = require('hs.eventtap')
+local geometry = require('hs.geometry')
+local hotkey = require('hs.hotkey')
+local layout = require('hs.layout')
+local screen = require('hs.screen')
+local win = require('hs.window')
 
 local hyper = { 'cmd', 'alt', 'shift', 'ctrl' }
 local laptopMonitor = "Built-in Retina Display"
 local mainMonitor = "DELL U3415W"
 
--- Define position values that don't exist by default in hs.layout.*
-local positions = {
-  rightTop = { x=0.5, y=0, w=0.5, h=0.5 },
-  rightBottom = { x=0.5, y=0.5, w=0.5, h=0.5 }
+-- Custom positions where apps can be on the screen
+local screenPositions = {
+  left = geometry.rect(0.01, 0.01, 0.485, 0.98),
+  leftTop = { x = 0.01, y = 0.01, w = 0.485, h = 0.485 },
+  leftBottom = { x= 0.01, y = 0.505, w = 0.485, h = 0.485 },
+  right = geometry.rect(0.505, 0.01, 0.485, 0.98),
+  rightTop = { x = 0.505, y = 0.01, w = 0.485, h = 0.485 },
+  rightBottom = { x= 0.505, y = 0.505, w = 0.485, h = 0.485 },
+  top = geometry.rect(0.01, 0.01, 0.98, 0.485),
+  bottom = geometry.rect(0.01, 0.505, 0.98, 0.485),
+  center = geometry.rect(0.15, 0.15, 0.7, 0.7),
+  max = geometry.rect(0.01, 0.01, 0.98, 0.98),
+  full = geometry.rect(0, 0, 1, 1),
 }
 
 local layoutDouble = {
-  {"Calendar", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"Firefox", nil, mainMonitor, layout.left50, nil, nil},
-  {"ForkLift", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"Spotify", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"iTerm2", nil, mainMonitor, layout.right50, nil, nil},
-  {"Messages", nil, mainMonitor, positions.rightTop, nil, nil},
-  {"Signal", nil, mainMonitor, positions.rightBottom, nil, nil},
-  {"Telegram", nil, mainMonitor, positions.rightTop, nil, nil},
-  {"Microsoft Teams", nil, mainMonitor, positions.rightBottom, nil, nil},
+  { "Calendar", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "Firefox", nil, mainMonitor, screenPositions.left, nil, nil },
+  { "ForkLift", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "Spotify", nil, mainMonitor, screenPositions.left, nil, nil },
+  { "iTerm2", nil, mainMonitor, screenPositions.right, nil, nil },
+  { "Messages", nil, mainMonitor, screenPositions.rightTop, nil, nil },
+  { "Signal", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
+  { "Telegram", nil, mainMonitor, screenPositions.rightTop, nil, nil },
+  { "Microsoft Teams", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
 }
 
 local layoutSingle = {
-  {"Calendar", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"Firefox", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"ForkLift", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"Spotify", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"iTerm2", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"Messages", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"Signal", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"Telegram", nil, laptopMonitor, layout.maximized, nil, nil},
-  {"Microsoft Teams", nil, laptopMonitor, layout.maximized, nil, nil},
+  { "Calendar", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "Firefox", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "ForkLift", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "Spotify", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "iTerm2", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "Messages", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "Signal", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "Telegram", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "Microsoft Teams", nil, laptopMonitor, screenPositions.max, nil, nil },
 }
 
 local appNames = {
@@ -62,64 +74,17 @@ local function moveMouse()
   hs.mouse.absolutePosition(pt)
 end
 
-local function fullSize()
+local function applyPosition(pos)
   local w = win.focusedWindow()
-  local f = w:frame()
-  local max = w:screen():frame()
+  local screenName = w:screen():name()
+  local tempPos = screenPositions[pos]
+  print(meh)
 
-  f.x = max.x
-  f.y = max.y
-  f.w = max.w
-  f.h = max.h
-  w:setFrame(f)
-end
+  local tempLayout = {
+    { app.frontmostApplication(), nil, screenName, tempPos, nil, nil },
+  }
 
-local function halfLeft()
-  local w = win.focusedWindow()
-  local f = w:frame()
-  local max = w:screen():frame()
-
-  f.x = max.x
-  f.y = max.y
-  f.w = max.w / 2
-  f.h = max.h
-  w:setFrame(f)
-end
-
-local function halfRight()
-  local w = win.focusedWindow()
-  local f = w:frame()
-  local max = w:screen():frame()
-
-  f.x = max.x + (max.w / 2)
-  f.y = max.y
-  f.w = max.w / 2
-  f.h = max.h
-  w:setFrame(f)
-end
-
-local function halfUp()
-  local w = win.focusedWindow()
-  local f = w:frame()
-  local max = w:screen():frame()
-
-  f.x = max.x
-  f.y = max.y
-  f.w = max.w
-  f.h = max.h / 2
-  w:setFrame(f)
-end
-
-local function halfDown()
-  local w = win.focusedWindow()
-  local f = w:frame()
-  local max = w:screen():frame()
-
-  f.x = max.x
-  f.y = max.h / 2
-  f.w = max.w
-  f.h = max.h / 2
-  w:setFrame(f)
+  layout.apply(tempLayout)
 end
 
 -- Window management
@@ -128,7 +93,11 @@ end
 win.animationDuration = 0
 
 -- Move and click mouse via keyboard
-vimouse(hyper, 'm')
+vimouse(hyper, ',')
+
+-- Applying main two layouts
+hotkey.bind(hyper, 'q', function() layout.apply(layoutSingle) end)
+hotkey.bind(hyper, 'w', function() layout.apply(layoutDouble) end)
 
 -- Window Navigation
 -- hotkey D is set in Dash itself
@@ -136,17 +105,22 @@ hotkey.bind(hyper, 'a', function() app.launchOrFocus('iTerm') end)
 hotkey.bind(hyper, 's', function() app.launchOrFocus('Firefox') end)
 hotkey.bind(hyper, 'f', function() app.launchOrFocus('ForkLift') end)
 hotkey.bind(hyper, 'g', function() launchApps() end)
-hotkey.bind(hyper, 'n', function() layout.apply(layoutSingle) end)
-hotkey.bind(hyper, 'p', function() layout.apply(layoutDouble) end)
 
 -- Moving window around / navigating windows
-hotkey.bind(hyper, 'z', function() fullSize(); moveMouse() end)
 hotkey.bind(hyper, '[', function() win.focusedWindow():moveOneScreenNorth(); moveMouse() end)
 hotkey.bind(hyper, ']', function() win.focusedWindow():moveOneScreenSouth(); moveMouse() end)
-hotkey.bind(hyper, 'h', function() halfLeft(); moveMouse() end)
-hotkey.bind(hyper, 'j', function() halfDown(); moveMouse() end)
-hotkey.bind(hyper, 'k', function() halfUp(); moveMouse() end)
-hotkey.bind(hyper, 'l', function() halfRight(); moveMouse() end)
+
+hotkey.bind(hyper, 'z', function() applyPosition('full'); moveMouse() end)
+hotkey.bind(hyper, 'x', function() applyPosition('max'); moveMouse() end)
+hotkey.bind(hyper, 'c', function() applyPosition('center'); moveMouse() end)
+hotkey.bind(hyper, 'h', function() applyPosition('left'); moveMouse() end)
+hotkey.bind(hyper, 'u', function() applyPosition('leftTop'); moveMouse() end)
+hotkey.bind(hyper, 'n', function() applyPosition('leftBottom'); moveMouse() end)
+hotkey.bind(hyper, 'l', function() applyPosition('right'); moveMouse() end)
+hotkey.bind(hyper, 'i', function() applyPosition('rightTop'); moveMouse() end)
+hotkey.bind(hyper, 'm', function() applyPosition('rightBottom'); moveMouse() end)
+hotkey.bind(hyper, 'k', function() applyPosition('top'); moveMouse() end)
+hotkey.bind(hyper, 'j', function() applyPosition('bottom'); moveMouse() end)
 
 -- map hyper + number to the corresponding fn-key, since the touchbar
 -- kinda sucks, and karabiner-elements is breaking fn-function to show keys
