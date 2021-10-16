@@ -1,5 +1,4 @@
 local vimouse = require('vimouse')
-
 local app = require('hs.application')
 local eventtap = require('hs.eventtap')
 local geometry = require('hs.geometry')
@@ -8,11 +7,16 @@ local layout = require('hs.layout')
 local screen = require('hs.screen')
 local win = require('hs.window')
 
+-- Custom variables
+--------------------
+
 local hyper = { 'cmd', 'alt', 'shift', 'ctrl' }
 local laptopMonitor = "Built-in Retina Display"
 local mainMonitor = "DELL U3415W"
 
--- Custom positions where apps can be on the screen
+-- Custom positions and layouts where which apps can be on the screen
+--------------------
+
 local screenPositions = {
   left = geometry.rect(0.01, 0.01, 0.485, 0.98),
   leftTop = { x = 0.01, y = 0.01, w = 0.485, h = 0.485 },
@@ -28,9 +32,9 @@ local screenPositions = {
 }
 
 local layoutDouble = {
-  { "Calendar", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "Calendar", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Firefox", nil, mainMonitor, screenPositions.left, nil, nil },
-  { "ForkLift", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "ForkLift", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Spotify", nil, mainMonitor, screenPositions.left, nil, nil },
   { "iTerm2", nil, mainMonitor, screenPositions.right, nil, nil },
   { "Messages", nil, mainMonitor, screenPositions.rightTop, nil, nil },
@@ -40,15 +44,15 @@ local layoutDouble = {
 }
 
 local layoutSingle = {
-  { "Calendar", nil, laptopMonitor, screenPositions.max, nil, nil },
-  { "Firefox", nil, laptopMonitor, screenPositions.max, nil, nil },
-  { "ForkLift", nil, laptopMonitor, screenPositions.max, nil, nil },
-  { "Spotify", nil, laptopMonitor, screenPositions.max, nil, nil },
-  { "iTerm2", nil, laptopMonitor, screenPositions.max, nil, nil },
-  { "Messages", nil, laptopMonitor, screenPositions.max, nil, nil },
-  { "Signal", nil, laptopMonitor, screenPositions.max, nil, nil },
-  { "Telegram", nil, laptopMonitor, screenPositions.max, nil, nil },
-  { "Microsoft Teams", nil, laptopMonitor, screenPositions.max, nil, nil },
+  { "Calendar", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Firefox", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "ForkLift", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Spotify", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "iTerm2", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Messages", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Signal", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Telegram", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Microsoft Teams", nil, laptopMonitor, screenPositions.full, nil, nil },
 }
 
 local appNames = {
@@ -62,6 +66,9 @@ local appNames = {
   "Telegram",
   "Microsoft Teams",
 }
+
+-- Local helper functions
+--------------------
 
 local function launchApps()
   for i, appName in ipairs(appNames) do
@@ -78,8 +85,6 @@ local function applyPosition(pos)
   local w = win.focusedWindow()
   local screenName = w:screen():name()
   local tempPos = screenPositions[pos]
-  print(meh)
-
   local tempLayout = {
     { app.frontmostApplication(), nil, screenName, tempPos, nil, nil },
   }
@@ -87,29 +92,28 @@ local function applyPosition(pos)
   layout.apply(tempLayout)
 end
 
--- Window management
+-- Window management and general config
 --------------------
 
 win.animationDuration = 0
 
--- Move and click mouse via keyboard
-vimouse(hyper, ',')
+-- Keybindings
+--------------------
 
 -- Applying main two layouts
 hotkey.bind(hyper, 'q', function() layout.apply(layoutSingle) end)
 hotkey.bind(hyper, 'w', function() layout.apply(layoutDouble) end)
 
--- Window Navigation
+-- Direct app navigation
 -- hotkey D is set in Dash itself
 hotkey.bind(hyper, 'a', function() app.launchOrFocus('iTerm') end)
 hotkey.bind(hyper, 's', function() app.launchOrFocus('Firefox') end)
 hotkey.bind(hyper, 'f', function() app.launchOrFocus('ForkLift') end)
 hotkey.bind(hyper, 'g', function() launchApps() end)
 
--- Moving window around / navigating windows
+-- Moving windows around / navigating windows
 hotkey.bind(hyper, '[', function() win.focusedWindow():moveOneScreenNorth(); moveMouse() end)
 hotkey.bind(hyper, ']', function() win.focusedWindow():moveOneScreenSouth(); moveMouse() end)
-
 hotkey.bind(hyper, 'z', function() applyPosition('full'); moveMouse() end)
 hotkey.bind(hyper, 'x', function() applyPosition('max'); moveMouse() end)
 hotkey.bind(hyper, 'c', function() applyPosition('center'); moveMouse() end)
@@ -137,3 +141,4 @@ hotkey.bind(hyper, '0', function() eventtap.keyStroke({}, 'F10') end)
 hotkey.bind(hyper, '-', function() eventtap.keyStroke({}, 'F11') end)
 hotkey.bind(hyper, '=', function() eventtap.keyStroke({}, 'F12') end)
 
+vimouse(hyper, ',')
