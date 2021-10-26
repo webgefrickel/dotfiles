@@ -86,7 +86,7 @@ local function applyPosition(pos)
   local screenName = w:screen():name()
   local tempPos = screenPositions[pos]
   local tempLayout = {
-    { app.frontmostApplication(), nil, screenName, tempPos, nil, nil },
+    { app.frontmostApplication(), w, screenName, tempPos, nil, nil },
   }
 
   layout.apply(tempLayout)
