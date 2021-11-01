@@ -35,36 +35,39 @@ local layoutDouble = {
   { "Calendar", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Firefox", nil, mainMonitor, screenPositions.left, nil, nil },
   { "ForkLift", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Spotify", nil, mainMonitor, screenPositions.left, nil, nil },
-  { "iTerm2", nil, mainMonitor, screenPositions.right, nil, nil },
   { "Messages", nil, mainMonitor, screenPositions.rightTop, nil, nil },
-  { "Signal", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
-  { "Telegram", nil, mainMonitor, screenPositions.rightTop, nil, nil },
   { "Microsoft Teams", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
+  { "Reminders", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Signal", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
+  { "Spotify", nil, mainMonitor, screenPositions.left, nil, nil },
+  { "Telegram", nil, mainMonitor, screenPositions.rightTop, nil, nil },
+  { "iTerm2", nil, mainMonitor, screenPositions.right, nil, nil },
 }
 
 local layoutSingle = {
   { "Calendar", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Firefox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "ForkLift", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Spotify", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "iTerm2", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Messages", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Signal", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Telegram", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Microsoft Teams", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Reminders", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Signal", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Spotify", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Telegram", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "iTerm2", nil, laptopMonitor, screenPositions.full, nil, nil },
 }
 
 local appNames = {
   "Calendar",
   "Firefox",
   "ForkLift",
-  "Spotify",
-  "iTerm",
   "Messages",
-  "Signal",
-  "Telegram",
   "Microsoft Teams",
+  "Reminders",
+  "Signal",
+  "Spotify",
+  "Telegram",
+  "iTerm",
 }
 
 -- Local helper functions

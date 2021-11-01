@@ -8,8 +8,8 @@ brew tap homebrew/services
 brew install clipper
 brew install exa
 brew install fzf
+brew install glances
 brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac --with-rav1e
-brew install htop
 brew install jump
 brew install lazygit
 brew install nnn
