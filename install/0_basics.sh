@@ -3,6 +3,10 @@
 # everything neccessary first - command line tools
 xcode-select --install
 
+# default macos settings
+defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write com.apple.Finder AppleShowAllFiles true
+
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew doctor
@@ -17,14 +21,9 @@ brew install git-flow
 brew install openssl
 brew install zsh
 
-# install all submodules
-cd ~/dotfiles
-git submodule init
-git submodule update
-git submodule foreach git pull origin master
-
 # basic config symlinks
 mkdir ~/.config
+cd ~/dotfiles
 ln -s ~/dotfiles/editorconfig ~/.editorconfig
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
