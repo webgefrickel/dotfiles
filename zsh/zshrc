@@ -1,7 +1,7 @@
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
   command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-  command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+  command git clone https://github.com/zdharma-continuum/zinit "$HOME/.zinit/bin" && \
     print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
     print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -20,7 +20,7 @@ source ~/dotfiles/zsh/functions
 zinit wait lucid for \
     light-mode zsh-users/zsh-autosuggestions \
     light-mode zsh-users/zsh-completions \
-    light-mode zdharma/fast-syntax-highlighting \
+    light-mode zdharma-continuum/fast-syntax-highlighting \
     light-mode "https://github.com/belak/zsh-utils/blob/master/history/history.plugin.zsh" \
     light-mode "https://github.com/belak/zsh-utils/blob/master/completion/completion.plugin.zsh"
 
