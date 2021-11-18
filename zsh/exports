@@ -2,19 +2,18 @@ export CLICOLOR=1
 export COPYFILE_DISABLE=true
 export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
 export DISABLE_AUTO_TITLE=true
-export EDITOR="/usr/local/bin/nvim"
+export EDITOR="/opt/homebrew/bin/nvim"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=$LANG
 export LESS="-F -i -J -M -R -W -x2 -X -z-4"
-export MANPATH=/usr/local/share/man:$MANPATH
+export MANPATH=/opt/homebrew/share/man:$MANPATH
 export PAGER="less"
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/opt/curl/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export SHELL=/usr/local/bin/zsh
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/opt/curl/bin:$PATH
+export SHELL=/opt/homebrew/bin/zsh
 export TERM=xterm-256color
-export VISUAL="/usr/local/bin/nvim"
+export VISUAL="/opt/homebrew/bin/nvim"
 
 # ripgrep
 export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc"
