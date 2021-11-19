@@ -30,11 +30,6 @@ alias vdiff='$EDITOR -d'
 alias vi=$EDITOR
 alias vim=$EDITOR
 alias vimdiff='$EDITOR -d'
-alias woffwoff='glyphhanger --subset="*.otf" --formats=woff-zopfli,woff2'
 alias yp='yarn lint && yarn production'
 alias yre='rm -f yarn.lock && rm -rf node_modules && yarn'
 alias ys='yarn start'
-
-# temp fix for dnsmasq-bootup/unifi-java fuckup
-alias unififix='sudo ln -s /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk /Applications/UniFi.app/Contents/PlugIns/adoptopenjdk-8.jdk && sudo v /Applications/UniFi.app/Contents/Info.plist'
-# THEN: <key>JVMRuntime</key> <string>adoptopenjdk-8.jdk</string>
