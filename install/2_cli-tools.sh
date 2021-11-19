@@ -26,7 +26,7 @@ npm install -g diff-so-fancy
 npm install -g fkill-cli
 
 # install fzf
-/usr/local/opt/fzf/install
+/opt/homebrew/opt/fzf/install
 
 # clipper
 mkdir -p ~/Library/LaunchAgents

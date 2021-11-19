@@ -2,10 +2,12 @@
 # install xcode and other software from the app store
 # everything neccessary first - command line tools
 xcode-select --install
+sudo xcodebuild -license
+sudo softwareupdate --install-rosetta
 
 # default macos settings
 defaults write -g ApplePressAndHoldEnabled -bool false
-defaults write com.apple.Finder AppleShowAllFiles true
+defaults write com.apple.Finder AppleShowAllFiles -bool true
 
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -24,7 +26,6 @@ brew install zsh
 # basic config symlinks
 mkdir ~/.config
 cd ~/dotfiles
-ln -s ~/dotfiles/editorconfig ~/.editorconfig
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/zsh ~/.zsh
@@ -35,7 +36,7 @@ tic ~/dotfiles/other/xterm-256color.terminfo
 
 # zsh as default
 sudo vim /etc/shells
-chsh -s /usr/local/bin/zsh
+chsh -s /opt/homebrew/bin/zsh
 /usr/bin/env zsh
 sudo launchctl config user path $PATH
 

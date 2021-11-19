@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 brew tap buo/cask-upgrade
 brew tap homebrew/cask-fonts
 
@@ -12,17 +12,14 @@ brew install --cask forklift
 brew install --cask google-chrome
 brew install --cask hammerspoon
 brew install --cask iina
-brew install --cask imagealpha
-brew install --cask imageoptim
 brew install --cask iterm2
 brew install --cask kap
 brew install --cask karabiner-elements
 brew install --cask microsoft-teams
 brew install --cask qlstephen
+brew install --cask reaper
 brew install --cask sequel-pro
 brew install --cask signal
-brew install --cask sketch
-brew install --cask skype
 brew install --cask spotify
 brew install --cask syntax-highlight
 brew install --cask telegram
