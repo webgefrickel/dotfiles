@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # everything needed for mutt
 brew install gpgme
@@ -22,10 +22,10 @@ mkdir ~/Mail/viu
 mkdir ~/Mail/viu/cur
 mkdir ~/Mail/viu/new
 mkdir ~/Mail/viu/tmp
-mkdir ~/Mail/===================
-mkdir ~/Mail/===================/cur
-mkdir ~/Mail/===================/new
-mkdir ~/Mail/===================/tmp
+mkdir ~/Mail/───────────────────
+mkdir ~/Mail/───────────────────/cur
+mkdir ~/Mail/───────────────────/new
+mkdir ~/Mail/───────────────────/tmp
 
 # link config files
 ln -s ~/dotfiles/office/mutt ~/.mutt
