@@ -38,12 +38,12 @@ nnoremap <right> :bn<cr>
 " Bubble/indent lines using unimpaired
 " using left alt + hjkl on mac usgerman keyboard
 " those are some weird mappings, but they work!
-nmap ˚ :m .-2<cr>==
-nmap ∆ :m .+1<cr>==
+nmap ˚ [e
+nmap ∆ ]e
 nmap ˙ <<
 nmap ¬ >>
-vmap ∆ :m '>+1<cr>gv=gv
-vmap ˚ :m '<-2<cr>gv=gv
+vmap ˚ [egv
+vmap ∆ ]egv
 vmap ˙ <gv
 vmap ¬ >gv
 
