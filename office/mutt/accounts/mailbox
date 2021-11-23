@@ -1,5 +1,5 @@
 set from = "kontakt@webgefrickel.de"
-set sendmail = "/usr/local/bin/msmtp -a mailbox"
+set sendmail = "msmtp -a mailbox"
 
 # Set folders
 set spoolfile = "+mailbox/INBOX"

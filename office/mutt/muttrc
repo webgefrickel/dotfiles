@@ -1,7 +1,7 @@
 # paths
 set folder = ~/Mail
+set certificate_file = ~/Dotfiles/office/certificates.crt
 set message_cachedir = ~/.mutt/cache/bodies
-set certificate_file = ~/dotfiles/office/certificates.crt
 set mailcap_path = ~/.mutt/mailcap
 set tmpdir = ~/.mutt/tmp
 

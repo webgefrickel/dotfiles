@@ -4,6 +4,9 @@
 xcode-select --install
 sudo xcodebuild -license
 sudo softwareupdate --install-rosetta
+sudo scutil --set ComputerName "mausohr"
+sudo scutil --set LocalHostName "mausohr"
+sudo scutil --set HostName "mausohr"
 
 # default macos settings
 defaults write -g ApplePressAndHoldEnabled -bool false

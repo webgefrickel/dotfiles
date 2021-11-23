@@ -1,5 +1,5 @@
 set from = "steffen.rademacker@viu.ch"
-set sendmail = "/usr/local/bin/msmtp -a viu"
+set sendmail = "msmtp -a viu"
 
 # Set folders
 set spoolfile = "+viu/INBOX"
