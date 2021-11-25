@@ -23,13 +23,19 @@
     "json",
     "yaml"
   ],
-  // autofixing via linters
+  // linters config
   "eslint.autoFixOnSave": true,
-  "stylelintplus.autoFixOnSave": true,
-  // we use eslint instaed
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "wxss.validate": false,
   "javascript.format.enabled": false,
   "javascript.validate.enable": false,
   "typescript.format.enabled": false,
+  "stylelintplus.autoFixOnSave": true,
+  "stylelintplus.filetypes": [
+    "scss"
+  ],
   "suggest.minTriggerInputLength": 3,
   "suggest.noselect": false,
   "suggest.enablePreselect": true,
