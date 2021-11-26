@@ -7,14 +7,3 @@
 127.0.0.1 localhost
 255.255.255.255 broadcasthost
 ::1 localhost
-
-## 
-# Block procrastination websites
-##
-
-127.0.0.1 reddit.com
-127.0.0.1 www.reddit.com
-127.0.0.1 imgur.com
-127.0.0.1 www.imgur.com
-127.0.0.1 twitter.com
-127.0.0.1 www.twitter.com
