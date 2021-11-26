@@ -11,6 +11,8 @@ local win = require('hs.window')
 --------------------
 
 local hyper = { 'cmd', 'alt', 'shift', 'ctrl' }
+local alt = { 'alt' }
+local altShift = { 'alt', 'shift' }
 local laptopMonitor = "Built-in Retina Display"
 local mainMonitor = "DELL U3415W"
 
@@ -143,5 +145,16 @@ hotkey.bind(hyper, '9', function() eventtap.keyStroke({}, 'F9') end)
 hotkey.bind(hyper, '0', function() eventtap.keyStroke({}, 'F10') end)
 hotkey.bind(hyper, '-', function() eventtap.keyStroke({}, 'F11') end)
 hotkey.bind(hyper, '=', function() eventtap.keyStroke({}, 'F12') end)
+
+-- macos keyboard input source switching is still broken AF, so we map
+-- umlauts and others manually with hammerspoon, instead of using US-german-layout
+-- dunno why I had to add a space beföre ´äÄ, but this way it works
+hotkey.bind(alt, 'a', function() eventtap.keyStrokes(' ä') end)
+hotkey.bind(alt, 'o', function() eventtap.keyStrokes('ö') end)
+hotkey.bind(alt, 's', function() eventtap.keyStrokes('ß') end)
+hotkey.bind(alt, 'u', function() eventtap.keyStrokes('ü') end)
+hotkey.bind(altShift, 'a', function() eventtap.keyStrokes(' Ä') end)
+hotkey.bind(altShift, 'o', function() eventtap.keyStrokes('Ö') end)
+hotkey.bind(altShift, 'u', function() eventtap.keyStrokes('Ü') end)
 
 vimouse(hyper, ',')
