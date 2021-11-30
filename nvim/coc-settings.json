@@ -2,7 +2,7 @@
 ////////////////////////////
 // coc-calc
 // coc-css
-// coc-eslint
+// coc-eslint8 // -- fall back to non-8 when supported offically
 // coc-html
 // coc-json
 // coc-markdownlint
@@ -18,8 +18,6 @@
     "typescriptreact",
     "javascriptreact",
     "javascript",
-    "scss",
-    "css",
     "json",
     "yaml"
   ],
