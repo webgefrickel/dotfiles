@@ -12,7 +12,11 @@ END
 
 " lualine
 lua << END
-require('lualine').setup()
+require('lualine').setup({
+  options = {
+    theme = 'nightfox'
+  }
+})
 END
 
 nnoremap <silent> <leader>, :BufferLinePick<cr>
