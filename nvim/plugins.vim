@@ -1,5 +1,5 @@
 " treesitter
-lua << END
+lua << EOF
 require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true
@@ -8,16 +8,16 @@ require('nvim-treesitter.configs').setup({
     enable = true
   }
 })
-END
+EOF
 
 " lualine
-lua << END
+lua << EOF
 require('lualine').setup({
   options = {
     theme = 'nightfox'
   }
 })
-END
+EOF
 
 nnoremap <silent> <leader>, :BufferLinePick<cr>
 nnoremap <silent> <leader>] :BufferLineCycleNext<CR>

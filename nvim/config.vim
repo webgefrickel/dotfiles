@@ -37,6 +37,20 @@ set wildmode=list:longest,list:full
 " language and colorscheme
 set background=dark
 set termguicolors
+
+lua << EOF
+require('nightfox').setup({
+  styles = {
+    comments = "italic",
+    keywords = "bold",
+    functions = "italic,bold"
+  },
+  inverse = {
+    match_paren = true,
+  },
+})
+EOF
+
 colorscheme nightfox
 language en_US.UTF-8
 
