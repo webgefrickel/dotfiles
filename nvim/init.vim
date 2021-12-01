@@ -1,16 +1,14 @@
 call plug#begin('~/.config/nvim/plugged')
 
-" Some dependencies and colorscheme
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'rktjmp/lush.nvim'
-Plug 'npxbr/gruvbox.nvim'
-
 " Plugins
+Plug 'EdenEast/nightfox.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
@@ -30,7 +28,6 @@ call plug#end()
 " load the default config and mappings
 source ~/.config/nvim/config.vim
 source ~/.config/nvim/autocommands.vim
-source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/keymappings.vim
 source ~/.config/nvim/leaderkeys.vim
 source ~/.config/nvim/plugins.vim

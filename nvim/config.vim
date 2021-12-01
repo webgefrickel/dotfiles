@@ -37,8 +37,7 @@ set wildmode=list:longest,list:full
 " language and colorscheme
 set background=dark
 set termguicolors
-let g:gruvbox_italic=1
-colorscheme gruvbox
+colorscheme nightfox
 language en_US.UTF-8
 
 " deactivate some unneeded language providers
