@@ -10,7 +10,7 @@ require('nvim-treesitter.configs').setup({
 
 require('lualine').setup({
   options = {
-    theme = 'nightfox',
+    theme = 'gruvbox',
   },
 })
 
@@ -57,20 +57,6 @@ nnoremap <silent> <space>a :Rg<cr>
 nnoremap <silent> <space>h :History:<cr>
 nnoremap <silent> <space>/ :History/<cr>
 nnoremap <silent> <space>c :Commits<cr>
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
 
 " EasyMotion
 let g:EasyMotion_do_mapping=0
@@ -85,7 +71,7 @@ let g:floaterm_autoclose = 1
 let g:floaterm_opener = 'edit'
 let g:floaterm_borderchars = '─│─│╭╮╯╰'
 let g:floaterm_title = ''
-hi FloatermBorder guibg='#192330' guifg='#3b4261'
+hi FloatermBorder guibg='#282828' guifg='#a89984'
 nnoremap <silent> - :FloatermNew nnn<cr>
 nnoremap <silent> <space>g :FloatermNew lazygit<cr>
 

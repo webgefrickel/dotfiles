@@ -1,7 +1,10 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Plugins
-Plug 'EdenEast/nightfox.nvim'
+Plug 'rktjmp/lush.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'ellisonleao/gruvbox.nvim'
+
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'

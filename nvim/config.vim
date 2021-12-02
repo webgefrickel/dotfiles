@@ -37,21 +37,8 @@ set wildmode=list:longest,list:full
 " language and colorscheme
 set background=dark
 set termguicolors
-
-lua << EOF
-require('nightfox').setup({
-  styles = {
-    comments = "italic",
-    keywords = "bold",
-    functions = "italic,bold"
-  },
-  inverse = {
-    match_paren = true,
-  },
-})
-EOF
-
-colorscheme nightfox
+let g:gruvbox_italic=1
+colorscheme gruvbox
 language en_US.UTF-8
 
 " deactivate some unneeded language providers
