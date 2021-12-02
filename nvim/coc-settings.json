@@ -1,7 +1,6 @@
 // Installed extensions are:
 ////////////////////////////
 // coc-calc
-// coc-css
 // coc-eslint8 // -- fall back to non-8 when supported offically
 // coc-html
 // coc-json
@@ -9,7 +8,6 @@
 // coc-pairs
 // coc-phpls
 // coc-snippets
-// coc-stylelintplus
 // coc-tsserver
 // coc-yaml
 // coc-yank
@@ -23,17 +21,9 @@
   ],
   // linters config
   "eslint.autoFixOnSave": true,
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
-  "wxss.validate": false,
   "javascript.format.enabled": false,
   "javascript.validate.enable": false,
   "typescript.format.enabled": false,
-  "stylelintplus.autoFixOnSave": true,
-  "stylelintplus.filetypes": [
-    "scss"
-  ],
   "suggest.minTriggerInputLength": 3,
   "suggest.noselect": false,
   "suggest.enablePreselect": true,

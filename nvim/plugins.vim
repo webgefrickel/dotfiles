@@ -1,21 +1,40 @@
-" treesitter
 lua << EOF
 require('nvim-treesitter.configs').setup({
   highlight = {
-    enable = true
+    enable = true,
   },
   indent = {
-    enable = true
-  }
+    enable = true,
+  },
 })
-EOF
 
-" lualine
-lua << EOF
 require('lualine').setup({
   options = {
-    theme = 'nightfox'
-  }
+    theme = 'nightfox',
+  },
+})
+
+require('lspconfig').stylelint_lsp.setup({
+  settings = {
+    stylelintplus = {
+      -- TODO why this not working?!
+      autoFixOnFormat = true,
+      autoFixOnSave = true,
+      validateOnSave = true,
+    },
+  },
+})
+
+require('lspconfig').cssls.setup({
+  filetypes = { 'css', 'scss' },
+  settings = {
+    css = {
+      validate = false,
+    },
+    scss = {
+      validate = false,
+    },
+  },
 })
 EOF
 
