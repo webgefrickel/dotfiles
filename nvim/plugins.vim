@@ -14,6 +14,20 @@ require('lualine').setup({
   },
 })
 
+require('hop').setup()
+
+require('fzf-lua').setup({
+  winopts = {
+    width = 0.80,
+    height = 0.78,
+    row = 0.45,
+    col = 0.48,
+  },
+})
+
+-- LSP-config
+require('lspconfig').eslint.setup({})
+
 require('lspconfig').stylelint_lsp.setup({
   settings = {
     stylelintplus = {
@@ -26,7 +40,7 @@ require('lspconfig').stylelint_lsp.setup({
 })
 
 require('lspconfig').cssls.setup({
-  filetypes = { 'css', 'scss' },
+  filetypes = { 'css', 'scss', 'sass' },
   settings = {
     css = {
       validate = false,
@@ -34,48 +48,55 @@ require('lspconfig').cssls.setup({
     scss = {
       validate = false,
     },
+    sass = {
+      validate = false,
+    },
   },
 })
 EOF
 
-nnoremap <silent> <leader>, :BufferLinePick<cr>
-nnoremap <silent> <leader>] :BufferLineCycleNext<CR>
-nnoremap <silent> <leader>[ :BufferLineCyclePrev<CR>
-
 " fugitive
 nnoremap <silent> <leader>gs :G<cr><C-w>20+
 nnoremap <silent> <leader>gd :Gvdiff<cr><C-w>20+
-nnoremap <silent> <leader>gc :Gcommit<cr><C-w>20+
+nnoremap <silent> <leader>gc :Git commit<cr><C-w>20+
 nnoremap <silent> <leader>gw :Gwrite<cr><C-w>20+
-nnoremap <silent> <leader>gb :Gblame<cr><C-w>20+
+nnoremap <silent> <leader>gb :Git blame<cr><C-w>20+
 
 " fzf
-nnoremap <silent> <space>, :Files<cr>
-nnoremap <silent> <space>. :Buffers<cr>
-nnoremap <silent> <space>l :Lines<cr>
-nnoremap <silent> <space>a :Rg<cr>
-nnoremap <silent> <space>h :History:<cr>
-nnoremap <silent> <space>/ :History/<cr>
-nnoremap <silent> <space>c :Commits<cr>
+nnoremap <silent> <leader>, <cmd>lua require('fzf-lua').files()<cr>
+nnoremap <silent> <leader>` <cmd>lua require('fzf-lua').files({ cwd = '~/' })<cr>
+nnoremap <silent> <leader>. <cmd>lua require('fzf-lua').buffers()<cr>
+nnoremap <silent> <leader>l <cmd>lua require('fzf-lua').lines()<cr>
+nnoremap <silent> <leader>a <cmd>lua require('fzf-lua').grep_project()<cr>
+nnoremap <silent> <leader>; <cmd>lua require('fzf-lua').command_history()<cr>
+nnoremap <silent> <leader>/ <cmd>lua require('fzf-lua').search_history()<cr>
+nnoremap <silent> <leader>c <cmd>lua require('fzf-lua').git_commits()<cr>
+nnoremap <silent> <leader>b <cmd>lua require('fzf-lua').git_branches()<cr>
 
-" EasyMotion
-let g:EasyMotion_do_mapping=0
-let g:EasyMotion_smartcase=1
-nmap <leader>j <Plug>(easymotion-overwin-f2)
+" Hop
+nnoremap <silent> <space>j <cmd>lua require('hop').hint_words()<cr>
 
 " Floaterm
 let g:floaterm_keymap_toggle = '<space>t'
-let g:floaterm_width = 0.9
-let g:floaterm_height = 0.62
+let g:floaterm_width = 0.8
+let g:floaterm_height = 0.8
 let g:floaterm_autoclose = 1
 let g:floaterm_opener = 'edit'
 let g:floaterm_borderchars = '─│─│╭╮╯╰'
 let g:floaterm_title = ''
-hi FloatermBorder guibg='#282828' guifg='#a89984'
+hi FloatermBorder guibg='#282828' guifg='#fbf1c7'
 nnoremap <silent> - :FloatermNew nnn<cr>
 nnoremap <silent> <space>g :FloatermNew lazygit<cr>
 
+
+
 " COC.vim
+" TODO LSP-alternatives
+" nmap <leader>c <Plug>(coc-rename)
+" nmap <leader>e <Plug>(coc-diagnostic-next)
+" xmap <leader>f <Plug>(coc-format-selected)
+" nmap <leader>f <Plug>(coc-format-selected)
+
 inoremap <silent><expr> <C-j>
   \ pumvisible() ? coc#_select_confirm() :
   \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<cr>" :
@@ -114,12 +135,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" Leader mappings
-nmap <leader>c <Plug>(coc-rename)
-nmap <leader>e <Plug>(coc-diagnostic-next)
-xmap <leader>f <Plug>(coc-format-selected)
-nmap <leader>f <Plug>(coc-format-selected)
 
 " Selection ranges
 nmap <silent> <C-s> <Plug>(coc-range-select)

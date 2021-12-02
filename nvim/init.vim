@@ -1,15 +1,18 @@
 call plug#begin('~/.config/nvim/plugged')
 
-" Plugins
+" Dependencies for other plugins
 Plug 'rktjmp/lush.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'vijaymarupudi/nvim-fzf'
+
+" Colorscheme
 Plug 'ellisonleao/gruvbox.nvim'
 
+" Plugins
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'easymotion/vim-easymotion'
+Plug 'phaazon/hop.nvim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'ibhagwan/fzf-lua'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lualine/lualine.nvim'

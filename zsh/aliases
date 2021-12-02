@@ -13,7 +13,6 @@ alias ggps='git push origin $(current_branch)'
 alias gmo='$EDITOR $(git ls-files -m)'
 alias gs="git status"
 alias lg='lazygit'
-alias e='exa -la'
 alias m='neomutt'
 alias mutt='neomutt'
 alias nb="npm run build"

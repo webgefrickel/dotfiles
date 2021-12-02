@@ -1,4 +1,8 @@
 " remap semi-colon to be colon in normal an visual mode
+nnoremap Q <nop>
+nnoremap K <nop>
+
+" deactivate stupid ex-mode and man-page stuff
 nnoremap ; :
 vnoremap ; :
 
@@ -12,10 +16,9 @@ vnoremap <C-V> v
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
-" behave - yank just like D and C
+" sane yanking and copying to clipboard/alfred-history
 nnoremap Y y$
-
-" auto-yanking with clipper for selected yanking, see leader-y mapping
+nnoremap yy yy :call system('nc localhost 8377', @0)<cr>
 vnoremap y y :call system('nc localhost 8377', @0)<cr>
 
 " Keeping it centered
@@ -35,9 +38,8 @@ nnoremap <down> :blast<cr>
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
 
-" Bubble/indent lines using unimpaired
-" using left alt + hjkl on mac usgerman keyboard
-" those are some weird mappings, but they work!
+" Bubble/indent lines using unimpaired using left alt + hjkl
+" on mac: weird mappings, but they work!
 nmap ˚ [e
 nmap ∆ ]e
 nmap ˙ <<
@@ -46,7 +48,3 @@ vmap ˚ [egv
 vmap ∆ ]egv
 vmap ˙ <gv
 vmap ¬ >gv
-
-" deactivate stupid ex-mode and man-page stuff
-nnoremap Q <nop>
-nnoremap K <nop>

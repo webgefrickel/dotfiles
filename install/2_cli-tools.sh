@@ -6,7 +6,7 @@ brew tap homebrew/services
 
 # install additional brew packages -- see _install.sh too
 brew install clipper
-brew install exa
+brew install fd
 brew install fzf
 brew install glances
 brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac --with-rav1e
@@ -15,7 +15,6 @@ brew install lazygit
 brew install nnn
 brew install ripgrep
 brew install starship
-brew install tree
 
 ln -s ~/dotfiles/lazygit ~/.config/lazygit
 ln -s ~/Dotfiles/starship.toml ~/.config/starship.toml

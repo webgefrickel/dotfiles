@@ -1,5 +1,6 @@
-let g:mapleader=","
-let g:maplocalleader=","
+nnoremap <space> <nop>
+let g:mapleader=' '
+let g:maplocalleader=''
 
 " Zoom / Restore window.
 function! s:ToggleZoom() abort
@@ -23,9 +24,6 @@ nnoremap <leader>- <C-w>s<C-w>j
 
 " Opens an edit command with the path of the currently edited file filled in
 nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <cr>
-
-" Yank to clipboard with clipper -- see https://github.com/wincent/clipper
-nnoremap <leader>y :call system('nc localhost 8377', @0)<cr>
 
 " Find merge conflict markers
 nnoremap <leader>gf /\v^[<\|=>]{7}( .*\|$)<cr>

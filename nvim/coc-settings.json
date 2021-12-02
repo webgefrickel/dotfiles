@@ -1,7 +1,6 @@
 // Installed extensions are:
 ////////////////////////////
 // coc-calc
-// coc-eslint8 // -- fall back to non-8 when supported offically
 // coc-html
 // coc-json
 // coc-markdownlint
@@ -10,7 +9,6 @@
 // coc-snippets
 // coc-tsserver
 // coc-yaml
-// coc-yank
 {
   "coc.preferences.formatOnSaveFiletypes": [
     "typescriptreact",
@@ -20,7 +18,6 @@
     "yaml"
   ],
   // linters config
-  "eslint.autoFixOnSave": true,
   "javascript.format.enabled": false,
   "javascript.validate.enable": false,
   "typescript.format.enabled": false,

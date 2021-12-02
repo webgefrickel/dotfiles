@@ -36,9 +36,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 # fzf colors
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
- --color=fg:#cdcecf,bg:#192330,hl:#b4a2df,fg+:#cdcecf,bg+:#283648,hl+:#fabd2f
- --color=info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#b4a2df,marker:#b4a2df,header:#665c54'
 
 # n node version management
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
