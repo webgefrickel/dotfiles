@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+brew install composer
 brew install dnsmasq
 brew install httpd
 brew install imagemagick
@@ -8,6 +9,11 @@ brew install mkcert
 brew install nss
 brew install php@7.4
 brew install php
+
+# phpactor etc.
+take ~/phpactor
+git clone git@github.com:phpactor/phpactor .
+composer install
 
 # link etc-configs
 sudo rm -rf /opt/homebrew/etc/php

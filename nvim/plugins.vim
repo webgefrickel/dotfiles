@@ -14,7 +14,9 @@ require('lualine').setup({
   },
 })
 
-require('hop').setup()
+require('hop').setup({})
+
+require('nvim-autopairs').setup({})
 
 require('fzf-lua').setup({
   winopts = {
@@ -27,20 +29,18 @@ require('fzf-lua').setup({
 
 -- LSP-config
 require('lspconfig').eslint.setup({})
+require('lspconfig').jsonls.setup({})
+require('lspconfig').html.setup({})
+require('lspconfig').yamlls.setup({})
+require('lspconfig').tsserver.setup({})
+require('lspconfig').phpactor.setup({})
 
 require('lspconfig').stylelint_lsp.setup({
-  settings = {
-    stylelintplus = {
-      -- TODO why this not working?!
-      autoFixOnFormat = true,
-      autoFixOnSave = true,
-      validateOnSave = true,
-    },
-  },
+  filetypes = { 'css', 'sass', 'scss' }
 })
 
 require('lspconfig').cssls.setup({
-  filetypes = { 'css', 'scss', 'sass' },
+  filetypes = { 'css', 'sass', 'scss' },
   settings = {
     css = {
       validate = false,
@@ -72,6 +72,9 @@ nnoremap <silent> <leader>; <cmd>lua require('fzf-lua').command_history()<cr>
 nnoremap <silent> <leader>/ <cmd>lua require('fzf-lua').search_history()<cr>
 nnoremap <silent> <leader>c <cmd>lua require('fzf-lua').git_commits()<cr>
 nnoremap <silent> <leader>b <cmd>lua require('fzf-lua').git_branches()<cr>
+
+" LSP
+nnoremap <silent> <leader>f <cmd>lua vim.lsp.buf.formatting()<cr>
 
 " Hop
 nnoremap <silent> <space>j <cmd>lua require('hop').hint_words()<cr>

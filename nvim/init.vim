@@ -29,6 +29,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'wellle/targets.vim'
 Plug 'wellle/tmux-complete.vim'
 Plug 'wincent/terminus'
+Plug 'windwp/nvim-autopairs'
 
 call plug#end()
 

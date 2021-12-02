@@ -1,26 +1,9 @@
 // Installed extensions are:
 ////////////////////////////
 // coc-calc
-// coc-html
-// coc-json
-// coc-markdownlint
-// coc-pairs
-// coc-phpls
 // coc-snippets
-// coc-tsserver
-// coc-yaml
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "typescriptreact",
-    "javascriptreact",
-    "javascript",
-    "json",
-    "yaml"
-  ],
   // linters config
-  "javascript.format.enabled": false,
-  "javascript.validate.enable": false,
-  "typescript.format.enabled": false,
   "suggest.minTriggerInputLength": 3,
   "suggest.noselect": false,
   "suggest.enablePreselect": true,
