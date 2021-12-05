@@ -40,8 +40,7 @@ Plug 'windwp/nvim-autopairs'
 call plug#end()
 
 " load the default config and mappings
-source ~/.config/nvim/config.vim
-source ~/.config/nvim/autocommands.vim
-source ~/.config/nvim/keymappings.vim
-source ~/.config/nvim/leaderkeys.vim
-source ~/.config/nvim/plugins.vim
+source ~/.config/nvim/lua/plugins.vim
+source ~/.config/nvim/lua/mappings.vim
+source ~/.config/nvim/lua/options.vim
+source ~/.config/nvim/lua/autocommands.vim
