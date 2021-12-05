@@ -22,7 +22,6 @@ npm i -g vscode-langservers-extracted
 npm i -g yaml-language-server
 
 vim +PlugInstall
-vim +CocInstall\ coc-calc\ coc-css\ coc-eslint\ coc-html\ coc-json\ coc-markdownlint\ coc-pairs\ coc-phpls\ coc-snippets\ coc-stylelintplus\ coc-tsserver\ coc-yaml\ coc-yank
-vim +TSInstall\ bash\ comment\ css\ dockerfile\ graphql\ html\ javascript\ jsdoc\ json\ jsonc\ lua\ php\ python\ regex\ scss\ tsx\ typescript\ vue\ yaml
-vim +CocUpdate +PlugUpgrade +PlugUpdate +TSUpdate
+vim +TSInstall\ bash\ comment\ css\ html\ javascript\ jsdoc\ json\ json5\ lua\ php\ python\ regex\ ruby\ scss\ toml\ tsx\ typescript\ vue\ yaml
+vim +PlugUpgrade +PlugUpdate +TSUpdate
 vim +checkhealth
