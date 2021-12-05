@@ -1,4 +1,3 @@
-lua << EOF
 -- set the leader key to space
 vim.api.nvim_set_keymap('n', '<space>', '', {})
 vim.g.mapleader = ' '
@@ -126,5 +125,3 @@ map('n', '<leader>o', '<cmd>e <C-R>=expand("%:p:h") . "/" <cr>')
 map('n', '<leader>ve', '<cmd>e $MYVIMRC<cr>')
 map('n', '<leader>vr', '<cmd>source $MYVIMRC<cr>')
 map('n', '<leader>w', '<cmd>set wrap! wrap?<cr>')
-
-EOF

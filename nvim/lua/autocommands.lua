@@ -1,4 +1,3 @@
-lua << EOF
 local cmd = vim.cmd
 
 cmd([[
@@ -15,5 +14,3 @@ cmd([[
     autocmd BufNewFile,BufRead neomutt-* set ft=mail
   augroup END
 ]])
-
-EOF

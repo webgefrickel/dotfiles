@@ -1,4 +1,3 @@
-lua << EOF
 local set = vim.opt
 local cmd = vim.cmd
 local g = vim.g
@@ -49,7 +48,6 @@ set.wildmode = { 'list:longest', 'list:full' }
 set.background = 'dark'
 set.termguicolors = true
 g.gruvbox_italic = 1
+
 cmd 'colorscheme gruvbox'
 cmd 'language en_US.UTF-8'
-
-EOF

@@ -1,4 +1,3 @@
-lua << EOF
 local lspconfig = require('lspconfig')
 local cmd = vim.cmd
 local g = vim.g
@@ -120,6 +119,3 @@ g.floaterm_opener = 'edit'
 g.floaterm_borderchars = '─│─│╭╮╯╰'
 g.floaterm_title = ''
 cmd("hi FloatermBorder guibg='#282828' guifg='#fbf1c7'")
-
-EOF
-
