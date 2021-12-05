@@ -1,5 +1,6 @@
 set breakindent
 set cmdheight=2
+set completeopt=menu,menuone,noselect
 set cpoptions+=$ " Add a $ to the end of a selection
 set cursorline
 set foldexpr=nvim_treesitter#foldexpr()

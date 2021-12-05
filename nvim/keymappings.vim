@@ -1,8 +1,8 @@
-" remap semi-colon to be colon in normal an visual mode
+" deactivate stupid ex-mode and man-page stuff
 nnoremap Q <nop>
 nnoremap K <nop>
 
-" deactivate stupid ex-mode and man-page stuff
+" remap semi-colon to be colon in normal an visual mode
 nnoremap ; :
 vnoremap ; :
 
@@ -19,14 +19,14 @@ nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 " sane yanking and copying to clipboard/alfred-history
 nnoremap Y y$
 nnoremap yy yy :call system('nc localhost 8377', @0)<cr>
+vnoremap Y y :call system('nc localhost 8377', @0)<cr>
 vnoremap y y :call system('nc localhost 8377', @0)<cr>
 
-" Keeping it centered
+" Keeping it centered when searching and jumping to next entry
 nnoremap N Nzzzv
 nnoremap n nzzzv
-nnoremap J mzJ`z
 
-" und breakpoints when writing long text/code
+" add undo-repo-breakpoints automatically when writing long text
 inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u

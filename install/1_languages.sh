@@ -4,15 +4,14 @@
 brew install rbenv # restart terminal, then:
 rbenv install 3.0.2
 rbenv global 3.0.2
-gem install neovim
 
 # node
 curl -L https://git.io/n-install | bash
 n v8
 n v12
+n v14
 n lts
 npm install -g npm@latest
-npm install -g neovim
 npm update -g
 
 # python
@@ -22,4 +21,3 @@ brew install pyenv # restart terminal, then:
 pyenv install 3.10.0
 pyenv global 3.10.0
 pip install --upgrade pip
-pip install neovim
