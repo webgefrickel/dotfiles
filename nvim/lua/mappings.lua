@@ -27,6 +27,10 @@ map('n', 'K', '')
 map('n', 'n', 'nzzzv')
 map('n', 'N', 'Nzzzv')
 
+-- j and k for wrapped lines
+map('n', 'j', 'gj')
+map('n', 'k', 'gk')
+
 -- sane yanking and copying to clipboard/alfred-history
 map('n', 'Y', 'y$')
 map('n', 'yy', 'yy <cmd>call system("nc localhost 8377", @0)<cr>')
