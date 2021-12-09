@@ -118,4 +118,4 @@ g.floaterm_autoclose = 1
 g.floaterm_opener = 'edit'
 g.floaterm_borderchars = '─│─│╭╮╯╰'
 g.floaterm_title = ''
-cmd("hi FloatermBorder guibg='#282828' guifg='#fbf1c7'")
+cmd("au VimEnter * highlight FloatermBorder guibg='#282828' guifg='#fbf1c7'")
