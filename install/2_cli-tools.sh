@@ -5,6 +5,7 @@ brew tap homebrew/cask-drivers
 brew tap homebrew/services
 
 # install additional brew packages -- see _install.sh too
+brew install bat
 brew install clipper
 brew install fd
 brew install fzf
@@ -15,6 +16,11 @@ brew install lazygit
 brew install nnn
 brew install ripgrep
 brew install starship
+brew install tree
+brew install viu
+
+# nnn plugins
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
 ln -s ~/dotfiles/lazygit ~/.config/lazygit
 ln -s ~/Dotfiles/starship.toml ~/.config/starship.toml
