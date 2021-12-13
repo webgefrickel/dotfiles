@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 brew tap buo/cask-upgrade
 brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
 
 brew install --cask 1password
-brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
 brew install --cask alfred
 brew install --cask carbon-copy-cloner
 brew install --cask dash
@@ -23,6 +23,7 @@ brew install --cask signal
 brew install --cask spotify
 brew install --cask syntax-highlight
 brew install --cask telegram
+brew install --cask temurin8
 brew install --cask vmware-fusion
 brew install --cask zoom
 
@@ -41,9 +42,10 @@ brew install --cask font-fira-code-nerd-font
 brew install --cask ubiquiti-unifi-controller
 
 # Tell unifi-controller to use brew-installed java
-sudo ln -s /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk /Applications/UniFi.app/Contents/PlugIns/adoptopenjdk-8.jdk
+sudo ln -s /Library/Java/JavaVirtualMachines/temurin-8.jdk /Applications/UniFi.app/Contents/PlugIns/temurin-8.jdk
 sudo v /Applications/UniFi.app/Contents/Info.plist
-# THEN add this: <key>JVMRuntime</key> <string>adoptopenjdk-8.jdk</string>
+
+# THEN add this: <key>JVMRuntime</key> <string>temurin8-8.jdk</string>
 
 # firefox-extensions: 
 # surfingkeys, dark reader, privacy badger, ublock origin, wikiwand,

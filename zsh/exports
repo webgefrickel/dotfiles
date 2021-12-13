@@ -10,6 +10,7 @@ export LESS="-F -i -J -M -R -W -x2 -X -z-4"
 export MANPATH=/opt/homebrew/share/man:$MANPATH
 export PAGER="less"
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/sbin:$PATH
 export PATH=/opt/homebrew/opt/curl/bin:$PATH
 export PATH=/Users/webgefrickel/git/bin:$PATH
 export PATH=/Users/webgefrickel/phpactor/bin:$PATH
