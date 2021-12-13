@@ -1,121 +1,117 @@
-local lspconfig = require('lspconfig')
-local cmd = vim.cmd
-local g = vim.g
+local fn = vim.fn
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  packer_bootstrap = fn.system({
+    'git', 'clone', '--depth', '1',
+    'https://github.com/wbthomason/packer.nvim',
+    install_path
+  })
+end
 
-lspconfig.cssls.setup({
-  filetypes = { 'css', 'sass', 'scss' },
-  settings = {
-    css = {
-      validate = false,
+function get_config(name)
+  return string.format("require(\"config/%s\")", name)
+end
+
+return require('packer').startup(function(use)
+  -- packer itself
+  use 'wbthomason/packer.nvim'
+
+  -- tpope general better-vim-plugins
+  use 'tpope/vim-apathy'
+  use 'tpope/vim-commentary'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-ragtag'
+  use 'tpope/vim-repeat'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-unimpaired'
+
+  -- other general plugins
+  use 'christoomey/vim-tmux-navigator'
+  use 'editorconfig/editorconfig-vim'
+  use 'wellle/targets.vim'
+  use 'wincent/terminus'
+
+  -- lsp and treesitter
+  use { 
+    'neovim/nvim-lspconfig',
+    config = get_config('lspconfig'),
+  }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    config = get_config('treesitter'),
+    run = ":TSUpdate",
+  }
+
+  -- fzf integration
+  use {
+    'ibhagwan/fzf-lua',
+    config = get_config('fzf'),
+    requires = { 
+      { 'kyazdani42/nvim-web-devicons', opt = true },
     },
-    scss = {
-      validate = false,
+  }
+
+  -- hop navigation
+  use {
+    'phaazon/hop.nvim',
+    config = get_config('hop'),
+  }
+
+  -- autoparis
+  use {
+    'windwp/nvim-autopairs', 
+     config = get_config('autopairs'),
+  }
+
+  -- nice status line
+  use {
+    'nvim-lualine/lualine.nvim',
+    config = get_config('lualine'),
+    event = 'VimEnter',
+    requires = { 
+      { 'kyazdani42/nvim-web-devicons', opt = true } 
     },
-    sass = {
-      validate = false,
+  }
+
+  -- autocompletion
+  use {
+    'hrsh7th/nvim-cmp',
+    config = get_config('cmp'),
+    requires = {
+      'andersevenrud/cmp-tmux',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-calc',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-vsnip',
     },
-  },
-})
-lspconfig.eslint.setup({})
-lspconfig.html.setup({})
-lspconfig.jsonls.setup({})
-lspconfig.phpactor.setup({})
-lspconfig.stylelint_lsp.setup({ 
-  filetypes = { 'css', 'sass', 'scss' } 
-})
-lspconfig.tsserver.setup({})
-lspconfig.yamlls.setup({})
+  } 
 
--- treesitter
-require('nvim-treesitter.configs').setup({
-  highlight = {
-    enable = true,
-  },
-  indent = {
-    enable = true,
-  },
-})
-
-require('lualine').setup({
-  options = {
-    theme = 'gruvbox',
-  },
-})
-
-require('hop').setup({})
-
-require('nvim-autopairs').setup({})
-
-require('fzf-lua').setup({
-  winopts = {
-    width = 0.80,
-    height = 0.78,
-    row = 0.45,
-    col = 0.48,
-  },
-})
-
-local cmp = require('cmp')
-cmp.setup({
-  completion = {
-    keyword_length = 1, -- TODO set this back 3, when fine with snippets
-  },
-  snippet = {
-    expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
-    end,
-  },
-  mapping = {
-    ['<cr>'] = cmp.mapping.confirm({ select = true }),
-  },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'vsnip' },
-    { 
-      name = 'buffer',
-      option = {
-        get_bufnrs = function()
-          return vim.api.nvim_list_bufs()
-        end
-      },
+  -- snippets
+  use {
+    'hrsh7th/vim-vsnip',
+    config = get_config('vsnip'),
+  }
+  use { 
+    'rafamadriz/friendly-snippets',
+    requires = {
+      'hrsh7th/vim-vsnip' 
     },
-    { name = 'path' },
-    { name = 'tmux', option = { all_panes = true } }, -- TODO 'true' makes things sloppy
-    { name = 'calc' },
-  }),
+  }
 
-  formatting = {
-    format = function(entry, vim_item)
-      vim_item.menu = ({
-        buffer = "[Buffer]",
-        calc = "[Calc]",
-        nvim_lsp = "[LSP]",
-        path = "[Path]",
-        tmux = "[tmux]",
-        vsnip = "[Snippet]",
-      })[entry.source.name]
-      return vim_item
-    end
-  },
-})
+  use {
+    'voldikss/vim-floaterm',
+    config = get_config('floaterm'),
+  } 
 
--- vsnip config
-g.vsnip_snippet_dirs = {
-  os.getenv('HOME') .. '/Dotfiles/nvim/plugged/friendly-snippets/snippets',
-  os.getenv('HOME') .. '/Dotfiles/snippets/',
-}
-g.vsnip_filetypes = {
-  sass = { 'css' },
-  scss = { 'css' },
-  javascriptreact = { 'javascript' },
-  typescriptreact = { 'typescript', 'javascript' },
-}
+  -- colorscheme
+  use { 
+    'ellisonleao/gruvbox.nvim', 
+    requires = { 'rktjmp/lush.nvim' },
+  }
 
--- floaterm
-g.floaterm_width = 0.8
-g.floaterm_height = 0.8
-g.floaterm_autoclose = 1
-g.floaterm_opener = 'edit'
-g.floaterm_borderchars = '─│─│╭╮╯╰'
-g.floaterm_title = ''
-cmd("au VimEnter * highlight FloatermBorder guibg='#282828' guifg='#fbf1c7'")
+  -- Automatically set up configuration after cloning packer.nvim
+  if packer_bootstrap then
+    require('packer').sync()
+  end
+end)
