@@ -1,4 +1,4 @@
-### Added by Zinit's installer
+# zinit
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
   command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
   command git clone https://github.com/zdharma-continuum/zinit "$HOME/.zinit/bin" && \
@@ -9,12 +9,6 @@ fi
 source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-### End of Zinit's installer chunk
-
-# exports, functions and aliases
-source ~/dotfiles/zsh/exports
-source ~/dotfiles/zsh/aliases
-source ~/dotfiles/zsh/functions
 
 # plugins
 zinit wait lucid for \
@@ -31,6 +25,11 @@ unsetopt HIST_BEEP
 # easy vim/terminal switch
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+# exports, functions and aliases
+source ~/dotfiles/zsh/exports.zsh
+source ~/dotfiles/zsh/aliases.zsh
+source ~/dotfiles/zsh/functions.zsh
 
 # other tools init, pyenv + rbenv are sandboxd
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
