@@ -2,7 +2,7 @@ local cmp = require('cmp')
 
 cmp.setup({
   completion = {
-    keyword_length = 1, -- TODO set this back 3, when fine with snippets
+    keyword_length = 3,
   },
   snippet = {
     expand = function(args)
@@ -27,7 +27,6 @@ cmp.setup({
     { name = 'tmux', option = { all_panes = true } }, -- TODO 'true' makes things sloppy
     { name = 'calc' },
   }),
-
   formatting = {
     format = function(entry, vim_item)
       vim_item.menu = ({
@@ -41,4 +40,16 @@ cmp.setup({
       return vim_item
     end
   },
+})
+
+cmp.setup.cmdline(':', {
+  sources = {
+    { name = 'cmdline' }
+  }
+})
+
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
 })

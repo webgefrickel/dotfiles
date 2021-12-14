@@ -22,9 +22,9 @@ return require('packer').startup(function(use)
   -- some will be used by via custom mappings
   use 'christoomey/vim-tmux-navigator'
   use 'editorconfig/editorconfig-vim'
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'tpope/vim-apathy'
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-fugitive'
+  use 'tpope/vim-fugitive' -- replace with? sindrets/diffview.nvim
   use 'tpope/vim-ragtag'
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
@@ -33,11 +33,17 @@ return require('packer').startup(function(use)
   use 'wincent/terminus'
 
   -- plugins without other dependencies
-  use { 'hrsh7th/vim-vsnip', config = get_config('vsnip') }
   use { 'neovim/nvim-lspconfig', config = get_config('lspconfig') }
-  use { 'voldikss/vim-floaterm', config = get_config('floaterm') } 
+  use { 'voldikss/vim-floaterm', config = get_config('floaterm') }
   use { 'windwp/nvim-autopairs', config = get_config('autopairs') }
-  
+
+  -- colorizer for nice css-colors
+  use {
+    "norcalli/nvim-colorizer.lua",
+    event = "BufReadPre",
+    config = get_config('colorizer'),
+  }
+
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -49,43 +55,31 @@ return require('packer').startup(function(use)
   use {
     'ibhagwan/fzf-lua',
     config = get_config('fzf'),
-    requires = { 
+    requires = {
       { 'kyazdani42/nvim-web-devicons', opt = true },
     },
   }
 
   -- hop for easy navigation
-  use { 
-    'phaazon/hop.nvim', 
+  use {
+    'phaazon/hop.nvim',
     config = get_config('hop'),
     event = "BufReadPre",
   }
 
--- TODO
---[[
-
-use "nvim-treesitter/nvim-treesitter-textobjects"
-sindrets/diffview.nvim
-TimUntersberger/neogit
-use {
+  -- comment
+  use {
     "numToStr/Comment.nvim",
-    opt = true,
-    keys = {"gc", "gcc"},
     config = get_config("comment")
-}
-
--- CMP: path, cmdline, spell 
---]]
-
-
+  }
 
   -- nice status line
   use {
     'nvim-lualine/lualine.nvim',
     config = get_config('lualine'),
     event = 'VimEnter',
-    requires = { 
-      { 'kyazdani42/nvim-web-devicons', opt = true } 
+    requires = {
+      { 'kyazdani42/nvim-web-devicons', opt = true }
     },
   }
 
@@ -96,15 +90,20 @@ use {
     requires = {
       'andersevenrud/cmp-tmux',
       'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-calc',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-vsnip',
     },
-  } 
+  }
 
   -- snippets
-  use { 
+  use {
+    'hrsh7th/vim-vsnip',
+    config = get_config('vsnip')
+  }
+  use {
     'rafamadriz/friendly-snippets',
     requires = {
       'hrsh7th/vim-vsnip',
@@ -112,8 +111,8 @@ use {
   }
 
   -- colorscheme
-  use { 
-    'ellisonleao/gruvbox.nvim', 
+  use {
+    'ellisonleao/gruvbox.nvim',
     requires = {
       'rktjmp/lush.nvim' ,
     },
