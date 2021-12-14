@@ -1,5 +1,11 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+
+function get_config(name)
+  return string.format("require(\"config/%s\")", name)
+end
+
+-- bootstrapping / downloading packer. run :PackerSync afterwards if sth. fails
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({
     'git', 'clone', '--depth', '1',
@@ -8,15 +14,14 @@ if fn.empty(fn.glob(install_path)) > 0 then
   })
 end
 
-function get_config(name)
-  return string.format("require(\"config/%s\")", name)
-end
-
 return require('packer').startup(function(use)
-  -- packer itself
+  -- packer for plugin management itself
   use 'wbthomason/packer.nvim'
 
-  -- tpope general better-vim-plugins
+  -- general plugins (without any config or dependencies)
+  -- some will be used by via custom mappings
+  use 'christoomey/vim-tmux-navigator'
+  use 'editorconfig/editorconfig-vim'
   use 'tpope/vim-apathy'
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
@@ -24,18 +29,16 @@ return require('packer').startup(function(use)
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
   use 'tpope/vim-unimpaired'
-
-  -- other general plugins
-  use 'christoomey/vim-tmux-navigator'
-  use 'editorconfig/editorconfig-vim'
   use 'wellle/targets.vim'
   use 'wincent/terminus'
 
-  -- lsp and treesitter
-  use { 
-    'neovim/nvim-lspconfig',
-    config = get_config('lspconfig'),
-  }
+  -- plugins without other dependencies
+  use { 'hrsh7th/vim-vsnip', config = get_config('vsnip') }
+  use { 'neovim/nvim-lspconfig', config = get_config('lspconfig') }
+  use { 'voldikss/vim-floaterm', config = get_config('floaterm') } 
+  use { 'windwp/nvim-autopairs', config = get_config('autopairs') }
+  
+  -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
     config = get_config('treesitter'),
@@ -51,17 +54,30 @@ return require('packer').startup(function(use)
     },
   }
 
-  -- hop navigation
-  use {
-    'phaazon/hop.nvim',
+  -- hop for easy navigation
+  use { 
+    'phaazon/hop.nvim', 
     config = get_config('hop'),
+    event = "BufReadPre",
   }
 
-  -- autoparis
-  use {
-    'windwp/nvim-autopairs', 
-     config = get_config('autopairs'),
-  }
+-- TODO
+--[[
+
+use "nvim-treesitter/nvim-treesitter-textobjects"
+sindrets/diffview.nvim
+TimUntersberger/neogit
+use {
+    "numToStr/Comment.nvim",
+    opt = true,
+    keys = {"gc", "gcc"},
+    config = get_config("comment")
+}
+
+-- CMP: path, cmdline, spell 
+--]]
+
+
 
   -- nice status line
   use {
@@ -88,29 +104,22 @@ return require('packer').startup(function(use)
   } 
 
   -- snippets
-  use {
-    'hrsh7th/vim-vsnip',
-    config = get_config('vsnip'),
-  }
   use { 
     'rafamadriz/friendly-snippets',
     requires = {
-      'hrsh7th/vim-vsnip' 
+      'hrsh7th/vim-vsnip',
     },
   }
-
-  use {
-    'voldikss/vim-floaterm',
-    config = get_config('floaterm'),
-  } 
 
   -- colorscheme
   use { 
     'ellisonleao/gruvbox.nvim', 
-    requires = { 'rktjmp/lush.nvim' },
+    requires = {
+      'rktjmp/lush.nvim' ,
+    },
   }
 
-  -- Automatically set up configuration after cloning packer.nvim
+  -- automatically set up configuration after cloning packer.nvim
   if packer_bootstrap then
     require('packer').sync()
   end
