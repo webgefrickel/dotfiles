@@ -60,6 +60,13 @@ return require('packer').startup(function(use)
     },
   }
 
+  -- null-ls for diagnostics and formatting
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = get_config('null-ls'),
+    requires = { 'nvim-lua/plenary.nvim' },
+  }
+
   -- hop for easy navigation
   use {
     'phaazon/hop.nvim',

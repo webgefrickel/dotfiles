@@ -24,6 +24,7 @@ curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | s
 
 ln -s ~/dotfiles/lazygit ~/.config/lazygit
 ln -s ~/Dotfiles/starship.toml ~/.config/starship.toml
+ln -s ~/Dotfiles/yamllint.yml ~/.config/yamllint/config
 ln -s ~/dotfiles/lazygit ~/Library/Application\ Support/lazygit
 
 # node cli tools and helpers

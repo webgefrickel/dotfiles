@@ -13,7 +13,6 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
 export PATH=/opt/homebrew/opt/curl/bin:$PATH
 export PATH=/Users/webgefrickel/git/bin:$PATH
-export PATH=/Users/webgefrickel/phpactor/bin:$PATH
 export SHELL=/opt/homebrew/bin/zsh
 export TERM=xterm-256color
 export VISUAL="/opt/homebrew/bin/nvim"
