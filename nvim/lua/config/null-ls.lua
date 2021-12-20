@@ -9,24 +9,18 @@ local sources = {
   b.code_actions.eslint_d,
 
   -- css and scss-files
-  b.diagnostics.stylelint.with({
-    prefer_local = 'node_modules/.bin',
-  }),
-  b.formatting.stylelint.with({
-    prefer_local = 'node_modules/.bin',
-  }),
+  b.diagnostics.stylelint.with({ prefer_local = 'node_modules/.bin' }),
+  b.formatting.stylelint.with({ prefer_local = 'node_modules/.bin' }),
 
-  -- markdown, json and yaml
+  -- markdown
   b.diagnostics.markdownlint,
   b.formatting.markdownlint,
-  b.diagnostics.yamllint,
-  b.formatting.fixjson,
 
   -- other languages
   b.diagnostics.php,
   b.diagnostics.tsc,
-  b.code_actions.shellcheck,
-  b.diagnostics.shellcheck,
+  b.diagnostics.yamllint,
+  b.formatting.fixjson,
 }
 
 null_ls.setup({
