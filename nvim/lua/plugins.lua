@@ -130,13 +130,15 @@ return require('packer').startup(function(use)
   -- colorscheme
   use {
     'ellisonleao/gruvbox.nvim',
-    requires = {
-      'rktjmp/lush.nvim' ,
-    },
+    requires = { 'rktjmp/lush.nvim' },
   }
 
   -- giving those a try—lets see how often i will really use them
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use {
+    'sindrets/diffview.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = get_config('diffview'),
+  }
 
   -- automatically set up configuration after cloning packer.nvim
   if packer_bootstrap then
