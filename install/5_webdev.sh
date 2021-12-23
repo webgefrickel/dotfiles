@@ -10,11 +10,6 @@ brew install nss
 brew install php@7.4
 brew install php
 
-# phpactor etc.
-take ~/phpactor
-git clone git@github.com:phpactor/phpactor .
-composer install
-
 # link etc-configs
 sudo rm -rf /opt/homebrew/etc/php
 sudo rm -rf /opt/homebrew/etc/httpd

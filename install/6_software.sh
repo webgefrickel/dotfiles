@@ -44,8 +44,7 @@ brew install --cask ubiquiti-unifi-controller
 # Tell unifi-controller to use brew-installed java
 sudo ln -s /Library/Java/JavaVirtualMachines/temurin-8.jdk /Applications/UniFi.app/Contents/PlugIns/temurin-8.jdk
 sudo v /Applications/UniFi.app/Contents/Info.plist
-
-# THEN add this: <key>JVMRuntime</key> <string>temurin8-8.jdk</string>
+# THEN add this: <key>JVMRuntime</key> <string>temurin-8.jdk</string>
 
 # firefox-extensions: 
 # surfingkeys, dark reader, privacy badger, ublock origin, wikiwand,

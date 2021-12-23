@@ -19,23 +19,30 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- general plugins (without any config or dependencies)
-  -- some will be used by via custom mappings
+  -- some will be used by via custom mappings, most of those are non-lua
+  -- oldschool vimscript plugins, that still provide a lot of value
   use 'christoomey/vim-tmux-navigator'
   use 'editorconfig/editorconfig-vim'
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'tpope/vim-apathy'
   use 'tpope/vim-fugitive' -- replace with? sindrets/diffview.nvim
-  use 'tpope/vim-ragtag'
+  use 'tpope/vim-ragtag' -- debate if we still need the next tpope-plugins
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
   use 'tpope/vim-unimpaired'
   use 'wellle/targets.vim'
   use 'wincent/terminus'
 
-  -- plugins without other dependencies
-  use { 'neovim/nvim-lspconfig', config = get_config('lspconfig') }
-  use { 'voldikss/vim-floaterm', config = get_config('floaterm') }
-  use { 'windwp/nvim-autopairs', config = get_config('autopairs') }
+  -- floating-terminal integration for nnn, lazygit etc.
+  use {
+    'voldikss/vim-floaterm',
+    config = get_config('floaterm')
+  }
+
+  -- autopairs for sensible () "" ''
+  use {
+    'windwp/nvim-autopairs',
+    config = get_config('autopairs')
+  }
 
   -- colorizer for nice css-colors
   use {
@@ -44,12 +51,13 @@ return require('packer').startup(function(use)
     config = get_config('colorizer'),
   }
 
-  -- Treesitter
+  -- Treesitter for nicer syntax-highlighting
   use {
     'nvim-treesitter/nvim-treesitter',
     config = get_config('treesitter'),
     run = ":TSUpdate",
   }
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   -- fzf integration
   use {
@@ -60,21 +68,18 @@ return require('packer').startup(function(use)
     },
   }
 
-  -- null-ls for diagnostics and formatting
+  -- lsp and null-ls for diagnostics and formatting (eslint_d, stylelint etc.)
+  use {
+    'neovim/nvim-lspconfig',
+    config = get_config('lspconfig')
+  }
   use {
     'jose-elias-alvarez/null-ls.nvim',
     config = get_config('null-ls'),
     requires = { 'nvim-lua/plenary.nvim' },
   }
 
-  -- hop for easy navigation
-  use {
-    'phaazon/hop.nvim',
-    config = get_config('hop'),
-    event = "BufReadPre",
-  }
-
-  -- comment
+  -- commenting stuff out
   use {
     "numToStr/Comment.nvim",
     config = get_config("comment")
@@ -90,7 +95,7 @@ return require('packer').startup(function(use)
     },
   }
 
-  -- autocompletion
+  -- autocompletion and snippets
   use {
     'hrsh7th/nvim-cmp',
     config = get_config('cmp'),
@@ -104,8 +109,6 @@ return require('packer').startup(function(use)
       'hrsh7th/cmp-vsnip',
     },
   }
-
-  -- snippets
   use {
     'hrsh7th/vim-vsnip',
     config = get_config('vsnip')
@@ -117,6 +120,13 @@ return require('packer').startup(function(use)
     },
   }
 
+  -- hop for easy navigation
+  use {
+    'phaazon/hop.nvim',
+    config = get_config('hop'),
+    event = "BufReadPre",
+  }
+
   -- colorscheme
   use {
     'ellisonleao/gruvbox.nvim',
@@ -124,6 +134,9 @@ return require('packer').startup(function(use)
       'rktjmp/lush.nvim' ,
     },
   }
+
+  -- giving those a try—lets see how often i will really use them
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   -- automatically set up configuration after cloning packer.nvim
   if packer_bootstrap then
