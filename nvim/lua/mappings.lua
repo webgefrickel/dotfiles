@@ -106,7 +106,7 @@ map('n', '<leader>x', '<cmd>lua vim.lsp.buf.code_action()<cr>')
 -- git
 map('n', '<leader>gb', '<cmd>Git blame<cr><C-w>10+')
 map('n', '<leader>gc', '<cmd>Git commit<cr><C-w>10+')
-map('n', '<leader>gd', '<cmd>Gvdiff<cr><C-w>10+')
+map('n', '<leader>gd', '<cmd>DiffviewOpen<cr>')
 map('n', '<leader>gf', '/\\v^[<\\|=>]{7}( .*\\|$)<cr>')
 map('n', '<leader>gs', '<cmd>G<cr><C-w>10+')
 map('n', '<leader>gw', '<cmd>Gwrite<cr><C-w>10+')
