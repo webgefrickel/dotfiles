@@ -2,8 +2,8 @@
 
 # ruby
 brew install rbenv # restart terminal, then:
-rbenv install 3.0.3
-rbenv global 3.0.3
+rbenv install 3.1.0
+rbenv global 3.1.0
 
 # node
 curl -L https://git.io/n-install | bash
