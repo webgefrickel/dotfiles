@@ -2,7 +2,7 @@ local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 function get_config(name)
-  return string.format("require(\"config/%s\")", name)
+  return string.format('require("config/%s")', name)
 end
 
 -- bootstrapping / downloading packer. run :PackerSync afterwards if sth. fails
@@ -23,13 +23,6 @@ return require('packer').startup(function(use)
   -- oldschool vimscript plugins, that still provide a lot of value
   use 'christoomey/vim-tmux-navigator'
   use 'editorconfig/editorconfig-vim'
-  use 'tpope/vim-apathy'
-  use 'tpope/vim-fugitive' -- replace with? sindrets/diffview.nvim
-  use 'tpope/vim-ragtag' -- debate if we still need the next tpope-plugins
-  use 'tpope/vim-repeat'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-unimpaired'
-  use 'wellle/targets.vim'
   use 'wincent/terminus'
 
   -- floating-terminal integration for nnn, lazygit etc.
@@ -46,8 +39,8 @@ return require('packer').startup(function(use)
 
   -- colorizer for nice css-colors
   use {
-    "norcalli/nvim-colorizer.lua",
-    event = "BufReadPre",
+    'norcalli/nvim-colorizer.lua',
+    event = 'BufReadPre',
     config = get_config('colorizer'),
   }
 
@@ -55,9 +48,15 @@ return require('packer').startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     config = get_config('treesitter'),
-    run = ":TSUpdate",
+    run = ':TSUpdate',
   }
+
+  -- textobjects, surroung, for stuff like cs", cib etc.
   use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use {
+    'blackCauldron7/surround.nvim',
+    config = get_config('surround'),
+  }
 
   -- fzf integration
   use {
@@ -81,8 +80,8 @@ return require('packer').startup(function(use)
 
   -- commenting stuff out
   use {
-    "numToStr/Comment.nvim",
-    config = get_config("comment")
+    'numToStr/Comment.nvim',
+    config = get_config('comment')
   }
 
   -- nice status line
@@ -124,7 +123,7 @@ return require('packer').startup(function(use)
   use {
     'phaazon/hop.nvim',
     config = get_config('hop'),
-    event = "BufReadPre",
+    event = 'BufReadPre',
   }
 
   -- colorscheme
