@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-brew tap homebrew-ffmpeg/ffmpeg
 brew tap homebrew/cask-drivers
 brew tap homebrew/services
 
@@ -8,9 +7,9 @@ brew tap homebrew/services
 brew install bat
 brew install clipper
 brew install fd
+brew install ffmpeg
 brew install fzf
 brew install glances
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac --with-rav1e
 brew install jump
 brew install lazygit
 brew install nnn

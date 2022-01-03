@@ -26,7 +26,8 @@ take () {
   cd $1
 }
 
-current_branch () {
+# used in aliases
+current_branch () { 
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
   echo ${ref#refs/heads/}
@@ -53,38 +54,37 @@ wttr () {
 }
 
 webvideo () {
-  WIDTH="${2:-trunc(iw/2)*2}"
-  HEIGHT="trunc(ih/2)*2"
-  if [[ -n "$2" ]]
-  then
-    HEIGHT="trunc(ow/a/2)*2"
+  if [ $# -eq 0 ]; then
+    echo "No arguments supplied, example usage: webvideo FILENAME --resize 1920 --mute"
+  else
+    zparseopts -E -D -- -resize:=opt_resize -mute=opt_mute
+
+    file=$(basename -- "$1")
+    extension="${file##*.}"
+    filename="${file%.*}"
+    width="${opt_resize[2]}"
+    w="${width:-trunc(iw/2)*2}"
+    h="trunc(ih/2)*2"
+
+    if [[ -n "$width" ]]
+    then
+      h="trunc(ow/a/2)*2"
+    fi
+
+    scale="scale=$w\:$h"
+    ffmpeg -ss 00:00:02 -i $1 -frames:v 1 -vf $scale $filename.jpg
+
+    if [ -z "${opt_mute}" ]; then
+      ffmpeg -i $1 -map_metadata -1 -c:a copy -c:v libx264 -crf 26 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf $scale $filename.h264.mp4
+      ffmpeg -i $1 -map_metadata -1 -c:a libopus -b:a 64k -c:v libaom-av1 -crf 50 -b:v 0 -pix_fmt yuv420p -movflags +faststart -cpu-used 8 -vf $scale $filename.av1.webm
+    else
+      ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 26 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf $scale $filename.h264.mp4
+      ffmpeg -i $1 -map_metadata -1 -an -c:v libaom-av1 -crf 50 -b:v 0 -pix_fmt yuv420p -movflags +faststart -cpu-used 8 -vf $scale $filename.av1.webm
+    fi
   fi
-
-  SCALE="scale=$WIDTH\:$HEIGHT"
-
-  ffmpeg -i $1 -map_metadata -1 -c:a libfdk_aac -b:a 96k -c:v libx264 -crf 26 -preset slow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf $SCALE -threads 0 $1.h264.mp4
-  ffmpeg -i $1 -map_metadata -1 -c:a libopus -b:a 64k -c:v librav1e -qp 110 -speed 4 -tile-columns 2 -tile-rows 2 -movflags +faststart -vf $SCALE -threads 0 $1.av1.webm
-}
-
-webvideomute () {
-  WIDTH="${2:-trunc(iw/2)*2}"
-  HEIGHT="trunc(ih/2)*2"
-  if [[ -n "$2" ]]
-  then
-    HEIGHT="trunc(ow/a/2)*2"
-  fi
-
-  SCALE="scale=$WIDTH\:$HEIGHT"
-
-  ffmpeg -i $1 -map_metadata -1 -an -c:v libx264 -crf 26 -preset slow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf $SCALE -threads 0 $1.h264.mp4
-  ffmpeg -i $1 -map_metadata -1 -an -c:v librav1e -qp 110 -speed 4 -tile-columns 2 -tile-rows 2 -movflags +faststart -vf $SCALE -threads 0 $1.av1.webm
-}
-
-webvideoposter () {
-  ffmpeg -ss 00:00:02 -i $1 -frames:v 1 $1.jpg
 }
 
 webgallery () {
-  mogrify -format jpg -resize '47.6190476%' -strip -quality 75 *.HEIC
+  mogrify -format jpg -strip -quality 80 *.HEIC
   rm *.HEIC
 }
