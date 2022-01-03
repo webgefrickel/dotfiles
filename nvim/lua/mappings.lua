@@ -125,7 +125,6 @@ map('s', '<C-j>', 'vsnip#available(-1) ? "<Plug>(vsnip-jump-prev)" : "<C-j>"', {
 map('n', '<leader>j', '<cmd>lua require("hop").hint_words()<cr>')
 
 -- custom handy shortcuts
--- TODO broken map('n', '<leader>o', '<cmd>e <C-R>=expand("%:p:h") . "/" <cr>')
 map('n', '<leader>ve', '<cmd>e $MYVIMRC<cr>')
 map('n', '<leader>vr', '<cmd>source $MYVIMRC<cr>')
 map('n', '<leader>w', '<cmd>set wrap! wrap?<cr>')
