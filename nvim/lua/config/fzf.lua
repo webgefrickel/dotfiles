@@ -11,9 +11,9 @@ require('fzf-lua').setup({
     },
   },
   winopts = {
-    width = 0.80,
-    height = 0.78,
-    row = 0.45,
+    width = 0.98,
+    height = 0.89,
+    row = 0.55,
     col = 0.48,
   },
 })

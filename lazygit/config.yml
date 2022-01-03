@@ -1,5 +1,16 @@
 gui:
   showRandomTip: false
   showCommandLog: false
+  showFileTree: false
+  theme:
+    selectedLineBgColor:
+      - reverse
+    selectedRangeBgColor:
+      - reverse
 disableStartupPopups: true
 notARepository: 'skip'
+git:
+  branchLogCmd: "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit"
+  paging:
+    colorArg: always
+    pager: diff-so-fancy

@@ -5,7 +5,7 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   eol = lf
-  pager = diff-so-fancy | less
+  pager = diff-so-fancy
 
 [color]
   ui = auto
