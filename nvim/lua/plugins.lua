@@ -18,32 +18,6 @@ return require('packer').startup(function(use)
   -- packer for plugin management itself
   use 'wbthomason/packer.nvim'
 
-  -- general plugins (without any config or dependencies)
-  -- some will be used by via custom mappings, most of those are non-lua
-  -- oldschool vimscript plugins, that still provide a lot of value
-  use 'christoomey/vim-tmux-navigator'
-  use 'editorconfig/editorconfig-vim'
-  use 'wincent/terminus'
-
-  -- floating-terminal integration for nnn, lazygit etc.
-  use {
-    'voldikss/vim-floaterm',
-    config = get_config('floaterm')
-  }
-
-  -- autopairs for sensible () "" ''
-  use {
-    'windwp/nvim-autopairs',
-    config = get_config('autopairs')
-  }
-
-  -- colorizer for nice css-colors
-  use {
-    'norcalli/nvim-colorizer.lua',
-    event = 'BufReadPre',
-    config = get_config('colorizer'),
-  }
-
   -- Treesitter for nicer syntax-highlighting
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -58,15 +32,6 @@ return require('packer').startup(function(use)
     config = get_config('surround'),
   }
 
-  -- fzf integration
-  use {
-    'ibhagwan/fzf-lua',
-    config = get_config('fzf'),
-    requires = {
-      { 'kyazdani42/nvim-web-devicons', opt = true },
-    },
-  }
-
   -- lsp and null-ls for diagnostics and formatting (eslint_d, stylelint etc.)
   use {
     'neovim/nvim-lspconfig',
@@ -76,22 +41,6 @@ return require('packer').startup(function(use)
     'jose-elias-alvarez/null-ls.nvim',
     config = get_config('null-ls'),
     requires = { 'nvim-lua/plenary.nvim' },
-  }
-
-  -- commenting stuff out
-  use {
-    'numToStr/Comment.nvim',
-    config = get_config('comment')
-  }
-
-  -- nice status line
-  use {
-    'nvim-lualine/lualine.nvim',
-    config = get_config('lualine'),
-    event = 'VimEnter',
-    requires = {
-      { 'kyazdani42/nvim-web-devicons', opt = true }
-    },
   }
 
   -- autocompletion and snippets
@@ -119,6 +68,50 @@ return require('packer').startup(function(use)
     },
   }
 
+  -- floating-terminal integration for nnn, lazygit etc.
+  use {
+    'voldikss/vim-floaterm',
+    config = get_config('floaterm')
+  }
+
+  -- fzf integration
+  use {
+    'ibhagwan/fzf-lua',
+    config = get_config('fzf'),
+    requires = {
+      { 'kyazdani42/nvim-web-devicons', opt = true },
+    },
+  }
+
+  -- autopairs for sensible () "" ''
+  use {
+    'windwp/nvim-autopairs',
+    config = get_config('autopairs')
+  }
+
+  -- colorizer for nice css-colors
+  use {
+    'norcalli/nvim-colorizer.lua',
+    event = 'BufReadPre',
+    config = get_config('colorizer'),
+  }
+
+  -- commenting stuff out
+  use {
+    'numToStr/Comment.nvim',
+    config = get_config('comment')
+  }
+
+  -- nice status line
+  use {
+    'nvim-lualine/lualine.nvim',
+    config = get_config('lualine'),
+    event = 'VimEnter',
+    requires = {
+      { 'kyazdani42/nvim-web-devicons', opt = true }
+    },
+  }
+
   -- hop for easy navigation
   use {
     'phaazon/hop.nvim',
@@ -126,18 +119,23 @@ return require('packer').startup(function(use)
     event = 'BufReadPre',
   }
 
-  -- colorscheme
-  use {
-    'ellisonleao/gruvbox.nvim',
-    requires = { 'rktjmp/lush.nvim' },
-  }
-
-  -- giving those a try—lets see how often i will really use them
+  -- git diff view, using lazygit for everything else
   use {
     'sindrets/diffview.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = get_config('diffview'),
   }
+
+  -- finally: the colorscheme of choice
+  use {
+    'ellisonleao/gruvbox.nvim',
+    requires = { 'rktjmp/lush.nvim' },
+  }
+
+  -- oldschool vimscript plugins that still provide a lot of value
+  use 'christoomey/vim-tmux-navigator'
+  use 'editorconfig/editorconfig-vim'
+  use 'wincent/terminus'
 
   -- automatically set up configuration after cloning packer.nvim
   if packer_bootstrap then

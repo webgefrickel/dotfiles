@@ -74,7 +74,7 @@ map('n', '<leader>;', '<cmd>lua require("fzf-lua").command_history()<cr>')
 map('n', '<leader>`', '<cmd>lua require("fzf-lua").files({ cwd = "~/" })<cr>')
 map('n', '<leader>a', '<cmd>lua require("fzf-lua").grep_project()<cr>')
 map('n', '<leader>b', '<cmd>lua require("fzf-lua").git_branches()<cr>')
-map('n', '<leader>c', '<cmd>lua require("fzf-lua").git_commits()<cr>')
+map('n', '<leader>c', '<cmd>lua require("fzf-lua").git_bcommits()<cr>')
 map('n', '<leader>]', '<cmd>lua require("fzf-lua").lines()<cr>')
 
 -- lsp and diagnostics
