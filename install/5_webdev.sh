@@ -25,9 +25,7 @@ sudo ln -s ~/dotfiles/etc/resolver /etc/resolver
 sudo ln -f ~/dotfiles/etc/hosts /etc/hosts
 
 # additional webdev cli tools
-npm install -g depcheck
 npm install -g npm-check
-npm install -g npm-check-updates
 npm install -g yarn
 
 # certificates for local ssl

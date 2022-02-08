@@ -23,9 +23,6 @@ npm i -g typescript-language-server
 npm i -g vscode-langservers-extracted
 npm i -g yaml-language-server
 
-# additional tools for code validation via null-ls
-
-
 # packer + treesitter
 nvim +PackerSync +TSUpdate
 nvim +checkhealth

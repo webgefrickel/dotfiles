@@ -15,6 +15,7 @@ brew install lazygit
 brew install nnn
 brew install ripgrep
 brew install starship
+brew install topgrade
 brew install tree
 brew install viu
 
