@@ -25,10 +25,10 @@ return require('packer').startup(function(use)
     run = ':TSUpdate',
   }
 
-  -- textobjects, surroung, for stuff like cs", cib etc.
+  -- textobjects, surround, for stuff like cs", cib etc.
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use {
-    'blackCauldron7/surround.nvim',
+    'ur4ltz/surround.nvim',
     config = get_config('surround'),
   }
 
