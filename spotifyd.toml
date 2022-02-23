@@ -1,0 +1,19 @@
+[global]
+username = 's.rademacker'
+use_keyring = true
+
+backend = 'portaudio'
+device_name = 'mausohr-spotifyd'
+device_type = 'computer'
+
+initial_volume = '100'
+zeroconf_port = 1234
+
+bitrate = 320
+volume_controller = 'softvol'
+volume_normalisation = false
+
+cache_path = '/Users/webgefrickel/Music'
+no_audio_cache = false
+
+

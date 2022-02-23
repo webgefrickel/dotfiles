@@ -12,6 +12,7 @@ brew install --cask forklift
 brew install --cask google-chrome
 brew install --cask hammerspoon
 brew install --cask iina
+brew install --cask imageoptim
 brew install --cask iterm2
 brew install --cask kap
 brew install --cask karabiner-elements
@@ -20,7 +21,6 @@ brew install --cask qlstephen
 brew install --cask reaper
 brew install --cask sequel-pro
 brew install --cask signal
-brew install --cask spotify
 brew install --cask syntax-highlight
 brew install --cask telegram
 brew install --cask temurin8
