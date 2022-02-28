@@ -18,9 +18,11 @@ brew install speedread
 brew install spotify-tui
 brew install spotifyd
 brew install starship
+brew install switchaudio-osx
 brew install topgrade
 brew install tree
 brew install viu
+brew install watson
 
 # nnn plugins
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
