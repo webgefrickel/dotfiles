@@ -54,16 +54,8 @@ wttr () {
 }
 
 out () {
-  # requires switchaudio-osx to be installed
-  IFS=$'\n' # split on newline
-  set -o noglob
-  sources=($(SwitchAudioSource -t output -a))
-
-  select option in $sources; do
-    SwitchAudioSource -s "$option"
-    brew services restart spotifyd
-    exit
-  done
+  SwitchAudioSource -n
+  brew services restart spotifyd
 }
 
 webvideo () {
