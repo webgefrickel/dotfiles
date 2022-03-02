@@ -6,7 +6,6 @@ brew tap homebrew/cask-versions
 brew install --cask 1password
 brew install --cask alfred
 brew install --cask carbon-copy-cloner
-brew install --cask dash
 brew install --cask firefox
 brew install --cask forklift
 brew install --cask google-chrome

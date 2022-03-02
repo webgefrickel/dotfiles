@@ -107,10 +107,9 @@ hotkey.bind(hyper, 'q', function() layout.apply(layoutSingle) end)
 hotkey.bind(hyper, 'w', function() layout.apply(layoutDouble) end)
 
 -- Direct app navigation
--- hotkey D is set in Dash itself
 hotkey.bind(hyper, 'a', function() app.launchOrFocus('iTerm') end)
 hotkey.bind(hyper, 's', function() app.launchOrFocus('Firefox') end)
-hotkey.bind(hyper, 'f', function() app.launchOrFocus('ForkLift') end)
+hotkey.bind(hyper, 'd', function() app.launchOrFocus('ForkLift') end)
 hotkey.bind(hyper, 'g', function() launchApps() end)
 
 -- Moving windows around / navigating windows
