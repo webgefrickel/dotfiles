@@ -9,7 +9,6 @@ brew install clipper
 brew install fd
 brew install ffmpeg
 brew install fzf
-brew install glances
 brew install jump
 brew install lazygit
 brew install nnn
@@ -33,9 +32,10 @@ ln -s ~/dotfiles/yamllint.yml ~/.config/yamllint/config
 ln -s ~/dotfiles/spotifyd.toml ~/.config/spotifyd/spotifyd.conf
 ln -s ~/dotfiles/lazygit ~/Library/Application\ Support/lazygit
 
-# node cli tools and helpers
+# other cli tools and helpers
 npm install -g diff-so-fancy
 npm install -g fkill-cli
+pip install tiptop
 
 # install fzf
 /opt/homebrew/opt/fzf/install
