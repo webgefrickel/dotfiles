@@ -21,7 +21,6 @@ brew install switchaudio-osx
 brew install topgrade
 brew install tree
 brew install viu
-brew install watson
 
 # nnn plugins
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
@@ -36,6 +35,7 @@ ln -s ~/dotfiles/lazygit ~/Library/Application\ Support/lazygit
 npm install -g diff-so-fancy
 npm install -g fkill-cli
 pip install tiptop
+cargo install bartib
 
 # install fzf
 /opt/homebrew/opt/fzf/install
