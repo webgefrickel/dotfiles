@@ -1,9 +1,11 @@
 #!/usr/bin/env zsh
 
-# ruby
+# ruby & rust
 brew install rbenv # restart terminal, then:
+brew install rust
 rbenv install 3.1.1
 rbenv global 3.1.1
+cargo install cargo-update
 
 # node
 curl -L https://git.io/n-install | bash
