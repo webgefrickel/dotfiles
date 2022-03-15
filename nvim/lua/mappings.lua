@@ -93,6 +93,8 @@ map('n', '<leader>l', '<cmd>FloatermNew lazygit<cr>')
 map('n', '<leader>gd', '<cmd>DiffviewOpen<cr>')
 map('n', '<leader>gc', '<cmd>DiffviewClose<cr>')
 map('n', '<leader>gh', '<cmd>DiffviewFileHistory<cr>')
+map('n', '<leader>gb', '<cmd>GitBlameToggle<cr>')
+-- TODO rework this?!
 map('n', '<leader>gf', '/\\v^[<\\|=>]{7}( .*\\|$)<cr>')
 
 -- floaterm

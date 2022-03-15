@@ -13,6 +13,7 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
 export PATH=/opt/homebrew/opt/curl/bin:$PATH
 export PATH=/Users/webgefrickel/git/bin:$PATH
+export PATH=/Users/webgefrickel/.cargo/bin:$PATH
 export SHELL=/opt/homebrew/bin/zsh
 export TERM=xterm-256color
 export VISUAL="/opt/homebrew/bin/nvim"
@@ -42,3 +43,6 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 # n node version management
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 # export N_PRESERVE_NPM=1
+
+# bartib for time tracking 
+export BARTIB_FILE="/Users/webgefrickel/Documents/tracking.bartib"
