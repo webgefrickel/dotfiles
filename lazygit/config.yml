@@ -13,4 +13,4 @@ git:
   branchLogCmd: "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit"
   paging:
     colorArg: always
-    pager: diff-so-fancy
+    pager: delta --dark --paging=never

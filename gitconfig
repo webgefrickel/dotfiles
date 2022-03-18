@@ -5,7 +5,7 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   eol = lf
-  pager = diff-so-fancy | less -F -i -J -M -R -W -x2 -X -z-4
+  pager = delta
 
 [color]
   ui = auto
@@ -57,6 +57,10 @@
   tool = nvim -d
   guitool = nvim -d
   compactionHeuristic = true
+  colorMoved = default
+
+[merge]
+  conflictstyle = diff3
 
 [mergetool]
   prompt = false
@@ -69,7 +73,19 @@
   rebase = false
 
 [interactive]
-  diffFilter = diff-highlight
+  diffFilter = delta --color-only
 
 [credential]
   helper = store
+
+[delta]
+  blame-code-style = syntax
+  blame-format = "{commit:<8} • {author:<18} • {timestamp:<15}"
+  blame-palette = "#333333"
+  hunk-header-style = omit
+  hyperlinks = false
+  navigate = true
+  side-by-side = true
+  syntax-theme = gruvbox-dark
+  width = "-4"
+

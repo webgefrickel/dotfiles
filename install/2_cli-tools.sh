@@ -32,8 +32,8 @@ ln -s ~/dotfiles/spotifyd.toml ~/.config/spotifyd/spotifyd.conf
 ln -s ~/dotfiles/lazygit ~/Library/Application\ Support/lazygit
 
 # other cli tools and helpers
-npm install -g diff-so-fancy
 npm install -g fkill-cli
+npm install -g trash-cli
 pip install tiptop
 cargo install bartib
 
