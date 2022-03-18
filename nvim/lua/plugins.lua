@@ -125,10 +125,6 @@ return require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' },
     config = get_config('diffview'),
   }
-  use {
-    'f-person/git-blame.nvim',
-    config = get_config('git-blame'),
-  }
 
   -- finally: the colorscheme of choice
   use {

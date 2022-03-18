@@ -26,7 +26,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # nnn
 export NNN_OPTS='deHR'
-export NNN_BMS='d:~/Dotfiles;s:~/Sites;l:~/Downloads;h:~/'
+export NNN_BMS='a:~/Sites/ag;d:~/Dotfiles;s:~/Sites;l:~/Downloads;h:~/'
 export NNN_FCOLORS='c1e26c2e006033f5c6d6abc4'
 export NNN_PLUG='p:preview-tui;j:autojump'
 export NNN_FIFO='/tmp/nnn.fifo'
@@ -42,7 +42,6 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 
 # n node version management
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-# export N_PRESERVE_NPM=1
 
 # bartib for time tracking 
 export BARTIB_FILE="/Users/webgefrickel/Documents/tracking.bartib"
