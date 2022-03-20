@@ -20,6 +20,6 @@ npm update -g
 # first: find out the current python3 version in homebrew
 # then install this version with pyenv and link it
 brew install pyenv # restart terminal, then:
-pyenv install 3.10.2
-pyenv global 3.10.2
+pyenv install 3.10.3
+pyenv global 3.10.3
 pip install --upgrade pip
