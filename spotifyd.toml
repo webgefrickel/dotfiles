@@ -3,7 +3,7 @@ username = 's.rademacker'
 use_keyring = true
 
 backend = 'portaudio'
-device_name = 'mausohr-spotifyd'
+device_name = 'spuckify'
 device_type = 'computer'
 
 initial_volume = '100'
