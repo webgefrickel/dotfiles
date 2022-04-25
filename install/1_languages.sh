@@ -1,11 +1,9 @@
 #!/usr/bin/env zsh
 
-# ruby & rust
+# ruby
 brew install rbenv # restart terminal, then:
-brew install rust
-rbenv install 3.1.1
-rbenv global 3.1.1
-cargo install cargo-update
+rbenv install 3.1.2
+rbenv global 3.1.2
 
 # node
 curl -L https://git.io/n-install | bash
@@ -20,6 +18,6 @@ npm update -g
 # first: find out the current python3 version in homebrew
 # then install this version with pyenv and link it
 brew install pyenv # restart terminal, then:
-pyenv install 3.10.3
-pyenv global 3.10.3
+pyenv install 3.10.4
+pyenv global 3.10.4
 pip install --upgrade pip
