@@ -22,8 +22,6 @@ brew install --cask sequel-pro
 brew install --cask signal
 brew install --cask syntax-highlight
 brew install --cask telegram
-brew install --cask temurin8
-brew install --cask vmware-fusion
 brew install --cask zoom
 
 # Quicklook-reset
@@ -38,6 +36,7 @@ ln -s ~/dotfiles/karabiner ~/.config/karabiner
 
 # Drivers and other software
 brew install --cask font-fira-code-nerd-font
+brew install --cask temurin8 # for ubiquiti-unifi-controller
 brew install --cask ubiquiti-unifi-controller
 
 # Tell unifi-controller to use brew-installed java
