@@ -6,9 +6,9 @@ min_time = 5_000
 [directory]
 truncation_length = 6
 
-[custom.bartib]
-command = "~/Dotfiles/other/bartib.status.zsh" # shows output of command
+[custom.tttimetracker]
+command = "~/Dotfiles/other/tt-time-tracker.status.zsh" # shows output of command
 when = ""
 symbol = ""
 style = "bold blue"
-format = "[$symbol($output)]($style)"
+format = "[$symbol($output)]($style) "

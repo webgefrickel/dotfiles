@@ -35,7 +35,7 @@ ln -s ~/dotfiles/spotifyd.toml ~/.config/spotifyd/spotifyd.conf
 npm install -g fkill-cli
 npm install -g trash-cli
 pip install tiptop
-cargo install bartib
+pip install tt-time-tracker
 
 # install fzf
 /opt/homebrew/opt/fzf/install
