@@ -9,10 +9,11 @@ cmp.setup({
       vim.fn["vsnip#anonymous"](args.body)
     end
   },
-  mapping = {
+  mapping = cmp.mapping.preset.insert({
     ['<cr>'] = cmp.mapping.confirm({ select = true }),
-  },
+  }),
   sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
     {
       name = 'buffer',
       option = {
@@ -21,7 +22,6 @@ cmp.setup({
         end
       },
     },
-    { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'vsnip' },
     { name = 'tmux', option = { all_panes = true } },
@@ -30,8 +30,8 @@ cmp.setup({
   formatting = {
     format = function(entry, vim_item)
       vim_item.menu = ({
-        buffer = "[Buffer]",
         nvim_lsp = "[LSP]",
+        buffer = "[Buffer]",
         path = "[Path]",
         vsnip = "[Snippet]",
         tmux = "[tmux]",
@@ -43,12 +43,14 @@ cmp.setup({
 })
 
 cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline({}),
   sources = {
     { name = 'cmdline' }
   }
 })
 
 cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline({}),
   sources = {
     { name = 'buffer' }
   }
