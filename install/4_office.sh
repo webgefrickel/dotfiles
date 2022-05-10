@@ -18,14 +18,6 @@ mkdir ~/Mail/mailbox
 mkdir ~/Mail/mailbox/cur
 mkdir ~/Mail/mailbox/new
 mkdir ~/Mail/mailbox/tmp
-mkdir ~/Mail/viu
-mkdir ~/Mail/viu/cur
-mkdir ~/Mail/viu/new
-mkdir ~/Mail/viu/tmp
-mkdir ~/Mail/───────────────────
-mkdir ~/Mail/───────────────────/cur
-mkdir ~/Mail/───────────────────/new
-mkdir ~/Mail/───────────────────/tmp
 
 # link config files
 ln -s ~/dotfiles/office/mutt ~/.mutt
