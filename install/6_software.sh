@@ -3,7 +3,6 @@ brew tap buo/cask-upgrade
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 
-brew install --cask 1password
 brew install --cask alfred
 brew install --cask carbon-copy-cloner
 brew install --cask firefox
@@ -16,13 +15,21 @@ brew install --cask iterm2
 brew install --cask kap
 brew install --cask karabiner-elements
 brew install --cask microsoft-teams
-brew install --cask qlstephen
 brew install --cask reaper
-brew install --cask sequel-pro
 brew install --cask signal
 brew install --cask syntax-highlight
 brew install --cask telegram
-brew install --cask zoom
+
+# seldomly used software
+#brew install --cask alfaview
+#brew install --cask paw
+#brew install --cask sequel-pro
+#brew install --cask sketch
+#brew install --cask skype
+#brew install --cask transmission
+#brew install --cask vmware-fusion
+#brew install --cask webex
+#brew install --cask zoom
 
 # Quicklook-reset
 xattr -cr ~/Library/QuickLook
