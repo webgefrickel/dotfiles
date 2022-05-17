@@ -52,8 +52,8 @@ sudo v /Applications/UniFi.app/Contents/Info.plist
 # THEN add this: <key>JVMRuntime</key> <string>temurin-8.jdk</string>
 
 # firefox-extensions: 
-# surfingkeys, dark reader, privacy badger, ublock origin, wikiwand,
-# 1passwd classic extension, react developer tools, df youtube
+# surfingkeys, dark reader, privacy badger, ublock origin, 
+# react developer tools, df youtube, axe devtools
 
 # other software:
 # bill: https://billtheapp.com/
