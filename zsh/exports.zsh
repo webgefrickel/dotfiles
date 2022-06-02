@@ -43,3 +43,6 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 
 # tt-time-tracker
 export SHEET_FILE='/Users/webgefrickel/Documents/tt-time-tracker.json' 
+
+# lazygit 
+export LG_CONFIG_FILE="/Users/webgefrickel/.config/lazygit/config.yml"

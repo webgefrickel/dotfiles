@@ -14,7 +14,6 @@ brew install lazygit
 brew install nnn
 brew install ripgrep
 brew install speedread
-brew install spotify-tui
 brew install spotifyd
 brew install starship
 brew install switchaudio-osx
@@ -26,7 +25,6 @@ brew install viu
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
 ln -s ~/dotfiles/lazygit ~/.config/lazygit
-ln -s ~/dotfiles/lazygit ~/Library/Application\ Support/lazygit
 ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/dotfiles/yamllint.yml ~/.config/yamllint/config
 ln -s ~/dotfiles/spotifyd.toml ~/.config/spotifyd/spotifyd.conf
