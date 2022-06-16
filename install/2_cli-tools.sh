@@ -41,3 +41,7 @@ pip install tt-time-tracker
 # clipper
 mkdir -p ~/Library/LaunchAgents
 brew services start clipper
+
+# switchaudio + custom node-script
+cd ~/dotfiles/other/out
+npm install

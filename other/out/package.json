@@ -1,0 +1,15 @@
+{
+  "name": "out",
+  "version": "1.0.0",
+  "description": "Audio Output Switcher",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "run": "node main.js"
+  },
+  "author": "Steffen Rademacker <kontakt@webgefrickel.de>",
+  "license": "MIT",
+  "dependencies": {
+    "enquirer": "^2.3.6"
+  }
+}

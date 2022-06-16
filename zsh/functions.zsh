@@ -53,11 +53,6 @@ wttr () {
   fi
 }
 
-out () {
-  SwitchAudioSource -n
-  brew services restart spotifyd
-}
-
 webvideo () {
   if [ $# -eq 0 ]; then
     echo "No arguments supplied, example usage: webvideo FILENAME --resize 1920 --mute"

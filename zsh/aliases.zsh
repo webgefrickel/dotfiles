@@ -17,6 +17,7 @@ alias mutt='neomutt'
 alias nb="npm run build"
 alias npmre='rm -f package-lock.json && rm -rf node_modules && npm install'
 alias ns="npm start"
+alias out="node ~/Dotfiles/other/out/main.js"
 alias q='exit'
 alias sudo='sudo '
 alias t='tmux -u -2'
