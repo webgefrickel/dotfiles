@@ -7,7 +7,6 @@ brew install imagemagick
 brew install mariadb
 brew install mkcert
 brew install nss
-brew install php@7.4
 brew install php
 
 # link etc-configs
