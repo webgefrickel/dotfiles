@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-brew install neovim --HEAD
+brew install neovim
 brew install tmux
 gem install neovim
 pip install neovim
