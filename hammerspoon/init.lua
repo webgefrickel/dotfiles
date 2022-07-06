@@ -94,6 +94,28 @@ local function applyPosition(pos)
   layout.apply(tempLayout)
 end
 
+
+-- Apple Music starts when I press a button on my bluetooth headset
+-- This sucks. For now: autokill Music on start
+--------------------
+
+function applicationMusicWatcher(appName, eventType, appObject)
+  if (eventType == hs.application.watcher.launching) then
+    if (appName == "Music") then
+      local op, stat, typ, ec = hs.execute([["/usr/bin/killall" "Music"]])
+      if not (ec == 0) then
+        hs.notify.new({
+          title = "Hammerspoon",
+          informativeText = "An error occurred terminating Music.",
+        }):send()
+      end
+    end
+  end
+end
+
+appMusicWatcher = hs.application.watcher.new(applicationMusicWatcher)
+appMusicWatcher:start()
+
 -- Window management and general config
 --------------------
 
