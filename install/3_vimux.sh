@@ -15,9 +15,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # additional language-servers for nvim-lspconfig
 npm i -g eslint_d
-npm i -g markdownlint-cli
 npm i -g fixjson
+npm i -g markdownlint-cli
 npm i -g neovim
+npm i -g stylelint
 npm i -g typescript
 npm i -g typescript-language-server
 npm i -g vscode-langservers-extracted
