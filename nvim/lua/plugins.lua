@@ -30,12 +30,14 @@ return require('packer').startup(function(use)
   use {
     'ur4ltz/surround.nvim',
     config = get_config('surround'),
+    requires = { 'tpope/vim-repeat' },
   }
 
   -- lsp and null-ls for diagnostics and formatting (eslint_d, stylelint etc.)
+  -- remember to install all those tools in the cli, see ../../install/3_vimux.sh
   use {
     'neovim/nvim-lspconfig',
-    config = get_config('lspconfig')
+    config = get_config('lspconfig'),
   }
   use {
     'jose-elias-alvarez/null-ls.nvim',
@@ -59,7 +61,7 @@ return require('packer').startup(function(use)
   }
   use {
     'hrsh7th/vim-vsnip',
-    config = get_config('vsnip')
+    config = get_config('vsnip'),
   }
   use {
     'rafamadriz/friendly-snippets',
@@ -71,7 +73,7 @@ return require('packer').startup(function(use)
   -- floating-terminal integration for nnn, lazygit etc.
   use {
     'voldikss/vim-floaterm',
-    config = get_config('floaterm')
+    config = get_config('floaterm'),
   }
 
   -- fzf integration
@@ -86,7 +88,7 @@ return require('packer').startup(function(use)
   -- autopairs for sensible () "" ''
   use {
     'windwp/nvim-autopairs',
-    config = get_config('autopairs')
+    config = get_config('autopairs'),
   }
 
   -- colorizer for nice css-colors
@@ -99,7 +101,7 @@ return require('packer').startup(function(use)
   -- commenting stuff out
   use {
     'numToStr/Comment.nvim',
-    config = get_config('comment')
+    config = get_config('comment'),
   }
 
   -- nice status line
@@ -130,6 +132,12 @@ return require('packer').startup(function(use)
   use {
     'ellisonleao/gruvbox.nvim',
     requires = { 'rktjmp/lush.nvim' },
+  }
+
+  -- Evaluating...
+  use {
+    'rcarriga/nvim-notify',
+    config = get_config('notify'),
   }
 
   -- oldschool vimscript plugins that still provide a lot of value
