@@ -114,10 +114,10 @@ return require('packer').startup(function(use)
     },
   }
 
-  -- hop for easy navigation
+  -- leap for stupidly nice navigation
   use {
-    'phaazon/hop.nvim',
-    config = get_config('hop'),
+    'ggandor/leap.nvim',
+    config = get_config('leap'),
     event = 'BufReadPre',
   }
 
