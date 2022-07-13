@@ -26,6 +26,7 @@ curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | s
 
 ln -s ~/dotfiles/lazygit ~/.config/lazygit
 ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
+ln -s ~/dotfiles/topgrade.toml ~/.config/topgrade.toml
 ln -s ~/dotfiles/yamllint.yml ~/.config/yamllint/config
 ln -s ~/dotfiles/spotifyd.toml ~/.config/spotifyd/spotifyd.conf
 
