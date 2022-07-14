@@ -30,7 +30,6 @@ return require('packer').startup(function(use)
   use {
     'ur4ltz/surround.nvim',
     config = get_config('surround'),
-    requires = { 'tpope/vim-repeat' },
   }
 
   -- lsp and null-ls for diagnostics and formatting (eslint_d, stylelint etc.)
@@ -143,6 +142,8 @@ return require('packer').startup(function(use)
   -- oldschool vimscript plugins that still provide a lot of value
   use 'christoomey/vim-tmux-navigator'
   use 'editorconfig/editorconfig-vim'
+  use 'tpope/vim-repeat'
+  use 'tpope/vim-ragtag'
   use 'wincent/terminus'
 
   -- automatically set up configuration after cloning packer.nvim

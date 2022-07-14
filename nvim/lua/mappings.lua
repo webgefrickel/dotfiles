@@ -90,6 +90,7 @@ map('n', '<leader>x', '<cmd>lua vim.lsp.buf.code_action()<cr>')
 
 -- git
 map('n', '<leader>l', '<cmd>FloatermNew lazygit<cr>')
+map('n', '<leader>gb', '<cmd>FloatermNew git blame %<cr>')
 map('n', '<leader>gd', '<cmd>DiffviewOpen<cr>')
 map('n', '<leader>gc', '<cmd>DiffviewClose<cr>')
 map('n', '<leader>gh', '<cmd>DiffviewFileHistory<cr>')
@@ -106,7 +107,6 @@ map('s', '<C-j>', 'vsnip#available(-1) ? "<Plug>(vsnip-jump-prev)" : "<C-j>"', {
 
 -- other useful mappings
 map('n', '<F5>', '<cmd>checktime<cr><cmd>redraw!<cr>');
-map('n', '<leader>j', '<cmd>lua require("hop").hint_words()<cr>')
 map('n', '<leader>ve', '<cmd>e $MYVIMRC<cr>')
 map('n', '<leader>vr', '<cmd>source $MYVIMRC<cr>')
 map('n', '<leader>w', '<cmd>set wrap! wrap?<cr>')
