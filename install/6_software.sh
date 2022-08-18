@@ -21,15 +21,11 @@ brew install --cask syntax-highlight
 brew install --cask telegram
 
 # seldomly used software
-#brew install --cask alfaview
 #brew install --cask paw
 #brew install --cask sequel-pro
 #brew install --cask sketch
-#brew install --cask skype
 #brew install --cask transmission
 #brew install --cask vmware-fusion
-#brew install --cask webex
-#brew install --cask zoom
 
 # Quicklook-reset
 xattr -cr ~/Library/QuickLook
@@ -43,17 +39,10 @@ ln -s ~/dotfiles/karabiner ~/.config/karabiner
 
 # Drivers and other software
 brew install --cask font-fira-code-nerd-font
-brew install --cask temurin8 # for ubiquiti-unifi-controller
-brew install --cask ubiquiti-unifi-controller
-
-# Tell unifi-controller to use brew-installed java
-sudo ln -s /Library/Java/JavaVirtualMachines/temurin-8.jdk /Applications/UniFi.app/Contents/PlugIns/temurin-8.jdk
-sudo v /Applications/UniFi.app/Contents/Info.plist
-# THEN add this: <key>JVMRuntime</key> <string>temurin-8.jdk</string>
 
 # firefox-extensions: 
 # surfingkeys, dark reader, privacy badger, ublock origin, 
-# react developer tools, df youtube, axe devtools
+# react developer tools, df youtube, axe devtools 
 
 # other software:
 # bill: https://billtheapp.com/

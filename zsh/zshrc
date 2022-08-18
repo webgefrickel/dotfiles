@@ -15,8 +15,8 @@ zinit wait lucid for \
     light-mode zsh-users/zsh-autosuggestions \
     light-mode zsh-users/zsh-completions \
     light-mode zdharma-continuum/fast-syntax-highlighting \
-    light-mode "https://github.com/belak/zsh-utils/blob/master/history/history.plugin.zsh" \
-    light-mode "https://github.com/belak/zsh-utils/blob/master/completion/completion.plugin.zsh"
+    light-mode "https://github.com/belak/zsh-utils/blob/main/history/history.plugin.zsh" \
+    light-mode "https://github.com/belak/zsh-utils/blob/main/completion/completion.plugin.zsh"
 
 # history
 setopt SHARE_HISTORY

@@ -42,6 +42,7 @@ local layoutDouble = {
   { "Microsoft Teams", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
   { "Reminders", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Signal", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
+  { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Telegram", nil, mainMonitor, screenPositions.rightTop, nil, nil },
   { "iTerm2", nil, mainMonitor, screenPositions.right, nil, nil },
 }
@@ -55,6 +56,7 @@ local layoutSingle = {
   { "Microsoft Teams", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Reminders", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Signal", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Telegram", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "iTerm2", nil, laptopMonitor, screenPositions.full, nil, nil },
 }
@@ -68,6 +70,7 @@ local appNames = {
   "Microsoft Teams",
   "Reminders",
   "Signal",
+  "Strongbox",
   "Telegram",
   "iTerm",
 }

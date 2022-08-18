@@ -79,9 +79,7 @@ return require('packer').startup(function(use)
   use {
     'ibhagwan/fzf-lua',
     config = get_config('fzf'),
-    requires = {
-      { 'kyazdani42/nvim-web-devicons', opt = true },
-    },
+    requires = { 'kyazdani42/nvim-web-devicons' },
   }
 
   -- autopairs for sensible () "" ''
@@ -93,8 +91,8 @@ return require('packer').startup(function(use)
   -- colorizer for nice css-colors
   use {
     'norcalli/nvim-colorizer.lua',
-    event = 'BufReadPre',
     config = get_config('colorizer'),
+    event = 'BufReadPre',
   }
 
   -- commenting stuff out
@@ -107,10 +105,8 @@ return require('packer').startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     config = get_config('lualine'),
+    requires = { 'kyazdani42/nvim-web-devicons' },
     event = 'VimEnter',
-    requires = {
-      { 'kyazdani42/nvim-web-devicons', opt = true }
-    },
   }
 
   -- leap for stupidly nice navigation
@@ -123,8 +119,8 @@ return require('packer').startup(function(use)
   -- git diff view and blame, using lazygit for everything else
   use {
     'sindrets/diffview.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
     config = get_config('diffview'),
+    requires = { 'nvim-lua/plenary.nvim' },
   }
 
   -- finally: the colorscheme of choice
@@ -137,6 +133,16 @@ return require('packer').startup(function(use)
   use {
     'rcarriga/nvim-notify',
     config = get_config('notify'),
+  }
+  use {
+    'nvim-neorg/neorg',
+    config = get_config('neorg'),
+    requires = { 'nvim-lua/plenary.nvim' },
+  }
+  use {
+    'folke/trouble.nvim',
+    config = get_config('trouble'),
+    requires = { 'kyazdani42/nvim-web-devicons' },
   }
 
   -- oldschool vimscript plugins that still provide a lot of value

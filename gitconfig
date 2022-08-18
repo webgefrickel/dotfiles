@@ -67,7 +67,7 @@
   keepBackup = false
 
 [push]
-  default = simple
+	default = current
 
 [pull]
   rebase = false
