@@ -15,21 +15,17 @@ zinit wait lucid for \
     light-mode zsh-users/zsh-autosuggestions \
     light-mode zsh-users/zsh-completions \
     light-mode zdharma-continuum/fast-syntax-highlighting \
-    light-mode "https://github.com/belak/zsh-utils/blob/main/history/history.plugin.zsh" \
-    light-mode "https://github.com/belak/zsh-utils/blob/main/completion/completion.plugin.zsh"
-
-# history
-setopt SHARE_HISTORY
-unsetopt HIST_BEEP
-
-# easy vim/terminal switch
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
+    light-mode PZT::modules/history/init.zsh \
+    light-mode PZT::modules/completion/init.zsh
 
 # exports, functions and aliases
 source ~/dotfiles/zsh/exports.zsh
 source ~/dotfiles/zsh/aliases.zsh
 source ~/dotfiles/zsh/functions.zsh
+
+# easy vim/terminal switch
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
 
 # other tools init, pyenv + rbenv are sandboxd
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
