@@ -116,13 +116,6 @@ return require('packer').startup(function(use)
     event = 'BufReadPre',
   }
 
-  -- git diff view and blame, using lazygit for everything else
-  use {
-    'sindrets/diffview.nvim',
-    config = get_config('diffview'),
-    requires = { 'nvim-lua/plenary.nvim' },
-  }
-
   -- finally: the colorscheme of choice
   use {
     'ellisonleao/gruvbox.nvim',

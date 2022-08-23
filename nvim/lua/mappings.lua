@@ -91,9 +91,6 @@ map('n', '<leader>x', '<cmd>lua vim.lsp.buf.code_action()<cr>')
 -- git
 map('n', '<leader>l', '<cmd>FloatermNew lazygit<cr>')
 map('n', '<leader>gb', '<cmd>FloatermNew git blame %<cr>')
-map('n', '<leader>gd', '<cmd>DiffviewOpen<cr>')
-map('n', '<leader>gc', '<cmd>DiffviewClose<cr>')
-map('n', '<leader>gh', '<cmd>DiffviewFileHistory<cr>')
 map('n', '<leader>gf', "<cmd>execute '/\\v^[<\\|=>]{7}/'<cr>")
 
 -- floaterm
