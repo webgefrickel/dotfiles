@@ -26,6 +26,8 @@ macro index,pager \cb "<pipe-message>urlscan<enter>" "call urlscan to extract UR
 # Sync all email
 macro index,pager O "<shell-escape>mbsync -a<enter>" "run mbsync to sync all mail"
 
+macro pager X "<enter-command>set pipe_decode=yes<enter>v|grep -v '^>' | speedread<enter><enter-command>unset pipe_decode<enter>q" "speedread"
+
 # View attachments properly.
 bind attach <space> view-mailcap
 
