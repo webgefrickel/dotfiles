@@ -1,10 +1,11 @@
-local vimouse = require('vimouse')
+local alert = require('hs.alert')
 local app = require('hs.application')
 local eventtap = require('hs.eventtap')
 local geometry = require('hs.geometry')
 local hotkey = require('hs.hotkey')
 local layout = require('hs.layout')
 local screen = require('hs.screen')
+local timer = require('hs.timer')
 local win = require('hs.window')
 
 -- Custom variables
@@ -116,13 +117,45 @@ function applicationMusicWatcher(appName, eventType, appObject)
   end
 end
 
-appMusicWatcher = hs.application.watcher.new(applicationMusicWatcher)
+local appMusicWatcher = hs.application.watcher.new(applicationMusicWatcher)
 appMusicWatcher:start()
 
 -- Window management and general config
 --------------------
 
 win.animationDuration = 0
+
+-- Esoteric stuff
+--------------------
+
+function showSanityReminder()
+  function linesFrom(file)
+    local lines = {}
+    for line in io.lines(file) do
+      lines[#lines + 1] = line
+    end
+    return lines
+  end
+
+  local file = '/Users/webgefrickel/Documents/sanity-reminders.txt'
+  local lines = linesFrom(file)
+  local txt = lines[math.random(#lines)]
+  local interval = math.random(20, 50) * 60
+
+  local largeTextStyle = {
+    textFont  = "FiraCode Nerd Font",
+    textSize  = 24,
+    radius = 10,
+  }
+
+  hs.timer.doAfter(interval, function()
+    alert.show(txt, largeTextStyle, win.focusedWindow():screen(), 4)
+    showSanityReminder()
+  end)
+end
+
+
+showSanityReminder()
 
 -- Keybindings
 --------------------
@@ -135,6 +168,7 @@ hotkey.bind(hyper, 'w', function() layout.apply(layoutDouble) end)
 hotkey.bind(hyper, 'a', function() app.launchOrFocus('iTerm') end)
 hotkey.bind(hyper, 's', function() app.launchOrFocus('Firefox') end)
 hotkey.bind(hyper, 'd', function() app.launchOrFocus('ForkLift') end)
+hotkey.bind(hyper, 'f', function() showSanityReminder() end)
 hotkey.bind(hyper, 'g', function() launchApps() end)
 
 -- Moving windows around / navigating windows
@@ -177,5 +211,3 @@ hotkey.bind(alt, 'u', function() eventtap.keyStrokes('ü') end)
 hotkey.bind(altShift, 'a', function() eventtap.keyStrokes(' Ä') end)
 hotkey.bind(altShift, 'o', function() eventtap.keyStrokes('Ö') end)
 hotkey.bind(altShift, 'u', function() eventtap.keyStrokes('Ü') end)
-
-vimouse(hyper, ',')
