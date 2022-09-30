@@ -7,8 +7,6 @@ rbenv global 3.1.2
 
 # node
 curl -L https://git.io/n-install | bash
-n v8
-n v12
 n v14
 n lts
 npm install -g npm@latest

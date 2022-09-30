@@ -21,16 +21,16 @@ local mainMonitor = "DELL U3415W"
 --------------------
 
 local screenPositions = {
-  left = geometry.rect(0.01, 0.01, 0.485, 0.98),
-  leftTop = { x = 0.01, y = 0.01, w = 0.485, h = 0.485 },
-  leftBottom = { x= 0.01, y = 0.505, w = 0.485, h = 0.485 },
-  right = geometry.rect(0.505, 0.01, 0.485, 0.98),
-  rightTop = { x = 0.505, y = 0.01, w = 0.485, h = 0.485 },
-  rightBottom = { x= 0.505, y = 0.505, w = 0.485, h = 0.485 },
-  top = geometry.rect(0.01, 0.01, 0.98, 0.485),
-  bottom = geometry.rect(0.01, 0.505, 0.98, 0.485),
+  left = geometry.rect(0, 0, 0.5, 1),
+  leftTop = { x = 0, y = 0, w = 0.5, h = 0.5 },
+  leftBottom = { x= 0, y = 0.5, w = 0.5, h = 0.5 },
+  right = geometry.rect(0.5, 0, 0.5, 1),
+  rightTop = { x = 0.5, y = 0, w = 0.5, h = 0.5 },
+  rightBottom = { x= 0.5, y = 0.5, w = 0.5, h = 0.5 },
+  top = geometry.rect(0, 0, 1, 0.5),
+  bottom = geometry.rect(0, 0.5, 1, 0.5),
   center = geometry.rect(0.15, 0.15, 0.7, 0.7),
-  max = geometry.rect(0.01, 0.01, 0.98, 0.98),
+  max = geometry.rect(0.1, 0.1, 0.9, 0.9),
   full = geometry.rect(0, 0, 1, 1),
 }
 
@@ -98,33 +98,6 @@ local function applyPosition(pos)
   layout.apply(tempLayout)
 end
 
-
--- Apple Music starts when I press a button on my bluetooth headset
--- This sucks. For now: autokill Music on start
---------------------
-
-function applicationMusicWatcher(appName, eventType, appObject)
-  if (eventType == hs.application.watcher.launching) then
-    if (appName == "Music") then
-      local op, stat, typ, ec = hs.execute([["/usr/bin/killall" "Music"]])
-      if not (ec == 0) then
-        hs.notify.new({
-          title = "Hammerspoon",
-          informativeText = "An error occurred terminating Music.",
-        }):send()
-      end
-    end
-  end
-end
-
-local appMusicWatcher = hs.application.watcher.new(applicationMusicWatcher)
-appMusicWatcher:start()
-
--- Window management and general config
---------------------
-
-win.animationDuration = 0
-
 -- Esoteric stuff
 --------------------
 
@@ -140,7 +113,7 @@ function showSanityReminder()
   local file = '/Users/webgefrickel/Documents/sanity-reminders.txt'
   local lines = linesFrom(file)
   local txt = lines[math.random(#lines)]
-  local interval = math.random(20, 50) * 60
+  local interval = math.random(20, 50)
 
   local largeTextStyle = {
     textFont  = "FiraCode Nerd Font",
@@ -148,14 +121,18 @@ function showSanityReminder()
     radius = 10,
   }
 
-  hs.timer.doAfter(interval, function()
+  hs.timer.doAfter(interval * 60, function()
     alert.show(txt, largeTextStyle, win.focusedWindow():screen(), 4)
     showSanityReminder()
   end)
 end
 
-
 showSanityReminder()
+
+-- Window management and general config
+--------------------
+
+win.animationDuration = 0
 
 -- Keybindings
 --------------------
@@ -168,7 +145,6 @@ hotkey.bind(hyper, 'w', function() layout.apply(layoutDouble) end)
 hotkey.bind(hyper, 'a', function() app.launchOrFocus('iTerm') end)
 hotkey.bind(hyper, 's', function() app.launchOrFocus('Firefox') end)
 hotkey.bind(hyper, 'd', function() app.launchOrFocus('ForkLift') end)
-hotkey.bind(hyper, 'f', function() showSanityReminder() end)
 hotkey.bind(hyper, 'g', function() launchApps() end)
 
 -- Moving windows around / navigating windows
