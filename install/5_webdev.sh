@@ -19,6 +19,8 @@ ln -s ~/dotfiles/etc/php /opt/homebrew/etc/php
 ln -s ~/dotfiles/etc/my.cnf /opt/homebrew/etc/my.cnf
 ln -s ~/dotfiles/etc/dnsmasq.conf /opt/homebrew/etc/dnsmasq.conf
 
+composer global require getkirby/cli
+
 sudo rm /etc/hosts
 sudo ln -s ~/dotfiles/etc/resolver /etc/resolver
 sudo ln -f ~/dotfiles/etc/hosts /etc/hosts
