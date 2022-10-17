@@ -1,6 +1,6 @@
 import util from 'util';
 import { exec } from 'child_process';
-import enquirer from 'enquirer';
+import inquirer from 'inquirer';
 
 const devices = [];
 const asyncExec = util.promisify(exec);
@@ -19,7 +19,7 @@ async function changeDevice(device) {
   const id = ids[index];
 
   await asyncExec(`SwitchAudioSource -i ${id}`);
-  console.log(`❯ Selected ${device} as new audio output device`);
+  console.log(`❯ Selected »${device}« as new audio output device`);
   console.log('❯ Restarting Spotify Daemon');
 
   await asyncExec('brew services restart spotifyd');
@@ -38,17 +38,14 @@ async function main() {
   });
 
   if (devices.length > 0) {
-    const { AutoComplete } = enquirer;
-    const prompt = new AutoComplete({
+    inquirer.prompt([{
+      type: 'list',
       name: 'device',
-      multiple: false,
-      message: 'Pick output audio device',
-      limit: 10,
-      initial: 0,
+      message: 'Choose your desired output audio device:',
       choices: devices.map(d => d.name),
+    }]).then(answer => {
+      changeDevice(answer.device);
     });
-
-    prompt.run().then(device => changeDevice(device));
   }
 }
 
