@@ -29,8 +29,8 @@ local screenPositions = {
   rightBottom = { x= 0.5, y = 0.5, w = 0.5, h = 0.5 },
   top = geometry.rect(0, 0, 1, 0.5),
   bottom = geometry.rect(0, 0.5, 1, 0.5),
-  center = geometry.rect(0.15, 0.15, 0.7, 0.7),
-  max = geometry.rect(0.1, 0.1, 0.9, 0.9),
+  center = geometry.rect(0.2, 0.2, 0.6, 0.6),
+  max = geometry.rect(0.1, 0.1, 0.8, 0.8),
   full = geometry.rect(0, 0, 1, 1),
 }
 
