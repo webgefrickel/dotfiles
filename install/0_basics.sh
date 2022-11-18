@@ -9,7 +9,10 @@ sudo scutil --set LocalHostName "mausohr"
 sudo scutil --set HostName "mausohr"
 
 # default macos settings
+#
+# deactivate long vowel-press-to-accent-entry
 defaults write -g ApplePressAndHoldEnabled -bool false
+# always show all files in finder
 defaults write com.apple.Finder AppleShowAllFiles -bool true
 
 # install homebrew
