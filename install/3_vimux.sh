@@ -4,7 +4,6 @@ brew install neovim
 brew install tmux
 gem install neovim
 pip install neovim
-pip install yamllint
 
 # link config files
 ln -s ~/dotfiles/nvim ~/.config/nvim
@@ -23,6 +22,7 @@ npm i -g typescript
 npm i -g typescript-language-server
 npm i -g vscode-langservers-extracted
 npm i -g yaml-language-server
+pip install yamllint
 
 # packer + treesitter
 nvim +PackerSync +TSUpdate
