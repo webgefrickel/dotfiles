@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 # everything needed for mutt
-brew install gpgme
 brew install isync
 brew install msmtp
 brew install mu

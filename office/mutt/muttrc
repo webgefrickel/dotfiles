@@ -70,15 +70,6 @@ hdr_order from: to: cc: bcc: date: subject:
 alternative_order text/plain text/enriched text/html
 auto_view text/html
 
-# GPG/PGP 
-set pgp_sign_as = 2F283D0D
-set crypt_use_gpgme = yes
-set crypt_autosign = no
-set crypt_verify_sig = yes
-set crypt_replysign = yes
-set crypt_replyencrypt = yes
-set crypt_replysignencrypted = yes
-
 # sidebar patch config
 set sidebar_visible
 set sidebar_short_path
