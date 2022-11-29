@@ -3,13 +3,14 @@ brew tap buo/cask-upgrade
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 
+brew install --cask affinity-designer
+brew install --cask affinity-photo
 brew install --cask alfred
 brew install --cask carbon-copy-cloner
 brew install --cask firefox
 brew install --cask forklift
 brew install --cask google-chrome
 brew install --cask hammerspoon
-brew install --cask iina
 brew install --cask imageoptim
 brew install --cask iterm2
 brew install --cask kap
@@ -19,6 +20,7 @@ brew install --cask reaper
 brew install --cask signal
 brew install --cask syntax-highlight
 brew install --cask telegram
+brew install --cask vlc
 
 # seldomly used software
 #brew install --cask paw
