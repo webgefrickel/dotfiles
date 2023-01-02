@@ -43,7 +43,7 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 # tt-time-tracker
-export SHEET_FILE='/Users/webgefrickel/Documents/tt-time-tracker.json' 
+export SHEET_FILE='/Users/webgefrickel/Documents/tt-time-tracker.json'
 
-# lazygit 
+# lazygit
 export LG_CONFIG_FILE="/Users/webgefrickel/.config/lazygit/config.yml"
