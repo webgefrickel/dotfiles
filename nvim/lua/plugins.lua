@@ -128,15 +128,15 @@ return require('packer').startup(function(use)
     config = get_config('notify'),
   }
   use {
-    'nvim-neorg/neorg',
-    config = get_config('neorg'),
-    requires = { 'nvim-lua/plenary.nvim' },
-  }
-  use {
     'folke/trouble.nvim',
     config = get_config('trouble'),
     requires = { 'kyazdani42/nvim-web-devicons' },
   }
+  -- use {
+  --   'nvim-neorg/neorg',
+  --   config = get_config('neorg'),
+  --   requires = { 'nvim-lua/plenary.nvim' },
+  -- }
 
   -- oldschool vimscript plugins that still provide a lot of value
   use 'christoomey/vim-tmux-navigator'
