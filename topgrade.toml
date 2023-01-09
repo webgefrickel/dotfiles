@@ -1,10 +1,12 @@
 assume_yes = true
-no_retry = true
-run_in_tmux = false
 cleanup = true
+disable = ["pnpm", "composer"]
+no_retry = true
+pre_sudo = true
+run_in_tmux = false
+set_title = false
+skip_notify = true
 
 [brew]
 greedy_cask = true
-
-[composer]
-self_update = true
+autoremove = true
