@@ -75,7 +75,7 @@ set sidebar_visible
 set sidebar_short_path
 set sidebar_folder_indent
 set sidebar_width = 25
-set sidebar_divider_char = ' | '
+set sidebar_divider_char = ' │ '
 set sidebar_indent_string = '  ''
 set sidebar_format = "%B %* [%?N?%N / ?%S]"
 
