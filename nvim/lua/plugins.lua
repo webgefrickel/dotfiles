@@ -132,6 +132,10 @@ return require('packer').startup(function(use)
     config = get_config('trouble'),
     requires = { 'kyazdani42/nvim-web-devicons' },
   }
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = get_config('gitsigns'),
+  }
   -- use {
   --   'nvim-neorg/neorg',
   --   config = get_config('neorg'),
