@@ -22,6 +22,7 @@ export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc"
 
 # brew
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export HOMEBREW_NO_ENV_HINTS=true
 
 # nnn
 export NNN_OPTS='deHR'
