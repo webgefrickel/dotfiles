@@ -20,7 +20,7 @@ map('v', ';', ':')
 map('n', 'Q', '')
 map('n', 'K', '')
 
--- Keeping it centered when searching and jumping to next entry
+-- keeping it centered when search/jumping to next/prev entry
 map('n', 'n', 'nzzzv')
 map('n', 'N', 'Nzzzv')
 
@@ -90,7 +90,7 @@ map('n', '<leader>x', '<cmd>lua vim.lsp.buf.code_action()<cr>')
 
 -- git
 map('n', '<leader>l', '<cmd>FloatermNew lazygit<cr>')
-map('n', '<leader>gb', '<cmd>FloatermNew git blame %<cr>')
+map('n', '<leader>gb', '<cmd>Gitsigns blame_line<cr>')
 map('n', '<leader>gf', "<cmd>execute '/\\v^[<\\|=>]{7}/'<cr>")
 
 -- floaterm
@@ -99,8 +99,7 @@ map('n', '<leader>t', '<cmd>FloatermNew<cr>')
 
 -- vsnip snippets expansion
 map('i', '<C-j>', 'vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"', { expr = true, noremap = false })
-map('s', '<C-j>', 'vsnip#available(-1) ? "<Plug>(vsnip-jump-prev)" : "<C-j>"', { expr = true, noremap = false
-})
+map('s', '<C-j>', 'vsnip#available(-1) ? "<Plug>(vsnip-jump-prev)" : "<C-j>"', { expr = true, noremap = false })
 
 -- other useful mappings
 map('n', '<F5>', '<cmd>checktime<cr><cmd>redraw!<cr>');
