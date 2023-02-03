@@ -11,7 +11,6 @@ brew install --cask firefox
 brew install --cask forklift
 brew install --cask google-chrome
 brew install --cask hammerspoon
-brew install --cask imageoptim
 brew install --cask iterm2
 brew install --cask kap
 brew install --cask karabiner-elements
@@ -49,3 +48,6 @@ brew install --cask font-fira-code-nerd-font
 # other software:
 # bill: https://billtheapp.com/
 # citrix: https://www.citrix.com/downloads/workspace-app/mac/workspace-app-for-mac-latest.html
+
+# app-store:
+# strongbox, hazeover, xcode
