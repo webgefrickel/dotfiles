@@ -16,6 +16,7 @@ local alt = { 'alt' }
 local altShift = { 'alt', 'shift' }
 local laptopMonitor = "Built-in Retina Display"
 local mainMonitor = "DELL U3415W"
+-- local mainMonitor = "DELL U3419W"
 
 -- Custom positions and layouts where which apps can be on the screen
 --------------------

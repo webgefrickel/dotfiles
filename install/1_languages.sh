@@ -10,7 +10,6 @@ curl -L https://git.io/n-install | bash
 n v8
 n v14
 n v16
-n latest
 n lts
 npm install -g npm@latest
 npm update -g

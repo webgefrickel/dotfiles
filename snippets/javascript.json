@@ -1,4 +1,9 @@
 {
+  "simple-log": {
+    "prefix": "cl",
+    "body": "console.log(${0:data});",
+    "description": "Simple logging with console.log()"
+  },
   "simple-debugging": {
     "prefix": "bug",
     "body": "console.log(${0:data});",
@@ -14,7 +19,7 @@
     "body": [
       "export default () => {",
         "\t${0:const sth = 0; }",
-      "}"
+      "};"
     ],
     "description": "Export default anonymous arrow function"
   }

@@ -1,3 +1,6 @@
+---
+
+extends: default
 rules:
-  document-start:
-    present: false
+  document-start: disable
+  key-ordering: disable

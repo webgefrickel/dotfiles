@@ -1,4 +1,5 @@
 # Minor modifications to terminal prompt
+command_timeout = 5_000
 
 [cmd_duration]
 min_time = 5_000

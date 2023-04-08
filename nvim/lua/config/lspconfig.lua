@@ -14,7 +14,15 @@ lspconfig.cssls.setup({
     },
   },
 })
+
+lspconfig.yamlls.setup({
+  settings = {
+    yaml = {
+      validate = false,
+    },
+  },
+})
+
 lspconfig.html.setup({})
 lspconfig.jsonls.setup({})
 lspconfig.tsserver.setup({})
-lspconfig.yamlls.setup({})
