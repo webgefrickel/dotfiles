@@ -38,7 +38,6 @@ set.showbreak = '\\\\\\\\'
 set.showmatch = true
 set.sidescroll = 10
 set.sidescrolloff = 5
-set.signcolumn = 'number'
 set.smartcase = true
 set.splitright = true
 set.splitbelow = true

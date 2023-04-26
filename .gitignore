@@ -1,7 +1,4 @@
-karabiner/automatic_backups/*
-lazygit/state.yml
-nvim/.netrwhist
-nvim/plugin/*
+nvim/lazy-lock.json
 office/mutt/cache/*
 office/mutt/tmp/*
 office/vdirsyncer/status/*

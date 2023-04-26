@@ -1,8 +1,3 @@
--- set the leader key to space
-vim.api.nvim_set_keymap('n', '<space>', '', {})
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 -- helper function for easier mappings
 local map = function(mode, lhs, rhs, opts)
   return vim.api.nvim_set_keymap(mode, lhs, rhs, vim.tbl_extend('keep', opts or {}, {

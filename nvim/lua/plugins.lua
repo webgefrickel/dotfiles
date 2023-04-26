@@ -1,54 +1,69 @@
-local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+-- using folke/lazy.nvim as package manager
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 
-function get_config(name)
-  return string.format('require("config/%s")', name)
-end
-
--- bootstrapping / downloading packer. run :PackerSync afterwards if sth. fails
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({
-    'git', 'clone', '--depth', '1',
-    'https://github.com/wbthomason/packer.nvim',
-    install_path
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    'git', 'clone', '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git', '--branch=stable',
+    lazypath,
   })
 end
 
-return require('packer').startup(function(use)
-  -- packer for plugin management itself
-  use 'wbthomason/packer.nvim'
+vim.opt.rtp:prepend(lazypath)
 
-  -- Treesitter for nicer syntax-highlighting
-  use {
+-- Make sure to set `mapleader` before lazy so your mappings are correct
+vim.api.nvim_set_keymap('n', '<space>', '', {})
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+require('lazy').setup({
+  -- The colorscheme of choice
+  { 'ellisonleao/gruvbox.nvim', priority = 1000 },
+
+  -- plugins that need no further config/dependencies
+  -- oldschool, non-lua plugins
+  'AndrewRadev/splitjoin.vim',
+  'christoomey/vim-tmux-navigator',
+  'editorconfig/editorconfig-vim',
+  'tpope/vim-ragtag',
+  'tpope/vim-repeat',
+  'wincent/terminus',
+
+  -- lua plugins using just the plain default config
+  { 'numToStr/Comment.nvim', config = true },
+  { 'windwp/nvim-autopairs', config = true },
+  { 'lewis6991/gitsigns.nvim', config = true },
+
+  { -- Treesitter for nicer syntax-highlighting
     'nvim-treesitter/nvim-treesitter',
-    config = get_config('treesitter'),
-    run = ':TSUpdate',
-  }
+    build = ':TSUpdate',
+    init = function() require('config/treesitter') end,
+  },
+  {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  },
 
-  -- textobjects, surround, for stuff like cs", cib etc.
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use {
+  { -- textobjects, surround, for stuff like cs", cib etc.
     'ur4ltz/surround.nvim',
-    config = get_config('surround'),
-  }
+    opts = { mappings_style = 'surround' },
+  },
 
-  -- lsp and null-ls for diagnostics and formatting (eslint_d, stylelint etc.)
-  -- remember to install all those tools in the cli, see ../../install/3_vimux.sh
-  use {
+  { -- lsp and null-ls for diagnostics and formatting (eslint_d, stylelint etc.)
+    -- remember to install all those tools in the cli, see ../../install/3_vimux.sh
     'neovim/nvim-lspconfig',
-    config = get_config('lspconfig'),
-  }
-  use {
-    'jose-elias-alvarez/null-ls.nvim',
-    config = get_config('null-ls'),
-    requires = { 'nvim-lua/plenary.nvim' },
-  }
+    init = function() require('config/lspconfig') end,
+  },
 
-  -- autocompletion and snippets
-  use {
+  {
+    'jose-elias-alvarez/null-ls.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    init = function() require('config/null-ls') end,
+  },
+
+  { -- autocompletion and snippets
     'hrsh7th/nvim-cmp',
-    config = get_config('cmp'),
-    requires = {
+    dependencies = {
       'andersevenrud/cmp-tmux',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-cmdline',
@@ -57,100 +72,62 @@ return require('packer').startup(function(use)
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-vsnip',
     },
-  }
-  use {
+    init = function() require('config/cmp') end,
+  },
+  {
     'hrsh7th/vim-vsnip',
-    config = get_config('vsnip'),
-  }
-  use {
+    init = function() require('config/vsnip') end,
+  },
+  {
     'rafamadriz/friendly-snippets',
-    requires = {
+    dependencies = {
       'hrsh7th/vim-vsnip',
     },
-  }
+  },
 
-  -- floating-terminal integration for nnn, lazygit etc.
-  use {
+  { -- floating-terminal integration for nnn, lazygit etc.
     'voldikss/vim-floaterm',
-    config = get_config('floaterm'),
-  }
+    init = function() require('config/floaterm') end,
+  },
 
-  -- fzf integration
-  use {
+  { -- fzf integration
     'ibhagwan/fzf-lua',
-    config = get_config('fzf'),
-    requires = { 'kyazdani42/nvim-web-devicons' },
-  }
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
+    init = function() require('config/fzf') end,
+  },
 
-  -- autopairs for sensible () "" ''
-  use {
-    'windwp/nvim-autopairs',
-    config = get_config('autopairs'),
-  }
-
-  -- colorizer for nice css-colors
-  use {
+  { -- colorizer for nice css-colors
     'norcalli/nvim-colorizer.lua',
-    config = get_config('colorizer'),
     event = 'BufReadPre',
-  }
+    opts = {
+      css = { css = true },
+      scss = { css = true },
+      json = { css = true},
+      json5 = { css = true, },
+      javascript = { css = true },
+    },
+  },
 
-  -- commenting stuff out
-  use {
-    'numToStr/Comment.nvim',
-    config = get_config('comment'),
-  }
-
-  -- nice status line
-  use {
+  { -- nice status line
     'nvim-lualine/lualine.nvim',
-    config = get_config('lualine'),
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
     event = 'VimEnter',
-  }
+    opts = { options = { theme = 'gruvbox' } },
+  },
 
-  -- leap for stupidly nice navigation
-  use {
+  { -- leap for stupidly nice navigation
     'ggandor/leap.nvim',
-    config = get_config('leap'),
     event = 'BufReadPre',
-  }
-
-  -- finally: the colorscheme of choice
-  use {
-    'ellisonleao/gruvbox.nvim',
-    requires = { 'rktjmp/lush.nvim' },
-  }
+    init = function() require('leap').set_default_keymaps() end,
+  },
 
   -- Evaluating...
-  use {
+  {
     'rcarriga/nvim-notify',
-    config = get_config('notify'),
-  }
-  use {
+    init = function() vim.notify = require('notify') end,
+  },
+  {
     'folke/trouble.nvim',
-    config = get_config('trouble'),
-    requires = { 'kyazdani42/nvim-web-devicons' },
-  }
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = get_config('gitsigns'),
-  }
-  -- use {
-  --   'nvim-neorg/neorg',
-  --   config = get_config('neorg'),
-  --   requires = { 'nvim-lua/plenary.nvim' },
-  -- }
-
-  -- oldschool vimscript plugins that still provide a lot of value
-  use 'christoomey/vim-tmux-navigator'
-  use 'editorconfig/editorconfig-vim'
-  use 'tpope/vim-repeat'
-  use 'tpope/vim-ragtag'
-  use 'wincent/terminus'
-
-  -- automatically set up configuration after cloning packer.nvim
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
+  },
+})

@@ -28,5 +28,5 @@ ln -s ~/dotfiles/office/msmtprc ~/.msmtprc
 # prepend imap-ones with http:// and smtp-ones with smtp://), then:
 
 mbsync -a
-mu init -m ~/Mail
+mu init -m /Users/webgefrickel/Mail
 mu index
