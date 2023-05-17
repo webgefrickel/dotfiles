@@ -12,6 +12,7 @@ export PAGER="less -F -i -J -M -R -W -x2 -X -z-4"
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
 export PATH=/opt/homebrew/opt/curl/bin:$PATH
+export PATH=~/.local/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 export SHELL=/opt/homebrew/bin/zsh
 export TERM=xterm-256color
