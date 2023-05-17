@@ -26,21 +26,21 @@ require('lazy').setup({
   -- The colorscheme of choice
   { 'ellisonleao/gruvbox.nvim', priority = 1000 },
 
-  -- TODO: telescope vs. fzf integration
-  -- modern neovim with treesitter, lsp, null-ls and cmp
+  -- modern neovim with treesitter, lsp, null-ls, cmp and vsnip
   -- remember to install all those tools since we do not use mason
   -- see ../../install/3_vimux.sh
+  { 'hrsh7th/vim-vsnip', init = get_config('vsnip') },
+  { 'jose-elias-alvarez/null-ls.nvim', init = get_config('null-ls'), dependencies = { 'nvim-lua/plenary.nvim' } },
   { 'neovim/nvim-lspconfig', init = get_config('lspconfig') },
   {
-    'nvim-treesitter/nvim-treesitter',
-    init = get_config('treesitter'),
-    build = ':TSUpdate',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.1',
+    init = get_config('telescope'),
+    dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  {
-    'jose-elias-alvarez/null-ls.nvim',
-    init = get_config('null-ls'),
-    dependencies = { 'nvim-lua/plenary.nvim' },
-  },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  { 'nvim-treesitter/nvim-treesitter', init = get_config('treesitter'), build = ':TSUpdate' },
+  { 'rafamadriz/friendly-snippets', dependencies = { 'hrsh7th/vim-vsnip' } },
   {
     'hrsh7th/nvim-cmp',
     init = get_config('cmp'),
@@ -51,13 +51,9 @@ require('lazy').setup({
       'hrsh7th/cmp-calc',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
-      'hrsh7th/cmp-vsnip', -- see snippet engine of choice below
+      'hrsh7th/cmp-vsnip',
     },
   },
-
-  -- snippet engine of choice
-  { 'hrsh7th/vim-vsnip', init = get_config('vsnip') },
-  { 'rafamadriz/friendly-snippets', dependencies = { 'hrsh7th/vim-vsnip' } },
 
   -- editing enhancements
   { 'AndrewRadev/splitjoin.vim' },
@@ -71,7 +67,6 @@ require('lazy').setup({
   -- git and other external tools integration
   { 'christoomey/vim-tmux-navigator'},
   { 'editorconfig/editorconfig-vim' },
-  { 'ibhagwan/fzf-lua', dependencies = { 'kyazdani42/nvim-web-devicons' }, init = get_config('fzf') },
   { 'lewis6991/gitsigns.nvim', config = true },
   { 'voldikss/vim-floaterm', init = get_config('floaterm') },
   { 'wincent/terminus' },

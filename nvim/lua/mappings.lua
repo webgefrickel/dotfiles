@@ -61,16 +61,16 @@ map('n', '<right>', '<cmd>bn<cr>')
 map('n', '<leader>\\', '<C-w>v<C-w>l')
 map('n', '<leader>-', '<C-w>s<C-w>j')
 
--- fzf-lua
-map('n', '<leader>,', '<cmd>lua require("fzf-lua").files()<cr>')
-map('n', '<leader>.', '<cmd>lua require("fzf-lua").buffers()<cr>')
-map('n', '<leader>/', '<cmd>lua require("fzf-lua").search_history()<cr>')
-map('n', '<leader>;', '<cmd>lua require("fzf-lua").command_history()<cr>')
-map('n', '<leader>`', '<cmd>lua require("fzf-lua").files({ cwd = "~/" })<cr>')
-map('n', '<leader>a', '<cmd>lua require("fzf-lua").live_grep()<cr>')
-map('n', '<leader>b', '<cmd>lua require("fzf-lua").git_branches()<cr>')
-map('n', '<leader>c', '<cmd>lua require("fzf-lua").git_bcommits()<cr>')
-map('n', '<leader>]', '<cmd>lua require("fzf-lua").lines()<cr>')
+-- Telescope
+map('n', '<leader>\'', '<cmd>Telescope git_files<cr>')
+map('n', '<leader>,', '<cmd>Telescope find_files<cr>')
+map('n', '<leader>.', '<cmd>Telescope buffers<cr>')
+map('n', '<leader>/', '<cmd>Telescope search_history<cr>')
+map('n', '<leader>;', '<cmd>Telescope command_history<cr>')
+map('n', '<leader>a', '<cmd>Telescope live_grep<cr>')
+map('n', '<leader>b', '<cmd>Telescope git_branches<cr>')
+map('n', '<leader>c', '<cmd>Telescope git_bcommits<cr>')
+map('n', '<leader>]', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
 
 -- lsp and diagnostics
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')

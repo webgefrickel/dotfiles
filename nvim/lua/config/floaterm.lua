@@ -1,8 +1,7 @@
 local g = vim.g
 
-g.floaterm_width = 0.98
-g.floaterm_height = 0.90
-g.floaterm_position = 'bottom'
+g.floaterm_width = 0.9
+g.floaterm_height = 0.9
 g.floaterm_autoclose = 1
 g.floaterm_opener = 'edit'
 g.floaterm_borderchars = '─│─│╭╮╯╰'
