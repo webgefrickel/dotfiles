@@ -11,7 +11,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to set `mapleader` before lazy so your mappings are correct
+-- Make sure to set mapleader before lazy.nvim so your mappings are correct
 vim.api.nvim_set_keymap('n', '<space>', '', {})
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -20,8 +20,7 @@ require('lazy').setup({
   -- The colorscheme of choice
   { 'ellisonleao/gruvbox.nvim', priority = 1000 },
 
-  -- plugins that need no further config/dependencies
-  -- oldschool, non-lua plugins
+  -- plugins that need no further config/dependencies, non-lua plugins
   'AndrewRadev/splitjoin.vim',
   'christoomey/vim-tmux-navigator',
   'editorconfig/editorconfig-vim',
@@ -129,5 +128,24 @@ require('lazy').setup({
   {
     'folke/trouble.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
+  },
+  {
+    'nvim-neorg/neorg',
+    build = ':Neorg sync-parsers',
+    opts = {
+      load = {
+        ['core.concealer'] = {},
+        ['core.defaults'] = {},
+        ['core.dirman'] = {
+          config = {
+            default_workspace = 'notes',
+            workspaces = {
+              notes = '~/Notes',
+            },
+          },
+        },
+      },
+    },
+    dependencies = { { 'nvim-lua/plenary.nvim' } },
   },
 })
