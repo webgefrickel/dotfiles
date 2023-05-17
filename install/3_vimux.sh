@@ -26,5 +26,6 @@ npm install -g yaml-language-server
 pip install yamllint
 
 # packer + treesitter
-nvim +PackerSync +TSUpdate
+nvim +TSUpdate
+nvim +Lazy
 nvim +checkhealth
