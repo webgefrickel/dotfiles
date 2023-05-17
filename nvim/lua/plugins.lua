@@ -37,10 +37,6 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
   {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    dependencies = 'nvim-treesitter/nvim-treesitter'
-  },
-  {
     'jose-elias-alvarez/null-ls.nvim',
     init = get_config('null-ls'),
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -69,7 +65,7 @@ require('lazy').setup({
   { 'numToStr/Comment.nvim', config = true },
   { 'tpope/vim-ragtag' },
   { 'tpope/vim-repeat' },
-  { 'ur4ltz/surround.nvim', opts = { mappings_style = 'surround' } },
+  { 'tpope/vim-surround' },
   { 'windwp/nvim-autopairs', config = true },
 
   -- git and other external tools integration
