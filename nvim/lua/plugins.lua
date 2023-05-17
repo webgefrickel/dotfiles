@@ -37,6 +37,10 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
   {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    dependencies = 'nvim-treesitter/nvim-treesitter'
+  },
+  {
     'jose-elias-alvarez/null-ls.nvim',
     init = get_config('null-ls'),
     dependencies = { 'nvim-lua/plenary.nvim' },
