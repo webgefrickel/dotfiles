@@ -1,3 +1,4 @@
+[misc]
 assume_yes = true
 cleanup = true
 disable = ["pnpm", "composer"]
