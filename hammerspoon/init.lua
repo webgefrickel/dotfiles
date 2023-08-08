@@ -80,6 +80,12 @@ local appNames = {
 -- Local helper functions
 --------------------
 
+local function tablelength(T)
+  local count = 0
+  for _ in pairs(T) do count = count + 1 end
+  return count
+end
+
 local function launchApps()
   for i, appName in ipairs(appNames) do
     app.launchOrFocus(appName)
@@ -95,10 +101,7 @@ local function applyPosition(pos)
   local w = win.focusedWindow()
   local screenName = w:screen():name()
   local tempPos = screenPositions[pos]
-  local tempLayout = {
-    { app.frontmostApplication(), w, screenName, tempPos, nil, nil },
-  }
-
+  local tempLayout = { { app.frontmostApplication(), w, screenName, tempPos, nil, nil } }
   layout.apply(tempLayout)
 end
 
@@ -137,13 +140,21 @@ showSanityReminder()
 --------------------
 
 win.animationDuration = 0
+app.enableSpotlightForNameSearches(true)
 
 -- Keybindings
 --------------------
 
 -- Applying main two layouts
 hotkey.bind(hyper, 'q', function() layout.apply(layoutSingle) end)
-hotkey.bind(hyper, 'w', function() layout.apply(layoutDouble) end)
+hotkey.bind(hyper, 'w', function()
+  if(tablelength(screen.allScreens()) == 2)
+  then
+    layout.apply(layoutDouble)
+  else
+    layout.apply(layoutSingle)
+  end
+end)
 
 -- Direct app navigation
 hotkey.bind(hyper, 'a', function() app.launchOrFocus('iTerm') end)
