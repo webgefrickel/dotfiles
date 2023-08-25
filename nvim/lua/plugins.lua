@@ -87,6 +87,18 @@ require('lazy').setup({
     event = 'BufReadPre',
     init = function() require('leap').set_default_keymaps() end,
   },
+  { -- better f t
+    'ggandor/flit.nvim',
+    event = 'BufReadPre',
+    init = function()
+      require('flit').setup {
+        keys = { f = 'f', F = 'F', t = 't', T = 'T' },
+        labeled_modes = "v",
+        multiline = true,
+        opts = {}
+      }
+    end,
+  },
   { -- colorizer for nice css-colors
     'norcalli/nvim-colorizer.lua',
     event = 'BufReadPre',
@@ -98,10 +110,7 @@ require('lazy').setup({
       javascript = { css = true },
     },
   },
-
-  -- Evaluating...
-  { 'folke/trouble.nvim', dependencies = { 'kyazdani42/nvim-web-devicons' } },
-  {
+  { -- and neorg for todo-lists etc.
     'nvim-neorg/neorg',
     build = ':Neorg sync-parsers',
     opts = {
