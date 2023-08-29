@@ -49,7 +49,8 @@ set.wildmode = { 'list:longest', 'list:full' }
 -- colorscheme and default language
 set.background = 'dark'
 set.termguicolors = true
-g.gruvbox_italic = 1
 
-cmd 'colorscheme gruvbox'
+-- g.gruvbox_baby_background_color = 'dark'
+g.gruvbox_baby_telescope_theme = 1
+cmd 'colorscheme gruvbox-baby'
 cmd 'language en_US.UTF-8'
