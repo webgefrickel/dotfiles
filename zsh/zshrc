@@ -37,3 +37,4 @@ eval "$(pyenv init --path --no-rehash)"
 # colors
 source ~/.local/share/nvim/lazy/gruvbox-baby/extras/bash/MEDIUM.bash
 source ~/.local/share/nvim/lazy/gruvbox-baby/extras/fzf/fzf.theme
+source ~/OPENAI_API_KEY.sh
