@@ -1,12 +1,11 @@
--- using folke/lazy.nvim as package manager
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-
 -- small helper function for loading external plugin config files
 local function get_config (key)
   return function() require('config/' .. key) end
 end
 
--- ensure lazy being loaded
+-- ensure folke/lazy.nvim is being loaded
+-- using folke/lazy.nvim as package manager
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     'git', 'clone', '--filter=blob:none',
@@ -14,7 +13,6 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
-
 vim.opt.rtp:prepend(lazypath)
 
 -- Make sure to set mapleader before lazy.nvim so your mappings are correct
@@ -33,7 +31,7 @@ require('lazy').setup({
   { 'christoomey/vim-tmux-navigator'},
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',
+    tag = '0.1.2',
     init = get_config('telescope'),
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
@@ -71,12 +69,9 @@ require('lazy').setup({
   { 'windwp/nvim-autopairs', config = true },
 
   -- interface/code-navigation enhancements, git and others
-  { 'ggandor/leap.nvim', init = get_config('leap') },
-  { 'ggandor/flit.nvim', init = get_config('flit') },
   { 'lewis6991/gitsigns.nvim', config = true },
-  { 'rcarriga/nvim-notify', init = function() vim.notify = require('notify') end },
   { 'nvim-lualine/lualine.nvim',
-    dependencies = { 'kyazdani42/nvim-web-devicons' },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = { options = { theme = 'gruvbox' } },
   },
   { 'norcalli/nvim-colorizer.lua',
@@ -109,5 +104,77 @@ require('lazy').setup({
       },
     },
     dependencies = { { 'nvim-lua/plenary.nvim' } },
+  },
+
+  -- investigating...
+  { 'kevinhwang91/nvim-bqf', config = true },
+  {
+    "piersolenski/wtf.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      {
+        "gw",
+        mode = { "n" },
+        function()
+          require("wtf").ai()
+        end,
+        desc = "Debug diagnostic with AI",
+      },
+      {
+        mode = { "n" },
+        "gW",
+        function()
+          require("wtf").search()
+        end,
+        desc = "Search diagnostic with Google",
+      },
+    },
+  },
+  {
+    'jackMort/ChatGPT.nvim',
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup()
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  },
+  {
+    'folke/zen-mode.nvim',
+    opts = {
+      window = {
+        backdrop = 0.95,
+        width = 120,
+        height = 0.85,
+      },
+      plugins = {
+        gitsigns = { enabled = true },
+        tmux = { enabled = true },
+      },
+    },
+  },
+  {
+    'folke/flash.nvim',
+    event = 'VeryLazy',
+    keys = {
+      { 's', mode = { "n", "o", "x" }, function() require("flash").jump() end, desc = "Flash" },
+      { 'S', mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { 'Q', mode = { "n", "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    },
+  },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
   },
 })
