@@ -24,7 +24,6 @@ cmp.setup({
     },
     { name = 'path' },
     { name = 'vsnip' },
-    { name = 'tmux', option = { all_panes = true } },
     { name = 'calc' },
   }),
   formatting = {
@@ -34,7 +33,6 @@ cmp.setup({
         buffer = "[Buffer]",
         path = "[Path]",
         vsnip = "[Snippet]",
-        tmux = "[tmux]",
         calc = "[Calc]",
       })[entry.source.name]
       return vim_item

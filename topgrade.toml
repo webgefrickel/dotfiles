@@ -4,7 +4,6 @@ cleanup = true
 disable = ["pnpm", "composer"]
 no_retry = true
 pre_sudo = true
-run_in_tmux = false
 set_title = false
 skip_notify = true
 

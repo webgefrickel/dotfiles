@@ -39,7 +39,6 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',
     init = get_config('cmp'),
     dependencies = {
-      'andersevenrud/cmp-tmux',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-calc',
@@ -69,6 +68,7 @@ require('lazy').setup({
 
   -- interface/code-navigation enhancements, git and others
   { 'lewis6991/gitsigns.nvim', config = true },
+  { 'kevinhwang91/nvim-bqf', config = true },
   { 'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
@@ -115,7 +115,6 @@ require('lazy').setup({
   },
 
   -- investigating...
-  { 'kevinhwang91/nvim-bqf', config = true },
   {
     "piersolenski/wtf.nvim",
     dependencies = {
@@ -157,7 +156,6 @@ require('lazy').setup({
       },
       plugins = {
         gitsigns = { enabled = true },
-        tmux = { enabled = true },
       },
     },
   },
