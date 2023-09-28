@@ -9,6 +9,7 @@ PassCmd "security find-internet-password -s 'imap.mailbox.org' -a 's.rademacker@
 SSLType IMAPS
 SSLVersions TLSv1.2
 CertificateFile ~/dotfiles/office/certificates.crt
+AuthMechs LOGIN
 
 # Remote storage
 IMAPStore mailbox-remote

@@ -11,12 +11,19 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # plugins
-zinit wait lucid for \
-    light-mode zsh-users/zsh-autosuggestions \
-    light-mode zsh-users/zsh-completions \
-    light-mode zdharma-continuum/fast-syntax-highlighting \
-    light-mode PZT::modules/history/init.zsh \
-    light-mode PZT::modules/completion/init.zsh
+zi load zsh-users/zsh-autosuggestions
+zi load zsh-users/zsh-completions
+zi load zdharma-continuum/fast-syntax-highlighting
+zi load starship/starship
+zi snippet PZTM::history
+zi snippet PZTM::completion
+
+# Fixes for unicode
+setopt COMBINING_CHARS
+
+# additional gruvbox colors
+source ~/.local/share/nvim/lazy/gruvbox-baby/extras/bash/MEDIUM.bash
+source ~/.local/share/nvim/lazy/gruvbox-baby/extras/fzf/fzf.theme
 
 # exports, functions and aliases
 source ~/dotfiles/zsh/exports.zsh
@@ -34,7 +41,6 @@ eval "$(jump shell)"
 eval "$(rbenv init - --no-rehash)"
 eval "$(pyenv init --path --no-rehash)"
 
-# colors
-source ~/.local/share/nvim/lazy/gruvbox-baby/extras/bash/MEDIUM.bash
-source ~/.local/share/nvim/lazy/gruvbox-baby/extras/fzf/fzf.theme
+# chat-gpt, hooray
 source ~/OPENAI_API_KEY.sh
+

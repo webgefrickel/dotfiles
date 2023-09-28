@@ -1,16 +1,11 @@
 #!/usr/bin/env zsh
 
 brew install neovim
-brew install tmux
 gem install neovim
 pip install neovim
 
 # link config files
 ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
-
-# vim and tmux plugin managers
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # additional language-servers for nvim-lspconfig
 npm install -g eslint_d

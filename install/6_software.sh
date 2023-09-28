@@ -11,7 +11,6 @@ brew install --cask firefox
 brew install --cask forklift
 brew install --cask google-chrome
 brew install --cask hammerspoon
-brew install --cask iterm2
 brew install --cask kap
 brew install --cask karabiner-elements
 brew install --cask microsoft-teams
@@ -20,13 +19,13 @@ brew install --cask signal
 brew install --cask syntax-highlight
 brew install --cask telegram
 brew install --cask vlc
+brew install --cask wezterm
 
 # seldomly used software
 #brew install --cask paw
 #brew install --cask sequel-pro
 #brew install --cask sketch
 #brew install --cask transmission
-#brew install --cask vmware-fusion
 
 # Quicklook-reset
 xattr -cr ~/Library/QuickLook
@@ -49,5 +48,4 @@ brew install --cask font-fira-code-nerd-font
 # bill: https://billtheapp.com/
 # citrix: https://www.citrix.com/downloads/workspace-app/mac/workspace-app-for-mac-latest.html
 
-# app-store:
-# strongbox, hazeover, xcode
+# app-store: strongbox, xcode

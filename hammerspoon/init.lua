@@ -46,7 +46,7 @@ local layoutDouble = {
   { "Signal", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Telegram", nil, mainMonitor, screenPositions.rightTop, nil, nil },
-  { "iTerm2", nil, mainMonitor, screenPositions.right, nil, nil },
+  { "WezTerm", nil, mainMonitor, screenPositions.right, nil, nil },
 }
 
 local layoutSingle = {
@@ -60,7 +60,7 @@ local layoutSingle = {
   { "Signal", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Telegram", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "iTerm2", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "WezTerm", nil, laptopMonitor, screenPositions.full, nil, nil },
 }
 
 local appNames = {
@@ -74,7 +74,7 @@ local appNames = {
   "Signal",
   "Strongbox",
   "Telegram",
-  "iTerm",
+  "WezTerm",
 }
 
 -- Local helper functions
@@ -157,7 +157,7 @@ hotkey.bind(hyper, 'w', function()
 end)
 
 -- Direct app navigation
-hotkey.bind(hyper, 'a', function() app.launchOrFocus('iTerm') end)
+hotkey.bind(hyper, 'a', function() app.launchOrFocus('WezTerm') end)
 hotkey.bind(hyper, 's', function() app.launchOrFocus('Firefox') end)
 hotkey.bind(hyper, 'd', function() app.launchOrFocus('ForkLift') end)
 hotkey.bind(hyper, 'g', function() launchApps() end)

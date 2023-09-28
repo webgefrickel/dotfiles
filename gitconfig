@@ -45,10 +45,6 @@
   ps = push
   pl = pull
   mg = merge
-  ffs = flow feature start
-  fff = flow feature finish
-  ffp = flow feature publish
-  fi = flow init
   rs = reset HEAD --hard
   fame = shortlog -sn --all --no-merges
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit

@@ -8,7 +8,8 @@ g.loaded_perl_provider = 0
 
 -- general options
 set.breakindent = true
-set.cmdheight = 2
+set.clipboard = 'unnamedplus'
+set.cmdheight = 1
 set.completeopt= { 'menu', 'menuone', 'noselect' }
 set.cpoptions:append('$')
 set.cursorline = true
@@ -49,8 +50,6 @@ set.wildmode = { 'list:longest', 'list:full' }
 -- colorscheme and default language
 set.background = 'dark'
 set.termguicolors = true
-
--- g.gruvbox_baby_background_color = 'dark'
 g.gruvbox_baby_telescope_theme = 1
 cmd 'colorscheme gruvbox-baby'
 cmd 'language en_US.UTF-8'

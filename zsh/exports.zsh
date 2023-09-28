@@ -6,6 +6,7 @@ export EDITOR="/opt/homebrew/bin/nvim"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=$LANG
+export LC_COLLATE=C
 export LESS="-F -i -J -M -R -W -x2 -X -z-4"
 export MANPATH=/opt/homebrew/share/man:$MANPATH
 export PAGER="less -F -i -J -M -R -W -x2 -X -z-4"
@@ -40,12 +41,10 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 # fzf colors
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
+export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} ${FZF_THEME}"
 
 # n node version management
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-# tt-time-tracker
-export SHEET_FILE='/Users/webgefrickel/Documents/tt-time-tracker.json'
 
 # lazygit
 export LG_CONFIG_FILE="/Users/webgefrickel/.config/lazygit/config.yml"

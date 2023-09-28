@@ -23,11 +23,8 @@ map('n', 'N', 'Nzzzv')
 map('n', 'j', 'gj')
 map('n', 'k', 'gk')
 
--- sane yanking and copying to clipboard/alfred-history
+-- large yank in normal mode
 map('n', 'Y', 'y$')
-map('n', 'yy', 'yy <cmd>call system("nc localhost 8377", @0)<cr>')
-map('v', 'y', 'y <cmd>call system("nc localhost 8377", @0)<cr>')
-map('v', 'Y', 'y <cmd>call system("nc localhost 8377", @0)<cr>')
 
 -- Swap v and CTRL-V, because Block mode is more useful
 map('n', 'v', '<C-V>')
@@ -42,14 +39,14 @@ map('i', '!', '!<c-g>u')
 map('i', '?', '?<c-g>u')
 
 -- bubbling of lines/selections with alt + hjkl
-map('n', '˚', ':move .-2<cr>', { noremap = false })
-map('n', '∆', ':move .+1<cr>', { noremap = false })
-map('n', '˙', '<<', { noremap = false })
-map('n', '¬', '>>', { noremap = false })
-map('v', '˚', ":move '<-2<cr>gv", { noremap = false })
-map('v', '∆', ":move '>+1<cr>gv", { noremap = false })
-map('v', '˙', '<gv', { noremap = false })
-map('v', '¬', '>gv', { noremap = false })
+map('n', '<M-k>', ':move .-2<cr>', { noremap = false })
+map('n', '<M-j>', ':move .+1<cr>', { noremap = false })
+map('n', '<M-h>', '<<', { noremap = false })
+map('n', '<M-l>', '>>', { noremap = false })
+map('v', '<M-k>', ":move '<-2<cr>gv", { noremap = false })
+map('v', '<M-j>', ":move '>+1<cr>gv", { noremap = false })
+map('v', '<M-h>', '<gv', { noremap = false })
+map('v', '<M-l>', '>gv', { noremap = false })
 
 -- use the arrowkeys for usefull stuff in normal mode -- switching buffers
 map('n', '<up>', '<cmd>bfirst<cr>')
@@ -101,3 +98,12 @@ map('n', '<F5>', '<cmd>checktime<cr><cmd>redraw!<cr>');
 map('n', '<leader>ve', '<cmd>e $MYVIMRC<cr>')
 map('n', '<leader>vr', '<cmd>source $MYVIMRC<cr>')
 map('n', '<leader>w', '<cmd>set wrap! wrap?<cr>')
+
+-- Navigator.nvim
+map('n', '<C-h>', '<cmd>NavigatorLeft<cr>')
+map('n', '<C-j>', '<cmd>NavigatorDown<cr>')
+map('n', '<C-k>', '<cmd>NavigatorUp<cr>')
+map('n', '<C-l>', '<cmd>NavigatorRight<cr>')
+
+-- FTerm.nvim
+-- map('n', '-', '<cmd>lua require("FTerm").run("nnn")<cr>')

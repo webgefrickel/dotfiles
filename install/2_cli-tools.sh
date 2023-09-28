@@ -5,7 +5,6 @@ brew tap homebrew/services
 
 # install additional brew packages -- see _install.sh too
 brew install bat
-brew install clipper
 brew install fd
 brew install ffmpeg
 brew install fzf
@@ -13,9 +12,7 @@ brew install jump
 brew install lazygit
 brew install nnn
 brew install ripgrep
-brew install speedread
 brew install spotifyd
-brew install starship
 brew install switchaudio-osx
 brew install topgrade
 brew install tree
@@ -34,14 +31,9 @@ ln -s ~/dotfiles/spotifyd.toml ~/.config/spotifyd/spotifyd.conf
 npm install -g fkill-cli
 npm install -g trash-cli
 pip install tiptop
-pip install tt-time-tracker
 
 # install fzf
 /opt/homebrew/opt/fzf/install
-
-# clipper
-mkdir -p ~/Library/LaunchAgents
-brew services start clipper
 
 # switchaudio + custom node-script
 cd ~/dotfiles/other/out
