@@ -23,7 +23,7 @@ map('n', 'N', 'Nzzzv')
 map('n', 'j', 'gj')
 map('n', 'k', 'gk')
 
--- large yank in normal mode
+-- captial Y to yank till line end in normal mode
 map('n', 'Y', 'y$')
 
 -- Swap v and CTRL-V, because Block mode is more useful

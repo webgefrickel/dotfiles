@@ -5,11 +5,14 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "run": "node main.js"
+    "run": "node index.js"
+  },
+  "bin": {
+    "out": "./index.js"
   },
   "author": "Steffen Rademacker <kontakt@webgefrickel.de>",
   "license": "MIT",
   "dependencies": {
-    "inquirer": "^9.1.3"
+    "inquirer": "9.2.11"
   }
 }

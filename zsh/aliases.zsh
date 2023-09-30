@@ -16,7 +16,6 @@ alias nb="npm run build"
 alias np="npm run lint && npm run production"
 alias nre='n engine && rm -f package-lock.json && rm -rf node_modules && npm install'
 alias ns="npm start"
-alias out="node ~/Dotfiles/other/out/main.js"
 alias q='exit'
 alias sudo='sudo '
 alias to='tiptop --net en0'

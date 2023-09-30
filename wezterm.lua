@@ -10,12 +10,12 @@ local function get_current_working_dir(tab)
   return current_dir == HOME_DIR and '~' or string.gsub(current_dir, '(.*[/\\])(.*)', '%2')
 end
 
-local function isNvim(pane)
+local function isVim(pane)
   return pane:get_foreground_process_name():find('n?vim') ~= nil
 end
 
 local function conditionalActivatePane(window, pane, pane_direction, vim_direction)
-  if isNvim(pane) then
+  if isVim(pane) then
     window:perform_action(act.SendKey({ key = vim_direction, mods = 'CTRL' }), pane)
   else
     window:perform_action(act.ActivatePaneDirection(pane_direction), pane)
@@ -25,15 +25,17 @@ end
 -- base config
 config.color_scheme = 'GruvboxDark'
 config.font = wezterm.font('FiraCode Nerd Font')
+config.default_prog = { '/opt/homebrew/bin/zsh' }
 config.font_size = 14.0
-config.inactive_pane_hsb = { saturation = 0.5, brightness = 0.9 }
+config.initial_cols = 120
+config.initial_rows = 32
+config.inactoutive_pane_hsb = { saturation = 0.5, brightness = 0.9 }
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
 config.scrollback_lines = 5000
 config.show_new_tab_button_in_tab_bar = false
 config.tab_bar_at_bottom = true
 config.use_dead_keys = false
 config.use_fancy_tab_bar = false
-config.window_close_confirmation = 'NeverPrompt'
 config.window_decorations = 'RESIZE'
 
 -- key mappings
@@ -93,7 +95,7 @@ config.keys = {
       end),
     },
   },
-  { -- switching workspaces with CTRL-a g
+  {
     key = 'g',
     mods = 'LEADER',
     action = act.ShowLauncherArgs {

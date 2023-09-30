@@ -32,4 +32,11 @@ require('nvim-treesitter.configs').setup({
   indent = {
     enable = true,
   },
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      include_surrounding_whitespace = true,
+    },
+  }
 })

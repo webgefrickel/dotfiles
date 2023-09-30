@@ -19,19 +19,16 @@ require('lazy').setup({
   -- The colorscheme of choice
   { 'luisiacc/gruvbox-baby', priority = 1000 },
 
-  -- modern neovim with treesitter, lsp, floaterm-integration (nnn, lazygit...)
+  -- modern neovim with treesitter + refactor/objects, lsp,
+  -- floaterm-integration (nnn, lazygit...)
   -- telescope and cmp as completion engine, vsnip-support
-  -- TODO replace null-ls with nvim-lint
   { 'voldikss/vim-floaterm', init = get_config('floaterm') },
   { 'nvim-treesitter/nvim-treesitter', init = get_config('treesitter'), build = ':TSUpdate' },
+  { 'nvim-treesitter/nvim-treesitter-textobjects', dependencies = { 'nvim-treesitter/nvim-treesitter' } },
+  { 'nvim-treesitter/nvim-treesitter-refactor', dependencies = { 'nvim-treesitter/nvim-treesitter' } },
+
   { 'neovim/nvim-lspconfig', init = get_config('lspconfig') },
-  { 'jose-elias-alvarez/null-ls.nvim', init = get_config('null-ls'), dependencies = { 'nvim-lua/plenary.nvim' } },
-  {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.3',
-    init = get_config('telescope'),
-    dependencies = { 'nvim-lua/plenary.nvim' }
-  },
+  { 'nvim-telescope/telescope.nvim', init = get_config('telescope'), dependencies = { 'nvim-lua/plenary.nvim' } },
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { 'hrsh7th/vim-vsnip', init = get_config('vsnip') },
   { 'rafamadriz/friendly-snippets', dependencies = { 'hrsh7th/vim-vsnip' } },
@@ -48,21 +45,25 @@ require('lazy').setup({
     },
   },
 
+  -- TODO replace null-ls with nvim-lint
+  { 'jose-elias-alvarez/null-ls.nvim', init = get_config('null-ls'), dependencies = { 'nvim-lua/plenary.nvim' } },
+
+
   -- editing / moving enhancements
   { 'AndrewRadev/splitjoin.vim' },
   { 'numToStr/Comment.nvim', config = true },
   { 'numToStr/Navigator.nvim', config = true },
   { 'tpope/vim-ragtag' },
   { 'tpope/vim-repeat' },
-  { 'tpope/vim-surround' },
-  { 'windwp/nvim-autopairs', config = true },
+  { 'windwp/nvim-autopairs', event = 'InsertEnter', config = true },
+  { 'kylechui/nvim-surround', event = 'VeryLazy', config = true },
   {
     'folke/flash.nvim',
     event = 'VeryLazy',
     -- TODO use whichkey for key mappings everywhere, one single init.lua ?!
     keys = {
-      { 's', mode = { "n", "o", "x" }, function() require("flash").jump() end, desc = "Flash" },
-      { 'S', mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { 's', mode = { 'n', 'o', 'x' }, function() require('flash').jump() end, desc = 'Flash' },
+      { 'S', mode = { 'n', 'o', 'x' }, function() require('flash').treesitter() end, desc = 'Flash Treesitter' },
     },
   },
 
@@ -116,38 +117,18 @@ require('lazy').setup({
 
   -- investigating...
   {
-    "piersolenski/wtf.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    },
-    event = "VeryLazy",
-    keys = {
-      {
-        "gw",
-        mode = { "n" },
-        function() require("wtf").ai() end,
-        desc = "Debug diagnostic with AI",
-      },
-      {
-        mode = { "n" },
-        "gW",
-        function() require("wtf").search() end,
-        desc = "Search diagnostic with Google",
-      },
-    },
-  },
-  {
     'jackMort/ChatGPT.nvim',
-    event = "VeryLazy",
+    event = 'VeryLazy',
     config = true,
     dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
+      'MunifTanjim/nui.nvim',
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim'
     }
   },
   {
     'folke/zen-mode.nvim',
+    dependencies = { 'folke/twilight.nvim' },
     opts = {
       window = {
         backdrop = 0.95,
@@ -160,8 +141,8 @@ require('lazy').setup({
     },
   },
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
     init = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300

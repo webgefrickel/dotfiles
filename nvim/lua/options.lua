@@ -10,7 +10,8 @@ g.loaded_perl_provider = 0
 set.breakindent = true
 set.clipboard = 'unnamedplus'
 set.cmdheight = 1
-set.completeopt= { 'menu', 'menuone', 'noselect' }
+set.completeopt = { 'menu', 'menuone', 'noselect' }
+set.conceallevel = 2
 set.cpoptions:append('$')
 set.cursorline = true
 set.foldexpr = 'nvim_treesitter#foldexpr()'

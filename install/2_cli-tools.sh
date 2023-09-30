@@ -37,4 +37,4 @@ pip install tiptop
 
 # switchaudio + custom node-script
 cd ~/dotfiles/other/out
-npm install
+npm i -g
