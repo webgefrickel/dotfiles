@@ -8,8 +8,9 @@ pip install neovim
 ln -s ~/dotfiles/nvim ~/.config/nvim
 
 # additional language-servers for nvim-lspconfig
-npm install -g eslint_d
 npm install -g fixjson
+npm install -g eslint_d
+npm install -g jsonlint
 npm install -g markdownlint-cli
 npm install -g neovim
 npm install -g stylelint

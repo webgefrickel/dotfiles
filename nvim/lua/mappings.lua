@@ -7,103 +7,100 @@ local map = function(mode, lhs, rhs, opts)
   }))
 end
 
--- remap semi-colon to be colon in normal an visual mode
-map('n', ';', ':')
-map('v', ';', ':')
+local wk = require('which-key')
 
--- deactivate ex-mode and man-pages
-map('n', 'Q', '')
-map('n', 'K', '')
+wk.register({
+  ['-'] = { '<cmd>FloatermNew nnn<cr>', 'invoke floaterm with nnn as file picker' },
+  [';'] = { ':', 'Colon with semicolon' },
+  ['<F5>'] = { '<cmd>checktime<cr><cmd>redraw!<cr>', 'redraw/reload with F5' },
+  ['<up>'] = { '<cmd>bfirst<cr>', 'buffer navigation with arrow keys' },
+  ['<right>'] = { '<cmd>bnext<cr>', 'buffer navigation with arrow keys' },
+  ['<down>'] = { '<cmd>blast<cr>', 'buffer navigation with arrow keys' },
+  ['<left>'] = { '<cmd>bprevious<cr>', 'buffer navigation with arrow keys' },
 
--- keeping it centered when search/jumping to next/prev entry
-map('n', 'n', 'nzzzv')
-map('n', 'N', 'Nzzzv')
+  g = {
+    b = { '<cmd>Gitsigns blame_line<cr>', '' },
+    f = { '<cmd>execute "/\\v^[<\\|=>]{7}/"<cr>', '' },
+    d = { '<cmd>lua vim.lsp.buf.definition()<cr>', 'show/go to definition' },
+    i = { '<cmd>lua vim.lsp.buf.implementation()<cr>', 'show/go to implementation' },
+    r = { '<cmd>lua vim.lsp.buf.references()<cr>', 'show/go to referennces' },
+  },
 
--- j and k for wrapped lines
-map('n', 'j', 'gj')
-map('n', 'k', 'gk')
+  K = { '', 'K man-pages mapping removed' },
+  j = { 'gj', 'j and k with wrapped lines' },
+  k = { 'gk', 'j and k with wrapped lines' },
+  n = { 'nzzzv', 'kepping it centered with n' },
+  v = { '<C-V>', 'remapping visual/visual-block mode' },
+  s = { function() require('flash').jump() end, 'flash jump' },
+  N = { 'Nzzzv', 'kepping it centered with N' },
+  Q = { '', 'Q ex-mode-mapping removed' },
+  S = { function() require('flash').treesitter() end, 'flash treesitter select' },
+  Y = { 'y$', 'yank till end of line with Y'},
 
--- captial Y to yank till line end in normal mode
-map('n', 'Y', 'y$')
+  -- all normal mode leader key mappings in one place
+  ['<leader>'] = {
+    [','] = { '<cmd>Telescope find_files<cr>', '' },
+    ['-'] = { '<C-w>s<C-w>j', '' },
+    ['.'] = { '<cmd>Telescope buffers<cr>', '' },
+    ['/'] = { '<cmd>Telescope search_history<cr>', '' },
+    [';'] = { '<cmd>Telescope command_history<cr>', '' },
+    ['\''] = { '<cmd>Telescope git_files<cr>', '' },
+    ['\\'] = { '<C-w>v<C-w>l', '' },
+    [']'] = { '<cmd>Telescope current_buffer_fuzzy_find<cr>', '' },
+    a = { '<cmd>Telescope live_grep<cr>', '' },
+    b = { '<cmd>Telescope git_branches<cr>', '' },
+    c = { '<cmd>Telescope git_bcommits<cr>', '' },
+    d = { '<cmd>lua vim.lsp.buf.declaration()<cr>', '' },
+    e = { '<cmd>lua vim.diagnostic.goto_next()<cr>', '' },
+    f = { '<cmd>lua vim.lsp.buf.formatting()<cr>', '' },
+    h = { '<cmd>lua vim.lsp.buf.hover()<cr>', '' },
+    r = { '<cmd>lua vim.lsp.buf.rename()<cr>', '' },
+    x = { '<cmd>lua vim.lsp.buf.code_action()<cr>', '' },
+    l = { '<cmd>FloatermNew lazygit<cr>', '' },
+    t = { '<cmd>FloatermNew<cr>', '' },
+    v = {
+      ve = { '<cmd>e $MYVIMRC<cr>', '' },
+      vr = { '<cmd>source $MYVIMRC<cr>', '' },
+    },
+    w = { '<cmd>set wrap! wrap?<cr>', '' },
+  },
 
--- Swap v and CTRL-V, because Block mode is more useful
-map('n', 'v', '<C-V>')
-map('n', '<C-V>', 'v')
-map('v', 'v', '<C-V>')
-map('v', '<C-V>', 'v')
+  -- with <CTRL> as modifier
+  ['<C-h>'] = { '<cmd>NavigatorLeft<cr>', '' },
+  ['<C-j>'] = { '<cmd>NavigatorDown<cr>', '' },
+  ['<C-k>'] = { '<cmd>NavigatorUp<cr>', '' },
+  ['<C-l>'] = { '<cmd>NavigatorRight<cr>', '' },
+  ['<C-V>'] = { 'v', '' },
+
+  -- with <ALT/META> as modifier
+  ['<M-k>'] = { ':move .-2<cr>', 'bubbling lines with alt-hjkl', noremap = false },
+  ['<M-j>'] = { ':move .+1<cr>', 'bubbling lines with alt-hjkl', noremap = false },
+  ['<M-h>'] = { '<<', 'bubbling lines with alt-hjkl', noremap = false },
+  ['<M-l>'] = { '>>', 'bubbling lines with alt-hjkl', noremap = false },
+})
+
+-- non-normal-mode mappings
+wk.register({
+  [';'] = { ':', 'Colon with semicolon' },
+  v = { '<C-V>', 'remapping visual/visual-block mode', },
+
+  -- with <CTRL> as modifier
+  ['<C-V>'] = { 'v', 'remapping visual/visual-block mode' },
+
+  -- with <ALT/META> as modifier
+  ['<M-k>'] = { ":move '<-2<cr>gv", 'bubbling lines with alt-hjkl', noremap = false },
+  ['<M-j>'] = { ":move '>+1<cr>gv", 'bubbling lines with alt-hjkl', noremap = false },
+  ['<M-h>'] = { '<gv', 'bubbling lines with alt-hjkl', noremap = false },
+  ['<M-l>'] = { '>gv', 'bubbling lines with alt-hjkl', noremap = false },
+}, { mode = 'v' })
+
+wk.register({
+  ['<C-j>'] = { 'vsnip#available(-1) ? "<Plug>(vsnip-jump-prev)" : "<C-j>"', 'snippet expansion' },
+}, { mode = 's', expr = true, noremap = true })
 
 -- add undo-repo-breakpoints automatically when writing long text
-map('i', ',', ',<c-g>u')
-map('i', '.', '.<c-g>u')
-map('i', '!', '!<c-g>u')
-map('i', '?', '?<c-g>u')
-
--- bubbling of lines/selections with alt + hjkl
-map('n', '<M-k>', ':move .-2<cr>', { noremap = false })
-map('n', '<M-j>', ':move .+1<cr>', { noremap = false })
-map('n', '<M-h>', '<<', { noremap = false })
-map('n', '<M-l>', '>>', { noremap = false })
-map('v', '<M-k>', ":move '<-2<cr>gv", { noremap = false })
-map('v', '<M-j>', ":move '>+1<cr>gv", { noremap = false })
-map('v', '<M-h>', '<gv', { noremap = false })
-map('v', '<M-l>', '>gv', { noremap = false })
-
--- use the arrowkeys for usefull stuff in normal mode -- switching buffers
-map('n', '<up>', '<cmd>bfirst<cr>')
-map('n', '<down>', '<cmd>blast<cr>')
-map('n', '<left>', '<cmd>bp<cr>')
-map('n', '<right>', '<cmd>bn<cr>')
-
--- easieser splits
-map('n', '<leader>\\', '<C-w>v<C-w>l')
-map('n', '<leader>-', '<C-w>s<C-w>j')
-
--- Telescope
-map('n', '<leader>\'', '<cmd>Telescope git_files<cr>')
-map('n', '<leader>,', '<cmd>Telescope find_files<cr>')
-map('n', '<leader>.', '<cmd>Telescope buffers<cr>')
-map('n', '<leader>/', '<cmd>Telescope search_history<cr>')
-map('n', '<leader>;', '<cmd>Telescope command_history<cr>')
-map('n', '<leader>a', '<cmd>Telescope live_grep<cr>')
-map('n', '<leader>b', '<cmd>Telescope git_branches<cr>')
-map('n', '<leader>c', '<cmd>Telescope git_bcommits<cr>')
-map('n', '<leader>]', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
-
--- lsp and diagnostics
-map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
-map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
-map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
-map('n', '<leader>d', '<cmd>lua vim.lsp.buf.declaration()<cr>')
-map('n', '<leader>e', '<cmd>lua vim.diagnostic.goto_next()<cr>')
-map('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<cr>')
-map('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<cr>')
-map('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>')
-map('n', '<leader>x', '<cmd>lua vim.lsp.buf.code_action()<cr>')
-
--- git
-map('n', '<leader>l', '<cmd>FloatermNew lazygit<cr>')
-map('n', '<leader>gb', '<cmd>Gitsigns blame_line<cr>')
-map('n', '<leader>gf', "<cmd>execute '/\\v^[<\\|=>]{7}/'<cr>")
-
--- floaterm
-map('n', '-', '<cmd>FloatermNew nnn<cr>')
-map('n', '<leader>t', '<cmd>FloatermNew<cr>')
-
--- vsnip snippets expansion
-map('i', '<C-j>', 'vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"', { expr = true, noremap = false })
-map('s', '<C-j>', 'vsnip#available(-1) ? "<Plug>(vsnip-jump-prev)" : "<C-j>"', { expr = true, noremap = false })
-
--- other useful mappings
-map('n', '<F5>', '<cmd>checktime<cr><cmd>redraw!<cr>');
-map('n', '<leader>ve', '<cmd>e $MYVIMRC<cr>')
-map('n', '<leader>vr', '<cmd>source $MYVIMRC<cr>')
-map('n', '<leader>w', '<cmd>set wrap! wrap?<cr>')
-
--- Navigator.nvim
-map('n', '<C-h>', '<cmd>NavigatorLeft<cr>')
-map('n', '<C-j>', '<cmd>NavigatorDown<cr>')
-map('n', '<C-k>', '<cmd>NavigatorUp<cr>')
-map('n', '<C-l>', '<cmd>NavigatorRight<cr>')
-
--- FTerm.nvim
--- map('n', '-', '<cmd>lua require("FTerm").run("nnn")<cr>')
+-- TODO only for prose (mail md etc)
+-- map('i', ',', ',<c-g>u')
+-- map('i', '.', '.<c-g>u')
+-- map('i', '!', '!<c-g>u')
+-- map('i', '?', '?<c-g>u')

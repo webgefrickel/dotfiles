@@ -1,56 +1,46 @@
-local set = vim.opt
-local cmd = vim.cmd
-local g = vim.g
-
--- deactivate some unneeded language providers
-g.loaded_python_provider = 0
-g.loaded_perl_provider = 0
-
--- general options
-set.breakindent = true
-set.clipboard = 'unnamedplus'
-set.cmdheight = 1
-set.completeopt = { 'menu', 'menuone', 'noselect' }
-set.conceallevel = 2
-set.cpoptions:append('$')
-set.cursorline = true
-set.foldexpr = 'nvim_treesitter#foldexpr()'
-set.foldmethod = 'expr'
-set.gdefault = true
-set.grepprg = 'rg'
-set.hidden = true
-set.ignorecase = true
-set.infercase = true
-set.laststatus = 3
-set.lazyredraw = true
-set.list = true
-set.listchars = 'extends:»,precedes:«,tab:▸ ,trail:·'
-set.foldenable = false
-set.showmode = false
-set.swapfile = false
-set.wrap = false
-set.writebackup = false
-set.relativenumber = true
-set.scrolljump = 5
-set.scrolloff = 3
-set.shiftround = true
-set.shiftwidth = 2
-set.shortmess:append('c')
-set.showbreak = '\\\\\\\\'
-set.showmatch = true
-set.sidescroll = 10
-set.sidescrolloff = 5
-set.smartcase = true
-set.splitright = true
-set.splitbelow = true
-set.updatetime = 300
-set.virtualedit = 'all'
-set.visualbell = true
-set.wildmode = { 'list:longest', 'list:full' }
+vim.opt.breakindent = true
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.cmdheight = 1
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+vim.opt.conceallevel = 2
+vim.opt.cpoptions:append('$')
+vim.opt.cursorline = true
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldmethod = 'expr'
+vim.opt.gdefault = true
+vim.opt.grepprg = 'rg'
+vim.opt.hidden = true
+vim.opt.ignorecase = true
+vim.opt.infercase = true
+vim.opt.laststatus = 3
+vim.opt.lazyredraw = true
+vim.opt.list = true
+vim.opt.listchars = 'extends:»,precedes:«,tab:▸ ,trail:·'
+vim.opt.foldenable = false
+vim.opt.showmode = false
+vim.opt.swapfile = false
+vim.opt.wrap = false
+vim.opt.writebackup = false
+vim.opt.relativenumber = true
+vim.opt.scrolljump = 5
+vim.opt.scrolloff = 3
+vim.opt.shiftround = true
+vim.opt.shiftwidth = 2
+vim.opt.shortmess:append('c')
+vim.opt.showbreak = '\\\\\\\\'
+vim.opt.showmatch = true
+vim.opt.sidescroll = 10
+vim.opt.sidescrolloff = 5
+vim.opt.smartcase = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.timeoutlen = 300
+vim.opt.updatetime = 300
+vim.opt.virtualedit = 'all'
+vim.opt.visualbell = true
+vim.opt.wildmode = { 'list:longest', 'list:full' }
 
 -- colorscheme and default language
-set.background = 'dark'
-set.termguicolors = true
-g.gruvbox_baby_telescope_theme = 1
-cmd 'colorscheme gruvbox-baby'
-cmd 'language en_US.UTF-8'
+vim.g.gruvbox_baby_telescope_theme = 1
+vim.cmd 'colorscheme gruvbox-baby'
+vim.cmd 'language en_US.UTF-8'
