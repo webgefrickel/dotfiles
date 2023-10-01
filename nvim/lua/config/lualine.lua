@@ -4,7 +4,5 @@ require('lualine').setup({
     lualine_x = {},
     lualine_y = { 'diff', 'diagnostics' },
   },
-  options = {
-    theme = 'gruvbox'
-  },
+  options = { theme = 'gruvbox' },
 })

@@ -6,7 +6,7 @@ cmp.setup({
   },
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      vim.fn['vsnip#anonymous'](args.body)
     end
   },
   mapping = cmp.mapping.preset.insert({
@@ -29,11 +29,11 @@ cmp.setup({
   formatting = {
     format = function(entry, vim_item)
       vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-        vsnip = "[Snippet]",
-        calc = "[Calc]",
+        nvim_lsp = '[LSP]',
+        buffer = '[Buffer]',
+        path = '[Path]',
+        vsnip = '[Snippet]',
+        calc = '[Calc]',
       })[entry.source.name]
       return vim_item
     end

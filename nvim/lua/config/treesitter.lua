@@ -26,12 +26,8 @@ require('nvim-treesitter.configs').setup({
     'vue',
     'yaml',
   },
-  highlight = {
-    enable = true,
-  },
-  indent = {
-    enable = true,
-  },
+  highlight = { enable = true },
+  indent = { enable = true },
   textobjects = {
     select = {
       enable = true,
