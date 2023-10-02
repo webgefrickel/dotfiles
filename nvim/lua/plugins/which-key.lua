@@ -8,6 +8,10 @@ wk.register({
   ['<right>'] = { '<cmd>bnext<cr>', 'buffer navigation with arrow keys' },
   ['<down>'] = { '<cmd>blast<cr>', 'buffer navigation with arrow keys' },
   ['<left>'] = { '<cmd>bprevious<cr>', 'buffer navigation with arrow keys' },
+  ['˙'] = { '<<', 'bubbling lines with alt-hjkl', noremap = false },
+  ['∆'] = { ':move .+1<cr>', 'bubbling lines with alt-hjkl', noremap = false },
+  ['˚'] = { ':move .-2<cr>', 'bubbling lines with alt-hjkl', noremap = false },
+  ['¬'] = { '>>', 'bubbling lines with alt-hjkl', noremap = false },
 
   g = {
     a = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'run code action' },
@@ -42,12 +46,6 @@ wk.register({
   ['<C-k>'] = { '<cmd>NavigatorUp<cr>', 'move to the upper split' },
   ['<C-l>'] = { '<cmd>NavigatorRight<cr>', 'move to the lower split' },
   ['<C-V>'] = { 'v', 'remapping visual/visual-block mode' },
-
-  -- with <ALT/META> as modifier
-  ['<M-k>'] = { ':move .-2<cr>', 'bubbling lines with alt-hjkl', noremap = false },
-  ['<M-j>'] = { ':move .+1<cr>', 'bubbling lines with alt-hjkl', noremap = false },
-  ['<M-h>'] = { '<<', 'bubbling lines with alt-hjkl', noremap = false },
-  ['<M-l>'] = { '>>', 'bubbling lines with alt-hjkl', noremap = false },
 })
 
 -- all normal mode leader key mappings in one place
@@ -76,16 +74,13 @@ wk.register({
 -- visual-mode mappings
 wk.register({
   [';'] = { ':', 'Colon with semicolon' },
+  ['˙'] = { '<gv', 'bubbling lines with alt-hjkl', noremap = false },
+  ['∆'] = { ":move '>+1<cr>gv", 'bubbling lines with alt-hjkl', noremap = false },
+  ['˚'] = { ":move '<-2<cr>gv", 'bubbling lines with alt-hjkl', noremap = false },
+  ['¬'] = { '>gv', 'bubbling lines with alt-hjkl', noremap = false },
+
   v = { '<C-V>', 'remapping visual/visual-block mode' },
-
-  -- with <CTRL> as modifier
   ['<C-V>'] = { 'v', 'remapping visual/visual-block mode' },
-
-  -- with <ALT/META> as modifier
-  ['<M-k>'] = { ":move '<-2<cr>gv", 'bubbling lines with alt-hjkl', noremap = false },
-  ['<M-j>'] = { ":move '>+1<cr>gv", 'bubbling lines with alt-hjkl', noremap = false },
-  ['<M-h>'] = { '<gv', 'bubbling lines with alt-hjkl', noremap = false },
-  ['<M-l>'] = { '>gv', 'bubbling lines with alt-hjkl', noremap = false },
 }, { mode = 'v' })
 
 -- non-normal-mode mappings
