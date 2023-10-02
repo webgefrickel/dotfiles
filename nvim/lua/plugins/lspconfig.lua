@@ -1,16 +1,17 @@
 local lspconfig = require('lspconfig')
 
 lspconfig.cssls.setup({
-  filetypes = { 'css', 'sass', 'scss' },
+  filetypes = { 'css', 'scss' },
   settings = {
+    -- let stylelint do the validation see lint.lua
     css = { validate = false },
     scss = { validate = false },
-    sass = { validate = false },
   },
 })
 
 lspconfig.yamlls.setup({
   settings = {
+    -- let stylelint do the validation see lint.lua
     yaml = { validate = false },
   },
 })

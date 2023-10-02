@@ -1,5 +1,6 @@
 -- small helper function for loading external plugin config files
 local g = vim.g
+local cmd = vim.cmd
 local set = vim.opt
 local setlocal = vim.opt_local
 local createCmd = vim.api.nvim_create_autocmd
@@ -9,6 +10,7 @@ local function get_config (key)
   return function() require('plugins/' .. key) end
 end
 
+-- ensure that lazy.nvim package manager is installed
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({ 'git', 'clone', '--filter=blob:none', 'https://github.com/folke/lazy.nvim.git', '--branch=stable', lazypath })
 end
@@ -82,10 +84,6 @@ require('lazy').setup({
   },
 })
 
--- deactivate python and perl
-g.loaded_python_provider = 0
-g.loaded_perl_provider = 0
-
 -- general sane vim options
 set.breakindent = true
 set.clipboard = 'unnamedplus'
@@ -94,7 +92,6 @@ set.completeopt = { 'menu', 'menuone', 'noselect' }
 set.conceallevel = 2
 set.cpoptions:append('$')
 set.cursorline = true
-set.foldexpr = 'nvim_treesitter#foldexpr()'
 set.foldmethod = 'expr'
 set.gdefault = true
 set.grepprg = 'rg'
@@ -128,27 +125,20 @@ set.updatetime = 300
 set.virtualedit = 'all'
 set.visualbell = true
 set.wildmode = { 'list:longest', 'list:full' }
+g.loaded_python_provider = 0
+g.loaded_perl_provider = 0
 
--- colorscheme
+-- colorscheme and default language
 set.background = 'dark'
 set.termguicolors = true
 g.gruvbox_baby_telescope_theme = 1
-vim.cmd 'colorscheme gruvbox-baby'
+cmd 'colorscheme gruvbox-baby'
+cmd 'language en_US.UTF-8'
 
--- default language
-vim.cmd 'language en_US.UTF-8'
+-- autoresize windows/splits everytime we change to a buffer
+createCmd({ 'BufEnter', 'BufWinEnter' }, { pattern = { '*' }, command = 'wincmd =' })
 
--- set some autocommand -- TODO refactor those in createCmd if possible
-vim.cmd([[
-  " Remember last location/cursor in file
-  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
-  " Autoresize windows/splits when vim resizes
-  autocmd VimResized * wincmd =
-  " floaterm integration
-  autocmd VimEnter * highlight FloatermBorder guibg='#282828' guifg='#fbf1c7'
-]])
-
--- make dash-spearated-key"ords on "word" in vim
+-- make dash-spearated-keywords in css and json a keyword
 createCmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = { '*.css', '*.scss', '*.json' },
   callback = function() setlocal.iskeyword:append('-') end,
