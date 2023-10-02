@@ -33,9 +33,6 @@ config.inactive_pane_hsb = { saturation = 0.5, brightness = 0.9 }
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
 config.scrollback_lines = 5000
 config.send_composed_key_when_left_alt_is_pressed = true
-
-˙∆˚¬
-
 config.show_new_tab_button_in_tab_bar = false
 config.tab_bar_at_bottom = true
 config.use_dead_keys = false
