@@ -120,7 +120,6 @@ set.sidescrolloff = 5
 set.smartcase = true
 set.splitright = true
 set.splitbelow = true
-set.timeoutlen = 300
 set.updatetime = 300
 set.virtualedit = 'all'
 set.visualbell = true

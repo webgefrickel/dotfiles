@@ -1,5 +1,8 @@
 local wk = require('which-key')
 
+vim.opt.timeout = true
+vim.opt.timeoutlen = 500
+
 wk.register({
   ['-'] = { '<cmd>FloatermNew nnn<cr>', 'invoke floaterm with nnn as file picker' },
   [';'] = { ':', 'Colon with semicolon' },
@@ -14,6 +17,7 @@ wk.register({
   ['¬'] = { '>>', 'bubbling lines with alt-hjkl', noremap = false },
 
   g = {
+    name = 'code-related mappings',
     a = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'run code action' },
     b = { '<cmd>Gitsigns blame_line<cr>', 'git blame line' },
     d = { '<cmd>lua vim.lsp.buf.definition()<cr>', 'show/go to definition' },
@@ -65,6 +69,7 @@ wk.register({
   l = { '<cmd>FloatermNew lazygit<cr>', 'open lazygit' },
   t = { '<cmd>FloatermNew<cr>', 'open new terminal' },
   v = {
+    name = 'vim related',
     e = { '<cmd>e $MYVIMRC<cr>', 'edit vimrc' },
     r = { '<cmd>source $MYVIMRC<cr>', 'source vimrc' },
   },
