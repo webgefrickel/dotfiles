@@ -147,6 +147,28 @@ end)
 wezterm.on('gui-startup', function()
  local tab, pane, window = mux.spawn_window({})
  window:gui_window():maximize()
+
+  -- Set a workspace for coding on a current project
+  -- Top pane is for the editor, bottom pane is for the build tool
+  local homeDir = wezterm.home_dir
+  -- local tab, build_pane, window = mux.spawn_window({
+  --   workspace = 'default',
+  --   cwd = homeDir
+  -- })
+  --
+  -- local editor_pane = build_pane:split({
+  --   direction = 'Right',
+  --   size = 0.5,
+  --   cwd = homeDir,
+  -- })
+  --
+  -- build_pane:send_text 'ls -al\n'
+  --
+  -- local tab, pane, window = mux.spawn_window {
+  --   workspace = 'dev',
+  -- }
+  --
+  -- mux.set_active_workspace 'default'
 end)
 
 return config
