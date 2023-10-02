@@ -11,6 +11,10 @@ require('lint').linters_by_ft = {
   typescriptreact = { 'tsc', 'eslint_d' },
 }
 
+-- TODO stylelint for local files :/ override args/cwd
+local stylelint = require('lint').linters.stylelint
+require('lint').linters.stylelint = stylelint
+
 vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
   pattern = {
     '*.js', '*.ts', '*.jsx', '*.tsx',

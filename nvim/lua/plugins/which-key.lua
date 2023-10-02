@@ -1,12 +1,3 @@
--- helper function for easier mappings
-local map = function(mode, lhs, rhs, opts)
-  return vim.api.nvim_set_keymap(mode, lhs, rhs, vim.tbl_extend('keep', opts or {}, {
-    nowait = true,
-    silent = true,
-    noremap = true,
-  }))
-end
-
 local wk = require('which-key')
 
 wk.register({
@@ -37,34 +28,6 @@ wk.register({
   S = { function() require('flash').treesitter() end, 'flash treesitter select' },
   Y = { 'y$', 'yank till end of line with Y'},
 
-  -- all normal mode leader key mappings in one place
-  ['<leader>'] = {
-    [','] = { '<cmd>Telescope find_files<cr>', '' },
-    ['-'] = { '<C-w>s<C-w>j', '' },
-    ['.'] = { '<cmd>Telescope buffers<cr>', '' },
-    ['/'] = { '<cmd>Telescope search_history<cr>', '' },
-    [';'] = { '<cmd>Telescope command_history<cr>', '' },
-    ['\''] = { '<cmd>Telescope git_files<cr>', '' },
-    ['\\'] = { '<C-w>v<C-w>l', '' },
-    [']'] = { '<cmd>Telescope current_buffer_fuzzy_find<cr>', '' },
-    a = { '<cmd>Telescope live_grep<cr>', '' },
-    b = { '<cmd>Telescope git_branches<cr>', '' },
-    c = { '<cmd>Telescope git_bcommits<cr>', '' },
-    d = { '<cmd>lua vim.lsp.buf.declaration()<cr>', '' },
-    e = { '<cmd>lua vim.diagnostic.goto_next()<cr>', '' },
-    f = { '<cmd>lua vim.lsp.buf.formatting()<cr>', '' },
-    h = { '<cmd>lua vim.lsp.buf.hover()<cr>', '' },
-    r = { '<cmd>lua vim.lsp.buf.rename()<cr>', '' },
-    x = { '<cmd>lua vim.lsp.buf.code_action()<cr>', '' },
-    l = { '<cmd>FloatermNew lazygit<cr>', '' },
-    t = { '<cmd>FloatermNew<cr>', '' },
-    v = {
-      ve = { '<cmd>e $MYVIMRC<cr>', '' },
-      vr = { '<cmd>source $MYVIMRC<cr>', '' },
-    },
-    w = { '<cmd>set wrap! wrap?<cr>', '' },
-  },
-
   -- with <CTRL> as modifier
   ['<C-h>'] = { '<cmd>NavigatorLeft<cr>', '' },
   ['<C-j>'] = { '<cmd>NavigatorDown<cr>', '' },
@@ -79,10 +42,39 @@ wk.register({
   ['<M-l>'] = { '>>', 'bubbling lines with alt-hjkl', noremap = false },
 })
 
--- non-normal-mode mappings
+-- all normal mode leader key mappings in one place
+wk.register({
+  ['\\'] = { '<C-w>v<C-w>l', 'Vertical split' },
+  ['-'] = { '<C-w>s<C-w>j', 'Horizontal split' },
+  [','] = { '<cmd>Telescope find_files<cr>', 'Telescope find files' },
+  ['.'] = { '<cmd>Telescope buffers<cr>', 'Telescope find buffers' },
+  ['\''] = { '<cmd>Telescope git_files<cr>', 'Telescope in git files' },
+  ['/'] = { '<cmd>Telescope search_history<cr>', 'Telescope find in search history' },
+  [';'] = { '<cmd>Telescope command_history<cr>', 'Telescope find in command history' },
+  [']'] = { '<cmd>Telescope current_buffer_fuzzy_find<cr>', 'Telescope in current buffer' },
+
+  a = { '<cmd>Telescope live_grep<cr>', '' },
+  b = { '<cmd>Telescope git_branches<cr>', '' },
+  c = { '<cmd>Telescope git_bcommits<cr>', '' },
+  d = { '<cmd>lua vim.lsp.buf.declaration()<cr>', '' },
+  e = { '<cmd>lua vim.diagnostic.goto_next()<cr>', '' },
+  f = { '<cmd>lua vim.lsp.buf.formatting()<cr>', '' },
+  h = { '<cmd>lua vim.lsp.buf.hover()<cr>', '' },
+  r = { '<cmd>lua vim.lsp.buf.rename()<cr>', '' },
+  x = { '<cmd>lua vim.lsp.buf.code_action()<cr>', '' },
+  l = { '<cmd>FloatermNew lazygit<cr>', '' },
+  t = { '<cmd>FloatermNew<cr>', '' },
+  v = {
+    ve = { '<cmd>e $MYVIMRC<cr>', '' },
+    vr = { '<cmd>source $MYVIMRC<cr>', '' },
+  },
+  w = { '<cmd>set wrap! wrap?<cr>', '' },
+}, { prefix = '<leader>' })
+
+-- visual-mode mappings
 wk.register({
   [';'] = { ':', 'Colon with semicolon' },
-  v = { '<C-V>', 'remapping visual/visual-block mode', },
+  v = { '<C-V>', 'remapping visual/visual-block mode' },
 
   -- with <CTRL> as modifier
   ['<C-V>'] = { 'v', 'remapping visual/visual-block mode' },
@@ -94,13 +86,11 @@ wk.register({
   ['<M-l>'] = { '>gv', 'bubbling lines with alt-hjkl', noremap = false },
 }, { mode = 'v' })
 
+-- non-normal-mode mappings
 wk.register({
   ['<C-j>'] = { 'vsnip#available(-1) ? "<Plug>(vsnip-jump-prev)" : "<C-j>"', 'snippet expansion' },
-}, { mode = 's', expr = true, noremap = true })
-
--- add undo-repo-breakpoints automatically when writing long text
--- TODO only for prose (mail md etc)
--- map('i', ',', ',<c-g>u')
--- map('i', '.', '.<c-g>u')
--- map('i', '!', '!<c-g>u')
--- map('i', '?', '?<c-g>u')
+}, {
+  mode = 's',
+  expr = true,
+  noremap = true
+})
