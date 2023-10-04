@@ -22,6 +22,31 @@ local function conditionalActivatePane(window, pane, pane_direction, vim_directi
   end
 end
 
+-- open new development session with splits and commands
+-- this expects the default src / public-dist structure to work
+local function newDevelopmentSession(path_and_title)
+  local sites_dir = wezterm.home_dir .. '/Sites/'
+  local dev_tab, dev_pane, dev_window = {
+    cwd = home_dir .. path_and_title,
+    workspace = path_and_title,
+  }
+  local src_tab, src_pane, dev_window = dev_window:spawn_tab({
+    cwd = home_dir .. path_and_title
+  })
+  dev_tab:set_title('zsh')
+  dev_pane:send_text('v package.json\n')
+  devgit_pane = dev_pane:split({
+    workspace = path_and_title,
+    direction = 'Right',
+    cwd = home_dir .. path_and_title .. '/src',
+  })
+  devgit_pane:send_text('ggpl && gs\n')
+  src_tab:set_title('src')
+  src_pane:send_text('cd src && v\n:Telescope find_files\n')
+
+  mux.set_active_workspace(path_and_title)
+end
+
 -- base config
 config.color_scheme = 'GruvboxDark'
 config.font = wezterm.font('FiraCode Nerd Font')
@@ -80,6 +105,18 @@ config.keys = {
             },
             pane
           )
+        end
+      end),
+    },
+  },
+  {
+    key = 'd',
+    mods = 'LEADER',
+    action = act.PromptInputLine {
+      description = 'Enter name for new workspace',
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          newDevelopmentSession(line:gsub('%s+', ''))
         end
       end),
     },
@@ -145,30 +182,25 @@ end)
 
 -- always maximise and start default session with mutt, neorg and dotfiles
 wezterm.on('gui-startup', function()
- local tab, pane, window = mux.spawn_window({})
- window:gui_window():maximize()
+  local home_dir = wezterm.home_dir
+  local tab, pane, window = mux.spawn_window({ cwd = home_dir })
+  local todo_tab, todo_pane, window = window:spawn_tab({ cwd = home_dir .. '/Notes' })
+  local dot_tab, dot_pane, window = window:spawn_tab({ cwd = home_dir .. '/Dotfiles' })
+  local git_pane = dot_pane:split({ direction = 'Right', cwd = home_dir .. '/Dotfiles' })
+  tab:set_title('mail')
+  pane:send_text('O && m\n')
+  dot_tab:set_title('dotfiles')
+  dot_pane:send_text('v nvim/init.lua\n')
+  todo_tab:set_title('todo')
+  todo_pane:send_text('v index.norg\n')
+  git_pane:send_text('gs\n')
 
-  -- Set a workspace for coding on a current project
-  -- Top pane is for the editor, bottom pane is for the build tool
-  local homeDir = wezterm.home_dir
-  -- local tab, build_pane, window = mux.spawn_window({
-  --   workspace = 'default',
-  --   cwd = homeDir
-  -- })
-  --
-  -- local editor_pane = build_pane:split({
-  --   direction = 'Right',
-  --   size = 0.5,
-  --   cwd = homeDir,
-  -- })
-  --
-  -- build_pane:send_text 'ls -al\n'
-  --
-  -- local tab, pane, window = mux.spawn_window {
-  --   workspace = 'dev',
-  -- }
-  --
-  -- mux.set_active_workspace 'default'
+  -- initialize some sessions for MRU projects and folders
+  newDevelopmentSession('ag/core')
+  newDevelopmentSession('ag/web')
+
+  mux.set_active_workspace('default')
+  window:gui_window():maximize()
 end)
 
 return config
