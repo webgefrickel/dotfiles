@@ -28,13 +28,31 @@ require('nvim-treesitter.configs').setup({
   },
   highlight = { enable = true },
   indent = { enable = true },
-  textobjects = {
-    select = {
+  autotag = { enable = true },
+  matchup = { enable = true },
+  refactor = {
+    highlight_definitions = {
       enable = true,
-      lookahead = true,
-      include_surrounding_whitespace = true,
+      clear_on_cursor_move = true,
     },
-  }
+    navigation = {
+      enable = true,
+      keymaps = {
+        goto_definition = 'gd',
+        list_definitions = 'gl',
+        list_definitions_toc = false,
+        goto_next_usage = 'gn',
+        goto_previous_usage = 'gp',
+      },
+    },
+    smart_rename = {
+      enable = true,
+      keymaps = {
+        smart_rename = 'gr',
+      },
+    },
+
+  },
 })
 
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'

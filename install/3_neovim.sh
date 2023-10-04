@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 brew install neovim
+brew install jq
 gem install neovim
 pip install neovim
 
@@ -8,7 +9,6 @@ pip install neovim
 ln -s ~/dotfiles/nvim ~/.config/nvim
 
 # additional language-servers for nvim-lspconfig
-npm install -g fixjson
 npm install -g eslint_d
 npm install -g jsonlint
 npm install -g markdownlint-cli

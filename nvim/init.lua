@@ -28,8 +28,9 @@ require('lazy').setup({
   -- modern neovim with treesitter, lsp, cmp, vsnips and telescope
   { 'neovim/nvim-lspconfig', config = get_config('lspconfig') },
   { 'nvim-treesitter/nvim-treesitter', config = get_config('treesitter'), build = ':TSUpdate' },
-  { 'nvim-treesitter/nvim-treesitter-textobjects', dependencies = 'nvim-treesitter/nvim-treesitter' },
   { 'nvim-treesitter/nvim-treesitter-refactor', dependencies = 'nvim-treesitter/nvim-treesitter' },
+  { 'windwp/nvim-ts-autotag', dependencies = 'nvim-treesitter/nvim-treesitter' },
+  { 'andymass/vim-matchup', dependencies = 'nvim-treesitter/nvim-treesitter' },
   { 'nvim-telescope/telescope.nvim', dependencies = 'nvim-lua/plenary.nvim', config = get_config('telescope')  },
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { 'hrsh7th/vim-vsnip', config = get_config('vsnip') },
@@ -60,14 +61,13 @@ require('lazy').setup({
   { 'kylechui/nvim-surround', event = 'VeryLazy', config = true },
   { 'numToStr/Comment.nvim', config = true },
   { 'numToStr/Navigator.nvim', config = true },
-  { 'tpope/vim-ragtag' }, -- TODO still needed?!
-  { 'tpope/vim-repeat' }, -- TODO still needed?!
   { 'windwp/nvim-autopairs', event = 'InsertEnter', config = true },
 
   -- more plugins and integrations
+  { 'nvim-pack/nvim-spectre', dependencies = 'nvim-lua/plenary.nvim', config = true },
   { 'voldikss/vim-floaterm', config = get_config('floaterm') },
   { 'mfussenegger/nvim-lint', config = get_config('lint') },
-  -- TODO formatter with eslint, stylelint, markdownlint and code_actions?
+  { 'stevearc/conform.nvim', event = { 'BufWritePre' }, config = get_config('conform') },
   { 'nvim-neorg/neorg',
     build = ':Neorg sync-parsers',
     dependencies = 'nvim-lua/plenary.nvim',
@@ -135,7 +135,10 @@ cmd 'colorscheme gruvbox-baby'
 cmd 'language en_US.UTF-8'
 
 -- autoresize windows/splits everytime we change to a buffer
-createCmd({ 'BufEnter', 'BufWinEnter' }, { pattern = { '*' }, command = 'wincmd =' })
+createCmd({ 'VimResized', 'FocusGained' }, {
+  pattern = { '*' },
+  command = 'wincmd =',
+})
 
 -- make dash-spearated-keywords in css and json a keyword
 createCmd({ 'BufEnter', 'BufWinEnter' }, {

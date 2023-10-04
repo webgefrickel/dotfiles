@@ -4,27 +4,23 @@ require('lint').linters_by_ft = {
   yaml = { 'yamllint' },
   css = { 'stylelint' },
   scss = { 'stylelint' },
-  json = { 'fixjson' },
+  json = { 'jsonlint' },
   javascript = { 'eslint_d' },
   javascriptreact = { 'eslint_d' },
-  typescript = { 'tsc',  'eslint_d' },
-  typescriptreact = { 'tsc', 'eslint_d' },
+  typescript = { 'eslint_d' },
+  typescriptreact = { 'eslint_d' },
 }
 
 -- stylelint always relative to current git-dir
 local stylelint = require('lint').linters.stylelint
-stylelint['stdin'] = false
 stylelint['args'] = {
-  '-f',
+  '--formatter',
   'json',
+  "--stdin",
+  "--stdin-filename",
+  vim.fn.expand("%:p"),
   '--config-basedir',
-  function()
-    return vim.fn.system({ 'git', 'rev-parse', '--show-toplevel' })
-  end,
-  '--stdin-filename',
-  function()
-    return vim.fn.expand('%:p')
-  end,
+  vim.fn.system({ 'git', 'rev-parse', '--show-toplevel' }),
 }
 require('lint').linters.stylelint = stylelint
 

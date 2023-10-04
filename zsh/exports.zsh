@@ -28,7 +28,7 @@ export HOMEBREW_NO_ENV_HINTS=true
 
 # nnn
 export NNN_OPTS='deHR'
-export NNN_BMS='a:~/Sites/ag;d:~/Dotfiles;s:~/Sites;l:~/Downloads;h:~/'
+export NNN_BMS='a:~/Sites;s:~/Dotfiles;d:~/Downloads;h:~/'
 export NNN_FCOLORS='c1e26c2e006033f5c6d6abc4'
 export NNN_PLUG='p:preview-tui;j:autojump'
 export NNN_FIFO='/tmp/nnn.fifo'
