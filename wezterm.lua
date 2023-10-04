@@ -26,19 +26,19 @@ end
 -- this expects the default src / public-dist structure to work
 local function newDevelopmentSession(path_and_title)
   local sites_dir = wezterm.home_dir .. '/Sites/'
-  local dev_tab, dev_pane, dev_window = {
-    cwd = home_dir .. path_and_title,
+  local dev_tab, dev_pane, dev_window = mux.spawn_window({
+    cwd = sites_dir .. path_and_title,
     workspace = path_and_title,
-  }
+  })
   local src_tab, src_pane, dev_window = dev_window:spawn_tab({
-    cwd = home_dir .. path_and_title
+    cwd = sites_dir .. path_and_title,
   })
   dev_tab:set_title('zsh')
   dev_pane:send_text('v package.json\n')
   devgit_pane = dev_pane:split({
     workspace = path_and_title,
     direction = 'Right',
-    cwd = home_dir .. path_and_title .. '/src',
+    cwd = sites_dir .. path_and_title .. '/src',
   })
   devgit_pane:send_text('ggpl && gs\n')
   src_tab:set_title('src')
@@ -194,10 +194,15 @@ wezterm.on('gui-startup', function()
   todo_tab:set_title('todo')
   todo_pane:send_text('v index.norg\n')
   git_pane:send_text('gs\n')
+  tab:activate()
 
   -- initialize some sessions for MRU projects and folders
+  newDevelopmentSession('dev')
   newDevelopmentSession('ag/core')
   newDevelopmentSession('ag/web')
+  newDevelopmentSession('ag/sp')
+  newDevelopmentSession('pax/frontend')
+  newDevelopmentSession('wwz/frontend')
 
   mux.set_active_workspace('default')
   window:gui_window():maximize()
