@@ -28,6 +28,7 @@ brew install --cask wezterm
 # brew install --cask kap
 # brew install --cask rapidapi
 # brew install --cask reaper
+# brew install --cask visual-studio-code
 
 ln -s ~/dotfiles/hammerspoon ~/.hammerspoon
 ln -s ~/dotfiles/karabiner ~/.config/karabiner
@@ -41,4 +42,4 @@ ln -s ~/dotfiles/karabiner ~/.config/karabiner
 # other software that can't be installed via brew:
 # bill: https://billtheapp.com/
 
-# Apps from the app-store: strongbox, xcode
+# Apps from the app-store: strongbox, xcode, unifi
