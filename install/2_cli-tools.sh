@@ -10,6 +10,7 @@ brew install ffmpeg
 brew install fzf
 brew install jump
 brew install lazygit
+brew install ocrmypdf
 brew install nnn
 brew install ripgrep
 brew install spotifyd

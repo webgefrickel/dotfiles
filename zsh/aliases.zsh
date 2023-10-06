@@ -24,6 +24,7 @@ alias v=$EDITOR
 alias vd='$EDITOR -d'
 alias vdiff='$EDITOR -d'
 alias vi=$EDITOR
+alias ocrpdf='convert *.jpg -auto-orient temp.pdf && ocrmypdf --rotate-pages --optimize 3 --jpeg-quality 70 temp.pdf ocr.pdf'
 alias vim=$EDITOR
 alias vimdiff='$EDITOR -d'
 alias vimup='nvim +TSUpdate'
