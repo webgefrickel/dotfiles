@@ -1,6 +1,6 @@
 {
   "name": "gallery",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Image web gallery batch conversion",
   "main": "index.js",
   "type": "module",
