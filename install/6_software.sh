@@ -11,21 +11,23 @@ brew install --cask affinity-designer
 brew install --cask affinity-photo
 brew install --cask alfred
 brew install --cask carbon-copy-cloner
-# brew install --cask citrix-workspace
 brew install --cask firefox
 brew install --cask forklift
 brew install --cask google-chrome
 brew install --cask hammerspoon
-# brew install --cask kap
 brew install --cask karabiner-elements
 brew install --cask microsoft-teams
-# brew install --cask rapidapi
-# brew install --cask reaper
 brew install --cask signal
 brew install --cask syntax-highlight
 brew install --cask telegram
 brew install --cask vlc
 brew install --cask wezterm
+
+# on demand, when needed
+# brew install --cask citrix-workspace
+# brew install --cask kap
+# brew install --cask rapidapi
+# brew install --cask reaper
 
 ln -s ~/dotfiles/hammerspoon ~/.hammerspoon
 ln -s ~/dotfiles/karabiner ~/.config/karabiner
