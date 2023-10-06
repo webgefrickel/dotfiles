@@ -7,12 +7,11 @@ sudo scutil --set ComputerName "mausohr"
 sudo scutil --set LocalHostName "mausohr"
 sudo scutil --set HostName "mausohr"
 
-# citrix/sequel etc. still use intel, so:
-sudo softwareupdate --install-rosetta
+# still needed?!
+# sudo softwareupdate --install-rosetta
 
-# deactivate long vowel-press-to-accent-entry
+# deactivate long vowel-press-to-accent-entry and show all files in finder
 defaults write -g ApplePressAndHoldEnabled -bool false
-# always show all files in finder
 defaults write com.apple.Finder AppleShowAllFiles -bool true
 
 # install homebrew
