@@ -3,13 +3,13 @@
 # everything neccessary first - command line tools
 xcode-select --install
 sudo xcodebuild -license
-sudo softwareupdate --install-rosetta
 sudo scutil --set ComputerName "mausohr"
 sudo scutil --set LocalHostName "mausohr"
 sudo scutil --set HostName "mausohr"
 
-# default macos settings
-#
+# citrix/sequel etc. still use intel, so:
+sudo softwareupdate --install-rosetta
+
 # deactivate long vowel-press-to-accent-entry
 defaults write -g ApplePressAndHoldEnabled -bool false
 # always show all files in finder

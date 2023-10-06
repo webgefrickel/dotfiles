@@ -1,18 +1,18 @@
 {
-  "name": "out",
-  "version": "1.1.0",
-  "description": "Audio Output Switcher",
+  "name": "gallery",
+  "version": "1.0.0",
+  "description": "Image web gallery batch conversion",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "run": "node index.js"
   },
   "bin": {
-    "out": "./index.js"
+    "gallery": "./index.js"
   },
   "author": "Steffen Rademacker <kontakt@webgefrickel.de>",
   "license": "MIT",
   "dependencies": {
-    "inquirer": "9.2.11"
+    "sharp": "^0.32.6"
   }
 }

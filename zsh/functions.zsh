@@ -1,4 +1,4 @@
-# TERMINAL INTEGRATIONS
+# nnn terminal integration
 l () {
   if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
     echo "nnn is already running"
@@ -21,18 +21,20 @@ s () {
   qlmanage -p $1 >& /dev/null
 }
 
+# shortcut for creating and going into dir
 take () {
   mkdir -p $1
   cd $1
 }
 
 # used in aliases
-current_branch () { 
+current_branch () {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
   echo ${ref#refs/heads/}
 }
 
+# fancy vim/shell switch with ctrl-z (see zshrc)
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     BUFFER="fg"
@@ -43,7 +45,7 @@ fancy-ctrl-z () {
   fi
 }
 
-# CUSTOM FUNCTIONS
+# terminal weather shortcut
 wttr () {
   if [[ -n "$1" ]]
     then 
@@ -53,6 +55,7 @@ wttr () {
   fi
 }
 
+# function for easily converting a video for web
 webvideo () {
   if [ $# -eq 0 ]; then
     echo "No arguments supplied, example usage: webvideo FILENAME --resize 1920 --mute"
@@ -84,7 +87,9 @@ webvideo () {
   fi
 }
 
-webgallery () {
-  mogrify -format jpg -strip -quality 80 *.HEIC
-  rm *.HEIC
+pdf () {
+  convert *.jpg -auto-orient -monochrome temp.pdf
+  ocrmypdf --rotate-pages --optimize 3 --jpeg-quality 70 temp.pdf document.pdf
+  rm temp.pdf
+  rm *.jpg
 }

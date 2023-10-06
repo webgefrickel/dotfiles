@@ -24,7 +24,7 @@ async function changeDevice(device) {
   console.log('❯ Restarting Spotify Daemon');
 
   await asyncExec('brew services restart spotifyd');
-  console.log('❯ Done 😀🎧🤘');
+  console.log('❯ Done 🤘');
 }
 
 async function main() {

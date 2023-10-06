@@ -3,7 +3,6 @@
 brew install composer
 brew install dnsmasq
 brew install httpd
-brew install imagemagick
 brew install mariadb
 brew install mkcert
 brew install nss

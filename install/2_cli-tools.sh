@@ -8,10 +8,11 @@ brew install bat
 brew install fd
 brew install ffmpeg
 brew install fzf
+brew install imagemagick
 brew install jump
 brew install lazygit
-brew install ocrmypdf
 brew install nnn
+brew install ocrmypdf
 brew install ripgrep
 brew install spotifyd
 brew install switchaudio-osx
@@ -36,6 +37,6 @@ pip install tiptop
 # install fzf
 /opt/homebrew/opt/fzf/install
 
-# switchaudio + custom node-script
-cd ~/dotfiles/other/out
-npm i -g
+# custom node scripts for audio-switching and jpg-galleries
+cd ~/dotfiles/other/out && npm i -g
+cd ~/dotfiles/other/gallery && npm i -g
