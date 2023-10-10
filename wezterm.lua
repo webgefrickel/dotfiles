@@ -66,20 +66,16 @@ config.window_decorations = 'RESIZE'
 
 -- key mappings
 config.keys = {
-  { key = '\\',
-    mods = 'LEADER',
-    action = act.SplitHorizontal,
-  },
-  {
-    key = '-',
-    mods = 'LEADER',
-    action = act.SplitVertical,
-  },
-  {
-    key = ']',
-    mods = 'LEADER',
-    action = act.ActivateCopyMode,
-  },
+  { key = '\\', mods = 'LEADER', action = act.SplitHorizontal },
+  { key = '-', mods = 'LEADER', action = act.SplitVertical },
+  { key = ']', mods = 'LEADER', action = act.ActivateCopyMode },
+  { key = 'g', mods = 'LEADER', action = act.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' } },
+  -- Navigator.nvim keys
+  { key = 'h', mods = 'CTRL', action = act.EmitEvent('ActivatePaneDirection-left') },
+  { key = 'j', mods = 'CTRL', action = act.EmitEvent('ActivatePaneDirection-down') },
+  { key = 'k', mods = 'CTRL', action = act.EmitEvent('ActivatePaneDirection-up') },
+  { key = 'l', mods = 'CTRL', action = act.EmitEvent('ActivatePaneDirection-right') },
+  -- leader-key mappings
   {
     key = ',',
     mods = 'LEADER',
@@ -133,18 +129,6 @@ config.keys = {
       end),
     },
   },
-  {
-    key = 'g',
-    mods = 'LEADER',
-    action = act.ShowLauncherArgs {
-      flags = 'FUZZY|WORKSPACES',
-    },
-  },
-  -- Navigator.nvim keys
-  { key = 'h', mods = 'CTRL', action = act.EmitEvent('ActivatePaneDirection-left') },
-  { key = 'j', mods = 'CTRL', action = act.EmitEvent('ActivatePaneDirection-down') },
-  { key = 'k', mods = 'CTRL', action = act.EmitEvent('ActivatePaneDirection-up') },
-  { key = 'l', mods = 'CTRL', action = act.EmitEvent('ActivatePaneDirection-right') },
 }
 
 -- Navigator.nvim events

@@ -27,6 +27,7 @@ wk.register({
     e = { '<cmd>lua vim.diagnostic.goto_next()<cr>', 'go to next error in file' },
     f = { '<cmd>lua vim.lsp.buf.format()<cr>', 'format file with LSP' },
     h = { '<cmd>lua vim.lsp.buf.hover()<cr>', 'show hover info' },
+    z = { '<cmd>ZenMode<cr>', 'toggle zen mode' },
     x = { '<cmd>execute "/\\v^[<\\|=>]{7}/"<cr>', 'find git conflicts in file' },
   },
 

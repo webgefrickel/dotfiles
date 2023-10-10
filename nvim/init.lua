@@ -1,6 +1,5 @@
 -- small helper function for loading external plugin config files
 local g = vim.g
-local cmd = vim.cmd
 local set = vim.opt
 local setlocal = vim.opt_local
 local createCmd = vim.api.nvim_create_autocmd
@@ -131,8 +130,8 @@ g.loaded_perl_provider = 0
 set.background = 'dark'
 set.termguicolors = true
 g.gruvbox_baby_telescope_theme = 1
-cmd 'colorscheme gruvbox-baby'
-cmd 'language en_US.UTF-8'
+vim.cmd('colorscheme gruvbox-baby')
+vim.cmd('language en_US.UTF-8')
 
 -- autoresize windows/splits everytime we change to a buffer
 createCmd({ 'VimResized', 'FocusGained' }, {

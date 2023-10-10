@@ -31,7 +31,7 @@ export NNN_OPTS='deHR'
 export NNN_BMS='a:~/Sites;s:~/Dotfiles;d:~/Downloads;h:~/'
 export NNN_FCOLORS='c1e26c2e006033f5c6d6abc4'
 export NNN_PLUG='p:preview-tui;j:autojump'
-export NNN_FIFO='/tmp/nnn.fifo'
+export NNN_FIFO='/Users/webgefrickel/.local/share/nnn/nnn.fifo'
 export NNN_TRASH=0
 export NNN_ARCHIVE="\\.(7z|bz|bz2|gz|rar|rpm|tar|tgz|zip)$"
 
