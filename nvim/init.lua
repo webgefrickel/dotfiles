@@ -55,7 +55,7 @@ require('lazy').setup({
   { 'nvim-lualine/lualine.nvim', dependencies = 'nvim-tree/nvim-web-devicons', config = get_config('lualine') },
 
   -- editing / movement enhancements
-  { 'AndrewRadev/splitjoin.vim' },
+  { 'Wansmer/treesj', dependencies = 'nvim-treesitter/nvim-treesitter', config = true },
   { 'folke/flash.nvim', event = 'VeryLazy', config = true },
   { 'kylechui/nvim-surround', event = 'VeryLazy', config = true },
   { 'numToStr/Comment.nvim', config = true },
@@ -66,12 +66,15 @@ require('lazy').setup({
   { 'nvim-pack/nvim-spectre', dependencies = 'nvim-lua/plenary.nvim', config = true },
   { 'voldikss/vim-floaterm', config = get_config('floaterm') },
   { 'mfussenegger/nvim-lint', config = get_config('lint') },
-  { 'stevearc/conform.nvim', event = { 'BufWritePre' }, config = get_config('conform') },
+  { 'stevearc/conform.nvim', event = 'BufWritePre', config = get_config('conform') },
   { 'nvim-neorg/neorg',
     build = ':Neorg sync-parsers',
     dependencies = 'nvim-lua/plenary.nvim',
     config = get_config('neorg'),
   },
+  { 'github/copilot.vim' },
+  -- { 'zbirenbaum/copilot.lua', event = 'InsertEnter', config = get_config('copilot') },
+  -- { 'zbirenbaum/copilot-cmp', config = true },
   { 'jackMort/ChatGPT.nvim',
     event = 'VeryLazy',
     dependencies = {
@@ -100,7 +103,7 @@ set.infercase = true
 set.laststatus = 3
 set.lazyredraw = true
 set.list = true
-set.listchars = 'extends:»,precedes:«,tab:▸ ,trail:·'
+set.listchars = { extends = '»', precedes = '«', tab = '▸ ', trail = '·'}
 set.foldenable = false
 set.showmode = false
 set.swapfile = false

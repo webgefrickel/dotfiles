@@ -20,15 +20,16 @@ wk.register({
     name = 'code-related mappings',
     -- for more code-mappings: see treesitter.lua
     D = { '<cmd>lua vim.lsp.buf.declaration()<cr>', 'show/go to declaration' },
+    F = { '<cmd>lua vim.lsp.buf.format()<cr>', 'format file with LSP' },
     I = { '<cmd>lua vim.lsp.buf.implementation()<cr>', 'show/go to implementation' },
     L = { '<cmd>lua vim.lsp.buf.references()<cr>', 'show/go to referennces' },
     a = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'run code action' },
     b = { '<cmd>Gitsigns blame_line<cr>', 'git blame line' },
     e = { '<cmd>lua vim.diagnostic.goto_next()<cr>', 'go to next error in file' },
-    f = { '<cmd>lua vim.lsp.buf.format()<cr>', 'format file with LSP' },
     h = { '<cmd>lua vim.lsp.buf.hover()<cr>', 'show hover info' },
+    s = { '<cmd>Gitsigns stage_hunk<cr>', 'git stage hunk' },
+    x = { "<cmd>execute '/\\v^[<\\|=>]{7}/'<cr>", 'find git conflicts in file' },
     z = { '<cmd>ZenMode<cr>', 'toggle zen mode' },
-    x = { '<cmd>execute "/\\v^[<\\|=>]{7}/"<cr>', 'find git conflicts in file' },
   },
 
   K = { '', 'K man-pages mapping removed' },

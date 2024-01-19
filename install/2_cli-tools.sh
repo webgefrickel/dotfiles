@@ -5,6 +5,7 @@ brew tap homebrew/services
 
 # install additional brew packages -- see _install.sh too
 brew install bat
+brew install blackhole-2ch
 brew install fd
 brew install ffmpeg
 brew install fzf

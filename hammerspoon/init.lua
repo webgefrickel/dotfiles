@@ -41,7 +41,7 @@ local layoutDouble = {
   { "ForkLift", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Mail", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Messages", nil, mainMonitor, screenPositions.rightTop, nil, nil },
-  { "Microsoft Teams", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
+  { "Microsoft Teams (work or school)", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
   { "Reminders", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Signal", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
@@ -55,7 +55,7 @@ local layoutSingle = {
   { "ForkLift", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Mail", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Messages", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Microsoft Teams", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Microsoft Teams (work or school)", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Reminders", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Signal", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
@@ -63,17 +63,15 @@ local layoutSingle = {
   { "WezTerm", nil, laptopMonitor, screenPositions.full, nil, nil },
 }
 
-local appNames = {
+local appsToLaunch = {
   "Calendar",
   "Firefox",
   "ForkLift",
   "Mail",
   "Messages",
-  "Microsoft Teams",
-  "Reminders",
+  "Microsoft Teams (work or school)",
   "Signal",
   "Strongbox",
-  "Telegram",
   "WezTerm",
 }
 
@@ -87,7 +85,7 @@ local function tablelength(T)
 end
 
 local function launchApps()
-  for i, appName in ipairs(appNames) do
+  for i, appName in ipairs(appsToLaunch) do
     app.launchOrFocus(appName)
   end
 end
@@ -104,37 +102,6 @@ local function applyPosition(pos)
   local tempLayout = { { app.frontmostApplication(), w, screenName, tempPos, nil, nil } }
   layout.apply(tempLayout)
 end
-
--- Esoteric stuff
---------------------
-
-function showSanityReminder()
-  function linesFrom(file)
-    local lines = {}
-    for line in io.lines(file) do
-      lines[#lines + 1] = line
-    end
-    return lines
-  end
-
-  local file = '/Users/webgefrickel/Documents/sanity-reminders.txt'
-  local lines = linesFrom(file)
-  local txt = lines[math.random(#lines)]
-  local interval = math.random(20, 50)
-
-  local largeTextStyle = {
-    textFont  = "FiraCode Nerd Font",
-    textSize  = 24,
-    radius = 10,
-  }
-
-  hs.timer.doAfter(interval * 60, function()
-    alert.show(txt, largeTextStyle, win.focusedWindow():screen(), 4)
-    showSanityReminder()
-  end)
-end
-
-showSanityReminder()
 
 -- Window management and general config
 --------------------

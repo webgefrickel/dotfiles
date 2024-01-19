@@ -13,6 +13,7 @@ cmp.setup({
     ['<cr>'] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
+    -- { name = 'copilot' },
     { name = 'nvim_lsp' },
     {
       name = 'buffer',
@@ -29,6 +30,7 @@ cmp.setup({
   formatting = {
     format = function(entry, vim_item)
       vim_item.menu = ({
+        -- copilot = '[Copilot]',
         nvim_lsp = '[LSP]',
         buffer = '[Buffer]',
         path = '[Path]',
