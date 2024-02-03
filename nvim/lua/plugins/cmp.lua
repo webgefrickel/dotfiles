@@ -1,9 +1,6 @@
 local cmp = require('cmp')
 
 cmp.setup({
-  completion = {
-    keyword_length = 2,
-  },
   snippet = {
     expand = function(args)
       vim.fn['vsnip#anonymous'](args.body)
@@ -13,7 +10,7 @@ cmp.setup({
     ['<cr>'] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
-    -- { name = 'copilot' },
+    { name = 'copilot' },
     { name = 'nvim_lsp' },
     {
       name = 'buffer',
@@ -30,7 +27,7 @@ cmp.setup({
   formatting = {
     format = function(entry, vim_item)
       vim_item.menu = ({
-        -- copilot = '[Copilot]',
+        copilot = '[Copilot]',
         nvim_lsp = '[LSP]',
         buffer = '[Buffer]',
         path = '[Path]',

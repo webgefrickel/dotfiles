@@ -72,18 +72,8 @@ require('lazy').setup({
     dependencies = 'nvim-lua/plenary.nvim',
     config = get_config('neorg'),
   },
-  { 'github/copilot.vim' },
-  -- { 'zbirenbaum/copilot.lua', event = 'InsertEnter', config = get_config('copilot') },
-  -- { 'zbirenbaum/copilot-cmp', config = true },
-  -- { 'jackMort/ChatGPT.nvim',
-  --   event = 'VeryLazy',
-  --   dependencies = {
-  --     'MunifTanjim/nui.nvim',
-  --     'nvim-lua/plenary.nvim',
-  --     'nvim-telescope/telescope.nvim'
-  --   },
-  --   config = true,
-  -- },
+  { 'zbirenbaum/copilot.lua', event = 'InsertEnter', config = get_config('copilot') },
+  { 'zbirenbaum/copilot-cmp', config = true },
 })
 
 -- general sane vim options
