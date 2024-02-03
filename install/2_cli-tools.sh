@@ -12,7 +12,6 @@ brew install fzf
 brew install imagemagick
 brew install jump
 brew install lazygit
-brew install nnn
 brew install ocrmypdf
 brew install ripgrep
 brew install spotifyd
@@ -20,9 +19,6 @@ brew install switchaudio-osx
 brew install topgrade
 brew install tree
 brew install viu
-
-# nnn plugins
-curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
 ln -s ~/dotfiles/lazygit ~/.config/lazygit
 ln -s ~/dotfiles/starship.toml ~/.config/starship.toml

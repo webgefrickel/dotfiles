@@ -20,6 +20,7 @@ zi snippet PZTM::completion
 
 # Fixes for unicode
 setopt COMBINING_CHARS
+setopt NO_HUP # fixes topgrade
 
 # additional gruvbox colors
 source ~/.local/share/nvim/lazy/gruvbox-baby/extras/bash/MEDIUM.bash

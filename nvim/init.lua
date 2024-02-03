@@ -63,8 +63,8 @@ require('lazy').setup({
   { 'windwp/nvim-autopairs', event = 'InsertEnter', config = true },
 
   -- more plugins and integrations
+  { 'stevearc/oil.nvim', config = get_config('oil'), dependencies = { 'nvim-tree/nvim-web-devicons' } },
   { 'nvim-pack/nvim-spectre', dependencies = 'nvim-lua/plenary.nvim', config = true },
-  { 'voldikss/vim-floaterm', config = get_config('floaterm') },
   { 'mfussenegger/nvim-lint', config = get_config('lint') },
   { 'stevearc/conform.nvim', event = 'BufWritePre', config = get_config('conform') },
   { 'nvim-neorg/neorg',
@@ -75,15 +75,15 @@ require('lazy').setup({
   { 'github/copilot.vim' },
   -- { 'zbirenbaum/copilot.lua', event = 'InsertEnter', config = get_config('copilot') },
   -- { 'zbirenbaum/copilot-cmp', config = true },
-  { 'jackMort/ChatGPT.nvim',
-    event = 'VeryLazy',
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim'
-    },
-    config = true,
-  },
+  -- { 'jackMort/ChatGPT.nvim',
+  --   event = 'VeryLazy',
+  --   dependencies = {
+  --     'MunifTanjim/nui.nvim',
+  --     'nvim-lua/plenary.nvim',
+  --     'nvim-telescope/telescope.nvim'
+  --   },
+  --   config = true,
+  -- },
 })
 
 -- general sane vim options

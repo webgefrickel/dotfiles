@@ -4,7 +4,7 @@ vim.opt.timeout = true
 vim.opt.timeoutlen = 500
 
 wk.register({
-  ['-'] = { '<cmd>FloatermNew nnn<cr>', 'invoke floaterm with nnn as file picker' },
+  ['-'] = { '<cmd>Oil<cr>', 'Open file browser in parent directory' },
   [';'] = { ':', 'Colon with semicolon' },
   ['<F5>'] = { '<cmd>checktime<cr><cmd>redraw!<cr>', 'redraw/reload with F5' },
   ['<down>'] = { '<cmd>blast<cr>', 'buffer navigation with arrow keys' },
@@ -64,8 +64,6 @@ wk.register({
   b = { '<cmd>Telescope git_branches<cr>', 'git branches' },
   c = { '<cmd>Telescope git_bcommits<cr>', 'commits for buffer' },
   f = { '<cmd>Spectre<cr>', 'open spectre for search/replace' },
-  l = { '<cmd>FloatermNew lazygit<cr>', 'open lazygit' },
-  t = { '<cmd>FloatermNew<cr>', 'open new terminal' },
   v = {
     name = 'vim related',
     e = { '<cmd>e $MYVIMRC<cr>', 'edit vimrc' },
