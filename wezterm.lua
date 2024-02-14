@@ -1,7 +1,7 @@
 local wezterm = require('wezterm')
-local mux = wezterm.mux
 local act = wezterm.action
 local config = wezterm.config_builder()
+local mux = wezterm.mux
 
 -- helper functions
 local function get_current_working_dir(tab)
@@ -55,9 +55,31 @@ end
 
 -- base config
 config.color_scheme = 'GruvboxDark'
-config.font = wezterm.font('FiraCode Nerd Font')
+config.font = wezterm.font('MonaspiceAr Nerd Font')
+
+config.font = wezterm.font({
+  family = 'MonaspiceAr Nerd Font',
+  weight = 'Regular',
+  harfbuzz_features = { 'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
+})
+
+config.font_rules = {
+  { -- Italic (comments)
+    intensity = 'Normal',
+    italic = true,
+    font = wezterm.font({
+      family = "MonaspiceRn Nerd Font",
+      weight = "ExtraLight",
+      stretch = "Normal",
+      style = "Italic",
+      harfbuzz_features = { 'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
+    })
+  },
+}
+
 config.default_prog = { '/opt/homebrew/bin/zsh' }
 config.font_size = 14.0
+config.line_height = 1.1
 config.initial_cols = 120
 config.initial_rows = 32
 config.inactive_pane_hsb = { saturation = 0.5, brightness = 0.9 }
@@ -65,6 +87,7 @@ config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
 config.scrollback_lines = 5000
 config.send_composed_key_when_left_alt_is_pressed = true
 config.show_new_tab_button_in_tab_bar = false
+config.show_tab_index_in_tab_bar = true
 config.tab_bar_at_bottom = true
 config.use_dead_keys = false
 config.use_fancy_tab_bar = false
@@ -130,7 +153,7 @@ config.keys = {
       description = 'Rename current workspace',
       action = wezterm.action_callback(function(window, pane, line)
         if line then
-          wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
+          mux.rename_workspace(mux.get_active_workspace(), line)
         end
       end),
     },
@@ -170,7 +193,7 @@ wezterm.on('update-status', function(window)
   window:set_left_status(string.format('  %s  ', workspace))
 end)
 
--- always maximise and start default session with mutt, neorg and dotfiles
+-- always maximise and start default session with mutt, notes and dotfiles
 wezterm.on('gui-startup', function()
   local home_dir = wezterm.home_dir
   local tab, pane, window = mux.spawn_window({ cwd = home_dir })

@@ -4,7 +4,7 @@ brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 
 # font of choice
-brew install --cask font-fira-code-nerd-font
+brew install --cask font-monaspace-nerd-font
 
 # default software
 brew install --cask affinity-designer
