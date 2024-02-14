@@ -205,7 +205,7 @@ wezterm.on('gui-startup', function()
   dot_tab:set_title('dotfiles')
   dot_pane:send_text('v nvim/init.lua\n')
   todo_tab:set_title('todo')
-  todo_pane:send_text('v index.norg\n')
+  todo_pane:send_text('v index.md\n')
   git_pane:send_text('gs\n')
   tab:activate()
 
