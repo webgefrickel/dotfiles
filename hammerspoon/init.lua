@@ -45,6 +45,7 @@ local layoutDouble = {
   { "Reminders", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Signal", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "TIDAL", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Telegram", nil, mainMonitor, screenPositions.rightTop, nil, nil },
   { "WezTerm", nil, mainMonitor, screenPositions.right, nil, nil },
 }
@@ -59,6 +60,7 @@ local layoutSingle = {
   { "Reminders", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Signal", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "TIDAL", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Telegram", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "WezTerm", nil, laptopMonitor, screenPositions.full, nil, nil },
 }
@@ -72,6 +74,7 @@ local appsToLaunch = {
   "Microsoft Teams (work or school)",
   "Signal",
   "Strongbox",
+  "TIDAL",
   "WezTerm",
 }
 
