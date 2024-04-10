@@ -70,8 +70,15 @@ require('lazy').setup({
   { 'epwalsh/obsidian.nvim', version = '*', lazy = true, ft = 'markdown',
     dependencies = { 'nvim-lua/plenary.nvim' }, opts = { dir = '~/Notes' },
   },
+
+  -- Copilot and other AI tools
   { 'zbirenbaum/copilot.lua', event = 'InsertEnter', config = get_config('copilot') },
   { 'zbirenbaum/copilot-cmp', config = true },
+  { 'Exafunction/codeium.nvim', event = 'BufEnter', config = true, dependencies = {
+      'nvim-lua/plenary.nvim',
+      'hrsh7th/nvim-cmp',
+    },
+  },
 })
 
 -- general sane vim options

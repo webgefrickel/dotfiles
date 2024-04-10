@@ -8,9 +8,9 @@
 #                   mod_setenvif, mod_negotiation
 #
 
-AliasMatch ^/manual(?:/(?:da|de|en|es|fr|ja|ko|pt-br|ru|tr|zh-cn))?(/.*)?$ "/opt/homebrew/Cellar/httpd/2.4.58/share/httpd/manual$1"
+AliasMatch ^/manual(?:/(?:da|de|en|es|fr|ja|ko|pt-br|ru|tr|zh-cn))?(/.*)?$ "/opt/homebrew/Cellar/httpd/2.4.59/share/httpd/manual$1"
 
-<Directory "/opt/homebrew/Cellar/httpd/2.4.58/share/httpd/manual">
+<Directory "/opt/homebrew/Cellar/httpd/2.4.59/share/httpd/manual">
     Options Indexes
     AllowOverride None
     Require all granted

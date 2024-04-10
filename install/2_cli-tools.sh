@@ -4,21 +4,18 @@ brew tap homebrew/cask-drivers
 brew tap homebrew/services
 
 # install additional brew packages -- see _install.sh too
-brew install bat
 brew install blackhole-2ch
 brew install fd
 brew install ffmpeg
 brew install fzf
+brew install glow
 brew install imagemagick
 brew install jump
 brew install lazygit
 brew install ocrmypdf
 brew install ripgrep
-brew install spotifyd
 brew install switchaudio-osx
 brew install topgrade
-brew install tree
-brew install viu
 
 ln -s ~/dotfiles/lazygit ~/.config/lazygit
 ln -s ~/dotfiles/starship.toml ~/.config/starship.toml

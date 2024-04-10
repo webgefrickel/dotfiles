@@ -11,6 +11,7 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'copilot' },
+    { name = 'codeium' },
     { name = 'nvim_lsp' },
     {
       name = 'buffer',
@@ -28,6 +29,7 @@ cmp.setup({
     format = function(entry, vim_item)
       vim_item.menu = ({
         copilot = '[Copilot]',
+        codeium = '[Codeium]',
         nvim_lsp = '[LSP]',
         buffer = '[Buffer]',
         path = '[Path]',

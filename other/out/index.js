@@ -21,9 +21,6 @@ async function changeDevice(device) {
 
   await asyncExec(`SwitchAudioSource -i ${id}`);
   console.log(`❯ Selected »${device}« as new audio output device`);
-  console.log('❯ Restarting Spotify Daemon');
-
-  await asyncExec('brew services restart spotifyd');
   console.log('❯ Done 🤘');
 }
 

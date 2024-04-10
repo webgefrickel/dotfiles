@@ -85,3 +85,5 @@
   syntax-theme = gruvbox-dark
   width = "-4"
 
+[init]
+  defaultBranch = main

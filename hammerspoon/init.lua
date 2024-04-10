@@ -71,7 +71,6 @@ local appsToLaunch = {
   "Messages",
   "Microsoft Teams (work or school)",
   "Signal",
-  "Streaks",
   "Strongbox",
   "WezTerm",
 }
