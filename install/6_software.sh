@@ -14,6 +14,7 @@ brew install --cask firefox
 brew install --cask forklift
 brew install --cask google-chrome
 brew install --cask hammerspoon
+brew install --cask imageoptim
 brew install --cask karabiner-elements
 brew install --cask microsoft-teams
 brew install --cask raycast
