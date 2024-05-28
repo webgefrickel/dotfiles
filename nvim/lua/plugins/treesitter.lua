@@ -3,6 +3,7 @@ require('nvim-treesitter.configs').setup({
     'bash',
     'comment',
     'css',
+    'diff',
     'gitignore',
     'glimmer',
     'html',

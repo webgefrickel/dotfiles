@@ -22,6 +22,7 @@ wk.register({
     D = { '<cmd>lua vim.lsp.buf.declaration()<cr>', 'show/go to declaration' },
     F = { '<cmd>lua vim.lsp.buf.format()<cr>', 'format file with LSP' },
     I = { '<cmd>lua vim.lsp.buf.implementation()<cr>', 'show/go to implementation' },
+    J = { '<cmd>TSJToggle<cr>', 'split/join lines of code' },
     L = { '<cmd>lua vim.lsp.buf.references()<cr>', 'show/go to referennces' },
     a = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'run code action' },
     b = { '<cmd>Gitsigns blame_line<cr>', 'git blame line' },

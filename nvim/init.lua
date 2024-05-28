@@ -53,6 +53,7 @@ require('lazy').setup({
   { 'lewis6991/gitsigns.nvim', config = true },
   { 'norcalli/nvim-colorizer.lua', event = 'BufReadPre', config = get_config('colorizer') },
   { 'nvim-lualine/lualine.nvim', dependencies = 'nvim-tree/nvim-web-devicons', config = get_config('lualine') },
+  { 'rcarriga/nvim-notify', config = function() vim.notify = require('notify') end },
 
   -- editing / movement enhancements
   { 'Wansmer/treesj', dependencies = 'nvim-treesitter/nvim-treesitter', config = true },
@@ -78,6 +79,9 @@ require('lazy').setup({
       'nvim-lua/plenary.nvim',
       'hrsh7th/nvim-cmp',
     },
+  },
+  { 'CopilotC-Nvim/CopilotChat.nvim', branch = 'canary',
+    dependencies = { { 'zbirenbaum/copilot.lua' }, { 'nvim-lua/plenary.nvim' } },
   },
 })
 
