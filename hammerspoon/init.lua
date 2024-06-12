@@ -5,7 +5,6 @@ local geometry = require('hs.geometry')
 local hotkey = require('hs.hotkey')
 local layout = require('hs.layout')
 local screen = require('hs.screen')
-local timer = require('hs.timer')
 local win = require('hs.window')
 
 -- Custom variables
@@ -40,13 +39,10 @@ local layoutDouble = {
   { "Firefox", nil, mainMonitor, screenPositions.left, nil, nil },
   { "ForkLift", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Mail", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Messages", nil, mainMonitor, screenPositions.rightTop, nil, nil },
-  { "Microsoft Teams (work or school)", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
-  { "Reminders", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Microsoft Teams", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
   { "Signal", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "TIDAL", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Telegram", nil, mainMonitor, screenPositions.rightTop, nil, nil },
   { "WezTerm", nil, mainMonitor, screenPositions.right, nil, nil },
 }
 
@@ -55,13 +51,10 @@ local layoutSingle = {
   { "Firefox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "ForkLift", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Mail", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Messages", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Microsoft Teams (work or school)", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Reminders", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Signal", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "TIDAL", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Telegram", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "WezTerm", nil, laptopMonitor, screenPositions.full, nil, nil },
 }
 
@@ -70,8 +63,7 @@ local appsToLaunch = {
   "Firefox",
   "ForkLift",
   "Mail",
-  "Messages",
-  "Microsoft Teams (work or school)",
+  "Microsoft Teams",
   "Signal",
   "Strongbox",
   "TIDAL",
@@ -94,7 +86,7 @@ local function launchApps()
 end
 
 local function moveMouse()
-  local pt = hs.geometry.rectMidPoint(win.focusedWindow():frame())
+  local pt = geometry.rectMidPoint(win.focusedWindow():frame())
   hs.mouse.absolutePosition(pt)
 end
 
@@ -105,6 +97,43 @@ local function applyPosition(pos)
   local tempLayout = { { app.frontmostApplication(), w, screenName, tempPos, nil, nil } }
   layout.apply(tempLayout)
 end
+
+-- Key-trap (cat/baby-mode)
+--------------------
+local function babymode()
+  alert('Babymode activated')
+
+  Mousetrap = eventtap.new({
+    eventtap.event.types.leftMouseDown,
+    eventtap.event.types.rightMouseDown,
+  }, function(event)
+    return true -- Stop event from propogating
+  end)
+
+  Keytrap = eventtap.new({ eventtap.event.types.keyDown }, function(event)
+    local keyCode = event:getKeyCode()
+
+    if (math.fmod(keyCode, 2) == 0) then
+      hs.window.switcher.nextWindow()
+    end
+
+    if keyCode == hs.keycodes.map['\\'] then
+      local mod = event:getFlags()
+      if (mod.ctrl == true and mod.shift == true and mod.alt == true and mod.cmd == true) then
+        alert('Babymode deactivated')
+        Mousetrap:stop()
+        Keytrap:stop()
+      end
+    end
+
+    return true -- Stop event from propogating
+  end)
+
+  Mousetrap:start()
+  Keytrap:start()
+end
+
+hotkey.bind(hyper, '\\', function() babymode() end)
 
 -- Window management and general config
 --------------------
