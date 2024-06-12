@@ -1,30 +1,31 @@
 local cmp = require('cmp')
 
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      vim.fn['vsnip#anonymous'](args.body)
-    end
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<cr>'] = cmp.mapping.confirm({ select = true }),
-  }),
   sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'path' },
     { name = 'copilot' },
     { name = 'codeium' },
-    { name = 'nvim_lsp' },
-    {
-      name = 'buffer',
+    { name = 'buffer',
       option = {
         get_bufnrs = function()
           return vim.api.nvim_list_bufs()
         end
       },
     },
-    { name = 'path' },
     { name = 'vsnip' },
-    { name = 'calc' },
   }),
+
+  snippet = {
+    expand = function(args)
+      vim.fn['vsnip#anonymous'](args.body)
+    end
+  },
+
+  mapping = cmp.mapping.preset.insert({
+    ['<cr>'] = cmp.mapping.confirm({ select = true }),
+  }),
+
   formatting = {
     format = function(entry, vim_item)
       vim_item.menu = ({
@@ -34,7 +35,6 @@ cmp.setup({
         buffer = '[Buffer]',
         path = '[Path]',
         vsnip = '[Snippet]',
-        calc = '[Calc]',
       })[entry.source.name]
       return vim_item
     end

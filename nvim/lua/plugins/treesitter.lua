@@ -1,6 +1,7 @@
 require('nvim-treesitter.configs').setup({
   ensure_installed = {
     'bash',
+    'c',
     'comment',
     'css',
     'diff',
@@ -15,6 +16,7 @@ require('nvim-treesitter.configs').setup({
     'markdown',
     'php',
     'python',
+    'query',
     'regex',
     'ruby',
     'scss',
@@ -23,27 +25,29 @@ require('nvim-treesitter.configs').setup({
     'tsx',
     'typescript',
     'vim',
+    'vimdoc',
     'vue',
     'yaml',
   },
+
   highlight = { enable = true },
   indent = { enable = true },
   autotag = { enable = true },
-  matchup = { enable = true },
+  pairs = { enable = true },
+
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = '<leader>ss',
+      node_incremental = '<leader>si',
+      node_decremental = '<leader>sd',
+    },
+  },
+
   refactor = {
     highlight_definitions = {
       enable = true,
       clear_on_cursor_move = true,
-    },
-    navigation = {
-      enable = true,
-      keymaps = {
-        goto_definition = 'gd',
-        list_definitions = 'gl',
-        list_definitions_toc = false,
-        goto_next_usage = 'gn',
-        goto_previous_usage = 'gp',
-      },
     },
     smart_rename = {
       enable = true,
@@ -51,8 +55,5 @@ require('nvim-treesitter.configs').setup({
         smart_rename = 'gr',
       },
     },
-
   },
 })
-
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'

@@ -10,7 +10,9 @@ require('oil').setup({
     show_hidden = true,
   },
   keymaps = {
-    ["<esc>"] = "actions.close",
-    ["q"] = "actions.close",
+    ['<esc>'] = 'actions.close',
+    ['q'] = 'actions.close',
+    ['<C-l>'] = false,
+    ['<C-h>'] = false,
   },
 })

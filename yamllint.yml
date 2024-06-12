@@ -1,6 +1,0 @@
----
-
-extends: default
-rules:
-  document-start: disable
-  key-ordering: disable

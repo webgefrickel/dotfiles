@@ -20,8 +20,6 @@ brew install topgrade
 ln -s ~/dotfiles/lazygit ~/.config/lazygit
 ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/dotfiles/topgrade.toml ~/.config/topgrade.toml
-ln -s ~/dotfiles/yamllint.yml ~/.config/yamllint/config
-ln -s ~/dotfiles/spotifyd.toml ~/.config/spotifyd/spotifyd.conf
 
 # other cli tools and helpers
 npm install -g fkill-cli

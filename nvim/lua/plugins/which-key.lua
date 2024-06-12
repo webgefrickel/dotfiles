@@ -3,6 +3,15 @@ local wk = require('which-key')
 vim.opt.timeout = true
 vim.opt.timeoutlen = 500
 
+vim.keymap.set("i", "<C-,>", function()
+  vim.ui.input({ prompt = "Calculate: " }, function(input)
+    local calc = load("return " .. (input or ""))()
+    if (calc) then
+      vim.api.nvim_feedkeys(tostring(calc), "i", true)
+    end
+  end)
+end)
+
 wk.register({
   ['-'] = { '<cmd>Oil<cr>', 'Open file browser in parent directory' },
   [';'] = { ':', 'Colon with semicolon' },
@@ -52,6 +61,7 @@ wk.register({
 
 -- all normal mode leader key mappings in one place
 wk.register({
+  ['<Space>'] = { '<cmd>e #<cr>', 'alternate between last two buffers' },
   [','] = { '<cmd>Telescope find_files<cr>', 'find files' },
   ['-'] = { '<C-w>s<C-w>j', 'Horizontal split' },
   ['.'] = { '<cmd>Telescope buffers<cr>', 'find buffers' },
