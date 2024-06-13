@@ -24,60 +24,53 @@ require('lazy').setup({
   { 'nvim-treesitter/nvim-treesitter', config = c('treesitter'), build = ':TSUpdate' },
   { 'nvim-treesitter/nvim-treesitter-refactor', dependencies = 'nvim-treesitter/nvim-treesitter' },
   { 'theHamsta/nvim-treesitter-pairs', dependencies = 'nvim-treesitter/nvim-treesitter' },
-  { 'Wansmer/treesj', config = true, opts = { use_default_keymaps = false },
+  { 'Wansmer/treesj', config = true, opts = { use_default_keymaps = false }, dependencies = 'nvim-treesitter/nvim-treesitter' },
   { 'windwp/nvim-ts-autotag', dependencies = 'nvim-treesitter/nvim-treesitter' },
-    dependencies = 'nvim-treesitter/nvim-treesitter' },
   { 'williamboman/mason.nvim', config = true },
-  { 'williamboman/mason-lspconfig.nvim', dependencies = 'williamboman/mason.nvim', config = c('mason-lspconfig') },
+  { 'williamboman/mason-lspconfig.nvim', config = c('mason-lspconfig') }, dependencies = 'williamboman/mason.nvim',
   { 'neovim/nvim-lspconfig' },
 
-  -- CMP completion and snippets
+  -- Completion, search and snippets
   { 'nvim-telescope/telescope.nvim', config = c('telescope'), dependencies = 'nvim-lua/plenary.nvim' },
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-  { 'hrsh7th/vim-vsnip', config = c('vsnip') },
   { 'rafamadriz/friendly-snippets', dependencies = 'hrsh7th/vim-vsnip' },
-  { 'hrsh7th/nvim-cmp', config = c('cmp'),
-    dependencies = {
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-calc',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-vsnip',
-    },
-  },
+  { 'hrsh7th/vim-vsnip', config = c('vsnip') },
+  { 'hrsh7th/nvim-cmp', config = c('cmp'), dependencies = {
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/cmp-calc',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-vsnip',
+  }},
 
-  -- interface, editing and movement enhancements
+  -- editing and movement enhancements
   { 'folke/flash.nvim', config = true },
-  { 'folke/which-key.nvim', config = c('which-key') },
-  { 'folke/zen-mode.nvim', dependencies = 'folke/twilight.nvim', config = c('zen-mode') },
-  { 'kevinhwang91/nvim-bqf', config = true },
   { 'kylechui/nvim-surround', config = true },
-  { 'lewis6991/gitsigns.nvim', config = true },
-  { 'norcalli/nvim-colorizer.lua', config = c('colorizer'), event = 'VeryLazy' },
   { 'numToStr/Comment.nvim', config = true },
   { 'numToStr/Navigator.nvim', config = true },
-  { 'nvim-lualine/lualine.nvim', dependencies = 'nvim-tree/nvim-web-devicons', config = c('lualine') },
+
+  -- make vim more beautiful
+  { 'nvim-lualine/lualine.nvim', config = c('lualine'), dependencies = 'nvim-tree/nvim-web-devicons' },
+  { 'lewis6991/gitsigns.nvim', config = true },
+  { 'kevinhwang91/nvim-bqf', config = true },
   { 'rcarriga/nvim-notify', config = function() vim.notify = require('notify') end },
+  { 'norcalli/nvim-colorizer.lua', config = c('colorizer'), event = 'VeryLazy' },
+  { 'folke/zen-mode.nvim', config = c('zen-mode'), dependencies = 'folke/twilight.nvim' },
 
-  -- more plugins and integrations
-  { 'folke/todo-comments.nvim', dependencies = { "nvim-lua/plenary.nvim" }, config = true },
+  -- other plugins and integrations
+  { 'folke/which-key.nvim', config = c('which-key') },
   { 'folke/trouble.nvim', config = true },
-  { 'stevearc/oil.nvim', config = c('oil'), dependencies = { 'nvim-tree/nvim-web-devicons' } },
-  { 'nvim-pack/nvim-spectre', dependencies = 'nvim-lua/plenary.nvim', config = true },
-  { 'epwalsh/obsidian.nvim', version = '*', lazy = true, ft = 'markdown',
-    dependencies = { 'nvim-lua/plenary.nvim' }, opts = { dir = '~/Notes' },
-  },
+  { 'folke/todo-comments.nvim', config = true, dependencies = 'nvim-lua/plenary.nvim' },
+  { 'stevearc/oil.nvim', config = c('oil'), dependencies = 'nvim-tree/nvim-web-devicons' },
+  { 'nvim-pack/nvim-spectre', config = true, dependencies = 'nvim-lua/plenary.nvim' },
+  { 'epwalsh/obsidian.nvim', config = c('obsidian'), ft = 'markdown', dependencies = 'nvim-lua/plenary.nvim' },
 
-  -- Copilot and other AI tools
+  -- Copilot and AI
   { 'zbirenbaum/copilot.lua', config = c('copilot') },
   { 'zbirenbaum/copilot-cmp', config = true },
-  { 'Exafunction/codeium.nvim', config = true,
-    dependencies = { 'nvim-lua/plenary.nvim', 'hrsh7th/nvim-cmp' },
-  },
-  { 'CopilotC-Nvim/CopilotChat.nvim', branch = 'canary', config = true,
-    dependencies = { { 'zbirenbaum/copilot.lua' }, { 'nvim-lua/plenary.nvim' } },
-  },
+  { 'CopilotC-Nvim/CopilotChat.nvim', branch = 'canary', config = true, dependencies = { 'zbirenbaum/copilot.lua', 'nvim-lua/plenary.nvim' }},
+  { 'Exafunction/codeium.nvim', config = true, dependencies = { 'nvim-lua/plenary.nvim', 'hrsh7th/nvim-cmp' }},
 })
 
 -- general sane vim options
