@@ -414,7 +414,7 @@ expose_php = On
 ; Maximum execution time of each script, in seconds
 ; https://php.net/max-execution-time
 ; Note: This directive is hardcoded to 0 for the CLI SAPI
-max_execution_time = 360
+max_execution_time = 30
 
 ; Maximum amount of time each script may spend parsing request data. It's a good
 ; idea to limit this time on productions servers in order to eliminate unexpectedly
@@ -424,7 +424,7 @@ max_execution_time = 360
 ; Development Value: 60 (60 seconds)
 ; Production Value: 60 (60 seconds)
 ; https://php.net/max-input-time
-max_input_time = 360
+max_input_time = 60
 
 ; Maximum input variable nesting level
 ; https://php.net/max-input-nesting-level
@@ -440,7 +440,7 @@ max_input_time = 360
 
 ; Maximum amount of memory a script may consume
 ; https://php.net/memory-limit
-memory_limit = 1024M
+memory_limit = 128M
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Error handling and logging ;

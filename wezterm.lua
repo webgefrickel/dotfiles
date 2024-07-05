@@ -36,20 +36,20 @@ local function newDevelopmentSession(path_and_title)
   local git_tab, git_pane, dev_window = dev_window:spawn_tab({
     cwd = sites_dir .. path_and_title,
   })
-  dev_tab:set_title('zsh')
-  dev_pane:send_text('v package.json\n')
-  devcli_pane = dev_pane:split({
+  local devcli_pane = dev_pane:split({
     workspace = path_and_title,
     direction = 'Right',
     cwd = sites_dir .. path_and_title,
   })
-  devcli_pane:send_text('ggpl && gs\n')
+
+  dev_tab:set_title('zsh')
+  dev_pane:send_text('v package.json\n')
+  devcli_pane:send_text('g pl && g l\n')
   src_tab:set_title('src')
-  src_pane:send_text('cd src && v\n:Telescope find_files\n')
   git_tab:set_title('git')
   git_pane:send_text('lg\n')
-  dev_tab:activate()
 
+  dev_tab:activate()
   mux.set_active_workspace(path_and_title)
 end
 
@@ -223,6 +223,7 @@ wezterm.on('gui-startup', function()
   local todo_tab, todo_pane, window = window:spawn_tab({ cwd = home_dir .. '/Notes' })
   local dot_tab, dot_pane, window = window:spawn_tab({ cwd = home_dir .. '/Dotfiles' })
   local git_pane = dot_pane:split({ direction = 'Right', cwd = home_dir .. '/Dotfiles' })
+
   tab:set_title('mail')
   pane:send_text('O && m\n')
   dot_tab:set_title('dotfiles')
