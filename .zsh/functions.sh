@@ -1,20 +1,8 @@
 #!/usr/bin/env zsh
 
-s () { # as in 'show': quicklook file
-  trap 'exit 0' 2 #traps Ctrl-C (signal 2)
-  qlmanage -p $1 >& /dev/null
-}
-
 take () { # shortcut for creating and going into dir
   mkdir -p $1
   cd $1
-}
-
-# used in aliases
-current_branch () {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
-  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-  echo ${ref#refs/heads/}
 }
 
 # terminal weather shortcut
@@ -63,7 +51,6 @@ pdf () {
   convert *.jpg -auto-orient -monochrome temp.pdf
   ocrmypdf --rotate-pages --optimize 3 --jpeg-quality 70 temp.pdf document.pdf
   rm temp.pdf
-  rm *.jpg
 }
 
 # fancy vim/shell switch with ctrl-z (see zshrc)

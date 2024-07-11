@@ -13,7 +13,7 @@ set trash = "+mailbox/trash"
 alternates ^kontakt@webgefrickel.de$ ^s.rademacker@mailbox.org$
 
 # custom signaure
-set signature = ./signatures/work
+set signature = .config/neomutt/signatures/work
 
 color status green default
 

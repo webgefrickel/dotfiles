@@ -24,7 +24,7 @@ macro index,pager S "<pipe-message>ripmime -i - -d ~/Downloads && rm ~/Downloads
 # opening urls with urlscan
 macro index,pager \cb "<pipe-message>urlscan<enter>" "call urlscan to extract URLs out of a message"
 # Sync all email
-macro index,pager O "<shell-escape>mbsync -a<enter>" "run mbsync to sync all mail"
+macro index,pager O "<shell-escape>mbsync -a && mu index<enter>" "run mbsync to sync all mail"
 
 macro pager X "<enter-command>set pipe_decode=yes<enter>v|grep -v '^>' | speedread<enter><enter-command>unset pipe_decode<enter>q" "speedread"
 
