@@ -1,0 +1,60 @@
+# default local settings
+set certificate_file = ~/Dotfiles/extras/certificates.crt
+set charset = "utf-8"
+set send_charset = "utf-8:iso-8859-1:us-ascii"
+set editor = nvim
+set folder = ~/Mail
+set mbox_type = Maildir
+set query_command = "mu cfind --format=mutt-ab '%s'"
+
+# override some options for saner usage
+set confirm_append = no
+set delete = yes
+set edit_headers = yes
+set fast_reply = yes
+set forward_format = "Fwd: %s"
+set forward_quote = yes
+set include = yes
+set mail_check = 0
+set mark_old = no
+set reply_to = yes
+set reverse_name = yes
+set sig_dashes = no
+set text_flowed = yes
+set timeout = 3
+set uncollapse_jump = yes
+set use_envelope_from = yes
+set wait_key = no
+
+# User interface
+set date_format = "%d.%m.%Y %H:%M"
+set index_format = "[%Z] %?X?A&-? %D  %-20.20F  %s"
+set pager_context = 3
+set pager_index_lines = 10
+set sidebar_divider_char = ' │ '
+set sidebar_folder_indent = yes
+set sidebar_format = "%B %* [%?N?%N / ?%S]"
+set sidebar_indent_string = '  ''
+set sidebar_short_path = yes
+set sidebar_visible = yes
+set sidebar_width = 25
+set sort = threads
+set sort_aux = reverse-last-date-received
+set status_chars = " *%A"
+set status_format = "────  %f  |  %r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)?  |  %>─%?p?( %p postponed )?"
+
+# Source colors and bindings
+source ./colors
+source ./bindings
+
+# Accounts and email headers and settings
+ignore *
+unignore from: to: cc: bcc: date: subject:
+unhdr_order *
+hdr_order from: to: cc: bcc: date: subject:
+alternative_order text/plain text/enriched text/html
+auto_view text/html
+
+mailboxes =mailbox
+mailboxes =mailbox/INBOX =mailbox/archive =mailbox/sent =mailbox/drafts =mailbox/junk =mailbox/trash
+source ./accounts/mailbox

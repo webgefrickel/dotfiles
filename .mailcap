@@ -1,0 +1,50 @@
+# HTML and text
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+text/plain; $EDITOR %s
+
+# images and other media
+audio/aac; ~/Dotfiles/scripts/quicklook.sh %s 
+audio/mpeg; ~/Dotfiles/scripts/quicklook.sh %s
+audio/wav; ~/Dotfiles/scripts/quicklook.sh %s
+audio/webm; ~/Dotfiles/scripts/quicklook.sh %s
+image/bmp; ~/Dotfiles/scripts/quicklook.sh %s
+image/gif; ~/Dotfiles/scripts/quicklook.sh %s
+image/jpeg; ~/Dotfiles/scripts/quicklook.sh %s
+image/png; ~/Dotfiles/scripts/quicklook.sh %s
+image/svg+xml; ~/Dotfiles/scripts/quicklook.sh %s
+image/tiff; ~/Dotfiles/scripts/quicklook.sh %s
+image/vnd.microsoft.icon; ~/Dotfiles/scripts/quicklook.sh %s
+video/mp4; ~/Dotfiles/scripts/quicklook.sh %s
+video/mpeg; ~/Dotfiles/scripts/quicklook.sh %s
+video/webm; ~/Dotfiles/scripts/quicklook.sh %s
+video/x-msvideo; ~/Dotfiles/scripts/quicklook.sh %s
+
+# fonts
+application/vnd.ms-fontobject; ~/Dotfiles/scripts/quicklook.sh %s
+font/otf; ~/Dotfiles/scripts/quicklook.sh %s
+font/ttf; ~/Dotfiles/scripts/quicklook.sh %s
+font/woff2; ~/Dotfiles/scripts/quicklook.sh %s
+font/woff; ~/Dotfiles/scripts/quicklook.sh %s
+
+# documents
+application/json; ~/Dotfiles/scripts/quicklook.sh %s
+application/msword; ~/Dotfiles/scripts/quicklook.sh %s
+application/pdf; ~/Dotfiles/scripts/quicklook.sh %s
+application/rtf; ~/Dotfiles/scripts/quicklook.sh %s
+application/vnd.ms-excel; ~/Dotfiles/scripts/quicklook.sh %s
+application/vnd.ms-powerpoint; ~/Dotfiles/scripts/quicklook.sh %s
+application/vnd.oasis.opendocument.presentation; ~/Dotfiles/scripts/quicklook.sh %s
+application/vnd.oasis.opendocument.spreadsheet; ~/Dotfiles/scripts/quicklook.sh %s
+application/vnd.oasis.opendocument.text; ~/Dotfiles/scripts/quicklook.sh %s
+application/vnd.openxmlformats-officedocument.presentationml.presentation; ~/Dotfiles/scripts/quicklook.sh %s
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; ~/Dotfiles/scripts/quicklook.sh %s
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; ~/Dotfiles/scripts/quicklook.sh %s
+application/xml; ~/Dotfiles/scripts/quicklook.sh %s
+text/calendar; ~/Dotfiles/scripts/quicklook.sh %s
+text/css; ~/Dotfiles/scripts/quicklook.sh %s
+text/csv; ~/Dotfiles/scripts/quicklook.sh %s
+text/javascript; ~/Dotfiles/scripts/quicklook.sh %s
+text/xml; ~/Dotfiles/scripts/quicklook.sh %s
+
+# all other Unidentified files
+application/octet-stream; ~/Dotfiles/scripts/quicklook.sh %s

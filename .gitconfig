@@ -1,0 +1,110 @@
+[include]
+  path = ~/.gitconfig.user
+
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  eol = lf
+  pager = delta
+
+[color]
+  ui = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow
+  commit = green
+  frag = magenta
+  old = red
+  new = green
+  whitespace = red reverse
+
+[color "diff-highlight"]
+  newNormal = green
+  newHighlight = green 22
+  oldNormal = red
+  oldHighlight = red 52
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[alias]
+  a = add
+  b = branch
+  br = branch -a
+  c = checkout
+  cl = clean -f -d
+  cm = commit
+  co = checkout
+  cp = cherry-pick
+  fame = shortlog -sn --all --no-merges
+  git = !git
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit
+  m = merge
+  mg = merge
+  pl = pull
+  ps = push
+  rs = reset HEAD --hard
+  s = status
+  st = status
+
+[diff]
+  tool = nvim -d
+  guitool = nvim -d
+  compactionHeuristic = true
+  colorMoved = default
+
+[merge]
+  conflictstyle = diff3
+
+[mergetool]
+  prompt = false
+  keepBackup = false
+
+[push]
+  default = current
+
+[pull]
+  rebase = false
+
+[interactive]
+  diffFilter = delta --color-only
+
+[credential]
+  helper = store
+
+[delta]
+  blame-code-style = syntax
+  blame-format = "{author:>18} ({commit:>8}) {timestamp:<13} "
+  commit-decoration-style = normal box
+  dark = true
+  file-added-label = [+]
+  file-copied-label = [==]
+  file-modified-label = [*]
+  file-removed-label = [-]
+  file-renamed-label = [->]
+  hunk-header-style = omit
+  hyperlinks = false
+  inline-hint-style = syntax
+  line-numbers = true
+  line-numbers-left-format = " {nm:>3} │"
+  line-numbers-right-format = " {np:>3} │"
+  merge-conflict-begin-symbol = ⌃
+  merge-conflict-end-symbol = ⌄
+  merge-conflict-ours-diff-header-decoration-style = ''
+  merge-conflict-theirs-diff-header-decoration-style = ''
+  minus-non-emph-style = syntax auto
+  navigate = true
+  plus-non-emph-style = syntax auto
+  side-by-side = true
+  syntax-theme = gruvbox-dark
+  width = "-4"
+
+[init]
+  defaultBranch = main

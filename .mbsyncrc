@@ -1,0 +1,65 @@
+#################################
+######## Account mailbox ########
+#################################
+
+IMAPAccount mailbox
+Host imap.mailbox.org
+User s.rademacker@mailbox.org
+PassCmd "security find-internet-password -s 'imap.mailbox.org' -a 's.rademacker@mailbox.org' -w"
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile ~/Dotfiles/extras/certificates.crt
+AuthMechs LOGIN
+
+# Remote storage
+IMAPStore mailbox-remote
+Account mailbox
+
+# Local storage
+MaildirStore mailbox-local
+Path ~/Mail/mailbox/
+Inbox ~/Mail/mailbox/INBOX
+
+Channel mailbox-inbox
+Far :mailbox-remote:"INBOX"
+Near :mailbox-local:INBOX
+Create Both
+Expunge Both
+
+Channel mailbox-archive
+Far :mailbox-remote:"Archiv"
+Near :mailbox-local:archive
+Create Both
+Expunge Both
+
+Channel mailbox-drafts
+Far :mailbox-remote:"Entw&APw-rfe"
+Near :mailbox-local:drafts
+Create Both
+Expunge Both
+
+Channel mailbox-sent
+Far :mailbox-remote:"Gesendete Objekte"
+Near :mailbox-local:sent
+Create Both
+Expunge Both
+
+Channel mailbox-trash
+Far :mailbox-remote:"Papierkorb"
+Near :mailbox-local:trash
+Create Both
+Expunge Both
+
+Channel mailbox-junk
+Far :mailbox-remote:"Spam"
+Near :mailbox-local:junk
+Create Both
+Expunge Both
+
+Group mailbox
+Channel mailbox-inbox
+Channel mailbox-archive
+Channel mailbox-drafts
+Channel mailbox-sent
+Channel mailbox-trash
+Channel mailbox-junk

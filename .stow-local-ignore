@@ -1,0 +1,7 @@
+\.git
+\.gitmodules
+\.luarc.json
+README.md
+extras
+scripts
+snippets
