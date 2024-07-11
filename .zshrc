@@ -24,12 +24,8 @@ setopt NO_HUP # fixes topgrade
 
 # Source exports, aliases and functions
 source ~/.zsh/exports.sh
-source ~/.zsh/aliases.sh
 source ~/.zsh/functions.sh
-
-# easy vim/terminal switch after loading zsh-functions
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
+source ~/.zsh/aliases.sh
 
 # other tools init, pyenv + rbenv are sandboxd
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -17,17 +17,6 @@ current_branch () {
   echo ${ref#refs/heads/}
 }
 
-# fancy vim/shell switch with ctrl-z (see zshrc)
-fancy-ctrl-z () {
-  if [[ $#BUFFER -eq 0 ]]; then
-    BUFFER="fg"
-    zle accept-line
-  else
-    zle push-input
-    zle clear-screen
-  fi
-}
-
 # terminal weather shortcut
 wttr () {
   if [[ -n "$1" ]]
@@ -76,3 +65,18 @@ pdf () {
   rm temp.pdf
   rm *.jpg
 }
+
+# fancy vim/shell switch with ctrl-z (see zshrc)
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+
+# easy vim/terminal switch after loading zsh-functions
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z

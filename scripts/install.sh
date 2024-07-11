@@ -26,7 +26,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 brew tap homebrew/services
 brew doctor
 brew install fzf neovim lazygit ripgrep zoxide zsh
-brew install curl fd git git-delta openssl pyenv rbenv stow 
+brew install curl fd git git-delta n openssl pyenv rbenv stow 
 
 # stow everything, link dotfiles, set zsh as default and restart
 cd ~/dotfiles && stow .
@@ -41,17 +41,12 @@ exit
 # ------------------------------------------------------------- #
 
 # ruby, node, python and all the essential tools they provide
-curl -L https://git.io/n-install | bash
 n lts
-npm install -g npm@latest && npm update -g
-rbenv install 3.3.4
-rbenv global 3.3.4
-pyenv install 3.12.4
-pyenv global 3.12.4
-pip install --upgrade pip
+pyenv install 3.12.4 && pyenv global 3.12.4
+rbenv install 3.3.4 && rbenv global 3.3.4
 pip install setuptools tiptop neovim
+npm install -g neovim fkill-cli npm-check trash-cli yarn
 gem install neovim
-npm install -g neovim fkill-cli trash-cli
 
 # Custom node scripts and fzf installation
 cd ~/Dotfiles/scripts/out && npm i -g
@@ -90,10 +85,5 @@ brew install --cask affinity-designer affinity-photo reaper tidal vlc
 # surfingkeys, dark reader, privacy badger, ublock origin,
 # react developer tools, df youtube, axe devtools, strongbox autofill
 
-# Other software that can't be installed via brew, also install manually:
-# bill: https://billtheapp.com/
-
-# Apps from the app-store, log in, install:
-# strongbox, xcode, unifi
-#
-# Spread love, stay curious.
+# Apps from the app-store: strongbox, xcode, unifi
+# Other software: https://billtheapp.com
