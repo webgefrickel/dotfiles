@@ -43,6 +43,7 @@
   cm = commit
   co = checkout
   cp = cherry-pick
+  d = diff
   fame = shortlog -sn --all --no-merges
   git = !git
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit
