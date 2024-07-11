@@ -13,6 +13,6 @@
   "author": "Steffen Rademacker <kontakt@webgefrickel.de>",
   "license": "MIT",
   "dependencies": {
-    "inquirer": "9.2.11"
+    "inquirer": "10.0.1"
   }
 }

@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+
+alias -- -='$EDITOR $(fzf)'
+alias ...='cd ../..'
+alias ..='cd ..'
+alias O='cd ~ && mbsync -a && mu index'
+alias g='git'
+alias l='nvim "+Oil"'
+alias lg='lazygit'
+alias m='neomutt'
+alias nb='npm run build'
+alias np='npm run lint && npm run production'
+alias nre='n engine > /dev/null && rm -f package-lock.json && rm -rf node_modules && npm install'
+alias ns='npm start'
+alias q='exit'
+alias sudo='sudo '
+alias to='tiptop --net en0'
+alias upall='n lts && topgrade && npm-check -gu && vimup && brew cleanup && brew autoremove'
+alias v=$EDITOR
+alias vd='$EDITOR -d'
+alias ocrpdf='convert *.jpg -auto-orient temp.pdf && ocrmypdf --rotate-pages --optimize 3 --jpeg-quality 70 temp.pdf ocr.pdf'
+alias vim=$EDITOR
+alias vimup='nvim --headless "+TSUpdateSync" +qa && nvim --headless "+Lazy! sync" +qa && nvim --headless "+MasonUpdate" +qa'
+alias yb='yarn build'
+alias yp='yarn lint && yarn production'
+alias yre='n engine > /dev/null && rm -f yarn.lock && rm -rf node_modules && yarn'
+alias ys='yarn start'
