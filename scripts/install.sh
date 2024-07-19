@@ -44,25 +44,23 @@ exit
 n lts
 pyenv install 3.12.4 && pyenv global 3.12.4
 rbenv install 3.3.4 && rbenv global 3.3.4
-pip install setuptools tiptop neovim
+pip install setuptools tiptop neovim urlscan
 npm install -g neovim fkill-cli npm-check trash-cli yarn
 gem install neovim
+brew install luarocks
 
 # Custom node scripts and fzf installation
 cd ~/Dotfiles/scripts/out && npm i -g
 cd ~/Dotfiles/scripts/gallery && npm i -g
 /opt/homebrew/opt/fzf/install
 
-# Neomutt and friends
+# Neomutt and friends:create system-keychain-entries for the 
+# mailboxes (compare msmtp/mbsync-config, remember to prepend 
+# imap-ones with http:// and smtp-ones with smtp://), then:
 brew install isync msmtp mu neomutt ripmime w3m
-pip install urlscan
-take Mail && take mailbox && mkdir cur && mkdir new && mkdir tmp
-# final steps for a working mutt instance: 
-# create the correct keychain-entries in system keychain
-# for the mailboxes (compare msmtp/mbsync-config, remember to
-# prepend imap-ones with http:// and smtps with smtp://), then:
+take Mail && take mailbox && mkdir cur new tmp
 mbsync -a
-mu init -m /Users/webgefrickel/Mail && mu index
+mu init -m $HOME/Mail && mu index
 
 # ------------------------------------------------------------- #
 

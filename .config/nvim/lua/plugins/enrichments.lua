@@ -1,4 +1,5 @@
 return {
+  { 'MeanderingProgrammer/markdown.nvim', config = true },
   { 'lewis6991/gitsigns.nvim', config = true },
   { 'kevinhwang91/nvim-bqf', config = true },
   { 'nvim-pack/nvim-spectre', config = true,  },
@@ -37,14 +38,5 @@ return {
     config = function()
       vim.notify = require('notify')
     end
-  },
-  { 'epwalsh/obsidian.nvim',
-    ft = 'markdown',
-    opts = {
-      dir = '~/Notes',
-      follow_url_func = function(url)
-        vim.fn.jobstart({ 'open', url })
-      end,
-    }
   },
 }

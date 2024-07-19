@@ -38,6 +38,6 @@ bind index p recall-message
 
 # finding stuff
 bind editor <tab> complete-query
-macro index F "<shell-escape>mu find --clearlinks --format=links --linksdir /Users/webgefrickel/.mu/results " "mu find"
+macro index F "<shell-escape>mu find --clearlinks --format=links --linksdir $HOME/.mu/results " "mu find"
 macro index \cf "<change-folder-readonly>~/.mu/results<enter>" "mu find results"
 

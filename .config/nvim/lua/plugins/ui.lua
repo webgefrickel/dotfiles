@@ -7,20 +7,6 @@ return {
     },
     config = function()
       require('telescope').setup({
-        defaults = {
-          layout_strategy = 'horizontal',
-          layout_config = {
-            preview_width = 0.5,
-            prompt_position = 'bottom',
-            width = 0.9,
-            height = 0.9,
-          },
-          borderchars = {
-            prompt = { '─', ' ', ' ', ' ', '─', '─', ' ', ' ' },
-            results = { ' ' },
-            preview = { ' ' },
-          },
-        },
         extensions = {
           fzf = {
             fuzzy = true,
@@ -30,7 +16,6 @@ return {
           },
         },
       })
-
       require('telescope').load_extension('fzf')
     end
   },

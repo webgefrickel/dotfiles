@@ -208,12 +208,12 @@ wezterm.on('gui-startup', function()
   local git_pane = dot_pane:split({ direction = 'Right', cwd = home_dir .. '/Dotfiles' })
 
   tab:set_title('mail')
-  pane:send_text('O && m\n')
+  pane:send_text('m\n')
   dot_tab:set_title('dotfiles')
   dot_pane:send_text('v nvim/init.lua\n')
   todo_tab:set_title('todo')
   todo_pane:send_text('v index.md\n')
-  git_pane:send_text('gs\n')
+  git_pane:send_text('g s\n')
   tab:activate()
 
   -- initialize some sessions for MRU projects and folders

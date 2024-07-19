@@ -1,101 +1,101 @@
 return {
   { 'folke/flash.nvim', config = true },
   { 'kylechui/nvim-surround', config = true },
-  { 'numToStr/Comment.nvim', config = true },
   { 'numToStr/Navigator.nvim', config = true },
+  { 'numToStr/Comment.nvim', config = true },
 
   { 'folke/which-key.nvim',
+    event = 'VeryLazy',
     config = function()
       local wk = require('which-key')
+      wk.setup({ preset = 'modern' })
+      wk.add({
+        { '<C-h>', '<cmd>NavigatorLeft<cr>', desc = 'move to the lefthand split' },
+        { '<C-j>', '<cmd>NavigatorDown<cr>', desc = 'move to the rigthand split' },
+        { '<C-k>', '<cmd>NavigatorUp<cr>', desc = 'move to the upper split' },
+        { '<C-l>', '<cmd>NavigatorRight<cr>', desc = 'move to the lower split' },
+        { '¬', '>>', desc = 'bubbling lines with alt-hjkl', remap = true },
+        { '˙', '<<', desc = 'bubbling lines with alt-hjkl', remap = true },
+        { '˚', ':move .-2<cr>', desc = 'bubbling lines with alt-hjkl', remap = true },
+        { '∆', ':move .+1<cr>', desc = 'bubbling lines with alt-hjkl', remap = true },
+        { '<F5>', '<cmd>checktime<cr><cmd>redraw!<cr>', desc = 'redraw/reload with F5' },
+        { '<down>', '<cmd>blast<cr>', desc = 'buffer navigation with arrow keys' },
+        { '<left>', '<cmd>bprevious<cr>', desc = 'buffer navigation with arrow keys' },
+        { '<right>', '<cmd>bnext<cr>', desc = 'buffer navigation with arrow keys' },
+        { '<up>', '<cmd>bfirst<cr>', desc = 'buffer navigation with arrow keys' },
 
-      wk.register({
-        ['-'] = { '<cmd>Oil<cr>', 'Open file browser in parent directory' },
-        [';'] = { ':', 'Colon with semicolon' },
-        ['<F5>'] = { '<cmd>checktime<cr><cmd>redraw!<cr>', 'redraw/reload with F5' },
-        ['<down>'] = { '<cmd>blast<cr>', 'buffer navigation with arrow keys' },
-        ['<left>'] = { '<cmd>bprevious<cr>', 'buffer navigation with arrow keys' },
-        ['<right>'] = { '<cmd>bnext<cr>', 'buffer navigation with arrow keys' },
-        ['<up>'] = { '<cmd>bfirst<cr>', 'buffer navigation with arrow keys' },
-        ['¬'] = { '>>', 'bubbling lines with alt-hjkl', noremap = false },
-        ['˙'] = { '<<', 'bubbling lines with alt-hjkl', noremap = false },
-        ['˚'] = { ':move .-2<cr>', 'bubbling lines with alt-hjkl', noremap = false },
-        ['∆'] = { ':move .+1<cr>', 'bubbling lines with alt-hjkl', noremap = false },
+        { '-', '<cmd>Oil<cr>', desc = 'Open file browser in parent directory' },
+        { ';', ':', desc = 'Colon with semicolon' },
+        { 'j', 'gj', desc = 'j and k with wrapped lines' },
+        { 'k', 'gk', desc = 'j and k with wrapped lines' },
+        { 'n', 'nzzzv', desc = 'kepping it centered with n' },
+        { 's', function() require('flash').jump() end, desc = 'flash jump' },
+        { 'v', '<C-V>', desc = 'remapping visual/visual-block mode' },
+        { 'N', 'Nzzzv', desc = 'kepping it centered with N' },
+        { 'S', function() require('flash').treesitter() end, desc = 'flash treesitter select' },
 
-        g = {
-          name = 'code-related mappings',
-          -- for more code-mappings: see treesitter.lua
-          D = { '<cmd>lua vim.lsp.buf.declaration()<cr>', 'show/go to declaration' },
-          F = { '<cmd>lua vim.lsp.buf.format()<cr>', 'format file with LSP' },
-          I = { '<cmd>lua vim.lsp.buf.implementation()<cr>', 'show/go to implementation' },
-          J = { '<cmd>TSJToggle<cr>', 'split/join lines of code' },
-          L = { '<cmd>lua vim.lsp.buf.references()<cr>', 'show/go to referennces' },
-          a = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'run code action' },
-          b = { '<cmd>Gitsigns blame_line<cr>', 'git blame line' },
-          e = { '<cmd>lua vim.diagnostic.goto_next()<cr>', 'go to next error in file' },
-          h = { '<cmd>lua vim.lsp.buf.hover()<cr>', 'show hover info' },
-          s = { '<cmd>Gitsigns stage_hunk<cr>', 'git stage hunk' },
-          x = { "<cmd>execute '/\\v^[<\\|=>]{7}/'<cr>", 'find git conflicts in file' },
-          z = { '<cmd>ZenMode<cr>', 'toggle zen mode' },
+        { 'g', group = 'code-related mappings' },
+        { 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', desc = 'show/go to declaration' },
+        { 'gF', '<cmd>lua vim.lsp.buf.format()<cr>', desc = 'format file with LSP' },
+        { 'gI', '<cmd>lua vim.lsp.buf.implementation()<cr>', desc = 'show/go to implementation' },
+        { 'gJ', '<cmd>TSJToggle<cr>', desc = 'split/join lines of code' },
+        { 'gL', '<cmd>lua vim.lsp.buf.references()<cr>', desc = 'show/go to referennces' },
+        { 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', desc = 'run code action' },
+        { 'gb', '<cmd>Gitsigns blame_line<cr>', desc = 'git blame line' },
+        { 'ge', '<cmd>lua vim.diagnostic.goto_next()<cr>', desc = 'go to next error in file' },
+        { 'gh', '<cmd>lua vim.lsp.buf.hover()<cr>', desc = 'show hover info' },
+        { 'gs', '<cmd>Gitsigns stage_hunk<cr>', desc = 'git stage hunk' },
+        { 'gx', "<cmd>execute '/\\v^[<\\|=>]{7}/'<cr>", desc = 'find git conflicts in file' },
+
+        { "<leader>'", '<cmd>Telescope git_files<cr>', desc = 'find in git files' },
+        { '<leader>,', '<cmd>Telescope find_files<cr>', desc = 'find files' },
+        { '<leader>-', '<C-w>s<C-w>j', desc = 'Horizontal split' },
+        { '<leader>.', '<cmd>Telescope buffers<cr>', desc = 'find buffers' },
+        { '<leader>/', '<cmd>Telescope search_history<cr>', desc = 'find in search history' },
+        { '<leader>;', '<cmd>Telescope command_history<cr>', desc = 'find in command history' },
+        { '<leader><Space>', '<cmd>e #<cr>', desc = 'alternate between last two buffers' },
+        { '<leader>\\', '<C-w>v<C-w>l', desc = 'Vertical split' },
+        { '<leader>]', '<cmd>Telescope current_buffer_fuzzy_find<cr>', desc = 'find line in current buffer' },
+        { '<leader>a', '<cmd>Telescope live_grep<cr>', desc = 'live ripgrep' },
+        { '<leader>b', '<cmd>Telescope git_branches<cr>', desc = 'git branches' },
+        { '<leader>c', '<cmd>Telescope git_bcommits<cr>', desc = 'commits for buffer' },
+        { '<leader>f', '<cmd>Spectre<cr>', desc = 'open spectre for search/replace' },
+        { '<leader>v', group = 'vim related' },
+        { '<leader>ve', '<cmd>e $MYVIMRC<cr>', desc = 'edit vimrc' },
+        { '<leader>vr', '<cmd>source $MYVIMRC<cr>', desc = 'source vimrc' },
+        { '<leader>w', '<cmd>set wrap! wrap?<cr>', desc = 'toggle line-wrapping' },
+        { '<leader>z', '<cmd>ZenMode<cr>', desc = 'toggle zen mode' },
+
+        {
+          mode = { 'v' },
+          { ';', ':', desc = 'Colon with semicolon' },
+          { 'v', '<C-V>', desc = 'remapping visual/visual-block mode' },
+          { '¬', '>gv', desc = 'bubbling lines with alt-hjkl', remap = true },
+          { '˙', '<gv', desc = 'bubbling lines with alt-hjkl', remap = true },
+          { '˚', ":move '<-2<cr>gv", desc = 'bubbling lines with alt-hjkl', remap = true },
+          { '∆', ":move '>+1<cr>gv", desc = 'bubbling lines with alt-hjkl', remap = true },
         },
 
-        K = { '', 'K man-pages mapping removed' },
-        N = { 'Nzzzv', 'kepping it centered with N' },
-        Q = { '', 'Q ex-mode-mapping removed' },
-        S = { function() require('flash').treesitter() end, 'flash treesitter select' },
-        j = { 'gj', 'j and k with wrapped lines' },
-        k = { 'gk', 'j and k with wrapped lines' },
-        n = { 'nzzzv', 'kepping it centered with n' },
-        s = { function() require('flash').jump() end, 'flash jump' },
-        v = { '<C-V>', 'remapping visual/visual-block mode' },
+        {
+          mode = 'i',
+          '<C-j>',
+          "vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-j>'",
+          desc = 'snippet expansion',
+          expr = true,
+          remap = false,
+          replace_keycodes = false,
+        },
 
-        -- with <CTRL> as modifier
-        ['<C-h>'] = { '<cmd>NavigatorLeft<cr>', 'move to the lefthand split' },
-        ['<C-j>'] = { '<cmd>NavigatorDown<cr>', 'move to the rigthand split' },
-        ['<C-k>'] = { '<cmd>NavigatorUp<cr>', 'move to the upper split' },
-        ['<C-l>'] = { '<cmd>NavigatorRight<cr>', 'move to the lower split' },
+        {
+          mode = 's',
+          '<C-j>',
+          "vsnip#available(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-j>'",
+          desc = 'snippet expansion',
+          expr = true,
+          remap = false,
+          replace_keycodes = false,
+        },
       })
-
-      -- all normal mode leader key mappings in one place
-      wk.register({
-        ['<Space>'] = { '<cmd>e #<cr>', 'alternate between last two buffers' },
-        [','] = { '<cmd>Telescope find_files<cr>', 'find files' },
-        ['-'] = { '<C-w>s<C-w>j', 'Horizontal split' },
-        ['.'] = { '<cmd>Telescope buffers<cr>', 'find buffers' },
-        ['/'] = { '<cmd>Telescope search_history<cr>', 'find in search history' },
-        [';'] = { '<cmd>Telescope command_history<cr>', 'find in command history' },
-        ['\''] = { '<cmd>Telescope git_files<cr>', 'find in git files' },
-        ['\\'] = { '<C-w>v<C-w>l', 'Vertical split' },
-        [']'] = { '<cmd>Telescope current_buffer_fuzzy_find<cr>', 'find line in current buffer' },
-
-        a = { '<cmd>Telescope live_grep<cr>', 'live ripgrep' },
-        b = { '<cmd>Telescope git_branches<cr>', 'git branches' },
-        c = { '<cmd>Telescope git_bcommits<cr>', 'commits for buffer' },
-        f = { '<cmd>Spectre<cr>', 'open spectre for search/replace' },
-        v = {
-          name = 'vim related',
-          e = { '<cmd>e $MYVIMRC<cr>', 'edit vimrc' },
-          r = { '<cmd>source $MYVIMRC<cr>', 'source vimrc' },
-        },
-        w = { '<cmd>set wrap! wrap?<cr>', 'toggle line-wrapping' },
-      }, { prefix = '<leader>' })
-
-      -- visual-mode mappings
-      wk.register({
-        [';'] = { ':', 'Colon with semicolon' },
-        ['¬'] = { '>gv', 'bubbling lines with alt-hjkl', noremap = false },
-        ['˙'] = { '<gv', 'bubbling lines with alt-hjkl', noremap = false },
-        ['˚'] = { ":move '<-2<cr>gv", 'bubbling lines with alt-hjkl', noremap = false },
-        ['∆'] = { ":move '>+1<cr>gv", 'bubbling lines with alt-hjkl', noremap = false },
-        v = { '<C-V>', 'remapping visual/visual-block mode' },
-      }, { mode = 'v' })
-
-      -- insert-substitute-mode mappings for snippets
-      wk.register({
-        ['<C-j>'] = { 'vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"', 'snippet expansion' },
-      }, { mode = 'i', expr = true, noremap = true })
-      wk.register({
-        ['<C-j>'] = { 'vsnip#available(-1) ? "<Plug>(vsnip-jump-prev)" : "<C-j>"', 'snippet expansion' },
-      }, { mode = 's', expr = true, noremap = true })
     end,
   }
 }
