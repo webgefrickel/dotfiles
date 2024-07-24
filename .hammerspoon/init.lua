@@ -1,10 +1,8 @@
-local alert = require('hs.alert')
 local app = require('hs.application')
 local eventtap = require('hs.eventtap')
 local geometry = require('hs.geometry')
 local hotkey = require('hs.hotkey')
 local layout = require('hs.layout')
-local screen = require('hs.screen')
 local win = require('hs.window')
 
 -- Custom variables
@@ -51,7 +49,7 @@ local layoutSingle = {
   { "Firefox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "ForkLift", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Mail", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Microsoft Teams (work or school)", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Microsoft Teams", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Signal", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "TIDAL", nil, laptopMonitor, screenPositions.full, nil, nil },
@@ -101,6 +99,7 @@ end
 -- Key-trap (cat/baby-mode)
 --------------------
 local function babymode()
+  local alert = require('hs.alert')
   alert('Babymode activated')
 
   Mousetrap = eventtap.new({
@@ -147,8 +146,9 @@ app.enableSpotlightForNameSearches(true)
 -- Applying main two layouts
 hotkey.bind(hyper, 'q', function() layout.apply(layoutSingle) end)
 hotkey.bind(hyper, 'w', function()
-  if(tablelength(screen.allScreens()) == 2)
-  then
+  local screen = require('hs.screen')
+
+  if (tablelength(screen.allScreens()) == 2) then
     layout.apply(layoutDouble)
   else
     layout.apply(layoutSingle)

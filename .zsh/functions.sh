@@ -48,6 +48,7 @@ webvideo () {
 }
 
 pdf () {
+  gallery
   convert *.jpg -auto-orient -monochrome temp.pdf
   ocrmypdf --rotate-pages --optimize 3 --jpeg-quality 70 temp.pdf document.pdf
   rm temp.pdf
