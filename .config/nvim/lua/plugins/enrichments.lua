@@ -3,6 +3,7 @@ return {
   { 'lewis6991/gitsigns.nvim', config = true },
   { 'kevinhwang91/nvim-bqf', config = true },
   { 'nvim-pack/nvim-spectre', config = true,  },
+  { 'folke/twilight.nvim', config = true },
   { 'folke/trouble.nvim', config = true },
   { 'folke/todo-comments.nvim', config = true },
   { 'norcalli/nvim-colorizer.lua',
