@@ -23,10 +23,8 @@ defaults write com.apple.Finder AppleShowAllFiles -bool true
 # install homebrew and all cli essentials
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-brew tap homebrew/services
-brew doctor
-brew install fzf neovim lazygit ripgrep zoxide zsh
-brew install curl fd git git-delta n openssl pyenv rbenv stow 
+brew tap homebrew/services && brew doctor
+brew install curl fzf git neovim openssl stow zsh
 
 # stow everything, link dotfiles, set zsh as default and restart
 cd ~/dotfiles && stow .
@@ -41,13 +39,11 @@ exit
 # ------------------------------------------------------------- #
 
 # ruby, node, python and all the essential tools they provide
-n lts
-pyenv install 3.12.4 && pyenv global 3.12.4
-rbenv install 3.3.4 && rbenv global 3.3.4
+brew install n pyenv luarocks
+pyenv install 3.12.5 && pyenv global 3.12.5
 pip install setuptools tiptop neovim urlscan
 npm install -g neovim fkill-cli npm-check trash-cli yarn
-gem install neovim
-brew install luarocks
+n lts
 
 # Custom node scripts and fzf installation
 cd ~/Dotfiles/scripts/out && npm i -g
@@ -64,18 +60,21 @@ mu init -m $HOME/Mail && mu index
 
 # ------------------------------------------------------------- #
 
-# Essential software
+# Other essential software
 brew tap buo/cask-upgrade
-brew install blackhole-2ch ffmpeg imagemagick ocrmypdf switchaudio-osx topgrade
-brew install --cask font-monaspace-nerd-font 
-brew install --cask hammerspoon karabiner-elements raycast syntax-highlight wezterm
-brew install --cask carbon-copy-cloner firefox forklift google-chrome 
+brew install bat fd lazygit git-delta ripgrep topgrade mpv yazi zoxide
+brew install ffmpegthumbnailer sevenzip jq poppler font-symbols-only-nerd-font
+brew install blackhole-2ch ffmpeg imagemagick ocrmypdf switchaudio-osx
+brew install --cask font-monaspace-nerd-font
+brew install --cask hammerspoon karabiner-elements raycast wezterm
+brew install --cask carbon-copy-cloner firefox google-chrome 
 
 # Additional software: Communications and multimedia...
 brew install --cask microsoft-teams signal telegram whatsapp
-brew install --cask affinity-designer affinity-photo reaper tidal vlc
+brew install --cask affinity-designer affinity-photo reaper tidal
 
 # On demand stuff, work and other tools
+# brew install --cask forklift transmit
 # brew install --cask citrix-workspace rapidapi visual-studio-code
 # brew install --cask bambu-studio imageoptim kap transmission
 

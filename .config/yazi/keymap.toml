@@ -1,0 +1,11 @@
+[manager]
+prepend_keymap = [
+  { on = 'l', run = 'plugin --sync smart-enter', desc = 'Enter child dir or open file' },
+  { on = '<Enter>', run = 'plugin --sync smart-enter', desc = 'Enter child dir or open file' },
+  { on = '-', run = 'leave', desc = 'Go back to the parent directory' },
+]
+
+[input]
+prepend_keymap = [
+  { on = '<Esc>', run = 'close', desc = 'Cancel input' },
+]

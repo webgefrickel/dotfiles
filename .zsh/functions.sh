@@ -1,22 +1,31 @@
 #!/usr/bin/env zsh
 
-take () { # shortcut for creating and going into dir
+y() { # a yazi wrapper that returns last dir
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
+take() { # shortcut for creating and going into dir
   mkdir -p $1
   cd $1
 }
 
 # terminal weather shortcut
-wttr () {
+wttr() {
   if [[ -n "$1" ]]
-    then 
+    then
       curl "wttr.in/$1?format=v2"
-    else 
+    else
       curl "wttr.in/Leipzig?format=v2"
   fi
 }
 
 # function for easily converting a video for web
-webvideo () {
+webvideo() {
   if [ $# -eq 0 ]; then
     echo "No arguments supplied, example usage: webvideo FILENAME --resize 1920 --mute"
   else
@@ -47,7 +56,7 @@ webvideo () {
   fi
 }
 
-pdf () {
+pdf() {
   gallery
   convert *.jpg -auto-orient -monochrome temp.pdf
   ocrmypdf --rotate-pages --optimize 3 --jpeg-quality 70 temp.pdf document.pdf
@@ -55,7 +64,7 @@ pdf () {
 }
 
 # fancy vim/shell switch with ctrl-z (see zshrc)
-fancy-ctrl-z () {
+fancy-ctrl-z() {
   if [[ $#BUFFER -eq 0 ]]; then
     BUFFER="fg"
     zle accept-line

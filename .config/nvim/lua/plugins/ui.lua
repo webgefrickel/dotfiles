@@ -26,27 +26,16 @@ return {
         lualine_x = {},
         lualine_y = { 'diff', 'diagnostics' },
       },
-      options = { theme = 'gruvbox-material' },
+      options = {
+        theme = 'gruvbox-material',
+      },
     },
   },
-  { 'stevearc/oil.nvim',
-     opts = {
-      columns = {
-        'mtime',
-        'permissions',
-        'size',
-        'icon',
-      },
-      delete_to_trash = true,
-      view_options = {
-        show_hidden = true,
-      },
-      keymaps = {
-        ['<esc>'] = 'actions.close',
-        ['q'] = 'actions.close',
-        ['<C-l>'] = false,
-        ['<C-h>'] = false,
-      },
-     }
-  },
+  { 'mikavilpas/yazi.nvim',
+    event = 'VeryLazy',
+    opts = {
+      open_for_directories = true,
+      yazi_floating_window_border = 'none',
+    },
+  }
 }

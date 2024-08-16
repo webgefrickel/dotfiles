@@ -37,6 +37,7 @@ vim.opt.sidescrolloff = 5
 vim.opt.smartcase = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.splitkeep = 'screen'
 vim.opt.swapfile = false
 vim.opt.timeout = true
 vim.opt.timeoutlen = 500

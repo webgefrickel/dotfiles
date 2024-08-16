@@ -24,33 +24,30 @@ end
 
 -- open new development session with splits and commands
 -- this expects the default src / public-dist structure to work
-local function newDevelopmentSession(path_and_title)
+local function newDevelopmentSession(id)
   local sites_dir = wezterm.home_dir .. '/Sites/'
+  local path = sites_dir .. id
   local dev_tab, dev_pane, dev_window = mux.spawn_window({
-    cwd = sites_dir .. path_and_title,
-    workspace = path_and_title,
-  })
-  local src_tab, src_pane, dev_window = dev_window:spawn_tab({
-    cwd = sites_dir .. path_and_title,
-  })
-  local git_tab, git_pane, dev_window = dev_window:spawn_tab({
-    cwd = sites_dir .. path_and_title,
+    cwd = path,
+    workspace = id,
   })
   local devcli_pane = dev_pane:split({
-    workspace = path_and_title,
+    workspace = id,
     direction = 'Right',
-    cwd = sites_dir .. path_and_title,
+    cwd = path
   })
+  local src_tab, src_pane = dev_window:spawn_tab({ cwd = path })
+  local git_tab, git_pane = dev_window:spawn_tab({ cwd = path })
 
-  dev_tab:set_title('zsh')
-  dev_pane:send_text('v package.json\n')
-  devcli_pane:send_text('g pl && g l\n')
   src_tab:set_title('src')
+  src_pane:send_text('v\n')
   git_tab:set_title('git')
   git_pane:send_text('lg\n')
-
+  dev_tab:set_title('zsh')
+  devcli_pane:send_text('g pl && g s\n')
   dev_tab:activate()
-  mux.set_active_workspace(path_and_title)
+
+  mux.set_active_workspace(id)
 end
 
 -- base config
@@ -73,6 +70,7 @@ config.show_new_tab_button_in_tab_bar = false
 config.tab_bar_at_bottom = true
 config.use_dead_keys = false
 config.use_fancy_tab_bar = false
+config.window_padding = { left = 0, right = 0, top = 10, bottom = 10 }
 config.window_decorations = 'RESIZE'
 
 -- key mappings

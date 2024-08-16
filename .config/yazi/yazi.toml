@@ -1,0 +1,18 @@
+[manager]
+ratio = [1, 2, 3]
+sort_by = 'natural'
+show_hidden = true
+show_symlink = true
+
+[preview]
+tab_size = 2
+max_width = 1280
+max_height = 1280
+image_quality = 50
+image_filter = 'nearest'
+
+[plugin]
+prepend_previewers = [
+  { mime = "text/*", run = "bat" },
+  { mime = "application/json", run = "bat" },
+]

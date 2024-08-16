@@ -6,8 +6,7 @@ IMAPAccount mailbox
 Host imap.mailbox.org
 User s.rademacker@mailbox.org
 PassCmd "security find-internet-password -s 'imap.mailbox.org' -a 's.rademacker@mailbox.org' -w"
-SSLType IMAPS
-SSLVersions TLSv1.2
+TLSType IMAPS
 CertificateFile ~/Dotfiles/extras/certificates.crt
 AuthMechs LOGIN
 
@@ -33,7 +32,7 @@ Create Both
 Expunge Both
 
 Channel mailbox-drafts
-Far :mailbox-remote:"Entw&APw-rfe"
+Far :mailbox-remote:"Entwürfe"
 Near :mailbox-local:drafts
 Create Both
 Expunge Both
