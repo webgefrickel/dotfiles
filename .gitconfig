@@ -104,7 +104,7 @@
   navigate = true
   plus-non-emph-style = syntax auto
   side-by-side = true
-  syntax-theme = gruvbox-dark
+  syntax-theme = gruvbox-material
   width = "-4"
 
 [init]

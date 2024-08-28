@@ -69,6 +69,9 @@ brew install --cask font-monaspace-nerd-font
 brew install --cask hammerspoon karabiner-elements raycast wezterm
 brew install --cask carbon-copy-cloner firefox google-chrome 
 
+# update bat to use local gruvbox-material-theme
+bat cache --build
+
 # Additional software: Communications and multimedia...
 brew install --cask microsoft-teams signal telegram whatsapp
 brew install --cask affinity-designer affinity-photo reaper tidal

@@ -1,4 +1,4 @@
---theme="gruvbox-dark"
+--theme="gruvbox-material"
 --style="grid,numbers,changes"
 --tabs=2
 --italic-text=always
