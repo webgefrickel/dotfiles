@@ -13,6 +13,6 @@
   "author": "Steffen Rademacker <kontakt@webgefrickel.de>",
   "license": "MIT",
   "dependencies": {
-    "sharp": "0.33.4"
+    "sharp": "0.33.5"
   }
 }
