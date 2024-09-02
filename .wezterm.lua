@@ -200,9 +200,8 @@ end)
 -- always maximise and start default session with mutt, notes and dotfiles
 wezterm.on('gui-startup', function()
   local home_dir = wezterm.home_dir
-  local tab, pane, window = mux.spawn_window({ cwd = home_dir })
-
-  local mail_tab, mail_pane = window:spawn_tab({ cwd = home_dir .. '/Notes' })
+  local tab, pane, window = mux.spawn_window({ cwd = home_dir .. '/Downloads' })
+  local mail_tab, mail_pane = window:spawn_tab({ cwd = home_dir })
   local todo_tab, todo_pane = window:spawn_tab({ cwd = home_dir .. '/Notes' })
   local dot_tab, dot_pane = window:spawn_tab({ cwd = home_dir .. '/Dotfiles' })
   local git_pane = dot_pane:split({ direction = 'Right', cwd = home_dir .. '/Dotfiles' })
@@ -214,7 +213,7 @@ wezterm.on('gui-startup', function()
   dot_tab:set_title('dotfiles')
   dot_pane:send_text('v +Yazi\n')
   todo_tab:set_title('todo')
-  todo_pane:send_text('v -O index.md webgefrickel.de\n')
+  todo_pane:send_text('v -O index.md webgefrickel.md\n')
   git_pane:send_text('g s\n')
   tab:activate()
 
