@@ -64,3 +64,12 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
     vim.opt_local.formatoptions:append('aw')
   end,
 })
+
+-- better gf for everything node/js/ts
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+  pattern = { '*.js', '*.jsx', '*.ts', '*.tsx' },
+  callback = function()
+    vim.opt_local.suffixesadd:append('.js,.jsx,.json,.ts,.tsx')
+    vim.opt_local.path:append('node_modules;~')
+  end,
+})

@@ -1,8 +1,8 @@
 # Minor modifications to terminal prompt
-command_timeout = 5_000
+command_timeout = 60000
 
 [cmd_duration]
-min_time = 5_000
+min_time = 5000
 
 [directory]
 truncation_length = 6
