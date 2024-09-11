@@ -6,6 +6,14 @@
 # Please configure 'everything apple' and your system-settings 
 # to your liking before doing anything else. Then install xcode
 # from the app store and proceed.
+#
+# Everything is highly to my liking/randomly working setup and
+# really to be used without me sitting next to you... wait! I 
+# can explain... ;)
+#
+# Buzzwords:
+# zsh, neovim, neomutt, yazi, zoxide, lazygit, bat, fzf, 
+# wezterm, raycast, karabiner, hammerspoon
 # ------------------------------------------------------------- #
 
 xcode-select --install
@@ -38,51 +46,49 @@ exit
 
 # ------------------------------------------------------------- #
 
-# ruby, node, python and all the essential tools they provide
-brew install n pyenv luarocks
-pyenv install 3.12.5 && pyenv global 3.12.5
-pip install setuptools tiptop neovim urlscan
+# node and node-scripts from these dotfiles
+brew install n && n lts
 npm install -g neovim fkill-cli npm-check trash-cli yarn
-n lts
 
 # Custom node scripts and fzf installation
 cd ~/Dotfiles/scripts/out && npm i -g
 cd ~/Dotfiles/scripts/gallery && npm i -g
-/opt/homebrew/opt/fzf/install
+
+# Other essential software
+brew tap buo/cask-upgrade
+brew install bat btop fd lazygit git-delta ripgrep topgrade mpv yazi zoxide
+brew install ffmpegthumbnailer sevenzip jq poppler font-symbols-only-nerd-font
+brew install blackhole-2ch ffmpeg imagemagick ocrmypdf switchaudio-osx
+
+# update bat to use local gruvbox-material-theme
+bat cache --build
 
 # Neomutt and friends:create system-keychain-entries for the 
 # mailboxes (compare msmtp/mbsync-config, remember to prepend 
 # imap-ones with http:// and smtp-ones with smtp://), then:
-brew install isync msmtp mu neomutt ripmime w3m
+brew install isync msmtp mu neomutt ripmime urlscan w3m
 take Mail && take mailbox && mkdir cur new tmp
 mbsync -a
 mu init -m $HOME/Mail && mu index
 
 # ------------------------------------------------------------- #
 
-# Other essential software
-brew tap buo/cask-upgrade
-brew install bat fd lazygit git-delta ripgrep topgrade mpv yazi zoxide
-brew install ffmpegthumbnailer sevenzip jq poppler font-symbols-only-nerd-font
-brew install blackhole-2ch ffmpeg imagemagick ocrmypdf switchaudio-osx
+# Other essential Apps and software
 brew install --cask font-monaspace-nerd-font
 brew install --cask hammerspoon karabiner-elements raycast wezterm
 brew install --cask carbon-copy-cloner firefox google-chrome 
 
-# update bat to use local gruvbox-material-theme
-bat cache --build
-
 # Additional software: Communications and multimedia...
 brew install --cask microsoft-teams signal telegram whatsapp
 brew install --cask affinity-designer affinity-photo reaper tidal
+brew install --cask mountain-duck shortcat bambu-studio imageoptim kap
 
 # On demand stuff, work and other tools
-# brew install --cask forklift transmit
-# brew install --cask citrix-workspace rapidapi visual-studio-code
-# brew install --cask bambu-studio imageoptim kap transmission
+# brew install --cask forklift transmit bruno sequel-ace transmission
+# brew install --cask citrix-workspace visual-studio-code
 
-# Firefox-extensions, install manually:
-# surfingkeys, dark reader, privacy badger, ublock origin,
+# Firefox-extensions, install manually (+gruvbox-material-theme):
+# surfingkeys, dark reader, privacy badger, ublock origin, tampermonkey,
 # react developer tools, df youtube, axe devtools, strongbox autofill
 
 # Apps from the app-store: strongbox, xcode, unifi

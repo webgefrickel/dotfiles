@@ -86,7 +86,7 @@ return {
           'marksman',
           'phpactor',
           'stylelint_lsp',
-          'tsserver',
+          'ts_ls',
           'vtsls',
           'yamlls',
         },
@@ -94,9 +94,6 @@ return {
 
       require('mason-lspconfig').setup_handlers({
         function (server)
-          if server == 'tsserver' then
-            server = 'ts_ls'
-          end
           local capabilities = require('cmp_nvim_lsp').default_capabilities()
           require('lspconfig')[server].setup({
             capabilities = capabilities,

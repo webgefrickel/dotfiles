@@ -10,6 +10,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_python_provider = 0
+vim.g.loaded_python3_provider = 0
 
 -- load all plugins
 require('lazy').setup({ spec = { import = 'plugins' }})
@@ -45,7 +49,7 @@ vim.opt.virtualedit = 'all'
 
 -- filetype-specific settings for text-files
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
-  pattern = { '*.md', '*.markdown', '*.rst', '*.txt', 'neomutt-*', '*.mail' },
+  pattern = { '*.md', '*.markdown', '*.txt', 'neomutt-*', '*.mail' },
   callback = function()
     vim.opt_local.spell = true
     vim.opt_local.spelllang = { 'de', 'en' }

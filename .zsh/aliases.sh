@@ -15,7 +15,6 @@ alias vd='$EDITOR -d'
 alias vim=$EDITOR
 
 # helpers
-alias to='tiptop --net en0'
 alias up='n lts && topgrade && npm-check -gu && vup && brew cleanup && brew autoremove'
 alias vup='nvim --headless "+TSUpdateSync" +qa && nvim --headless "+Lazy! sync" +qa && nvim --headless "+MasonUpdate" +qa'
 

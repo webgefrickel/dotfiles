@@ -27,12 +27,7 @@ source ~/.zsh/exports.sh
 source ~/.zsh/functions.sh
 source ~/.zsh/aliases.sh
 
-# other tools init, pyenv + rbenv are sandboxd
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
-eval "$(rbenv init - --no-rehash)"
-eval "$(pyenv init --path --no-rehash)"
-
-# chat-gpt, hooray
-source ~/OPENAI_API_KEY.sh
+# other tools init
+source <(fzf --zsh)
+source <(starship init zsh)
+source <(zoxide init zsh)

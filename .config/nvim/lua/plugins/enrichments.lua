@@ -1,5 +1,5 @@
 return {
-  { 'MeanderingProgrammer/markdown.nvim', config = true },
+  { 'OXY2DEV/markview.nvim', config = true, lazy = false },
   { 'lewis6991/gitsigns.nvim', config = true },
   { 'kevinhwang91/nvim-bqf', config = true },
   { 'nvim-pack/nvim-spectre', config = true,  },

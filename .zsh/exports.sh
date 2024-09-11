@@ -19,7 +19,6 @@ export LESS="-F -i -J -M -R -W -x2 -X -z-4"
 export PAGER="less -F -i -J -M -R -W -x2 -X -z-4"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export HOMEBREW_NO_ENV_HINTS=true
-export PYENV_ROOT="$HOME/.pyenv"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
@@ -32,4 +31,3 @@ export PATH=/opt/homebrew/sbin:$PATH
 export PATH=/opt/homebrew/opt/curl/bin:$PATH
 export PATH=/.local/bin:$PATH
 export PATH=/.composer/vendor/bin:$PATH
-export PATH="$PYENV_ROOT/bin:$PATH"
