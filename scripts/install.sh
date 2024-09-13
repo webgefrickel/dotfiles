@@ -28,11 +28,13 @@ sudo scutil --set HostName "mausohr"
 defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write com.apple.Finder AppleShowAllFiles -bool true
 
-# install homebrew and all cli essentials
+# install homebrew and all brewfile dependencies
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-brew tap homebrew/services && brew doctor
-brew install curl fzf git neovim openssl stow zsh
+cd ~/dotfiles/scripts
+brew doctor && brew bundle install
+# good idea to kill terminal now and proceed...
+# ------------------------------------------------------------- #
 
 # stow everything, link dotfiles, set zsh as default and restart
 cd ~/dotfiles && stow .
@@ -46,19 +48,11 @@ exit
 
 # ------------------------------------------------------------- #
 
-# node and node-scripts from these dotfiles
-brew install n && n lts
+# node, global tools and custom scripts
+n lts
 npm install -g neovim fkill-cli npm-check trash-cli yarn
-
-# Custom node scripts and fzf installation
 cd ~/Dotfiles/scripts/out && npm i -g
 cd ~/Dotfiles/scripts/gallery && npm i -g
-
-# Other essential software
-brew tap buo/cask-upgrade
-brew install bat btop fd lazygit git-delta ripgrep topgrade mpv yazi zoxide
-brew install ffmpegthumbnailer sevenzip jq poppler font-symbols-only-nerd-font
-brew install blackhole-2ch ffmpeg imagemagick ocrmypdf switchaudio-osx
 
 # update bat to use local gruvbox-material-theme
 bat cache --build
@@ -66,28 +60,13 @@ bat cache --build
 # Neomutt and friends:create system-keychain-entries for the 
 # mailboxes (compare msmtp/mbsync-config, remember to prepend 
 # imap-ones with http:// and smtp-ones with smtp://), then:
-brew install isync msmtp mu neomutt ripmime urlscan w3m
 take Mail && take mailbox && mkdir cur new tmp
 mbsync -a
 mu init -m $HOME/Mail && mu index
 
 # ------------------------------------------------------------- #
 
-# Other essential Apps and software
-brew install --cask font-monaspace-nerd-font
-brew install --cask hammerspoon karabiner-elements raycast wezterm
-brew install --cask carbon-copy-cloner firefox google-chrome 
-
-# Additional software: Communications and multimedia...
-brew install --cask microsoft-teams signal telegram whatsapp
-brew install --cask affinity-designer affinity-photo reaper tidal
-brew install --cask mountain-duck shortcat bambu-studio imageoptim kap
-
-# On demand stuff, work and other tools
-# brew install --cask forklift transmit bruno sequel-ace transmission
-# brew install --cask citrix-workspace visual-studio-code
-
-# Firefox-extensions, install manually (+gruvbox-material-theme):
+# zen-browser / firefox-extensions, install manually:
 # surfingkeys, dark reader, privacy badger, ublock origin, tampermonkey,
 # react developer tools, df youtube, axe devtools, strongbox autofill
 
