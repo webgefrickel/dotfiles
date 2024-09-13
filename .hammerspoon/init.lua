@@ -33,39 +33,33 @@ local screenPositions = {
 }
 
 local layoutDouble = {
-  { "Calendar", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Firefox", nil, mainMonitor, screenPositions.left, nil, nil },
-  { "ForkLift", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Mail", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Microsoft Teams", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
   { "Signal", nil, mainMonitor, screenPositions.rightBottom, nil, nil },
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "TIDAL", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "WezTerm", nil, mainMonitor, screenPositions.right, nil, nil },
+  { "Zen Browser", nil, mainMonitor, screenPositions.left, nil, nil },
 }
 
 local layoutSingle = {
-  { "Calendar", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Firefox", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "ForkLift", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Mail", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Microsoft Teams", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Signal", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "TIDAL", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "WezTerm", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Zen Browser", nil, laptopMonitor, screenPositions.full, nil, nil },
 }
 
 local appsToLaunch = {
-  "Calendar",
-  "Firefox",
-  "ForkLift",
   "Mail",
   "Microsoft Teams",
   "Signal",
   "Strongbox",
   "TIDAL",
   "WezTerm",
+  "Zen Browser",
 }
 
 -- Local helper functions
