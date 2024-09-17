@@ -22,9 +22,9 @@ alias vup='nvim --headless "+TSUpdateSync" +qa && nvim --headless "+Lazy! sync" 
 # work / dev related
 alias nb='npm run build'
 alias np='npm run lint && npm run production'
-alias nre='n engine > /dev/null && rm -f package-lock.json && rm -rf node_modules && npm install'
+alias nre='rm -f package-lock.json && rm -rf node_modules && npm install'
 alias ns='npm start'
 alias yb='yarn build'
 alias yp='yarn lint && yarn production'
-alias yre='n engine > /dev/null && rm -f yarn.lock && rm -rf node_modules && yarn'
+alias yre='rm -f yarn.lock && rm -rf node_modules && yarn'
 alias ys='yarn start'

@@ -41,11 +41,12 @@ return {
         { 'ge', '<cmd>lua vim.diagnostic.goto_next()<cr>', desc = 'go to next error in file' },
         { 'gh', '<cmd>lua vim.lsp.buf.hover()<cr>', desc = 'show hover info' },
         { 'gs', '<cmd>Gitsigns stage_hunk<cr>', desc = 'git stage hunk' },
+        { 'gt', '<cmd>lua vim.lsp.buf.type_definition()<cr>', desc = 'show/go to type definition' },
         { 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', desc = 'show/go to declaration' },
         { 'gF', '<cmd>lua vim.lsp.buf.format()<cr>', desc = 'format file with LSP' },
         { 'gI', '<cmd>lua vim.lsp.buf.implementation()<cr>', desc = 'show/go to implementation' },
         { 'gJ', '<cmd>TSJToggle<cr>', desc = 'split/join lines of code' },
-        { 'gL', '<cmd>lua vim.lsp.buf.references()<cr>', desc = 'show/go to referennces' },
+        { 'gR', '<cmd>lua vim.lsp.buf.references()<cr>', desc = 'show/go to referennces' },
         { 'gX', "<cmd>execute '/\\v^[<\\|=>]{7}/'<cr>", desc = 'find git conflicts in file' },
 
         { '<leader><Space>', '<cmd>e #<cr>', desc = 'alternate between last two buffers' },

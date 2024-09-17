@@ -17,7 +17,7 @@
 # ------------------------------------------------------------- #
 
 xcode-select --install
-sudo xcodebuild -license
+sudo xcodebuild -license accept
 
 # set name of new computer
 sudo scutil --set ComputerName "mausohr"
@@ -49,8 +49,9 @@ exit
 # ------------------------------------------------------------- #
 
 # node, global tools and custom scripts
-n lts
-npm install -g neovim fkill-cli npm-check trash-cli yarn
+asdf install nodejs latest
+asdf global nodejs latest
+npm install -g fkill-cli neovim npm npm-check trash-cli yarn
 cd ~/Dotfiles/scripts/out && npm i -g
 cd ~/Dotfiles/scripts/gallery && npm i -g
 
