@@ -21,6 +21,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export HOMEBREW_NO_ENV_HINTS=true
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+export N_PREFIX=$HOME/.n
 
 # Paths
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -28,4 +29,4 @@ export MANPATH=/opt/homebrew/share/man:$MANPATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
 export PATH=/opt/homebrew/opt/curl/bin:$PATH
-export PATH=/.local/bin:$PATH
+export PATH=$N_PREFIX/bin:$PATH

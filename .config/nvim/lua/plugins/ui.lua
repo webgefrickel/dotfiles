@@ -2,9 +2,7 @@ return {
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { 'nvim-telescope/telescope.nvim',
     version = false,
-    dependencies = {
-      'nvim-telescope/telescope-fzf-native.nvim',
-    },
+    dependencies = 'nvim-telescope/telescope-fzf-native.nvim',
     config = function()
       require('telescope').setup({
         extensions = {
@@ -37,5 +35,5 @@ return {
       open_for_directories = true,
       yazi_floating_window_border = 'none',
     },
-  }
+  },
 }

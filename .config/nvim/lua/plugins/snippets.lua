@@ -1,9 +1,6 @@
 return {
   { 'hrsh7th/vim-vsnip',
-    dependencies = {
-      'hrsh7th/cmp-vsnip',
-      'rafamadriz/friendly-snippets',
-    },
+    dependencies = 'rafamadriz/friendly-snippets',
     config = function ()
       vim.g.vsnip_snippet_dirs = {
         os.getenv('HOME') .. '/.local/share/nvim/lazy/friendly-snippets/snippets/',

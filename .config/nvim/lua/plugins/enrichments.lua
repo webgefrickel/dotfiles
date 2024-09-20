@@ -1,19 +1,12 @@
 return {
   { 'OXY2DEV/markview.nvim', config = true, lazy = false },
-  { 'lewis6991/gitsigns.nvim', config = true },
-  { 'kevinhwang91/nvim-bqf', config = true },
-  { 'nvim-pack/nvim-spectre', config = true,  },
-  { 'folke/twilight.nvim', config = true },
-  { 'folke/trouble.nvim', config = true },
   { 'folke/todo-comments.nvim', config = true },
-  { 'norcalli/nvim-colorizer.lua',
-    opts = {
-      css = { css = true },
-      scss = { css = true },
-      json = { css = true},
-      javascript = { css = true },
-    },
-  },
+  { 'kevinhwang91/nvim-bqf', config = true },
+  { 'lewis6991/gitsigns.nvim', config = true },
+  { 'norcalli/nvim-colorizer.lua', config = true },
+  { 'nvim-pack/nvim-spectre', config = true,  },
+
+  { 'folke/twilight.nvim', config = true },
   { 'folke/zen-mode.nvim',
     opts = {
       window = {
@@ -34,10 +27,5 @@ return {
         },
       },
     },
-  },
-  { 'rcarriga/nvim-notify',
-    config = function()
-      vim.notify = require('notify')
-    end
   },
 }

@@ -24,7 +24,7 @@ return {
         { '<right>', '<cmd>bnext<cr>', desc = 'buffer navigation with arrow keys' },
         { '<up>', '<cmd>bfirst<cr>', desc = 'buffer navigation with arrow keys' },
 
-        { '-', '<cmd>Yazi<cr>', desc = 'Open file browser' },
+        { '-', '<cmd>Yazi<cr>', desc = 'Open yazi file browser' },
         { ';', ':', desc = 'Colon with semicolon' },
         { 'j', 'gj', desc = 'j and k with wrapped lines' },
         { 'k', 'gk', desc = 'j and k with wrapped lines' },

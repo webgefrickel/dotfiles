@@ -83,6 +83,7 @@
 [delta]
   blame-code-style = syntax
   blame-format = "{author:>18} ({commit:>8}) {timestamp:<13} "
+  blame-palette = "#282828"
   commit-decoration-style = normal box
   dark = true
   file-added-label = [+]

@@ -31,4 +31,3 @@ source ~/.zsh/aliases.sh
 source <(fzf --zsh)
 source <(starship init zsh)
 source <(zoxide init zsh)
-. /opt/homebrew/opt/asdf/libexec/asdf.sh

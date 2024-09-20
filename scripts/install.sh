@@ -49,8 +49,7 @@ exit
 # ------------------------------------------------------------- #
 
 # node, global tools and custom scripts
-asdf install nodejs latest
-asdf global nodejs latest
+n lts
 npm install -g fkill-cli neovim npm npm-check trash-cli yarn
 cd ~/Dotfiles/scripts/out && npm i -g
 cd ~/Dotfiles/scripts/gallery && npm i -g

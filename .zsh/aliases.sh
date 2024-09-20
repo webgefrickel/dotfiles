@@ -16,8 +16,8 @@ alias vd='$EDITOR -d'
 alias vim=$EDITOR
 
 # helpers
-alias up='n lts && topgrade && npm-check -gu && vup && brew cleanup && brew autoremove'
 alias vup='nvim --headless "+TSUpdateSync" +qa && nvim --headless "+Lazy! sync" +qa && nvim --headless "+MasonUpdate" +qa'
+alias up='n lts && topgrade && npm-check -gu && vup && brew cleanup && brew autoremove'
 
 # work / dev related
 alias nb='npm run build'
