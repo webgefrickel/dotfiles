@@ -1,7 +1,7 @@
 [misc]
 assume_yes = true
 cleanup = true
-disable = ["pnpm", "composer"]
+disable = ["system", "pnpm", "composer"]
 no_retry = true
 pre_sudo = true
 set_title = false
