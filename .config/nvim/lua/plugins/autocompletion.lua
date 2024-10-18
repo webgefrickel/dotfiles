@@ -1,16 +1,15 @@
 return {
-  -- { 'Exafunction/codeium.nvim', config = true },
-
+  { 'Exafunction/codeium.nvim', config = true },
   { 'hrsh7th/nvim-cmp',
     version = false,
     dependencies = {
+      'Exafunction/codeium.nvim',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-calc',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-vsnip', -- see snippets.lua
-      -- 'Exafunction/codeium.nvim',
     },
     config = function ()
       local cmp = require('cmp')
@@ -18,7 +17,7 @@ return {
       cmp.setup({
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
-          -- { name = 'codeium' },
+          { name = 'codeium' },
           { name = 'buffer',
           { name = 'path' },
             option = {
@@ -43,8 +42,8 @@ return {
         formatting = {
           format = function(entry, vim_item)
             vim_item.menu = ({
-              -- codeium = '[Codeium]',
               nvim_lsp = '[LSP]',
+              codeium = '[Codeium]',
               buffer = '[Buffer]',
               path = '[Path]',
               vsnip = '[Snippet]',

@@ -52,17 +52,17 @@ end
 
 -- base config
 config.color_scheme = 'Gruvbox Material (Gogh)'
-config.line_height = 1.15
-config.font_size = 14.0
+config.line_height = 1.1
+config.font_size = 14
 config.font = wezterm.font({
   family = 'MonaspiceAr Nerd Font',
   harfbuzz_features = { 'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
 })
 
 config.default_prog = { '/opt/homebrew/bin/zsh' }
-config.initial_cols = 120
-config.initial_rows = 32
-config.inactive_pane_hsb = { saturation = 0.5, brightness = 0.9 }
+config.initial_cols = 140
+config.initial_rows = 40
+config.inactive_pane_hsb = { saturation = 0.3, brightness = 1 }
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
 config.scrollback_lines = 50000
 config.send_composed_key_when_left_alt_is_pressed = true
@@ -70,7 +70,7 @@ config.show_new_tab_button_in_tab_bar = false
 config.tab_bar_at_bottom = true
 config.use_dead_keys = false
 config.use_fancy_tab_bar = false
-config.window_padding = { left = 0, right = 0, top = 10, bottom = 10 }
+config.window_padding = { left = 5, right = 5, top = 10, bottom = 10 }
 config.window_decorations = 'RESIZE'
 
 -- key mappings

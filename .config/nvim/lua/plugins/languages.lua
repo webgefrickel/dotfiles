@@ -3,7 +3,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-refactor',
-      'theHamsta/nvim-treesitter-pairs',
+      'yorickpeterse/nvim-tree-pairs',
       'windwp/nvim-ts-autotag',
       'Wansmer/treesj',
     },
@@ -18,7 +18,6 @@ return {
           'css',
           'diff',
           'gitignore',
-          'glimmer',
           'html',
           'javascript',
           'json',
@@ -33,6 +32,7 @@ return {
           'sql',
           'toml',
           'tsx',
+          'twig',
           'typescript',
           'vim',
           'vimdoc',
@@ -102,11 +102,8 @@ return {
       })
     end
   },
-  { 'williamboman/mason.nvim',
-    config = true,
-    build = ":MasonUpdate",
-  },
-  { 'Wansmer/treesj',
-    opts = { use_default_keymaps = false }
-  },
+
+  { 'williamboman/mason.nvim', config = true, build = ":MasonUpdate", },
+  { 'Wansmer/treesj', opts = { use_default_keymaps = false } },
+  { 'yorickpeterse/nvim-tree-pairs', config = true }
 }
