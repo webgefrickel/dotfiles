@@ -2,7 +2,16 @@
 
 y() { # a yazi wrapper that returns last dir
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-  yazi "$@" --cwd-file="$tmp"
+  if [ "$1" != "" ]; then
+    if [ -d "$1" ]; then
+      yazi "$1" --cwd-file="$tmp"
+    else
+      yazi "$(zoxide query $1)" --cwd-file="$tmp"
+    fi
+  else
+    yazi "$@" --cwd-file="$tmp"
+  fi
+
   if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
     builtin cd -- "$cwd"
   fi

@@ -1,4 +1,9 @@
 require('starship'):setup()
+
+require('zoxide'):setup({
+  update_db = true,
+})
+
 require('yatline'):setup({
   show_background = false,
   display_header_line = true, -- keep for starship plugin
