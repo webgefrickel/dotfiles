@@ -1,56 +1,22 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-refactor',
-      'yorickpeterse/nvim-tree-pairs',
-      'windwp/nvim-ts-autotag',
-      'Wansmer/treesj',
-    },
+    dependencies = 'nvim-treesitter/nvim-treesitter-refactor',
     build = ':TSUpdate',
     version = false,
     config = function ()
       require('nvim-treesitter.configs').setup({
-        ensure_installed = {
-          'bash',
-          'c',
-          'comment',
-          'css',
-          'diff',
-          'gitignore',
-          'html',
-          'javascript',
-          'json',
-          'lua',
-          'markdown',
-          'php',
-          'python',
-          'query',
-          'regex',
-          'ruby',
-          'scss',
-          'sql',
-          'toml',
-          'tsx',
-          'twig',
-          'typescript',
-          'vim',
-          'vimdoc',
-          'vue',
-          'yaml',
-        },
-
+        ensure_installed = 'all',
         highlight = { enable = true },
         indent = { enable = true },
         autotag = { enable = true },
-        pairs = { enable = true },
 
         incremental_selection = {
           enable = true,
           keymaps = {
-            init_selection = '<leader>ss',
-            node_incremental = '<leader>si',
-            node_decremental = '<leader>sd',
+            init_selection = 'gS',
+            node_incremental = 'gSS',
+            node_decremental = 'gSD',
           },
         },
 
@@ -102,8 +68,5 @@ return {
       })
     end
   },
-
   { 'williamboman/mason.nvim', config = true, build = ":MasonUpdate", },
-  { 'Wansmer/treesj', opts = { use_default_keymaps = false } },
-  { 'yorickpeterse/nvim-tree-pairs', config = true }
 }

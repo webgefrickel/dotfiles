@@ -16,6 +16,18 @@ return {
   },
 
   -- Libraries, icons and shared usage
-  { 'nvim-lua/plenary.nvim', lazy = true },
-  { 'nvim-tree/nvim-web-devicons', lazy = true },
+  { 'nvim-lua/plenary.nvim', lazy = true, branch = 'master' },
+  { 'echasnovski/mini.nvim',
+    config = function()
+      require('mini.bracketed').setup()
+      require('mini.comment').setup()
+      require('mini.diff').setup()
+      require('mini.git').setup()
+      require('mini.icons').setup()
+      require('mini.jump').setup()
+      require('mini.splitjoin').setup()
+      require('mini.statusline').setup()
+      require('mini.surround').setup()
+    end
+  },
 }
