@@ -1,5 +1,4 @@
 return {
-  { 'Exafunction/codeium.nvim', config = true },
   { 'hrsh7th/vim-vsnip',
     dependencies = 'rafamadriz/friendly-snippets',
     config = function ()

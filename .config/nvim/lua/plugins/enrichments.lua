@@ -1,7 +1,4 @@
 return {
-  { 'OXY2DEV/markview.nvim', config = true, lazy = false },
-  { 'kevinhwang91/nvim-bqf', config = true },
-  { 'nvim-pack/nvim-spectre', config = true,  },
   { 'brenoprata10/nvim-highlight-colors',
     config = true,
     opts = {
@@ -9,7 +6,6 @@ return {
       enable_tailwind = true
     }
   },
-  { 'folke/twilight.nvim', config = true },
   { 'folke/zen-mode.nvim',
     opts = {
       window = {
@@ -29,7 +25,6 @@ return {
       },
     },
   },
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { 'nvim-telescope/telescope.nvim',
     version = false,
     dependencies = 'nvim-telescope/telescope-fzf-native.nvim',
