@@ -42,11 +42,4 @@ return {
       require('telescope').load_extension('fzf')
     end
   },
-  { 'mikavilpas/yazi.nvim',
-    event = 'VeryLazy',
-    opts = {
-      open_for_directories = true,
-      yazi_floating_window_border = 'none',
-    },
-  },
 }

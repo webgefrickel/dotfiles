@@ -72,6 +72,11 @@ pdf() {
   rm temp.pdf
 }
 
+yt() {
+  cd ~/Downloads
+  yt-dlp "https://youtu.be/$1"
+}
+
 # fancy vim/shell switch with ctrl-z (see zshrc)
 fancy-ctrl-z() {
   if [[ $#BUFFER -eq 0 ]]; then

@@ -59,6 +59,7 @@ config.font = wezterm.font({
   harfbuzz_features = { 'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
 })
 
+config.max_fps = 120
 config.default_prog = { '/opt/homebrew/bin/zsh' }
 config.initial_cols = 140
 config.initial_rows = 40
