@@ -43,7 +43,9 @@ return {
     config = function ()
       require('mason-lspconfig').setup({
         ensure_installed = {
+          'css_variables',
           'cssls',
+          'cssmodules_ls',
           'emmet_language_server',
           'eslint',
           'html',
@@ -52,6 +54,7 @@ return {
           'marksman',
           'phpactor',
           'stylelint_lsp',
+          'tailwindcss',
           'ts_ls',
           'vtsls',
           'yamlls',

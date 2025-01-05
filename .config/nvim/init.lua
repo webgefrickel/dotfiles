@@ -59,7 +59,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   end
 })
 
--- filetype-specific settings for mails
+-- additional filetype-specific settings for writing mails for neomutt
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = { 'neomutt-*', '*.mail' },
   callback = function()
@@ -69,11 +69,11 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   end,
 })
 
--- better gf for everything node/js/ts
+-- better gf for everything javascript
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
-  pattern = { '*.js', '*.jsx', '*.ts', '*.tsx' },
+  pattern = { '*.js', '*.jsx', '*.json', '*.ts', '*.tsx', '*.cjs', '*.mjs' },
   callback = function()
-    vim.opt_local.suffixesadd:append('.js,.jsx,.json,.ts,.tsx')
+    vim.opt_local.suffixesadd:append('.js,.jsx,.json,.ts,.tsx,.cjs,.mjs')
     vim.opt_local.path:append('node_modules;~')
   end,
 })
