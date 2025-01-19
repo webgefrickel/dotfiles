@@ -73,8 +73,9 @@ pdf() {
 }
 
 yt() {
-  cd ~/Downloads
+  cd ~/Downloads/youtube/
   yt-dlp "https://youtu.be/$1"
+  exit
 }
 
 # fancy vim/shell switch with ctrl-z (see zshrc)

@@ -33,6 +33,7 @@ defaults write com.apple.Finder AppleShowAllFiles -bool true
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 cd ~/dotfiles/scripts
 brew doctor && brew bundle install
+
 # good idea to kill terminal now and proceed...
 # ------------------------------------------------------------- #
 
@@ -67,8 +68,8 @@ mu init -m $HOME/Mail && mu index
 # ------------------------------------------------------------- #
 
 # zen-browser / firefox-extensions, install manually:
-# surfingkeys, dark reader, privacy badger, ublock origin, tampermonkey,
-# react developer tools, df youtube, axe devtools, strongbox autofill
+# surfingkeys, privacy badger, ublock origin, react devtools, 
+# df youtube, axe devtools, strongbox autofill and gruvbox material dark
 
 # Apps from the app-store: strongbox, xcode, unifi
 # Other software: https://billtheapp.com

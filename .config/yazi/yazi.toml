@@ -11,8 +11,14 @@ max_height = 3024
 image_quality = 50
 image_filter = 'nearest'
 
-[plugin]
-prepend_previewers = [
-  { mime = "text/*", run = "bat" },
-  { mime = "application/json", run = "bat" },
-]
+[[plugin.prepend_previewers]]
+mime = "text/*"
+run = "bat"
+
+[[plugin.prepend_previewers]]
+mime = "application/json"
+run = "bat"
+
+[[plugin.prepend_previewers]]
+mime = "*/{xml,javascript,x-wine-extension-ini}"
+run = "bat"
