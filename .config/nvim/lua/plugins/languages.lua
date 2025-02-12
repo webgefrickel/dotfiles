@@ -10,7 +10,11 @@ return {
         highlight = { enable = true },
         indent = { enable = true },
         autotag = { enable = true },
-
+        textobjects = {
+          select = {
+            enable = false,
+          },
+        },
         incremental_selection = {
           enable = true,
           keymaps = {
@@ -19,7 +23,6 @@ return {
             node_decremental = 'gSD',
           },
         },
-
         refactor = {
           highlight_definitions = {
             enable = true,
@@ -63,7 +66,9 @@ return {
 
       require('mason-lspconfig').setup_handlers({
         function (server)
-          local capabilities = require('cmp_nvim_lsp').default_capabilities()
+          local capabilities = require('blink.cmp').get_lsp_capabilities({
+            textDocument = { completion = { completionItem = { snippetSupport = false } } },
+          })
           require('lspconfig')[server].setup({
             capabilities = capabilities,
           })
@@ -71,5 +76,5 @@ return {
       })
     end
   },
-  { 'williamboman/mason.nvim', config = true, build = ":MasonUpdate", },
+  { 'williamboman/mason.nvim', config = true, build = ':MasonUpdate', },
 }

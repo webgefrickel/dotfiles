@@ -25,6 +25,8 @@ sudo scutil --set LocalHostName "mausohr"
 sudo scutil --set HostName "mausohr"
 
 # some sane macos-default settings (minimum):
+defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 1
 defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write com.apple.Finder AppleShowAllFiles -bool true
 

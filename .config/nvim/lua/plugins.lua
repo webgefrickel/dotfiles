@@ -15,8 +15,11 @@ return {
     end
   },
 
-  -- Plugins that do not need further configuration
-  { 'nvim-lua/plenary.nvim', lazy = true, branch = 'master' },
+  -- global dependencies
+  { 'nvim-lua/plenary.nvim', lazy = true },
+  { 'MunifTanjim/nui.nvim', lazy = true },
+
+  -- mini plugins and config
   { 'echasnovski/mini.nvim',
     config = function()
       require('mini.bracketed').setup()
@@ -30,12 +33,9 @@ return {
       require('mini.surround').setup()
     end
   },
-  { 'Exafunction/codeium.nvim', config = true },
   { 'OXY2DEV/markview.nvim', config = true },
-  { 'folke/twilight.nvim', config = true },
   { 'kevinhwang91/nvim-bqf', config = true },
   { 'numToStr/Navigator.nvim', config = true },
   { 'nvim-pack/nvim-spectre', config = true,  },
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { 'tpope/vim-ragtag' },
 }

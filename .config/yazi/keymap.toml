@@ -1,8 +1,8 @@
 [manager]
 prepend_keymap = [
-  { on = 'l', run = 'plugin smart-enter', desc = 'Enter child dir or open file' },
-  { on = '<Enter>', run = 'plugin smart-enter', desc = 'Enter child dir or open file' },
   { on = '-', run = 'leave', desc = 'Go back to the parent directory' },
+  { on = '<Enter>', run = 'plugin smart-enter', desc = 'Enter child dir or open file' },
+  { on = 'l', run = 'plugin smart-enter', desc = 'Enter child dir or open file' },
 ]
 
 [input]

@@ -8,7 +8,6 @@ local keybindings = {
   { '˙', '<<', desc = 'bubbling lines with alt-hjkl', remap = true },
   { '˚', ':move .-2<cr>', desc = 'bubbling lines with alt-hjkl', remap = true },
   { '∆', ':move .+1<cr>', desc = 'bubbling lines with alt-hjkl', remap = true },
-  { '<F5>', '<cmd>checktime<cr><cmd>redraw!<cr>', desc = 'redraw/reload with F5' },
 
   { '-', '<cmd>Yazi<cr>', desc = 'Open yazi file browser' },
   { ';', ':', desc = 'Colon with semicolon' },
@@ -48,7 +47,6 @@ local keybindings = {
   { '<leader>s', '<cmd>Telescope git_status<cr>', desc = 'git status' },
   { '<leader>t', '<cmd>Telescope treesitter<cr>', desc = 'treesitter' },
   { '<leader>w', '<cmd>set wrap! wrap?<cr>', desc = 'toggle line-wrapping' },
-  { '<leader>z', '<cmd>ZenMode<cr>', desc = 'toggle zen mode' },
 
   { -- visual mode keybindings
     mode = { 'v' },

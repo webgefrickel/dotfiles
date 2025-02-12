@@ -28,6 +28,7 @@ vim.opt.foldenable = false
 vim.opt.gdefault = true
 vim.opt.ignorecase = true
 vim.opt.infercase = true
+vim.opt.laststatus = 3
 vim.opt.list = true
 vim.opt.listchars = { extends = '»', precedes = '«', tab = '▸ ', trail = '·'}
 vim.opt.relativenumber = true

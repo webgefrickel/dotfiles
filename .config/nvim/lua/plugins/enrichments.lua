@@ -1,30 +1,11 @@
 return {
-  { 'brenoprata10/nvim-highlight-colors',
-    config = true,
+  { 'catgoose/nvim-colorizer.lua',
+    event = 'BufReadPre',
     opts = {
-      render = 'virtual',
-      enable_tailwind = true
-    }
-  },
-  { 'folke/zen-mode.nvim',
-    opts = {
-      window = {
-        backdrop = 0.95,
-        width = 120,
-        height = 0.85,
-        options = {
-          signcolumn = 'no',
-          relativenumber = false,
-        },
-      },
-      plugins = {
-        wezterm = {
-          enabled = true,
-          font = '+2',
-        },
-      },
+      tailwind = true,
     },
   },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { 'nvim-telescope/telescope.nvim',
     version = false,
     dependencies = 'nvim-telescope/telescope-fzf-native.nvim',

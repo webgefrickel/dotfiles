@@ -3,7 +3,6 @@ import util from 'util';
 import { exec } from 'child_process';
 import inquirer from 'inquirer';
 
-const devices = [];
 const asyncExec = util.promisify(exec);
 const parseJson = jsonString => {
   try {
@@ -13,38 +12,47 @@ const parseJson = jsonString => {
   }
 };
 
-async function changeDevice(device) {
-  const names = devices.map(d => d.name);
-  const ids = devices.map(d => d.id);
-  const index = names.findIndex(element => element === device);
-  const id = ids[index];
-
-  await asyncExec(`SwitchAudioSource -i ${id}`);
-  console.log(`❯ Selected »${device}« as new audio output device`);
-  console.log('❯ Done 🤘');
-}
-
-async function main() {
+const fetchDevices = async () => {
   const { stdout } = await asyncExec('SwitchAudioSource -a -f json');
-  const lines = stdout.split(/\r?\n/).filter(element => element);
+  return stdout
+    .split(/\r?\n/)
+    .map(parseJson)
+    .filter(device => device?.type === 'output');
+};
 
-  lines.forEach(line => {
-    const device = parseJson(line);
-    if (device !== undefined && device.type === 'output') {
-      devices.push(device);
-    }
-  });
+const changeDevice = async (device, devices) => {
+  const id = devices.find(d => d.name === device)?.id;
 
-  if (devices.length > 0) {
-    inquirer.prompt([{
-      type: 'list',
-      name: 'device',
-      message: 'Choose your desired output audio device:',
-      choices: devices.map(d => d.name),
-    }]).then(answer => {
-      changeDevice(answer.device);
-    });
+  if (id) {
+    await asyncExec(`SwitchAudioSource -i ${id}`);
+    console.log(`❯ Selected »${device}« as new audio output device`);
+    console.log('❯ Done 🤘');
+  } else {
+    console.error('Device not found');
   }
-}
+};
+
+const promptUserForDevice = async (devices) => {
+  const { device } = await inquirer.prompt([{
+    type: 'list',
+    name: 'device',
+    message: 'Choose your desired output audio device:',
+    choices: devices.map(d => d.name),
+  }]);
+
+  return device;
+};
+
+const main = async () => {
+  try {
+    const devices = await fetchDevices();
+    if (devices.length > 0) {
+      const selectedDevice = await promptUserForDevice(devices);
+      await changeDevice(selectedDevice, devices);
+    }
+  } catch (error) {
+    // do nothing, silently exit
+  }
+};
 
 main();

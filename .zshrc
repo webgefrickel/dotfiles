@@ -26,6 +26,7 @@ setopt NO_HUP # fixes topgrade
 source ~/.zsh/exports.sh
 source ~/.zsh/functions.sh
 source ~/.zsh/aliases.sh
+source ~/.API_KEYS
 
 # other tools init
 source <(fzf --zsh)

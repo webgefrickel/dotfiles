@@ -5,6 +5,7 @@ local hotkey = require('hs.hotkey')
 local layout = require('hs.layout')
 local win = require('hs.window')
 
+
 -- Custom variables
 --------------------
 
@@ -153,7 +154,6 @@ end)
 hotkey.bind(hyper, 'a', function() app.launchOrFocus('WezTerm') end)
 hotkey.bind(hyper, 's', function() app.launchOrFocus('Zen Browser') end)
 hotkey.bind(hyper, 'd', function() app.launchOrFocus('TIDAL') end)
--- hotkey.bind(hyper, 'f', function() app.launchOrFocus('Mouseless') end)
 hotkey.bind(hyper, 'g', function() launchApps() end)
 
 -- Moving windows around / navigating windows
