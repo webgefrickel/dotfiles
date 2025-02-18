@@ -1,39 +1,17 @@
 return {
-  {
-    'nvim-treesitter/nvim-treesitter',
+  { 'nvim-treesitter/nvim-treesitter',
     dependencies = 'nvim-treesitter/nvim-treesitter-refactor',
     build = ':TSUpdate',
-    version = false,
     config = function ()
       require('nvim-treesitter.configs').setup({
         ensure_installed = 'all',
+        sync_install = false,
         highlight = { enable = true },
+        incremental_selection = { enable = true },
         indent = { enable = true },
-        autotag = { enable = true },
-        textobjects = {
-          select = {
-            enable = false,
-          },
-        },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = 'gS',
-            node_incremental = 'gSS',
-            node_decremental = 'gSD',
-          },
-        },
         refactor = {
-          highlight_definitions = {
-            enable = true,
-            clear_on_cursor_move = true,
-          },
-          smart_rename = {
-            enable = true,
-            keymaps = {
-              smart_rename = 'gr',
-            },
-          },
+          highlight_definitions = { enable = true },
+          smart_rename = { enable = true },
         },
       })
     end
@@ -44,8 +22,11 @@ return {
       'williamboman/mason-lspconfig.nvim',
     },
     config = function ()
+      require('mason').setup()
       require('mason-lspconfig').setup({
         ensure_installed = {
+          'ast_grep',
+          'bashls',
           'css_variables',
           'cssls',
           'cssmodules_ls',
@@ -66,15 +47,13 @@ return {
 
       require('mason-lspconfig').setup_handlers({
         function (server)
-          local capabilities = require('blink.cmp').get_lsp_capabilities({
-            textDocument = { completion = { completionItem = { snippetSupport = false } } },
-          })
           require('lspconfig')[server].setup({
-            capabilities = capabilities,
+            capabilities = require('blink.cmp').get_lsp_capabilities({
+              textDocument = { completion = { completionItem = { snippetSupport = false }}},
+            })
           })
         end
       })
     end
   },
-  { 'williamboman/mason.nvim', config = true, build = ':MasonUpdate', },
 }

@@ -1,4 +1,5 @@
 require('starship'):setup()
+require('full-border'):setup()
 require('zoxide'):setup({ update_db = true })
 require('yatline'):setup({
   show_background = false,

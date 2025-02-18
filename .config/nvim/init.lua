@@ -1,54 +1,35 @@
--- ensure that lazy.nvim package manager is installed
+-- Ensure lazy.nvim package manager is installed
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
   vim.fn.system({ 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath })
 end
 
--- minimum starter options and settings before loading plugins/lazy
--- setting leader-key before anything else fixes bugs with lazy.nvim
+-- Setting leader-key before anything else for lazy.nvim
 vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_python_provider = 0
-vim.g.loaded_python3_provider = 0
 
--- load all plugins
-require('lazy').setup({ spec = { import = 'plugins' }})
-
--- general sane vim options
-vim.opt.breakindent = true
+-- General sane options in addition to mini.basics (see lua/plugins.lua)
 vim.opt.clipboard = 'unnamedplus'
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.conceallevel = 2
-vim.opt.cursorline = true
 vim.opt.foldenable = false
 vim.opt.gdefault = true
-vim.opt.ignorecase = true
-vim.opt.infercase = true
 vim.opt.laststatus = 3
 vim.opt.list = true
 vim.opt.listchars = { extends = '»', precedes = '«', tab = '▸ ', trail = '·'}
+vim.opt.number = false
 vim.opt.relativenumber = true
 vim.opt.scrolljump = 5
 vim.opt.scrolloff = 3
-vim.opt.shortmess:append('cs')
-vim.opt.showbreak = '++++'
-vim.opt.showmode = false
+vim.opt.showbreak = '+++ '
 vim.opt.sidescroll = 10
 vim.opt.sidescrolloff = 5
-vim.opt.smartcase = true
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.splitkeep = 'screen'
 vim.opt.swapfile = false
 vim.opt.timeout = true
 vim.opt.timeoutlen = 500
-vim.opt.virtualedit = 'all'
 
--- filetype-specific settings for text-files
+-- filetype-specific settings for all commonly used text-files
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = { '*.md', '*.markdown', '*.txt', 'neomutt-*', '*.mail' },
   callback = function()
@@ -60,7 +41,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   end
 })
 
--- additional filetype-specific settings for writing mails for neomutt
+-- additional filetype-specific settings for writing mails in neomutt
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = { 'neomutt-*', '*.mail' },
   callback = function()
@@ -70,11 +51,5 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   end,
 })
 
--- better gf for everything javascript
-vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
-  pattern = { '*.js', '*.jsx', '*.json', '*.ts', '*.tsx', '*.cjs', '*.mjs' },
-  callback = function()
-    vim.opt_local.suffixesadd:append('.js,.jsx,.json,.ts,.tsx,.cjs,.mjs')
-    vim.opt_local.path:append('node_modules;~')
-  end,
-})
+-- load all plugins and lua sub-configs
+require('lazy').setup({ spec = { import = 'plugins' }})

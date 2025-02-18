@@ -5,7 +5,6 @@ local hotkey = require('hs.hotkey')
 local layout = require('hs.layout')
 local win = require('hs.window')
 
-
 -- Custom variables
 --------------------
 

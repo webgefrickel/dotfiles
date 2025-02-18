@@ -1,3 +1,6 @@
+-- Those plugins are for the file-manager of choice: yazi
+-- (and except for the first one are yazi-plugins themselves)
+
 return {
   { 'mikavilpas/yazi.nvim',
     event = 'VeryLazy',
