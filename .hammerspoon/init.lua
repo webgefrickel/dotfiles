@@ -39,7 +39,7 @@ local layoutDouble = {
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "TIDAL", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "WezTerm", nil, mainMonitor, screenPositions.right, nil, nil },
-  { "Zen Browser", nil, mainMonitor, screenPositions.left, nil, nil },
+  { "Zen", nil, mainMonitor, screenPositions.left, nil, nil },
 }
 
 local layoutSingle = {
@@ -49,7 +49,7 @@ local layoutSingle = {
   { "Strongbox", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "TIDAL", nil, laptopMonitor, screenPositions.full, nil, nil },
   { "WezTerm", nil, laptopMonitor, screenPositions.full, nil, nil },
-  { "Zen Browser", nil, laptopMonitor, screenPositions.full, nil, nil },
+  { "Zen", nil, laptopMonitor, screenPositions.full, nil, nil },
 }
 
 local appsToLaunch = {
@@ -59,7 +59,7 @@ local appsToLaunch = {
   "Strongbox",
   "TIDAL",
   "WezTerm",
-  "Zen Browser",
+  "Zen",
 }
 
 -- Local helper functions
