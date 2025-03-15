@@ -28,6 +28,13 @@ source ~/.zsh/functions.sh
 source ~/.zsh/aliases.sh
 source ~/.API_KEYS
 
+# easy vim/terminal switch after loading zsh-functions
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
+# shift tab for autocompletion (no right arrow)
+bindkey '^[[Z' autosuggest-accept
+
 # other tools init
 source <(fzf --zsh)
 source <(starship init zsh)

@@ -88,7 +88,3 @@ fancy-ctrl-z() {
     zle clear-screen
   fi
 }
-
-# easy vim/terminal switch after loading zsh-functions
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z

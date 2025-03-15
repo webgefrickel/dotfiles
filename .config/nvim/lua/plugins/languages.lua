@@ -44,7 +44,6 @@ return {
           'yamlls',
         },
       })
-
       require('mason-lspconfig').setup_handlers({
         function (server)
           require('lspconfig')[server].setup({

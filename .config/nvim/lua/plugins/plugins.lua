@@ -28,7 +28,6 @@ return {
       require('mini.jump').setup()
       require('mini.jump2d').setup()
       require('mini.move').setup()
-      require('mini.pairs').setup()
       require('mini.splitjoin').setup()
       require('mini.statusline').setup()
       require('mini.surround').setup()
@@ -43,4 +42,7 @@ return {
   { 'kevinhwang91/nvim-bqf', opts = {} },
   { 'numToStr/Navigator.nvim', opts = {} },
   { 'windwp/nvim-ts-autotag', opts = {} },
+
+  -- temp stuff, new corne keyboard ;)
+  { 'nvzone/typr', dependencies = 'nvzone/volt', opts = {} }
 }

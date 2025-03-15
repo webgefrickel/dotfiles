@@ -10,16 +10,27 @@ local function get_current_working_dir(tab)
   return current_dir == HOME_DIR and '~' or string.gsub(tostring(current_dir), '(.*[/\\])(.*)', '%2')
 end
 
-local function isVim(pane)
-  return pane:get_foreground_process_name():find('n?vim') ~= nil
+local function is_inside_vim(pane)
+  local tty = pane:get_tty_name()
+  if tty == nil then return false end
+  local success, stdout, stderr = wezterm.run_child_process
+    { 'sh', '-c',
+      'ps -o state= -o comm= -t' .. wezterm.shell_quote_arg(tty) .. ' | ' ..
+      'grep -iqE \'^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?)(diff)?$\'' }
+  return success
 end
 
-local function conditionalActivatePane(window, pane, pane_direction, vim_direction)
-  if isVim(pane) then
-    window:perform_action(act.SendKey({ key = vim_direction, mods = 'CTRL' }), pane)
-  else
-    window:perform_action(act.ActivatePaneDirection(pane_direction), pane)
+local function is_outside_vim(pane) return not is_inside_vim(pane) end
+
+local function bind_if(cond, key, mods, action)
+  local function callback (win, pane)
+    if cond(pane) then
+      win:perform_action(action, pane)
+    else
+      win:perform_action(act.SendKey({key=key, mods=mods}), pane)
+    end
   end
+  return { key=key, mods=mods, action=wezterm.action_callback(callback) }
 end
 
 -- open new development session with splits and commands
@@ -64,7 +75,6 @@ config.default_prog = { '/opt/homebrew/bin/zsh' }
 config.initial_cols = 140
 config.initial_rows = 40
 config.inactive_pane_hsb = { saturation = 0.3, brightness = 1 }
-config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
 config.scrollback_lines = 50000
 config.show_new_tab_button_in_tab_bar = false
 config.tab_bar_at_bottom = true
@@ -75,31 +85,42 @@ config.window_decorations = 'RESIZE'
 
 -- key mappings
 config.keys = {
-  { key = '\\', mods = 'LEADER', action = act.SplitHorizontal },
-  { key = '-', mods = 'LEADER', action = act.SplitVertical },
-  { key = ']', mods = 'LEADER', action = act.ActivateCopyMode },
-  { key = 'g', mods = 'LEADER', action = act.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' } },
-  -- Navigator.nvim keys
-  { key = 'h', mods = 'CTRL', action = act.EmitEvent('ActivatePaneDirection-left') },
-  { key = 'j', mods = 'CTRL', action = act.EmitEvent('ActivatePaneDirection-down') },
-  { key = 'k', mods = 'CTRL', action = act.EmitEvent('ActivatePaneDirection-up') },
-  { key = 'l', mods = 'CTRL', action = act.EmitEvent('ActivatePaneDirection-right') },
-  -- leader-key mappings
+  bind_if(is_outside_vim, 'h', 'CTRL', act.ActivatePaneDirection('Left')),
+  bind_if(is_outside_vim, 'l', 'CTRL', act.ActivatePaneDirection('Right')),
+  bind_if(is_outside_vim, 'j', 'CTRL', act.ActivatePaneDirection('Down')),
+  bind_if(is_outside_vim, 'k', 'CTRL', act.ActivatePaneDirection('Up')),
+
+  { key = '\\', mods = 'ALT',  action = act.SplitHorizontal },
+  { key = '-',  mods = 'ALT',  action = act.SplitVertical },
+  { key = ']',  mods = 'ALT',  action = act.ActivateCopyMode },
+  { key = 'g',  mods = 'ALT',  action = act.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' } },
   {
     key = ',',
-    mods = 'LEADER',
+    mods = 'ALT',
     action = act.PromptInputLine {
       description = 'Enter new name for tab',
       action = wezterm.action_callback(function(window, pane, line)
         if line then
-          window:active_tab():set_title(line)
+          window:activCTRL():set_title(line)
+        end
+      end),
+    },
+  },
+  {
+    key = '.',
+    mods = 'ALT',
+    action = act.PromptInputLine {
+      description = 'Rename current workspace',
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          mux.rename_workspace(mux.get_active_workspace(), line)
         end
       end),
     },
   },
   {
     key = 'c',
-    mods = 'LEADER',
+    mods = 'ALT',
     action = act.PromptInputLine {
       description = 'Enter name for new workspace',
       action = wezterm.action_callback(function(window, pane, line)
@@ -116,7 +137,7 @@ config.keys = {
   },
   {
     key = 'd',
-    mods = 'LEADER',
+    mods = 'ALT',
     action = act.PromptInputLine {
       description = 'Enter name for new workspace',
       action = wezterm.action_callback(function(window, pane, line)
@@ -126,33 +147,7 @@ config.keys = {
       end),
     },
   },
-  {
-    key = '$',
-    mods = 'LEADER',
-    action = act.PromptInputLine {
-      description = 'Rename current workspace',
-      action = wezterm.action_callback(function(window, pane, line)
-        if line then
-          mux.rename_workspace(mux.get_active_workspace(), line)
-        end
-      end),
-    },
-  },
 }
-
--- Navigator.nvim events
-wezterm.on('ActivatePaneDirection-right', function(window, pane)
-  conditionalActivatePane(window, pane, 'Right', 'l')
-end)
-wezterm.on('ActivatePaneDirection-left', function(window, pane)
-  conditionalActivatePane(window, pane, 'Left', 'h')
-end)
-wezterm.on('ActivatePaneDirection-up', function(window, pane)
-  conditionalActivatePane(window, pane, 'Up', 'k')
-end)
-wezterm.on('ActivatePaneDirection-down', function(window, pane)
-  conditionalActivatePane(window, pane, 'Down', 'j')
-end)
 
 -- set tab-title to current dir if not set explicitly
 wezterm.on('format-tab-title', function(tab)
@@ -194,9 +189,6 @@ wezterm.on('gui-startup', function()
   tab:activate()
 
   -- initialize some sessions for MRU projects and folders
-  newDevelopmentSession('ag/core')
-  newDevelopmentSession('ag/web')
-  newDevelopmentSession('ag/sp')
   newDevelopmentSession('pax/frontend')
   newDevelopmentSession('wwz/frontend')
 

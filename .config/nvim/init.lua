@@ -17,7 +17,7 @@ vim.opt.foldenable = false
 vim.opt.gdefault = true
 vim.opt.laststatus = 3
 vim.opt.list = true
-vim.opt.listchars = { extends = '»', precedes = '«', tab = '▸ ', trail = '·'}
+vim.opt.listchars = { extends = '»', precedes = '«', tab = '▸ ', trail = '·' }
 vim.opt.number = false
 vim.opt.relativenumber = true
 vim.opt.scrolljump = 5
@@ -25,6 +25,7 @@ vim.opt.scrolloff = 3
 vim.opt.showbreak = '+++ '
 vim.opt.sidescroll = 10
 vim.opt.sidescrolloff = 5
+vim.opt.virtualedit = 'all'
 vim.opt.swapfile = false
 vim.opt.timeout = true
 vim.opt.timeoutlen = 500
@@ -52,4 +53,4 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
 })
 
 -- load all plugins and lua sub-configs
-require('lazy').setup({ spec = { import = 'plugins' }})
+require('lazy').setup({ spec = { import = 'plugins' } })

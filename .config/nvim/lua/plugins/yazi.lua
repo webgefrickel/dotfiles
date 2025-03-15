@@ -21,7 +21,7 @@ return {
       require('yazi.plugin').build_plugin(plugin)
     end,
   },
-  { 'KKV9/bat.yazi',
+  { 'mgumz/yazi-plugin-bat',
     lazy = true,
     build = function(plugin)
       require('yazi.plugin').build_plugin(plugin)
