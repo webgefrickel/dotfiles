@@ -54,7 +54,6 @@ exit
 # node, global tools and custom scripts
 n lts
 npm install -g fkill-cli neovim npm npm-check trash-cli yarn
-cd ~/Dotfiles/scripts/out && npm i -g
 cd ~/Dotfiles/scripts/gallery && npm i -g
 
 # some plugins and additional things to do 
