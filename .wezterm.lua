@@ -13,7 +13,7 @@ end
 local function is_inside_vim(pane)
   local tty = pane:get_tty_name()
   if tty == nil then return false end
-  local success, stdout, stderr = wezterm.run_child_process
+  local success = wezterm.run_child_process
     { 'sh', '-c',
       'ps -o state= -o comm= -t' .. wezterm.shell_quote_arg(tty) .. ' | ' ..
       'grep -iqE \'^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?)(diff)?$\'' }
@@ -30,38 +30,11 @@ local function bind_if(cond, key, mods, action)
       win:perform_action(act.SendKey({key=key, mods=mods}), pane)
     end
   end
+
   return { key=key, mods=mods, action=wezterm.action_callback(callback) }
 end
 
--- open new development session with splits and commands
--- this expects the default src / public-dist structure to work
-local function newDevelopmentSession(id)
-  local sites_dir = wezterm.home_dir .. '/Sites/'
-  local path = sites_dir .. id
-  local dev_tab, dev_pane, dev_window = mux.spawn_window({
-    cwd = path,
-    workspace = id,
-  })
-  local devcli_pane = dev_pane:split({
-    workspace = id,
-    direction = 'Right',
-    cwd = path
-  })
-  local src_tab, src_pane = dev_window:spawn_tab({ cwd = path })
-  local git_tab, git_pane = dev_window:spawn_tab({ cwd = path })
-
-  src_tab:set_title('src')
-  src_pane:send_text('v\n')
-  git_tab:set_title('git')
-  git_pane:send_text('lg\n')
-  dev_tab:set_title('zsh')
-  devcli_pane:send_text('g pl && g s\n')
-  dev_tab:activate()
-
-  mux.set_active_workspace(id)
-end
-
--- base config
+-- colors and fonts
 config.color_scheme = 'Gruvbox Material (Gogh)'
 config.line_height = 1.1
 config.font_size = 14
@@ -70,18 +43,20 @@ config.font = wezterm.font({
   harfbuzz_features = { 'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
 })
 
-config.max_fps = 120
+-- base config and minimal layout
 config.default_prog = { '/opt/homebrew/bin/zsh' }
 config.initial_cols = 140
-config.initial_rows = 40
 config.inactive_pane_hsb = { saturation = 0.3, brightness = 1 }
+config.initial_rows = 40
+config.max_fps = 120
 config.scrollback_lines = 50000
+config.send_composed_key_when_left_alt_is_pressed = false
+config.send_composed_key_when_right_alt_is_pressed = true
 config.show_new_tab_button_in_tab_bar = false
 config.tab_bar_at_bottom = true
-config.use_dead_keys = false
 config.use_fancy_tab_bar = false
-config.window_padding = { left = 5, right = 5, top = 10, bottom = 10 }
 config.window_decorations = 'RESIZE'
+config.window_padding = { left = 5, right = 5, top = 10, bottom = 10 }
 
 -- key mappings
 config.keys = {
@@ -90,25 +65,25 @@ config.keys = {
   bind_if(is_outside_vim, 'j', 'CTRL', act.ActivatePaneDirection('Down')),
   bind_if(is_outside_vim, 'k', 'CTRL', act.ActivatePaneDirection('Up')),
 
-  { key = '\\', mods = 'ALT',  action = act.SplitHorizontal },
-  { key = '-',  mods = 'ALT',  action = act.SplitVertical },
-  { key = ']',  mods = 'ALT',  action = act.ActivateCopyMode },
-  { key = 'g',  mods = 'ALT',  action = act.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' } },
+  { key = '/', mods = 'CTRL|CMD',  action = act.SplitHorizontal },
+  { key = '-',  mods = 'CTRL|CMD',  action = act.SplitVertical },
+  { key = 'p',  mods = 'CTRL|CMD',  action = act.ActivateCopyMode },
+  { key = 'g',  mods = 'CTRL|CMD',  action = act.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' } },
   {
     key = ',',
-    mods = 'ALT',
+    mods = 'CTRL|CMD',
     action = act.PromptInputLine {
       description = 'Enter new name for tab',
       action = wezterm.action_callback(function(window, pane, line)
         if line then
-          window:activCTRL():set_title(line)
+          window:active_tab():set_title(line)
         end
       end),
     },
   },
   {
     key = '.',
-    mods = 'ALT',
+    mods = 'CTRL|CMD',
     action = act.PromptInputLine {
       description = 'Rename current workspace',
       action = wezterm.action_callback(function(window, pane, line)
@@ -120,29 +95,12 @@ config.keys = {
   },
   {
     key = 'c',
-    mods = 'ALT',
+    mods = 'CTRL|CMD',
     action = act.PromptInputLine {
       description = 'Enter name for new workspace',
       action = wezterm.action_callback(function(window, pane, line)
         if line then
-          window:perform_action(
-            act.SwitchToWorkspace {
-              name = line,
-            },
-            pane
-          )
-        end
-      end),
-    },
-  },
-  {
-    key = 'd',
-    mods = 'ALT',
-    action = act.PromptInputLine {
-      description = 'Enter name for new workspace',
-      action = wezterm.action_callback(function(window, pane, line)
-        if line then
-          newDevelopmentSession(line:gsub('%s+', ''))
+          window:perform_action(act.SwitchToWorkspace({ name = line }), pane)
         end
       end),
     },
@@ -187,11 +145,6 @@ wezterm.on('gui-startup', function()
   todo_pane:send_text('v -O index.md webgefrickel.md\n')
   git_pane:send_text('g s\n')
   tab:activate()
-
-  -- initialize some sessions for MRU projects and folders
-  newDevelopmentSession('pax/frontend')
-  newDevelopmentSession('wwz/frontend')
-
   mux.set_active_workspace('default')
   window:gui_window():maximize()
 end)

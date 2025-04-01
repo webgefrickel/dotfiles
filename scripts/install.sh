@@ -12,8 +12,8 @@
 # can explain... ;)
 #
 # Buzzwords:
-# zsh, neovim, neomutt, yazi, zoxide, lazygit, bat, fzf, 
-# wezterm, raycast, karabiner, hammerspoon
+# zsh, neovim, neomutt, yazi, zoxide, lazygit, bat, 
+# fzf, wezterm, raycast, karabiner
 # ------------------------------------------------------------- #
 
 xcode-select --install
@@ -71,7 +71,7 @@ mu init -m $HOME/Mail && mu index
 
 # ------------------------------------------------------------- #
 
-# zen-browser / firefox-extensions, install manually:
+# librewolf / firefox-extensions, install manually:
 # surfingkeys, privacy badger, ublock origin, react devtools, 
 # df youtube, axe devtools, strongbox autofill and gruvbox material dark
 

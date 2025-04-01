@@ -39,30 +39,15 @@
                                 ],
                                 "to_if_alone": [{ "key_code": "escape" }],
                                 "type": "basic"
-                            },
-                            {
-                                "description": "Change left control lock to control/escape",
-                                "from": {
-                                    "key_code": "left_control",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_control",
-                                        "modifiers": []
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
                             }
                         ]
                     },
                     {
                         "manipulators": [
                             {
-                                "description": "Change right option to hyper/esc",
+                                "description": "Change fn/globe to hyper/esc",
                                 "from": {
-                                    "key_code": "right_option",
+                                    "key_code": "fn",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [

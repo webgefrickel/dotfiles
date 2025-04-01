@@ -26,11 +26,11 @@ local keybindings = {
   { 'gX', "<cmd>execute '/\\v^[<\\|=>]{7}/'<cr>", desc = 'find git conflicts in file' },
 
   { '<leader><Space>', '<cmd>e #<cr>', desc = 'alternate between last two buffers' },
-  { '<leader>\\', '<C-w>v<C-w>l', desc = 'Vertical split' },
+  { '<leader>/', '<C-w>v<C-w>l', desc = 'Vertical split' },
   { '<leader>-', '<C-w>s<C-w>j', desc = 'Horizontal split' },
   { '<leader>,', '<cmd>FzfLua files<cr>', desc = 'fzf find files' },
   { '<leader>.', '<cmd>FzfLua buffers<cr>', desc = 'fzf find buffers' },
-  { '<leader>/', '<cmd>FzfLua git_status<cr>', desc = 'fzf current git status files' },
+  { '<leader>\\', '<cmd>FzfLua git_status<cr>', desc = 'fzf current git status files' },
   { '<leader>l', '<cmd>FzfLua lines<cr>', desc = 'fzf lines in currrent buffers' },
   { '<leader>;', '<cmd>FzfLua treesitter<cr>', desc = 'fzf symbols in current buffer' },
   { '<leader>\'', '<cmd>FzfLua git_bcommits<cr>', desc = 'fzf commits for buffer' },
