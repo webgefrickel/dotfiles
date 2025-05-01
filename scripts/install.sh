@@ -74,5 +74,5 @@ mu init -m $HOME/Mail && mu index
 # surfingkeys, privacy badger, ublock origin, react devtools, 
 # df youtube, axe devtools, strongbox autofill and gruvbox material dark
 
-# Apps from the app-store: strongbox, xcode, unifi
+# Apps from the app-store: hazeover, strongbox, xcode, unifi
 # Other software: https://billtheapp.com
