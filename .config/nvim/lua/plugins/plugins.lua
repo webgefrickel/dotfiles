@@ -27,7 +27,7 @@ return {
       require('mini.icons').setup()
       require('mini.jump').setup()
       require('mini.jump2d').setup()
-      require('mini.move').setup()
+      require('mini.move').setup({ options = { reindent_linewise = false }})
       require('mini.splitjoin').setup()
       require('mini.statusline').setup()
       require('mini.surround').setup()

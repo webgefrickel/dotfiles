@@ -36,8 +36,8 @@ end
 
 -- colors and fonts
 config.color_scheme = 'Gruvbox Material (Gogh)'
-config.line_height = 1.05
-config.font_size = 14
+config.line_height = 1.1
+config.font_size = 15
 config.font = wezterm.font({
   family = 'Maple Mono NF',
   harfbuzz_features = { 'calt', 'zero', 'cv01' },
