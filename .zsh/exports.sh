@@ -17,6 +17,7 @@ export EDITOR="/opt/homebrew/bin/nvim"
 export VISUAL="/opt/homebrew/bin/nvim"
 export LESS="-F -i -J -M -R -W -x2 -X -z-4"
 export PAGER="less -F -i -J -M -R -W -x2 -X -z-4"
+export MANPAGER='$EDITOR +Man!'
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export HOMEBREW_NO_ENV_HINTS=true
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"

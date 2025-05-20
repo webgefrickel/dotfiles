@@ -1,5 +1,9 @@
-[include]
-  path = ~/.gitconfig.user
+[user]
+  name = Steffen Rademacker
+  email = kontakt@webgefrickel.de
+
+[github]
+  user = webgefrickel
 
 [core]
   excludesfile = ~/.gitignore

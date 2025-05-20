@@ -45,7 +45,6 @@ return {
           'phpactor',
           'stylelint_lsp',
           'tailwindcss',
-          'ts_ls',
           'vtsls',
           'yamlls',
         },

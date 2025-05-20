@@ -1,0 +1,8 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Steffen Rademacker"
+email = "kontakt@webgefrickel.de"
+
+[ui]
+default-command = "log"
