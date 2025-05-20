@@ -6,9 +6,15 @@ return {
       require('nvim-treesitter.configs').setup({
         ensure_installed = 'all',
         sync_install = false,
-        highlight = { enable = true },
-        incremental_selection = { enable = true },
-        indent = { enable = true },
+        highlight = {
+          enable = true,
+        },
+        incremental_selection = {
+          enable = true,
+        },
+        indent = {
+          enable = true,
+        },
         refactor = {
           highlight_definitions = { enable = true },
           smart_rename = { enable = true },
@@ -18,8 +24,8 @@ return {
   },
   { 'neovim/nvim-lspconfig',
     dependencies = {
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
+      'mason-org/mason.nvim',
+      'mason-org/mason-lspconfig.nvim',
     },
     config = function ()
       require('mason').setup()
@@ -43,15 +49,6 @@ return {
           'vtsls',
           'yamlls',
         },
-      })
-      require('mason-lspconfig').setup_handlers({
-        function (server)
-          require('lspconfig')[server].setup({
-            capabilities = require('blink.cmp').get_lsp_capabilities({
-              textDocument = { completion = { completionItem = { snippetSupport = false }}},
-            })
-          })
-        end
       })
     end
   },

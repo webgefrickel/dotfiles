@@ -1,12 +1,9 @@
 return {
   { 'saghen/blink.cmp',
     dependencies = 'rafamadriz/friendly-snippets',
-    version = '*',
+    version = '1.*',
     opts = {
       keymap = { preset = 'super-tab' },
-      sources = {
-        default = { 'snippets', 'lsp', 'path', 'buffer' },
-      },
       completion = {
         trigger = { show_in_snippet = false },
         documentation = { auto_show = true },
