@@ -19,16 +19,18 @@ return {
     },
   },
   { 'yetone/avante.nvim',
-    lazy = false,
+    version = false,
     event = 'VeryLazy',
     build = 'make',
     opts = {
       hints = { enabled = false },
       behaviour = { auto_set_keymaps = false },
-      provider = 'openai',
-      openai = {
-        model = 'gpt-4o-mini',
-      },
+      provider = "openai",
+      providers = {
+        openai = {
+          model = 'gpt-4o-mini',
+        },
+      }
     },
   },
 }
