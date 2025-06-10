@@ -3,13 +3,16 @@ require('full-border'):setup()
 require('zoxide'):setup({ update_db = true })
 require('yatline'):setup({
   show_background = false,
-  display_header_line = true, -- keep for starship plugin
   display_status_line = true,
-  header_line = {},
+  display_header_line = true, -- keep for starship plugin
+  header_line = {}, -- keep for starship plugin
   status_line = {
     left = {
-      section_a = { { type = 'string', name = 'tab_mode' } },
-      section_b = { { type = 'string', name = 'hovered_size' } },
+      section_a = {
+        { type = 'string', name = 'tab_mode' },
+        { type = 'line', name = 'tabs', params = { 'left' } },
+      },
+      section_b = {},
       section_c = {
         { type = 'string', name = 'hovered_name' },
         { type = 'coloreds', name = 'count' },
@@ -17,10 +20,10 @@ require('yatline'):setup({
     },
     right = {
       section_a = { { type = 'string', name = 'cursor_position' } },
-      section_b = { { type = 'string', name = 'cursor_percentage' } },
+      section_b = {},
       section_c = {
-        { type = 'string', name = 'hovered_file_extension', params = { true } },
         { type = 'coloreds', name = 'permissions' },
+        { type = 'string', name = 'hovered_size' },
       },
     },
   },

@@ -9,19 +9,16 @@ return {
       yazi_floating_window_border = 'none',
     },
   },
+  { 'yazi-rs/plugins',
+    name = 'yazi-rs-plugins',
+    lazy = true,
+    build = function(plugin)
+      require('yazi.plugin').build_plugin(plugin, { sub_dir = 'full-border.yazi' })
+      require('yazi.plugin').build_plugin(plugin, { sub_dir = 'piper.yazi' })
+      require('yazi.plugin').build_plugin(plugin, { sub_dir = 'smart-enter.yazi' })
+    end,
+  },
   { 'Rolv-Apneseth/starship.yazi',
-    lazy = true,
-    build = function(plugin)
-      require('yazi.plugin').build_plugin(plugin)
-    end,
-  },
-  { 'Ape/smart-enter.yazi',
-    lazy = true,
-    build = function(plugin)
-      require('yazi.plugin').build_plugin(plugin)
-    end,
-  },
-  { 'mgumz/yazi-plugin-bat',
     lazy = true,
     build = function(plugin)
       require('yazi.plugin').build_plugin(plugin)

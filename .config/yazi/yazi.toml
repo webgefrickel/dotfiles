@@ -13,9 +13,9 @@ image_filter = 'nearest'
 
 [plugin]
 prepend_previewers = [
-  { mime = 'text/*', run = 'bat' },
-  { mime = 'application/json', run = 'bat' },
-  { mime = '*/{xml,javascript,x-wine-extension-ini}', run = 'bat' },
+  { mime = 'text/*', run = 'piper -- bat -p --color=always "$1"' },
+  { mime = 'application/json', run = 'piper -- bat -p --color=always "$1"' },
+  { mime = '*/{xml,javascript,x-wine-extension-ini}', run = 'piper -- bat -p --color=always "$1"' },
 ]
 
 [open]

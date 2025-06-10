@@ -2,6 +2,7 @@
 prepend_keymap = [
   { on = '-', run = 'leave', desc = 'Go back to the parent directory' },
   { on = '<Enter>', run = 'plugin smart-enter', desc = 'Enter child dir or open file' },
+  { on = 'f', run  = 'plugin jump-to-char', desc = 'Jump to char' },
   { on = 'l', run = 'plugin smart-enter', desc = 'Enter child dir or open file' },
 ]
 
