@@ -15,6 +15,7 @@ local keybindings = {
   { 'N', 'Nzzzv', desc = 'kepping it centered with N' },
 
   { 'g', group = 'general purpose mappings' },
+  { 'g=', '<cmd>wincmd =<cr>', desc = 'resize splits' },
   { 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', desc = 'run code action' },
   { 'gb', '<cmd>:vertical Git blame -- %<cr>', desc = 'git blame split' },
   { 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', desc = 'show/go to definition' },
