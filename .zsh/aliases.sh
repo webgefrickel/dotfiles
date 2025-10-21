@@ -9,6 +9,7 @@ alias g='git'
 alias l='y'
 alias lg='lazygit'
 alias m='neomutt'
+alias nvimdiff='nvim -d'
 alias q='exit'
 alias sudo='sudo '
 alias v=$EDITOR

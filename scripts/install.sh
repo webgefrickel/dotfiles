@@ -7,10 +7,6 @@
 # to your liking before doing anything else. Then install xcode
 # from the app store and proceed.
 #
-# Everything is highly to my liking/randomly working setup and
-# really to be used without me sitting next to you... wait! I 
-# can explain... ;)
-#
 # Buzzwords:
 # zsh, neovim, neomutt, yazi, zoxide, lazygit, bat, 
 # fzf, wezterm, raycast, karabiner
@@ -67,6 +63,10 @@ ya pack -a yazi-rs/plugins:full-border
 take Mail && take mailbox && mkdir cur new tmp
 mbsync -a
 mu init -m $HOME/Mail && mu index
+
+# create certificates for local ssl / ddev
+mkcert -install
+mkcert localhost "dev.localhost" "*.dev.localhost"
 
 # ------------------------------------------------------------- #
 

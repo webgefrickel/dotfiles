@@ -22,11 +22,10 @@ bind index <space> collapse-thread
 # Save all attachments
 macro index,pager S "<pipe-message>ripmime -i - -d ~/Downloads && rm ~/Downloads/textfile*" "Save all non-text attachments using ripmime"
 # opening urls with urlscan
-macro index,pager \cb "<pipe-message>urlscan<enter>" "call urlscan to extract URLs out of a message"
+macro index,pager \cb "<pipe-message>urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry>urlscan<Enter>" "call urlscan to extract URLs out of a message"
 # Sync all email
 macro index,pager O "<shell-escape>mbsync -a && mu index<enter>" "run mbsync to sync all mail"
-
-macro pager X "<enter-command>set pipe_decode=yes<enter>v|grep -v '^>' | speedread<enter><enter-command>unset pipe_decode<enter>q" "speedread"
 
 # View attachments properly.
 bind attach <space> view-mailcap

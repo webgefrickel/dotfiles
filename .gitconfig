@@ -60,17 +60,19 @@
   st = status
 
 [diff]
-  tool = nvim -d
-  guitool = nvim -d
+  tool = nvimdiff
+  guitool = nvimdiff
   compactionHeuristic = true
   colorMoved = default
 
 [merge]
+  tool = nvimdiff
   conflictstyle = diff3
 
-[mergetool]
+[mergetool "nvimdiff"]
   prompt = false
   keepBackup = false
+  layout = "LOCAL,BASE,REMOTE / MERGED"
 
 [push]
   default = current
