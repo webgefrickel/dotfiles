@@ -2,23 +2,20 @@
 ratio = [1, 2, 3]
 sort_by = 'natural'
 show_hidden = true
-show_symlink = true
 
 [preview]
-tab_size = 2
-max_width = 76800
-max_height = 76800
+max_width = 3840
+max_height = 3840
 image_quality = 50
-image_filter = 'nearest'
+
+[tasks]
+image_alloc = 536870912
+image_bound = [ 16384, 16384 ]
+suppress_preload = false
 
 [plugin]
 prepend_previewers = [
   { mime = 'text/*', run = 'piper -- bat -p --color=always "$1"' },
   { mime = 'application/json', run = 'piper -- bat -p --color=always "$1"' },
   { mime = '*/{xml,javascript,x-wine-extension-ini}', run = 'piper -- bat -p --color=always "$1"' },
-]
-
-[open]
-prepend_rules = [
-  { mime = 'image/svg+xml', use = [ 'edit', 'open', 'reveal' ] },
 ]

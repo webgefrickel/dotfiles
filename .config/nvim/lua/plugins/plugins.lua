@@ -16,6 +16,15 @@ return {
   { 'MunifTanjim/nui.nvim', lazy = true },
   { 'stevearc/dressing.nvim', lazy = true },
 
+  -- file-manager of choice
+  { 'mikavilpas/yazi.nvim',
+    event = 'VeryLazy',
+    opts = {
+      open_for_directories = true,
+      yazi_floating_window_border = 'none',
+    },
+  },
+
   -- mini plugins and config
   { 'echasnovski/mini.nvim',
     config = function()
@@ -26,7 +35,6 @@ return {
       require('mini.git').setup()
       require('mini.icons').setup()
       require('mini.jump').setup()
-      require('mini.jump2d').setup()
       require('mini.move').setup({ options = { reindent_linewise = false }})
       require('mini.splitjoin').setup()
       require('mini.statusline').setup()
