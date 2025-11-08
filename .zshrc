@@ -42,3 +42,4 @@ bindkey '^[[Z' autosuggest-accept
 source <(fzf --zsh)
 source <(starship init zsh)
 source <(zoxide init zsh)
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
