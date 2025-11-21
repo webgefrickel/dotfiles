@@ -9,6 +9,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+-- set in mini/can be removed after lazy -> vim.pack
 
 -- General sane options in addition to mini.basics (see lua/plugins.lua)
 vim.opt.clipboard = 'unnamedplus'

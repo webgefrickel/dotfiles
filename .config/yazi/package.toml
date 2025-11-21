@@ -1,16 +1,16 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "8f1d971"
+rev = "2301ff8"
 hash = "64713dcd74daf9ec644883a5895e5d1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "8f1d971"
+rev = "2301ff8"
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "8f1d971"
+rev = "2301ff8"
 hash = "56fdabc96fc1f4d53c96eb884b02a5be"
 
 [[plugin.deps]]
