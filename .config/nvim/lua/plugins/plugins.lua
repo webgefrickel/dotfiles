@@ -16,15 +16,6 @@ return {
   { 'MunifTanjim/nui.nvim', lazy = true },
   { 'stevearc/dressing.nvim', lazy = true },
 
-  -- file-manager of choice
-  { 'mikavilpas/yazi.nvim',
-    event = 'VeryLazy',
-    opts = {
-      open_for_directories = true,
-      yazi_floating_window_border = 'none',
-    },
-  },
-
   -- mini plugins and config
   { 'echasnovski/mini.nvim',
     config = function()
@@ -46,9 +37,12 @@ return {
   { 'MagicDuck/grug-far.nvim', opts = {} },
   { 'MeanderingProgrammer/render-markdown.nvim', opts = {} },
   { 'catgoose/nvim-colorizer.lua', event = 'BufReadPre', opts = { tailwind = true } },
+  { 'gruvw/strudel.nvim', build = "npm ci", opts = {} },
   { 'ibhagwan/fzf-lua', opts = { grep = { hidden = true } } },
   { 'kevinhwang91/nvim-bqf', opts = {} },
+  { 'mikavilpas/yazi.nvim', opts = { open_for_directories = true } },
   { 'numToStr/Navigator.nvim', opts = {} },
+  { 'sphamba/smear-cursor.nvim', opts = { smear_between_neighbor_lines = false } },
   { 'windwp/nvim-ts-autotag', opts = {} },
 
   -- temp stuff, new corne keyboard ;)
