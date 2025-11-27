@@ -55,7 +55,6 @@ cd ~/Dotfiles/scripts/gallery && npm i -g
 # some plugins and additional things to do 
 # (launch vim, install everything with lazy/mason...)
 bat cache --build
-ya pack -a yazi-rs/plugins:full-border
 
 # Neomutt and friends:create system-keychain-entries for the 
 # mailboxes (compare msmtp/mbsync-config, remember to prepend 
@@ -63,10 +62,7 @@ ya pack -a yazi-rs/plugins:full-border
 take Mail && take mailbox && mkdir cur new tmp
 mbsync -a
 mu init -m $HOME/Mail && mu index
-
-# create certificates for local ssl / ddev
 mkcert -install
-mkcert localhost "dev.localhost" "*.dev.localhost"
 
 # ------------------------------------------------------------- #
 

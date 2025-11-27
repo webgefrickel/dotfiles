@@ -13,7 +13,7 @@
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
   "nvim-bqf": { "branch": "main", "commit": "ba2b365969d7c2c6301d48e13aeee59568765529" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "81e676d3203c9eb6e4c0ccf1eba1679296ef923f" },
-  "nvim-lspconfig": { "branch": "master", "commit": "f1237a8b3c243608a7116fa1ad216c441d7c2264" },
+  "nvim-lspconfig": { "branch": "master", "commit": "de659c9c0d53df0e6b4747d8d1ef22ba1164291d" },
   "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
   "nvim-treesitter-refactor": { "branch": "master", "commit": "d8b74fa87afc6a1e97b18da23e762efb032dc270" },
   "nvim-ts-autotag": { "branch": "main", "commit": "c4ca798ab95b316a768d51eaaaee48f64a4a46bc" },
@@ -24,5 +24,5 @@
   "typr": { "branch": "main", "commit": "584e4ef34dea25a4035627794322f315b22d1253" },
   "volt": { "branch": "main", "commit": "620de1321f275ec9d80028c68d1b88b409c0c8b1" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
-  "yazi.nvim": { "branch": "main", "commit": "9abfdaef81ddeb3fdae7bfbac6ea00cbe25e9e05" }
+  "yazi.nvim": { "branch": "main", "commit": "60c2cf532df27e08d68edde3b7e04eced2256d78" }
 }
