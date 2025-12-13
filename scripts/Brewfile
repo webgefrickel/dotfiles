@@ -1,6 +1,5 @@
 tap "homebrew/cask"
 tap "buo/cask-upgrade"
-tap "sst/tap"
 tap "ddev/ddev"
 
 brew "bat"
