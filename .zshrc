@@ -29,7 +29,6 @@ setopt NO_HUP # fixes topgrade
 source ~/.zsh/exports.sh
 source ~/.zsh/functions.sh
 source ~/.zsh/aliases.sh
-source ~/.API_KEYS
 
 # easy vim/terminal switch after loading zsh-functions
 zle -N fancy-ctrl-z
