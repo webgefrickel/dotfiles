@@ -44,6 +44,7 @@ return {
   { 'numToStr/Navigator.nvim', opts = {} },
   { 'sphamba/smear-cursor.nvim', opts = { smear_between_neighbor_lines = false } },
   { 'windwp/nvim-ts-autotag', opts = {} },
+  { 'nvim-focus/focus.nvim', opts = {} },
 
   -- temp stuff, new corne keyboard ;)
   { 'nvzone/typr', dependencies = 'nvzone/volt', opts = {} }

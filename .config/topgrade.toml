@@ -1,7 +1,7 @@
 [misc]
 assume_yes = true
 cleanup = true
-disable = ["system", "pnpm", "composer", "gem", "ruby_gems", "containers"]
+disable = ["system", "containers"]
 no_retry = true
 pre_sudo = true
 set_title = false

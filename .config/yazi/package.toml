@@ -4,11 +4,6 @@ rev = "1612f00"
 hash = "d00cacddd5e4f58e2fb13aecae42d655"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:full-border"
-rev = "1612f00"
-hash = "3996fc74044bc44144b323686f887e1"
-
-[[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
 rev = "1612f00"
 hash = "56fdabc96fc1f4d53c96eb884b02a5be"
@@ -19,9 +14,9 @@ rev = "eca1861"
 hash = "e519d894e94ded741e06aae4d4775981"
 
 [[plugin.deps]]
-use = "imsi32/yatline"
-rev = "88bd1c5"
-hash = "981acbe9b758b1af3a8154c932bb936d"
+use = "yazi-rs/plugins:no-status"
+rev = "1612f00"
+hash = "3e023d31f29201efdac2a6ae35fedb78"
 
 [flavor]
 deps = []
