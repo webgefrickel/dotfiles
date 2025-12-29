@@ -9,7 +9,7 @@
 *.vi
 *.bak
 
-# some folders
+# and folders
 *~
 .~lock*
 .tmp_*
@@ -20,7 +20,6 @@ _srcs
 log
 tmp
 node_modules
-bower_components
 
 # OS or editor folders and temporary and other files
 Session.vim

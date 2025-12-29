@@ -6,10 +6,6 @@
 # Please configure 'everything apple' and your system-settings 
 # to your liking before doing anything else. Then install xcode
 # from the app store and proceed.
-#
-# Buzzwords:
-# zsh, neovim, neomutt, yazi, zoxide, lazygit, bat, 
-# fzf, wezterm, raycast, karabiner
 # ------------------------------------------------------------- #
 
 xcode-select --install
@@ -70,5 +66,5 @@ mkcert -install
 # surfingkeys, privacy badger, ublock origin, react devtools, 
 # df youtube, axe devtools, strongbox autofill and gruvbox material dark
 
-# Apps from the app-store: strongbox, xcode, unifi
+# Apps from the app-store: strongbox, xcode, unifi, smart vpn
 # Other software: https://billtheapp.com

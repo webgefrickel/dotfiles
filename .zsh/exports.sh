@@ -27,8 +27,7 @@ export N_PREFIX=$HOME/.n
 # Paths
 export XDG_CONFIG_HOME="$HOME/.config"
 export MANPATH=/opt/homebrew/share/man:$MANPATH
+export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
 export PATH=/opt/homebrew/opt/curl/bin:$PATH
 export PATH=$N_PREFIX/bin:$PATH
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH

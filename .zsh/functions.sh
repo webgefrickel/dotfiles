@@ -18,11 +18,6 @@ y() { # a yazi wrapper that returns last dir
   rm -f -- "$tmp"
 }
 
-take() { # shortcut for creating and going into dir
-  mkdir -p $1
-  cd $1
-}
-
 # terminal weather shortcut
 wttr() {
   if [[ -n "$1" ]]
@@ -66,7 +61,6 @@ webvideo() {
 }
 
 pdf() {
-  gallery
   magick convert *.jpg -auto-orient -monochrome temp.pdf
   ocrmypdf --rotate-pages --optimize 3 --jpeg-quality 70 temp.pdf document.pdf
   rm temp.pdf

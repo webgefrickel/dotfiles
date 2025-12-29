@@ -14,6 +14,11 @@ image_alloc = 536870912
 image_bound = [ 16384, 16384 ]
 suppress_preload = false
 
+[opener]
+play = [
+  { run = 'mpv --force-window "$@"', orphan = true, for = "macos" },
+]
+
 [plugin]
 prepend_previewers = [
   { mime = 'text/*', run = 'piper -- bat -p --color=always "$1"' },

@@ -25,7 +25,6 @@ return {
       require('mini.diff').setup()
       require('mini.git').setup()
       require('mini.icons').setup()
-      require('mini.jump').setup()
       require('mini.move').setup({ options = { reindent_linewise = false }})
       require('mini.splitjoin').setup()
       require('mini.statusline').setup()
@@ -42,10 +41,7 @@ return {
   { 'kevinhwang91/nvim-bqf', opts = {} },
   { 'mikavilpas/yazi.nvim', opts = { open_for_directories = true } },
   { 'numToStr/Navigator.nvim', opts = {} },
+  { 'nvim-focus/focus.nvim', opts = {} },
   { 'sphamba/smear-cursor.nvim', opts = { smear_between_neighbor_lines = false } },
   { 'windwp/nvim-ts-autotag', opts = {} },
-  { 'nvim-focus/focus.nvim', opts = {} },
-
-  -- temp stuff, new corne keyboard ;)
-  { 'nvzone/typr', dependencies = 'nvzone/volt', opts = {} }
 }
