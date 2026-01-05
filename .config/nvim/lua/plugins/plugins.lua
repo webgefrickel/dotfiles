@@ -41,7 +41,6 @@ return {
   { 'kevinhwang91/nvim-bqf', opts = {} },
   { 'mikavilpas/yazi.nvim', opts = { open_for_directories = true } },
   { 'numToStr/Navigator.nvim', opts = {} },
-  { 'nvim-focus/focus.nvim', opts = {} },
   { 'sphamba/smear-cursor.nvim', opts = { smear_between_neighbor_lines = false } },
   { 'windwp/nvim-ts-autotag', opts = {} },
 }
