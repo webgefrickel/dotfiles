@@ -12,11 +12,12 @@ xcode-select --install
 sudo xcodebuild -license accept
 
 # set name of new computer
-sudo scutil --set ComputerName "mausohr"
-sudo scutil --set LocalHostName "mausohr"
-sudo scutil --set HostName "mausohr"
+sudo scutil --set ComputerName "abendsegler"
+sudo scutil --set LocalHostName "abendsegler"
+sudo scutil --set HostName "abendsegler"
 
 # some sane macos-default settings (minimum):
+# click through all system-settings as well
 defaults write -g InitialKeyRepeat -int 12
 defaults write -g KeyRepeat -int 2
 defaults write -g ApplePressAndHoldEnabled -bool false
