@@ -1,5 +1,11 @@
-local keybindings = {
-  { -- remapping colon and visual-block bindings for normal and visual mode
+vim.pack.add({
+  'https://github.com/folke/which-key.nvim',
+})
+
+local wk = require('which-key')
+wk.setup({ preset = 'modern' })
+wk.add({
+  {
     mode = { 'n', 'v' },
     { ';', ':', desc = 'Colon with semicolon' },
     { 'v', '<C-V>', desc = 'remapping visual/visual-block mode' },
@@ -38,15 +44,4 @@ local keybindings = {
   { '<leader>a', '<cmd>FzfLua live_grep_native<cr>', desc = 'fzf live ripgrep' },
   { '<leader>f', '<cmd>GrugFar<cr>', desc = 'project-wide search/replace' },
   { '<leader>w', '<cmd>set wrap! wrap?<cr>', desc = 'toggle line-wrapping' },
-}
-
-return {
-  { 'folke/which-key.nvim',
-    event = 'VeryLazy',
-    config = function()
-      local wk = require('which-key')
-      wk.setup({ preset = 'modern' })
-      wk.add(keybindings)
-    end
-  },
-}
+})
