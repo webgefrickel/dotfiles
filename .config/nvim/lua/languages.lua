@@ -1,10 +1,5 @@
-vim.pack.add({
-  { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
-  'https://github.com/mason-org/mason.nvim',
-  'https://github.com/mason-org/mason-lspconfig.nvim',
-})
-
-require('nvim-treesitter').install({
+-- treesitter
+local languages = {
   'bash',
   'c',
   'comment',
@@ -48,32 +43,58 @@ require('nvim-treesitter').install({
   'xml',
   'yaml',
   'zsh',
-})
+}
 
+vim.pack.add({ 'https://github.com/nvim-treesitter/nvim-treesitter' })
+require('nvim-treesitter').install(languages)
+require('nvim-treesitter.install').update(languages)
 require('nvim-treesitter.config').setup({
+  auto_install = true,
   highlight = { enable = true },
   incremental_selection = { enable = true },
   indent = { enable = true },
 })
 
-require('mason').setup()
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'ast_grep',
-    'bashls',
-    'css_variables',
-    'cssls',
-    'cssmodules_ls',
-    'emmet_language_server',
-    'eslint',
-    'html',
-    'jsonls',
-    'lua_ls',
-    'marksman',
-    'phpactor',
-    'stylelint_lsp',
-    'tailwindcss',
-    'vtsls',
-    'yamlls',
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = languages,
+--   callback = function() vim.treesitter.start() end,
+-- })
+
+-- LSP and mason
+local lsp_servers = {
+  ast_grep = {},
+  bashls = {},
+  css_variables = {},
+  cssls = {},
+  cssmodules_ls = {},
+  emmet_language_server = {},
+  eslint = {},
+  html = {},
+  jsonls = {},
+  lua_ls = {
+    Lua = { workspace = { library = vim.api.nvim_get_runtime_file("lua", true) }, },
   },
+  marksman = {},
+  phpactor = {},
+  stylelint_lsp = {},
+  tailwindcss = {},
+  vtsls = {},
+  yamlls = {},
+}
+
+vim.pack.add({
+  'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/mason-org/mason.nvim',
+  'https://github.com/mason-org/mason-lspconfig.nvim',
+  'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
 })
+
+require('mason').setup()
+require('mason-lspconfig').setup()
+require('mason-tool-installer').setup({
+  ensure_installed = vim.tbl_keys(lsp_servers)
+})
+
+for server, config in pairs(lsp_servers) do
+  vim.lsp.config(server, { settings = config })
+end

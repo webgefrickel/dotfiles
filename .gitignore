@@ -42,3 +42,11 @@ NERD_tree*
 .hg
 .svn
 .CVS
+
+# 2026. agents
+.claude
+.agents
+.cursor
+.gemini
+.codex
+.opencode
