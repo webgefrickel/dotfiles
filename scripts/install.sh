@@ -61,6 +61,8 @@ mbsync -a
 mu init -m $HOME/Mail && mu index
 mkcert -install
 
+# kanata: copy LaunchDaemons, register and launch
+
 # ------------------------------------------------------------- #
 
 # librewolf / firefox-extensions, install manually:

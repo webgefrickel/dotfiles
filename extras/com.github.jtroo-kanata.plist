@@ -1,0 +1,28 @@
+<!-- See https://launchd.info/ for more info -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.github.jtroo-kanata</string>
+    <key>KeepAlive</key>
+    <true/>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/opt/homebrew/bin/kanata</string>
+      <string>--cfg</string>
+      <string>/Users/webgefrickel/.config/kanata/config.kbd</string>
+    </array>
+    <key>StandardOutPath</key>
+    <string>/var/log/kanata.log</string>
+    <key>StandardErrorPath</key>
+    <string>/var/log/kanata.log</string>
+    <key>OtherJobEnabled</key>
+    <dict>
+        <key>com.github.pqrs-org-Karabiner-VirtualHIDDevice-Manager</key>
+        <true />
+    </dict>
+  </dict>
+</plist>

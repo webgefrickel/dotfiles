@@ -5,7 +5,7 @@
       "src": "https://github.com/numToStr/Navigator.nvim"
     },
     "blink.cmp": {
-      "rev": "b19413d214068f316c78978b08264ed1c41830ec",
+      "rev": "4b18c32adef2898f95cdef6192cbd5796c1a332d",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "1.0.0 - 2.0.0"
     },
@@ -14,23 +14,23 @@
       "src": "https://github.com/stevearc/dressing.nvim"
     },
     "friendly-snippets": {
-      "rev": "572f5660cf05f8cd8834e096d7b4c921ba18e175",
+      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "940ffbfb54842b1b2bdd7aacc35db998a952b616",
+      "rev": "b2c0603216adb92c6bba81053bc996d7ae95b77a",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "grug-far.nvim": {
-      "rev": "794f03c97afc7f4b03fb6ec5111be507df1850cf",
+      "rev": "275dbedc96e61a6b8d1dfb28ba51586ddd233dcf",
       "src": "https://github.com/MagicDuck/grug-far.nvim"
     },
     "gruvbox-material": {
-      "rev": "e4359a2f80ef7275b080be180841c62ca8322757",
+      "rev": "790afe9dd085aa04eccd1da3626c5fa05c620e53",
       "src": "https://github.com/sainnhe/gruvbox-material"
     },
     "mason-lspconfig.nvim": {
-      "rev": "fe661093f4b05136437b531e7f959af2a2ae66c8",
+      "rev": "21c2a84ce368e99b18f52ab348c4c02c32c02fcf",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason-tool-installer.nvim": {
@@ -42,19 +42,19 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "8dccba88fc4dce006ca0ad668067c9e0d5ce7702",
-      "src": "https://github.com/echasnovski/mini.nvim"
+      "rev": "dbb073bd2ed4a7bb35daafc7989567f0ff1426ee",
+      "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nui.nvim": {
       "rev": "de740991c12411b663994b2860f1a4fd0937c130",
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-bqf": {
-      "rev": "daa1a130632dc2b05a9a73538bac058dfa4e0b86",
+      "rev": "f65fba733268ffcf9c5b8ac381287eca7c223422",
       "src": "https://github.com/kevinhwang91/nvim-bqf"
     },
     "nvim-colorizer.lua": {
-      "rev": "81e676d3203c9eb6e4c0ccf1eba1679296ef923f",
+      "rev": "338409dd8a6ed74767bad3eb5269f1b903ffb3cf",
       "src": "https://github.com/catgoose/nvim-colorizer.lua"
     },
     "nvim-lspconfig": {
@@ -70,7 +70,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-refactor"
     },
     "nvim-ts-autotag": {
-      "rev": "c4ca798ab95b316a768d51eaaaee48f64a4a46bc",
+      "rev": "8e1c0a389f20bf7f5b0dd0e00306c1247bda2595",
       "src": "https://github.com/windwp/nvim-ts-autotag"
     },
     "plenary.nvim": {
@@ -78,7 +78,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "73a6ebc842cf81926eb1d424820b800f6f6a1227",
+      "rev": "48b4175dbca8439d30c1f52231cbe5a712c8f9d9",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "smear-cursor.nvim": {
@@ -94,7 +94,7 @@
       "src": "https://github.com/folke/which-key.nvim"
     },
     "yazi.nvim": {
-      "rev": "4a8bd3284708e11e48bcd865892902a46abdcce0",
+      "rev": "ebcc774362f98e21624dfeab3cdedd9fcfe337d7",
       "src": "https://github.com/mikavilpas/yazi.nvim"
     }
   }

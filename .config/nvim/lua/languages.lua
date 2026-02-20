@@ -46,19 +46,23 @@ local languages = {
 }
 
 vim.pack.add({ 'https://github.com/nvim-treesitter/nvim-treesitter' })
+
+require('nvim-treesitter').setup({ install_dir = vim.fn.stdpath('data') .. '/site' })
 require('nvim-treesitter').install(languages)
-require('nvim-treesitter.install').update(languages)
-require('nvim-treesitter.config').setup({
-  auto_install = true,
-  highlight = { enable = true },
-  incremental_selection = { enable = true },
-  indent = { enable = true },
+
+vim.api.nvim_create_autocmd('PackChanged', {
+  callback = function()
+    require('nvim-treesitter').update()
+  end
 })
 
--- vim.api.nvim_create_autocmd('FileType', {
---   pattern = languages,
---   callback = function() vim.treesitter.start() end,
--- })
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = languages,
+  callback = function(args)
+    vim.treesitter.start(args.buf)
+    vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end
+})
 
 -- LSP and mason
 local lsp_servers = {

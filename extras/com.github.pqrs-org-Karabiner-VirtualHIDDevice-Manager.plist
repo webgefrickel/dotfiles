@@ -1,0 +1,22 @@
+<!-- See https://launchd.info/ for more info -->
+<!-- https://github.com/jtroo/kanata/issues/1317 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.github.pqrs-org-Karabiner-VirtualHIDDevice-Manager</string>
+    <key>RunAtLoad</key>
+    <true />
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager</string>
+      <string>activate</string>
+    </array>
+    <key>OtherJobEnabled</key>
+    <dict>
+        <key>com.github.pqrs-org-Karabiner-DriverKit-VirtualHIDDevice</key>
+        <true />
+    </dict>
+  </dict>
+</plist>
