@@ -5,13 +5,14 @@ show_hidden = true
 linemode = 'size'
 
 [preview]
-max_width = 3840
-max_height = 3840
+max_width = 1600
+max_height = 1600
+image_filter = 'nearest'
 image_quality = 50
 
 [tasks]
 image_alloc = 536870912
-image_bound = [ 16384, 16384 ]
+image_bound = [ 0, 0 ]
 suppress_preload = false
 
 [opener]
