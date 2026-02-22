@@ -15,7 +15,7 @@ alternates ^kontakt@webgefrickel.de$ ^s.rademacker@mailbox.org$
 # custom signaure
 set signature = .config/neomutt/signatures/work
 
-color status green default
+color status #a9b665 default
 
 macro index o "<shell-escape>mbsync mailbox<enter>" "run mbsync to sync mail for this account"
 

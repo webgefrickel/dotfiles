@@ -35,6 +35,7 @@ local function bind_if(cond, key, mods, action)
 end
 
 -- colors and fonts
+config.term = 'wezterm'
 config.color_scheme = 'Gruvbox Material (Gogh)'
 config.line_height = 1.1
 config.font_size = 15

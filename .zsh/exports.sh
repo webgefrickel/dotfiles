@@ -2,7 +2,11 @@
 
 # Shell config
 export SHELL=/opt/homebrew/bin/zsh
-export TERM=xterm-256color
+if [[ "$TERM_PROGRAM" == "WezTerm" ]]; then
+  export TERM='wezterm'
+else
+  export TERM='xterm-256color'
+fi
 export CLICOLOR=1
 export COPYFILE_DISABLE=true
 export COPY_EXTENDED_ATTRIBUTES_DISABLE=true

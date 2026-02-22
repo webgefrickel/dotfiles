@@ -1,43 +1,43 @@
-color attachment  color109 default
-color bold        color229 default
-color error       color167 default
-color hdrdefault  color246 default
-color indicator   color235 color66
-color markers     color243 default
-color normal      color223 default
-color quoted      color250 default
-color quoted1     color108 default
-color quoted2     color250 default
-color quoted3     color108 default
-color quoted4     color250 default
-color quoted5     color108 default
-color search      default color208
-color signature   color108 default
-color tilde       color243 default
-color tree        color142 default
-color underline   color223 color239
+color attachment  #7daea3 default
+color bold        #ddc7a1 default
+color error       #ea6962 default
+color hdrdefault  #a89984 default
+color indicator   #282828 #45403d
+color markers     #7c6f64 default
+color normal      #d4be98 default
+color quoted      #a89984 default
+color quoted1     #89b482 default
+color quoted2     #a89984 default
+color quoted3     #89b482 default
+color quoted4     #a89984 default
+color quoted5     #89b482 default
+color search      default #e78a4e
+color signature   #89b482 default
+color tilde       #7c6f64 default
+color tree        #a9b665 default
+color underline   #d4be98 #5a524c
 
-color sidebar_divider    color250 default
-color sidebar_new        color142 default
+color sidebar_divider    #a89984 default
+color sidebar_new        #a9b665 default
 
-color index color142 default ~N
-color index color108 default ~O
-color index color109 default ~P
-color index color214 default ~F
-color index color175 default ~Q
-color index color167 default ~=
-color index default color223 ~T
-color index default color167 ~D
+color index #a9b665 default ~N
+color index #89b482 default ~O
+color index #7daea3 default ~P
+color index #d8a657 default ~F
+color index #d3869b default ~Q
+color index #ea6962 default ~=
+color index default #d4be98 ~T
+color index default #ea6962 ~D
 
-color header color214 default "^From:"
-color header color109 default "^To:"
-color header color142 default "^Subject:"
-color header color108 default "^X-Spam-Status:"
-color header color108 default "^Received:"
+color header #d8a657 default "^From:"
+color header #7daea3 default "^To:"
+color header #a9b665 default "^Subject:"
+color header #89b482 default "^X-Spam-Status:"
+color header #89b482 default "^Received:"
 
-color body color208 default "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
-color body color208 default "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-color body default color214 "[;:]-*[)>(<lt;|]"
-color body color229 default "\\*[- A-Za-z]+\\*"
+color body #e78a4e default "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+color body #e78a4e default "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body default #d8a657 "[;:]-*[)>(<lt;|]"
+color body #ddc7a1 default "\\*[- A-Za-z]+\\*"
 
-color compose header            color223 default
+color compose header            #d4be98 default
