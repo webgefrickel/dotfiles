@@ -31,15 +31,12 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 cd ~/dotfiles/scripts
 brew doctor && brew bundle install
 
-# Activate wezterm as terminal after installing
-# https://wezterm.org/config/lua/config/term.html
-tic -x -o ~/.terminfo ~/.terminfo
-
 # good idea to kill terminal now and proceed...
 # ------------------------------------------------------------- #
 
 # stow everything, link dotfiles, set zsh as default and restart
 cd ~/dotfiles && stow .
+/opt/homebrew/opt/ncurses/bin/tic -x -o ~/.terminfo ~/Dotfiles/extras/wezterm.terminfo
 sudo vim /etc/shells
 chsh -s /opt/homebrew/bin/zsh
 /usr/bin/env zsh
