@@ -1,6 +1,17 @@
 (defvar
-  tap-time 300
-  hold-time 300
+  tap-time 250
+  hold-time 250
+)
+
+(defalias
+  cesc (tap-hold-press $tap-time $hold-time esc lctl)
+  hypr (tap-hold-press $tap-time $hold-time fn (multi lsft lctl lalt lmet))
+;; s0 (layer-switch base)
+;; s1 (layer-switch code)
+;; s2 (layer-switch äöüß)
+;; s3 (layer-switch func)
+  sshf (tap-hold-press $tap-time $hold-time spc lsft)
+  rcmd (tap-hold-press $tap-time $hold-time ret lmet)
 )
 
 (defsrc
@@ -12,7 +23,7 @@
   fn   lctl lalt lmet           spc            rmet ralt left up   down rght
 )
 
-(deflayer base
+(deflayer default
   esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   nubs  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab   q    w    e    r    t    y    u    i    o    p    [    ]
@@ -21,7 +32,8 @@
   @hypr lctl lalt lmet        spc               rmet ralt left up   down rght
 )
 
-(deflayer zero
+#|
+(deflayer base
   XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
   XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
   tab   q    w    e    r    t    y    u    i    o    p    [    XX
@@ -30,7 +42,30 @@
   XX    lctl lalt lmet        spc               rmet ralt left up   down rght
 )
 
-(defalias
-  cesc (tap-hold-press $tap-time $hold-time esc lctl)
-  hypr (tap-hold-press $tap-time $hold-time fn (multi lsft lctl lalt lmet))
+(deflayer code
+  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  tab   q    w    e    r    t    y    u    i    o    p    [    XX
+  @cesc a    s    d    f    g    h    j    k    l    ;    '    XX   XX
+  XX    grv  z    x    c    v    b    n    m    ,    .    /    rsft
+  XX    lctl lalt lmet        spc               rmet ralt left up   down rght
 )
+
+(deflayer äöüß
+  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  tab   q    w    e    r    t    y    u    i    o    p    [    XX
+  @cesc a    s    d    f    g    h    j    k    l    ;    '    XX   XX
+  XX    grv  z    x    c    v    b    n    m    ,    .    /    rsft
+  XX    lctl lalt lmet        spc               rmet ralt left up   down rght
+)
+
+(deflayer func
+  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  tab   q    w    e    r    t    y    u    i    o    p    [    XX
+  @cesc a    s    d    f    g    h    j    k    l    ;    '    XX   XX
+  XX    grv  z    x    c    v    b    n    m    ,    .    /    rsft
+  XX    lctl lalt lmet        spc               rmet ralt left up   down rght
+)
+|#

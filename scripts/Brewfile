@@ -60,7 +60,7 @@ cask "raycast"
 cask "signal"
 cask "tidal"
 cask "transmit"
-cask "wezterm"
+cask "wezterm@nightly"
 
 # cask "bambu-studio"
 # cask "blackhole-2ch"
