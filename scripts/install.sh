@@ -70,6 +70,5 @@ mkcert -install
 
 # brave-extensions, install manually:
 # surfingkeys, react + axe devtools, strongbox autofill, df Utube, dark reader
-
 # Apps from the app-store: strongbox, xcode, unifi
 # Other software: https://billtheapp.com

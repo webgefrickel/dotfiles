@@ -9,6 +9,9 @@ wk.add({
     mode = { 'n', 'v' },
     { ';', ':', desc = 'Colon with semicolon' },
     { 'v', '<C-V>', desc = 'remapping visual/visual-block mode' },
+    { '<C-a>', '<cmd>lua require("opencode").ask("@this: ", { submit = true })<cr>', desc = 'Ask opencode…' },
+    { '<C-x>', '<cmd>lua require("opencode").select()<cr>', desc = 'Execute opencode action…' },
+    { '<C-.>', '<cmd>lua require("opencode").toggle()<cr>', desc = 'Toggle opencode…' },
   },
 
   { '<C-h>', '<cmd>NavigatorLeft<cr>', desc = 'move to the lefthand split' },

@@ -2,4 +2,5 @@
   "$schema": "https://opencode.ai/config.json",
   "model": "kimi-k2.5",
   "autoupdate": true,
+  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"]
 }

@@ -1,5 +1,6 @@
 vim.pack.add({
   'https://github.com/sainnhe/gruvbox-material',
+  'https://github.com/folke/snacks.nvim',
   'https://github.com/MunifTanjim/nui.nvim',
   'https://github.com/nvim-lua/plenary.nvim',
   'https://github.com/stevearc/dressing.nvim',
@@ -14,6 +15,7 @@ vim.pack.add({
   'https://github.com/sphamba/smear-cursor.nvim',
   'https://github.com/windwp/nvim-ts-autotag',
   'https://github.com/f-person/git-blame.nvim',
+  'https://github.com/nickjvandyke/opencode.nvim',
   { src = 'https://github.com/gruvw/strudel.nvim', build = 'npm ci' },
 })
 
