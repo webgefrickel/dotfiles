@@ -11,14 +11,16 @@ alias lg='lazygit'
 alias m='neomutt'
 alias nvimdiff='nvim -d'
 alias q='exit'
+alias oc='opencode .'
 alias sudo='sudo '
 alias v=$EDITOR
 alias vd='$EDITOR -d'
 alias vim=$EDITOR
 
 # helpers
+alias cln="cd ~/.n && find . -name '.DS_Store' -type f -delete && cd ~"
 alias vup='nvim --headless "+TSUpdate" +qa && nvim --headless "+MasonUpdate" +qa && nvim --headless "+lua vim.pack.update()" +qa'
-alias up='n lts && topgrade && npm-check -gu && vup && brew cleanup && brew autoremove && echo \ \❤️Everything is up to date ❤️'
+alias up='cln && n lts && topgrade && npm-check -gu && vup && brew cleanup && brew autoremove && echo \ \❤️Everything is up to date ❤️'
 
 # work / dev related
 alias nb='npm run build'

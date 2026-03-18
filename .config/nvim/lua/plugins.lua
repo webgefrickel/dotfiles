@@ -13,6 +13,7 @@ vim.pack.add({
   'https://github.com/nvim-mini/mini.nvim',
   'https://github.com/sphamba/smear-cursor.nvim',
   'https://github.com/windwp/nvim-ts-autotag',
+  'https://github.com/f-person/git-blame.nvim',
   { src = 'https://github.com/gruvw/strudel.nvim', build = 'npm ci' },
 })
 
@@ -39,3 +40,4 @@ require('render-markdown').setup({ completions = { lsp = { enabled = true } } })
 require('smear_cursor').setup({ smear_between_neighbor_lines = false })
 require('strudel').setup()
 require('yazi').setup({ open_for_directories = true })
+require('gitblame').setup({ enabled = false, message_template = "<date>, <author>: <summary> <<sha>>", date_format = "%Y-%m-%d %H:%M" })

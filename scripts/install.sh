@@ -68,9 +68,8 @@ mkcert -install
 
 # ------------------------------------------------------------- #
 
-# librewolf / firefox-extensions, install manually:
-# surfingkeys, privacy badger, ublock origin, react devtools, 
-# df youtube, axe devtools, strongbox autofill and gruvbox material dark
+# brave-extensions, install manually:
+# surfingkeys, react + axe devtools, strongbox autofill, df Utube, dark reader
 
-# Apps from the app-store: strongbox, xcode, unifi, smart vpn
+# Apps from the app-store: strongbox, xcode, unifi
 # Other software: https://billtheapp.com

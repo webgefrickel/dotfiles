@@ -23,7 +23,7 @@ wk.add({
   { 'g', group = 'general purpose mappings' },
   { 'g=', '<cmd>wincmd =<cr>', desc = 'resize splits' },
   { 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', desc = 'run code action' },
-  { 'gb', '<cmd>:vertical Git blame -- %<cr>', desc = 'git blame split' },
+  { 'gb', '<cmd>:GitBlameEnable<cr>:GitBlameCopySHA<cr>', desc = 'git blame and copy sha' },
   { 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', desc = 'show/go to definition' },
   { 'gt', '<cmd>lua vim.lsp.buf.type_definition()<cr>', desc = 'show/go to type definition' },
   { 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', desc = 'show/go to declaration' },
