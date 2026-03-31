@@ -1,24 +1,44 @@
-local autocmd = vim.api.nvim_create_autocmd
-local o = vim.opt_local
+-- keep treesitter parsers up to date
+vim.api.nvim_create_autocmd('PackChanged', {
+  callback = function()
+    require('nvim-treesitter').update()
+  end
+})
+
+-- autoload treesitter-indentation for supported languages
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = languages,
+  callback = function(args)
+    vim.treesitter.start(args.buf)
+    vim.bo[args.buf].indentexpr = "v:lua.require('nvim-treesitter').indentexpr()"
+  end
+})
+
+-- auto-resize splits
+vim.api.nvim_create_autocmd('VimResized', {
+  callback = function()
+    vim.cmd('wincmd =')
+  end
+})
 
 -- filetype-specific settings for all commonly used text-files
-autocmd({ 'BufEnter', 'BufWinEnter' }, {
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = { '*.md', '*.markdown', '*.txt', 'neomutt-*', '*.mail' },
   callback = function()
-    o.spell = true
-    o.spelllang = { 'de', 'en' }
-    o.wrap = true
-    o.textwidth = 70
-    o.formatoptions:append('q')
+    vim.opt_local.spell = true
+    vim.opt_local.spelllang = { 'de', 'en' }
+    vim.opt_local.wrap = true
+    vim.opt_local.textwidth = 70
+    vim.opt_local.formatoptions:append('q')
   end
 })
 
 -- additional filetype-specific settings for writing mails in neomutt
-autocmd({ 'BufEnter', 'BufWinEnter' }, {
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = { 'neomutt-*', '*.mail' },
   callback = function()
-    o.filetype = 'mail'
-    o.comments:append('nb:>')
-    o.formatoptions:append('aw')
+    vim.opt_local.filetype = 'mail'
+    vim.opt_local.comments:append('nb:>')
+    vim.opt_local.formatoptions:append('aw')
   end,
 })

@@ -45,7 +45,7 @@ set status_format = "────  %f  |  %r%m messages%?n? (%n new)?%?d? (%d to
 
 # Source colors and bindings
 source ./colors
-source ./bindings
+source ./keybindings
 
 # Accounts and email headers and settings
 ignore *

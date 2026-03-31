@@ -1,5 +1,13 @@
--- treesitter
-local languages = {
+vim.pack.add({
+  'https://github.com/nvim-treesitter/nvim-treesitter',
+  'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/mason-org/mason.nvim',
+  'https://github.com/mason-org/mason-lspconfig.nvim',
+  'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
+})
+
+-- global var will be used in autocommands later
+languages = {
   'bash',
   'c',
   'comment',
@@ -45,26 +53,6 @@ local languages = {
   'zsh',
 }
 
-vim.pack.add({ 'https://github.com/nvim-treesitter/nvim-treesitter' })
-
-require('nvim-treesitter').setup({ install_dir = vim.fn.stdpath('data') .. '/site' })
-require('nvim-treesitter').install(languages)
-
-vim.api.nvim_create_autocmd('PackChanged', {
-  callback = function()
-    require('nvim-treesitter').update()
-  end
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = languages,
-  callback = function(args)
-    vim.treesitter.start(args.buf)
-    vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-  end
-})
-
--- LSP and mason
 local lsp_servers = {
   ast_grep = {},
   bashls = {},
@@ -76,7 +64,7 @@ local lsp_servers = {
   html = {},
   jsonls = {},
   lua_ls = {
-    Lua = { workspace = { library = vim.api.nvim_get_runtime_file("lua", true) }, },
+    Lua = { workspace = { library = vim.api.nvim_get_runtime_file('lua', true) }, },
   },
   marksman = {},
   phpactor = {},
@@ -86,18 +74,11 @@ local lsp_servers = {
   yamlls = {},
 }
 
-vim.pack.add({
-  'https://github.com/neovim/nvim-lspconfig',
-  'https://github.com/mason-org/mason.nvim',
-  'https://github.com/mason-org/mason-lspconfig.nvim',
-  'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
-})
-
+require('nvim-treesitter').setup({ install_dir = vim.fn.stdpath('data') .. '/site' })
+require('nvim-treesitter').install(languages)
 require('mason').setup()
 require('mason-lspconfig').setup()
-require('mason-tool-installer').setup({
-  ensure_installed = vim.tbl_keys(lsp_servers)
-})
+require('mason-tool-installer').setup({ ensure_installed = vim.tbl_keys(lsp_servers) })
 
 for server, config in pairs(lsp_servers) do
   vim.lsp.config(server, { settings = config })

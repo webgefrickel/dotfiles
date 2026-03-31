@@ -36,7 +36,6 @@ brew doctor && brew bundle install
 
 # stow everything, link dotfiles, set zsh as default and restart
 cd ~/dotfiles && stow .
-/opt/homebrew/opt/ncurses/bin/tic -x -o ~/.terminfo ~/Dotfiles/extras/wezterm.terminfo
 sudo vim /etc/shells
 chsh -s /opt/homebrew/bin/zsh
 /usr/bin/env zsh

@@ -1,7 +1,3 @@
-vim.pack.add({
-  'https://github.com/folke/which-key.nvim',
-})
-
 local wk = require('which-key')
 wk.setup({ preset = 'modern' })
 wk.add({
@@ -12,12 +8,11 @@ wk.add({
     { '<C-a>', '<cmd>lua require("opencode").ask("@this: ", { submit = true })<cr>', desc = 'Ask opencode…' },
     { '<C-x>', '<cmd>lua require("opencode").select()<cr>', desc = 'Execute opencode action…' },
     { '<C-.>', '<cmd>lua require("opencode").toggle()<cr>', desc = 'Toggle opencode…' },
+    { '<C-h>', '<cmd>lua require("kitty-navigator").navigateLeft()<cr>', desc = 'Move left a Split' },
+    { '<C-j>', '<cmd>lua require("kitty-navigator").navigateDown()<cr>', desc = 'Move down a Split'},
+    { '<C-k>', '<cmd>lua require("kitty-navigator").navigateUp()<cr>', desc = 'Move up a Split' },
+    { '<C-l>', '<cmd>lua require("kitty-navigator").navigateRight()<cr>', desc = 'Move right a Split' },
   },
-
-  { '<C-h>', '<cmd>NavigatorLeft<cr>', desc = 'move to the lefthand split' },
-  { '<C-j>', '<cmd>NavigatorDown<cr>', desc = 'move to the rigthand split' },
-  { '<C-k>', '<cmd>NavigatorUp<cr>', desc = 'move to the upper split' },
-  { '<C-l>', '<cmd>NavigatorRight<cr>', desc = 'move to the lower split' },
 
   { '-', '<cmd>Yazi<cr>', desc = 'Open yazi file browser' },
   { 'n', 'nzzzv', desc = 'kepping it centered with n' },

@@ -1,6 +1,5 @@
 require('options')
-require('autocommands')
 require('languages')
-require('bindings')
-require('autocompletion')
 require('plugins')
+require('keybindings')
+require('autocommands')

@@ -1,0 +1,35 @@
+new_tab files
+layout tall
+enabled_layouts tall,stack
+set_layout_state {"main_bias": [0.5, 0.5], "biased_map": {}, "opts": {"full_size": 1, "bias": 50, "mirrored": "n"}, "class": "Tall", "all_windows": {"active_group_idx": 0, "active_group_history": [1], "window_groups": [{"id": 1, "window_ids": [1]}]}}
+cd ~
+launch 'kitty-unserialize-data={"id": 1, "cmd_at_shell_startup": "yazi"}'
+focus
+
+new_tab mail
+layout tall
+enabled_layouts tall,stack
+set_layout_state {"main_bias": [0.5, 0.5], "biased_map": {}, "opts": {"full_size": 1, "bias": 50, "mirrored": "n"}, "class": "Tall", "all_windows": {"active_group_idx": 0, "active_group_history": [2], "window_groups": [{"id": 2, "window_ids": [2]}]}}
+cd ~
+launch 'kitty-unserialize-data={"id": 2, "cmd_at_shell_startup": "neomutt"}'
+focus
+
+new_tab notes
+layout tall
+enabled_layouts tall,stack
+set_layout_state {"main_bias": [0.5, 0.5], "biased_map": {}, "opts": {"full_size": 1, "bias": 50, "mirrored": "n"}, "class": "Tall", "all_windows": {"active_group_idx": 0, "active_group_history": [3], "window_groups": [{"id": 3, "window_ids": [3]}]}}
+cd ~/Notes
+launch 'kitty-unserialize-data={"id": 3, "cmd_at_shell_startup": "nvim index.md"}'
+focus
+
+new_tab dotfiles
+layout tall
+enabled_layouts tall,stack
+set_layout_state {"main_bias": [0.5, 0.5], "biased_map": {}, "opts": {"full_size": 1, "bias": 50, "mirrored": "n"}, "class": "Tall", "all_windows": {"active_group_idx": 0, "active_group_history": [4, 6], "window_groups": [{"id": 4, "window_ids": [4]}, {"id": 6, "window_ids": [7]}]}}
+cd ~/Dotfiles
+
+launch 'kitty-unserialize-data={"id": 4}'
+focus
+launch 'kitty-unserialize-data={"id": 7, "cmd_at_shell_startup": "nvim ./scripts"}'
+
+focus_tab 0

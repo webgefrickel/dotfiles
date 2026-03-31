@@ -1,6 +1,25 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "kimi-k2.5",
   "autoupdate": true,
-  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"]
+  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"],
+  "agent": {
+    "plan": {
+      "mode": "primary",
+      "model": "opencode/kimi-k2.5",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    },
+    "build": {
+      "mode": "primary",
+      "model": "opencode/kimi-k2.5",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    }
+  }
 }
