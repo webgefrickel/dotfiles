@@ -1,0 +1,39 @@
+
+new_tab devops
+layout tall
+enabled_layouts tall,stack
+set_layout_state {"main_bias": [0.5, 0.5], "biased_map": {}, "opts": {"full_size": 1, "bias": 50, "mirrored": "n"}, "class": "Tall", "all_windows": {"active_group_idx": 1, "active_group_history": [4, 10, 5], "window_groups": [{"id": 5, "window_ids": [5]}, {"id": 10, "window_ids": [11]}]}}
+cd ~/Projects/lu
+
+launch 'kitty-unserialize-data={"id": 5, "cmd_at_shell_startup": "git status"}'
+launch 'kitty-unserialize-data={"id": 11, "cmd_at_shell_startup": "npm-check -u -E"}'
+focus
+
+new_tab src
+layout tall
+enabled_layouts tall,stack
+set_layout_state {"main_bias": [0.5, 0.5], "biased_map": {}, "opts": {"full_size": 1, "bias": 50, "mirrored": "n"}, "class": "Tall", "all_windows": {"active_group_idx": 0, "active_group_history": [6], "window_groups": [{"id": 6, "window_ids": [6]}]}}
+cd ~/Projects/lu/src
+
+launch 'kitty-unserialize-data={"id": 6, "cmd_at_shell_startup": "nvim"}'
+focus
+
+new_tab git
+layout tall
+enabled_layouts tall,stack
+set_layout_state {"main_bias": [0.5, 0.5], "biased_map": {}, "opts": {"full_size": 1, "bias": 50, "mirrored": "n"}, "class": "Tall", "all_windows": {"active_group_idx": 0, "active_group_history": [8], "window_groups": [{"id": 8, "window_ids": [8]}]}}
+cd ~/Projects/lu
+
+launch 'kitty-unserialize-data={"id": 8, "cmd_at_shell_startup": "lazygit"}'
+focus
+
+new_tab ai
+layout tall
+enabled_layouts tall,stack
+set_layout_state {"main_bias": [0.5, 0.5], "biased_map": {}, "opts": {"full_size": 1, "bias": 50, "mirrored": "n"}, "class": "Tall", "all_windows": {"active_group_idx": 0, "active_group_history": [9], "window_groups": [{"id": 9, "window_ids": [9]}]}}
+cd ~/Projects/lu
+
+launch 'kitty-unserialize-data={"id": 9, "cmd_at_shell_startup": "opencode"}'
+focus
+
+focus_tab 0
