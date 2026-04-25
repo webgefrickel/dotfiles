@@ -25,7 +25,7 @@ brew "msmtp"
 brew "mu"
 brew "n"
 brew "neomutt"
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 brew "ocrmypdf"
 brew "opencode"
 brew "openssl"

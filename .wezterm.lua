@@ -35,29 +35,25 @@ local function bind_if(cond, key, mods, action)
 end
 
 -- colors and fonts
-config.term = 'wezterm'
 config.color_scheme = 'Gruvbox Material (Gogh)'
-config.line_height = 1.1
-config.font_size = 15
-config.font = wezterm.font({
-  family = 'Maple Mono NF',
-  harfbuzz_features = { 'calt', 'zero', 'cv01' },
-})
-
--- base config and minimal layout
 config.default_prog = { '/opt/homebrew/bin/zsh' }
-config.initial_cols = 140
+config.font = wezterm.font({ family = 'Berkeley Mono' })
+config.font_size = 15
 config.inactive_pane_hsb = { saturation = 0.3, brightness = 1 }
+config.initial_cols = 140
 config.initial_rows = 40
+config.line_height = 1.2
 config.max_fps = 120
 config.scrollback_lines = 50000
 config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = true
 config.show_new_tab_button_in_tab_bar = false
 config.tab_bar_at_bottom = true
+config.term = 'wezterm'
 config.use_fancy_tab_bar = false
+config.window_close_confirmation = 'NeverPrompt'
 config.window_decorations = 'RESIZE'
-config.window_padding = { left = 5, right = 5, top = 10, bottom = 10 }
+config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 
 -- key mappings
 config.keys = {

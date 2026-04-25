@@ -5,7 +5,7 @@
   "agent": {
     "plan": {
       "mode": "primary",
-      "model": "opencode/kimi-k2.5",
+      "model": "opencode-go/glm-5.1",
       "tools": {
         "write": false,
         "edit": false,
@@ -14,7 +14,7 @@
     },
     "build": {
       "mode": "primary",
-      "model": "opencode/kimi-k2.5",
+      "model": "opencode-go/kimi-k2.5",
       "tools": {
         "write": true,
         "edit": true,

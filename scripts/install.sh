@@ -68,6 +68,7 @@ mkcert -install
 # ------------------------------------------------------------- #
 
 # brave-extensions, install manually:
+# Berkeley Mono Font in Software-Folder
 # surfingkeys, react + axe devtools, strongbox autofill, df Utube, dark reader
 # Apps from the app-store: strongbox, xcode, unifi
 # Other software: https://billtheapp.com

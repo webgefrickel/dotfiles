@@ -5,14 +5,15 @@ wk.add({
     mode = { 'n', 'v' },
     { ';', ':', desc = 'Colon with semicolon' },
     { 'v', '<C-V>', desc = 'remapping visual/visual-block mode' },
-    { '<C-a>', '<cmd>lua require("opencode").ask("@this: ", { submit = true })<cr>', desc = 'Ask opencode…' },
-    { '<C-x>', '<cmd>lua require("opencode").select()<cr>', desc = 'Execute opencode action…' },
-    { '<C-.>', '<cmd>lua require("opencode").toggle()<cr>', desc = 'Toggle opencode…' },
-    { '<C-h>', '<cmd>lua require("kitty-navigator").navigateLeft()<cr>', desc = 'Move left a Split' },
-    { '<C-j>', '<cmd>lua require("kitty-navigator").navigateDown()<cr>', desc = 'Move down a Split'},
-    { '<C-k>', '<cmd>lua require("kitty-navigator").navigateUp()<cr>', desc = 'Move up a Split' },
-    { '<C-l>', '<cmd>lua require("kitty-navigator").navigateRight()<cr>', desc = 'Move right a Split' },
   },
+
+  { '<C-a>', '<cmd>lua require("opencode").ask("@this: ", { submit = true })<cr>', desc = 'Ask opencode…' },
+  { '<C-x>', '<cmd>lua require("opencode").select()<cr>', desc = 'Execute opencode action…' },
+  { '<C-.>', '<cmd>lua require("opencode").toggle()<cr>', desc = 'Toggle opencode…' },
+  { '<C-h>', '<cmd>NavigatorLeft<cr>', desc = 'Move left a Split' },
+  { '<C-j>', '<cmd>NavigatorDown<cr>', desc = 'Move down a Split'},
+  { '<C-k>', '<cmd>NavigatorUp<cr>', desc = 'Move up a Split' },
+  { '<C-l>', '<cmd>NavigatorRight<cr>', desc = 'Move right a Split' },
 
   { '-', '<cmd>Yazi<cr>', desc = 'Open yazi file browser' },
   { 'n', 'nzzzv', desc = 'kepping it centered with n' },
@@ -42,4 +43,5 @@ wk.add({
   { '<leader>a', '<cmd>FzfLua live_grep_native<cr>', desc = 'fzf live ripgrep' },
   { '<leader>f', '<cmd>GrugFar<cr>', desc = 'project-wide search/replace' },
   { '<leader>w', '<cmd>set wrap! wrap?<cr>', desc = 'toggle line-wrapping' },
+  { '<leader>u', '<cmd>lua require("undotree").open()<cr>', desc = 'show undo tree' },
 })

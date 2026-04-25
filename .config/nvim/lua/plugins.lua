@@ -1,3 +1,4 @@
+vim.cmd.packadd('nvim.undotree')
 vim.pack.add({
   'https://github.com/sainnhe/gruvbox-material',
   'https://github.com/nvim-lua/plenary.nvim',
@@ -6,7 +7,7 @@ vim.pack.add({
   'https://github.com/catgoose/nvim-colorizer.lua',
   'https://github.com/ibhagwan/fzf-lua',
   'https://github.com/mikavilpas/yazi.nvim',
-  'https://github.com/MunsMan/kitty-navigator.nvim',
+  'https://github.com/numToStr/Navigator.nvim',
   'https://github.com/nvim-mini/mini.nvim',
   'https://github.com/rafamadriz/friendly-snippets',
   'https://github.com/folke/which-key.nvim',
@@ -15,6 +16,7 @@ vim.pack.add({
   'https://github.com/nickjvandyke/opencode.nvim',
   { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('^1') },
 })
+
 
 vim.g.gruvbox_material_enable_italic = 1
 vim.g.gruvbox_material_enable_bold = 1
@@ -32,6 +34,7 @@ require('mini.splitjoin').setup()
 require('mini.statusline').setup()
 require('mini.surround').setup()
 
+require('Navigator').setup()
 require('colorizer').setup({ user_default_options = { tailwind = true } })
 require('fzf-lua').setup({ grep = { hidden = true } })
 require('gitblame').setup({ enabled = false, message_template = "<date>, <author>: <summary> <<sha>>", date_format = "%Y-%m-%d %H:%M" })
