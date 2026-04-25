@@ -1,11 +1,11 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "442d908"
+rev = "ac82af3"
 hash = "384464b6df8cb807425c521f8cd790f3"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "442d908"
+rev = "ac82af3"
 hash = "187cc58ba7ac3befd49c342129e6f1b6"
 
 [[plugin.deps]]
@@ -15,7 +15,7 @@ hash = "635b0feb9215772d22020eb0abf0bb34"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:no-status"
-rev = "442d908"
+rev = "ac82af3"
 hash = "3e023d31f29201efdac2a6ae35fedb78"
 
 [flavor]
