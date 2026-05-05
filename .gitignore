@@ -50,3 +50,7 @@ NERD_tree*
 .gemini
 .codex
 .opencode
+
+# pi agent runtime data
+.pi/agent/auth.json
+.pi/agent/sessions/

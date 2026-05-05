@@ -60,19 +60,17 @@
   st = status
 
 [diff]
-  tool = nvimdiff
-  guitool = nvimdiff
+  tool = vimdiff
+  guitool = vimdiff
   compactionHeuristic = true
   colorMoved = default
 
 [merge]
-  tool = nvimdiff
-  conflictstyle = diff3
+  tool = vimdiff
 
-[mergetool "nvimdiff"]
-  prompt = false
-  keepBackup = false
-  layout = "LOCAL,BASE,REMOTE / MERGED"
+[mergetool "vimdiff"]
+  path = nvim
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
 [push]
   default = current

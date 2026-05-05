@@ -37,6 +37,7 @@ end
 -- colors and fonts
 config.color_scheme = 'Gruvbox Material (Gogh)'
 config.default_prog = { '/opt/homebrew/bin/zsh' }
+config.enable_kitty_keyboard = true
 config.font = wezterm.font({ family = 'Berkeley Mono' })
 config.font_size = 15
 config.inactive_pane_hsb = { saturation = 0.3, brightness = 1 }
@@ -66,8 +67,7 @@ config.keys = {
   { key = '-',  mods = 'CTRL|CMD',  action = act.SplitVertical },
   { key = 'p',  mods = 'CTRL|CMD',  action = act.ActivateCopyMode },
   { key = 'g',  mods = 'CTRL|CMD',  action = act.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' } },
-  {
-    key = ',',
+  { key = ',',
     mods = 'CTRL|CMD',
     action = act.PromptInputLine {
       description = 'Enter new name for tab',
@@ -78,8 +78,7 @@ config.keys = {
       end),
     },
   },
-  {
-    key = '.',
+  { key = '.',
     mods = 'CTRL|CMD',
     action = act.PromptInputLine {
       description = 'Rename current workspace',
@@ -90,8 +89,7 @@ config.keys = {
       end),
     },
   },
-  {
-    key = 'c',
+  { key = 'c',
     mods = 'CTRL|CMD',
     action = act.PromptInputLine {
       description = 'Enter name for new workspace',
@@ -111,10 +109,10 @@ wezterm.on('format-tab-title', function(tab)
   local num = tab.tab_index + 1
 
   if title and #title > 0 then
-    return string.format('  %s %s  ', num, title)
+    return string.format('   %s %s   ', num, title)
   end
 
-  return string.format('  %s %s  ', num, cwd)
+  return string.format('   %s %s   ', num, cwd)
 end)
 
 -- show workspace on the left side of tabbar
@@ -130,7 +128,6 @@ wezterm.on('gui-startup', function()
   local mail_tab, mail_pane = window:spawn_tab({ cwd = home_dir })
   local todo_tab, todo_pane = window:spawn_tab({ cwd = home_dir .. '/Notes' })
   local dot_tab, dot_pane = window:spawn_tab({ cwd = home_dir .. '/Dotfiles' })
-  local dot_git_pane = dot_pane:split({ direction = 'Right', cwd = home_dir .. '/Dotfiles' })
 
   mail_tab:set_title('mail')
   mail_pane:send_text('m\n')
@@ -138,7 +135,6 @@ wezterm.on('gui-startup', function()
   todo_pane:send_text('v -O index.md webgefrickel.md\n')
   dot_tab:set_title('dotfiles')
   dot_pane:send_text('v +Yazi\n')
-  dot_git_pane:send_text('g s\n')
   default_pane:send_text('y\n')
   default_tab:set_title('files')
   default_tab:activate()
